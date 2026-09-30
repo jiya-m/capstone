@@ -11,10 +11,11 @@ from plotly.subplots import make_subplots
 # ---------------------------------------------------------
 COUNTRY = "Kenya"
 FLAG = "🇰🇪"
+FISCAL_YEAR = "FY2026/27"
 DEFAULT_CSV = Path(__file__).parent / "kenya_health_data.csv"
 
 REQUIRED_COLUMNS = {"section", "name", "detail", "value"}
-PROFILE_KEYS = ["population_m", "gdp_usd_bn", "gov_revenue_usd_bn", "gov_spending_usd_bn"]
+PROFILE_KEYS = ["population_m", "gdp_kes_bn", "gov_revenue_kes_bn", "gov_spending_kes_bn"]
 
 SOURCE_COLORS = {
     "Government": "#183B56",
@@ -38,7 +39,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-
 # Streamlit >=1.50 uses width="stretch"; older versions (e.g. 1.37) use use_container_width.
 _ST_VERSION = tuple(int(p) for p in st.__version__.split(".")[:2])
 WIDTH_KW = {"width": "stretch"} if _ST_VERSION >= (1, 50) else {"use_container_width": True}
@@ -48,6 +48,11 @@ def html(s: str) -> None:
     """Render HTML. Lines are stripped and joined so Markdown never
     mistakes indented HTML for a code block."""
     st.markdown("".join(line.strip() for line in s.splitlines()), unsafe_allow_html=True)
+
+
+def fmt_money(bn: float) -> str:
+    """Format a US$-billion amount as $1.23B, or $123M when under a billion."""
+    return f"${bn:,.2f}B" if abs(bn) >= 1 else f"${bn * 1000:,.0f}M"
 
 
 # ---------------------------------------------------------
@@ -84,7 +89,10 @@ def stat(label, value, sub="", color="#172033", size=27):
 # ---------------------------------------------------------
 @st.cache_data(show_spinner=False)
 def load_data(raw: bytes) -> dict:
-    """Parse the long-format CSV (section, name, detail, value) into model inputs."""
+    """Parse the long-format CSV (section, name, detail, value[, source]).
+
+    Money in the CSV is in KES billions; everything is converted to
+    US$ billions here using the `kes_per_usd` assumption."""
     df = pd.read_csv(io.BytesIO(raw))
     df.columns = [c.strip().lower() for c in df.columns]
 
@@ -94,6 +102,9 @@ def load_data(raw: bytes) -> dict:
 
     for c in ("section", "name", "detail"):
         df[c] = df[c].fillna("").astype(str).str.strip()
+    if "source" not in df.columns:
+        df["source"] = ""
+    df["source"] = df["source"].fillna("").astype(str).str.strip()
     df["section"] = df["section"].str.lower()
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
 
@@ -105,14 +116,26 @@ def load_data(raw: bytes) -> dict:
     def section(name):
         return df[df["section"] == name]
 
+    # Assumptions + FX
+    assumptions = section("assumption").set_index("name")["value"].to_dict()
+    fx = assumptions.get("kes_per_usd", 0)
+    if fx <= 0:
+        raise ValueError("Add an assumption row named 'kes_per_usd' (KES per US$)")
+
     # Profile
-    profile = section("profile").set_index("name")["value"].to_dict()
-    missing_keys = [k for k in PROFILE_KEYS if k not in profile]
+    p = section("profile").set_index("name")["value"].to_dict()
+    missing_keys = [k for k in PROFILE_KEYS if k not in p]
     if missing_keys:
         raise ValueError(f"Missing profile row(s): {', '.join(missing_keys)}")
+    profile = {
+        "population_m": p["population_m"],
+        "gdp_usd_bn": p["gdp_kes_bn"] / fx,
+        "gov_revenue_usd_bn": p["gov_revenue_kes_bn"] / fx,
+        "gov_spending_usd_bn": p["gov_spending_kes_bn"] / fx,
+    }
 
     # Government spending by category
-    gov = section("gov_spending").groupby("name", sort=False)["value"].sum()
+    gov = section("gov_spending").groupby("name", sort=False)["value"].sum() / fx
     if gov.empty or "Health" not in gov.index:
         raise ValueError("gov_spending section needs at least a 'Health' row")
 
@@ -127,25 +150,30 @@ def load_data(raw: bytes) -> dict:
         hf.pivot_table(index="name", columns="detail", values="value", aggfunc="sum", fill_value=0)
         .reindex(programmes)
         .reindex(columns=sources, fill_value=0)
-    )
+    ) / fx
 
-    # Scenarios
+    # Which sources sit inside the government health budget (vs off-budget)
+    ob = section("on_budget")
+    on_budget = ob.loc[ob["value"] > 0, "name"].tolist() if not ob.empty else sources
+    on_budget = [s for s in on_budget if s in sources]
+
+    # Scenarios (mortality_factor is optional and defaults to 1.0)
     sc = section("scenario")
     scen_order = sc["name"].drop_duplicates().tolist()
     scenarios = sc.pivot_table(index="name", columns="detail", values="value", aggfunc="first").reindex(scen_order)
-    for col in ("funding_cut", "mortality_factor"):
-        if col not in scenarios.columns or scenarios[col].isna().any():
-            raise ValueError(f"Every scenario needs a '{col}' row")
+    if "funding_cut" not in scenarios.columns or scenarios["funding_cut"].isna().any():
+        raise ValueError("Every scenario needs a 'funding_cut' row")
 
-    # Assumptions
-    assumptions = section("assumption").set_index("name")["value"].to_dict()
+    notes = df[df["source"] != ""][["section", "name", "detail", "value", "source"]].reset_index(drop=True)
 
     return {
         "profile": profile,
         "gov": gov,
         "funding": funding,
+        "on_budget": on_budget,
         "scenarios": scenarios,
         "assumptions": assumptions,
+        "notes": notes,
     }
 
 
@@ -178,13 +206,13 @@ def run_scenario(cut, mortality_factor, exposed_annual, years, new_financing, li
 html(f"""
 <div class="country-header">
 <h1>{COUNTRY} <span class="flag">{FLAG}</span></h1>
-<div style="color:#68758A; font-size:14px;">Health financing &amp; five-year funding scenarios</div>
+<div style="color:#68758A; font-size:14px;">Health financing &amp; funding scenarios · {FISCAL_YEAR} budget · figures in US$</div>
 </div>
 """)
 
 with st.expander("Data source", expanded=False):
     uploaded = st.file_uploader(
-        "Upload a CSV to replace the default data (columns: section, name, detail, value)",
+        "Upload a CSV to replace the default data (columns: section, name, detail, value, source)",
         type="csv",
     )
 
@@ -205,6 +233,7 @@ except Exception as e:  # show a readable message instead of a traceback
 profile = data["profile"]
 gov = data["gov"]
 funding = data["funding"]
+on_budget = data["on_budget"]
 scenarios = data["scenarios"]
 assumptions = data["assumptions"]
 
@@ -212,25 +241,33 @@ POP = profile["population_m"]
 GDP = profile["gdp_usd_bn"]
 REVENUE = profile["gov_revenue_usd_bn"]
 SPENDING = profile["gov_spending_usd_bn"]
+FX = assumptions["kes_per_usd"]
 YEARS = int(assumptions.get("horizon_years", 5))
 DEFAULT_LIVES_PER_BN = int(assumptions.get("lives_per_usd_bn", 12000))
+DEFAULT_COFINANCING = float(assumptions.get("kenya_cofinancing_usd_bn", 0.0))
 
 external_sources = [c for c in funding.columns if c != "Government"]
-gov_health_programmes = funding["Government"].sum()
 total_health = funding.to_numpy().sum()
-external_total = total_health - gov_health_programmes
+on_budget_health = funding[on_budget].to_numpy().sum()
+external_total = total_health - funding["Government"].sum()
 
 # Consistency checks between the CSV sections
 if abs(gov.sum() - SPENDING) > 0.05:
     st.warning(
-        f"Spending categories sum to ${gov.sum():.2f}B but profile says ${SPENDING:.2f}B "
-        f"(gov_spending_usd_bn)."
+        f"Spending categories sum to ${gov.sum():.2f}B but the profile total is ${SPENDING:.2f}B."
     )
-if abs(gov["Health"] - gov_health_programmes) > 0.05:
+if abs(gov["Health"] - on_budget_health) > 0.05:
     st.warning(
-        f"Health line in gov_spending (${gov['Health']:.2f}B) doesn't match the sum of "
-        f"'Government' health_funding rows (${gov_health_programmes:.2f}B)."
+        f"Health line in gov_spending (${gov['Health']:.2f}B) doesn't match the sum of on-budget "
+        f"health_funding sources ({', '.join(on_budget)}): ${on_budget_health:.2f}B."
     )
+
+with st.expander("Sources & notes for every figure"):
+    st.caption(
+        f"Money in the CSV is in KES billions; the dashboard converts at {FX:g} KES per US$. "
+        "Rows marked DERIVED are calculated, not quoted."
+    )
+    st.dataframe(data["notes"], hide_index=True, **WIDTH_KW)
 
 
 # ---------------------------------------------------------
@@ -242,18 +279,18 @@ with left:
     with st.container(border=True):
         html('<div class="section-title" style="margin-top:0">Country profile</div>')
         html(
-            stat("Population", f"{POP:g}M", "people")
-            + stat("GDP", f"${GDP:,.1f}B", "nominal GDP")
-            + stat("Government revenue", f"${REVENUE:,.1f}B", "annual")
-            + stat("Government spending", f"${SPENDING:,.1f}B", "annual")
+            stat("Population", f"{POP:,.1f}M", "mid-2026 (KNBS)")
+            + stat("GDP", f"${GDP:,.1f}B", "nominal, calendar 2025")
+            + stat("Government revenue", f"${REVENUE:,.1f}B", f"{FISCAL_YEAR} budget")
+            + stat("Government spending", f"${SPENDING:,.1f}B", f"{FISCAL_YEAR} budget")
         )
 
 with right:
     fig = make_subplots(
         rows=1,
         cols=3,
-        subplot_titles=("Revenue vs spending", "Government spending", "Health expenditure (all sources)"),
-        horizontal_spacing=0.12,
+        subplot_titles=("Revenue vs spending", "Government spending", "Health financing by programme"),
+        horizontal_spacing=0.14,
     )
 
     fig.add_trace(
@@ -281,29 +318,32 @@ with right:
         col=2,
     )
 
-    health_by_programme = funding.sum(axis=1)
+    health_by_programme = funding.sum(axis=1) * 1000  # US$ millions
     fig.add_trace(
         go.Bar(
             x=health_by_programme.values,
             y=health_by_programme.index,
             orientation="h",
             marker_color="#28A77A",
-            hovertemplate="%{y}: $%{x:.2f}B<extra></extra>",
+            hovertemplate="%{y}: $%{x:,.0f}M<extra></extra>",
         ),
         row=1,
         col=3,
     )
 
     fig.update_layout(
-        height=370,
+        height=400,
         margin=dict(l=10, r=10, t=55, b=10),
         paper_bgcolor="white",
         plot_bgcolor="white",
         showlegend=False,
         font=dict(family="Arial", color="#172033"),
     )
-    fig.update_xaxes(showgrid=False, zeroline=False, title_text="$B")
-    fig.update_yaxes(showgrid=False, zeroline=False)
+    fig.update_xaxes(showgrid=False, zeroline=False)
+    fig.update_xaxes(title_text="US$ B", row=1, col=1)
+    fig.update_xaxes(title_text="US$ B", row=1, col=2)
+    fig.update_xaxes(title_text="US$ M", row=1, col=3)
+    fig.update_yaxes(showgrid=False, zeroline=False, automargin=True)
     fig.update_yaxes(autorange="reversed", row=1, col=2)  # keep CSV order, top to bottom
     fig.update_yaxes(autorange="reversed", row=1, col=3)
     st.plotly_chart(fig, **WIDTH_KW)
@@ -314,9 +354,9 @@ with right:
 # ---------------------------------------------------------
 k1, k2, k3, k4, k5 = st.columns(5)
 kpis = [
-    (k1, "Health % of gov. spending", f"{gov['Health'] / SPENDING:.1%}", "gov. health line ÷ total spending"),
-    (k2, "Total health financing", f"${total_health:,.2f}B", "all sources, per year"),
-    (k3, "Health financing % of GDP", f"{total_health / GDP:.1%}", "all sources"),
+    (k1, "Health % of gov. spending", f"{gov['Health'] / SPENDING:.1%}", "national health vote ÷ total budget"),
+    (k2, "Total health financing", fmt_money(total_health), "all sources, per year"),
+    (k3, "Health financing % of GDP", f"{total_health / GDP:.1%}", "excludes county & private spending"),
     (k4, "External share of health", f"{external_total / total_health:.1%}", ", ".join(external_sources) or "none"),
     (k5, "Health spend per person", f"${total_health * 1000 / POP:,.0f}", "per year, all sources"),
 ]
@@ -337,25 +377,25 @@ for src in funding.columns:
     fig_sources.add_trace(
         go.Bar(
             y=funding.index,
-            x=funding[src],
+            x=funding[src] * 1000,
             name=src,
             orientation="h",
             marker_color=SOURCE_COLORS.get(src) or next(fallback, "#999999"),
-            hovertemplate=f"{src}: $%{{x:.2f}}B<extra></extra>",
+            hovertemplate=f"{src}: $%{{x:,.0f}}M<extra></extra>",
         )
     )
 fig_sources.update_layout(
     barmode="stack",
-    height=390,
+    height=420,
     margin=dict(l=10, r=10, t=10, b=10),
     paper_bgcolor="white",
     plot_bgcolor="white",
     legend=dict(orientation="h", y=1.08, x=0),
-    xaxis_title="US$ billions per year",
+    xaxis_title="US$ millions per year",
     font=dict(family="Arial", color="#172033"),
 )
 fig_sources.update_xaxes(showgrid=True, gridcolor="#EEF1F5")
-fig_sources.update_yaxes(showgrid=False, autorange="reversed")
+fig_sources.update_yaxes(showgrid=False, autorange="reversed", automargin=True)
 st.plotly_chart(fig_sources, **WIDTH_KW)
 
 
@@ -365,8 +405,8 @@ st.plotly_chart(fig_sources, **WIDTH_KW)
 html(f'<div class="section-title">{YEARS}-year funding scenarios</div>')
 st.markdown(
     "Adjust the levers below. Every number is recalculated from the CSV inputs and these "
-    "controls. Outputs are scenario estimates driven by an illustrative lives-per-$B "
-    "assumption, not forecasts."
+    "controls. Outputs are scenario estimates built on a global lives-per-$ assumption, "
+    "not Kenya-specific forecasts."
 )
 
 control_col, scenario_col = st.columns([0.28, 0.72], gap="large")
@@ -377,13 +417,18 @@ with control_col:
 
         additional_health = st.slider(
             f"Additional government health allocation ($B over {YEARS} yrs)",
-            0.0, 5.0, 1.0, 0.1, format="%.1f",
+            0.0,
+            max(3.0, round(DEFAULT_COFINANCING * 2, 1)),
+            float(DEFAULT_COFINANCING),
+            0.05,
+            format="%.2f",
+            help="Default is Kenya's pledged ~$850M extra domestic health spending under the US framework.",
         )
         tax_increase = st.slider(
             f"Increase in government revenue ($B over {YEARS} yrs)",
-            0.0, 5.0, 0.5, 0.1, format="%.1f",
+            0.0, 5.0, 0.0, 0.1, format="%.1f",
         )
-        health_share = st.slider("Health share of additional revenue", 0, 100, 70, 5, format="%d%%")
+        health_share = st.slider("Health share of additional revenue", 0, 100, 10, 5, format="%d%%")
 
         st.markdown("---")
         st.markdown("**Which funding is being cut?**")
@@ -402,8 +447,9 @@ with control_col:
             step=1000,
         )
         html(
-            '<div class="source-note">Replace the default with an evidence-based '
-            "mortality/funding elasticity when one is available.</div>"
+            '<div class="source-note">Default derived from Stover et al. (2025, Lancet Global Health): '
+            "global deaths if US health funding ended, per $ of US funding. It is an average across "
+            "many countries and programmes, so treat results as an order of magnitude.</div>"
         )
 
 # ---------------------------------------------------------
@@ -413,10 +459,16 @@ new_financing = additional_health + tax_increase * (health_share / 100)
 exposed_by_programme = funding[cut_sources].sum(axis=1) if cut_sources else pd.Series(0.0, index=funding.index)
 exposed_annual = float(exposed_by_programme.sum())
 
+
+def mortality_factor_of(row):
+    v = row.get("mortality_factor", 1.0)
+    return 1.0 if pd.isna(v) else float(v)
+
+
 results = {
     name: run_scenario(
         cut=row["funding_cut"],
-        mortality_factor=row["mortality_factor"],
+        mortality_factor=mortality_factor_of(row),
         exposed_annual=exposed_annual,
         years=YEARS,
         new_financing=new_financing,
@@ -442,7 +494,7 @@ with scenario_col:
                 <div style="font-size:20px; font-weight:800; color:#172033; margin-bottom:8px;">{name}</div>
                 <div class="metric-label">Funding cut</div>
                 <div style="color:{color}; font-size:30px; font-weight:800;">{scenarios.loc[name, 'funding_cut']:.0%}</div>
-                <div class="metric-sub" style="margin-bottom:0">${r['funding_loss']:.2f}B lost over {YEARS} yrs</div>
+                <div class="metric-sub" style="margin-bottom:0">{fmt_money(r['funding_loss'])} lost over {YEARS} yrs</div>
                 </div>
                 """)
                 html(stat("Lives at risk (remaining)", f"{r['lives_at_risk']:,.0f}", color="#B42318", size=28))
@@ -456,7 +508,7 @@ with scenario_col:
                     padding:10px 14px; margin-top:8px;">
                     <div style="color:#8A5A00; font-size:10px; font-weight:800;
                     text-transform:uppercase; letter-spacing:.05em;">Remaining financing gap</div>
-                    <div style="color:#7A4F00; font-size:24px; font-weight:800;">${r['financing_gap']:.2f}B</div>
+                    <div style="color:#7A4F00; font-size:24px; font-weight:800;">{fmt_money(r['financing_gap'])}</div>
                     </div>
                     """)
                 else:
@@ -465,7 +517,7 @@ with scenario_col:
                     padding:10px 14px; margin-top:8px;">
                     <div style="color:#067647; font-size:10px; font-weight:800;
                     text-transform:uppercase; letter-spacing:.05em;">Loss fully offset</div>
-                    <div style="color:#067647; font-size:24px; font-weight:800;">+${r['surplus']:.2f}B surplus</div>
+                    <div style="color:#067647; font-size:24px; font-weight:800;">+{fmt_money(r['surplus'])} surplus</div>
                     </div>
                     """)
 
@@ -515,46 +567,50 @@ st.plotly_chart(fig_cmp, **WIDTH_KW)
 html('<div class="section-title">Where the cut lands, by programme</div>')
 chosen = st.radio("Scenario", names, horizontal=True, label_visibility="collapsed")
 cut = scenarios.loc[chosen, "funding_cut"]
-mf = scenarios.loc[chosen, "mortality_factor"]
+mf = mortality_factor_of(scenarios.loc[chosen])
 
-prog = pd.DataFrame({"Annual funding exposed ($B)": exposed_by_programme})
-prog[f"Funding lost over {YEARS} yrs ($B)"] = prog["Annual funding exposed ($B)"] * YEARS * cut
-prog["Lives at risk (before offset)"] = prog[f"Funding lost over {YEARS} yrs ($B)"] * lives_per_bn * mf
+loss_bn = exposed_by_programme * YEARS * cut
+prog = pd.DataFrame({
+    "Annual funding exposed ($M)": exposed_by_programme * 1000,
+    f"Funding lost over {YEARS} yrs ($M)": loss_bn * 1000,
+    "Lives at risk (before offset)": loss_bn * lives_per_bn * mf,
+})
+loss_col = f"Funding lost over {YEARS} yrs ($M)"
 
 p_left, p_right = st.columns([0.55, 0.45], gap="large")
 with p_left:
     fig_p = go.Figure(
         go.Bar(
-            x=prog[f"Funding lost over {YEARS} yrs ($B)"],
+            x=prog[loss_col],
             y=prog.index,
             orientation="h",
             marker_color="#D94F4F",
-            hovertemplate="%{y}: $%{x:.2f}B<extra></extra>",
+            hovertemplate="%{y}: $%{x:,.0f}M<extra></extra>",
         )
     )
     fig_p.update_layout(
-        height=340, margin=dict(l=10, r=10, t=10, b=10), paper_bgcolor="white", plot_bgcolor="white",
-        xaxis_title=f"US$ billions lost over {YEARS} years", font=dict(family="Arial", color="#172033"),
+        height=360, margin=dict(l=10, r=10, t=10, b=10), paper_bgcolor="white", plot_bgcolor="white",
+        xaxis_title=f"US$ millions lost over {YEARS} years", font=dict(family="Arial", color="#172033"),
     )
     fig_p.update_xaxes(showgrid=True, gridcolor="#EEF1F5")
-    fig_p.update_yaxes(showgrid=False, autorange="reversed")
+    fig_p.update_yaxes(showgrid=False, autorange="reversed", automargin=True)
     st.plotly_chart(fig_p, **WIDTH_KW)
 with p_right:
     st.dataframe(
         prog.style.format({
-            "Annual funding exposed ($B)": "{:.2f}",
-            f"Funding lost over {YEARS} yrs ($B)": "{:.2f}",
+            "Annual funding exposed ($M)": "{:,.0f}",
+            loss_col: "{:,.0f}",
             "Lives at risk (before offset)": "{:,.0f}",
         }),
         **WIDTH_KW,
-        height=340,
+        height=360,
     )
 
 # Export
 summary = pd.DataFrame(results).T
 summary.index.name = "scenario"
 st.download_button(
-    "Download scenario results (CSV)",
+    "Download scenario results (CSV, US$ billions)",
     summary.round(4).to_csv().encode("utf-8"),
     file_name="scenario_results.csv",
     mime="text/csv",
@@ -562,10 +618,11 @@ st.download_button(
 
 html(f"""
 <div class="source-note">
-<b>Interpretation:</b> Inputs are read from <code>{source_label}</code>. Funding lost =
-(annual funding from the selected sources) × {YEARS} years × cut %. New financing = additional
-government allocation + (revenue increase × health share). Lives at risk = funding lost ×
-lives per $1B × mortality factor, reduced in proportion to the share of the loss offset.
-These are illustrative model outputs, not forecasts.
+<b>Interpretation:</b> Inputs are read from <code>{source_label}</code> (KES converted at {FX:g} per US$).
+Funding lost = annual funding from the selected sources × {YEARS} years × cut %. New financing =
+additional government allocation + (revenue increase × health share). Lives at risk = funding lost ×
+lives per $1B, reduced in proportion to the share of the loss offset. The health figures cover
+national-level budget and donor funding only; county-government and private health spending are
+excluded. These are illustrative model outputs, not forecasts.
 </div>
 """)
