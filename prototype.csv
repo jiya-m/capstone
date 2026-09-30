@@ -1,0 +1,41 @@
+section,name,detail,value
+profile,population_m,,56.0
+profile,gdp_usd_bn,,120.3
+profile,gov_revenue_usd_bn,,25.5
+profile,gov_spending_usd_bn,,31.0
+gov_spending,Health,,4.25
+gov_spending,Education,,5.35
+gov_spending,Defence,,1.95
+gov_spending,Infrastructure,,6.10
+gov_spending,Social protection,,3.25
+gov_spending,Debt service,,6.20
+gov_spending,Other,,3.90
+health_funding,Primary care,Government,0.72
+health_funding,Maternal & child health,Government,0.55
+health_funding,Vaccination,Government,0.48
+health_funding,HIV,Government,0.62
+health_funding,TB,Government,0.22
+health_funding,Malaria,Government,0.31
+health_funding,Medicines & commodities,Government,0.53
+health_funding,Health systems,Government,0.82
+health_funding,Vaccination,Gavi,0.18
+health_funding,HIV,Global Fund,0.16
+health_funding,TB,Global Fund,0.07
+health_funding,Malaria,Global Fund,0.11
+health_funding,Health systems,Global Fund,0.06
+health_funding,Primary care,US,0.09
+health_funding,Maternal & child health,US,0.08
+health_funding,Vaccination,US,0.07
+health_funding,HIV,US,0.10
+health_funding,TB,US,0.03
+health_funding,Malaria,US,0.04
+health_funding,Medicines & commodities,US,0.06
+health_funding,Health systems,US,0.08
+scenario,Severe cut,funding_cut,0.30
+scenario,Severe cut,mortality_factor,1.00
+scenario,Moderate cut,funding_cut,0.15
+scenario,Moderate cut,mortality_factor,0.65
+scenario,Protected,funding_cut,0.05
+scenario,Protected,mortality_factor,0.35
+assumption,lives_per_usd_bn,,12000
+assumption,horizon_years,,5
