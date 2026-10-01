@@ -1,4 +1,4 @@
-#Health spending dashboard
+Health spending dashboard
 
 Keep streamlit.py and kenya_health_data.csv in the same folder.
 
