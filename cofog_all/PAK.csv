@@ -1,0 +1,167 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+PAK,2005,GF01,General public services,Government spending,41.802194069517405,6.394523480121241,Central government (budgetary),15.2971001222736
+PAK,2005,GF02,Defence,Government spending,19.7567972109412,3.02221705031224,Central government (budgetary),15.2971001222736
+PAK,2005,GF03,Public order and safety,Government spending,1.71843272216914,0.262870374044124,Central government (budgetary),15.2971001222736
+PAK,2005,GF04,Economic affairs,Government spending,8.16187888198758,1.24853078443635,Central government (budgetary),15.2971001222736
+PAK,2005,GF05,Environmental protection,Government spending,0.007651994744386,0.0011705332973998,Central government (budgetary),15.2971001222736
+PAK,2005,GF06,Housing and community amenities,Government spending,0.214349169851887,0.0327892071235055,Central government (budgetary),15.2971001222736
+PAK,2005,GF08,"Recreation, culture and religion",Government spending,0.256248506927855,0.0391985906665852,Central government (budgetary),15.2971001222736
+PAK,2005,GF09,Education,Government spending,1.49139243908266,0.228139794622492,Central government (budgetary),15.2971001222736
+PAK,2005,GF10,Social protection,Government spending,0.197925376254181,0.0302768429729888,Central government (budgetary),15.2971001222736
+PAK,2005,GF0170,Interest on public debt,Government spending,25.6357687828476,3.92152921782676,Central government (budgetary),15.2971001222736
+PAK,2005,GF07,Health (no breakdown),Health,0.757360845676063,0.115854246849965,Central government (budgetary),15.2971001222736
+PAK,2006,GF01,General public services,Government spending,43.579971929187806,7.36554546162687,Central government (budgetary),16.9012166267453
+PAK,2006,GF02,Defence,Government spending,17.6077013979956,2.9759157562657,Central government (budgetary),16.9012166267453
+PAK,2006,GF03,Public order and safety,Government spending,1.67445491278821,0.283003252127515,Central government (budgetary),16.9012166267453
+PAK,2006,GF04,Economic affairs,Government spending,7.84153601640753,1.32531498899729,Central government (budgetary),16.9012166267453
+PAK,2006,GF05,Environmental protection,Government spending,0.0111620725736355,0.0018865260657046,Central government (budgetary),16.9012166267453
+PAK,2006,GF06,Housing and community amenities,Government spending,0.300439785659401,0.0507779790072248,Central government (budgetary),16.9012166267453
+PAK,2006,GF08,"Recreation, culture and religion",Government spending,0.255647468621974,0.0432075324725906,Central government (budgetary),16.9012166267453
+PAK,2006,GF09,Education,Government spending,1.58983920134291,0.268702167435882,Central government (budgetary),16.9012166267453
+PAK,2006,GF10,Social protection,Government spending,0.222665344501167,0.037633152226831,Central government (budgetary),16.9012166267453
+PAK,2006,GF0170,Interest on public debt,Government spending,26.0406832340629,4.40119228447353,Central government (budgetary),16.9012166267453
+PAK,2006,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),16.9012166267453
+PAK,2006,GF072,Outpatient services,Health,0.376629932645894,0.0636550407976476,Central government (budgetary),16.9012166267453
+PAK,2006,GF073,Hospital services,Health,0.44907538431736,0.0758992035208662,Central government (budgetary),16.9012166267453
+PAK,2006,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),16.9012166267453
+PAK,2006,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),16.9012166267453
+PAK,2006,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),16.9012166267453
+PAK,2006,GF07_rest,Health (not broken down),Health,0.05019331989563802,0.008483281727717201,Central government (budgetary),16.9012166267453
+PAK,2007,GF01,General public services,Government spending,46.279355289932596,8.228534730133411,Central government (budgetary),17.7801412283791
+PAK,2007,GF02,Defence,Government spending,15.6191659965901,2.77710977288868,Central government (budgetary),17.7801412283791
+PAK,2007,GF03,Public order and safety,Government spending,1.60800123200761,0.285904890005028,Central government (budgetary),17.7801412283791
+PAK,2007,GF04,Economic affairs,Government spending,10.5272736901245,1.87176412960214,Central government (budgetary),17.7801412283791
+PAK,2007,GF05,Environmental protection,Government spending,0.02775669310654,0.0049351792346705,Central government (budgetary),17.7801412283791
+PAK,2007,GF06,Housing and community amenities,Government spending,0.276349532244938,0.049135337117115,Central government (budgetary),17.7801412283791
+PAK,2007,GF08,"Recreation, culture and religion",Government spending,0.211340435232252,0.0375766278569655,Central government (budgetary),17.7801412283791
+PAK,2007,GF09,Education,Government spending,1.63861881234223,0.291348739029237,Central government (budgetary),17.7801412283791
+PAK,2007,GF10,Social protection,Government spending,0.209392597119513,0.0372302994896202,Central government (budgetary),17.7801412283791
+PAK,2007,GF0170,Interest on public debt,Government spending,22.7432012841123,4.04377330816969,Central government (budgetary),17.7801412283791
+PAK,2007,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),17.7801412283791
+PAK,2007,GF072,Outpatient services,Health,0.0003652196461386,6.49365688772e-05,Central government (budgetary),17.7801412283791
+PAK,2007,GF073,Hospital services,Health,0.436498347076752,0.0776100225697868,Central government (budgetary),17.7801412283791
+PAK,2007,GF0740,Public health services,Health,0.465472439003754,0.0827616570340482,Central government (budgetary),17.7801412283791
+PAK,2007,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),17.7801412283791
+PAK,2007,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),17.7801412283791
+PAK,2008,GF01,General public services,Government spending,41.302495586631295,8.425730500710099,Central government (budgetary),20.4000518153613
+PAK,2008,GF02,Defence,Government spending,13.1375768336274,2.6800724813429,Central government (budgetary),20.4000518153613
+PAK,2008,GF03,Public order and safety,Government spending,1.36393944825864,0.278244354174916,Central government (budgetary),20.4000518153613
+PAK,2008,GF04,Economic affairs,Government spending,18.3426101245512,3.74190196969817,Central government (budgetary),20.4000518153613
+PAK,2008,GF05,Environmental protection,Government spending,0.0082023454099813,0.0016732827137111,Central government (budgetary),20.4000518153613
+PAK,2008,GF06,Housing and community amenities,Government spending,0.300906267006619,0.0613850343850197,Central government (budgetary),20.4000518153613
+PAK,2008,GF08,"Recreation, culture and religion",Government spending,0.199344641817861,0.0406664102219901,Central government (budgetary),20.4000518153613
+PAK,2008,GF09,Education,Government spending,1.84658757086619,0.376704821272725,Central government (budgetary),20.4000518153613
+PAK,2008,GF10,Social protection,Government spending,0.250309776781003,0.05106332416224,Central government (budgetary),20.4000518153613
+PAK,2008,GF0170,Interest on public debt,Government spending,22.5647904646352,4.6032289468133,Central government (budgetary),20.4000518153613
+PAK,2008,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),20.4000518153613
+PAK,2008,GF072,Outpatient services,Health,0.0011520148047726,0.0002350116170942,Central government (budgetary),20.4000518153613
+PAK,2008,GF073,Hospital services,Health,0.380625691496887,0.0776478382879423,Central government (budgetary),20.4000518153613
+PAK,2008,GF0740,Public health services,Health,0.480298012405817,0.0979810433989373,Central government (budgetary),20.4000518153613
+PAK,2008,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),20.4000518153613
+PAK,2008,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),20.4000518153613
+PAK,2009,GF01,General public services,Government spending,41.769957941766094,7.622563137196891,Central government (budgetary),18.2489126463186
+PAK,2009,GF02,Defence,Government spending,12.9235558075941,2.35840841012607,Central government (budgetary),18.2489126463186
+PAK,2009,GF03,Public order and safety,Government spending,1.2230556006448,0.223194348177577,Central government (budgetary),18.2489126463186
+PAK,2009,GF04,Economic affairs,Government spending,9.51223491501796,1.73587944035424,Central government (budgetary),18.2489126463186
+PAK,2009,GF05,Environmental protection,Government spending,0.0087180230180716,0.0015909444050538,Central government (budgetary),18.2489126463186
+PAK,2009,GF06,Housing and community amenities,Government spending,0.226211940121297,0.041281219348278,Central government (budgetary),18.2489126463186
+PAK,2009,GF08,"Recreation, culture and religion",Government spending,0.205703828831166,0.0375387120335323,Central government (budgetary),18.2489126463186
+PAK,2009,GF09,Education,Government spending,1.88404780299593,0.343818237783611,Central government (budgetary),18.2489126463186
+PAK,2009,GF10,Social protection,Government spending,0.265733644469888,0.0484935006511887,Central government (budgetary),18.2489126463186
+PAK,2009,GF0170,Interest on public debt,Government spending,31.2019289248643,5.69401275346491,Central government (budgetary),18.2489126463186
+PAK,2009,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),18.2489126463186
+PAK,2009,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),18.2489126463186
+PAK,2009,GF073,Hospital services,Health,0.258966798032052,0.0472586247558374,Central government (budgetary),18.2489126463186
+PAK,2009,GF0740,Public health services,Health,0.504732018351023,0.0921081051268789,Central government (budgetary),18.2489126463186
+PAK,2009,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.2489126463186
+PAK,2009,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),18.2489126463186
+PAK,2010,GF01,General public services,Government spending,48.6025841838202,9.55073237391067,Central government (budgetary),19.6506678282553
+PAK,2010,GF02,Defence,Government spending,12.943339366838,2.54345262486114,Central government (budgetary),19.6506678282553
+PAK,2010,GF03,Public order and safety,Government spending,1.35418406661865,0.266106212714391,Central government (budgetary),19.6506678282553
+PAK,2010,GF04,Economic affairs,Government spending,5.92100398978047,1.1635168261295,Central government (budgetary),19.6506678282553
+PAK,2010,GF05,Environmental protection,Government spending,0.0142052067045837,0.0027914179838348,Central government (budgetary),19.6506678282553
+PAK,2010,GF06,Housing and community amenities,Government spending,0.15968021512502,0.031378228661661,Central government (budgetary),19.6506678282553
+PAK,2010,GF08,"Recreation, culture and religion",Government spending,0.166526097874216,0.0327234903406176,Central government (budgetary),19.6506678282553
+PAK,2010,GF09,Education,Government spending,1.90507225144654,0.374359420020023,Central government (budgetary),19.6506678282553
+PAK,2010,GF10,Social protection,Government spending,0.178301016202835,0.0350373404284228,Central government (budgetary),19.6506678282553
+PAK,2010,GF0170,Interest on public debt,Government spending,27.8833831257205,5.47927099731513,Central government (budgetary),19.6506678282553
+PAK,2010,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),19.6506678282553
+PAK,2010,GF072,Outpatient services,Health,0.0006845882749196,0.0001345261678956,Central government (budgetary),19.6506678282553
+PAK,2010,GF073,Hospital services,Health,0.356499344164433,0.0700545019316612,Central government (budgetary),19.6506678282553
+PAK,2010,GF0740,Public health services,Health,0.495368075731893,0.0973431350892944,Central government (budgetary),19.6506678282553
+PAK,2010,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),19.6506678282553
+PAK,2010,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),19.6506678282553
+PAK,2011,GF01,General public services,Government spending,54.689845635047504,10.293448833580321,Central government (budgetary),18.8214991541022
+PAK,2011,GF02,Defence,Government spending,12.9259571499171,2.43285891563127,Central government (budgetary),18.8214991541022
+PAK,2011,GF03,Public order and safety,Government spending,1.74667868251984,0.328751113455356,Central government (budgetary),18.8214991541022
+PAK,2011,GF04,Economic affairs,Government spending,3.12523619872671,0.588216304707044,Central government (budgetary),18.8214991541022
+PAK,2011,GF05,Environmental protection,Government spending,0.013023634407977,0.0024512432399307,Central government (budgetary),18.8214991541022
+PAK,2011,GF06,Housing and community amenities,Government spending,0.103665804238495,0.0195114584678417,Central government (budgetary),18.8214991541022
+PAK,2011,GF08,"Recreation, culture and religion",Government spending,0.128521177941219,0.0241896124190488,Central government (budgetary),18.8214991541022
+PAK,2011,GF09,Education,Government spending,1.60417453995756,0.301929697468435,Central government (budgetary),18.8214991541022
+PAK,2011,GF10,Social protection,Government spending,0.107764760603506,0.0202829435054091,Central government (budgetary),18.8214991541022
+PAK,2011,GF0170,Interest on public debt,Government spending,24.8688624669322,4.68069273884848,Central government (budgetary),18.8214991541022
+PAK,2011,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),18.8214991541022
+PAK,2011,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),18.8214991541022
+PAK,2011,GF073,Hospital services,Health,0.211808482804733,0.0398655317994095,Central government (budgetary),18.8214991541022
+PAK,2011,GF0740,Public health services,Health,0.459868019419169,0.0865540553849656,Central government (budgetary),18.8214991541022
+PAK,2011,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.8214991541022
+PAK,2011,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),18.8214991541022
+PAK,2012,GF01,General public services,Government spending,55.7383544043827,11.642925198912499,Central government (budgetary),20.8885341580825
+PAK,2012,GF02,Defence,Government spending,12.1836118660177,2.5449779263213,Central government (budgetary),20.8885341580825
+PAK,2012,GF03,Public order and safety,Government spending,1.56776726480745,0.327483600628539,Central government (budgetary),20.8885341580825
+PAK,2012,GF04,Economic affairs,Government spending,4.35029206528125,0.908712244032624,Central government (budgetary),20.8885341580825
+PAK,2012,GF05,Environmental protection,Government spending,0.0143047508967336,0.0029880527772927,Central government (budgetary),20.8885341580825
+PAK,2012,GF06,Housing and community amenities,Government spending,0.119715719942112,0.0250068590527025,Central government (budgetary),20.8885341580825
+PAK,2012,GF08,"Recreation, culture and religion",Government spending,0.1304144317981,0.0272416631332153,Central government (budgetary),20.8885341580825
+PAK,2012,GF09,Education,Government spending,1.46433842318182,0.30587883171626,Central government (budgetary),20.8885341580825
+PAK,2012,GF10,Social protection,Government spending,0.832803969986292,0.173960541740453,Central government (budgetary),20.8885341580825
+PAK,2012,GF0170,Interest on public debt,Government spending,23.4208892348988,4.8922804479585,Central government (budgetary),20.8885341580825
+PAK,2012,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),20.8885341580825
+PAK,2012,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),20.8885341580825
+PAK,2012,GF073,Hospital services,Health,0.145865473250832,0.0304691592048487,Central government (budgetary),20.8885341580825
+PAK,2012,GF0740,Public health services,Health,0.0258392996164703,0.0053974509265956,Central government (budgetary),20.8885341580825
+PAK,2012,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),20.8885341580825
+PAK,2012,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),20.8885341580825
+PAK,2013,GF01,General public services,Government spending,55.3356665183522,11.166748422885231,Central government (budgetary),20.1800197331711
+PAK,2013,GF02,Defence,Government spending,12.0729264205533,2.43631893403888,Central government (budgetary),20.1800197331711
+PAK,2013,GF03,Public order and safety,Government spending,1.67546591756817,0.338109352787814,Central government (budgetary),20.1800197331711
+PAK,2013,GF04,Economic affairs,Government spending,3.46347370075463,0.698929676265477,Central government (budgetary),20.1800197331711
+PAK,2013,GF05,Environmental protection,Government spending,0.0192587378221688,0.0038864170928733,Central government (budgetary),20.1800197331711
+PAK,2013,GF06,Housing and community amenities,Government spending,0.0986844289784236,0.0199145372414131,Central government (budgetary),20.1800197331711
+PAK,2013,GF08,"Recreation, culture and religion",Government spending,0.141961247877665,0.0286478078351687,Central government (budgetary),20.1800197331711
+PAK,2013,GF09,Education,Government spending,1.44440533666266,0.291481281965501,Central government (budgetary),20.1800197331711
+PAK,2013,GF10,Social protection,Government spending,0.27126042904926,0.0547404081104253,Central government (budgetary),20.1800197331711
+PAK,2013,GF0170,Interest on public debt,Government spending,25.2741049667621,5.10031936967497,Central government (budgetary),20.1800197331711
+PAK,2013,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),20.1800197331711
+PAK,2013,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),20.1800197331711
+PAK,2013,GF073,Hospital services,Health,0.162216127311325,0.0327352465018114,Central government (budgetary),20.1800197331711
+PAK,2013,GF0740,Public health services,Health,0.0319429410084938,0.0064460917988692,Central government (budgetary),20.1800197331711
+PAK,2013,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),20.1800197331711
+PAK,2013,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),20.1800197331711
+PAK,2014,GF01,General public services,Government spending,52.95224301645351,11.127147276161859,Central government (budgetary),21.0135522922125
+PAK,2014,GF02,Defence,Government spending,11.9071406692558,2.50211323104136,Central government (budgetary),21.0135522922125
+PAK,2014,GF03,Public order and safety,Government spending,1.51098724488831,0.317512094833267,Central government (budgetary),21.0135522922125
+PAK,2014,GF04,Economic affairs,Government spending,3.06793902655771,0.6446829716389,Central government (budgetary),21.0135522922125
+PAK,2014,GF05,Environmental protection,Government spending,0.0174328683307934,0.0036632649027238,Central government (budgetary),21.0135522922125
+PAK,2014,GF06,Housing and community amenities,Government spending,0.511074220153303,0.107394848503932,Central government (budgetary),21.0135522922125
+PAK,2014,GF08,"Recreation, culture and religion",Government spending,0.132240218118838,0.027788367385738,Central government (budgetary),21.0135522922125
+PAK,2014,GF09,Education,Government spending,1.6571435054057,0.348224717065431,Central government (budgetary),21.0135522922125
+PAK,2014,GF10,Social protection,Government spending,0.103198042678384,0.0216855746627621,Central government (budgetary),21.0135522922125
+PAK,2014,GF0170,Interest on public debt,Government spending,27.4321876548065,5.76447709774064,Central government (budgetary),21.0135522922125
+PAK,2014,GF073,Hospital services,Health,0.16714377011303,0.0351228435358771,Central government (budgetary),21.0135522922125
+PAK,2014,GF0740,Public health services,Health,0.0873345106506884,0.0183520830647303,Central government (budgetary),21.0135522922125
+PAK,2014,GF07_rest,Health (not broken down),Health,0.4539163449212116,0.09538394850291859,Central government (budgetary),21.0135522922125
+PAK,2015,GF01,General public services,Government spending,52.563019321114695,11.05555702014204,Central government (budgetary),21.0329565594437
+PAK,2015,GF02,Defence,Government spending,12.1299102108616,2.55127874535005,Central government (budgetary),21.0329565594437
+PAK,2015,GF03,Public order and safety,Government spending,1.56801388199988,0.329799678647082,Central government (budgetary),21.0329565594437
+PAK,2015,GF04,Economic affairs,Government spending,2.57905340519421,0.542451182359352,Central government (budgetary),21.0329565594437
+PAK,2015,GF05,Environmental protection,Government spending,0.0166491137768558,0.0035018008682184,Central government (budgetary),21.0329565594437
+PAK,2015,GF06,Housing and community amenities,Government spending,0.0836093892685807,0.0175855265244768,Central government (budgetary),21.0329565594437
+PAK,2015,GF08,"Recreation, culture and religion",Government spending,0.130750116205963,0.0275006151430224,Central government (budgetary),21.0329565594437
+PAK,2015,GF09,Education,Government spending,1.4897751745948,0.313343765305902,Central government (budgetary),21.0329565594437
+PAK,2015,GF10,Social protection,Government spending,0.0466209835312372,0.0098057712137105,Central government (budgetary),21.0329565594437
+PAK,2015,GF0170,Interest on public debt,Government spending,28.7315194403957,6.04308800276656,Central government (budgetary),21.0329565594437
+PAK,2015,GF073,Hospital services,Health,0.161345678047719,0.0339357663743166,Central government (budgetary),21.0329565594437
+PAK,2015,GF0740,Public health services,Health,0.0832628936644838,0.0175126482545867,Central government (budgetary),21.0329565594437
+PAK,2015,GF07_rest,Health (not broken down),Health,0.41647039134426217,0.0875960364943837,Central government (budgetary),21.0329565594437

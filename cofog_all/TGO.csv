@@ -1,0 +1,16 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+TGO,2023,GF01,General public services,Government spending,28.57947377064054,7.584935034784658,Central government (budgetary),26.53979949265755
+TGO,2023,GF02,Defence,Government spending,8.02604617636077,2.130096562394257,Central government (budgetary),26.53979949265755
+TGO,2023,GF03,Public order and safety,Government spending,2.089677247846235,0.5545961516220754,Central government (budgetary),26.53979949265755
+TGO,2023,GF04,Economic affairs,Government spending,22.23247384500603,5.900453980722133,Central government (budgetary),26.53979949265755
+TGO,2023,GF05,Environmental protection,Government spending,1.097074405145368,0.2911613474108462,Central government (budgetary),26.53979949265755
+TGO,2023,GF06,Housing and community amenities,Government spending,3.153621515607663,0.8369648269995819,Central government (budgetary),26.53979949265755
+TGO,2023,GF08,"Recreation, culture and religion",Government spending,0.6694287446939013,0.1776650465879759,Central government (budgetary),26.53979949265755
+TGO,2023,GF09,Education,Government spending,14.51925013525822,3.853379873734942,Central government (budgetary),26.53979949265755
+TGO,2023,GF10,Social protection,Government spending,12.3462580642109,3.276672135087637,Central government (budgetary),26.53979949265755
+TGO,2023,GF0712,Medical products,Health,0.1354325399960851,0.0359435245627742,Central government (budgetary),26.53979949265755
+TGO,2023,GF072,Outpatient services,Health,0.0047892920483146,0.0012710685067404,Central government (budgetary),26.53979949265755
+TGO,2023,GF073,Hospital services,Health,0.7900078387849175,0.2096664963897944,Central government (budgetary),26.53979949265755
+TGO,2023,GF0740,Public health services,Health,3.031101873398563,0.8044483596181654,Central government (budgetary),26.53979949265755
+TGO,2023,GF075,Health R&D,Health,0.0003420922891653,9.07906076243e-05,Central government (budgetary),26.53979949265755
+TGO,2023,GF0760,Other health,Health,3.325022458713594,0.8824542936284201,Central government (budgetary),26.53979949265755

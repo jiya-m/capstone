@@ -1,0 +1,319 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+MDA,2005,GF01,General public services,Government spending,9.040044589264271,3.3599808775098268,General government,37.16774673324126
+MDA,2005,GF02,Defence,Government spending,1.119019036185903,0.4159141612663338,General government,37.16774673324126
+MDA,2005,GF03,Public order and safety,Government spending,6.217486994797919,2.310899819398704,General government,37.16774673324126
+MDA,2005,GF04,Economic affairs,Government spending,10.9336591779569,4.063794751938808,General government,37.16774673324126
+MDA,2005,GF05,Environmental protection,Government spending,0.3872977762533585,0.1439498565813237,General government,37.16774673324126
+MDA,2005,GF06,Housing and community amenities,Government spending,5.242096838735494,1.948369276532455,General government,37.16774673324126
+MDA,2005,GF08,"Recreation, culture and religion",Government spending,2.27876865031727,0.846966960586423,General government,37.16774673324126
+MDA,2005,GF09,Education,Government spending,19.53495683987881,7.260703282694146,General government,37.16774673324126
+MDA,2005,GF10,Social protection,Government spending,30.54436060138341,11.35265058961011,General government,37.16774673324126
+MDA,2005,GF0170,Interest on public debt,Government spending,3.483536271651518,1.294751938808031,General government,37.16774673324126
+MDA,2005,GF0712,Medical products,Health,0.0,0.0,General government,37.16774673324126
+MDA,2005,GF072,Outpatient services,Health,0.0328702909735322,0.0122171464995219,General government,37.16774673324126
+MDA,2005,GF073,Hospital services,Health,0.6302521008403361,0.2342505046212685,General government,37.16774673324126
+MDA,2005,GF0740,Public health services,Health,10.55565083176128,3.923297567194306,General government,37.16774673324126
+MDA,2005,GF075,Health R&D,Health,0.0,0.0,General government,37.16774673324126
+MDA,2005,GF0760,Other health,Health,0.0,0.0,General government,37.16774673324126
+MDA,2006,GF01,General public services,Government spending,2.1761284962614287,0.8779103543817341,General government,40.34276265808643
+MDA,2006,GF02,Defence,Government spending,1.196344502907782,0.4826384233811503,General government,40.34276265808643
+MDA,2006,GF03,Public order and safety,Government spending,6.528939351980061,2.633954506859722,General government,40.34276265808643
+MDA,2006,GF04,Economic affairs,Government spending,8.9526446967599,3.611744201635608,General government,40.34276265808643
+MDA,2006,GF05,Environmental protection,Government spending,0.6014954306286348,0.242659873977745,General government,40.34276265808643
+MDA,2006,GF06,Housing and community amenities,Government spending,5.602326225422321,2.260133172453859,General government,40.34276265808643
+MDA,2006,GF08,"Recreation, culture and religion",Government spending,2.696206037108834,1.087724002323815,General government,40.34276265808643
+MDA,2006,GF09,Education,Government spending,19.97119911381889,8.056933458461813,General government,40.34276265808643
+MDA,2006,GF10,Social protection,Government spending,32.51343118249792,13.1168163739554,General government,40.34276265808643
+MDA,2006,GF0170,Interest on public debt,Government spending,2.517308224868457,1.01555168253117,General government,40.34276265808643
+MDA,2006,GF0712,Medical products,Health,0.0,0.0,General government,40.34276265808643
+MDA,2006,GF072,Outpatient services,Health,0.0603710883411797,0.0243553648835858,General government,40.34276265808643
+MDA,2006,GF073,Hospital services,Health,0.5427859318748269,0.2189748402377441,General government,40.34276265808643
+MDA,2006,GF0740,Public health services,Health,16.64081971752977,6.713366403003084,General government,40.34276265808643
+MDA,2006,GF075,Health R&D,Health,0.0,0.0,General government,40.34276265808643
+MDA,2006,GF0760,Other health,Health,0.0,0.0,General government,40.34276265808643
+MDA,2007,GF01,General public services,Government spending,9.6124287322836,4.026389668725436,General government,41.88732921579637
+MDA,2007,GF02,Defence,Government spending,1.23277510678987,0.516376567471458,General government,41.88732921579637
+MDA,2007,GF03,Public order and safety,Government spending,5.67148040249504,2.375631667602471,General government,41.88732921579637
+MDA,2007,GF04,Economic affairs,Government spending,13.36213829958356,5.597042859816582,General government,41.88732921579637
+MDA,2007,GF05,Environmental protection,Government spending,0.582652678236314,0.2440576455174995,General government,41.88732921579637
+MDA,2007,GF06,Housing and community amenities,Government spending,3.376168433093242,1.41418678644956,General government,41.88732921579637
+MDA,2007,GF08,"Recreation, culture and religion",Government spending,2.533466783435506,1.061201572150477,General government,41.88732921579637
+MDA,2007,GF09,Education,Government spending,19.07383246054583,7.989518996818267,General government,41.88732921579637
+MDA,2007,GF10,Social protection,Government spending,29.97622920055048,12.55624181171626,General government,41.88732921579637
+MDA,2007,GF0170,Interest on public debt,Government spending,2.833729513324159,1.186973610331275,General government,41.88732921579637
+MDA,2007,GF0712,Medical products,Health,0.0,0.0,General government,41.88732921579637
+MDA,2007,GF072,Outpatient services,Health,0.054958803238548,0.0230207748455923,General government,41.88732921579637
+MDA,2007,GF073,Hospital services,Health,0.3534342549731015,0.1480441699419802,General government,41.88732921579637
+MDA,2007,GF0740,Public health services,Health,11.33670533145073,4.748643084409508,General government,41.88732921579637
+MDA,2007,GF075,Health R&D,Health,0.0,0.0,General government,41.88732921579637
+MDA,2007,GF0760,Other health,Health,0.0,0.0,General government,41.88732921579637
+MDA,2008,GF01,General public services,Government spending,10.904196078130163,4.512412192873716,General government,41.3823463971266
+MDA,2008,GF02,Defence,Government spending,1.470509167159525,0.608531197355456,General government,41.3823463971266
+MDA,2008,GF03,Public order and safety,Government spending,5.304048604763697,2.194939766695274,General government,41.3823463971266
+MDA,2008,GF04,Economic affairs,Government spending,11.00059142964676,4.552302851149042,General government,41.3823463971266
+MDA,2008,GF05,Environmental protection,Government spending,0.3606184664306069,0.1492323829503194,General government,41.3823463971266
+MDA,2008,GF06,Housing and community amenities,Government spending,2.413724240166522,0.9988557261371221,General government,41.3823463971266
+MDA,2008,GF08,"Recreation, culture and religion",Government spending,2.462497983762568,1.019039445662884,General government,41.3823463971266
+MDA,2008,GF09,Education,Government spending,19.93271527655097,8.248625282095293,General government,41.3823463971266
+MDA,2008,GF10,Social protection,Government spending,30.31653007458158,12.54569149105241,General government,41.3823463971266
+MDA,2008,GF0170,Interest on public debt,Government spending,2.811979138663369,1.163662947776612,General government,41.3823463971266
+MDA,2008,GF0712,Medical products,Health,0.0,0.0,General government,41.3823463971266
+MDA,2008,GF072,Outpatient services,Health,0.0541503767483658,0.0224086964813578,General government,41.3823463971266
+MDA,2008,GF073,Hospital services,Health,0.4666149485763444,0.193096214360637,General government,41.3823463971266
+MDA,2008,GF0740,Public health services,Health,12.50182421481954,5.173548202536474,General government,41.3823463971266
+MDA,2008,GF075,Health R&D,Health,0.0,0.0,General government,41.3823463971266
+MDA,2008,GF0760,Other health,Health,0.0,0.0,General government,41.3823463971266
+MDA,2009,GF01,General public services,Government spending,10.168349428520155,4.594737713056429,General government,45.18666225384743
+MDA,2009,GF02,Defence,Government spending,0.9126099105334666,0.4123779579678967,General government,45.18666225384743
+MDA,2009,GF03,Public order and safety,Government spending,5.574171528182141,2.51878206188979,General government,45.18666225384743
+MDA,2009,GF04,Economic affairs,Government spending,7.554300655892596,3.413536323018368,General government,45.18666225384743
+MDA,2009,GF05,Environmental protection,Government spending,0.4614319772360225,0.2085057090848916,General government,45.18666225384743
+MDA,2009,GF06,Housing and community amenities,Government spending,1.975002105741166,0.8924375310276353,General government,45.18666225384743
+MDA,2009,GF08,"Recreation, culture and religion",Government spending,2.144193830727708,0.9688896243587622,General government,45.18666225384743
+MDA,2009,GF09,Education,Government spending,20.74979034142304,9.376137679960284,General government,45.18666225384743
+MDA,2009,GF10,Social protection,Government spending,33.29195094172407,15.04352142975343,General government,45.18666225384743
+MDA,2009,GF0170,Interest on public debt,Government spending,3.080607771832874,1.392023829223895,General government,45.18666225384743
+MDA,2009,GF0712,Medical products,Health,0.0,0.0,General government,45.18666225384743
+MDA,2009,GF072,Outpatient services,Health,0.024536462281598,0.0110872083402283,General government,45.18666225384743
+MDA,2009,GF073,Hospital services,Health,0.0996107125461889,0.0450107562468972,General government,45.18666225384743
+MDA,2009,GF0740,Public health services,Health,13.96344433335897,6.309614429918914,General government,45.18666225384743
+MDA,2009,GF075,Health R&D,Health,0.0,0.0,General government,45.18666225384743
+MDA,2009,GF0760,Other health,Health,0.0,0.0,General government,45.18666225384743
+MDA,2010,GF01,General public services,Government spending,8.325070954245154,2.832106635757751,General government,34.01900898290351
+MDA,2010,GF02,Defence,Government spending,0.8088613589824838,0.2751666183714865,General government,34.01900898290351
+MDA,2010,GF03,Public order and safety,Government spending,4.460321840960276,1.517357287742683,General government,34.01900898290351
+MDA,2010,GF04,Economic affairs,Government spending,8.073281339970494,2.746450304259635,General government,34.01900898290351
+MDA,2010,GF05,Environmental protection,Government spending,0.4347544625364993,0.1478991596638655,General government,34.01900898290351
+MDA,2010,GF06,Housing and community amenities,Government spending,2.850094889590765,0.9695740365111561,General government,34.01900898290351
+MDA,2010,GF08,"Recreation, culture and religion",Government spending,2.032374897359105,0.6913937988988699,General government,34.01900898290351
+MDA,2010,GF09,Education,Government spending,22.43517013686588,7.63222254419009,General government,34.01900898290351
+MDA,2010,GF10,Social protection,Government spending,35.06758115019131,11.92964358157056,General government,34.01900898290351
+MDA,2010,GF0170,Interest on public debt,Government spending,1.889273898718565,0.6427122573167198,General government,34.01900898290351
+MDA,2010,GF072,Outpatient services,Health,0.0122657998834749,0.0041727035641842,General government,34.01900898290351
+MDA,2010,GF073,Hospital services,Health,0.0862013158477541,0.0293248333816285,General government,34.01900898290351
+MDA,2010,GF0740,Public health services,Health,2.050432880520888,0.6975369458128079,General government,34.01900898290351
+MDA,2010,GF07_rest,Health (not broken down),Health,11.474315074327343,3.903448275862069,General government,34.01900898290351
+MDA,2011,GF01,General public services,Government spending,7.78917721538706,2.5311573000718814,General government,32.49582375750458
+MDA,2011,GF02,Defence,Government spending,0.839639718229996,0.2728478430340275,General government,32.49582375750458
+MDA,2011,GF03,Public order and safety,Government spending,5.877789582236401,1.910036143480506,General government,32.49582375750458
+MDA,2011,GF04,Economic affairs,Government spending,8.797056431889485,2.858675953955028,General government,32.49582375750458
+MDA,2011,GF05,Environmental protection,Government spending,0.6869779512790875,0.223239144300568,General government,32.49582375750458
+MDA,2011,GF06,Housing and community amenities,Government spending,2.424829657507999,0.7879683719235014,General government,32.49582375750458
+MDA,2011,GF08,"Recreation, culture and religion",Government spending,2.339775244492493,0.7603292397720025,General government,32.49582375750458
+MDA,2011,GF09,Education,Government spending,21.40068728950591,6.954329624492523,General government,32.49582375750458
+MDA,2011,GF10,Social protection,Government spending,34.47538874228513,11.20306156540755,General government,32.49582375750458
+MDA,2011,GF0170,Interest on public debt,Government spending,2.097697299756053,0.6816640174946595,General government,32.49582375750458
+MDA,2011,GF0712,Medical products,Health,0.0,0.0,General government,32.49582375750458
+MDA,2011,GF072,Outpatient services,Health,0.012462185057217,0.0040496896925273,General government,32.49582375750458
+MDA,2011,GF073,Hospital services,Health,0.0408136560623857,0.0132627337430269,General government,32.49582375750458
+MDA,2011,GF0740,Public health services,Health,13.22237834570724,4.296720763771476,General government,32.49582375750458
+MDA,2011,GF075,Health R&D,Health,0.0,0.0,General government,32.49582375750458
+MDA,2011,GF0760,Other health,Health,0.0,0.0,General government,32.49582375750458
+MDA,2012,GF01,General public services,Government spending,8.277089438369574,2.7822335987864997,General government,33.61367083807357
+MDA,2012,GF02,Defence,Government spending,0.8151016620740812,0.2739855896852484,General government,33.61367083807357
+MDA,2012,GF03,Public order and safety,Government spending,5.679481719441444,1.909082290481608,General government,33.61367083807357
+MDA,2012,GF04,Economic affairs,Government spending,10.71618949844454,3.602104664391354,General government,33.61367083807357
+MDA,2012,GF05,Environmental protection,Government spending,0.8210245461237544,0.2759764884338263,General government,33.61367083807357
+MDA,2012,GF06,Housing and community amenities,Government spending,2.288207537857101,0.7691505498672734,General government,33.61367083807357
+MDA,2012,GF08,"Recreation, culture and religion",Government spending,2.403280713679324,0.8078308684110732,General government,33.61367083807357
+MDA,2012,GF09,Education,Government spending,20.84347509709299,7.006257110352673,General government,33.61367083807357
+MDA,2012,GF10,Social protection,Government spending,32.81305967728743,11.02967387182404,General government,33.61367083807357
+MDA,2012,GF0170,Interest on public debt,Government spending,1.946654557659276,0.6543420553659463,General government,33.61367083807357
+MDA,2012,GF0712,Medical products,Health,0.0,0.0,General government,33.61367083807357
+MDA,2012,GF072,Outpatient services,Health,0.0118457680993465,0.0039817974971558,General government,33.61367083807357
+MDA,2012,GF073,Hospital services,Health,0.0397679357620918,0.0133674630261661,General government,33.61367083807357
+MDA,2012,GF0740,Public health services,Health,13.34482184810905,4.485684489950702,General government,33.61367083807357
+MDA,2012,GF075,Health R&D,Health,0.0,0.0,General government,33.61367083807357
+MDA,2012,GF0760,Other health,Health,0.0,0.0,General government,33.61367083807357
+MDA,2013,GF01,General public services,Government spending,8.330708254796146,2.6991709402424435,General government,32.4002576694302
+MDA,2013,GF02,Defence,Government spending,0.8680833483952594,0.2812612416654815,General government,32.4002576694302
+MDA,2013,GF03,Public order and safety,Government spending,6.306385395956518,2.043285117917228,General government,32.4002576694302
+MDA,2013,GF04,Economic affairs,Government spending,11.94557050272406,3.870395622966043,General government,32.4002576694302
+MDA,2013,GF05,Environmental protection,Government spending,1.008804771618167,0.326855345385793,General government,32.4002576694302
+MDA,2013,GF06,Housing and community amenities,Government spending,3.027188928193343,0.9808170128751056,General government,32.4002576694302
+MDA,2013,GF08,"Recreation, culture and religion",Government spending,2.634201760954324,0.8534881580818686,General government,32.4002576694302
+MDA,2013,GF09,Education,Government spending,18.23982028970539,5.909748772305556,General government,32.4002576694302
+MDA,2013,GF10,Social protection,Government spending,32.78266931756565,10.6216693298085,General government,32.4002576694302
+MDA,2013,GF0170,Interest on public debt,Government spending,1.360479227452297,0.4407987752336175,General government,32.4002576694302
+MDA,2013,GF0712,Medical products,Health,0.0,0.0,General government,32.4002576694302
+MDA,2013,GF072,Outpatient services,Health,0.0126520178677476,0.0040992863895325,General government,32.4002576694302
+MDA,2013,GF073,Hospital services,Health,0.002323840016525,0.0007529301531794,General government,32.4002576694302
+MDA,2013,GF0740,Public health services,Health,13.44806217563066,4.357206796449516,General government,32.4002576694302
+MDA,2013,GF075,Health R&D,Health,0.0,0.0,General government,32.4002576694302
+MDA,2013,GF0760,Other health,Health,0.0330501691239123,0.01070833995633,General government,32.4002576694302
+MDA,2014,GF01,General public services,Government spending,7.53841034887433,2.54092025097754,General government,33.70631384316935
+MDA,2014,GF02,Defence,Government spending,0.920184711399679,0.3101603467612379,General government,33.70631384316935
+MDA,2014,GF03,Public order and safety,Government spending,6.30864969132333,2.126413264223576,General government,33.70631384316935
+MDA,2014,GF04,Economic affairs,Government spending,13.86639448563631,4.673850444060501,General government,33.70631384316935
+MDA,2014,GF05,Environmental protection,Government spending,1.301253141847384,0.4386044678851808,General government,33.70631384316935
+MDA,2014,GF06,Housing and community amenities,Government spending,3.36621687852123,1.134627625716104,General government,33.70631384316935
+MDA,2014,GF08,"Recreation, culture and religion",Government spending,2.663881907005814,0.8978963959867843,General government,33.70631384316935
+MDA,2014,GF09,Education,Government spending,17.58894968997442,5.928586584219939,General government,33.70631384316935
+MDA,2014,GF10,Social protection,Government spending,31.80066636391023,10.71883240883877,General government,33.70631384316935
+MDA,2014,GF0170,Interest on public debt,Government spending,1.402871389966772,0.4728562335182322,General government,33.70631384316935
+MDA,2014,GF0712,Medical products,Health,0.0,0.0,General government,33.70631384316935
+MDA,2014,GF072,Outpatient services,Health,4.600024280466365,1.550498620835986,General government,33.70631384316935
+MDA,2014,GF073,Hospital services,Health,4.949393213160013,1.668258009760238,General government,33.70631384316935
+MDA,2014,GF0740,Public health services,Health,2.669727204464009,0.8998666302931102,General government,33.70631384316935
+MDA,2014,GF075,Health R&D,Health,0.0,0.0,General government,33.70631384316935
+MDA,2014,GF0760,Other health,Health,1.023376693450119,0.3449425600921463,General government,33.70631384316935
+MDA,2015,GF01,General public services,Government spending,7.465390061473868,2.3677252282949435,General government,31.71602834946163
+MDA,2015,GF02,Defence,Government spending,0.9873206116875556,0.3131388851029031,General government,31.71602834946163
+MDA,2015,GF03,Public order and safety,Government spending,6.452929838999057,2.04661305710781,General government,31.71602834946163
+MDA,2015,GF04,Economic affairs,Government spending,11.31798169750387,3.589614283767207,General government,31.71602834946163
+MDA,2015,GF05,Environmental protection,Government spending,0.9669081072021762,0.3066648493934851,General government,31.71602834946163
+MDA,2015,GF06,Housing and community amenities,Government spending,2.224962988906341,0.705669892326564,General government,31.71602834946163
+MDA,2015,GF08,"Recreation, culture and religion",Government spending,2.398791579734466,0.7608014174730816,General government,31.71602834946163
+MDA,2015,GF09,Education,Government spending,18.18216978476626,5.766662123483713,General government,31.71602834946163
+MDA,2015,GF10,Social protection,Government spending,33.77001768367494,10.71050838217255,General government,31.71602834946163
+MDA,2015,GF0170,Interest on public debt,Government spending,2.361834203192516,0.7490800054518195,General government,31.71602834946163
+MDA,2015,GF0712,Medical products,Health,0.0,0.0,General government,31.71602834946163
+MDA,2015,GF072,Outpatient services,Health,4.98387412145655,1.580686929262641,General government,31.71602834946163
+MDA,2015,GF073,Hospital services,Health,5.170809688848971,1.639975466812049,General government,31.71602834946163
+MDA,2015,GF0740,Public health services,Health,2.768365345153964,0.8780155376857026,General government,31.71602834946163
+MDA,2015,GF075,Health R&D,Health,0.0,0.0,General government,31.71602834946163
+MDA,2015,GF0760,Other health,Health,0.9486442873994684,0.3008722911271637,General government,31.71602834946163
+MDA,2016,GF01,General public services,Government spending,6.862817925575596,2.091629457266838,General government,30.47770580466637
+MDA,2016,GF02,Defence,Government spending,1.131594260316203,0.3448839695616628,General government,30.47770580466637
+MDA,2016,GF03,Public order and safety,Government spending,6.91172161625666,2.106534180240236,General government,30.47770580466637
+MDA,2016,GF04,Economic affairs,Government spending,9.492680953972753,2.893151374127413,General government,30.47770580466637
+MDA,2016,GF05,Environmental protection,Government spending,0.3561509287574336,0.1085466322872775,General government,30.47770580466637
+MDA,2016,GF06,Housing and community amenities,Government spending,2.362233970113036,0.7199547198289415,General government,30.47770580466637
+MDA,2016,GF08,"Recreation, culture and religion",Government spending,2.429089648512461,0.7403307968052324,General government,30.47770580466637
+MDA,2016,GF09,Education,Government spending,17.66042267645566,5.382491667190743,General government,30.47770580466637
+MDA,2016,GF10,Social protection,Government spending,35.63098141659754,10.85950569146595,General government,30.47770580466637
+MDA,2016,GF0170,Interest on public debt,Government spending,3.738553028520963,1.139425193384064,General government,30.47770580466637
+MDA,2016,GF0712,Medical products,Health,0.071601606187039,0.0218225268851015,General government,30.47770580466637
+MDA,2016,GF072,Outpatient services,Health,5.321423118033288,1.62184768253569,General government,30.47770580466637
+MDA,2016,GF073,Hospital services,Health,6.09954893051549,1.859002578454185,General government,30.47770580466637
+MDA,2016,GF0740,Public health services,Health,1.384366501178228,0.4219231494874536,General government,30.47770580466637
+MDA,2016,GF075,Health R&D,Health,0.0707762274413671,0.0215709703792214,General government,30.47770580466637
+MDA,2016,GF0760,Other health,Health,0.47603719156628,0.1450852147663669,General government,30.47770580466637
+MDA,2017,GF01,General public services,Government spending,6.82270039470016,2.11349548597499,General government,30.97740430778321
+MDA,2017,GF02,Defence,Government spending,1.04232388889704,0.3228848852602453,General government,30.97740430778321
+MDA,2017,GF03,Public order and safety,Government spending,7.412549704341702,2.296215491429318,General government,30.97740430778321
+MDA,2017,GF04,Economic affairs,Government spending,9.949855472246268,3.08220695767782,General government,30.97740430778321
+MDA,2017,GF05,Environmental protection,Government spending,0.269063724267457,0.0833489577119091,General government,30.97740430778321
+MDA,2017,GF06,Housing and community amenities,Government spending,2.412402975657711,0.7472998233024823,General government,30.97740430778321
+MDA,2017,GF08,"Recreation, culture and religion",Government spending,2.445600340410547,0.7575835052014978,General government,30.97740430778321
+MDA,2017,GF09,Education,Government spending,17.75655510395727,5.50051986568716,General government,30.97740430778321
+MDA,2017,GF10,Social protection,Government spending,34.96397810808035,10.83093286062486,General government,30.97740430778321
+MDA,2017,GF0170,Interest on public debt,Government spending,3.593385470925711,1.113137545665797,General government,30.97740430778321
+MDA,2017,GF0712,Medical products,Health,0.0680454272005634,0.0210787070968768,General government,30.97740430778321
+MDA,2017,GF072,Outpatient services,Health,5.224091382624389,1.618287909003619,General government,30.97740430778321
+MDA,2017,GF073,Hospital services,Health,5.985980074244714,1.854301249382127,General government,30.97740430778321
+MDA,2017,GF0740,Public health services,Health,1.397223893298901,0.4328236945121501,General government,30.97740430778321
+MDA,2017,GF075,Health R&D,Health,0.0660279077956949,0.0204537319538427,General government,30.97740430778321
+MDA,2017,GF0760,Other health,Health,0.5902161313515178,0.1828336372985165,General government,30.97740430778321
+MDA,2018,GF01,General public services,Government spending,6.753857226018262,2.129396021432009,General government,31.52859099876761
+MDA,2018,GF02,Defence,Government spending,1.079201260214498,0.3402569513865748,General government,31.52859099876761
+MDA,2018,GF03,Public order and safety,Government spending,7.341521148687528,2.314678176057716,General government,31.52859099876761
+MDA,2018,GF04,Economic affairs,Government spending,11.09851045733104,3.499203969047355,General government,31.52859099876761
+MDA,2018,GF05,Environmental protection,Government spending,0.1935952517157673,0.0610378551064988,General government,31.52859099876761
+MDA,2018,GF06,Housing and community amenities,Government spending,2.555658634868283,0.8057631583123086,General government,31.52859099876761
+MDA,2018,GF08,"Recreation, culture and religion",Government spending,2.548444946979394,0.8034887841618931,General government,31.52859099876761
+MDA,2018,GF09,Education,Government spending,17.55123815403405,5.533658092805044,General government,31.52859099876761
+MDA,2018,GF10,Social protection,Government spending,35.23467133263657,11.108995414227,General government,31.52859099876761
+MDA,2018,GF0170,Interest on public debt,Government spending,2.559684879271384,0.807032576442773,General government,31.52859099876761
+MDA,2018,GF0712,Medical products,Health,0.0625745484315261,0.0197288734443016,General government,31.52859099876761
+MDA,2018,GF072,Outpatient services,Health,4.99052993764354,1.573443772710684,General government,31.52859099876761
+MDA,2018,GF073,Hospital services,Health,5.984341264475607,1.886778481246992,General government,31.52859099876761
+MDA,2018,GF0740,Public health services,Health,1.3147365577959,0.4145179120187451,General government,31.52859099876761
+MDA,2018,GF075,Health R&D,Health,0.0585483040284252,0.0184594553138371,General government,31.52859099876761
+MDA,2018,GF0760,Other health,Health,0.6728860958682344,0.2121515050538709,General government,31.52859099876761
+MDA,2019,GF01,General public services,Government spending,6.8855758795675985,2.202505624078815,General government,31.98723915910325
+MDA,2019,GF02,Defence,Government spending,0.9264030944773523,0.2963307734078039,General government,31.98723915910325
+MDA,2019,GF03,Public order and safety,Government spending,6.551209841214025,2.095551159723838,General government,31.98723915910325
+MDA,2019,GF04,Economic affairs,Government spending,10.92297758565288,3.493958963618028,General government,31.98723915910325
+MDA,2019,GF05,Environmental protection,Government spending,0.2500924584240234,0.0799976727949732,General government,31.98723915910325
+MDA,2019,GF06,Housing and community amenities,Government spending,2.353142676989675,0.7527053758436117,General government,31.98723915910325
+MDA,2019,GF08,"Recreation, culture and religion",Government spending,2.788303554647476,0.8919013265068653,General government,31.98723915910325
+MDA,2019,GF09,Education,Government spending,18.37224670938953,5.876774493832907,General government,31.98723915910325
+MDA,2019,GF10,Social protection,Government spending,35.37444146017619,11.31530719106353,General government,31.98723915910325
+MDA,2019,GF0170,Interest on public debt,Government spending,2.487434748604029,0.7956617019626095,General government,31.98723915910325
+MDA,2019,GF0712,Medical products,Health,0.0428946458993931,0.0137208129702893,General government,31.98723915910325
+MDA,2019,GF072,Outpatient services,Health,4.349032066400306,1.391135288185556,General government,31.98723915910325
+MDA,2019,GF073,Hospital services,Health,5.903091445928495,1.888235978589714,General government,31.98723915910325
+MDA,2019,GF0740,Public health services,Health,1.218632342866151,0.3898068419827787,General government,31.98723915910325
+MDA,2019,GF075,Health R&D,Health,0.0607800459563838,0.0194418586610813,General government,31.98723915910325
+MDA,2019,GF0760,Other health,Health,1.513741443806498,0.4842040958808471,General government,31.98723915910325
+MDA,2020,GF01,General public services,Government spending,6.665911466934535,2.4453022519951535,General government,36.68368930677801
+MDA,2020,GF02,Defence,Government spending,0.8874051792143557,0.3255329588352509,General government,36.68368930677801
+MDA,2020,GF03,Public order and safety,Government spending,6.510731570169429,2.388376540799263,General government,36.68368930677801
+MDA,2020,GF04,Economic affairs,Government spending,12.12709738528016,4.448666726746573,General government,36.68368930677801
+MDA,2020,GF05,Environmental protection,Government spending,0.3462545277863458,0.1270189351837944,General government,36.68368930677801
+MDA,2020,GF06,Housing and community amenities,Government spending,2.42992337907296,0.8913855427718866,General government,36.68368930677801
+MDA,2020,GF08,"Recreation, culture and religion",Government spending,2.365503932042943,0.8677541129702504,General government,36.68368930677801
+MDA,2020,GF09,Education,Government spending,17.17365135430969,6.299928905444241,General government,36.68368930677801
+MDA,2020,GF10,Social protection,Government spending,35.52937226524434,13.03348453443079,General government,36.68368930677801
+MDA,2020,GF0170,Interest on public debt,Government spending,2.329336234028208,0.8544864670011115,General government,36.68368930677801
+MDA,2020,GF0712,Medical products,Health,0.0334380604287168,0.0122663141978831,General government,36.68368930677801
+MDA,2020,GF072,Outpatient services,Health,5.47633540694802,2.008921866081889,General government,36.68368930677801
+MDA,2020,GF073,Hospital services,Health,6.158744803452446,2.259254808895831,General government,36.68368930677801
+MDA,2020,GF0740,Public health services,Health,0.9198878664879664,0.3374488069131945,General government,36.68368930677801
+MDA,2020,GF075,Health R&D,Health,0.0569129436684691,0.0208777674306828,General government,36.68368930677801
+MDA,2020,GF0760,Other health,Health,0.9894936249314163,0.3629827670802162,General government,36.68368930677801
+MDA,2021,GF01,General public services,Government spending,5.958897010857967,2.018803778931671,General government,33.87881641943333
+MDA,2021,GF02,Defence,Government spending,0.955452455998098,0.3236959835425626,General government,33.87881641943333
+MDA,2021,GF03,Public order and safety,Government spending,6.233485950483762,2.111831261695562,General government,33.87881641943333
+MDA,2021,GF04,Economic affairs,Government spending,10.35829467099929,3.509267635771794,General government,33.87881641943333
+MDA,2021,GF05,Environmental protection,Government spending,0.3772549641217604,0.1278095167280103,General government,33.87881641943333
+MDA,2021,GF06,Housing and community amenities,Government spending,2.651270827363788,0.8982191763845687,General government,33.87881641943333
+MDA,2021,GF08,"Recreation, culture and religion",Government spending,2.388753071140727,0.8092812676853424,General government,33.87881641943333
+MDA,2021,GF09,Education,Government spending,16.33657873398892,5.53463951850429,General government,33.87881641943333
+MDA,2021,GF10,Social protection,Government spending,35.87860535155798,12.15524684090731,General government,33.87881641943333
+MDA,2021,GF0170,Interest on public debt,Government spending,2.366805464953941,0.801845678476861,General government,33.87881641943333
+MDA,2021,GF0712,Medical products,Health,0.0376767239539831,0.0127644281412266,General government,33.87881641943333
+MDA,2021,GF072,Outpatient services,Health,6.291403244587781,2.131452955440166,General government,33.87881641943333
+MDA,2021,GF073,Hospital services,Health,7.996854176446561,2.709239545768117,General government,33.87881641943333
+MDA,2021,GF0740,Public health services,Health,0.9157029025709182,0.3102293053094238,General government,33.87881641943333
+MDA,2021,GF075,Health R&D,Health,0.0535277728666622,0.0181345759029077,General government,33.87881641943333
+MDA,2021,GF0760,Other health,Health,1.199436678107872,0.4063549502435155,General government,33.87881641943333
+MDA,2022,GF01,General public services,Government spending,5.476307656748448,2.0025647751449966,General government,36.56779167030981
+MDA,2022,GF02,Defence,Government spending,0.8919622771588716,0.3261709072892075,General government,36.56779167030981
+MDA,2022,GF03,Public order and safety,Government spending,6.250709843764633,2.285746553583399,General government,36.56779167030981
+MDA,2022,GF04,Economic affairs,Government spending,10.8419294998117,3.964654192533007,General government,36.56779167030981
+MDA,2022,GF05,Environmental protection,Government spending,0.3694176391941355,0.1350878726938883,General government,36.56779167030981
+MDA,2022,GF06,Housing and community amenities,Government spending,2.878329291790121,1.052541459007315,General government,36.56779167030981
+MDA,2022,GF08,"Recreation, culture and religion",Government spending,2.31971960922229,0.848270234035732,General government,36.56779167030981
+MDA,2022,GF09,Education,Government spending,15.79878096164154,5.777265308501647,General government,36.56779167030981
+MDA,2022,GF10,Social protection,Government spending,38.84304930948391,14.20404534988779,General government,36.56779167030981
+MDA,2022,GF0170,Interest on public debt,Government spending,2.726298192164919,0.9969470432222902,General government,36.56779167030981
+MDA,2022,GF0712,Medical products,Health,0.7973164418745056,0.291561015417796,General government,36.56779167030981
+MDA,2022,GF072,Outpatient services,Health,4.82046183182531,1.762736440208679,General government,36.56779167030981
+MDA,2022,GF073,Hospital services,Health,6.485331888074824,2.371542653959372,General government,36.56779167030981
+MDA,2022,GF0740,Public health services,Health,0.8140538106405829,0.2976815015592667,General government,36.56779167030981
+MDA,2022,GF075,Health R&D,Health,0.0435370842308083,0.0159205502608492,General government,36.56779167030981
+MDA,2022,GF0760,Other health,Health,0.6427946623733977,0.2350558130045754,General government,36.56779167030981
+MDA,2023,GF01,General public services,Government spending,5.145620936769062,1.9980629476139338,General government,38.83035637810735
+MDA,2023,GF02,Defence,Government spending,1.298367453939091,0.5041607094619079,General government,38.83035637810735
+MDA,2023,GF03,Public order and safety,Government spending,5.69359240729916,2.210842222471125,General government,38.83035637810735
+MDA,2023,GF04,Economic affairs,Government spending,9.556880354896155,3.710970700435507,General government,38.83035637810735
+MDA,2023,GF05,Environmental protection,Government spending,0.3508069408022832,0.1362195853126627,General government,38.83035637810735
+MDA,2023,GF06,Housing and community amenities,Government spending,3.187380112682413,1.237671056879501,General government,38.83035637810735
+MDA,2023,GF08,"Recreation, culture and religion",Government spending,2.526573519717726,0.9810775018612832,General government,38.83035637810735
+MDA,2023,GF09,Education,Government spending,15.93639153278454,6.188157625990763,General government,38.83035637810735
+MDA,2023,GF10,Social protection,Government spending,38.16906773585722,14.82118502803455,General government,38.83035637810735
+MDA,2023,GF0170,Interest on public debt,Government spending,4.612072000685495,1.790883994281083,General government,38.83035637810735
+MDA,2023,GF0712,Medical products,Health,0.8083406365088643,0.3138815499054534,General government,38.83035637810735
+MDA,2023,GF072,Outpatient services,Health,4.669083430968236,1.813021735836128,General government,38.83035637810735
+MDA,2023,GF073,Hospital services,Health,6.349308693988603,2.465459193421928,General government,38.83035637810735
+MDA,2023,GF0740,Public health services,Health,0.6921119765574428,0.2687495470328179,General government,38.83035637810735
+MDA,2023,GF075,Health R&D,Health,0.0386014892539392,0.0149890958445614,General government,38.83035637810735
+MDA,2023,GF0760,Other health,Health,0.9658007772897682,0.3750238837241479,General government,38.83035637810735
+MDA,2024,GF01,General public services,Government spending,5.42205516148813,2.058909816346887,General government,37.97286739114994
+MDA,2024,GF02,Defence,Government spending,1.446130774723371,0.549137321388315,General government,37.97286739114994
+MDA,2024,GF03,Public order and safety,Government spending,5.802658694594942,2.203435891259569,General government,37.97286739114994
+MDA,2024,GF04,Economic affairs,Government spending,9.190518092493164,3.489903247822072,General government,37.97286739114994
+MDA,2024,GF05,Environmental protection,Government spending,0.4137030284005055,0.1570949023676953,General government,37.97286739114994
+MDA,2024,GF06,Housing and community amenities,Government spending,2.576881100432164,0.9785156430947108,General government,37.97286739114994
+MDA,2024,GF08,"Recreation, culture and religion",Government spending,2.637305977589934,1.001460701569096,General government,37.97286739114994
+MDA,2024,GF09,Education,Government spending,15.96485435408815,6.062312973068122,General government,37.97286739114994
+MDA,2024,GF10,Social protection,Government spending,38.22934778542419,14.51677953906064,General government,37.97286739114994
+MDA,2024,GF0170,Interest on public debt,Government spending,3.616221517762311,1.373183001510112,General government,37.97286739114994
+MDA,2024,GF0712,Medical products,Health,0.97444263540296,0.3700238097443927,General government,37.97286739114994
+MDA,2024,GF072,Outpatient services,Health,5.019249755616749,1.905953053730965,General government,37.97286739114994
+MDA,2024,GF073,Hospital services,Health,6.930481300818298,2.631702473928175,General government,37.97286739114994
+MDA,2024,GF0740,Public health services,Health,0.7231467129029477,0.2745995423340961,General government,37.97286739114994
+MDA,2024,GF075,Health R&D,Health,0.0374097489805843,0.0142055543717593,General government,37.97286739114994
+MDA,2024,GF0760,Other health,Health,1.015593359281603,0.385649919553328,General government,37.97286739114994

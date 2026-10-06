@@ -1,0 +1,290 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+PAK,1990,G1111,Personal income tax,Taxes,0.24930576,2.0655986187133384,General government,12.069419
+PAK,1990,G1112,Corporate income tax,Taxes,0.77486187,6.4200426350583895,General government,12.069419
+PAK,1990,G11412,VAT / sales tax,Taxes,1.3268389,10.993394613486368,General government,12.069419
+PAK,1990,G1142,Excise taxes,Taxes,2.3446488,19.426359513907286,General government,12.069419
+PAK,1990,G115,Trade taxes (customs),Taxes,3.6192685,29.98709702636913,General government,12.069419
+PAK,1990,G11NEC,Other taxes,Taxes,0.21694900000000059,1.7975098318275569,General government,12.069419
+PAK,1990,G13,Grants (e.g. foreign aid),Grants,0.81221915,6.729562743887352,General government,12.069419
+PAK,1990,G14X,Other non-tax revenue,Other revenue,2.7253274,22.58043501675057,General government,12.069419
+PAK,1991,G1111,Personal income tax,Taxes,0.26741933,2.531239522949792,General government,10.564758
+PAK,1991,G1112,Corporate income tax,Taxes,0.87822421,8.312771669734413,General government,10.564758
+PAK,1991,G11412,VAT / sales tax,Taxes,1.0228402,9.681624510471515,General government,10.564758
+PAK,1991,G1142,Excise taxes,Taxes,2.2271791,21.081212650587926,General government,10.564758
+PAK,1991,G115,Trade taxes (customs),Taxes,3.0386917,28.762530102440586,General government,10.564758
+PAK,1991,G11NEC,Other taxes,Taxes,0.36203539999999995,3.426821513564248,General government,10.564758
+PAK,1991,G13,Grants (e.g. foreign aid),Grants,0.8612473,8.152077880061238,General government,10.564758
+PAK,1991,G14X,Other non-tax revenue,Other revenue,1.9071206,18.051720635721143,General government,10.564758
+PAK,1992,G1111,Personal income tax,Taxes,0.31639605,2.780520067707212,General government,11.379024
+PAK,1992,G1112,Corporate income tax,Taxes,1.0997354,9.664584462631622,General government,11.379024
+PAK,1992,G11412,VAT / sales tax,Taxes,1.0552115,9.273303985386129,General government,11.379024
+PAK,1992,G1142,Excise taxes,Taxes,2.2899697,20.124482291392273,General government,11.379024
+PAK,1992,G115,Trade taxes (customs),Taxes,3.1364117,27.563099072955215,General government,11.379024
+PAK,1992,G11NEC,Other taxes,Taxes,0.4381874999999999,3.850835486626504,General government,11.379024
+PAK,1992,G13,Grants (e.g. foreign aid),Grants,1.0519645,9.24476902529467,General government,11.379024
+PAK,1992,G14X,Other non-tax revenue,Other revenue,1.9911478,17.49840560800638,General government,11.379024
+PAK,1993,G1111,Personal income tax,Taxes,0.34285574,2.989061350225603,General government,11.470348
+PAK,1993,G1112,Corporate income tax,Taxes,1.2636068,11.016289964293009,General government,11.470348
+PAK,1993,G11412,VAT / sales tax,Taxes,1.0790338,9.407158320193394,General government,11.470348
+PAK,1993,G1142,Excise taxes,Taxes,1.6133897,14.065743204772012,General government,11.470348
+PAK,1993,G115,Trade taxes (customs),Taxes,2.9004681,25.286661659134797,General government,11.470348
+PAK,1993,G11NEC,Other taxes,Taxes,0.9843930000000007,8.582067401679302,General government,11.470348
+PAK,1993,G13,Grants (e.g. foreign aid),Grants,1.0591698,9.233981360516765,General government,11.470348
+PAK,1993,G14X,Other non-tax revenue,Other revenue,2.2274311,19.419036739185117,General government,11.470348
+PAK,1994,G1111,Personal income tax,Taxes,0.32482385,2.9843248088789642,General government,10.884333
+PAK,1994,G1112,Corporate income tax,Taxes,1.2992954,11.937299235515857,General government,10.884333
+PAK,1994,G11412,VAT / sales tax,Taxes,1.0353143,9.51196825749451,General government,10.884333
+PAK,1994,G1142,Excise taxes,Taxes,2.753318,25.296157329989818,General government,10.884333
+PAK,1994,G115,Trade taxes (customs),Taxes,2.6780381,24.604521930742106,General government,10.884333
+PAK,1994,G11NEC,Other taxes,Taxes,0.6018085999999995,5.529127048942728,General government,10.884333
+PAK,1994,G14X,Other non-tax revenue,Other revenue,2.1917345,20.136599091556644,General government,10.884333
+PAK,1995,G1111,Personal income tax,Taxes,0.3757957,3.730243528727671,General government,10.074294
+PAK,1995,G1112,Corporate income tax,Taxes,1.5642971,15.527610172980856,General government,10.074294
+PAK,1995,G11412,VAT / sales tax,Taxes,1.3894741,13.792272689282246,General government,10.074294
+PAK,1995,G1142,Excise taxes,Taxes,2.2455005,22.289408071672316,General government,10.074294
+PAK,1995,G115,Trade taxes (customs),Taxes,2.576632,25.576303411435084,General government,10.074294
+PAK,1995,G11NEC,Other taxes,Taxes,0.24816017,2.463300852645357,General government,10.074294
+PAK,1995,G14X,Other non-tax revenue,Other revenue,1.674434,16.620857004967295,General government,10.074294
+PAK,1996,G1111,Personal income tax,Taxes,0.39758005,3.720124508223121,General government,10.687278
+PAK,1996,G1112,Corporate income tax,Taxes,1.7889083,16.738670891041334,General government,10.687278
+PAK,1996,G11412,VAT / sales tax,Taxes,1.3741688,12.85798679112686,General government,10.687278
+PAK,1996,G1142,Excise taxes,Taxes,2.4668074,23.081718174254856,General government,10.687278
+PAK,1996,G115,Trade taxes (customs),Taxes,2.6749125,25.028940834939725,General government,10.687278
+PAK,1996,G11NEC,Other taxes,Taxes,0.4795993999999995,4.487572960637995,General government,10.687278
+PAK,1996,G14X,Other non-tax revenue,Other revenue,1.5053016,14.084985839776106,General government,10.687278
+PAK,1997,G1111,Personal income tax,Taxes,0.34098551,3.457431809561285,General government,9.8623928
+PAK,1997,G1112,Corporate income tax,Taxes,1.6836002,17.070909805122632,General government,9.8623928
+PAK,1997,G11412,VAT / sales tax,Taxes,1.4472622,14.674554256149023,General government,9.8623928
+PAK,1997,G1142,Excise taxes,Taxes,2.0965498,21.25802345339938,General government,9.8623928
+PAK,1997,G115,Trade taxes (customs),Taxes,2.2496181,22.81006362500512,General government,9.8623928
+PAK,1997,G11NEC,Other taxes,Taxes,0.39758981,4.0313726417624824,General government,9.8623928
+PAK,1997,G14X,Other non-tax revenue,Other revenue,1.6467873,16.697644409000084,General government,9.8623928
+PAK,1998,G1111,Personal income tax,Taxes,0.32985295,3.4148371280899954,General government,9.659405
+PAK,1998,G1112,Corporate income tax,Taxes,1.8883939,19.549795150168176,General government,9.659405
+PAK,1998,G11412,VAT / sales tax,Taxes,1.1199701,11.594607475333069,General government,9.659405
+PAK,1998,G1142,Excise taxes,Taxes,2.4009047,24.85561675457434,General government,9.659405
+PAK,1998,G115,Trade taxes (customs),Taxes,1.8643485,19.300862634391752,General government,9.659405
+PAK,1998,G11NEC,Other taxes,Taxes,0.3650875,3.7796064882898763,General government,9.659405
+PAK,1998,G14X,Other non-tax revenue,Other revenue,1.6908474,17.504674369152788,General government,9.659405
+PAK,1999,G1111,Personal income tax,Taxes,0.3508594,3.450851726268759,General government,10.167327
+PAK,1999,G1112,Corporate income tax,Taxes,1.7968721,17.6730028842584,General government,10.167327
+PAK,1999,G11412,VAT / sales tax,Taxes,1.4291575,14.056373082736117,General government,10.167327
+PAK,1999,G1142,Excise taxes,Taxes,2.5490734,25.07122323864139,General government,10.167327
+PAK,1999,G115,Trade taxes (customs),Taxes,1.6367057,16.097698081450627,General government,10.167327
+PAK,1999,G11NEC,Other taxes,Taxes,0.32759509999999953,3.222037421121353,General government,10.167327
+PAK,1999,G13,Grants (e.g. foreign aid),Grants,0.2851448,2.8045206293933127,General government,10.167327
+PAK,1999,G14X,Other non-tax revenue,Other revenue,1.7919196,17.62429293613004,General government,10.167327
+PAK,2000,G1111,Personal income tax,Taxes,0.31571207,2.9762286534366633,General government,10.607789
+PAK,2000,G1112,Corporate income tax,Taxes,1.7314038,16.322003780942303,General government,10.607789
+PAK,2000,G11412,VAT / sales tax,Taxes,2.2672401,21.373351198896533,General government,10.607789
+PAK,2000,G1142,Excise taxes,Taxes,1.8368031,17.315606644184648,General government,10.607789
+PAK,2000,G115,Trade taxes (customs),Taxes,1.1975299,11.28915597597248,General government,10.607789
+PAK,2000,G11NEC,Other taxes,Taxes,0.53216426,5.016730969287674,General government,10.607789
+PAK,2000,G13,Grants (e.g. foreign aid),Grants,0.64974515,6.1251701047144085,General government,10.607789
+PAK,2000,G14X,Other non-tax revenue,Other revenue,2.0771911,19.58175267256529,General government,10.607789
+PAK,2001,G1111,Personal income tax,Taxes,0.3083904,2.938807657228524,General government,10.493725
+PAK,2001,G1112,Corporate income tax,Taxes,1.7684445,16.85239954934936,General government,10.493725
+PAK,2001,G11412,VAT / sales tax,Taxes,2.7135597,25.858878955722147,General government,10.493725
+PAK,2001,G1142,Excise taxes,Taxes,1.4022375,13.362628351119174,General government,10.493725
+PAK,2001,G115,Trade taxes (customs),Taxes,1.1494889,10.954059468839475,General government,10.493725
+PAK,2001,G11NEC,Other taxes,Taxes,0.46479572,4.429272833989143,General government,10.493725
+PAK,2001,G13,Grants (e.g. foreign aid),Grants,0.71681939,6.83093349268291,General government,10.493725
+PAK,2001,G14X,Other non-tax revenue,Other revenue,1.9699891,18.77301969106927,General government,10.493725
+PAK,2002,G1111,Personal income tax,Taxes,0.35483557,3.025551065338275,General government,11.727965
+PAK,2002,G1112,Corporate income tax,Taxes,1.9106429,16.291342104107578,General government,11.727965
+PAK,2002,G11412,VAT / sales tax,Taxes,2.7580891,23.517200980732802,General government,11.727965
+PAK,2002,G1142,Excise taxes,Taxes,1.6778779,14.306641433530881,General government,11.727965
+PAK,2002,G115,Trade taxes (customs),Taxes,0.79719846,6.797415067319864,General government,11.727965
+PAK,2002,G11NEC,Other taxes,Taxes,0.42914594000000067,3.6591679801227297,General government,11.727965
+PAK,2002,G13,Grants (e.g. foreign aid),Grants,1.3788621,11.757044807006162,General government,11.727965
+PAK,2002,G14X,Other non-tax revenue,Other revenue,2.4213129,20.645635453380024,General government,11.727965
+PAK,2003,G1111,Personal income tax,Taxes,0.3304656,2.594784181152095,General government,12.735764
+PAK,2003,G1112,Corporate income tax,Taxes,1.7784367,13.964114317315733,General government,12.735764
+PAK,2003,G11412,VAT / sales tax,Taxes,2.9649222,23.280284613305195,General government,12.735764
+PAK,2003,G1142,Excise taxes,Taxes,1.7059014,13.394574101889008,General government,12.735764
+PAK,2003,G115,Trade taxes (customs),Taxes,1.0446511,8.202500197004273,General government,12.735764
+PAK,2003,G11NEC,Other taxes,Taxes,0.5962055999999987,4.681349161892464,General government,12.735764
+PAK,2003,G13,Grants (e.g. foreign aid),Grants,1.8065453,14.1848203473362,General government,12.735764
+PAK,2003,G14X,Other non-tax revenue,Other revenue,2.5086365,19.697573080105034,General government,12.735764
+PAK,2004,G1111,Personal income tax,Taxes,0.71992798,6.645049450574809,General government,10.83405
+PAK,2004,G1112,Corporate income tax,Taxes,1.3485791,12.447599004988902,General government,10.83405
+PAK,2004,G11412,VAT / sales tax,Taxes,2.8982703,26.751494593434593,General government,10.83405
+PAK,2004,G1142,Excise taxes,Taxes,1.4084279,13.00001292222207,General government,10.83405
+PAK,2004,G115,Trade taxes (customs),Taxes,1.1947431,11.027668323480139,General government,10.83405
+PAK,2004,G11NEC,Other taxes,Taxes,0.4632079999999999,4.275483314180754,General government,10.83405
+PAK,2004,G13,Grants (e.g. foreign aid),Grants,0.40106794,3.7019207037072936,General government,10.83405
+PAK,2004,G14X,Other non-tax revenue,Other revenue,2.3998256,22.15077094899876,General government,10.83405
+PAK,2005,G1111,Personal income tax,Taxes,0.72726665,6.818070938376644,General government,10.666751
+PAK,2005,G1112,Corporate income tax,Taxes,1.283083,12.028808022236575,General government,10.666751
+PAK,2005,G11412,VAT / sales tax,Taxes,2.7326449,25.61834339247255,General government,10.666751
+PAK,2005,G1142,Excise taxes,Taxes,0.99126001,9.292989121054763,General government,10.666751
+PAK,2005,G115,Trade taxes (customs),Taxes,1.3602488,12.752231677668298,General government,10.666751
+PAK,2005,G11NEC,Other taxes,Taxes,0.54792933,5.136796855949858,General government,10.666751
+PAK,2005,G13,Grants (e.g. foreign aid),Grants,0.22457917,2.105413072827893,General government,10.666751
+PAK,2005,G14X,Other non-tax revenue,Other revenue,2.799739,26.247345606923798,General government,10.666751
+PAK,2006,G1111,Personal income tax,Taxes,0.81119439,6.944111075728315,General government,11.68176
+PAK,2006,G1112,Corporate income tax,Taxes,1.3491087,11.548847947569543,General government,11.68176
+PAK,2006,G11412,VAT / sales tax,Taxes,3.0410036,26.03206708578159,General government,11.68176
+PAK,2006,G1142,Excise taxes,Taxes,1.091921,9.34723021188588,General government,11.68176
+PAK,2006,G115,Trade taxes (customs),Taxes,1.4268138,12.214031104902,General government,11.68176
+PAK,2006,G11NEC,Other taxes,Taxes,0.57542875,4.92587375532454,General government,11.68176
+PAK,2006,G13,Grants (e.g. foreign aid),Grants,0.45680334,3.91039826190574,General government,11.68176
+PAK,2006,G14X,Other non-tax revenue,Other revenue,2.9294862,25.07743867362452,General government,11.68176
+PAK,2007,G1111,Personal income tax,Taxes,0.90066506,7.5768248464255485,General government,11.887104
+PAK,2007,G1112,Corporate income tax,Taxes,1.9261255,16.20348805996075,General government,11.887104
+PAK,2007,G11412,VAT / sales tax,Taxes,2.7695613,23.298873025604703,General government,11.887104
+PAK,2007,G1142,Excise taxes,Taxes,1.2191504,10.256075707266412,General government,11.887104
+PAK,2007,G115,Trade taxes (customs),Taxes,1.1840325,9.960647152200352,General government,11.887104
+PAK,2007,G11NEC,Other taxes,Taxes,0.54691391,4.600901140923293,General government,11.887104
+PAK,2007,G13,Grants (e.g. foreign aid),Grants,0.26212617,2.2051305928913987,General government,11.887104
+PAK,2007,G14X,Other non-tax revenue,Other revenue,3.0785293,25.898059474727543,General government,11.887104
+PAK,2008,G1111,Personal income tax,Taxes,0.99163729,8.196964827828348,General government,12.097615
+PAK,2008,G1112,Corporate income tax,Taxes,1.917456,15.849867234125929,General government,12.097615
+PAK,2008,G11412,VAT / sales tax,Taxes,3.048097,25.195849483241094,General government,12.097615
+PAK,2008,G1142,Excise taxes,Taxes,0.93912164,7.762865646301457,General government,12.097615
+PAK,2008,G115,Trade taxes (customs),Taxes,1.1903485,9.839529922637572,General government,12.097615
+PAK,2008,G11NEC,Other taxes,Taxes,0.49925125,4.126856641806338,General government,12.097615
+PAK,2008,G13,Grants (e.g. foreign aid),Grants,0.24213385,2.0015006213377324,General government,12.097615
+PAK,2008,G14X,Other non-tax revenue,Other revenue,3.26957,27.02656562272152,General government,12.097615
+PAK,2009,G1111,Personal income tax,Taxes,0.88762829,6.950904363201795,General government,12.769968
+PAK,2009,G1112,Corporate income tax,Taxes,1.9850052,15.544323520443735,General government,12.769968
+PAK,2009,G11412,VAT / sales tax,Taxes,3.0756378,24.08492884296012,General government,12.769968
+PAK,2009,G1142,Excise taxes,Taxes,1.6461714,12.89095908247585,General government,12.769968
+PAK,2009,G115,Trade taxes (customs),Taxes,1.0090102,7.901430678482675,General government,12.769968
+PAK,2009,G11NEC,Other taxes,Taxes,0.4453932999999999,3.4878183437696033,General government,12.769968
+PAK,2009,G13,Grants (e.g. foreign aid),Grants,0.1836839,1.4384052833195777,General government,12.769968
+PAK,2009,G14X,Other non-tax revenue,Other revenue,3.5374383,27.70122988534665,General government,12.769968
+PAK,2010,G1111,Personal income tax,Taxes,1.0321936,8.00068830219567,General government,12.90131
+PAK,2010,G1112,Corporate income tax,Taxes,2.0300973,15.735590416787131,General government,12.90131
+PAK,2010,G11412,VAT / sales tax,Taxes,3.1339937,24.292057938302385,General government,12.90131
+PAK,2010,G1142,Excise taxes,Taxes,1.4287469,11.074432751402764,General government,12.90131
+PAK,2010,G115,Trade taxes (customs),Taxes,0.97849689,7.584477002722979,General government,12.90131
+PAK,2010,G11NEC,Other taxes,Taxes,0.48319361,3.745306561891777,General government,12.90131
+PAK,2010,G13,Grants (e.g. foreign aid),Grants,0.30532403,2.3666126153080578,General government,12.90131
+PAK,2010,G14X,Other non-tax revenue,Other revenue,3.5092636,27.200831543463412,General government,12.90131
+PAK,2011,G1111,Personal income tax,Taxes,1.1761209,10.061788610190796,General government,11.688984
+PAK,2011,G1112,Corporate income tax,Taxes,1.7689299,15.133307060563197,General government,11.688984
+PAK,2011,G11412,VAT / sales tax,Taxes,3.2099693,27.461490176564435,General government,11.688984
+PAK,2011,G1142,Excise taxes,Taxes,1.2694725,10.860417446412553,General government,11.688984
+PAK,2011,G115,Trade taxes (customs),Taxes,0.93684922,8.014804269919981,General government,11.688984
+PAK,2011,G11NEC,Other taxes,Taxes,0.4449395,3.8064855350534006,General government,11.688984
+PAK,2011,G13,Grants (e.g. foreign aid),Grants,0.23080397,1.974542546206617,General government,11.688984
+PAK,2011,G14X,Other non-tax revenue,Other revenue,2.6518991,22.687164355089024,General government,11.688984
+PAK,2012,G1111,Personal income tax,Taxes,1.099808,9.411922571881986,General government,11.685264
+PAK,2012,G1112,Corporate income tax,Taxes,2.1326348,18.250634303170212,General government,11.685264
+PAK,2012,G11412,VAT / sales tax,Taxes,3.6219471,30.99585169834417,General government,11.685264
+PAK,2012,G1142,Excise taxes,Taxes,0.91898106,7.864444140928266,General government,11.685264
+PAK,2012,G115,Trade taxes (customs),Taxes,0.97658772,8.357429665260451,General government,11.685264
+PAK,2012,G11NEC,Other taxes,Taxes,0.5401757799999999,4.622709251583874,General government,11.685264
+PAK,2012,G13,Grants (e.g. foreign aid),Grants,0.19922005,1.704882748049167,General government,11.685264
+PAK,2012,G14X,Other non-tax revenue,Other revenue,2.1959093,18.792123994802342,General government,11.685264
+PAK,2013,G1111,Personal income tax,Taxes,0.98636367,8.202441875556914,General government,12.025244
+PAK,2013,G1112,Corporate income tax,Taxes,1.8992165,15.793579411079321,General government,12.025244
+PAK,2013,G11412,VAT / sales tax,Taxes,3.3596291,27.938136059065908,General government,12.025244
+PAK,2013,G1142,Excise taxes,Taxes,1.0434,8.676746836140147,General government,12.025244
+PAK,2013,G115,Trade taxes (customs),Taxes,0.95681808,7.956745493963668,General government,12.025244
+PAK,2013,G11NEC,Other taxes,Taxes,0.6651546199999998,5.5313190000277945,General government,12.025244
+PAK,2013,G13,Grants (e.g. foreign aid),Grants,0.11621198,0.9664001627243456,General government,12.025244
+PAK,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,0.26026899,2.1643551231818012,General government,12.025244
+PAK,2013,G14X,Other non-tax revenue,Other revenue,2.73818131,22.770276038260096,General government,12.025244
+PAK,2014,G1111,Personal income tax,Taxes,1.1732676,8.548415253597604,General government,13.724972
+PAK,2014,G1112,Corporate income tax,Taxes,1.9101384,13.917248064331206,General government,13.724972
+PAK,2014,G11412,VAT / sales tax,Taxes,3.5849448,26.11986967987986,General government,13.724972
+PAK,2014,G1142,Excise taxes,Taxes,1.0255032,7.471805406961851,General government,13.724972
+PAK,2014,G115,Trade taxes (customs),Taxes,0.86203483,6.280776601948624,General government,13.724972
+PAK,2014,G11NEC,Other taxes,Taxes,0.89014734,6.485604050776934,General government,13.724972
+PAK,2014,G13,Grants (e.g. foreign aid),Grants,0.73677732,5.3681517164479455,General government,13.724972
+PAK,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.27346441,1.9924587824295743,General government,13.724972
+PAK,2014,G14X,Other non-tax revenue,Other revenue,3.2686940900000003,23.815670370766515,General government,13.724972
+PAK,2015,G1111,Personal income tax,Taxes,1.3687626,10.453225308262471,General government,13.094165
+PAK,2015,G1112,Corporate income tax,Taxes,2.0053756,15.315031967188494,General government,13.094165
+PAK,2015,G11412,VAT / sales tax,Taxes,3.5785456,27.329314398779825,General government,13.094165
+PAK,2015,G1142,Excise taxes,Taxes,1.0755252,8.213774426853902,General government,13.094165
+PAK,2015,G115,Trade taxes (customs),Taxes,1.0061172,7.683706274644102,General government,13.094165
+PAK,2015,G11NEC,Other taxes,Taxes,0.90324341,6.898060242830493,General government,13.094165
+PAK,2015,G13,Grants (e.g. foreign aid),Grants,0.15441788,1.1792876947866908,General government,13.094165
+PAK,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,0.24351309,1.859706858794357,General government,13.094165
+PAK,2015,G14X,Other non-tax revenue,Other revenue,2.75866471,21.067892827859666,General government,13.094165
+PAK,2016,G1111,Personal income tax,Taxes,1.4565014,10.562967240920965,General government,13.788752
+PAK,2016,G1112,Corporate income tax,Taxes,2.1847521,15.844450861381446,General government,13.788752
+PAK,2016,G11412,VAT / sales tax,Taxes,4.0448648,29.334523383468312,General government,13.788752
+PAK,2016,G1142,Excise taxes,Taxes,1.1383451,8.255606208248684,General government,13.788752
+PAK,2016,G115,Trade taxes (customs),Taxes,1.2411899,9.00146629001659,General government,13.788752
+PAK,2016,G11NEC,Other taxes,Taxes,1.1196836,8.12026764066032,General government,13.788752
+PAK,2016,G13,Grants (e.g. foreign aid),Grants,0.20048251,1.4539568485877252,General government,13.788752
+PAK,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.17644282,1.279614099619619,General government,13.788752
+PAK,2016,G14X,Other non-tax revenue,Other revenue,2.22649018,16.147147427096343,General government,13.788752
+PAK,2017,G1111,Personal income tax,Taxes,1.5112129,10.827887073954727,General government,13.956674
+PAK,2017,G1112,Corporate income tax,Taxes,2.2668194,16.241830969183635,General government,13.956674
+PAK,2017,G11412,VAT / sales tax,Taxes,3.721958,26.667943952835753,General government,13.956674
+PAK,2017,G1142,Excise taxes,Taxes,1.2334577,8.837762492697042,General government,13.956674
+PAK,2017,G115,Trade taxes (customs),Taxes,1.395158,9.996350133276739,General government,13.956674
+PAK,2017,G11NEC,Other taxes,Taxes,1.035735,7.42107324424143,General government,13.956674
+PAK,2017,G13,Grants (e.g. foreign aid),Grants,0.07109985,0.509432619834783,General government,13.956674
+PAK,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14901209,1.0676762242924067,General government,13.956674
+PAK,2017,G14X,Other non-tax revenue,Other revenue,2.57222081,18.430041498425773,General government,13.956674
+PAK,2018,G1111,Personal income tax,Taxes,1.5684036,11.674415848824253,General government,13.434536
+PAK,2018,G1112,Corporate income tax,Taxes,2.3526054,17.51162377323638,General government,13.434536
+PAK,2018,G11412,VAT / sales tax,Taxes,3.8053514,28.325142007137426,General government,13.434536
+PAK,2018,G1142,Excise taxes,Taxes,1.0435442,7.767623682723392,General government,13.434536
+PAK,2018,G115,Trade taxes (customs),Taxes,1.552253,11.554198820115559,General government,13.434536
+PAK,2018,G11NEC,Other taxes,Taxes,1.0766217,8.013836130998495,General government,13.434536
+PAK,2018,G13,Grants (e.g. foreign aid),Grants,0.09429492,0.7018844565975334,General government,13.434536
+PAK,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14854882,1.1057234875845359,General government,13.434536
+PAK,2018,G14X,Other non-tax revenue,Other revenue,1.79291248,13.345548219901305,General government,13.434536
+PAK,2019,G1111,Personal income tax,Taxes,1.3202254,11.720106958894545,General government,11.264619
+PAK,2019,G1112,Corporate income tax,Taxes,1.980338,17.580159550606517,General government,11.264619
+PAK,2019,G11412,VAT / sales tax,Taxes,3.344613,29.691310359662197,General government,11.264619
+PAK,2019,G1142,Excise taxes,Taxes,1.0164823,9.023672228865719,General government,11.264619
+PAK,2019,G115,Trade taxes (customs),Taxes,1.5648905,13.89208542644155,General government,11.264619
+PAK,2019,G11NEC,Other taxes,Taxes,0.98706115,8.762490293679742,General government,11.264619
+PAK,2019,G13,Grants (e.g. foreign aid),Grants,0.07539773,0.6693322670945825,General government,11.264619
+PAK,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,0.20068084,1.7815146636330454,General government,11.264619
+PAK,2019,G14X,Other non-tax revenue,Other revenue,0.7749301200000001,6.879328251122109,General government,11.264619
+PAK,2020,G1111,Personal income tax,Taxes,1.2824896,9.66834619829365,General government,13.264829
+PAK,2020,G1112,Corporate income tax,Taxes,1.9237344,14.502519297440479,General government,13.264829
+PAK,2020,G11412,VAT / sales tax,Taxes,3.358871,25.321630415879238,General government,13.264829
+PAK,2020,G1142,Excise taxes,Taxes,1.1705978,8.82482383433044,General government,13.264829
+PAK,2020,G115,Trade taxes (customs),Taxes,1.3175696,9.932804939039885,General government,13.264829
+PAK,2020,G11NEC,Other taxes,Taxes,0.9346701999999996,7.04622873731558,General government,13.264829
+PAK,2020,G13,Grants (e.g. foreign aid),Grants,0.0704243,0.5309099685272236,General government,13.264829
+PAK,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,0.16696954,1.2587387198226325,General government,13.264829
+PAK,2020,G14X,Other non-tax revenue,Other revenue,3.0395026599999997,22.913997889350867,General government,13.264829
+PAK,2021,G1111,Personal income tax,Taxes,1.2407716,9.99245697996799,General government,12.417082
+PAK,2021,G1112,Corporate income tax,Taxes,1.8611573,14.98868466460981,General government,12.417082
+PAK,2021,G11412,VAT / sales tax,Taxes,3.5639945,28.702350793725877,General government,12.417082
+PAK,2021,G1142,Excise taxes,Taxes,1.2957896,10.435540137354796,General government,12.417082
+PAK,2021,G115,Trade taxes (customs),Taxes,1.3704186,11.03655894851878,General government,12.417082
+PAK,2021,G11NEC,Other taxes,Taxes,0.97554948,7.856511392370798,General government,12.417082
+PAK,2021,G13,Grants (e.g. foreign aid),Grants,0.05483895,0.44164119222394804,General government,12.417082
+PAK,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.12696059,1.0224671758495716,General government,12.417082
+PAK,2021,G14X,Other non-tax revenue,Other revenue,1.92760161,15.523788715378426,General government,12.417082
+PAK,2022,G1111,Personal income tax,Taxes,1.3681806,11.291717512578122,General government,12.116674
+PAK,2022,G1112,Corporate income tax,Taxes,2.0522709,16.93757626886718,General government,12.116674
+PAK,2022,G11412,VAT / sales tax,Taxes,3.7985013,31.349372773419503,General government,12.116674
+PAK,2022,G1142,Excise taxes,Taxes,0.70359286,5.806815137553424,General government,12.116674
+PAK,2022,G115,Trade taxes (customs),Taxes,1.5136998,12.492700554624149,General government,12.116674
+PAK,2022,G11NEC,Other taxes,Taxes,0.979629599999999,8.084971172782225,General government,12.116674
+PAK,2022,G13,Grants (e.g. foreign aid),Grants,0.0621082,0.5125845590960028,General government,12.116674
+PAK,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,0.13651802,1.1266954941595357,General government,12.116674
+PAK,2022,G14X,Other non-tax revenue,Other revenue,1.50217268,12.39756619679625,General government,12.116674
+PAK,2023,G1111,Personal income tax,Taxes,1.551832,13.422554547140411,General government,11.561376
+PAK,2023,G1112,Corporate income tax,Taxes,2.327748,20.13383182071062,General government,11.561376
+PAK,2023,G11412,VAT / sales tax,Taxes,3.1238711,27.019890193001252,General government,11.561376
+PAK,2023,G1142,Excise taxes,Taxes,1.1440277,9.89525554743657,General government,11.561376
+PAK,2023,G115,Trade taxes (customs),Taxes,1.1502342,9.948938603847848,General government,11.561376
+PAK,2023,G11NEC,Other taxes,Taxes,0.03292185,0.2847571949913229,General government,11.561376
+PAK,2023,G13,Grants (e.g. foreign aid),Grants,0.04136241,0.35776372985360916,General government,11.561376
+PAK,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14226422,1.2305128732081718,General government,11.561376
+PAK,2023,G14X,Other non-tax revenue,Other revenue,1.2788442800000002,11.061350136869523,General government,11.561376
+PAK,2023,UNCL,Unclassified,Unclassified,0.7682702399999979,6.645145352940671,General government,11.561376
+PAK,2024,G1111,Personal income tax,Taxes,1.7228644,13.604753873553799,General government,12.663694
+PAK,2024,G1112,Corporate income tax,Taxes,2.5842966,20.4071308103307,General government,12.663694
+PAK,2024,G11412,VAT / sales tax,Taxes,2.9458677,23.262309559911984,General government,12.663694
+PAK,2024,G1142,Excise taxes,Taxes,1.5468902,12.215157757286303,General government,12.663694
+PAK,2024,G115,Trade taxes (customs),Taxes,1.0495825,8.288122723116969,General government,12.663694
+PAK,2024,G11NEC,Other taxes,Taxes,0.02326258,0.1836950576980145,General government,12.663694
+PAK,2024,G13,Grants (e.g. foreign aid),Grants,0.04938664,0.3899860498840228,General government,12.663694
+PAK,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,0.15721016,1.2414241847599918,General government,12.663694
+PAK,2024,G14X,Other non-tax revenue,Other revenue,1.8483435400000001,14.595611201597261,General government,12.663694
+PAK,2024,UNCL,Unclassified,Unclassified,0.7359896799999994,5.81180878186096,General government,12.663694

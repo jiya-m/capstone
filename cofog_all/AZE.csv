@@ -1,0 +1,262 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+AZE,2008,GF01,General public services,Government spending,7.542043339537358,2.261504347609438,General government,29.98530034631387
+AZE,2008,GF02,Defence,Government spending,10.99773996277586,3.297705359144929,General government,29.98530034631387
+AZE,2008,GF03,Public order and safety,Government spending,4.584053443233183,1.374542192989013,General government,29.98530034631387
+AZE,2008,GF04,Economic affairs,Government spending,41.32212177612337,12.39056232404016,General government,29.98530034631387
+AZE,2008,GF05,Environmental protection,Government spending,0.0814278117521935,0.0244163739193263,General government,29.98530034631387
+AZE,2008,GF06,Housing and community amenities,Government spending,1.58950412124435,0.4766175847721554,General government,29.98530034631387
+AZE,2008,GF08,"Recreation, culture and religion",Government spending,1.218093592129753,0.3652490220993099,General government,29.98530034631387
+AZE,2008,GF09,Education,Government spending,8.504220951874501,2.550016194533722,General government,29.98530034631387
+AZE,2008,GF10,Social protection,Government spending,18.69266817335815,5.605052694521265,General government,29.98530034631387
+AZE,2008,GF0170,Interest on public debt,Government spending,0.2717030045200744,0.081470961955303,General government,29.98530034631387
+AZE,2008,GF072,Outpatient services,Health,0.4902286625897368,0.1469965368612502,General government,29.98530034631387
+AZE,2008,GF073,Hospital services,Health,1.694197022068599,0.5080100655255749,General government,29.98530034631387
+AZE,2008,GF0740,Public health services,Health,0.0,0.0,General government,29.98530034631387
+AZE,2008,GF07_rest,Health (not broken down),Health,0.7926748205264551,0.23768592570446223,General government,29.98530034631387
+AZE,2008,UNCL,Unclassified,Unclassified,2.2193233182664187,,General government,29.98530034631387
+AZE,2009,GF01,General public services,Government spending,5.836204877722391,1.960002247064772,General government,33.58350654457615
+AZE,2009,GF02,Defence,Government spending,9.925228329597537,3.333239705634515,General government,33.58350654457615
+AZE,2009,GF03,Public order and safety,Government spending,5.623766351075575,1.888657940565137,General government,33.58350654457615
+AZE,2009,GF04,Economic affairs,Government spending,34.66093472951725,11.64035728329869,General government,33.58350654457615
+AZE,2009,GF05,Environmental protection,Government spending,0.0920009367368104,0.030897140610078,General government,33.58350654457615
+AZE,2009,GF06,Housing and community amenities,Government spending,1.876819109430932,0.6303016684455929,General government,33.58350654457615
+AZE,2009,GF08,"Recreation, culture and religion",Government spending,1.372486701682781,0.460929161283074,General government,33.58350654457615
+AZE,2009,GF09,Education,Government spending,10.04566591950754,3.373686871524072,General government,33.58350654457615
+AZE,2009,GF10,Social protection,Government spending,22.93332441203038,7.701814504803101,General government,33.58350654457615
+AZE,2009,GF0170,Interest on public debt,Government spending,0.6582248837442709,0.2210549969102859,General government,33.58350654457615
+AZE,2009,GF072,Outpatient services,Health,0.5369509216821117,0.1803269479242739,General government,33.58350654457615
+AZE,2009,GF073,Hospital services,Health,1.979692884145729,0.6648502893095893,General government,33.58350654457615
+AZE,2009,GF0740,Public health services,Health,0.070255260780837,0.0235941801022414,General government,33.58350654457615
+AZE,2009,GF07_rest,Health (not broken down),Health,0.8731725268475459,0.2932419526992863,General government,33.58350654457615
+AZE,2009,UNCL,Unclassified,Unclassified,3.515272155498309,,General government,33.58350654457615
+AZE,2010,GF01,General public services,Government spending,10.024623190568574,3.1637819380666428,General government,31.56010832450253
+AZE,2010,GF02,Defence,Government spending,8.868079391135652,2.798775462145296,General government,31.56010832450253
+AZE,2010,GF03,Public order and safety,Government spending,5.180570064169527,1.634993524078653,General government,31.56010832450253
+AZE,2010,GF04,Economic affairs,Government spending,35.64617221310252,11.24997056399388,General government,31.56010832450253
+AZE,2010,GF05,Environmental protection,Government spending,0.0850619310550664,0.0268456375838926,General government,31.56010832450253
+AZE,2010,GF06,Housing and community amenities,Government spending,1.609461274436651,0.5079477216531261,General government,31.56010832450253
+AZE,2010,GF08,"Recreation, culture and religion",Government spending,1.307267572004178,0.4125750618156129,General government,31.56010832450253
+AZE,2010,GF09,Education,Government spending,9.186688553947173,2.899328859060403,General government,31.56010832450253
+AZE,2010,GF10,Social protection,Government spending,21.69526936278167,6.847050512186507,General government,31.56010832450253
+AZE,2010,GF0170,Interest on public debt,Government spending,0.2947321295329055,0.0930177793476981,General government,31.56010832450253
+AZE,2010,GF072,Outpatient services,Health,0.5805103715863305,0.183209702107618,General government,31.56010832450253
+AZE,2010,GF073,Hospital services,Health,1.80793911356514,0.5705875426822089,General government,31.56010832450253
+AZE,2010,GF0740,Public health services,Health,0.0365617072078794,0.0115389144000942,General government,31.56010832450253
+AZE,2010,GF07_rest,Health (not broken down),Health,0.85360393971049,0.26939832803485186,General government,31.56010832450253
+AZE,2010,UNCL,Unclassified,Unclassified,2.823459185196242,,General government,31.56010832450253
+AZE,2011,GF01,General public services,Government spending,9.610276084223209,3.1494182251065626,General government,32.77136054683
+AZE,2011,GF02,Defence,Government spending,7.902516876630978,2.589762297914827,General government,32.77136054683
+AZE,2011,GF03,Public order and safety,Government spending,4.320956551390381,1.416036250528014,General government,32.77136054683
+AZE,2011,GF04,Economic affairs,Government spending,41.96278645744839,13.75177604546676,General government,32.77136054683
+AZE,2011,GF05,Environmental protection,Government spending,0.0708929820634896,0.0232325947544257,General government,32.77136054683
+AZE,2011,GF06,Housing and community amenities,Government spending,1.949849952952839,0.63899235820437,General government,32.77136054683
+AZE,2011,GF08,"Recreation, culture and religion",Government spending,1.158895194393244,0.3797857225144964,General government,32.77136054683
+AZE,2011,GF09,Education,Government spending,7.776550007675191,2.548481241119773,General government,32.77136054683
+AZE,2011,GF10,Social protection,Government spending,21.28371371421809,6.974962559041511,General government,32.77136054683
+AZE,2011,GF0170,Interest on public debt,Government spending,0.9936735337163508,0.3256403363926117,General government,32.77136054683
+AZE,2011,GF072,Outpatient services,Health,0.5044533682368973,0.1653162320955416,General government,32.77136054683
+AZE,2011,GF073,Hospital services,Health,1.612961815047826,0.5285895318920164,General government,32.77136054683
+AZE,2011,GF0740,Public health services,Health,0.0281228358598967,0.0092162359356399,General government,32.77136054683
+AZE,2011,GF07_rest,Health (not broken down),Health,0.824350626143223,0.2701509158634461,General government,32.77136054683
+AZE,2012,GF01,General public services,Government spending,13.359158996478781,4.7749525062107265,General government,35.742912465293
+AZE,2012,GF02,Defence,Government spending,7.178375947381063,2.56576063130206,General government,35.742912465293
+AZE,2012,GF03,Public order and safety,Government spending,4.932258740436754,1.762932924156072,General government,35.742912465293
+AZE,2012,GF04,Economic affairs,Government spending,37.7480566869899,13.49225485897998,General government,35.742912465293
+AZE,2012,GF05,Environmental protection,Government spending,0.0643938038850928,0.0230162209557211,General government,35.742912465293
+AZE,2012,GF06,Housing and community amenities,Government spending,2.363150390195788,0.8446587753909104,General government,35.742912465293
+AZE,2012,GF08,"Recreation, culture and religion",Government spending,1.27101103382719,0.454296361245068,General government,35.742912465293
+AZE,2012,GF09,Education,Government spending,7.737988766858656,2.765782551512495,General government,35.742912465293
+AZE,2012,GF10,Social protection,Government spending,21.70122297121188,7.756649130498319,General government,35.742912465293
+AZE,2012,GF0170,Interest on public debt,Government spending,0.4609778659075693,0.1647669150957183,General government,35.742912465293
+AZE,2012,GF072,Outpatient services,Health,0.4824424672026003,0.1724389887476253,General government,35.742912465293
+AZE,2012,GF073,Hospital services,Health,1.658907042944534,0.5929416922402455,General government,35.742912465293
+AZE,2012,GF0740,Public health services,Health,0.0250420348442027,0.0089507525938915,General government,35.742912465293
+AZE,2012,GF07_rest,Health (not broken down),Health,1.0170132518359911,0.3635101563641676,General government,35.742912465293
+AZE,2013,GF01,General public services,Government spending,9.487307591654181,3.427004915609638,General government,36.12199649376096
+AZE,2013,GF02,Defence,Government spending,7.090619275331287,2.561273246021106,General government,36.12199649376096
+AZE,2013,GF03,Public order and safety,Government spending,5.16927176266267,1.867244164861985,General government,36.12199649376096
+AZE,2013,GF04,Economic affairs,Government spending,43.18749553921918,15.60018562441992,General government,36.12199649376096
+AZE,2013,GF05,Environmental protection,Government spending,0.0675659600789855,0.024406173730707,General government,36.12199649376096
+AZE,2013,GF06,Housing and community amenities,Government spending,2.05457616634549,0.7421539307689663,General government,36.12199649376096
+AZE,2013,GF08,"Recreation, culture and religion",Government spending,1.347988485237789,0.4869203533738957,General government,36.12199649376096
+AZE,2013,GF09,Education,Government spending,7.118692455927486,2.571413839331752,General government,36.12199649376096
+AZE,2013,GF10,Social protection,Government spending,20.71657983013347,7.483242239868,General government,36.12199649376096
+AZE,2013,GF0170,Interest on public debt,Government spending,0.7503628101729592,0.2710460279811626,General government,36.12199649376096
+AZE,2013,GF072,Outpatient services,Health,0.463445388147408,0.1674057268571036,General government,36.12199649376096
+AZE,2013,GF073,Hospital services,Health,1.564009230842433,0.5649513595270015,General government,36.12199649376096
+AZE,2013,GF0740,Public health services,Health,0.0256940974948254,0.0092812209961843,General government,36.12199649376096
+AZE,2013,GF07_rest,Health (not broken down),Health,0.9563914067518384,0.34546767041352966,General government,36.12199649376096
+AZE,2014,GF01,General public services,Government spending,16.14248777444991,5.744569085301793,General government,35.58664045819636
+AZE,2014,GF02,Defence,Government spending,7.247239430315555,2.579049039211035,General government,35.58664045819636
+AZE,2014,GF03,Public order and safety,Government spending,5.453047697501559,1.940556478123835,General government,35.58664045819636
+AZE,2014,GF04,Economic affairs,Government spending,38.44560523020223,13.6814993052496,General government,35.58664045819636
+AZE,2014,GF05,Environmental protection,Government spending,0.0714248301279456,0.0254176974955095,General government,35.58664045819636
+AZE,2014,GF06,Housing and community amenities,Government spending,2.148935055782792,0.7647337919815637,General government,35.58664045819636
+AZE,2014,GF08,"Recreation, culture and religion",Government spending,1.444210065187062,0.5139458433592029,General government,35.58664045819636
+AZE,2014,GF09,Education,Government spending,7.699596687792544,2.740027790015928,General government,35.58664045819636
+AZE,2014,GF10,Social protection,Government spending,17.68621643628191,6.293930253838072,General government,35.58664045819636
+AZE,2014,GF0170,Interest on public debt,Government spending,0.4009313797848684,0.1426780086081269,General government,35.58664045819636
+AZE,2014,GF072,Outpatient services,Health,0.5071162939084143,0.1804656522181177,General government,35.58664045819636
+AZE,2014,GF073,Hospital services,Health,1.733718709972335,0.6169722438743349,General government,35.58664045819636
+AZE,2014,GF0740,Public health services,Health,0.0314269252562961,0.0111837868980242,General government,35.58664045819636
+AZE,2014,GF07_rest,Health (not broken down),Health,0.9880434834365817,0.35161148202121517,General government,35.58664045819636
+AZE,2015,GF01,General public services,Government spending,15.601278663539288,5.797719749908054,General government,37.16182420007356
+AZE,2015,GF02,Defence,Government spending,8.446404006215175,3.138837808017654,General government,37.16182420007356
+AZE,2015,GF03,Public order and safety,Government spending,5.685203329275655,2.112725266642148,General government,37.16182420007356
+AZE,2015,GF04,Economic affairs,Government spending,35.5116138673634,13.19676351599853,General government,37.16182420007356
+AZE,2015,GF05,Environmental protection,Government spending,0.0217729085636808,0.0080912100036778,General government,37.16182420007356
+AZE,2015,GF06,Housing and community amenities,Government spending,2.070405668873648,0.7694005148951821,General government,37.16182420007356
+AZE,2015,GF08,"Recreation, culture and religion",Government spending,1.390002276258623,0.5165502022802501,General government,37.16182420007356
+AZE,2015,GF09,Education,Government spending,8.266282671733816,3.071901434350864,General government,37.16182420007356
+AZE,2015,GF10,Social protection,Government spending,18.35802579099987,6.822177271055535,General government,37.16182420007356
+AZE,2015,GF0170,Interest on public debt,Government spending,1.046089288718664,0.3887458624494299,General government,37.16182420007356
+AZE,2015,GF0712,Medical products,Health,1.059944775986461,0.3938948142699522,General government,37.16182420007356
+AZE,2015,GF072,Outpatient services,Health,0.4958285086547312,0.1842589187201177,General government,37.16182420007356
+AZE,2015,GF073,Hospital services,Health,1.471650683372426,0.5468922397940419,General government,37.16182420007356
+AZE,2015,GF0740,Public health services,Health,0.0267212968736082,0.00993012136815,General government,37.16182420007356
+AZE,2015,GF075,Health R&D,Health,0.0207832309016953,0.0077234277307833,General government,37.16182420007356
+AZE,2015,GF0760,Other health,Health,0.5279930326692596,0.1962118425891872,General government,37.16182420007356
+AZE,2016,GF01,General public services,Government spending,11.894527048411991,3.8990484071162594,General government,32.7801886636326
+AZE,2016,GF02,Defence,Government spending,10.52281949363544,3.449400082747207,General government,32.7801886636326
+AZE,2016,GF03,Public order and safety,Government spending,6.45919265948145,2.117335539925528,General government,32.7801886636326
+AZE,2016,GF04,Economic affairs,Government spending,26.85260161730228,8.802333471245346,General government,32.7801886636326
+AZE,2016,GF05,Environmental protection,Government spending,0.1201569370764878,0.039387670666115,General government,32.7801886636326
+AZE,2016,GF06,Housing and community amenities,Government spending,2.40364360260991,0.7879189077368639,General government,32.7801886636326
+AZE,2016,GF08,"Recreation, culture and religion",Government spending,3.522011867365522,1.154522134877948,General government,32.7801886636326
+AZE,2016,GF09,Education,Government spending,9.445950809668432,3.096400496483244,General government,32.7801886636326
+AZE,2016,GF10,Social protection,Government spending,23.71826752477568,7.77489284236657,General government,32.7801886636326
+AZE,2016,GF0170,Interest on public debt,Government spending,1.38029019313915,0.4524617294166322,General government,32.7801886636326
+AZE,2016,GF0712,Medical products,Health,0.0,0.0,General government,32.7801886636326
+AZE,2016,GF072,Outpatient services,Health,0.5568617714091011,0.1825403392635499,General government,32.7801886636326
+AZE,2016,GF073,Hospital services,Health,1.837189470677896,0.6022341745966074,General government,32.7801886636326
+AZE,2016,GF0740,Public health services,Health,0.0333208312901184,0.0109226313611915,General government,32.7801886636326
+AZE,2016,GF075,Health R&D,Health,0.0222138875267456,0.0072817542407943,General government,32.7801886636326
+AZE,2016,GF0760,Other health,Health,1.230952285629801,0.4035084815887464,General government,32.7801886636326
+AZE,2017,GF01,General public services,Government spending,9.875230875829676,3.3064204270806674,General government,33.48195569962183
+AZE,2017,GF02,Defence,Government spending,10.66875839524345,3.572108959595098,General government,33.48195569962183
+AZE,2017,GF03,Public order and safety,Government spending,5.672057258309768,1.899115698484461,General government,33.48195569962183
+AZE,2017,GF04,Economic affairs,Government spending,39.31116138408388,13.16214563962581,General government,33.48195569962183
+AZE,2017,GF05,Environmental protection,Government spending,0.0644571262023823,0.0215815064403309,General government,33.48195569962183
+AZE,2017,GF06,Housing and community amenities,Government spending,1.277677817806116,0.4277915209417385,General government,33.48195569962183
+AZE,2017,GF08,"Recreation, culture and religion",Government spending,1.120356571047337,0.3751172907958714,General government,33.48195569962183
+AZE,2017,GF09,Education,Government spending,7.820628131722511,2.618499246495493,General government,33.48195569962183
+AZE,2017,GF10,Social protection,Government spending,19.75779916365393,6.615297563194859,General government,33.48195569962183
+AZE,2017,GF0170,Interest on public debt,Government spending,1.323961261521924,0.4432881230629247,General government,33.48195569962183
+AZE,2017,GF0712,Medical products,Health,0.0,0.0,General government,33.48195569962183
+AZE,2017,GF072,Outpatient services,Health,0.4610085765344299,0.154354687366715,General government,33.48195569962183
+AZE,2017,GF073,Hospital services,Health,1.452875513926688,0.4864511359435867,General government,33.48195569962183
+AZE,2017,GF0740,Public health services,Health,0.0292986937283555,0.0098097756546958,General government,33.48195569962183
+AZE,2017,GF075,Health R&D,Health,0.0182586062365114,0.0061133384514771,General government,33.48195569962183
+AZE,2017,GF0760,Other health,Health,1.146470624153045,0.3838607864881003,General government,33.48195569962183
+AZE,2018,GF01,General public services,Government spending,13.485170365264382,4.080622284372971,General government,30.26007216700794
+AZE,2018,GF02,Defence,Government spending,11.11120417783588,3.362258402836738,General government,30.26007216700794
+AZE,2018,GF03,Public order and safety,Government spending,6.253533756146925,1.892323827598262,General government,30.26007216700794
+AZE,2018,GF04,Economic affairs,Government spending,32.18242757839745,9.738425810318134,General government,30.26007216700794
+AZE,2018,GF05,Environmental protection,Government spending,0.0695043389563835,0.0210320631274034,General government,30.26007216700794
+AZE,2018,GF06,Housing and community amenities,Government spending,1.831993261895774,0.554362483144384,General government,30.26007216700794
+AZE,2018,GF08,"Recreation, culture and religion",Government spending,1.290647505227473,0.390550866503521,General government,30.26007216700794
+AZE,2018,GF09,Education,Government spending,8.454236292553976,2.558258003296209,General government,30.26007216700794
+AZE,2018,GF10,Social protection,Government spending,19.74113027465004,5.973680267692154,General government,30.26007216700794
+AZE,2018,GF0170,Interest on public debt,Government spending,2.547460900663177,0.770863506966988,General government,30.26007216700794
+AZE,2018,GF0712,Medical products,Health,0.0,0.0,General government,30.26007216700794
+AZE,2018,GF072,Outpatient services,Health,0.4361299274378002,0.1319732307845977,General government,30.26007216700794
+AZE,2018,GF073,Hospital services,Health,1.446201888050605,0.4376217350047445,General government,30.26007216700794
+AZE,2018,GF0740,Public health services,Health,0.0284701655564883,0.00861509264346,General government,30.26007216700794
+AZE,2018,GF075,Health R&D,Health,0.0189801103709922,0.00574339509564,General government,30.26007216700794
+AZE,2018,GF0760,Other health,Health,1.102909456992658,0.3337411976227339,General government,30.26007216700794
+AZE,2019,GF01,General public services,Government spending,16.835750412940275,5.453746214711341,General government,32.3938409690339
+AZE,2019,GF02,Defence,Government spending,11.32410025760236,3.668311028621667,General government,32.3938409690339
+AZE,2019,GF03,Public order and safety,Government spending,6.460413897711433,2.092776203966006,General government,32.3938409690339
+AZE,2019,GF04,Economic affairs,Government spending,29.32799482533625,9.500464003125916,General government,32.3938409690339
+AZE,2019,GF05,Environmental protection,Government spending,0.0531488628028071,0.0172169580931913,General government,32.3938409690339
+AZE,2019,GF06,Housing and community amenities,Government spending,1.30082784065594,0.4213881019830028,General government,32.3938409690339
+AZE,2019,GF08,"Recreation, culture and religion",Government spending,1.321559666571929,0.4281039367002051,General government,32.3938409690339
+AZE,2019,GF09,Education,Government spending,8.593153371032589,2.783652437237472,General government,32.3938409690339
+AZE,2019,GF10,Social protection,Government spending,19.85826216034673,6.432853863436554,General government,32.3938409690339
+AZE,2019,GF0170,Interest on public debt,Government spending,1.515308003314077,0.4908664647846049,General government,32.3938409690339
+AZE,2019,GF0712,Medical products,Health,0.0,0.0,General government,32.3938409690339
+AZE,2019,GF072,Outpatient services,Health,0.4451688437596827,0.1442072872911986,General government,32.3938409690339
+AZE,2019,GF073,Hospital services,Health,1.447835333514768,0.4690094754322555,General government,32.3938409690339
+AZE,2019,GF0740,Public health services,Health,0.0275167871248576,0.0089137442610139,General government,32.3938409690339
+AZE,2019,GF075,Health R&D,Health,0.0297784408611472,0.0096463807756178,General government,32.3938409690339
+AZE,2019,GF0760,Other health,Health,1.459181296425155,0.4726848686138517,General government,32.3938409690339
+AZE,2020,GF01,General public services,Government spending,13.964930251767482,5.6652153545151425,General government,40.56744468020612
+AZE,2020,GF02,Defence,Government spending,11.84830099065857,4.806552949929731,General government,40.56744468020612
+AZE,2020,GF03,Public order and safety,Government spending,7.351143088485428,2.982170905784122,General government,40.56744468020612
+AZE,2020,GF04,Economic affairs,Government spending,22.61145588227303,9.172889856430324,General government,40.56744468020612
+AZE,2020,GF05,Environmental protection,Government spending,0.8141143034143213,0.3302653696712502,General government,40.56744468020612
+AZE,2020,GF06,Housing and community amenities,Government spending,0.8874762932088534,0.3600264542974455,General government,40.56744468020612
+AZE,2020,GF08,"Recreation, culture and religion",Government spending,1.217605247284248,0.4939513351153242,General government,40.56744468020612
+AZE,2020,GF09,Education,Government spending,9.80201093365359,3.976425363057676,General government,40.56744468020612
+AZE,2020,GF10,Social protection,Government spending,23.74221547774958,9.631610129791396,General government,40.56744468020612
+AZE,2020,GF0170,Interest on public debt,Government spending,1.998434944217717,0.8107139904654302,General government,40.56744468020612
+AZE,2020,GF0712,Medical products,Health,0.0,0.0,General government,40.56744468020612
+AZE,2020,GF072,Outpatient services,Health,0.0020378330498481,0.000826696795172,General government,40.56744468020612
+AZE,2020,GF073,Hospital services,Health,0.5291573152772268,0.2146656011463529,General government,40.56744468020612
+AZE,2020,GF0740,Public health services,Health,0.0,0.0,General government,40.56744468020612
+AZE,2020,GF075,Health R&D,Health,0.0057738603079029,0.0023423075863209,General government,40.56744468020612
+AZE,2020,GF0760,Other health,Health,5.225343578652204,2.119788365620436,General government,40.56744468020612
+AZE,2021,GF01,General public services,Government spending,8.660368570095542,2.762357434846518,General government,31.89653433902342
+AZE,2021,GF02,Defence,Government spending,14.43226573059696,4.60339259465897,General government,31.89653433902342
+AZE,2021,GF03,Public order and safety,Government spending,7.932448210207146,2.530176067293971,General government,31.89653433902342
+AZE,2021,GF04,Economic affairs,Government spending,20.62147250222479,6.577535057884403,General government,31.89653433902342
+AZE,2021,GF05,Environmental protection,Government spending,1.604855839661534,0.5118933939894639,General government,31.89653433902342
+AZE,2021,GF06,Housing and community amenities,Government spending,0.7783769467568203,0.2482752701093312,General government,31.89653433902342
+AZE,2021,GF08,"Recreation, culture and religion",Government spending,1.308171108875227,0.4172612469555701,General government,31.89653433902342
+AZE,2021,GF09,Education,Government spending,10.78862740420549,3.441198244691694,General government,31.89653433902342
+AZE,2021,GF10,Social protection,Government spending,27.09608493921036,8.642712037166186,General government,31.89653433902342
+AZE,2021,GF0170,Interest on public debt,Government spending,2.105048804150467,0.6714376146690557,General government,31.89653433902342
+AZE,2021,GF0712,Medical products,Health,0.0,0.0,General government,31.89653433902342
+AZE,2021,GF072,Outpatient services,Health,0.0047092814410525,0.0015020975719665,General government,31.89653433902342
+AZE,2021,GF073,Hospital services,Health,0.4850559884284075,0.1547160499125565,General government,31.89653433902342
+AZE,2021,GF0740,Public health services,Health,0.0,0.0,General government,31.89653433902342
+AZE,2021,GF075,Health R&D,Health,0.0053820359326314,0.0017166829393903,General government,31.89653433902342
+AZE,2021,GF0760,Other health,Health,4.177132638213567,1.332360546334345,General government,31.89653433902342
+AZE,2022,GF01,General public services,Government spending,13.037289062704685,3.600281623909295,General government,27.61526270218626
+AZE,2022,GF02,Defence,Government spending,13.24322929689543,3.657152560590567,General government,27.61526270218626
+AZE,2022,GF03,Public order and safety,Government spending,6.617799473821603,1.827522709799736,General government,27.61526270218626
+AZE,2022,GF04,Economic affairs,Government spending,21.7798034785846,6.014549946631038,General government,27.61526270218626
+AZE,2022,GF05,Environmental protection,Government spending,0.7540798738202417,0.2082411381397744,General government,27.61526270218626
+AZE,2022,GF06,Housing and community amenities,Government spending,0.7601173910447145,0.2099084143820023,General government,27.61526270218626
+AZE,2022,GF08,"Recreation, culture and religion",Government spending,1.140985341461197,0.3150860994379465,General government,27.61526270218626
+AZE,2022,GF09,Education,Government spending,10.36503615148926,2.862331962410336,General government,27.61526270218626
+AZE,2022,GF10,Social protection,Government spending,26.73962806801835,7.384218536570802,General government,27.61526270218626
+AZE,2022,GF0170,Interest on public debt,Government spending,1.709057680545355,0.471960768214491,General government,27.61526270218626
+AZE,2022,GF0712,Medical products,Health,0.0,0.0,General government,27.61526270218626
+AZE,2022,GF072,Outpatient services,Health,0.0043760309739098,0.0012084524493742,General government,27.61526270218626
+AZE,2022,GF073,Hospital services,Health,0.4344217580108984,0.1199667097101655,General government,27.61526270218626
+AZE,2022,GF0740,Public health services,Health,0.0,0.0,General government,27.61526270218626
+AZE,2022,GF075,Health R&D,Health,0.0053598946394455,0.0014801489852432,General government,27.61526270218626
+AZE,2022,GF0760,Other health,Health,3.408757844579484,0.9413374336620064,General government,27.61526270218626
+AZE,2023,GF01,General public services,Government spending,12.159898472633417,4.155480475602625,General government,34.17364450003249
+AZE,2023,GF02,Defence,Government spending,11.9478507723578,4.083016048339939,General government,34.17364450003249
+AZE,2023,GF03,Public order and safety,Government spending,8.47538193076675,2.896346891040218,General government,34.17364450003249
+AZE,2023,GF04,Economic affairs,Government spending,24.92548421269651,8.517946364758625,General government,34.17364450003249
+AZE,2023,GF05,Environmental protection,Government spending,0.8344613161601884,0.2851658436748749,General government,34.17364450003249
+AZE,2023,GF06,Housing and community amenities,Government spending,0.8201448167154162,0.2802733740497693,General government,34.17364450003249
+AZE,2023,GF08,"Recreation, culture and religion",Government spending,1.149008402981891,0.3926580469105321,General government,34.17364450003249
+AZE,2023,GF09,Education,Government spending,10.15182405250334,3.469248261971282,General government,34.17364450003249
+AZE,2023,GF10,Social protection,Government spending,23.35868071461292,7.982512507309467,General government,34.17364450003249
+AZE,2023,GF0170,Interest on public debt,Government spending,2.062906803129714,0.7049704372685336,General government,34.17364450003249
+AZE,2023,GF0712,Medical products,Health,0.0,0.0,General government,34.17364450003249
+AZE,2023,GF072,Outpatient services,Health,0.0045677808653473,0.0015609771944642,General government,34.17364450003249
+AZE,2023,GF073,Hospital services,Health,0.4244186150141436,0.1450393086868949,General government,34.17364450003249
+AZE,2023,GF0740,Public health services,Health,0.0,0.0,General government,34.17364450003249
+AZE,2023,GF075,Health R&D,Health,0.0052047034834082,0.0017786368657007,General government,34.17364450003249
+AZE,2023,GF0760,Other health,Health,3.680167406079165,1.257647326359561,General government,34.17364450003249
+AZE,2024,GF01,General public services,Government spending,11.772124441988696,4.151035326151484,General government,35.26156512027355
+AZE,2024,GF02,Defence,Government spending,13.82345968112168,4.874368237333481,General government,35.26156512027355
+AZE,2024,GF03,Public order and safety,Government spending,7.379896336983719,2.602266952674197,General government,35.26156512027355
+AZE,2024,GF04,Economic affairs,Government spending,24.44200024731544,8.618631833904557,General government,35.26156512027355
+AZE,2024,GF05,Environmental protection,Government spending,0.7869260674973441,0.2774824477389838,General government,35.26156512027355
+AZE,2024,GF06,Housing and community amenities,Government spending,0.753535420868855,0.2657083831339987,General government,35.26156512027355
+AZE,2024,GF08,"Recreation, culture and religion",Government spending,1.164540048437919,0.410635047531602,General government,35.26156512027355
+AZE,2024,GF09,Education,Government spending,10.36037082071034,3.653228903646596,General government,35.26156512027355
+AZE,2024,GF10,Social protection,Government spending,24.38916519120335,8.60000136618726,General government,35.26156512027355
+AZE,2024,GF0170,Interest on public debt,Government spending,1.000053794834614,0.3526346201033743,General government,35.26156512027355
+AZE,2024,GF0712,Medical products,Health,0.0,0.0,General government,35.26156512027355
+AZE,2024,GF072,Outpatient services,Health,0.0045052119518236,0.0015886082461986,General government,35.26156512027355
+AZE,2024,GF073,Hospital services,Health,0.5006666509829621,0.1765428971718499,General government,35.26156512027355
+AZE,2024,GF0740,Public health services,Health,0.0,0.0,General government,35.26156512027355
+AZE,2024,GF075,Health R&D,Health,0.0158165039424762,0.0055771468374268,General government,35.26156512027355
+AZE,2024,GF0760,Other health,Health,3.606939582160774,1.271863349612544,General government,35.26156512027355

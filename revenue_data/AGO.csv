@@ -1,0 +1,236 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+AGO,1996,G111,Income taxes,Taxes,0.51700274,1.7384018864157669,General government,29.740116
+AGO,1996,G114,Goods & services taxes,Taxes,0.52334369,1.7597230876180432,General government,29.740116
+AGO,1996,G115,Trade taxes (customs),Taxes,1.1971806,4.025473856135385,General government,29.740116
+AGO,1996,G11NEC,Other taxes,Taxes,0.51271591,1.7239875849388666,General government,29.740116
+AGO,1996,G13,Grants (e.g. foreign aid),Grants,1.8731052,6.2982444022157065,General government,29.740116
+AGO,1996,NONTAXRES,Resource (extractive) revenue,Other revenue,24.974008,83.97414415746125,General government,29.740116
+AGO,1996,G14X,Other non-tax revenue,Other revenue,0.1427599999999991,0.4800250252149792,General government,29.740116
+AGO,1997,G111,Income taxes,Taxes,0.86282797,3.252401631138874,General government,26.528949
+AGO,1997,G114,Goods & services taxes,Taxes,0.96598102,3.6412336576168167,General government,26.528949
+AGO,1997,G115,Trade taxes (customs),Taxes,1.2008097,4.526412637002695,General government,26.528949
+AGO,1997,G11NEC,Other taxes,Taxes,0.55367911,2.0870751796462046,General government,26.528949
+AGO,1997,G13,Grants (e.g. foreign aid),Grants,1.4669047,5.529448980432659,General government,26.528949
+AGO,1997,NONTAXRES,Resource (extractive) revenue,Other revenue,21.281726,80.22076562475203,General government,26.528949
+AGO,1997,G14X,Other non-tax revenue,Other revenue,0.19702000000000197,0.7426604046771772,General government,26.528949
+AGO,1998,G111,Income taxes,Taxes,1.2752505,6.068815009998919,General government,21.013171
+AGO,1998,G114,Goods & services taxes,Taxes,1.4865581,7.074410957310327,General government,21.013171
+AGO,1998,G115,Trade taxes (customs),Taxes,1.3620472,6.481873554793351,General government,21.013171
+AGO,1998,G11NEC,Other taxes,Taxes,0.6561504999999997,3.1225676862846115,General government,21.013171
+AGO,1998,G13,Grants (e.g. foreign aid),Grants,1.5701051,7.4720044400342145,General government,21.013171
+AGO,1998,NONTAXRES,Resource (extractive) revenue,Other revenue,14.397157,68.51491726755724,General government,21.013171
+AGO,1998,G14X,Other non-tax revenue,Other revenue,0.2659029999999998,1.2654110840213284,General government,21.013171
+AGO,1999,G111,Income taxes,Taxes,0.95489122,3.052785352230734,General government,31.279343
+AGO,1999,G114,Goods & services taxes,Taxes,1.1876802,3.797011263434246,General government,31.279343
+AGO,1999,G115,Trade taxes (customs),Taxes,0.81270699,2.598222648573028,General government,31.279343
+AGO,1999,G11NEC,Other taxes,Taxes,0.3929401,1.2562287268533894,General government,31.279343
+AGO,1999,G13,Grants (e.g. foreign aid),Grants,2.4574551,7.856479121302123,General government,31.279343
+AGO,1999,NONTAXRES,Resource (extractive) revenue,Other revenue,25.309516,80.91447287246959,General government,31.279343
+AGO,1999,G14X,Other non-tax revenue,Other revenue,0.1641539999999999,0.5248000151368902,General government,31.279343
+AGO,2000,G111,Income taxes,Taxes,1.2915987,3.4131225975527495,General government,37.842142
+AGO,2000,G114,Goods & services taxes,Taxes,1.263858,3.3398162292187368,General government,37.842142
+AGO,2000,G115,Trade taxes (customs),Taxes,0.97463531,2.5755289169413293,General government,37.842142
+AGO,2000,G11NEC,Other taxes,Taxes,0.1617303899999999,0.42738170053904423,General government,37.842142
+AGO,2000,G13,Grants (e.g. foreign aid),Grants,1.6010256,4.230800677192111,General government,37.842142
+AGO,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,32.387563,85.5859665660575,General government,37.842142
+AGO,2000,G14X,Other non-tax revenue,Other revenue,0.16173100000000318,0.42738331249854505,General government,37.842142
+AGO,2001,G111,Income taxes,Taxes,1.9431425,5.874228906306477,General government,33.079107
+AGO,2001,G114,Goods & services taxes,Taxes,2.1283974,6.43426487310506,General government,33.079107
+AGO,2001,G115,Trade taxes (customs),Taxes,1.6096869,4.8661739003098665,General government,33.079107
+AGO,2001,G11NEC,Other taxes,Taxes,0.70140038,2.1203727400797154,General government,33.079107
+AGO,2001,G13,Grants (e.g. foreign aid),Grants,0.52961541,1.6010571281557358,General government,33.079107
+AGO,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,25.921632,78.36254932051509,General government,33.079107
+AGO,2001,G14X,Other non-tax revenue,Other revenue,0.24523300000000248,0.7413531315280639,General government,33.079107
+AGO,2002,G111,Income taxes,Taxes,1.6562579,6.540231223564511,General government,25.324149
+AGO,2002,G114,Goods & services taxes,Taxes,1.9392696,7.657787829316595,General government,25.324149
+AGO,2002,G115,Trade taxes (customs),Taxes,1.4027094,5.539018902471313,General government,25.324149
+AGO,2002,G11NEC,Other taxes,Taxes,0.63156862,2.493938177350007,General government,25.324149
+AGO,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,19.42543,76.70713831292021,General government,25.324149
+AGO,2002,G14X,Other non-tax revenue,Other revenue,0.2689130000000013,1.0618836589533622,General government,25.324149
+AGO,2003,G111,Income taxes,Taxes,1.8278834,7.024821304115358,General government,26.020354
+AGO,2003,G114,Goods & services taxes,Taxes,1.9852486,7.629598616216542,General government,26.020354
+AGO,2003,G115,Trade taxes (customs),Taxes,1.5136763,5.81727779779307,General government,26.020354
+AGO,2003,G11NEC,Other taxes,Taxes,0.7094330000000005,2.7264540244976643,General government,26.020354
+AGO,2003,G13,Grants (e.g. foreign aid),Grants,0.52639311,2.023005150912547,General government,26.020354
+AGO,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,19.134364,73.53613904907608,General government,26.020354
+AGO,2003,G14X,Other non-tax revenue,Other revenue,0.32335599999999687,1.2427040573887282,General government,26.020354
+AGO,2004,G111,Income taxes,Taxes,1.8786168,6.9496813315124095,General government,27.031697
+AGO,2004,G114,Goods & services taxes,Taxes,1.619708,5.991884268309163,General government,27.031697
+AGO,2004,G115,Trade taxes (customs),Taxes,1.4718631,5.4449526420779275,General government,27.031697
+AGO,2004,G11NEC,Other taxes,Taxes,0.6754263999999999,2.4986459414664197,General government,27.031697
+AGO,2004,G13,Grants (e.g. foreign aid),Grants,0.33247448,1.2299430553694057,General government,27.031697
+AGO,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,20.806223,76.96972557808708,General government,27.031697
+AGO,2004,G14X,Other non-tax revenue,Other revenue,0.2473850000000013,0.9151663693182166,General government,27.031697
+AGO,2005,G111,Income taxes,Taxes,1.7525339,5.8234049411763245,General government,30.094659
+AGO,2005,G114,Goods & services taxes,Taxes,1.5211487,5.054546936777624,General government,30.094659
+AGO,2005,G115,Trade taxes (customs),Taxes,1.3030922,4.329978185465244,General government,30.094659
+AGO,2005,G11NEC,Other taxes,Taxes,0.6403968999999995,2.1279419883255883,General government,30.094659
+AGO,2005,G13,Grants (e.g. foreign aid),Grants,0.176366,0.5860375287779046,General government,30.094659
+AGO,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,23.892555,79.39134463779965,General government,30.094659
+AGO,2005,G14X,Other non-tax revenue,Other revenue,0.808567,2.6867457816776708,General government,30.094659
+AGO,2006,G111,Income taxes,Taxes,1.7500364,4.895736411424878,General government,35.746132
+AGO,2006,G114,Goods & services taxes,Taxes,1.4214028,3.976382115972716,General government,35.746132
+AGO,2006,G115,Trade taxes (customs),Taxes,1.2351451,3.4553251803579754,General government,35.746132
+AGO,2006,G113,Property taxes,Taxes,0.02594709,0.0725871263497824,General government,35.746132
+AGO,2006,G11NEC,Other taxes,Taxes,0.6357151099999999,1.7784165011196174,General government,35.746132
+AGO,2006,G121,Social contributions,Social contributions,1.3506026,3.7783181688021514,General government,35.746132
+AGO,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,28.651746,80.15341631928175,General government,35.746132
+AGO,2006,G14X,Other non-tax revenue,Other revenue,0.675530000000002,1.8897988739033413,General government,35.746132
+AGO,2007,G111,Income taxes,Taxes,2.1465539,5.660042761942872,General government,37.924694
+AGO,2007,G114,Goods & services taxes,Taxes,1.6325108,4.3046116556092855,General government,37.924694
+AGO,2007,G115,Trade taxes (customs),Taxes,1.4066427,3.7090416563845796,General government,37.924694
+AGO,2007,G113,Property taxes,Taxes,0.03184012,0.08395616841738403,General government,37.924694
+AGO,2007,G11NEC,Other taxes,Taxes,0.6871465800000005,1.8118711235356366,General government,37.924694
+AGO,2007,G121,Social contributions,Social contributions,0.8602482,2.2683062362815045,General government,37.924694
+AGO,2007,G13,Grants (e.g. foreign aid),Grants,0.04056274,0.10695601118684728,General government,37.924694
+AGO,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,30.736553,81.04627809938688,General government,37.924694
+AGO,2007,G14X,Other non-tax revenue,Other revenue,0.382635999999998,1.0089362872550098,General government,37.924694
+AGO,2008,G111,Income taxes,Taxes,2.0112,4.633562650757241,General government,43.405046
+AGO,2008,G114,Goods & services taxes,Taxes,1.8306023,4.217487293988814,General government,43.405046
+AGO,2008,G115,Trade taxes (customs),Taxes,1.4070762,3.2417341522918792,General government,43.405046
+AGO,2008,G113,Property taxes,Taxes,0.03737443,0.08610618682445355,General government,43.405046
+AGO,2008,G11NEC,Other taxes,Taxes,1.0318273699999996,2.377206028073325,General government,43.405046
+AGO,2008,G121,Social contributions,Social contributions,1.259999,2.9028859916425387,General government,43.405046
+AGO,2008,G13,Grants (e.g. foreign aid),Grants,0.02524843,0.05816934279945239,General government,43.405046
+AGO,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,35.101148,80.8688188004685,General government,43.405046
+AGO,2008,G14X,Other non-tax revenue,Other revenue,0.700569999999999,1.6140289311063027,General government,43.405046
+AGO,2009,G111,Income taxes,Taxes,3.0015044,9.399433483649549,General government,31.932822
+AGO,2009,G114,Goods & services taxes,Taxes,2.2791047,7.137185282794541,General government,31.932822
+AGO,2009,G115,Trade taxes (customs),Taxes,1.6402097,5.136438238900061,General government,31.932822
+AGO,2009,G113,Property taxes,Taxes,0.04926001,0.15426137219685956,General government,31.932822
+AGO,2009,G11NEC,Other taxes,Taxes,1.3461787,4.215658370434447,General government,31.932822
+AGO,2009,G121,Social contributions,Social contributions,0.24805131,0.7767910614680872,General government,31.932822
+AGO,2009,G13,Grants (e.g. foreign aid),Grants,0.03464557,0.10849517019469447,General government,31.932822
+AGO,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,22.358959,70.01873723195189,General government,31.932822
+AGO,2009,G14X,Other non-tax revenue,Other revenue,0.9749090000000002,3.0529997884098723,General government,31.932822
+AGO,2010,G111,Income taxes,Taxes,2.6872854,7.160659974646761,General government,37.528459
+AGO,2010,G114,Goods & services taxes,Taxes,1.8321837,4.882118023932334,General government,37.528459
+AGO,2010,G115,Trade taxes (customs),Taxes,1.1608818,3.0933371798008085,General government,37.528459
+AGO,2010,G113,Property taxes,Taxes,0.03406023,0.09075840090831545,General government,37.528459
+AGO,2010,G11NEC,Other taxes,Taxes,1.05072017,2.7997956100505887,General government,37.528459
+AGO,2010,G121,Social contributions,Social contributions,0.86104462,2.29437771917301,General government,37.528459
+AGO,2010,G13,Grants (e.g. foreign aid),Grants,0.02193988,0.05846197823444915,General government,37.528459
+AGO,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,28.474154,75.87349481366138,General government,37.528459
+AGO,2010,G14X,Other non-tax revenue,Other revenue,1.4061900000000023,3.746996299592349,General government,37.528459
+AGO,2011,G111,Income taxes,Taxes,2.6498733,6.543285336592048,General government,40.497596
+AGO,2011,G114,Goods & services taxes,Taxes,1.4340381,3.541044951788571,General government,40.497596
+AGO,2011,G115,Trade taxes (customs),Taxes,0.95209963,2.351002800003198,General government,40.497596
+AGO,2011,G113,Property taxes,Taxes,0.05125287,0.1265578066427774,General government,40.497596
+AGO,2011,G11NEC,Other taxes,Taxes,0.9382650000000003,2.3168411924968417,General government,40.497596
+AGO,2011,G121,Social contributions,Social contributions,0.76122179,1.8796715210502146,General government,40.497596
+AGO,2011,G13,Grants (e.g. foreign aid),Grants,0.02049291,0.050602780709213736,General government,40.497596
+AGO,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,32.365815,79.920335321825,General government,40.497596
+AGO,2011,G14X,Other non-tax revenue,Other revenue,1.324538000000004,3.2706582888921463,General government,40.497596
+AGO,2012,G111,Income taxes,Taxes,2.3686111,6.424000601652056,General government,36.871277
+AGO,2012,G114,Goods & services taxes,Taxes,1.205003,3.2681346452326143,General government,36.871277
+AGO,2012,G115,Trade taxes (customs),Taxes,0.81220256,2.2028055741625714,General government,36.871277
+AGO,2012,G113,Property taxes,Taxes,0.11798314,0.3199865787780859,General government,36.871277
+AGO,2012,G11NEC,Other taxes,Taxes,0.7723789,2.0947983053458428,General government,36.871277
+AGO,2012,G121,Social contributions,Social contributions,0.77759477,2.108944465523062,General government,36.871277
+AGO,2012,G13,Grants (e.g. foreign aid),Grants,0.01168921,0.0317027527536442,General government,36.871277
+AGO,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,29.932036,81.17981768837906,General government,36.871277
+AGO,2012,G14X,Other non-tax revenue,Other revenue,0.873778999999999,2.3698093881730626,General government,36.871277
+AGO,2013,G111,Income taxes,Taxes,3.3799233,10.345365746360521,General government,32.670892
+AGO,2013,G114,Goods & services taxes,Taxes,1.3547919,4.146785732003648,General government,32.670892
+AGO,2013,G115,Trade taxes (customs),Taxes,0.83832334,2.5659640164055038,General government,32.670892
+AGO,2013,G113,Property taxes,Taxes,0.14265806,0.4366518634805245,General government,32.670892
+AGO,2013,G11NEC,Other taxes,Taxes,0.83509241,2.556074693606111,General government,32.670892
+AGO,2013,G121,Social contributions,Social contributions,0.81343648,2.4897896047025903,General government,32.670892
+AGO,2013,G13,Grants (e.g. foreign aid),Grants,0.0124318,0.03805160841537579,General government,32.670892
+AGO,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,24.458546,74.86341598171269,General government,32.670892
+AGO,2013,G14X,Other non-tax revenue,Other revenue,0.8356890000000021,2.557900753313041,General government,32.670892
+AGO,2014,G111,Income taxes,Taxes,3.3703803,12.375402124802138,General government,27.234511
+AGO,2014,G114,Goods & services taxes,Taxes,1.4159371,5.199054538719615,General government,27.234511
+AGO,2014,G115,Trade taxes (customs),Taxes,1.126102,4.134834601170656,General government,27.234511
+AGO,2014,G113,Property taxes,Taxes,0.17420331,0.6396417676431249,General government,27.234511
+AGO,2014,G11NEC,Other taxes,Taxes,0.8926451900000004,3.277625133585196,General government,27.234511
+AGO,2014,G121,Social contributions,Social contributions,0.53728869,1.972822946970749,General government,27.234511
+AGO,2014,G13,Grants (e.g. foreign aid),Grants,0.00941079,0.0345546496821343,General government,27.234511
+AGO,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,18.370887,67.45443949286671,General government,27.234511
+AGO,2014,G14X,Other non-tax revenue,Other revenue,1.337657,4.911624744559673,General government,27.234511
+AGO,2015,G111,Income taxes,Taxes,4.1987894,19.71388101944697,General government,21.298644
+AGO,2015,G114,Goods & services taxes,Taxes,1.1169624,5.24428871255032,General government,21.298644
+AGO,2015,G115,Trade taxes (customs),Taxes,0.82531052,3.8749439053499346,General government,21.298644
+AGO,2015,G113,Property taxes,Taxes,0.19241236,0.9034019119203733,General government,21.298644
+AGO,2015,G11NEC,Other taxes,Taxes,0.9055511199999999,4.2516843156522555,General government,21.298644
+AGO,2015,G121,Social contributions,Social contributions,0.95358158,4.477193786012761,General government,21.298644
+AGO,2015,G13,Grants (e.g. foreign aid),Grants,0.00755894,0.03549024006613394,General government,21.298644
+AGO,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,12.005354,56.36675189099547,General government,21.298644
+AGO,2015,G14X,Other non-tax revenue,Other revenue,1.0931239999999995,5.132364218005775,General government,21.298644
+AGO,2016,G111,Income taxes,Taxes,3.8284825,24.795375929134217,General government,15.440308
+AGO,2016,G114,Goods & services taxes,Taxes,1.1169258,7.233830922813144,General government,15.440308
+AGO,2016,G115,Trade taxes (customs),Taxes,0.47600685,3.0828843518529863,General government,15.440308
+AGO,2016,G113,Property taxes,Taxes,0.18953552,1.2275371430648925,General government,15.440308
+AGO,2016,G11NEC,Other taxes,Taxes,0.92053844,5.961917463908679,General government,15.440308
+AGO,2016,G121,Social contributions,Social contributions,0.84498746,5.472607417195785,General government,15.440308
+AGO,2016,G13,Grants (e.g. foreign aid),Grants,0.00980208,0.06348370626937641,General government,15.440308
+AGO,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,7.3080285,47.33084556565868,General government,15.440308
+AGO,2016,G14X,Other non-tax revenue,Other revenue,0.7460011999999994,4.831517500102253,General government,15.440308
+AGO,2017,G111,Income taxes,Taxes,2.7654933,18.092717519101356,General government,15.285118
+AGO,2017,G114,Goods & services taxes,Taxes,1.063843,6.95999186968681,General government,15.285118
+AGO,2017,G115,Trade taxes (customs),Taxes,0.51845433,3.3918895190398604,General government,15.285118
+AGO,2017,G113,Property taxes,Taxes,0.12932853,0.8461074776245617,General government,15.285118
+AGO,2017,G11NEC,Other taxes,Taxes,0.6782262399999994,4.437167059620876,General government,15.285118
+AGO,2017,G121,Social contributions,Social contributions,0.71469821,4.675778033863752,General government,15.285118
+AGO,2017,G13,Grants (e.g. foreign aid),Grants,0.01977232,0.1293566686483305,General government,15.285118
+AGO,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,8.6599483,56.65607590585087,General government,15.285118
+AGO,2017,G14X,Other non-tax revenue,Other revenue,0.7353541999999997,4.810915946563587,General government,15.285118
+AGO,2018,G111,Income taxes,Taxes,2.8801624,14.191243898455344,General government,20.295348
+AGO,2018,G114,Goods & services taxes,Taxes,1.0298021,5.07407942282751,General government,20.295348
+AGO,2018,G115,Trade taxes (customs),Taxes,0.6500467,3.202934412686601,General government,20.295348
+AGO,2018,G113,Property taxes,Taxes,0.13397272,0.6601153967080001,General government,20.295348
+AGO,2018,G11NEC,Other taxes,Taxes,1.1698994,5.764372079177398,General government,20.295348
+AGO,2018,G121,Social contributions,Social contributions,0.6723098,3.3126299916705153,General government,20.295348
+AGO,2018,G13,Grants (e.g. foreign aid),Grants,0.00509834,0.025120731531406287,General government,20.295348
+AGO,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,12.86613,63.39447694311725,General government,20.295348
+AGO,2018,G14X,Other non-tax revenue,Other revenue,0.8879269999999995,4.375027123825985,General government,20.295348
+AGO,2019,G111,Income taxes,Taxes,3.3357535,17.643051011262976,General government,18.906897
+AGO,2019,G114,Goods & services taxes,Taxes,1.0708726,5.66392567926971,General government,18.906897
+AGO,2019,G115,Trade taxes (customs),Taxes,0.61339282,3.244280733933862,General government,18.906897
+AGO,2019,G113,Property taxes,Taxes,0.1423451,0.7528739340311955,General government,18.906897
+AGO,2019,G11NEC,Other taxes,Taxes,0.93265658,4.932890759742909,General government,18.906897
+AGO,2019,G121,Social contributions,Social contributions,0.90161543,4.768711784018754,General government,18.906897
+AGO,2019,G13,Grants (e.g. foreign aid),Grants,0.00840207,0.04443917981655488,General government,18.906897
+AGO,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,11.443659,60.52637267486901,General government,18.906897
+AGO,2019,G14X,Other non-tax revenue,Other revenue,0.4581999999999997,2.423454243055037,General government,18.906897
+AGO,2020,G111,Income taxes,Taxes,4.2365824,23.106550477442486,General government,18.334984
+AGO,2020,G114,Goods & services taxes,Taxes,2.1124159,11.52123103346275,General government,18.334984
+AGO,2020,G115,Trade taxes (customs),Taxes,0.73613859,4.014939845907008,General government,18.334984
+AGO,2020,G113,Property taxes,Taxes,0.13532228,0.7380550638039296,General government,18.334984
+AGO,2020,G11NEC,Other taxes,Taxes,0.56045777,3.0567671132703214,General government,18.334984
+AGO,2020,G121,Social contributions,Social contributions,0.8325271,4.540648013830395,General government,18.334984
+AGO,2020,G13,Grants (e.g. foreign aid),Grants,0.01043385,0.05690678451080363,General government,18.334984
+AGO,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,9.3909448,51.218722914978834,General government,18.334984
+AGO,2020,G14X,Other non-tax revenue,Other revenue,0.3201616000000005,1.746178752793469,General government,18.334984
+AGO,2021,G111,Income taxes,Taxes,3.6857405,17.82365276267451,General government,20.678929
+AGO,2021,G114,Goods & services taxes,Taxes,2.0771484,10.044758120693775,General government,20.678929
+AGO,2021,G115,Trade taxes (customs),Taxes,0.53161869,2.570823131120572,General government,20.678929
+AGO,2021,G113,Property taxes,Taxes,0.10915669,0.5278643299176664,General government,20.678929
+AGO,2021,G11NEC,Other taxes,Taxes,0.5989341,2.8963497094070974,General government,20.678929
+AGO,2021,G121,Social contributions,Social contributions,0.65707027,3.1774869481876937,General government,20.678929
+AGO,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,12.416572,60.04456033482199,General government,20.678929
+AGO,2021,G14X,Other non-tax revenue,Other revenue,0.5995779999999993,2.8994635070317196,General government,20.678929
+AGO,2022,G111,Income taxes,Taxes,3.6152698,17.991151900176714,General government,20.09471
+AGO,2022,G114,Goods & services taxes,Taxes,1.9597561,9.752597076544026,General government,20.09471
+AGO,2022,G115,Trade taxes (customs),Taxes,0.44142542,2.1967245110777913,General government,20.09471
+AGO,2022,G113,Property taxes,Taxes,0.11799646,0.587201606791041,General government,20.09471
+AGO,2022,G11NEC,Other taxes,Taxes,0.71129672,3.539721250020528,General government,20.09471
+AGO,2022,G121,Social contributions,Social contributions,0.62345276,3.1025715723192824,General government,20.09471
+AGO,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,11.746267,58.45452360347574,General government,20.09471
+AGO,2022,G14X,Other non-tax revenue,Other revenue,0.8779909999999997,4.36926434867684,General government,20.09471
+AGO,2023,G111,Income taxes,Taxes,2.9860885,17.52205933136137,General government,17.041881
+AGO,2023,G114,Goods & services taxes,Taxes,2.0206981,11.85724803500271,General government,17.041881
+AGO,2023,G115,Trade taxes (customs),Taxes,0.41172013,2.4159312578230066,General government,17.041881
+AGO,2023,G113,Property taxes,Taxes,0.08557629,0.5021528433393004,General government,17.041881
+AGO,2023,G11NEC,Other taxes,Taxes,0.52169957,3.061279268409397,General government,17.041881
+AGO,2023,G121,Social contributions,Social contributions,0.71736477,4.209422481004297,General government,17.041881
+AGO,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,10.106384,59.303218934576535,General government,17.041881
+AGO,2023,G14X,Other non-tax revenue,Other revenue,0.19159600000000054,1.124265566694196,General government,17.041881
+AGO,2024,G111,Income taxes,Taxes,3.035177,18.170026448867347,General government,16.704307
+AGO,2024,G114,Goods & services taxes,Taxes,1.674673,10.025396444162574,General government,16.704307
+AGO,2024,G115,Trade taxes (customs),Taxes,0.54491716,3.26213568752059,General government,16.704307
+AGO,2024,G113,Property taxes,Taxes,0.07594139,0.4546216134557393,General government,16.704307
+AGO,2024,G11NEC,Other taxes,Taxes,0.2769326499999995,1.6578517743956664,General government,16.704307
+AGO,2024,G121,Social contributions,Social contributions,0.66893417,4.00456103925772,General government,16.704307
+AGO,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,10.095429,60.43608393930978,General government,16.704307
+AGO,2024,G14X,Other non-tax revenue,Other revenue,0.3323020000000003,1.989319281548168,General government,16.704307

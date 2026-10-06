@@ -1,0 +1,294 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+MDA,1995,G1111,Personal income tax,Taxes,3.1091645,7.882880987066015,General government,39.441982
+MDA,1995,G1112,Corporate income tax,Taxes,6.0571646,15.357150662459102,General government,39.441982
+MDA,1995,G11412,VAT / sales tax,Taxes,8.7727161,22.242077236382286,General government,39.441982
+MDA,1995,G1142,Excise taxes,Taxes,2.876037,7.291816623211277,General government,39.441982
+MDA,1995,G115,Trade taxes (customs),Taxes,0.7912385,2.006081996589319,General government,39.441982
+MDA,1995,G11NEC,Other taxes,Taxes,2.0124344000000023,5.102264891252174,General government,39.441982
+MDA,1995,G121,Social contributions,Social contributions,9.8785209,25.045701050215982,General government,39.441982
+MDA,1995,G14X,Other non-tax revenue,Other revenue,5.9447059,15.072026299286886,General government,39.441982
+MDA,1996,G1111,Personal income tax,Taxes,2.8100437,7.83346125232378,General government,35.872312
+MDA,1996,G1112,Corporate income tax,Taxes,4.5991311,12.820838076720033,General government,35.872312
+MDA,1996,G11412,VAT / sales tax,Taxes,7.8732583,21.94800878811479,General government,35.872312
+MDA,1996,G1142,Excise taxes,Taxes,2.5203506,7.025893856159956,General government,35.872312
+MDA,1996,G115,Trade taxes (customs),Taxes,1.2155428,3.388526457556925,General government,35.872312
+MDA,1996,G11NEC,Other taxes,Taxes,2.2276194,6.209857254114856,General government,35.872312
+MDA,1996,G121,Social contributions,Social contributions,9.7556134,27.195384741365643,General government,35.872312
+MDA,1996,G14X,Other non-tax revenue,Other revenue,4.8707532,13.57802957364402,General government,35.872312
+MDA,1997,G1111,Personal income tax,Taxes,3.161386,8.215664780265726,General government,38.479978
+MDA,1997,G1112,Corporate income tax,Taxes,2.7385969,7.116939879747332,General government,38.479978
+MDA,1997,G11412,VAT / sales tax,Taxes,10.641501,27.654644189245637,General government,38.479978
+MDA,1997,G1142,Excise taxes,Taxes,5.7272786,14.883788654972722,General government,38.479978
+MDA,1997,G115,Trade taxes (customs),Taxes,1.4287356,3.712932476208796,General government,38.479978
+MDA,1997,G11NEC,Other taxes,Taxes,2.078059,5.400364314137602,General government,38.479978
+MDA,1997,G121,Social contributions,Social contributions,8.1748575,21.24444431854924,General government,38.479978
+MDA,1997,G14X,Other non-tax revenue,Other revenue,4.529563,11.771220347371298,General government,38.479978
+MDA,1998,G1111,Personal income tax,Taxes,2.4555714,6.535575623641466,General government,37.57238
+MDA,1998,G1112,Corporate income tax,Taxes,1.9567835,5.208036933213927,General government,37.57238
+MDA,1998,G11412,VAT / sales tax,Taxes,12.321707,32.79458618505347,General government,37.57238
+MDA,1998,G1142,Excise taxes,Taxes,4.1065047,10.929583239033128,General government,37.57238
+MDA,1998,G115,Trade taxes (customs),Taxes,1.1981873,3.1890107982348974,General government,37.57238
+MDA,1998,G11NEC,Other taxes,Taxes,1.5248118,4.058331527529953,General government,37.57238
+MDA,1998,G121,Social contributions,Social contributions,8.5846338,22.84825576693417,General government,37.57238
+MDA,1998,G14X,Other non-tax revenue,Other revenue,5.4241819,14.436619926358993,General government,37.57238
+MDA,1999,G1111,Personal income tax,Taxes,1.7765616,5.847901504015606,General government,30.379472
+MDA,1999,G1112,Corporate income tax,Taxes,1.8942416,6.235268341727598,General government,30.379472
+MDA,1999,G11412,VAT / sales tax,Taxes,7.6313426,25.120063311172757,General government,30.379472
+MDA,1999,G1142,Excise taxes,Taxes,3.6074995,11.87479328146322,General government,30.379472
+MDA,1999,G115,Trade taxes (customs),Taxes,1.8731404,6.165809596690818,General government,30.379472
+MDA,1999,G11NEC,Other taxes,Taxes,1.6201124000000022,5.332918228466914,General government,30.379472
+MDA,1999,G121,Social contributions,Social contributions,6.3547179,20.91780232388502,General government,30.379472
+MDA,1999,G14X,Other non-tax revenue,Other revenue,5.6218558,18.505442754238782,General government,30.379472
+MDA,2000,G1111,Personal income tax,Taxes,1.6182657,5.30942385174366,General government,30.47912
+MDA,2000,G1112,Corporate income tax,Taxes,1.6867897,5.534246611082181,General government,30.47912
+MDA,2000,G11412,VAT / sales tax,Taxes,8.2149165,26.952603398306312,General government,30.47912
+MDA,2000,G1142,Excise taxes,Taxes,4.0288393,13.218358069544594,General government,30.47912
+MDA,2000,G115,Trade taxes (customs),Taxes,1.4114703,4.630941678395445,General government,30.47912
+MDA,2000,G11NEC,Other taxes,Taxes,1.3950002999999989,4.5769046863006215,General government,30.47912
+MDA,2000,G121,Social contributions,Social contributions,6.1714353,20.248075319963085,General government,30.47912
+MDA,2000,G13,Grants (e.g. foreign aid),Grants,0.91406012,2.998971431610812,General government,30.47912
+MDA,2000,G14X,Other non-tax revenue,Other revenue,5.0383434,16.53047495305329,General government,30.47912
+MDA,2001,G1111,Personal income tax,Taxes,1.8245253,6.256312028094719,General government,29.162952
+MDA,2001,G1112,Corporate income tax,Taxes,1.835548,6.2941089556528516,General government,29.162952
+MDA,2001,G11412,VAT / sales tax,Taxes,7.8623602,26.960096792559252,General government,29.162952
+MDA,2001,G1142,Excise taxes,Taxes,3.5734661,12.253444193631475,General government,29.162952
+MDA,2001,G115,Trade taxes (customs),Taxes,1.2292975,4.2152710819393775,General government,29.162952
+MDA,2001,G11NEC,Other taxes,Taxes,1.211100200000001,4.152872392883742,General government,29.162952
+MDA,2001,G121,Social contributions,Social contributions,6.8433125,23.465773977352324,General government,29.162952
+MDA,2001,G13,Grants (e.g. foreign aid),Grants,0.85294982,2.92477183968193,General government,29.162952
+MDA,2001,G14X,Other non-tax revenue,Other revenue,3.9303928,13.477348738204332,General government,29.162952
+MDA,2002,G1111,Personal income tax,Taxes,2.0726323,7.011500054346228,General government,29.560469
+MDA,2002,G1112,Corporate income tax,Taxes,1.8957381,6.413085326893833,General government,29.560469
+MDA,2002,G11412,VAT / sales tax,Taxes,9.0189431,30.510148874836858,General government,29.560469
+MDA,2002,G1142,Excise taxes,Taxes,2.9167589,9.867092771768945,General government,29.560469
+MDA,2002,G114X,Other goods & services taxes,Taxes,0.22122900000000056,0.7483947565243317,General government,29.560469
+MDA,2002,G115,Trade taxes (customs),Taxes,1.4763349,4.994287810521544,General government,29.560469
+MDA,2002,G11NEC,Other taxes,Taxes,0.239849,0.8113842848704463,General government,29.560469
+MDA,2002,G121,Social contributions,Social contributions,7.2873193,24.652245199492608,General government,29.560469
+MDA,2002,G13,Grants (e.g. foreign aid),Grants,0.57812033,1.95572110171865,General government,29.560469
+MDA,2002,G14X,Other non-tax revenue,Other revenue,3.853101,13.034640959180994,General government,29.560469
+MDA,2003,G1111,Personal income tax,Taxes,2.2571485,6.643788753191244,General government,33.973815
+MDA,2003,G1112,Corporate income tax,Taxes,2.0909581,6.154616724674576,General government,33.973815
+MDA,2003,G11412,VAT / sales tax,Taxes,10.108651,29.754241612253434,General government,33.973815
+MDA,2003,G1142,Excise taxes,Taxes,3.2166358,9.467985270420764,General government,33.973815
+MDA,2003,G114X,Other goods & services taxes,Taxes,0.6024851999999989,1.7733810583238854,General government,33.973815
+MDA,2003,G115,Trade taxes (customs),Taxes,1.7256288,5.079290624264599,General government,33.973815
+MDA,2003,G113,Property taxes,Taxes,0.71871027,2.1154829682801295,General government,33.973815
+MDA,2003,G121,Social contributions,Social contributions,7.1689992,21.10154305602712,General government,33.973815
+MDA,2003,G13,Grants (e.g. foreign aid),Grants,0.26431159,0.7779861931902554,General government,33.973815
+MDA,2003,G14X,Other non-tax revenue,Other revenue,5.8202859,17.13168185557024,General government,33.973815
+MDA,2004,G1111,Personal income tax,Taxes,2.4869054,7.025001072003119,General government,35.400783
+MDA,2004,G1112,Corporate income tax,Taxes,2.4338331,6.875082637472529,General government,35.400783
+MDA,2004,G11412,VAT / sales tax,Taxes,10.701248,30.22884532389983,General government,35.400783
+MDA,2004,G1142,Excise taxes,Taxes,2.8421776,8.02857265371785,General government,35.400783
+MDA,2004,G114X,Other goods & services taxes,Taxes,0.8335474,2.354601577754189,General government,35.400783
+MDA,2004,G115,Trade taxes (customs),Taxes,1.5472136,4.370563190147001,General government,35.400783
+MDA,2004,G113,Property taxes,Taxes,0.70367623,1.987741982502878,General government,35.400783
+MDA,2004,G121,Social contributions,Social contributions,8.797826,24.852065977779816,General government,35.400783
+MDA,2004,G13,Grants (e.g. foreign aid),Grants,0.44018788,1.2434410769636755,General government,35.400783
+MDA,2004,G14X,Other non-tax revenue,Other revenue,4.614168,13.034084507759117,General government,35.400783
+MDA,2005,G1111,Personal income tax,Taxes,2.5547205,6.625274511198278,General government,38.560221
+MDA,2005,G1112,Corporate income tax,Taxes,1.8835718,4.8847536302119385,General government,38.560221
+MDA,2005,G11412,VAT / sales tax,Taxes,12.278806,31.843193969652834,General government,38.560221
+MDA,2005,G1142,Excise taxes,Taxes,3.1124617,8.071690491422,General government,38.560221
+MDA,2005,G114X,Other goods & services taxes,Taxes,0.8127083000000015,2.107633921217328,General government,38.560221
+MDA,2005,G115,Trade taxes (customs),Taxes,1.808144,4.689143237303689,General government,38.560221
+MDA,2005,G113,Property taxes,Taxes,0.61749923,1.601389235810165,General government,38.560221
+MDA,2005,G11NEC,Other taxes,Taxes,0.2408914700000022,0.624714960464794,General government,38.560221
+MDA,2005,G121,Social contributions,Social contributions,9.0681926,23.516962147294326,General government,38.560221
+MDA,2005,G13,Grants (e.g. foreign aid),Grants,1.2203909,3.164896012486816,General government,38.560221
+MDA,2005,G14X,Other non-tax revenue,Other revenue,4.9628346,12.870347882937839,General government,38.560221
+MDA,2006,G1111,Personal income tax,Taxes,2.5197541,6.318637159616251,General government,39.878126
+MDA,2006,G1112,Corporate income tax,Taxes,2.4111614,6.046325718796268,General government,39.878126
+MDA,2006,G11412,VAT / sales tax,Taxes,13.83932,34.70403783282677,General government,39.878126
+MDA,2006,G1142,Excise taxes,Taxes,2.3928391,6.0003799792379375,General government,39.878126
+MDA,2006,G114X,Other goods & services taxes,Taxes,1.5687849000000003,3.933948381941264,General government,39.878126
+MDA,2006,G115,Trade taxes (customs),Taxes,1.8559083,4.653950617332153,General government,39.878126
+MDA,2006,G113,Property taxes,Taxes,0.52448513,1.3152200971055708,General government,39.878126
+MDA,2006,G11NEC,Other taxes,Taxes,0.023685069999997713,0.05939363822449882,General government,39.878126
+MDA,2006,G121,Social contributions,Social contributions,9.4830969,23.780196829754804,General government,39.878126
+MDA,2006,G13,Grants (e.g. foreign aid),Grants,0.70361849,1.7644221462352516,General government,39.878126
+MDA,2006,G14X,Other non-tax revenue,Other revenue,4.5554728,11.423487598929235,General government,39.878126
+MDA,2007,G1111,Personal income tax,Taxes,2.4868251,5.802183290912043,General government,42.860161
+MDA,2007,G1112,Corporate income tax,Taxes,2.598561,6.062882031637726,General government,42.860161
+MDA,2007,G11412,VAT / sales tax,Taxes,14.199815,33.13056850159755,General government,42.860161
+MDA,2007,G1142,Excise taxes,Taxes,2.6058603,6.079912532293101,General government,42.860161
+MDA,2007,G114X,Other goods & services taxes,Taxes,1.431603700000002,3.3401734071880926,General government,42.860161
+MDA,2007,G115,Trade taxes (customs),Taxes,1.6844605,3.930131060403623,General government,42.860161
+MDA,2007,G113,Property taxes,Taxes,0.42878877,1.0004366759144931,General government,42.860161
+MDA,2007,G11NEC,Other taxes,Taxes,0.03200475,0.07467249131425335,General government,42.860161
+MDA,2007,G121,Social contributions,Social contributions,9.7453524,22.737554345631132,General government,42.860161
+MDA,2007,G13,Grants (e.g. foreign aid),Grants,2.924972,6.824454065863168,General government,42.860161
+MDA,2007,G14X,Other non-tax revenue,Other revenue,4.721917,11.017030477323686,General government,42.860161
+MDA,2008,G1111,Personal income tax,Taxes,2.3514998,5.78793981648618,General government,40.627578
+MDA,2008,G1112,Corporate income tax,Taxes,1.1403089,2.8067360607062595,General government,40.627578
+MDA,2008,G11412,VAT / sales tax,Taxes,14.458005,35.58667655700258,General government,40.627578
+MDA,2008,G1142,Excise taxes,Taxes,2.501369,6.156825201866578,General government,40.627578
+MDA,2008,G114X,Other goods & services taxes,Taxes,1.7304089999999985,4.259197959492076,General government,40.627578
+MDA,2008,G115,Trade taxes (customs),Taxes,1.8276729,4.498601594362357,General government,40.627578
+MDA,2008,G113,Property taxes,Taxes,0.43482721,1.070275966874672,General government,40.627578
+MDA,2008,G11NEC,Other taxes,Taxes,0.01476442,0.03634088099234577,General government,40.627578
+MDA,2008,G121,Social contributions,Social contributions,10.46891,25.767989018842496,General government,40.627578
+MDA,2008,G13,Grants (e.g. foreign aid),Grants,1.6302842,4.012752556206178,General government,40.627578
+MDA,2008,G14X,Other non-tax revenue,Other revenue,4.0695282,10.016664387168278,General government,40.627578
+MDA,2009,G1111,Personal income tax,Taxes,2.424135,6.228958841774191,General government,38.917178
+MDA,2009,G1112,Corporate income tax,Taxes,0.7329165,1.8832724716062403,General government,38.917178
+MDA,2009,G11412,VAT / sales tax,Taxes,12.569295,32.297549940542964,General government,38.917178
+MDA,2009,G1142,Excise taxes,Taxes,2.5477495,6.546593640474137,General government,38.917178
+MDA,2009,G114X,Other goods & services taxes,Taxes,1.406093499999999,3.613040750282559,General government,38.917178
+MDA,2009,G115,Trade taxes (customs),Taxes,1.5019079,3.8592415411004364,General government,38.917178
+MDA,2009,G113,Property taxes,Taxes,0.42164625,1.0834450791884243,General government,38.917178
+MDA,2009,G121,Social contributions,Social contributions,11.537023,29.64506573421125,General government,38.917178
+MDA,2009,G13,Grants (e.g. foreign aid),Grants,1.8836732,4.840210150900458,General government,38.917178
+MDA,2009,G14X,Other non-tax revenue,Other revenue,3.8925727,10.002196716318949,General government,38.917178
+MDA,2010,G1111,Personal income tax,Taxes,1.7904297,5.609461447999049,General government,31.918032
+MDA,2010,G1112,Corporate income tax,Taxes,0.56087845,1.757246342756972,General government,31.918032
+MDA,2010,G11412,VAT / sales tax,Taxes,10.601402,33.21446008951931,General government,31.918032
+MDA,2010,G1142,Excise taxes,Taxes,2.4039304,7.531574628410675,General government,31.918032
+MDA,2010,G114X,Other goods & services taxes,Taxes,1.2026605999999997,3.7679660199601273,General government,31.918032
+MDA,2010,G115,Trade taxes (customs),Taxes,1.2521533,3.9230278984619105,General government,31.918032
+MDA,2010,G113,Property taxes,Taxes,0.32825124,1.0284194213477824,General government,31.918032
+MDA,2010,G121,Social contributions,Social contributions,8.6606402,27.134004377212225,General government,31.918032
+MDA,2010,G13,Grants (e.g. foreign aid),Grants,2.2145368,6.938199698527779,General government,31.918032
+MDA,2010,G14X,Other non-tax revenue,Other revenue,2.9030334,9.095276926848122,General government,31.918032
+MDA,2011,G1111,Personal income tax,Taxes,1.7910799,5.869957613527534,General government,30.512554
+MDA,2011,G1112,Corporate income tax,Taxes,0.57849926,1.895932244930583,General government,30.512554
+MDA,2011,G11412,VAT / sales tax,Taxes,10.594211,34.72071207921386,General government,30.512554
+MDA,2011,G1142,Excise taxes,Taxes,2.699832,8.848236979067917,General government,30.512554
+MDA,2011,G114X,Other goods & services taxes,Taxes,0.9871129999999999,3.2350937943985665,General government,30.512554
+MDA,2011,G115,Trade taxes (customs),Taxes,1.1932433,3.9106505486582255,General government,30.512554
+MDA,2011,G113,Property taxes,Taxes,0.28722478,0.9413300233868803,General government,30.512554
+MDA,2011,G121,Social contributions,Social contributions,8.3005634,27.20367490383762,General government,30.512554
+MDA,2011,G13,Grants (e.g. foreign aid),Grants,1.6053,5.26109580984955,General government,30.512554
+MDA,2011,G14X,Other non-tax revenue,Other revenue,2.4755881,8.113316003129265,General government,30.512554
+MDA,2012,G1111,Personal income tax,Taxes,1.921688,6.055056903890847,General government,31.736816
+MDA,2012,G1112,Corporate income tax,Taxes,1.8645208,5.874928470432288,General government,31.736816
+MDA,2012,G11412,VAT / sales tax,Taxes,10.117351,31.878814886514853,General government,31.736816
+MDA,2012,G1142,Excise taxes,Taxes,2.7432641,8.643765391624921,General government,31.736816
+MDA,2012,G114X,Other goods & services taxes,Taxes,1.2641229000000012,3.9831315452932654,General government,31.736816
+MDA,2012,G115,Trade taxes (customs),Taxes,1.2196604,3.8430344183979246,General government,31.736816
+MDA,2012,G113,Property taxes,Taxes,0.28754216,0.9060181158792096,General government,31.736816
+MDA,2012,G121,Social contributions,Social contributions,8.482636,26.727982729242747,General government,31.736816
+MDA,2012,G13,Grants (e.g. foreign aid),Grants,1.4170434,4.464969559201577,General government,31.736816
+MDA,2012,G14X,Other non-tax revenue,Other revenue,2.4190819,7.622297979522372,General government,31.736816
+MDA,2013,G1111,Personal income tax,Taxes,1.8452665,5.9761463170199605,General government,30.877197
+MDA,2013,G1112,Corporate income tax,Taxes,1.7171009,5.561064604753112,General government,30.877197
+MDA,2013,G11412,VAT / sales tax,Taxes,10.18473,32.984632127306654,General government,30.877197
+MDA,2013,G1142,Excise taxes,Taxes,2.9349249,9.505153121169855,General government,30.877197
+MDA,2013,G114X,Other goods & services taxes,Taxes,1.0535181000000002,3.411961531425877,General government,30.877197
+MDA,2013,G115,Trade taxes (customs),Taxes,1.1853643,3.83896336695645,General government,30.877197
+MDA,2013,G113,Property taxes,Taxes,0.26528268,0.8591540089473172,General government,30.877197
+MDA,2013,G121,Social contributions,Social contributions,8.1509797,26.398055410565068,General government,30.877197
+MDA,2013,G13,Grants (e.g. foreign aid),Grants,1.6283387,5.273596157989141,General government,30.877197
+MDA,2013,G14X,Other non-tax revenue,Other revenue,1.9116917,6.1912733538665705,General government,30.877197
+MDA,2014,G1111,Personal income tax,Taxes,1.85429,5.763600529447206,General government,32.172424
+MDA,2014,G1112,Corporate income tax,Taxes,1.8417866,5.724736811873424,General government,32.172424
+MDA,2014,G11412,VAT / sales tax,Taxes,9.7390007,30.27126802755055,General government,32.172424
+MDA,2014,G1142,Excise taxes,Taxes,2.5977489,8.074458113569559,General government,32.172424
+MDA,2014,G114X,Other goods & services taxes,Taxes,1.9220353999999995,5.9741703018709424,General government,32.172424
+MDA,2014,G115,Trade taxes (customs),Taxes,1.1039353,3.431309061449644,General government,32.172424
+MDA,2014,G113,Property taxes,Taxes,0.26226798,0.8151949632393258,General government,32.172424
+MDA,2014,G121,Social contributions,Social contributions,8.1739557,25.406713836669567,General government,32.172424
+MDA,2014,G13,Grants (e.g. foreign aid),Grants,2.9657273,9.218227697111043,General government,32.172424
+MDA,2014,G14X,Other non-tax revenue,Other revenue,1.7116756,5.320319040927721,General government,32.172424
+MDA,2015,G1111,Personal income tax,Taxes,1.8709256,6.28666694780263,General government,29.760215
+MDA,2015,G1112,Corporate income tax,Taxes,1.9137904,6.430700853471656,General government,29.760215
+MDA,2015,G11412,VAT / sales tax,Taxes,9.3457686,31.40356546483283,General government,29.760215
+MDA,2015,G1142,Excise taxes,Taxes,2.6195275,8.802112148719356,General government,29.760215
+MDA,2015,G114X,Other goods & services taxes,Taxes,1.2423319000000004,4.174472193833278,General government,29.760215
+MDA,2015,G115,Trade taxes (customs),Taxes,0.90527337,3.041891229616453,General government,29.760215
+MDA,2015,G113,Property taxes,Taxes,0.2448545,0.8227578328987207,General government,29.760215
+MDA,2015,G11NEC,Other taxes,Taxes,0.00824587,0.027707696332166958,General government,29.760215
+MDA,2015,G121,Social contributions,Social contributions,8.2620847,27.762180817578102,General government,29.760215
+MDA,2015,G13,Grants (e.g. foreign aid),Grants,1.2988942,4.364532312686586,General government,29.760215
+MDA,2015,G14X,Other non-tax revenue,Other revenue,2.0485183,6.88341230061678,General government,29.760215
+MDA,2016,G1111,Personal income tax,Taxes,2.0008123,6.924297367975231,General government,28.895528
+MDA,2016,G1112,Corporate income tax,Taxes,2.1147042,7.31844797540787,General government,28.895528
+MDA,2016,G11412,VAT / sales tax,Taxes,9.1588967,31.696588587228806,General government,28.895528
+MDA,2016,G1142,Excise taxes,Taxes,2.8591837,9.89490027048898,General government,28.895528
+MDA,2016,G114X,Other goods & services taxes,Taxes,1.0826966000000011,3.74693479128239,General government,28.895528
+MDA,2016,G115,Trade taxes (customs),Taxes,0.91302193,3.159734347296178,General government,28.895528
+MDA,2016,G113,Property taxes,Taxes,0.25375696,0.878187649202974,General government,28.895528
+MDA,2016,G121,Social contributions,Social contributions,8.3460569,28.88355885539164,General government,28.895528
+MDA,2016,G13,Grants (e.g. foreign aid),Grants,0.86346543,2.9882320317036237,General government,28.895528
+MDA,2016,G14X,Other non-tax revenue,Other revenue,1.3029335,4.509118124022305,General government,28.895528
+MDA,2017,G1111,Personal income tax,Taxes,2.0732664,6.836157800420937,General government,30.327948
+MDA,2017,G1112,Corporate income tax,Taxes,2.31462,7.631970289978321,General government,30.327948
+MDA,2017,G11412,VAT / sales tax,Taxes,9.5848869,31.60413893148872,General government,30.327948
+MDA,2017,G1142,Excise taxes,Taxes,3.3805417,11.146621829256123,General government,30.327948
+MDA,2017,G114X,Other goods & services taxes,Taxes,1.020185399999999,3.3638457557048853,General government,30.327948
+MDA,2017,G115,Trade taxes (customs),Taxes,0.90399663,2.980737841373757,General government,30.327948
+MDA,2017,G113,Property taxes,Taxes,0.31032805,1.0232411617228345,General government,30.327948
+MDA,2017,G121,Social contributions,Social contributions,8.8144075,29.063645939187463,General government,30.327948
+MDA,2017,G13,Grants (e.g. foreign aid),Grants,0.57315807,1.8898676075128162,General government,30.327948
+MDA,2017,G14X,Other non-tax revenue,Other revenue,1.3525576,4.459772843354149,General government,30.327948
+MDA,2018,G1111,Personal income tax,Taxes,2.1061804,6.866002529641166,General government,30.675497
+MDA,2018,G1112,Corporate income tax,Taxes,2.833294,9.236342609216731,General government,30.675497
+MDA,2018,G11412,VAT / sales tax,Taxes,9.8462612,32.09813096100774,General government,30.675497
+MDA,2018,G1142,Excise taxes,Taxes,3.006041,9.799485889340277,General government,30.675497
+MDA,2018,G114X,Other goods & services taxes,Taxes,0.9482567999999989,3.0912516266647576,General government,30.675497
+MDA,2018,G115,Trade taxes (customs),Taxes,0.88108371,2.8722719961146836,General government,30.675497
+MDA,2018,G113,Property taxes,Taxes,0.29820806,0.9721376641428173,General government,30.675497
+MDA,2018,G121,Social contributions,Social contributions,9.0739774,29.5805391514928,General government,30.675497
+MDA,2018,G13,Grants (e.g. foreign aid),Grants,0.20490565,0.6679782563914124,General government,30.675497
+MDA,2018,G14X,Other non-tax revenue,Other revenue,1.4772883,4.815857751220787,General government,30.675497
+MDA,2019,G1111,Personal income tax,Taxes,1.9247418,6.306513903829505,General government,30.519901
+MDA,2019,G1112,Corporate income tax,Taxes,2.6012789,8.523221946231082,General government,30.519901
+MDA,2019,G11412,VAT / sales tax,Taxes,9.7855464,32.06283794957264,General government,30.519901
+MDA,2019,G1142,Excise taxes,Taxes,3.016636,9.884160502355497,General government,30.519901
+MDA,2019,G114X,Other goods & services taxes,Taxes,0.9382986000000013,3.074382842853918,General government,30.519901
+MDA,2019,G115,Trade taxes (customs),Taxes,0.87192514,2.8569068425221955,General government,30.519901
+MDA,2019,G113,Property taxes,Taxes,0.28115513,0.9212190105072751,General government,30.519901
+MDA,2019,G121,Social contributions,Social contributions,8.9228331,29.236114166949623,General government,30.519901
+MDA,2019,G13,Grants (e.g. foreign aid),Grants,0.77699468,2.545862386644046,General government,30.519901
+MDA,2019,G14X,Other non-tax revenue,Other revenue,1.4004425,4.588620716692364,General government,30.519901
+MDA,2020,G1111,Personal income tax,Taxes,2.0855771,6.648439893104817,General government,31.369421
+MDA,2020,G1112,Corporate income tax,Taxes,2.5649154,8.176483078855679,General government,31.369421
+MDA,2020,G11412,VAT / sales tax,Taxes,9.9008338,31.562054651885347,General government,31.369421
+MDA,2020,G1142,Excise taxes,Taxes,3.2387126,10.324425815828734,General government,31.369421
+MDA,2020,G114X,Other goods & services taxes,Taxes,0.947811600000001,3.0214507306335077,General government,31.369421
+MDA,2020,G115,Trade taxes (customs),Taxes,0.87060929,2.775343829266087,General government,31.369421
+MDA,2020,G113,Property taxes,Taxes,0.29158827,0.9295302900235232,General government,31.369421
+MDA,2020,G121,Social contributions,Social contributions,9.6303736,30.69987680040381,General government,31.369421
+MDA,2020,G13,Grants (e.g. foreign aid),Grants,0.32528314,1.0369433978395712,General government,31.369421
+MDA,2020,G14X,Other non-tax revenue,Other revenue,1.5111622,4.817309825386959,General government,31.369421
+MDA,2021,G1111,Personal income tax,Taxes,2.1207159,6.634668015677558,General government,31.96416
+MDA,2021,G1112,Corporate income tax,Taxes,2.4823753,7.766120867872018,General government,31.96416
+MDA,2021,G11412,VAT / sales tax,Taxes,10.537403,32.96630663843504,General government,31.96416
+MDA,2021,G1142,Excise taxes,Taxes,3.1429044,9.832588749399328,General government,31.96416
+MDA,2021,G114X,Other goods & services taxes,Taxes,0.8779786000000014,2.746759495635116,General government,31.96416
+MDA,2021,G115,Trade taxes (customs),Taxes,0.93068934,2.911665252582893,General government,31.96416
+MDA,2021,G113,Property taxes,Taxes,0.31208868,0.9763706601393561,General government,31.96416
+MDA,2021,G121,Social contributions,Social contributions,9.0214903,28.22376780744434,General government,31.96416
+MDA,2021,G13,Grants (e.g. foreign aid),Grants,1.0109938,3.1628980708393404,General government,31.96416
+MDA,2021,G14X,Other non-tax revenue,Other revenue,1.5275202,4.778852940293129,General government,31.96416
+MDA,2022,G1111,Personal income tax,Taxes,2.1849038,6.555751747323011,General government,33.32797
+MDA,2022,G1112,Corporate income tax,Taxes,3.1799561,9.541382443925206,General government,33.32797
+MDA,2022,G11412,VAT / sales tax,Taxes,10.585779,31.762377444730173,General government,33.32797
+MDA,2022,G1142,Excise taxes,Taxes,2.9190705,8.758601422604537,General government,33.32797
+MDA,2022,G114X,Other goods & services taxes,Taxes,0.8166844999999991,2.4504423663351287,General government,33.32797
+MDA,2022,G115,Trade taxes (customs),Taxes,0.99534383,2.9865054254149217,General government,33.32797
+MDA,2022,G113,Property taxes,Taxes,0.27523966,0.8258500360416746,General government,33.32797
+MDA,2022,G121,Social contributions,Social contributions,9.0798848,27.24397780949974,General government,33.32797
+MDA,2022,G13,Grants (e.g. foreign aid),Grants,1.6449896,4.935752065847558,General government,33.32797
+MDA,2022,G14X,Other non-tax revenue,Other revenue,1.6461918,4.9393592382780485,General government,33.32797
+MDA,2023,G1111,Personal income tax,Taxes,2.3827059,7.07024090539215,General government,33.700491
+MDA,2023,G1112,Corporate income tax,Taxes,3.1037966,9.209944745315433,General government,33.700491
+MDA,2023,G11412,VAT / sales tax,Taxes,9.9518689,29.530338000119936,General government,33.700491
+MDA,2023,G1142,Excise taxes,Taxes,3.3398007,9.910243444227564,General government,33.700491
+MDA,2023,G115,Trade taxes (customs),Taxes,0.92635895,2.748799564967763,General government,33.700491
+MDA,2023,G113,Property taxes,Taxes,0.25563817,0.7585591853839756,General government,33.700491
+MDA,2023,G11NEC,Other taxes,Taxes,0.33641457,0.998248274780329,General government,33.700491
+MDA,2023,G121,Social contributions,Social contributions,9.5608677,28.37011395471953,General government,33.700491
+MDA,2023,G13,Grants (e.g. foreign aid),Grants,2.2210214,6.590471931106286,General government,33.700491
+MDA,2023,G14X,Other non-tax revenue,Other revenue,1.6220176,4.8130384806559645,General government,33.700491
+MDA,2024,G1111,Personal income tax,Taxes,2.6773779,7.8579056234089215,General government,34.072411
+MDA,2024,G1112,Corporate income tax,Taxes,2.7994222,8.216096594984135,General government,34.072411
+MDA,2024,G11412,VAT / sales tax,Taxes,10.33609,30.33565778482773,General government,34.072411
+MDA,2024,G1142,Excise taxes,Taxes,3.6131538,10.604338507186943,General government,34.072411
+MDA,2024,G115,Trade taxes (customs),Taxes,0.79517178,2.333770216613083,General government,34.072411
+MDA,2024,G113,Property taxes,Taxes,0.27955398,0.8204702038843097,General government,34.072411
+MDA,2024,G11NEC,Other taxes,Taxes,0.6462472400000033,1.8966877336622971,General government,34.072411
+MDA,2024,G121,Social contributions,Social contributions,10.365181,30.42103771288741,General government,34.072411
+MDA,2024,G13,Grants (e.g. foreign aid),Grants,0.80054519,2.349540776553793,General government,34.072411
+MDA,2024,G14X,Other non-tax revenue,Other revenue,1.7596677,5.16449422965695,General government,34.072411

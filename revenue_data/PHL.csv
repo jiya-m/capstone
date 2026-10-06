@@ -1,0 +1,355 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+PHL,1990,G111,Income taxes,Taxes,4.0204156,23.254696240034917,General government,17.288618
+PHL,1990,G1142,Excise taxes,Taxes,2.3516084,13.602061194249304,General government,17.288618
+PHL,1990,G114X,Other goods & services taxes,Taxes,2.7737985,16.04407304273829,General government,17.288618
+PHL,1990,G115,Trade taxes (customs),Taxes,2.797905,16.183508710759877,General government,17.288618
+PHL,1990,G11NEC,Other taxes,Taxes,0.83436288,4.826081992210136,General government,17.288618
+PHL,1990,G121,Social contributions,Social contributions,1.1727502,6.783365795924233,General government,17.288618
+PHL,1990,G13,Grants (e.g. foreign aid),Grants,0.19382954,1.1211395844364194,General government,17.288618
+PHL,1990,G14X,Other non-tax revenue,Other revenue,3.1439478,18.185072976914636,General government,17.288618
+PHL,1991,G111,Income taxes,Taxes,4.2905694,24.130761924146437,General government,17.780497
+PHL,1991,G1142,Excise taxes,Taxes,1.7857871,10.04351621892234,General government,17.780497
+PHL,1991,G114X,Other goods & services taxes,Taxes,2.5902380999999997,14.567861067100653,General government,17.780497
+PHL,1991,G115,Trade taxes (customs),Taxes,3.83265,21.555359223085834,General government,17.780497
+PHL,1991,G11NEC,Other taxes,Taxes,0.7671343999999999,4.3144710746836825,General government,17.780497
+PHL,1991,G121,Social contributions,Social contributions,1.3282191,7.470089840570823,General government,17.780497
+PHL,1991,G13,Grants (e.g. foreign aid),Grants,0.21588831,1.214186026408598,General government,17.780497
+PHL,1991,G14X,Other non-tax revenue,Other revenue,2.9700104,16.703753556495073,General government,17.780497
+PHL,1992,G111,Income taxes,Taxes,4.5489369,25.28987240774948,General government,17.987188
+PHL,1992,G1142,Excise taxes,Taxes,1.7923161,9.964404097000152,General government,17.987188
+PHL,1992,G114X,Other goods & services taxes,Taxes,2.8977149000000004,16.109882749755126,General government,17.987188
+PHL,1992,G115,Trade taxes (customs),Taxes,3.8574139,21.445341515921957,General government,17.987188
+PHL,1992,G11NEC,Other taxes,Taxes,0.9204521999999988,5.11726568364408,General government,17.987188
+PHL,1992,G121,Social contributions,Social contributions,1.2779553,7.104808703723107,General government,17.987188
+PHL,1992,G13,Grants (e.g. foreign aid),Grants,0.13914792,0.773594626604676,General government,17.987188
+PHL,1992,G14X,Other non-tax revenue,Other revenue,2.5532508,14.194830215601428,General government,17.987188
+PHL,1993,G111,Income taxes,Taxes,4.445377,24.39931457187911,General government,18.21927
+PHL,1993,G11412,VAT / sales tax,Taxes,2.2498445,12.348708263283875,General government,18.21927
+PHL,1993,G1142,Excise taxes,Taxes,1.7980031,9.8686890308997,General government,18.21927
+PHL,1993,G114X,Other goods & services taxes,Taxes,0.9480380000000002,5.203490589908378,General government,18.21927
+PHL,1993,G115,Trade taxes (customs),Taxes,3.9774873,21.831211129754376,General government,18.21927
+PHL,1993,G11NEC,Other taxes,Taxes,0.8667861,4.757523764673338,General government,18.21927
+PHL,1993,G121,Social contributions,Social contributions,1.4057115,7.715520435231487,General government,18.21927
+PHL,1993,G13,Grants (e.g. foreign aid),Grants,0.09218852,0.5059945870498653,General government,18.21927
+PHL,1993,G14X,Other non-tax revenue,Other revenue,2.4358336,13.3695455416161,General government,18.21927
+PHL,1994,G1111,Personal income tax,Taxes,1.8156235,9.437731362423142,General government,19.237923
+PHL,1994,G1112,Corporate income tax,Taxes,2.3379827,12.15298912610061,General government,19.237923
+PHL,1994,G1113,Other income taxes,Taxes,0.7333811999999997,3.812164114339518,General government,19.237923
+PHL,1994,G11412,VAT / sales tax,Taxes,2.4172281,12.5649119707365,General government,19.237923
+PHL,1994,G1142,Excise taxes,Taxes,1.8303868,9.514471974903019,General government,19.237923
+PHL,1994,G114X,Other goods & services taxes,Taxes,1.1803747,6.135665971276977,General government,19.237923
+PHL,1994,G115,Trade taxes (customs),Taxes,3.0855903,16.039103011113607,General government,19.237923
+PHL,1994,G11NEC,Other taxes,Taxes,1.3052107000000017,6.784571778212982,General government,19.237923
+PHL,1994,G121,Social contributions,Social contributions,1.3711665,7.127414400702551,General government,19.237923
+PHL,1994,G13,Grants (e.g. foreign aid),Grants,0.03792698,0.19714695730034074,General government,19.237923
+PHL,1994,G14X,Other non-tax revenue,Other revenue,3.1230516,16.23382933289075,General government,19.237923
+PHL,1995,G1111,Personal income tax,Taxes,1.7759833,9.30488856569978,General government,19.086561
+PHL,1995,G1112,Corporate income tax,Taxes,2.4244892,12.702597955027283,General government,19.086561
+PHL,1995,G1113,Other income taxes,Taxes,0.9026937999999998,4.729473085669264,General government,19.086561
+PHL,1995,G11412,VAT / sales tax,Taxes,2.4518915,12.846166505443199,General government,19.086561
+PHL,1995,G1142,Excise taxes,Taxes,1.7934144,9.396215124388462,General government,19.086561
+PHL,1995,G114X,Other goods & services taxes,Taxes,1.1412027,5.979089980393237,General government,19.086561
+PHL,1995,G115,Trade taxes (customs),Taxes,3.3928394,17.776063850552934,General government,19.086561
+PHL,1995,G11NEC,Other taxes,Taxes,1.158717700000001,6.070856115372233,General government,19.086561
+PHL,1995,G121,Social contributions,Social contributions,1.4472219,7.582412801595774,General government,19.086561
+PHL,1995,G13,Grants (e.g. foreign aid),Grants,0.04539223,0.23782298059819285,General government,19.086561
+PHL,1995,G14X,Other non-tax revenue,Other revenue,2.5527156,13.374413035259652,General government,19.086561
+PHL,1996,G1111,Personal income tax,Taxes,1.9283856,9.566555927977465,General government,20.157574
+PHL,1996,G1112,Corporate income tax,Taxes,2.7426478,13.606041016612213,General government,20.157574
+PHL,1996,G1113,Other income taxes,Taxes,0.8242417,4.088992534076807,General government,20.157574
+PHL,1996,G11412,VAT / sales tax,Taxes,2.1692697,10.76156133291853,General government,20.157574
+PHL,1996,G1142,Excise taxes,Taxes,1.9501436,9.674495503900939,General government,20.157574
+PHL,1996,G114X,Other goods & services taxes,Taxes,1.1629912999999994,5.769500309067446,General government,20.157574
+PHL,1996,G115,Trade taxes (customs),Taxes,3.6680689,18.196975895030942,General government,20.157574
+PHL,1996,G11NEC,Other taxes,Taxes,1.1337069,5.624222906862587,General government,20.157574
+PHL,1996,G121,Social contributions,Social contributions,1.3992648,6.941632921989359,General government,20.157574
+PHL,1996,G13,Grants (e.g. foreign aid),Grants,0.0229315,0.11376120899389379,General government,20.157574
+PHL,1996,G14X,Other non-tax revenue,Other revenue,3.1559223,15.656260442569824,General government,20.157574
+PHL,1997,G1111,Personal income tax,Taxes,2.1543675,10.43070782411189,General government,20.654087
+PHL,1997,G1112,Corporate income tax,Taxes,2.9531476,14.298126840976408,General government,20.654087
+PHL,1997,G1113,Other income taxes,Taxes,0.8120283999999995,3.931562737221506,General government,20.654087
+PHL,1997,G11412,VAT / sales tax,Taxes,2.810325,13.606628843870531,General government,20.654087
+PHL,1997,G1142,Excise taxes,Taxes,2.350227,11.378992283043171,General government,20.654087
+PHL,1997,G114X,Other goods & services taxes,Taxes,1.165914,5.644955320780502,General government,20.654087
+PHL,1997,G115,Trade taxes (customs),Taxes,2.2355449,10.823740926087787,General government,20.654087
+PHL,1997,G11NEC,Other taxes,Taxes,1.2256686000000012,5.934266579767972,General government,20.654087
+PHL,1997,G121,Social contributions,Social contributions,1.3160869,6.372040947072011,General government,20.654087
+PHL,1997,G13,Grants (e.g. foreign aid),Grants,0.0612972,0.29677999860105175,General government,20.654087
+PHL,1997,G14X,Other non-tax revenue,Other revenue,3.5694802,17.28219769846717,General government,20.654087
+PHL,1998,G1111,Personal income tax,Taxes,2.1581686,11.34182130094516,General government,19.028413
+PHL,1998,G1112,Corporate income tax,Taxes,2.4539429,12.89620368608974,General government,19.028413
+PHL,1998,G1113,Other income taxes,Taxes,1.4253330999999996,7.490551625355958,General government,19.028413
+PHL,1998,G11412,VAT / sales tax,Taxes,2.395844,12.590876594600465,General government,19.028413
+PHL,1998,G1142,Excise taxes,Taxes,2.1181641,11.13158569181172,General government,19.028413
+PHL,1998,G114X,Other goods & services taxes,Taxes,1.0804970000000003,5.678334811380049,General government,19.028413
+PHL,1998,G115,Trade taxes (customs),Taxes,1.6017217,8.417526459816944,General government,19.028413
+PHL,1998,G11NEC,Other taxes,Taxes,1.263095600000001,6.637945052675735,General government,19.028413
+PHL,1998,G121,Social contributions,Social contributions,1.8974323,9.971574082414767,General government,19.028413
+PHL,1998,G13,Grants (e.g. foreign aid),Grants,0.01299971,0.06831736305685746,General government,19.028413
+PHL,1998,G14X,Other non-tax revenue,Other revenue,2.621214,13.775263331852601,General government,19.028413
+PHL,1999,G1111,Personal income tax,Taxes,2.1321219,11.548967452152512,General government,18.46158
+PHL,1999,G1112,Corporate income tax,Taxes,2.3456476,12.705562372685941,General government,18.46158
+PHL,1999,G1113,Other income taxes,Taxes,1.0042483999999998,5.4396665056891145,General government,18.46158
+PHL,1999,G11412,VAT / sales tax,Taxes,2.7487204,14.8888684247686,General government,18.46158
+PHL,1999,G1142,Excise taxes,Taxes,1.9202386,10.401268844791149,General government,18.46158
+PHL,1999,G114X,Other goods & services taxes,Taxes,1.0833967,5.868385492438045,General government,18.46158
+PHL,1999,G115,Trade taxes (customs),Taxes,1.2172051,6.5931793498739655,General government,18.46158
+PHL,1999,G11NEC,Other taxes,Taxes,1.2578025,6.813081434854198,General government,18.46158
+PHL,1999,G121,Social contributions,Social contributions,2.0693413,11.208906639481997,General government,18.46158
+PHL,1999,G13,Grants (e.g. foreign aid),Grants,0.0087227,0.047247851257890425,General government,18.46158
+PHL,1999,G14X,Other non-tax revenue,Other revenue,2.6741351,14.484865632006596,General government,18.46158
+PHL,2000,G1111,Personal income tax,Taxes,2.2127811,12.618927046718145,General government,17.535414
+PHL,2000,G1112,Corporate income tax,Taxes,2.3158357,13.20662118385115,General government,17.535414
+PHL,2000,G1113,Other income taxes,Taxes,0.9844657999999997,5.614157726757975,General government,17.535414
+PHL,2000,G11412,VAT / sales tax,Taxes,2.5818001,14.723348419375787,General government,17.535414
+PHL,2000,G1142,Excise taxes,Taxes,1.7286946,9.858305027756973,General government,17.535414
+PHL,2000,G114X,Other goods & services taxes,Taxes,1.0726385999999997,6.116984748691988,General government,17.535414
+PHL,2000,G115,Trade taxes (customs),Taxes,1.2765192,7.2796638847534485,General government,17.535414
+PHL,2000,G11NEC,Other taxes,Taxes,1.0830671,6.176455828188603,General government,17.535414
+PHL,2000,G121,Social contributions,Social contributions,2.0061906,11.440794041132989,General government,17.535414
+PHL,2000,G13,Grants (e.g. foreign aid),Grants,0.03721378,0.2122207094739822,General government,17.535414
+PHL,2000,G14X,Other non-tax revenue,Other revenue,2.2362074,12.752521269244058,General government,17.535414
+PHL,2001,G1111,Personal income tax,Taxes,1.9937721,11.378413857273499,General government,17.522408
+PHL,2001,G1112,Corporate income tax,Taxes,2.4483297,13.972564158990021,General government,17.522408
+PHL,2001,G1113,Other income taxes,Taxes,1.1094170999999995,6.331419174807478,General government,17.522408
+PHL,2001,G11412,VAT / sales tax,Taxes,2.6460542,15.100973564820544,General government,17.522408
+PHL,2001,G1142,Excise taxes,Taxes,1.5999962,9.131143390794236,General government,17.522408
+PHL,2001,G114X,Other goods & services taxes,Taxes,1.0871193,6.204166116894436,General government,17.522408
+PHL,2001,G115,Trade taxes (customs),Taxes,0.95987003,5.477957310433589,General government,17.522408
+PHL,2001,G11NEC,Other taxes,Taxes,1.1423394,6.51930602232296,General government,17.522408
+PHL,2001,G121,Social contributions,Social contributions,2.0100393,11.471250412614523,General government,17.522408
+PHL,2001,G13,Grants (e.g. foreign aid),Grants,0.04947323,0.28234264377361834,General government,17.522408
+PHL,2001,G14X,Other non-tax revenue,Other revenue,2.4759971,14.130461406902523,General government,17.522408
+PHL,2002,G1111,Personal income tax,Taxes,1.9867774,11.79049357794158,General government,16.850672
+PHL,2002,G1112,Corporate income tax,Taxes,2.3159764,13.744118928906811,General government,16.850672
+PHL,2002,G1113,Other income taxes,Taxes,0.9035688,5.362212260733577,General government,16.850672
+PHL,2002,G11412,VAT / sales tax,Taxes,2.6505701,15.729759026821007,General government,16.850672
+PHL,2002,G1142,Excise taxes,Taxes,1.5370048,9.121326437307664,General government,16.850672
+PHL,2002,G114X,Other goods & services taxes,Taxes,0.9882037000000001,5.8644765027768635,General government,16.850672
+PHL,2002,G115,Trade taxes (customs),Taxes,0.84221361,4.998101025288487,General government,16.850672
+PHL,2002,G11NEC,Other taxes,Taxes,1.3290806,7.887404134387045,General government,16.850672
+PHL,2002,G121,Social contributions,Social contributions,2.0897085,12.40133627905166,General government,16.850672
+PHL,2002,G13,Grants (e.g. foreign aid),Grants,0.02417048,0.14343926461805206,General government,16.850672
+PHL,2002,G14X,Other non-tax revenue,Other revenue,2.1833975,12.957331909374297,General government,16.850672
+PHL,2003,G1111,Personal income tax,Taxes,1.9321461,11.419193636069565,General government,16.920162
+PHL,2003,G1112,Corporate income tax,Taxes,2.3775645,14.05166483411628,General government,16.920162
+PHL,2003,G1113,Other income taxes,Taxes,0.8565201,5.062126966012388,General government,16.920162
+PHL,2003,G11412,VAT / sales tax,Taxes,2.8637646,16.925160315527542,General government,16.920162
+PHL,2003,G1142,Excise taxes,Taxes,1.4580067,8.616978203660059,General government,16.920162
+PHL,2003,G114X,Other goods & services taxes,Taxes,0.8229240000000002,4.863570360320534,General government,16.920162
+PHL,2003,G115,Trade taxes (customs),Taxes,0.87775877,5.187649816123248,General government,16.920162
+PHL,2003,G11NEC,Other taxes,Taxes,1.364380229999999,8.063635580971397,General government,16.920162
+PHL,2003,G121,Social contributions,Social contributions,1.9539994,11.548349016341856,General government,16.920162
+PHL,2003,G13,Grants (e.g. foreign aid),Grants,0.02539313,0.15007616064638546,General government,16.920162
+PHL,2003,G14X,Other non-tax revenue,Other revenue,2.3877048,14.111595110210741,General government,16.920162
+PHL,2004,G1111,Personal income tax,Taxes,1.8968206,11.452250045644279,General government,16.562864
+PHL,2004,G1112,Corporate income tax,Taxes,2.460123,14.853246395067904,General government,16.562864
+PHL,2004,G1113,Other income taxes,Taxes,0.8658266000000006,5.227517414862554,General government,16.562864
+PHL,2004,G11412,VAT / sales tax,Taxes,2.6098186,15.757049022439595,General government,16.562864
+PHL,2004,G1142,Excise taxes,Taxes,1.4374173,8.678555230544667,General government,16.562864
+PHL,2004,G114X,Other goods & services taxes,Taxes,0.9382062000000002,5.664516716432618,General government,16.562864
+PHL,2004,G115,Trade taxes (customs),Taxes,0.86888676,5.245993446544028,General government,16.562864
+PHL,2004,G11NEC,Other taxes,Taxes,1.1025159400000004,6.6565537216268895,General government,16.562864
+PHL,2004,G121,Social contributions,Social contributions,1.8777574,11.337154009113398,General government,16.562864
+PHL,2004,G14X,Other non-tax revenue,Other revenue,2.5041023,15.118775955655979,General government,16.562864
+PHL,2005,G1111,Personal income tax,Taxes,1.9816795,11.577707893926135,General government,17.116337
+PHL,2005,G1112,Corporate income tax,Taxes,2.6174027,15.291839019061145,General government,17.116337
+PHL,2005,G1113,Other income taxes,Taxes,0.8667506,5.063879029724642,General government,17.116337
+PHL,2005,G11412,VAT / sales tax,Taxes,2.6476231,15.468397823669866,General government,17.116337
+PHL,2005,G1142,Excise taxes,Taxes,1.2913806,7.544725252838851,General government,17.116337
+PHL,2005,G114X,Other goods & services taxes,Taxes,0.9945811999999994,5.8107128879268926,General government,17.116337
+PHL,2005,G115,Trade taxes (customs),Taxes,0.98555097,5.757954929258521,General government,17.116337
+PHL,2005,G11NEC,Other taxes,Taxes,1.3861017,8.098121110842817,General government,17.116337
+PHL,2005,G121,Social contributions,Social contributions,1.823135,10.651432020764723,General government,17.116337
+PHL,2005,G14X,Other non-tax revenue,Other revenue,2.5206446,14.726542250248984,General government,17.116337
+PHL,2006,G1111,Personal income tax,Taxes,1.9909232,10.917585827406985,General government,18.235929
+PHL,2006,G1112,Corporate income tax,Taxes,2.9860644,16.374621770023346,General government,18.235929
+PHL,2006,G1113,Other income taxes,Taxes,0.778257,4.267712382516954,General government,18.235929
+PHL,2006,G11412,VAT / sales tax,Taxes,3.9675485,21.75676654586668,General government,18.235929
+PHL,2006,G1142,Excise taxes,Taxes,1.0535824,5.777508784992529,General government,18.235929
+PHL,2006,G114X,Other goods & services taxes,Taxes,1.0030890000000003,5.500619134895735,General government,18.235929
+PHL,2006,G115,Trade taxes (customs),Taxes,1.0448876,5.729829283717874,General government,18.235929
+PHL,2006,G11NEC,Other taxes,Taxes,1.1388719,6.245209114380738,General government,18.235929
+PHL,2006,G121,Social contributions,Social contributions,1.7915959,9.824538689528787,General government,18.235929
+PHL,2006,G14X,Other non-tax revenue,Other revenue,2.4783154,13.59028870972244,General government,18.235929
+PHL,2007,G1111,Personal income tax,Taxes,1.9680949,10.995623584095396,General government,17.898893
+PHL,2007,G1112,Corporate income tax,Taxes,3.3504193,18.718583881137228,General government,17.898893
+PHL,2007,G1113,Other income taxes,Taxes,0.6162685000000003,3.4430537128748706,General government,17.898893
+PHL,2007,G11412,VAT / sales tax,Taxes,3.8083838,21.27720300914699,General government,17.898893
+PHL,2007,G1142,Excise taxes,Taxes,0.94994744,5.3072971607797195,General government,17.898893
+PHL,2007,G114X,Other goods & services taxes,Taxes,0.9800091600000002,5.475250117423464,General government,17.898893
+PHL,2007,G115,Trade taxes (customs),Taxes,0.92974077,5.194403754466826,General government,17.898893
+PHL,2007,G11NEC,Other taxes,Taxes,1.1469612,6.408000762952212,General government,17.898893
+PHL,2007,G121,Social contributions,Social contributions,1.8078856,10.100544206840055,General government,17.898893
+PHL,2007,G14X,Other non-tax revenue,Other revenue,2.3390983,13.068396464518782,General government,17.898893
+PHL,2008,G1111,Personal income tax,Taxes,1.8749098,10.473987787022022,General government,17.90063
+PHL,2008,G1112,Corporate income tax,Taxes,3.5435997,19.795949639761286,General government,17.90063
+PHL,2008,G1113,Other income taxes,Taxes,0.5719035999999993,3.1948797332831265,General government,17.90063
+PHL,2008,G11412,VAT / sales tax,Taxes,3.6845174,20.58317165373509,General government,17.90063
+PHL,2008,G1142,Excise taxes,Taxes,0.95548551,5.33772001320624,General government,17.90063
+PHL,2008,G114X,Other goods & services taxes,Taxes,0.9171170900000004,5.123378841973721,General government,17.90063
+PHL,2008,G115,Trade taxes (customs),Taxes,1.0980719,6.134263989591428,General government,17.90063
+PHL,2008,G11NEC,Other taxes,Taxes,1.1669770000000017,6.51919513447293,General government,17.90063
+PHL,2008,G121,Social contributions,Social contributions,1.7670992,9.87171512957924,General government,17.90063
+PHL,2008,G14X,Other non-tax revenue,Other revenue,2.3193957,12.957061846426633,General government,17.90063
+PHL,2009,G1111,Personal income tax,Taxes,1.5563343,9.352733924219827,General government,16.640421
+PHL,2009,G1112,Corporate income tax,Taxes,3.2267511,19.39104245018801,General government,16.640421
+PHL,2009,G1113,Other income taxes,Taxes,0.6009232999999998,3.6112265428861434,General government,16.640421
+PHL,2009,G11412,VAT / sales tax,Taxes,3.6017382,21.644513681474763,General government,16.640421
+PHL,2009,G1142,Excise taxes,Taxes,0.81571592,4.902014918973505,General government,16.640421
+PHL,2009,G114X,Other goods & services taxes,Taxes,0.8911177799999997,5.355139632585015,General government,16.640421
+PHL,2009,G115,Trade taxes (customs),Taxes,0.81620457,4.9049514432357215,General government,16.640421
+PHL,2009,G11NEC,Other taxes,Taxes,1.0047178300000006,6.037814968743883,General government,16.640421
+PHL,2009,G121,Social contributions,Social contributions,1.7960958,10.793571869365564,General government,16.640421
+PHL,2009,G14X,Other non-tax revenue,Other revenue,2.3285464,13.993314231653153,General government,16.640421
+PHL,2010,G1111,Personal income tax,Taxes,1.7029824,10.581093831723951,General government,16.094578
+PHL,2010,G1112,Corporate income tax,Taxes,2.9788442,18.50837095573429,General government,16.094578
+PHL,2010,G1113,Other income taxes,Taxes,0.5229561,3.249268791017696,General government,16.094578
+PHL,2010,G11412,VAT / sales tax,Taxes,3.50779,21.794855385459627,General government,16.094578
+PHL,2010,G1142,Excise taxes,Taxes,0.93733134,5.8238951030589305,General government,16.094578
+PHL,2010,G114X,Other goods & services taxes,Taxes,0.8412937600000002,5.227187441634072,General government,16.094578
+PHL,2010,G115,Trade taxes (customs),Taxes,0.86005023,5.343726502179804,General government,16.094578
+PHL,2010,G11NEC,Other taxes,Taxes,1.0403693,6.46409803351166,General government,16.094578
+PHL,2010,G121,Social contributions,Social contributions,1.7926579,11.138272156001856,General government,16.094578
+PHL,2010,G14X,Other non-tax revenue,Other revenue,1.9059837,11.84239624052274,General government,16.094578
+PHL,2011,G1111,Personal income tax,Taxes,1.9076491,11.327531636080169,General government,16.840819
+PHL,2011,G1112,Corporate income tax,Taxes,3.3263079,19.751461612407333,General government,16.840819
+PHL,2011,G1113,Other income taxes,Taxes,0.40345919999999946,2.395721965778502,General government,16.840819
+PHL,2011,G11412,VAT / sales tax,Taxes,3.7783948,22.435932599239976,General government,16.840819
+PHL,2011,G1142,Excise taxes,Taxes,0.86768612,5.152279826770895,General government,16.840819
+PHL,2011,G114X,Other goods & services taxes,Taxes,0.8614705799999999,5.115372239319239,General government,16.840819
+PHL,2011,G115,Trade taxes (customs),Taxes,0.41592894,2.4697667019638416,General government,16.840819
+PHL,2011,G11NEC,Other taxes,Taxes,1.0867993600000008,6.453364055512982,General government,16.840819
+PHL,2011,G121,Social contributions,Social contributions,1.8354776,10.898980625585963,General government,16.840819
+PHL,2011,G14X,Other non-tax revenue,Other revenue,2.3551322,13.98466547262339,General government,16.840819
+PHL,2012,G1111,Personal income tax,Taxes,2.0093772,11.304709600858883,General government,17.774691
+PHL,2012,G1112,Corporate income tax,Taxes,3.3507245,18.851098452288145,General government,17.774691
+PHL,2012,G1113,Other income taxes,Taxes,0.4489215000000004,2.5256219643987086,General government,17.774691
+PHL,2012,G11412,VAT / sales tax,Taxes,4.0741008,22.92079676659358,General government,17.774691
+PHL,2012,G1142,Excise taxes,Taxes,0.88490607,4.978461060166953,General government,17.774691
+PHL,2012,G114X,Other goods & services taxes,Taxes,0.9152727300000003,5.149303186198851,General government,17.774691
+PHL,2012,G115,Trade taxes (customs),Taxes,0.37299871,2.0984821058211365,General government,17.774691
+PHL,2012,G11NEC,Other taxes,Taxes,1.0894808,6.1293937542993016,General government,17.774691
+PHL,2012,G121,Social contributions,Social contributions,1.9470572,10.954098723854045,General government,17.774691
+PHL,2012,G14X,Other non-tax revenue,Other revenue,2.6809562,15.08299750471049,General government,17.774691
+PHL,2013,G1111,Personal income tax,Taxes,2.0462097,11.339630635256263,General government,18.044765
+PHL,2013,G1112,Corporate income tax,Taxes,3.5226211,19.521568166723146,General government,18.044765
+PHL,2013,G1113,Other income taxes,Taxes,0.3923748000000007,2.1744522580371686,General government,18.044765
+PHL,2013,G11412,VAT / sales tax,Taxes,4.0663979,22.53505601208993,General government,18.044765
+PHL,2013,G1142,Excise taxes,Taxes,1.2089364,6.6996516718283665,General government,18.044765
+PHL,2013,G114X,Other goods & services taxes,Taxes,0.9157550999999999,5.074907320765884,General government,18.044765
+PHL,2013,G115,Trade taxes (customs),Taxes,0.28928315,1.6031416867994677,General government,18.044765
+PHL,2013,G11NEC,Other taxes,Taxes,1.1029078499999987,6.1120654660783815,General government,18.044765
+PHL,2013,G121,Social contributions,Social contributions,1.9631482,10.87932261794487,General government,18.044765
+PHL,2013,G14X,Other non-tax revenue,Other revenue,2.5344674,14.045444205009042,General government,18.044765
+PHL,2014,G1111,Personal income tax,Taxes,2.1477617,11.844165219069678,General government,18.1335
+PHL,2014,G1112,Corporate income tax,Taxes,3.4462416,19.004834146744972,General government,18.1335
+PHL,2014,G1113,Other income taxes,Taxes,0.34882569999999946,1.9236534590674685,General government,18.1335
+PHL,2014,G11412,VAT / sales tax,Taxes,4.2238822,23.293253922298508,General government,18.1335
+PHL,2014,G1142,Excise taxes,Taxes,1.2549781,6.920771500261946,General government,18.1335
+PHL,2014,G114X,Other goods & services taxes,Taxes,0.8518302,4.697549838696335,General government,18.1335
+PHL,2014,G115,Trade taxes (customs),Taxes,0.42613465,2.34998566189649,General government,18.1335
+PHL,2014,G11NEC,Other taxes,Taxes,1.1367019,6.268519039347065,General government,18.1335
+PHL,2014,G121,Social contributions,Social contributions,2.1531135,11.873678550748613,General government,18.1335
+PHL,2014,G14X,Other non-tax revenue,Other revenue,2.1422665,11.813861085835606,General government,18.1335
+PHL,2015,G1111,Personal income tax,Taxes,2.2174613,11.97802864405809,General government,18.51274
+PHL,2015,G1112,Corporate income tax,Taxes,3.5123065,18.97237523996988,General government,18.51274
+PHL,2015,G1113,Other income taxes,Taxes,0.3387319,1.8297232068294587,General government,18.51274
+PHL,2015,G11412,VAT / sales tax,Taxes,4.0298412,21.767934946420677,General government,18.51274
+PHL,2015,G1142,Excise taxes,Taxes,1.3635874,7.36567034377407,General government,18.51274
+PHL,2015,G114X,Other goods & services taxes,Taxes,0.8826299000000006,4.767689169728525,General government,18.51274
+PHL,2015,G115,Trade taxes (customs),Taxes,0.40976999,2.213448630510664,General government,18.51274
+PHL,2015,G11NEC,Other taxes,Taxes,1.1235851,6.069253389827761,General government,18.51274
+PHL,2015,G121,Social contributions,Social contributions,1.6965598,9.164282542724631,General government,18.51274
+PHL,2015,G14X,Other non-tax revenue,Other revenue,2.9370908,15.865240909773483,General government,18.51274
+PHL,2016,G1111,Personal income tax,Taxes,2.2722945,12.439325092034696,General government,18.267024
+PHL,2016,G1112,Corporate income tax,Taxes,3.5307792,19.3287051027031,General government,18.267024
+PHL,2016,G1113,Other income taxes,Taxes,0.2846480999999996,1.5582620354579906,General government,18.267024
+PHL,2016,G11412,VAT / sales tax,Taxes,4.0569714,22.20926298668026,General government,18.267024
+PHL,2016,G1142,Excise taxes,Taxes,1.3797616,7.553291658236175,General government,18.267024
+PHL,2016,G114X,Other goods & services taxes,Taxes,0.8690774999999997,4.757630471170344,General government,18.267024
+PHL,2016,G115,Trade taxes (customs),Taxes,0.38003946,2.0804672945083995,General government,18.267024
+PHL,2016,G11NEC,Other taxes,Taxes,1.1306935,6.189806834435648,General government,18.267024
+PHL,2016,G121,Social contributions,Social contributions,2.2702632,12.428205054090913,General government,18.267024
+PHL,2016,G14X,Other non-tax revenue,Other revenue,2.0919796,11.452219036883076,General government,18.267024
+PHL,2017,G1111,Personal income tax,Taxes,2.3606372,12.619787189455273,General government,18.70584
+PHL,2017,G1112,Corporate income tax,Taxes,3.5538144,18.99842188321936,General government,18.70584
+PHL,2017,G1113,Other income taxes,Taxes,0.27789059999999965,1.485582042827265,General government,18.70584
+PHL,2017,G11412,VAT / sales tax,Taxes,4.2117886,22.515901985690036,General government,18.70584
+PHL,2017,G1142,Excise taxes,Taxes,1.630547,8.716780427930528,General government,18.70584
+PHL,2017,G114X,Other goods & services taxes,Taxes,0.9291390999999996,4.9671070638902055,General government,18.70584
+PHL,2017,G115,Trade taxes (customs),Taxes,0.35086863,1.8757170487933181,General government,18.70584
+PHL,2017,G11NEC,Other taxes,Taxes,1.1675944699999998,6.2418713620986805,General government,18.70584
+PHL,2017,G121,Social contributions,Social contributions,2.249374,12.024982572287586,General government,18.70584
+PHL,2017,G14X,Other non-tax revenue,Other revenue,1.9739503,10.552588389508303,General government,18.70584
+PHL,2018,G1111,Personal income tax,Taxes,2.1152649,10.886723494251038,General government,19.429766
+PHL,2018,G1112,Corporate income tax,Taxes,3.2401826,16.67638508873447,General government,19.429766
+PHL,2018,G1113,Other income taxes,Taxes,0.3131645999999999,1.6117775170323714,General government,19.429766
+PHL,2018,G11412,VAT / sales tax,Taxes,4.2360193,21.801700030767226,General government,19.429766
+PHL,2018,G1142,Excise taxes,Taxes,2.0992792,10.804449214674019,General government,19.429766
+PHL,2018,G114X,Other goods & services taxes,Taxes,1.1187463000000006,5.757898988593072,General government,19.429766
+PHL,2018,G115,Trade taxes (customs),Taxes,0.39991284,2.058248359758939,General government,19.429766
+PHL,2018,G11NEC,Other taxes,Taxes,1.4381714,7.401897686261379,General government,19.429766
+PHL,2018,G121,Social contributions,Social contributions,2.373812,12.217398809640837,General government,19.429766
+PHL,2018,G14X,Other non-tax revenue,Other revenue,2.0949332,10.782081472314179,General government,19.429766
+PHL,2019,G1111,Personal income tax,Taxes,2.4510957,12.123886442744773,General government,20.217079
+PHL,2019,G1112,Corporate income tax,Taxes,3.0259766,14.967427292538158,General government,20.217079
+PHL,2019,G1113,Other income taxes,Taxes,0.49030019999999963,2.4251782366780072,General government,20.217079
+PHL,2019,G11412,VAT / sales tax,Taxes,4.1663365,20.60800425224633,General government,20.217079
+PHL,2019,G1142,Excise taxes,Taxes,2.2891258,11.32273262621173,General government,20.217079
+PHL,2019,G114X,Other goods & services taxes,Taxes,1.2155586999999999,6.012533759204285,General government,20.217079
+PHL,2019,G115,Trade taxes (customs),Taxes,0.36811575,1.8208157073531743,General government,20.217079
+PHL,2019,G11NEC,Other taxes,Taxes,1.4209327499999993,7.028378085676963,General government,20.217079
+PHL,2019,G121,Social contributions,Social contributions,2.5785365,12.754248524230428,General government,20.217079
+PHL,2019,G14X,Other non-tax revenue,Other revenue,2.2097738,10.930232799703656,General government,20.217079
+PHL,2020,G1111,Personal income tax,Taxes,2.4452317,12.0014517190291,General government,20.374466
+PHL,2020,G1112,Corporate income tax,Taxes,2.819552,13.83865471615305,General government,20.374466
+PHL,2020,G1113,Other income taxes,Taxes,0.5593520999999999,2.7453583323361697,General government,20.374466
+PHL,2020,G11412,VAT / sales tax,Taxes,3.7412907,18.362644203779375,General government,20.374466
+PHL,2020,G1142,Excise taxes,Taxes,2.377323,11.668148750499768,General government,20.374466
+PHL,2020,G114X,Other goods & services taxes,Taxes,1.2699604999999998,6.233098330037213,General government,20.374466
+PHL,2020,G115,Trade taxes (customs),Taxes,0.35246721,1.729945756615167,General government,20.374466
+PHL,2020,G11NEC,Other taxes,Taxes,1.4434231,7.084470827358125,General government,20.374466
+PHL,2020,G121,Social contributions,Social contributions,2.8052295,13.768358395258062,General government,20.374466
+PHL,2020,G14X,Other non-tax revenue,Other revenue,2.5592936,12.561279397457582,General government,20.374466
+PHL,2021,G1111,Personal income tax,Taxes,2.635735,12.571017171942636,General government,20.96676
+PHL,2021,G1112,Corporate income tax,Taxes,2.4267416,11.57423273791468,General government,20.96676
+PHL,2021,G1113,Other income taxes,Taxes,0.38477870000000003,1.8351843584798033,General government,20.96676
+PHL,2021,G11412,VAT / sales tax,Taxes,3.9345042,18.765437292171036,General government,20.96676
+PHL,2021,G1142,Excise taxes,Taxes,2.4907345,11.879443938882305,General government,20.96676
+PHL,2021,G114X,Other goods & services taxes,Taxes,1.2126552,5.783703347584462,General government,20.96676
+PHL,2021,G115,Trade taxes (customs),Taxes,0.38587132,1.8403955594474302,General government,20.96676
+PHL,2021,G11NEC,Other taxes,Taxes,1.6448147,7.84486825813812,General government,20.96676
+PHL,2021,G121,Social contributions,Social contributions,3.7947052,18.098672374749366,General government,20.96676
+PHL,2021,G14X,Other non-tax revenue,Other revenue,2.0543963,9.79834891037051,General government,20.96676
+PHL,2022,G1111,Personal income tax,Taxes,2.9725431,14.567196901956311,General government,20.405731
+PHL,2022,G1112,Corporate income tax,Taxes,2.2475658,11.014384806969815,General government,20.405731
+PHL,2022,G1113,Other income taxes,Taxes,0.3961998999999996,1.9416108569915753,General government,20.405731
+PHL,2022,G11412,VAT / sales tax,Taxes,4.6368586,22.72331467043471,General government,20.405731
+PHL,2022,G1142,Excise taxes,Taxes,2.3409912,11.472223819445036,General government,20.405731
+PHL,2022,G114X,Other goods & services taxes,Taxes,0.9715409000000004,4.761117707125543,General government,20.405731
+PHL,2022,G115,Trade taxes (customs),Taxes,0.43539949,2.1337117372129466,General government,20.405731
+PHL,2022,G11NEC,Other taxes,Taxes,1.5465981,7.579233771544478,General government,20.405731
+PHL,2022,G121,Social contributions,Social contributions,2.8019589,13.73123471531461,General government,20.405731
+PHL,2022,G13,Grants (e.g. foreign aid),Grants,0.0050299,0.024649447033131346,General government,20.405731
+PHL,2022,G14X,Other non-tax revenue,Other revenue,2.0510457,10.051321565971849,General government,20.405731
+PHL,2023,G1111,Personal income tax,Taxes,2.8769949,14.184745469896042,General government,20.282316
+PHL,2023,G1112,Corporate income tax,Taxes,2.2658134,11.171374117235919,General government,20.282316
+PHL,2023,G1113,Other income taxes,Taxes,0.6327497000000002,3.1197112795205446,General government,20.282316
+PHL,2023,G11412,VAT / sales tax,Taxes,4.1428011,20.42568067670378,General government,20.282316
+PHL,2023,G1142,Excise taxes,Taxes,2.1450619,10.576020509689327,General government,20.282316
+PHL,2023,G114X,Other goods & services taxes,Taxes,1.0751069000000006,5.300710727512581,General government,20.282316
+PHL,2023,G115,Trade taxes (customs),Taxes,0.43298133,2.134772626558032,General government,20.282316
+PHL,2023,G11NEC,Other taxes,Taxes,1.5276707700000005,7.53203317609291,General government,20.282316
+PHL,2023,G121,Social contributions,Social contributions,2.7829613,13.721121887658194,General government,20.282316
+PHL,2023,G14X,Other non-tax revenue,Other revenue,2.3975057,11.820670282427312,General government,20.282316
+PHL,2024,G1111,Personal income tax,Taxes,2.8912585,13.634097134468986,General government,21.206087
+PHL,2024,G1112,Corporate income tax,Taxes,2.2071463,10.408079057678108,General government,21.206087
+PHL,2024,G1113,Other income taxes,Taxes,0.6973510999999997,3.288447793315191,General government,21.206087
+PHL,2024,G11412,VAT / sales tax,Taxes,4.5410627,21.41395864310092,General government,21.206087
+PHL,2024,G1142,Excise taxes,Taxes,2.0266676,9.557008796578078,General government,21.206087
+PHL,2024,G114X,Other goods & services taxes,Taxes,1.0638356999999998,5.016652530002352,General government,21.206087
+PHL,2024,G115,Trade taxes (customs),Taxes,0.41782673,1.9703150798164695,General government,21.206087
+PHL,2024,G11NEC,Other taxes,Taxes,1.5106475,7.123650393398838,General government,21.206087
+PHL,2024,G121,Social contributions,Social contributions,2.7438549,12.938996713537957,General government,21.206087
+PHL,2024,G14X,Other non-tax revenue,Other revenue,3.1046738,14.64048412137515,General government,21.206087

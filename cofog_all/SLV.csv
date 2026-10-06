@@ -1,0 +1,294 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+SLV,2005,GF02,Defence,Government spending,3.098878143144738,0.7667709892502381,General government,24.74350244931283
+SLV,2005,GF03,Public order and safety,Government spending,11.04267490937823,2.732344536671656,General government,24.74350244931283
+SLV,2005,GF04,Economic affairs,Government spending,12.28552577069271,3.039869369982311,General government,24.74350244931283
+SLV,2005,GF05,Environmental protection,Government spending,0.6021777403271495,0.1489998639270649,General government,24.74350244931283
+SLV,2005,GF06,Housing and community amenities,Government spending,9.863066459148335,2.440468090896721,General government,24.74350244931283
+SLV,2005,GF08,"Recreation, culture and religion",Government spending,0.6984161919776072,0.1728126275683766,General government,24.74350244931283
+SLV,2005,GF09,Education,Government spending,14.08380998153269,3.484827867737107,General government,24.74350244931283
+SLV,2005,GF10,Social protection,Government spending,10.84194899593585,2.682677915362634,General government,24.74350244931283
+SLV,2005,GF072,Outpatient services,Health,0.1044874617919255,0.0258538576677098,General government,24.74350244931283
+SLV,2005,GF073,Hospital services,Health,12.92069955158573,3.197033610014968,General government,24.74350244931283
+SLV,2005,GF07_rest,Health (not broken down),Health,2.1639903271117227,0.5354469995917812,General government,24.74350244931283
+SLV,2005,UNCL,Unclassified,Unclassified,22.294324467373315,,General government,24.74350244931283
+SLV,2006,GF01,General public services,Government spending,13.77265849365408,2.7875,Central government (budgetary),20.239375
+SLV,2006,GF02,Defence,Government spending,3.514189543896489,0.71125,Central government (budgetary),20.239375
+SLV,2006,GF03,Public order and safety,Government spending,12.44171324460365,2.518125,Central government (budgetary),20.239375
+SLV,2006,GF04,Economic affairs,Government spending,13.65531297285613,2.76375,Central government (budgetary),20.239375
+SLV,2006,GF05,Environmental protection,Government spending,0.7874502053546614,0.159375,Central government (budgetary),20.239375
+SLV,2006,GF06,Housing and community amenities,Government spending,1.457554889911373,0.295,Central government (budgetary),20.239375
+SLV,2006,GF08,"Recreation, culture and religion",Government spending,0.7226013649136893,0.14625,Central government (budgetary),20.239375
+SLV,2006,GF09,Education,Government spending,16.60130315288886,3.36,Central government (budgetary),20.239375
+SLV,2006,GF10,Social protection,Government spending,12.46950560479264,2.52375,Central government (budgetary),20.239375
+SLV,2006,GF0170,Interest on public debt,Government spending,15.07581138251552,3.05125,Central government (budgetary),20.239375
+SLV,2006,GF072,Outpatient services,Health,0.0401445202729827,0.008125,Central government (budgetary),20.239375
+SLV,2006,GF073,Hospital services,Health,6.676342525399129,1.35125,Central government (budgetary),20.239375
+SLV,2006,GF0740,Public health services,Health,0.5249668035697743,0.10625,Central government (budgetary),20.239375
+SLV,2006,GF07_rest,Health (not broken down),Health,2.260445295371028,0.4575,Central government (budgetary),20.239375
+SLV,2007,GF01,General public services,Government spending,14.288074630469872,3.3041382553491645,General government,23.12514695509052
+SLV,2007,GF02,Defence,Government spending,3.014704947827303,0.6971549494474489,General government,23.12514695509052
+SLV,2007,GF03,Public order and safety,Government spending,10.65314370686697,2.463555137549965,General government,23.12514695509052
+SLV,2007,GF04,Economic affairs,Government spending,7.079218616946912,1.6370797084411,General government,23.12514695509052
+SLV,2007,GF05,Environmental protection,Government spending,0.1601403134174705,0.0370326828121326,General government,23.12514695509052
+SLV,2007,GF06,Housing and community amenities,Government spending,4.753371207788411,1.099224077122032,General government,23.12514695509052
+SLV,2007,GF08,"Recreation, culture and religion",Government spending,0.7473214626148625,0.1728191864566189,General government,23.12514695509052
+SLV,2007,GF09,Education,Government spending,13.75427358574497,3.180695979308723,General government,23.12514695509052
+SLV,2007,GF10,Social protection,Government spending,20.03279063560453,4.632612273689161,General government,23.12514695509052
+SLV,2007,GF0170,Interest on public debt,Government spending,11.13610655685617,2.57524100634846,General government,23.12514695509052
+SLV,2007,GF072,Outpatient services,Health,0.0127095486839262,0.0029391018104867,General government,23.12514695509052
+SLV,2007,GF073,Hospital services,Health,9.549954881102172,2.208441100399718,General government,23.12514695509052
+SLV,2007,GF0740,Public health services,Health,2.066572616006406,0.4778979543851399,General government,23.12514695509052
+SLV,2007,GF07_rest,Health (not broken down),Health,2.3131378604745763,0.5349165295085823,General government,23.12514695509052
+SLV,2008,GF01,General public services,Government spending,16.909760830226524,4.3120031133596495,General government,25.50008339356202
+SLV,2008,GF02,Defence,Government spending,2.577016155405847,0.6571412686940568,General government,25.50008339356202
+SLV,2008,GF03,Public order and safety,Government spending,10.01155514858177,2.552954911880803,General government,25.50008339356202
+SLV,2008,GF04,Economic affairs,Government spending,6.989774783613491,1.782398398843609,General government,25.50008339356202
+SLV,2008,GF05,Environmental protection,Government spending,0.1351734362395622,0.0344693389670317,General government,25.50008339356202
+SLV,2008,GF06,Housing and community amenities,Government spending,5.367693548738745,1.368766331239228,General government,25.50008339356202
+SLV,2008,GF08,"Recreation, culture and religion",Government spending,0.6671463143436458,0.1701228665147051,General government,25.50008339356202
+SLV,2008,GF09,Education,Government spending,13.09002114810212,3.337966309000945,General government,25.50008339356202
+SLV,2008,GF10,Social protection,Government spending,21.28545577430397,5.427808973147273,General government,25.50008339356202
+SLV,2008,GF0170,Interest on public debt,Government spending,9.778271960232848,2.493467504308667,General government,25.50008339356202
+SLV,2008,GF072,Outpatient services,Health,0.0545054178385331,0.0138989270028353,General government,25.50008339356202
+SLV,2008,GF073,Hospital services,Health,10.36257003946192,2.642464001779063,General government,25.50008339356202
+SLV,2008,GF0740,Public health services,Health,2.871345411733926,0.732195474509368,General government,25.50008339356202
+SLV,2008,GF07_rest,Health (not broken down),Health,1.6983888198486916,0.43309056540834945,General government,25.50008339356202
+SLV,2009,GF01,General public services,Government spending,13.120253927437822,3.7103738211566872,General government,28.27974093852971
+SLV,2009,GF02,Defence,Government spending,2.675880911245932,0.7567321895239177,General government,28.27974093852971
+SLV,2009,GF03,Public order and safety,Government spending,10.50464060428302,2.970685149414839,General government,28.27974093852971
+SLV,2009,GF04,Economic affairs,Government spending,8.704648639961428,2.461652084990342,General government,28.27974093852971
+SLV,2009,GF05,Environmental protection,Government spending,0.5403993732170839,0.1528235427792296,General government,28.27974093852971
+SLV,2009,GF06,Housing and community amenities,Government spending,1.43035075736269,0.4044994886944665,General government,28.27974093852971
+SLV,2009,GF08,"Recreation, culture and religion",Government spending,0.6549077905902206,0.185206226565163,General government,28.27974093852971
+SLV,2009,GF09,Education,Government spending,16.90505845956045,4.780706737870697,General government,28.27974093852971
+SLV,2009,GF10,Social protection,Government spending,20.94700470087187,5.923758663788206,General government,28.27974093852971
+SLV,2009,GF0170,Interest on public debt,Government spending,9.600626782916148,2.715032382683786,General government,28.27974093852971
+SLV,2009,GF07,Health (no breakdown),Health,14.91622805255334,4.218270651062379,General government,28.27974093852971
+SLV,2010,GF01,General public services,Government spending,15.44029942828939,4.069817866435386,General government,26.35841283607979
+SLV,2010,GF02,Defence,Government spending,2.942870069510139,0.7756938421509108,General government,26.35841283607979
+SLV,2010,GF03,Public order and safety,Government spending,11.65425903837453,3.071877710320902,General government,26.35841283607979
+SLV,2010,GF04,Economic affairs,Government spending,7.962818245383128,2.09887250650477,General government,26.35841283607979
+SLV,2010,GF05,Environmental protection,Government spending,0.7424011845514745,0.1956851691240243,General government,26.35841283607979
+SLV,2010,GF06,Housing and community amenities,Government spending,1.069386747830379,0.2818733738074588,General government,26.35841283607979
+SLV,2010,GF08,"Recreation, culture and religion",Government spending,0.6436885616748242,0.1696660884648742,General government,26.35841283607979
+SLV,2010,GF09,Education,Government spending,15.47114712293835,4.07794882914137,General government,26.35841283607979
+SLV,2010,GF10,Social protection,Government spending,20.18878789125159,5.321444058976583,General government,26.35841283607979
+SLV,2010,GF0170,Interest on public debt,Government spending,10.2887344219142,2.711947094535993,General government,26.35841283607979
+SLV,2010,GF072,Outpatient services,Health,0.0,0.0,General government,26.35841283607979
+SLV,2010,GF073,Hospital services,Health,7.327355735614692,1.931374674761492,General government,26.35841283607979
+SLV,2010,GF0740,Public health services,Health,3.829227162423395,1.009323503902862,General government,26.35841283607979
+SLV,2010,GF07_rest,Health (not broken down),Health,2.439024390243903,0.642888117953166,General government,26.35841283607979
+SLV,2011,GF01,General public services,Government spending,21.97480286927079,6.10382567540919,General government,27.77647522811083
+SLV,2011,GF02,Defence,Government spending,2.807861896388531,0.7799250640899231,General government,27.77647522811083
+SLV,2011,GF03,Public order and safety,Government spending,10.33158286907562,2.869749556300532,General government,27.77647522811083
+SLV,2011,GF04,Economic affairs,Government spending,6.765846744015853,1.879313744823506,General government,27.77647522811083
+SLV,2011,GF05,Environmental protection,Government spending,0.3177037164687402,0.088246894103727,General government,27.77647522811083
+SLV,2011,GF06,Housing and community amenities,Government spending,3.042146201270507,0.8450009859988168,General government,27.77647522811083
+SLV,2011,GF08,"Recreation, culture and religion",Government spending,0.9016395975760896,0.2504436994675606,General government,27.77647522811083
+SLV,2011,GF09,Education,Government spending,12.53421031118572,3.481561822125813,General government,27.77647522811083
+SLV,2011,GF10,Social protection,Government spending,16.26501037832143,4.517846578584106,General government,27.77647522811083
+SLV,2011,GF0170,Interest on public debt,Government spending,9.389121006254948,2.607966870439755,General government,27.77647522811083
+SLV,2011,GF07,Health (no breakdown),Health,15.56570722587068,4.323604811674226,General government,27.77647522811083
+SLV,2012,GF01,General public services,Government spending,36.40586506162502,9.128825686477137,General government,25.07515113574301
+SLV,2012,GF02,Defence,Government spending,3.022212755984687,0.7578244162068642,General government,25.07515113574301
+SLV,2012,GF03,Public order and safety,Government spending,9.880874571732104,2.477644232395025,General government,25.07515113574301
+SLV,2012,GF04,Economic affairs,Government spending,11.83159341232623,2.966789929907416,General government,25.07515113574301
+SLV,2012,GF05,Environmental protection,Government spending,0.5555874524306025,0.1393143933881979,General government,25.07515113574301
+SLV,2012,GF08,"Recreation, culture and religion",Government spending,0.5517633665850217,0.1383554980828579,General government,25.07515113574301
+SLV,2012,GF09,Education,Government spending,16.00487081546458,4.013245546058169,General government,25.07515113574301
+SLV,2012,GF0170,Interest on public debt,Government spending,9.727789296557054,2.439257868278313,General government,25.07515113574301
+SLV,2012,GF072,Outpatient services,Health,0.1718499993302101,0.0430916470588235,General government,25.07515113574301
+SLV,2012,GF073,Hospital services,Health,6.434967780410615,1.613577896474329,General government,25.07515113574301
+SLV,2012,GF0740,Public health services,Health,6.310550728078279,1.582380132563359,General government,25.07515113574301
+SLV,2012,GF075,Health R&D,Health,0.0,0.0,General government,25.07515113574301
+SLV,2012,GF0760,Other health,Health,0.0,0.0,General government,25.07515113574301
+SLV,2012,GF07_rest,Health (not broken down),Health,0.08821697773238668,0.022120540493781427,General government,25.07515113574301
+SLV,2013,GF01,General public services,Government spending,34.142515068945585,9.401573370924467,General government,27.53626483561457
+SLV,2013,GF02,Defence,Government spending,2.686813640492115,0.7398481196853258,General government,27.53626483561457
+SLV,2013,GF03,Public order and safety,Government spending,9.140450829824127,2.516938747669501,General government,27.53626483561457
+SLV,2013,GF04,Economic affairs,Government spending,10.65973082321856,2.9352917102451,General government,27.53626483561457
+SLV,2013,GF05,Environmental protection,Government spending,0.4888118239616877,0.1346005183938884,General government,27.53626483561457
+SLV,2013,GF08,"Recreation, culture and religion",Government spending,0.5003715630418628,0.1377836387613114,General government,27.53626483561457
+SLV,2013,GF09,Education,Government spending,14.03022046073817,3.863398663089446,General government,27.53626483561457
+SLV,2013,GF0170,Interest on public debt,Government spending,9.336966394187105,2.571051793915693,General government,27.53626483561457
+SLV,2013,GF072,Outpatient services,Health,0.6704648666501528,0.1846209813105361,General government,27.53626483561457
+SLV,2013,GF073,Hospital services,Health,7.234745272892412,1.992178618525761,General government,27.53626483561457
+SLV,2013,GF0740,Public health services,Health,3.360581289736603,0.9253785639579828,General government,27.53626483561457
+SLV,2013,GF07_rest,Health (not broken down),Health,0.5267938237965524,0.145059342458278,General government,27.53626483561457
+SLV,2013,UNCL,Unclassified,Unclassified,7.221534142515068,,General government,27.53626483561457
+SLV,2014,GF01,General public services,Government spending,24.54177400331394,6.237108839020935,General government,25.41425423516133
+SLV,2014,GF02,Defence,Government spending,2.856226048712689,0.7258885495507458,General government,25.41425423516133
+SLV,2014,GF03,Public order and safety,Government spending,10.97034626880563,2.788031691231797,General government,25.41425423516133
+SLV,2014,GF04,Economic affairs,Government spending,8.708006246075271,2.213074846191298,General government,25.41425423516133
+SLV,2014,GF05,Environmental protection,Government spending,0.5991108297299788,0.1522595494179613,General government,25.41425423516133
+SLV,2014,GF06,Housing and community amenities,Government spending,1.27136891192699,0.3231089275439295,General government,25.41425423516133
+SLV,2014,GF08,"Recreation, culture and religion",Government spending,0.287364206120484,0.0730314699243128,General government,25.41425423516133
+SLV,2014,GF09,Education,Government spending,15.58036477547788,3.959633514805471,General government,25.41425423516133
+SLV,2014,GF10,Social protection,Government spending,14.84540904830912,3.772849997786925,General government,25.41425423516133
+SLV,2014,GF0170,Interest on public debt,Government spending,11.08864382569765,2.818096133094321,General government,25.41425423516133
+SLV,2014,GF0712,Medical products,Health,0.2211833586503119,0.0562121010932589,General government,25.41425423516133
+SLV,2014,GF072,Outpatient services,Health,0.9352398708284843,0.2376842384809454,General government,25.41425423516133
+SLV,2014,GF073,Hospital services,Health,2.467848970137732,0.6271854114106139,General government,25.41425423516133
+SLV,2014,GF0740,Public health services,Health,5.331041423847281,1.354844420838313,General government,25.41425423516133
+SLV,2014,GF075,Health R&D,Health,0.033090423735086,0.0084096844155269,General government,25.41425423516133
+SLV,2014,GF0760,Other health,Health,0.2629817886314732,0.0668348603549772,General government,25.41425423516133
+SLV,2015,GF01,General public services,Government spending,12.25047656727692,2.9063913303182862,General government,23.72472053929516
+SLV,2015,GF02,Defence,Government spending,2.949322015609826,0.6997184060073385,General government,23.72472053929516
+SLV,2015,GF03,Public order and safety,Government spending,12.26666187102111,2.910231248400034,General government,23.72472053929516
+SLV,2015,GF04,Economic affairs,Government spending,15.04693738085818,3.569843843331342,General government,23.72472053929516
+SLV,2015,GF05,Environmental protection,Government spending,0.6132431751969212,0.1454902295417698,General government,23.72472053929516
+SLV,2015,GF06,Housing and community amenities,Government spending,2.521310649929864,0.5981739056233467,General government,23.72472053929516
+SLV,2015,GF08,"Recreation, culture and religion",Government spending,0.4046325936050067,0.0959979520436897,General government,23.72472053929516
+SLV,2015,GF09,Education,Government spending,17.21396971549833,4.083966208720881,General government,23.72472053929516
+SLV,2015,GF10,Social protection,Government spending,9.471999424522535,2.247205392951617,General government,23.72472053929516
+SLV,2015,GF0170,Interest on public debt,Government spending,10.93407186274862,2.594077993002816,General government,23.72472053929516
+SLV,2015,GF0712,Medical products,Health,0.4729705427471856,0.1122109394999573,General government,23.72472053929516
+SLV,2015,GF072,Outpatient services,Health,3.639894975362371,0.863554910828569,General government,23.72472053929516
+SLV,2015,GF073,Hospital services,Health,6.207963169442147,1.47282191313252,General government,23.72472053929516
+SLV,2015,GF0740,Public health services,Health,5.900442398302341,1.399863469579316,General government,23.72472053929516
+SLV,2015,GF075,Health R&D,Health,0.0,0.0,General government,23.72472053929516
+SLV,2015,GF0760,Other health,Health,0.1061036578786462,0.0251727963136786,General government,23.72472053929516
+SLV,2016,GF01,General public services,Government spending,11.6223596762519,2.920507626803357,General government,25.1283535199041
+SLV,2016,GF02,Defence,Government spending,2.184641705599789,0.5489644909263776,General government,25.1283535199041
+SLV,2016,GF03,Public order and safety,Government spending,11.83292755149043,2.973419866892646,General government,25.1283535199041
+SLV,2016,GF04,Economic affairs,Government spending,11.96946765809041,3.007730147575545,General government,25.1283535199041
+SLV,2016,GF05,Environmental protection,Government spending,0.6613147331710206,0.1661775040304245,General government,25.1283535199041
+SLV,2016,GF06,Housing and community amenities,Government spending,0.8439165624794367,0.2120623372328552,General government,25.1283535199041
+SLV,2016,GF08,"Recreation, culture and religion",Government spending,0.5247746265710338,0.1318672233475259,General government,25.1283535199041
+SLV,2016,GF09,Education,Government spending,16.16272948608278,4.061427803728659,General government,25.1283535199041
+SLV,2016,GF10,Social protection,Government spending,18.28814897677173,4.595510727129924,General government,25.1283535199041
+SLV,2016,GF0170,Interest on public debt,Government spending,10.74554188326643,2.70017775205655,General government,25.1283535199041
+SLV,2016,GF0712,Medical products,Health,0.2303086135421465,0.0578727625976602,General government,25.1283535199041
+SLV,2016,GF072,Outpatient services,Health,3.010462591300915,0.7564796825265595,General government,25.1283535199041
+SLV,2016,GF073,Hospital services,Health,6.552280055274067,1.646480095903435,General government,25.1283535199041
+SLV,2016,GF0740,Public health services,Health,5.310258603671777,1.334380554751767,General government,25.1283535199041
+SLV,2016,GF075,Health R&D,Health,0.0,0.0,General government,25.1283535199041
+SLV,2016,GF0760,Other health,Health,0.0608672764361387,0.0152949444008102,General government,25.1283535199041
+SLV,2017,GF01,General public services,Government spending,17.56311745334797,4.739981584531005,General government,26.98827014692342
+SLV,2017,GF02,Defence,Government spending,2.489097220161984,0.6717642819968774,General government,26.98827014692342
+SLV,2017,GF03,Public order and safety,Government spending,12.18737947607322,3.28916289683334,General government,26.98827014692342
+SLV,2017,GF04,Economic affairs,Government spending,13.59361556946628,3.668681692621802,General government,26.98827014692342
+SLV,2017,GF05,Environmental protection,Government spending,0.5473640490105913,0.1477240882341167,General government,26.98827014692342
+SLV,2017,GF06,Housing and community amenities,Government spending,1.293499866496573,0.349093238320189,General government,26.98827014692342
+SLV,2017,GF08,"Recreation, culture and religion",Government spending,0.4984127925950099,0.1345129909123664,General government,26.98827014692342
+SLV,2017,GF09,Education,Government spending,8.59762067226392,2.32034909323832,General government,26.98827014692342
+SLV,2017,GF10,Social protection,Government spending,18.14904915892841,4.898114416109532,General government,26.98827014692342
+SLV,2017,GF0170,Interest on public debt,Government spending,10.93096389473996,2.950078065575083,General government,26.98827014692342
+SLV,2017,GF0712,Medical products,Health,0.2061886255080547,0.055646743264342,General government,26.98827014692342
+SLV,2017,GF072,Outpatient services,Health,2.880707271486635,0.7774530605708795,General government,26.98827014692342
+SLV,2017,GF073,Hospital services,Health,5.549292431839084,1.497658032747508,General government,26.98827014692342
+SLV,2017,GF0740,Public health services,Health,5.384638205713947,1.45322070539253,General government,26.98827014692342
+SLV,2017,GF075,Health R&D,Health,0.0014833714065327,0.0004003362824772,General government,26.98827014692342
+SLV,2017,GF0760,Other health,Health,0.127569940961818,0.0344289202930461,General government,26.98827014692342
+SLV,2018,GF01,General public services,Government spending,16.28950197061985,4.368010453095576,General government,26.81488028899735
+SLV,2018,GF02,Defence,Government spending,2.281619491221784,0.6118135352215518,General government,26.81488028899735
+SLV,2018,GF03,Public order and safety,Government spending,11.4969544965962,3.082894585142769,General government,26.81488028899735
+SLV,2018,GF04,Economic affairs,Government spending,10.67717663919742,2.863072134045579,General government,26.81488028899735
+SLV,2018,GF05,Environmental protection,Government spending,0.3324973127911143,0.0891587563890703,General government,26.81488028899735
+SLV,2018,GF06,Housing and community amenities,Government spending,1.044786814761734,0.2801583336535875,General government,26.81488028899735
+SLV,2018,GF08,"Recreation, culture and religion",Government spending,0.579003941239699,0.1552592137120018,General government,26.81488028899735
+SLV,2018,GF09,Education,Government spending,14.78466499462558,3.964490219438146,General government,26.81488028899735
+SLV,2018,GF10,Social protection,Government spending,16.31816553206736,4.37569655278429,General government,26.81488028899735
+SLV,2018,GF0170,Interest on public debt,Government spending,11.17735578645647,2.99719457361362,General government,26.81488028899735
+SLV,2018,GF0712,Medical products,Health,0.1089215335005374,0.0292071788171092,General government,26.81488028899735
+SLV,2018,GF072,Outpatient services,Health,3.17018989609459,0.8500826255716537,General government,26.81488028899735
+SLV,2018,GF073,Hospital services,Health,5.585094948047295,1.497636524345721,General government,26.81488028899735
+SLV,2018,GF0740,Public health services,Health,4.689358652812612,1.257445909073441,General government,26.81488028899735
+SLV,2018,GF075,Health R&D,Health,0.0,0.0,General government,26.81488028899735
+SLV,2018,GF0760,Other health,Health,1.464707989967753,0.3927596940932324,General government,26.81488028899735
+SLV,2019,GF01,General public services,Government spending,14.94041771665314,3.9038726237863184,General government,26.12960827350173
+SLV,2019,GF02,Defence,Government spending,2.50430672418457,0.6543655369963916,General government,26.12960827350173
+SLV,2019,GF03,Public order and safety,Government spending,11.67727330969974,3.051225772850712,General government,26.12960827350173
+SLV,2019,GF04,Economic affairs,Government spending,11.06934893720013,2.892377515717421,General government,26.12960827350173
+SLV,2019,GF05,Environmental protection,Government spending,0.3858255385184869,0.1008147018340092,General government,26.12960827350173
+SLV,2019,GF06,Housing and community amenities,Government spending,0.8029727074702089,0.2098136230050965,General government,26.12960827350173
+SLV,2019,GF08,"Recreation, culture and religion",Government spending,0.5324677173649967,0.13913172873033,General government,26.12960827350173
+SLV,2019,GF09,Education,Government spending,14.33106963367929,3.744652356683159,General government,26.12960827350173
+SLV,2019,GF10,Social protection,Government spending,16.78269907031706,4.385253524794464,General government,26.12960827350173
+SLV,2019,GF0170,Interest on public debt,Government spending,11.61747746978175,3.03560135411629,General government,26.12960827350173
+SLV,2019,GF0712,Medical products,Health,0.1082019960420849,0.0282727577099066,General government,26.12960827350173
+SLV,2019,GF072,Outpatient services,Health,3.375617534418201,0.8820356385551134,General government,26.12960827350173
+SLV,2019,GF073,Hospital services,Health,5.97816028132519,1.562069863472341,General government,26.12960827350173
+SLV,2019,GF0740,Public health services,Health,4.655533250758126,1.216472601465719,General government,26.12960827350173
+SLV,2019,GF075,Health R&D,Health,0.0,0.0,General government,26.12960827350173
+SLV,2019,GF0760,Other health,Health,1.238628112587024,0.3236486737844574,General government,26.12960827350173
+SLV,2020,GF01,General public services,Government spending,25.05367257445642,8.803418803418808,General government,35.13823682837767
+SLV,2020,GF02,Defence,Government spending,2.422117668554723,0.8510894426387384,General government,35.13823682837767
+SLV,2020,GF03,Public order and safety,Government spending,9.352731591448933,3.286384976525822,General government,35.13823682837767
+SLV,2020,GF04,Economic affairs,Government spending,10.94349534076375,3.845351310140043,General government,35.13823682837767
+SLV,2020,GF05,Environmental protection,Government spending,0.4739174127535173,0.166526222864251,General government,35.13823682837767
+SLV,2020,GF06,Housing and community amenities,Government spending,1.881966014982642,0.6612896753741824,General government,35.13823682837767
+SLV,2020,GF08,"Recreation, culture and religion",Government spending,0.4179608989585237,0.1468640905260624,General government,35.13823682837767
+SLV,2020,GF09,Education,Government spending,11.86849077288507,4.170378395730508,General government,35.13823682837767
+SLV,2020,GF10,Social protection,Government spending,14.3374291978805,5.037919826652221,General government,35.13823682837767
+SLV,2020,GF0170,Interest on public debt,Government spending,9.2522382605518,3.251073391918462,General government,35.13823682837767
+SLV,2020,GF0712,Medical products,Health,0.0787959071807052,0.0276874924762248,General government,35.13823682837767
+SLV,2020,GF072,Outpatient services,Health,2.223414946099032,0.7812688094378235,General government,35.13823682837767
+SLV,2020,GF073,Hospital services,Health,5.250776539375114,1.845030295734521,General government,35.13823682837767
+SLV,2020,GF0740,Public health services,Health,5.459756988854376,1.918462340997552,General government,35.13823682837767
+SLV,2020,GF075,Health R&D,Health,0.0,0.0,General government,35.13823682837767
+SLV,2020,GF0760,Other health,Health,0.9832358852548876,0.3454917539424582,General government,35.13823682837767
+SLV,2021,GF01,General public services,Government spending,10.143215709434521,3.311641359363702,General government,32.64883104362497
+SLV,2021,GF02,Defence,Government spending,2.789437050473519,0.9107185896773748,General government,32.64883104362497
+SLV,2021,GF03,Public order and safety,Government spending,10.32566282086436,3.371208208518404,General government,32.64883104362497
+SLV,2021,GF04,Economic affairs,Government spending,12.09002130307313,3.947250628378611,General government,32.64883104362497
+SLV,2021,GF05,Environmental protection,Government spending,0.4956655628440657,0.1618290121543918,General government,32.64883104362497
+SLV,2021,GF06,Housing and community amenities,Government spending,2.497310750669676,0.8153427676204249,General government,32.64883104362497
+SLV,2021,GF08,"Recreation, culture and religion",Government spending,0.5389044736453567,0.1759460110870089,General government,32.64883104362497
+SLV,2021,GF09,Education,Government spending,11.96135917824977,3.905243948627897,General government,32.64883104362497
+SLV,2021,GF10,Social protection,Government spending,22.25011073379595,7.264401060496505,General government,32.64883104362497
+SLV,2021,GF0170,Interest on public debt,Government spending,10.68001096791884,3.486898736356437,General government,32.64883104362497
+SLV,2021,GF0712,Medical products,Health,0.3743856910843475,0.1222325517336363,General government,32.64883104362497
+SLV,2021,GF072,Outpatient services,Health,1.909894328320432,0.6235581723651138,General government,32.64883104362497
+SLV,2021,GF073,Hospital services,Health,5.524034506760035,1.803532692903626,General government,32.64883104362497
+SLV,2021,GF0740,Public health services,Health,7.187150661238953,2.346520676238681,General government,32.64883104362497
+SLV,2021,GF075,Health R&D,Health,0.0,0.0,General government,32.64883104362497
+SLV,2021,GF0760,Other health,Health,1.232836261627049,0.4025066281031574,General government,32.64883104362497
+SLV,2022,GF01,General public services,Government spending,3.084180671052879,1.0031377470975844,General government,32.52525886413555
+SLV,2022,GF02,Defence,Government spending,2.036504659553532,0.6623784122999686,General government,32.52525886413555
+SLV,2022,GF03,Public order and safety,Government spending,11.43568272588705,3.719485409475996,General government,32.52525886413555
+SLV,2022,GF04,Economic affairs,Government spending,12.27594589901407,3.992783181675557,General government,32.52525886413555
+SLV,2022,GF05,Environmental protection,Government spending,1.909162823901677,0.6209601506118607,General government,32.52525886413555
+SLV,2022,GF06,Housing and community amenities,Government spending,3.430511875590885,1.115782867900847,General government,32.52525886413555
+SLV,2022,GF08,"Recreation, culture and religion",Government spending,2.023963418163576,0.6582993410731095,General government,32.52525886413555
+SLV,2022,GF09,Education,Government spending,9.331648305002991,3.03514276749294,General government,32.52525886413555
+SLV,2022,GF10,Social protection,Government spending,18.74047348009801,6.095387511766552,General government,32.52525886413555
+SLV,2022,GF0170,Interest on public debt,Government spending,10.59252542013159,3.44524631314716,General government,32.52525886413555
+SLV,2022,GF0712,Medical products,Health,0.1186594377665014,0.0385942893002824,General government,32.52525886413555
+SLV,2022,GF072,Outpatient services,Health,2.630766559262189,0.855663633511139,General government,32.52525886413555
+SLV,2022,GF073,Hospital services,Health,8.810704431881765,2.865704424223408,General government,32.52525886413555
+SLV,2022,GF0740,Public health services,Health,4.879507611568813,1.587072481957954,General government,32.52525886413555
+SLV,2022,GF075,Health R&D,Health,0.0,0.0,General government,32.52525886413555
+SLV,2022,GF0760,Other health,Health,8.699762681124467,2.829620332601192,General government,32.52525886413555
+SLV,2023,GF01,General public services,Government spending,5.32731073901452,1.6408696165888808,General government,30.8010870207361
+SLV,2023,GF02,Defence,Government spending,3.15323091086944,0.971229396821646,General government,30.8010870207361
+SLV,2023,GF03,Public order and safety,Government spending,12.75293937127184,3.928043953447155,General government,30.8010870207361
+SLV,2023,GF04,Economic affairs,Government spending,11.10248000460326,3.419684527677675,General government,30.8010870207361
+SLV,2023,GF05,Environmental protection,Government spending,1.628402094481846,0.5015655461688427,General government,30.8010870207361
+SLV,2023,GF06,Housing and community amenities,Government spending,5.730095709381054,1.764931765817924,General government,30.8010870207361
+SLV,2023,GF08,"Recreation, culture and religion",Government spending,1.545927076740127,0.4761623441838483,General government,30.8010870207361
+SLV,2023,GF09,Education,Government spending,12.53524368490707,3.860991315649554,General government,30.8010870207361
+SLV,2023,GF10,Social protection,Government spending,14.09555593916029,4.341584450877297,General government,30.8010870207361
+SLV,2023,GF0170,Interest on public debt,Government spending,13.38396915817941,4.122407987239322,General government,30.8010870207361
+SLV,2023,GF0712,Medical products,Health,0.1160404319389301,0.0357417144207479,General government,30.8010870207361
+SLV,2023,GF072,Outpatient services,Health,3.476417898996874,1.070774502274473,General government,30.8010870207361
+SLV,2023,GF073,Hospital services,Health,7.091892513953622,2.184379984639924,General government,30.8010870207361
+SLV,2023,GF0740,Public health services,Health,4.9427469934979,1.522419802682106,General government,30.8010870207361
+SLV,2023,GF075,Health R&D,Health,0.1102863609336939,0.0339693980031901,General government,30.8010870207361
+SLV,2023,GF0760,Other health,Health,3.007461112070123,0.9263307142435164,General government,30.8010870207361
+SLV,2024,GF01,General public services,Government spending,7.287146357763419,2.3124558178990533,General government,31.73335218436307
+SLV,2024,GF02,Defence,Government spending,3.063488527511695,0.9721476035628446,General government,31.73335218436307
+SLV,2024,GF03,Public order and safety,Government spending,13.21006905769659,4.191997737876432,General government,31.73335218436307
+SLV,2024,GF04,Economic affairs,Government spending,9.18333704611272,2.914180687120034,General government,31.73335218436307
+SLV,2024,GF05,Environmental protection,Government spending,1.549565604811762,0.4917291107026721,General government,31.73335218436307
+SLV,2024,GF06,Housing and community amenities,Government spending,5.995099131209624,1.902445921108441,General government,31.73335218436307
+SLV,2024,GF08,"Recreation, culture and religion",Government spending,1.321452439296057,0.4193411565106744,General government,31.73335218436307
+SLV,2024,GF09,Education,Government spending,13.10848741367788,4.159762477025308,General government,31.73335218436307
+SLV,2024,GF10,Social protection,Government spending,12.28870572510581,3.899618266647816,General government,31.73335218436307
+SLV,2024,GF0170,Interest on public debt,Government spending,14.36132768990867,4.55733069418917,General government,31.73335218436307
+SLV,2024,GF0712,Medical products,Health,0.1256404544441969,0.0398699278948112,General government,31.73335218436307
+SLV,2024,GF072,Outpatient services,Health,2.880819781688572,0.914180687120034,General government,31.73335218436307
+SLV,2024,GF073,Hospital services,Health,8.78948540877701,2.789198359960413,General government,31.73335218436307
+SLV,2024,GF0740,Public health services,Health,4.491869013143239,1.425420613601018,General government,31.73335218436307
+SLV,2024,GF075,Health R&D,Health,0.0766317665404321,0.0243178283613742,General government,31.73335218436307
+SLV,2024,GF0760,Other health,Health,2.266874582312319,0.7193552947829776,General government,31.73335218436307

@@ -1,0 +1,253 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+TJK,1998,G111,Income taxes,Taxes,2.0689885,17.173096973099916,General government,12.047847
+TJK,1998,G11412,VAT / sales tax,Taxes,2.6492036,21.989020395369714,General government,12.047847
+TJK,1998,G115,Trade taxes (customs),Taxes,5.1155425,42.460220258601716,General government,12.047847
+TJK,1998,G113,Property taxes,Taxes,0.6226785,5.168379748637751,General government,12.047847
+TJK,1998,G11NEC,Other taxes,Taxes,0.3964858999999998,3.2909273343794765,General government,12.047847
+TJK,1998,G121,Social contributions,Social contributions,0.81095485,6.731118263758206,General government,12.047847
+TJK,1998,G14X,Other non-tax revenue,Other revenue,0.38399345,3.1872370261532117,General government,12.047847
+TJK,1999,G111,Income taxes,Taxes,2.3471542,17.375703773411427,General government,13.508254
+TJK,1999,G11412,VAT / sales tax,Taxes,3.564362,26.386548550241944,General government,13.508254
+TJK,1999,G115,Trade taxes (customs),Taxes,4.8535932,35.930574003124306,General government,13.508254
+TJK,1999,G113,Property taxes,Taxes,0.72881457,5.395327701122588,General government,13.508254
+TJK,1999,G11NEC,Other taxes,Taxes,0.27145004,2.0095124062665684,General government,13.508254
+TJK,1999,G121,Social contributions,Social contributions,0.99498623,7.36576488715714,General government,13.508254
+TJK,1999,G13,Grants (e.g. foreign aid),Grants,0.26635465,1.9717918392710119,General government,13.508254
+TJK,1999,G14X,Other non-tax revenue,Other revenue,0.48153868,3.5647736561660746,General government,13.508254
+TJK,2000,G111,Income taxes,Taxes,1.8411003,13.535723651605483,General government,13.601787
+TJK,2000,G11412,VAT / sales tax,Taxes,3.8968447,28.64950539219589,General government,13.601787
+TJK,2000,G115,Trade taxes (customs),Taxes,4.7757942,35.111520273034714,General government,13.601787
+TJK,2000,G113,Property taxes,Taxes,0.63620872,4.677390698736864,General government,13.601787
+TJK,2000,G11NEC,Other taxes,Taxes,0.11253808000000115,0.827377167426612,General government,13.601787
+TJK,2000,G121,Social contributions,Social contributions,1.5979754,11.748275428809464,General government,13.601787
+TJK,2000,G13,Grants (e.g. foreign aid),Grants,0.09343001,0.6868951116496678,General government,13.601787
+TJK,2000,G14X,Other non-tax revenue,Other revenue,0.6478955,4.763311614863547,General government,13.601787
+TJK,2001,G111,Income taxes,Taxes,1.876598,12.343591057431698,General government,15.203015
+TJK,2001,G11412,VAT / sales tax,Taxes,5.117029,33.657988234570574,General government,15.203015
+TJK,2001,G115,Trade taxes (customs),Taxes,4.5524732,29.94454192145439,General government,15.203015
+TJK,2001,G113,Property taxes,Taxes,0.58897106,3.8740411688076346,General government,15.203015
+TJK,2001,G11NEC,Other taxes,Taxes,0.13821873999999984,0.9091534804116146,General government,15.203015
+TJK,2001,G121,Social contributions,Social contributions,1.7822709,11.723141100630368,General government,15.203015
+TJK,2001,G14X,Other non-tax revenue,Other revenue,1.147454,7.5475423789294425,General government,15.203015
+TJK,2002,G111,Income taxes,Taxes,1.7967769,10.733271154947435,General government,16.740254
+TJK,2002,G11412,VAT / sales tax,Taxes,6.9180199,41.3256556459638,General government,16.740254
+TJK,2002,G115,Trade taxes (customs),Taxes,3.6743333,21.949088739148866,General government,16.740254
+TJK,2002,G113,Property taxes,Taxes,0.56607666,3.3815296079702417,General government,16.740254
+TJK,2002,G11NEC,Other taxes,Taxes,0.08036847,0.48009109022842966,General government,16.740254
+TJK,2002,G121,Social contributions,Social contributions,1.9323088,11.542887881901803,General government,16.740254
+TJK,2002,G13,Grants (e.g. foreign aid),Grants,0.2404727,1.4364936985010928,General government,16.740254
+TJK,2002,G14X,Other non-tax revenue,Other revenue,1.5318977,9.150982181338328,General government,16.740254
+TJK,2003,G111,Income taxes,Taxes,1.580766,9.123465269972453,General government,17.326377
+TJK,2003,G11412,VAT / sales tax,Taxes,7.4774964,43.15672193844253,General government,17.326377
+TJK,2003,G115,Trade taxes (customs),Taxes,3.3834854,19.527945020552604,General government,17.326377
+TJK,2003,G113,Property taxes,Taxes,0.57832381,3.337823052452512,General government,17.326377
+TJK,2003,G11NEC,Other taxes,Taxes,0.13759187,0.7941179449555246,General government,17.326377
+TJK,2003,G121,Social contributions,Social contributions,1.8196175,10.502007928993983,General government,17.326377
+TJK,2003,G13,Grants (e.g. foreign aid),Grants,0.30837845,1.7798207189317943,General government,17.326377
+TJK,2003,G14X,Other non-tax revenue,Other revenue,2.0407177,11.778098125698595,General government,17.326377
+TJK,2004,G111,Income taxes,Taxes,1.7023744,9.493404594421872,General government,17.93218
+TJK,2004,G11412,VAT / sales tax,Taxes,7.8266731,43.64596552120266,General government,17.93218
+TJK,2004,G115,Trade taxes (customs),Taxes,3.0047261,16.756055872738287,General government,17.93218
+TJK,2004,G113,Property taxes,Taxes,0.55725501,3.107569799098604,General government,17.93218
+TJK,2004,G11NEC,Other taxes,Taxes,0.13769472,0.7678638068544928,General government,17.93218
+TJK,2004,G121,Social contributions,Social contributions,1.9423471,10.83162839097087,General government,17.93218
+TJK,2004,G13,Grants (e.g. foreign aid),Grants,0.6608864,3.6854771700930953,General government,17.93218
+TJK,2004,G14X,Other non-tax revenue,Other revenue,2.1002229,11.712033338947078,General government,17.93218
+TJK,2005,G111,Income taxes,Taxes,2.0955043,10.43373900616529,General government,20.083924
+TJK,2005,G11412,VAT / sales tax,Taxes,9.3775302,46.691721238287606,General government,20.083924
+TJK,2005,G115,Trade taxes (customs),Taxes,2.145798,10.68415669295046,General government,20.083924
+TJK,2005,G113,Property taxes,Taxes,0.84479864,4.206342369482797,General government,20.083924
+TJK,2005,G121,Social contributions,Social contributions,2.1431454,10.670949115143172,General government,20.083924
+TJK,2005,G13,Grants (e.g. foreign aid),Grants,0.7422776,3.6958791964887676,General government,20.083924
+TJK,2005,G14X,Other non-tax revenue,Other revenue,2.7348707,13.617212381481906,General government,20.083924
+TJK,2006,G1111,Personal income tax,Taxes,1.1535372,4.883384020533343,General government,23.621677
+TJK,2006,G1112,Corporate income tax,Taxes,0.93810397,3.9713690522480687,General government,23.621677
+TJK,2006,G11412,VAT / sales tax,Taxes,8.4267561,35.67382662966732,General government,23.621677
+TJK,2006,G1142,Excise taxes,Taxes,0.73264617,3.1015840661947927,General government,23.621677
+TJK,2006,G114X,Other goods & services taxes,Taxes,0.5665155299999991,2.398286666945785,General government,23.621677
+TJK,2006,G115,Trade taxes (customs),Taxes,1.8484058,7.825040533743647,General government,23.621677
+TJK,2006,G113,Property taxes,Taxes,0.8259669,3.4966480152954427,General government,23.621677
+TJK,2006,G121,Social contributions,Social contributions,2.0426681,8.647430493609749,General government,23.621677
+TJK,2006,G13,Grants (e.g. foreign aid),Grants,4.7001013,19.897407368663963,General government,23.621677
+TJK,2006,G14X,Other non-tax revenue,Other revenue,2.3869755,10.10502133273603,General government,23.621677
+TJK,2007,G1111,Personal income tax,Taxes,1.3163548,5.860343154355315,General government,22.462077
+TJK,2007,G1112,Corporate income tax,Taxes,1.0716645,4.770994656106858,General government,22.462077
+TJK,2007,G11412,VAT / sales tax,Taxes,9.453884,42.08820021886899,General government,22.462077
+TJK,2007,G1142,Excise taxes,Taxes,0.83145466,3.701592932914307,General government,22.462077
+TJK,2007,G114X,Other goods & services taxes,Taxes,0.656128339999999,2.921049268553972,General government,22.462077
+TJK,2007,G115,Trade taxes (customs),Taxes,1.7688862,7.874989427625126,General government,22.462077
+TJK,2007,G113,Property taxes,Taxes,0.72192044,3.213952278324337,General government,22.462077
+TJK,2007,G121,Social contributions,Social contributions,1.9774407,8.803463222368757,General government,22.462077
+TJK,2007,G13,Grants (e.g. foreign aid),Grants,1.9509478,8.685518208491025,General government,22.462077
+TJK,2007,G14X,Other non-tax revenue,Other revenue,2.7133957,12.079896632391318,General government,22.462077
+TJK,2008,G1111,Personal income tax,Taxes,1.399797,6.328320073961376,General government,22.119567
+TJK,2008,G1112,Corporate income tax,Taxes,1.1718075,5.297605956484043,General government,22.119567
+TJK,2008,G11412,VAT / sales tax,Taxes,10.288319,46.5122983225555,General government,22.119567
+TJK,2008,G1142,Excise taxes,Taxes,0.84389708,3.815160935279465,General government,22.119567
+TJK,2008,G114X,Other goods & services taxes,Taxes,0.6866839199999998,3.1044184516772693,General government,22.119567
+TJK,2008,G115,Trade taxes (customs),Taxes,1.6376681,7.403707760279659,General government,22.119567
+TJK,2008,G113,Property taxes,Taxes,0.68884012,3.114166382086805,General government,22.119567
+TJK,2008,G121,Social contributions,Social contributions,1.9633287,8.87598160590035,General government,22.119567
+TJK,2008,G13,Grants (e.g. foreign aid),Grants,1.6217375,7.331687363200476,General government,22.119567
+TJK,2008,G14X,Other non-tax revenue,Other revenue,1.8174881,8.216653148575057,General government,22.119567
+TJK,2009,G1111,Personal income tax,Taxes,1.7770192,7.5893135641695135,General government,23.414755
+TJK,2009,G1112,Corporate income tax,Taxes,1.1764085,5.024218638748704,General government,23.414755
+TJK,2009,G11412,VAT / sales tax,Taxes,8.9683321,38.3020534918851,General government,23.414755
+TJK,2009,G1142,Excise taxes,Taxes,0.80321879,3.430395832494564,General government,23.414755
+TJK,2009,G114X,Other goods & services taxes,Taxes,0.517557110000001,2.2103887201417862,General government,23.414755
+TJK,2009,G115,Trade taxes (customs),Taxes,1.3566838,5.7941404153815785,General government,23.414755
+TJK,2009,G113,Property taxes,Taxes,0.6922532,2.956482744024235,General government,23.414755
+TJK,2009,G121,Social contributions,Social contributions,2.3343833,9.9697104244348,General government,23.414755
+TJK,2009,G13,Grants (e.g. foreign aid),Grants,3.4391827,14.688100114375315,General government,23.414755
+TJK,2009,G14X,Other non-tax revenue,Other revenue,2.3497166,10.035196054344416,General government,23.414755
+TJK,2010,G1111,Personal income tax,Taxes,1.8181407,7.850403154363952,General government,23.159838
+TJK,2010,G1112,Corporate income tax,Taxes,1.3388862,5.781068785168477,General government,23.159838
+TJK,2010,G11412,VAT / sales tax,Taxes,9.0819131,39.21406041232083,General government,23.159838
+TJK,2010,G1142,Excise taxes,Taxes,0.68171538,2.9435238810343005,General government,23.159838
+TJK,2010,G114X,Other goods & services taxes,Taxes,0.6872735199999997,2.9675229256563114,General government,23.159838
+TJK,2010,G115,Trade taxes (customs),Taxes,1.4376945,6.207705178049038,General government,23.159838
+TJK,2010,G113,Property taxes,Taxes,0.6134069,2.6485802021090077,General government,23.159838
+TJK,2010,G121,Social contributions,Social contributions,2.2957721,9.912729270919876,General government,23.159838
+TJK,2010,G13,Grants (e.g. foreign aid),Grants,2.3001577,9.931665499603268,General government,23.159838
+TJK,2010,G14X,Other non-tax revenue,Other revenue,2.9048785,12.542740690774936,General government,23.159838
+TJK,2011,G1111,Personal income tax,Taxes,1.9294938,7.753585557605549,General government,24.885181
+TJK,2011,G1112,Corporate income tax,Taxes,1.3541431,5.441564198387788,General government,24.885181
+TJK,2011,G11412,VAT / sales tax,Taxes,10.213085,41.04083068553932,General government,24.885181
+TJK,2011,G1142,Excise taxes,Taxes,0.62929386,2.528789563555917,General government,24.885181
+TJK,2011,G114X,Other goods & services taxes,Taxes,0.7058211400000001,2.8363110559653957,General government,24.885181
+TJK,2011,G115,Trade taxes (customs),Taxes,1.5322037,6.157092849756649,General government,24.885181
+TJK,2011,G113,Property taxes,Taxes,0.56914146,2.287069802707081,General government,24.885181
+TJK,2011,G121,Social contributions,Social contributions,2.465094,9.905871289423212,General government,24.885181
+TJK,2011,G13,Grants (e.g. foreign aid),Grants,2.2956992,9.22516577235263,General government,24.885181
+TJK,2011,G14X,Other non-tax revenue,Other revenue,3.1912051,12.823716652894747,General government,24.885181
+TJK,2012,G1111,Personal income tax,Taxes,2.0182109,8.029692993416539,General government,25.134347
+TJK,2012,G1112,Corporate income tax,Taxes,1.5943494,6.343309416393431,General government,25.134347
+TJK,2012,G11412,VAT / sales tax,Taxes,10.245596,40.76332677351832,General government,25.134347
+TJK,2012,G1142,Excise taxes,Taxes,0.51506595,2.049251369052874,General government,25.134347
+TJK,2012,G114X,Other goods & services taxes,Taxes,0.7204110499999995,2.866241362864925,General government,25.134347
+TJK,2012,G115,Trade taxes (customs),Taxes,1.5670615,6.234741248698445,General government,25.134347
+TJK,2012,G113,Property taxes,Taxes,0.52849638,2.1026859380910112,General government,25.134347
+TJK,2012,G121,Social contributions,Social contributions,2.618153,10.416634257496325,General government,25.134347
+TJK,2012,G13,Grants (e.g. foreign aid),Grants,1.5016084,5.974328276760084,General government,25.134347
+TJK,2012,G14X,Other non-tax revenue,Other revenue,3.8253937,15.219785499102082,General government,25.134347
+TJK,2013,G1111,Personal income tax,Taxes,2.2560295,8.374694291462054,General government,26.938649
+TJK,2013,G1112,Corporate income tax,Taxes,1.7280623,6.41480684499063,General government,26.938649
+TJK,2013,G11412,VAT / sales tax,Taxes,10.978549,40.753896010152545,General government,26.938649
+TJK,2013,G1142,Excise taxes,Taxes,0.69504042,2.5800864029966757,General government,26.938649
+TJK,2013,G114X,Other goods & services taxes,Taxes,0.8891545800000011,3.300665077896078,General government,26.938649
+TJK,2013,G115,Trade taxes (customs),Taxes,1.4350947,5.327270495264999,General government,26.938649
+TJK,2013,G113,Property taxes,Taxes,0.38579638,1.4321296513422035,General government,26.938649
+TJK,2013,G121,Social contributions,Social contributions,2.6681523,9.9045512638737,General government,26.938649
+TJK,2013,G13,Grants (e.g. foreign aid),Grants,2.3099774,8.574956375874677,General government,26.938649
+TJK,2013,G14X,Other non-tax revenue,Other revenue,3.5927923,13.336943140689796,General government,26.938649
+TJK,2014,G1111,Personal income tax,Taxes,2.4021456,8.45985788934127,General government,28.394633
+TJK,2014,G1112,Corporate income tax,Taxes,1.7697949,6.232850060080016,General government,28.394633
+TJK,2014,G11412,VAT / sales tax,Taxes,12.198976,42.9622598045201,General government,28.394633
+TJK,2014,G1142,Excise taxes,Taxes,0.79859012,2.812468539389116,General government,28.394633
+TJK,2014,G114X,Other goods & services taxes,Taxes,0.9050828800000003,3.187513922085206,General government,28.394633
+TJK,2014,G115,Trade taxes (customs),Taxes,1.3261579,4.6704526873089005,General government,28.394633
+TJK,2014,G113,Property taxes,Taxes,0.39875871,1.4043453563918225,General government,28.394633
+TJK,2014,G121,Social contributions,Social contributions,3.0120651,10.607867691052743,General government,28.394633
+TJK,2014,G13,Grants (e.g. foreign aid),Grants,1.5377437,5.415613929576058,General government,28.394633
+TJK,2014,G14X,Other non-tax revenue,Other revenue,4.0453178,14.246769098935001,General government,28.394633
+TJK,2015,G1111,Personal income tax,Taxes,2.6883492,8.977840338428631,General government,29.944275
+TJK,2015,G1112,Corporate income tax,Taxes,2.0854504,6.964437776503188,General government,29.944275
+TJK,2015,G11412,VAT / sales tax,Taxes,11.206533,37.42462624324683,General government,29.944275
+TJK,2015,G1142,Excise taxes,Taxes,0.67468769,2.253144181984703,General government,29.944275
+TJK,2015,G114X,Other goods & services taxes,Taxes,0.9014743100000001,3.010506382271737,General government,29.944275
+TJK,2015,G115,Trade taxes (customs),Taxes,1.1684331,3.902025011458784,General government,29.944275
+TJK,2015,G113,Property taxes,Taxes,0.42744421,1.427465550593561,General government,29.944275
+TJK,2015,G121,Social contributions,Social contributions,2.8349707,9.467488192651183,General government,29.944275
+TJK,2015,G13,Grants (e.g. foreign aid),Grants,2.9630258,9.895132875983805,General government,29.944275
+TJK,2015,G14X,Other non-tax revenue,Other revenue,4.9939061,16.67733181050468,General government,29.944275
+TJK,2016,G1111,Personal income tax,Taxes,2.4679932,8.298585823602448,General government,29.739925
+TJK,2016,G1112,Corporate income tax,Taxes,1.8840807,6.335189816383195,General government,29.739925
+TJK,2016,G11412,VAT / sales tax,Taxes,10.067048,33.850280389072935,General government,29.739925
+TJK,2016,G1142,Excise taxes,Taxes,0.61884061,2.080841192437439,General government,29.739925
+TJK,2016,G114X,Other goods & services taxes,Taxes,1.3064063900000007,4.392769618618745,General government,29.739925
+TJK,2016,G115,Trade taxes (customs),Taxes,1.2130778,4.078953796958129,General government,29.739925
+TJK,2016,G113,Property taxes,Taxes,0.50541896,1.699462792861784,General government,29.739925
+TJK,2016,G121,Social contributions,Social contributions,2.5248664,8.489821006609802,General government,29.739925
+TJK,2016,G13,Grants (e.g. foreign aid),Grants,2.4521171,8.245202703100293,General government,29.739925
+TJK,2016,G14X,Other non-tax revenue,Other revenue,6.7000755,22.52889171711092,General government,29.739925
+TJK,2017,G1111,Personal income tax,Taxes,2.4352982,8.657724985772157,General government,28.128615
+TJK,2017,G1112,Corporate income tax,Taxes,2.3337293,8.296637541406046,General government,28.128615
+TJK,2017,G11412,VAT / sales tax,Taxes,9.2665833,32.94361642001338,General government,28.128615
+TJK,2017,G1142,Excise taxes,Taxes,0.60561943,2.153036729128323,General government,28.128615
+TJK,2017,G114X,Other goods & services taxes,Taxes,1.7740832699999993,6.307040777806746,General government,28.128615
+TJK,2017,G115,Trade taxes (customs),Taxes,1.1132731,3.9577955315115108,General government,28.128615
+TJK,2017,G113,Property taxes,Taxes,0.46520752,1.6538585580497291,General government,28.128615
+TJK,2017,G121,Social contributions,Social contributions,2.4423826,8.682910725608538,General government,28.128615
+TJK,2017,G13,Grants (e.g. foreign aid),Grants,2.4859487,8.837792502510704,General government,28.128615
+TJK,2017,G14X,Other non-tax revenue,Other revenue,5.2064904,18.509586228192866,General government,28.128615
+TJK,2018,G1111,Personal income tax,Taxes,2.505099,8.889186878772852,General government,28.181419
+TJK,2018,G1112,Corporate income tax,Taxes,2.3234074,8.24446561757589,General government,28.181419
+TJK,2018,G11412,VAT / sales tax,Taxes,9.2830745,32.94040835913905,General government,28.181419
+TJK,2018,G1142,Excise taxes,Taxes,0.59853185,2.123852776895301,General government,28.181419
+TJK,2018,G114X,Other goods & services taxes,Taxes,1.895125650000001,6.724734655838306,General government,28.181419
+TJK,2018,G115,Trade taxes (customs),Taxes,1.0784585,3.826842431177791,General government,28.181419
+TJK,2018,G113,Property taxes,Taxes,0.50437841,1.7897551929517816,General government,28.181419
+TJK,2018,G121,Social contributions,Social contributions,2.4325482,8.631744909651283,General government,28.181419
+TJK,2018,G13,Grants (e.g. foreign aid),Grants,2.7908835,9.903275275102363,General government,28.181419
+TJK,2018,G14X,Other non-tax revenue,Other revenue,4.7699119,16.925733583536015,General government,28.181419
+TJK,2019,G1111,Personal income tax,Taxes,2.4176834,9.03040492513606,General government,26.772702
+TJK,2019,G1112,Corporate income tax,Taxes,2.4029165,8.975248370523081,General government,26.772702
+TJK,2019,G11412,VAT / sales tax,Taxes,9.0759797,33.9001259566554,General government,26.772702
+TJK,2019,G1142,Excise taxes,Taxes,0.75005365,2.8015612693855108,General government,26.772702
+TJK,2019,G114X,Other goods & services taxes,Taxes,1.6507546500000014,6.16581266246493,General government,26.772702
+TJK,2019,G115,Trade taxes (customs),Taxes,1.0316013,3.8531833656535674,General government,26.772702
+TJK,2019,G113,Property taxes,Taxes,0.46830473,1.7491873999120446,General government,26.772702
+TJK,2019,G121,Social contributions,Social contributions,2.134141,7.97133214271761,General government,26.772702
+TJK,2019,G13,Grants (e.g. foreign aid),Grants,2.1823971,8.151575810316046,General government,26.772702
+TJK,2019,G14X,Other non-tax revenue,Other revenue,4.6588695,17.401566341716276,General government,26.772702
+TJK,2020,G1111,Personal income tax,Taxes,2.2320056,8.991227376527421,General government,24.824259
+TJK,2020,G1112,Corporate income tax,Taxes,2.0283084,8.170670366651647,General government,24.824259
+TJK,2020,G11412,VAT / sales tax,Taxes,8.4759809,34.14394278894441,General government,24.824259
+TJK,2020,G1142,Excise taxes,Taxes,0.73965424,2.9795621712833444,General government,24.824259
+TJK,2020,G114X,Other goods & services taxes,Taxes,1.5435348599999994,6.217848597627361,General government,24.824259
+TJK,2020,G115,Trade taxes (customs),Taxes,0.83819813,3.376528254861946,General government,24.824259
+TJK,2020,G113,Property taxes,Taxes,0.44528149,1.793735250103728,General government,24.824259
+TJK,2020,G121,Social contributions,Social contributions,1.9870689,8.004544564192056,General government,24.824259
+TJK,2020,G13,Grants (e.g. foreign aid),Grants,2.1642008,8.71808810930517,General government,24.824259
+TJK,2020,G14X,Other non-tax revenue,Other revenue,4.370026,17.60385252050292,General government,24.824259
+TJK,2021,G1111,Personal income tax,Taxes,2.3350019,8.655907094990306,General government,26.975819
+TJK,2021,G1112,Corporate income tax,Taxes,2.3149981,8.581752536766277,General government,26.975819
+TJK,2021,G11412,VAT / sales tax,Taxes,8.8811446,32.922612420475915,General government,26.975819
+TJK,2021,G1142,Excise taxes,Taxes,0.73712865,2.732553284627146,General government,26.975819
+TJK,2021,G114X,Other goods & services taxes,Taxes,1.7750797499999986,6.5802624838115165,General government,26.975819
+TJK,2021,G115,Trade taxes (customs),Taxes,0.94815515,3.5148334954402385,General government,26.975819
+TJK,2021,G113,Property taxes,Taxes,0.45177435,1.6747381668081873,General government,26.975819
+TJK,2021,G121,Social contributions,Social contributions,2.0132856,7.4632971858745885,General government,26.975819
+TJK,2021,G13,Grants (e.g. foreign aid),Grants,3.0966413,11.479322307750587,General government,26.975819
+TJK,2021,G14X,Other non-tax revenue,Other revenue,4.4226104,16.394721023455233,General government,26.975819
+TJK,2022,G1111,Personal income tax,Taxes,2.0881565,7.691742758236238,General government,27.148028
+TJK,2022,G1112,Corporate income tax,Taxes,2.7010115,9.949199518828111,General government,27.148028
+TJK,2022,G11412,VAT / sales tax,Taxes,8.5202027,31.384241275225225,General government,27.148028
+TJK,2022,G1142,Excise taxes,Taxes,0.84310193,3.1055733440154007,General government,27.148028
+TJK,2022,G114X,Other goods & services taxes,Taxes,1.3036383699999994,4.801963354665413,General government,27.148028
+TJK,2022,G115,Trade taxes (customs),Taxes,1.2067193,4.444961111391269,General government,27.148028
+TJK,2022,G113,Property taxes,Taxes,0.51790889,1.907721932759191,General government,27.148028
+TJK,2022,G121,Social contributions,Social contributions,2.1603577,7.957696510857732,General government,27.148028
+TJK,2022,G13,Grants (e.g. foreign aid),Grants,3.369439,12.411358069938125,General government,27.148028
+TJK,2022,G14X,Other non-tax revenue,Other revenue,4.4374924,16.345542124083295,General government,27.148028
+TJK,2023,G1111,Personal income tax,Taxes,2.1133404,7.309290469308965,General government,28.913071
+TJK,2023,G1112,Corporate income tax,Taxes,2.580077,8.923565851569991,General government,28.913071
+TJK,2023,G11412,VAT / sales tax,Taxes,8.6708591,29.98940813337544,General government,28.913071
+TJK,2023,G1142,Excise taxes,Taxes,0.95597591,3.306379610143243,General government,28.913071
+TJK,2023,G114X,Other goods & services taxes,Taxes,1.24526999,4.306944621710477,General government,28.913071
+TJK,2023,G115,Trade taxes (customs),Taxes,1.1561238,3.9986197550954237,General government,28.913071
+TJK,2023,G113,Property taxes,Taxes,0.62004348,2.1445091850423927,General government,28.913071
+TJK,2023,G121,Social contributions,Social contributions,2.0636304,7.137361314294776,General government,28.913071
+TJK,2023,G13,Grants (e.g. foreign aid),Grants,5.2523224,18.16590931591427,General government,28.913071
+TJK,2023,G14X,Other non-tax revenue,Other revenue,4.2554293,14.718011743545016,General government,28.913071
+TJK,2024,G1111,Personal income tax,Taxes,2.178326,8.296212794432408,General government,26.256872
+TJK,2024,G1112,Corporate income tax,Taxes,2.630621,10.01879039110885,General government,26.256872
+TJK,2024,G11412,VAT / sales tax,Taxes,8.3895371,31.95177628526922,General government,26.256872
+TJK,2024,G1142,Excise taxes,Taxes,0.861208,3.2799336868161815,General government,26.256872
+TJK,2024,G114X,Other goods & services taxes,Taxes,1.206738899999999,4.595897354996121,General government,26.256872
+TJK,2024,G115,Trade taxes (customs),Taxes,0.98349681,3.7456738883002174,General government,26.256872
+TJK,2024,G113,Property taxes,Taxes,0.69503779,2.6470700005472203,General government,26.256872
+TJK,2024,G11NEC,Other taxes,Taxes,0.14676841,0.5589714123875404,General government,26.256872
+TJK,2024,G121,Social contributions,Social contributions,1.8309221,6.9731157556899435,General government,26.256872
+TJK,2024,G13,Grants (e.g. foreign aid),Grants,3.1664454,12.05949194030262,General government,26.256872
+TJK,2024,G14X,Other non-tax revenue,Other revenue,4.1677708,15.873066490149682,General government,26.256872

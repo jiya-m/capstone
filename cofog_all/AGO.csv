@@ -1,0 +1,81 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+AGO,2014,GF01,General public services,Government spending,21.13466155456175,7.729176324103217,Central government (budgetary),36.57109106833525
+AGO,2014,GF02,Defence,Government spending,11.37218570046159,4.158932388976008,Central government (budgetary),36.57109106833525
+AGO,2014,GF03,Public order and safety,Government spending,8.639282396183958,3.159479832759092,Central government (budgetary),36.57109106833525
+AGO,2014,GF04,Economic affairs,Government spending,19.23629912019116,7.034924469422482,Central government (budgetary),36.57109106833525
+AGO,2014,GF05,Environmental protection,Government spending,0.6270466943591338,0.2293178176350646,Central government (budgetary),36.57109106833525
+AGO,2014,GF06,Housing and community amenities,Government spending,9.335051290635802,3.413930108774224,Central government (budgetary),36.57109106833525
+AGO,2014,GF08,"Recreation, culture and religion",Government spending,1.209506674274984,0.4423297873266975,Central government (budgetary),36.57109106833525
+AGO,2014,GF09,Education,Government spending,6.852259747166175,2.505946152375021,Central government (budgetary),36.57109106833525
+AGO,2014,GF10,Social protection,Government spending,14.43286541625536,5.278256355149011,Central government (budgetary),36.57109106833525
+AGO,2014,GF0170,Interest on public debt,Government spending,2.489213256131881,0.9103324467850632,Central government (budgetary),36.57109106833525
+AGO,2014,GF0712,Medical products,Health,0.0738463224336651,0.0270064058278321,Central government (budgetary),36.57109106833525
+AGO,2014,GF072,Outpatient services,Health,0.0874912074398065,0.0319964891495977,Central government (budgetary),36.57109106833525
+AGO,2014,GF073,Hospital services,Health,3.42016463202783,1.250791522265891,Central government (budgetary),36.57109106833525
+AGO,2014,GF0740,Public health services,Health,1.090125987876902,0.3986709677860513,Central government (budgetary),36.57109106833525
+AGO,2014,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),36.57109106833525
+AGO,2014,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),36.57109106833525
+AGO,2015,GF01,General public services,Government spending,13.209355037305006,2.9027944335170224,Central government (budgetary),21.97529270217311
+AGO,2015,GF02,Defence,Government spending,22.71245390871591,4.991128226286479,Central government (budgetary),21.97529270217311
+AGO,2015,GF03,Public order and safety,Government spending,4.583936990022279,1.00733357084058,Central government (budgetary),21.97529270217311
+AGO,2015,GF04,Economic affairs,Government spending,12.39656660706651,2.724181796922716,Central government (budgetary),21.97529270217311
+AGO,2015,GF05,Environmental protection,Government spending,0.6143789464782721,0.1350115717891278,Central government (budgetary),21.97529270217311
+AGO,2015,GF06,Housing and community amenities,Government spending,5.023975333440304,1.104033284808485,Central government (budgetary),21.97529270217311
+AGO,2015,GF08,"Recreation, culture and religion",Government spending,0.9836756750953696,0.2161656088422849,Central government (budgetary),21.97529270217311
+AGO,2015,GF09,Education,Government spending,12.1008887668792,2.65920572608609,Central government (budgetary),21.97529270217311
+AGO,2015,GF10,Social protection,Government spending,15.66016067440715,3.441366145831579,Central government (budgetary),21.97529270217311
+AGO,2015,GF0170,Interest on public debt,Government spending,7.152864888019164,1.571862995733179,Central government (budgetary),21.97529270217311
+AGO,2015,GF0712,Medical products,Health,0.1002423384567475,0.0220285472873733,Central government (budgetary),21.97529270217311
+AGO,2015,GF072,Outpatient services,Health,0.0742481990639897,0.0163162590704039,Central government (budgetary),21.97529270217311
+AGO,2015,GF073,Hospital services,Health,3.702130802056532,0.813554079969232,Central government (budgetary),21.97529270217311
+AGO,2015,GF0740,Public health services,Health,1.685121832993601,0.3703104551885687,Central government (budgetary),21.97529270217311
+AGO,2015,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),21.97529270217311
+AGO,2015,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),21.97529270217311
+AGO,2016,GF01,General public services,Government spending,14.559430521735939,2.7375346134483474,Central government (budgetary),18.80248413124024
+AGO,2016,GF02,Defence,Government spending,14.38066576485321,2.703922398403221,Central government (budgetary),18.80248413124024
+AGO,2016,GF03,Public order and safety,Government spending,13.24505368809422,2.490399117878165,Central government (budgetary),18.80248413124024
+AGO,2016,GF04,Economic affairs,Government spending,16.78904171806858,3.156756904827148,Central government (budgetary),18.80248413124024
+AGO,2016,GF05,Environmental protection,Government spending,0.0539855182649826,0.0101506185049411,Central government (budgetary),18.80248413124024
+AGO,2016,GF06,Housing and community amenities,Government spending,3.435516872138201,0.6459625147098662,Central government (budgetary),18.80248413124024
+AGO,2016,GF08,"Recreation, culture and religion",Government spending,0.5066272118127856,0.0952585011056438,Central government (budgetary),18.80248413124024
+AGO,2016,GF09,Education,Government spending,10.82170107291497,2.034748626965092,Central government (budgetary),18.80248413124024
+AGO,2016,GF10,Social protection,Government spending,10.53039399938103,1.979975660690691,Central government (budgetary),18.80248413124024
+AGO,2016,GF0170,Interest on public debt,Government spending,10.09472333795855,1.898058753712261,Central government (budgetary),18.80248413124024
+AGO,2016,GF0712,Medical products,Health,0.0851437841300212,0.0160091464997846,Central government (budgetary),18.80248413124024
+AGO,2016,GF072,Outpatient services,Health,0.0905847338237814,0.0170321802025427,Central government (budgetary),18.80248413124024
+AGO,2016,GF073,Hospital services,Health,3.458498195213167,0.6502835743341858,Central government (budgetary),18.80248413124024
+AGO,2016,GF0740,Public health services,Health,1.948633581610579,0.3663915199583475,Central government (budgetary),18.80248413124024
+AGO,2016,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.80248413124024
+AGO,2016,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),18.80248413124024
+AGO,2017,GF01,General public services,Government spending,14.598648514467909,2.9506481738976316,Central government (budgetary),20.21178995420985
+AGO,2017,GF02,Defence,Government spending,13.15348937428376,2.658555643979546,Central government (budgetary),20.21178995420985
+AGO,2017,GF03,Public order and safety,Government spending,10.75320126143135,2.173414452313948,Central government (budgetary),20.21178995420985
+AGO,2017,GF04,Economic affairs,Government spending,19.78226766272525,3.998350388169606,Central government (budgetary),20.21178995420985
+AGO,2017,GF05,Environmental protection,Government spending,0.5633868043991609,0.1138705575348935,Central government (budgetary),20.21178995420985
+AGO,2017,GF06,Housing and community amenities,Government spending,6.374908889911611,1.288483194601186,Central government (budgetary),20.21178995420985
+AGO,2017,GF08,"Recreation, culture and religion",Government spending,0.7832754716823813,0.1583139930992894,Central government (budgetary),20.21178995420985
+AGO,2017,GF09,Education,Government spending,8.760296857233358,1.770612800149253,Central government (budgetary),20.21178995420985
+AGO,2017,GF10,Social protection,Government spending,9.047020957560596,1.828564873055493,Central government (budgetary),20.21178995420985
+AGO,2017,GF0170,Interest on public debt,Government spending,11.69290836258307,2.363346077783528,Central government (budgetary),20.21178995420985
+AGO,2017,GF0712,Medical products,Health,0.2023304604329707,0.0408946076760977,Central government (budgetary),20.21178995420985
+AGO,2017,GF072,Outpatient services,Health,0.0052756844166272,0.0010663102529356,Central government (budgetary),20.21178995420985
+AGO,2017,GF073,Hospital services,Health,2.924636671449792,0.5911214209572265,Central government (budgetary),20.21178995420985
+AGO,2017,GF0740,Public health services,Health,1.358353027422165,0.2745474607392185,Central government (budgetary),20.21178995420985
+AGO,2017,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),20.21178995420985
+AGO,2017,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),20.21178995420985
+AGO,2021,GF01,General public services,Government spending,10.72420442589592,2.0677040022907205,Central government (budgetary),19.28072162908235
+AGO,2021,GF02,Defence,Government spending,7.940384764724942,1.530963482764681,Central government (budgetary),19.28072162908235
+AGO,2021,GF03,Public order and safety,Government spending,7.229425385465059,1.393885383953732,Central government (budgetary),19.28072162908235
+AGO,2021,GF04,Economic affairs,Government spending,24.74217959223833,4.770470772147094,Central government (budgetary),19.28072162908235
+AGO,2021,GF05,Environmental protection,Government spending,0.036318822224076,0.0070025310119854,Central government (budgetary),19.28072162908235
+AGO,2021,GF06,Housing and community amenities,Government spending,7.401131826296435,1.426991624829634,Central government (budgetary),19.28072162908235
+AGO,2021,GF08,"Recreation, culture and religion",Government spending,0.5263951330653502,0.1014927802753678,Central government (budgetary),19.28072162908235
+AGO,2021,GF09,Education,Government spending,7.35203246811283,1.417524914256587,Central government (budgetary),19.28072162908235
+AGO,2021,GF10,Social protection,Government spending,2.356469419863112,0.4543443091182583,Central government (budgetary),19.28072162908235
+AGO,2021,GF0170,Interest on public debt,Government spending,23.82470763638681,4.593575558314465,Central government (budgetary),19.28072162908235
+AGO,2021,GF0712,Medical products,Health,0.0581431111698824,0.0112104114111529,Central government (budgetary),19.28072162908235
+AGO,2021,GF072,Outpatient services,Health,0.0034666817192736,0.0006684012520594,Central government (budgetary),19.28072162908235
+AGO,2021,GF073,Hospital services,Health,4.095109872189155,0.7895667348618609,Central government (budgetary),19.28072162908235
+AGO,2021,GF0740,Public health services,Health,3.710030860649217,0.7153207225948235,Central government (budgetary),19.28072162908235
+AGO,2021,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),19.28072162908235
+AGO,2021,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),19.28072162908235

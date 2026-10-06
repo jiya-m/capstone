@@ -1,0 +1,254 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+NPL,2000,G1111,Personal income tax,Taxes,0.09711744,0.9759595589965468,General government,9.9509697
+NPL,2000,G1112,Corporate income tax,Taxes,1.3569542,13.636401686561262,General government,9.9509697
+NPL,2000,G1113,Other income taxes,Taxes,0.16808866,1.6891686445392353,General government,9.9509697
+NPL,2000,G11412,VAT / sales tax,Taxes,2.207684,22.18561674446662,General government,9.9509697
+NPL,2000,G1142,Excise taxes,Taxes,0.97115286,9.75937912864914,General government,9.9509697
+NPL,2000,G115,Trade taxes (customs),Taxes,2.0299546,20.399565682528404,General government,9.9509697
+NPL,2000,G11NEC,Other taxes,Taxes,0.30327411,3.0476839860139457,General government,9.9509697
+NPL,2000,G13,Grants (e.g. foreign aid),Grants,1.2291222,12.351783163403661,General government,9.9509697
+NPL,2000,G14X,Other non-tax revenue,Other revenue,1.5876216,15.954441103363022,General government,9.9509697
+NPL,2001,G1111,Personal income tax,Taxes,0.11860134,1.124247788617262,General government,10.549395
+NPL,2001,G1112,Corporate income tax,Taxes,1.5549821,14.740012104959574,General government,10.549395
+NPL,2001,G1113,Other income taxes,Taxes,0.14461305999999996,1.3708185161329154,General government,10.549395
+NPL,2001,G11412,VAT / sales tax,Taxes,2.4585802,23.305414196738298,General government,10.549395
+NPL,2001,G1142,Excise taxes,Taxes,1.0446231,9.90220861006721,General government,10.549395
+NPL,2001,G115,Trade taxes (customs),Taxes,2.1887338,20.747481727625136,General government,10.549395
+NPL,2001,G11NEC,Other taxes,Taxes,0.20700139999999964,1.9622111031011698,General government,10.549395
+NPL,2001,G13,Grants (e.g. foreign aid),Grants,1.3409765,12.711406673084095,General government,10.549395
+NPL,2001,G14X,Other non-tax revenue,Other revenue,1.4912833,14.136197383831016,General government,10.549395
+NPL,2002,G1111,Personal income tax,Taxes,0.1594077,1.5140657416621415,General government,10.528453
+NPL,2002,G1112,Corporate income tax,Taxes,1.383855,13.143953817336698,General government,10.528453
+NPL,2002,G1113,Other income taxes,Taxes,0.15641189999999994,1.485611418885566,General government,10.528453
+NPL,2002,G11412,VAT / sales tax,Taxes,2.3407973,22.233060260609985,General government,10.528453
+NPL,2002,G1142,Excise taxes,Taxes,1.0827282,10.283829922591666,General government,10.528453
+NPL,2002,G115,Trade taxes (customs),Taxes,2.0592292,19.558706298066767,General government,10.528453
+NPL,2002,G11NEC,Other taxes,Taxes,0.32278437,3.06582904439997,General government,10.528453
+NPL,2002,G13,Grants (e.g. foreign aid),Grants,1.2758226,12.117854351441753,General government,10.528453
+NPL,2002,G14X,Other non-tax revenue,Other revenue,1.7474167,16.597088860063295,General government,10.528453
+NPL,2003,G1111,Personal income tax,Taxes,0.22245374,1.9145299601365762,General government,11.619235
+NPL,2003,G1112,Corporate income tax,Taxes,0.9891978,8.513450142942927,General government,11.619235
+NPL,2003,G1113,Other income taxes,Taxes,0.23680906000000002,2.0380778502612724,General government,11.619235
+NPL,2003,G11412,VAT / sales tax,Taxes,2.398582,20.64320024848451,General government,11.619235
+NPL,2003,G1142,Excise taxes,Taxes,1.2731157,10.956966380382045,General government,11.619235
+NPL,2003,G115,Trade taxes (customs),Taxes,2.1133639,18.188493945847252,General government,11.619235
+NPL,2003,G11NEC,Other taxes,Taxes,0.35149115,3.0250798992988797,General government,11.619235
+NPL,2003,G13,Grants (e.g. foreign aid),Grants,2.019564,17.38121276096893,General government,11.619235
+NPL,2003,G14X,Other non-tax revenue,Other revenue,2.0146579,17.3389888116776,General government,11.619235
+NPL,2004,G1111,Personal income tax,Taxes,0.22750696,1.951985662433834,General government,11.655155
+NPL,2004,G1112,Corporate income tax,Taxes,1.1114831,9.536407480621742,General government,11.655155
+NPL,2004,G1113,Other income taxes,Taxes,0.22316724,1.9147513236734843,General government,11.655155
+NPL,2004,G11412,VAT / sales tax,Taxes,2.3648317,20.290005951769693,General government,11.655155
+NPL,2004,G1142,Excise taxes,Taxes,1.6512077,14.167187483408629,General government,11.655155
+NPL,2004,G115,Trade taxes (customs),Taxes,1.9064533,16.357167744229315,General government,11.655155
+NPL,2004,G11NEC,Other taxes,Taxes,0.39175738,3.3612368997970137,General government,11.655155
+NPL,2004,G13,Grants (e.g. foreign aid),Grants,1.8429543,15.812353037994013,General government,11.655155
+NPL,2004,G14X,Other non-tax revenue,Other revenue,1.9357936,16.608904416072267,General government,11.655155
+NPL,2005,G1111,Personal income tax,Taxes,0.24961519,2.0304235078800206,General government,12.29375
+NPL,2005,G1112,Corporate income tax,Taxes,1.0904564,8.87000630401627,General government,12.29375
+NPL,2005,G1113,Other income taxes,Taxes,0.18156890999999997,1.476920467717336,General government,12.29375
+NPL,2005,G11412,VAT / sales tax,Taxes,2.7726691,22.553485307574988,General government,12.29375
+NPL,2005,G1142,Excise taxes,Taxes,1.2799393,10.411300864260294,General government,12.29375
+NPL,2005,G115,Trade taxes (customs),Taxes,2.0069493,16.324956176919166,General government,12.29375
+NPL,2005,G11NEC,Other taxes,Taxes,0.4590427000000007,3.7339518047788567,General government,12.29375
+NPL,2005,G13,Grants (e.g. foreign aid),Grants,2.1405403,17.411614031520084,General government,12.29375
+NPL,2005,G14X,Other non-tax revenue,Other revenue,2.1129684,17.187338281647182,General government,12.29375
+NPL,2006,G1111,Personal income tax,Taxes,0.23739017,2.0815016905373986,General government,11.404755
+NPL,2006,G1112,Corporate income tax,Taxes,1.0155067,8.904239433343237,General government,11.404755
+NPL,2006,G1113,Other income taxes,Taxes,0.2249859299999999,1.9727379345241152,General government,11.404755
+NPL,2006,G11412,VAT / sales tax,Taxes,2.9398142,25.777091895447267,General government,11.404755
+NPL,2006,G1142,Excise taxes,Taxes,1.1861089,10.400126005686984,General government,11.404755
+NPL,2006,G115,Trade taxes (customs),Taxes,1.7439751,15.291648845043282,General government,11.404755
+NPL,2006,G11NEC,Other taxes,Taxes,0.44888299,3.9359283602117223,General government,11.404755
+NPL,2006,G13,Grants (e.g. foreign aid),Grants,1.853344,16.250625159194016,General government,11.404755
+NPL,2006,G14X,Other non-tax revenue,Other revenue,1.7547471,15.386100676011973,General government,11.404755
+NPL,2007,G1111,Personal income tax,Taxes,0.24173103,1.944244816964443,General government,12.433158
+NPL,2007,G1112,Corporate income tax,Taxes,1.3978465,11.242891789841325,General government,12.433158
+NPL,2007,G1113,Other income taxes,Taxes,0.27877377000000014,2.242179903126785,General government,12.433158
+NPL,2007,G11412,VAT / sales tax,Taxes,3.199102,25.730405742450948,General government,12.433158
+NPL,2007,G1142,Excise taxes,Taxes,1.3418344,10.792385973056884,General government,12.433158
+NPL,2007,G115,Trade taxes (customs),Taxes,1.7839815,14.348579017494993,General government,12.433158
+NPL,2007,G11NEC,Other taxes,Taxes,0.42615382,3.427558951635618,General government,12.433158
+NPL,2007,G13,Grants (e.g. foreign aid),Grants,1.903279,15.308089867433518,General government,12.433158
+NPL,2007,G14X,Other non-tax revenue,Other revenue,1.8604559,14.96366329455477,General government,12.433158
+NPL,2008,G1111,Personal income tax,Taxes,0.26317877,2.00904845514994,General government,13.099672
+NPL,2008,G1112,Corporate income tax,Taxes,1.4242444,10.872366382652952,General government,13.099672
+NPL,2008,G1113,Other income taxes,Taxes,0.3648737299999998,2.785365261724173,General government,13.099672
+NPL,2008,G11412,VAT / sales tax,Taxes,3.3485784,25.562306038091364,General government,13.099672
+NPL,2008,G1142,Excise taxes,Taxes,1.5277164,11.662248719101576,General government,13.099672
+NPL,2008,G115,Trade taxes (customs),Taxes,1.8072057,13.79580814867083,General government,13.099672
+NPL,2008,G11NEC,Other taxes,Taxes,0.5288387,4.0370375363427025,General government,13.099672
+NPL,2008,G13,Grants (e.g. foreign aid),Grants,2.1841229,16.673110593618958,General government,13.099672
+NPL,2008,G14X,Other non-tax revenue,Other revenue,1.6509136,12.602708864647504,General government,13.099672
+NPL,2009,G1111,Personal income tax,Taxes,0.30147905,2.0448709644575307,General government,14.743182
+NPL,2009,G1112,Corporate income tax,Taxes,1.7428173,11.82117461602811,General government,14.743182
+NPL,2009,G1113,Other income taxes,Taxes,0.3934147499999998,2.668452084031437,General government,14.743182
+NPL,2009,G11412,VAT / sales tax,Taxes,3.513264,23.829753822276942,General government,14.743182
+NPL,2009,G1142,Excise taxes,Taxes,1.7269541,11.713577762835879,General government,14.743182
+NPL,2009,G115,Trade taxes (customs),Taxes,2.0765708,14.08495659834521,General government,14.743182
+NPL,2009,G11NEC,Other taxes,Taxes,0.627435,4.255763754013457,General government,14.743182
+NPL,2009,G13,Grants (e.g. foreign aid),Grants,2.3404207,15.874596705958073,General government,14.743182
+NPL,2009,G14X,Other non-tax revenue,Other revenue,2.0208264,13.706853692053357,General government,14.743182
+NPL,2010,G1111,Personal income tax,Taxes,0.32487127,2.058440323677935,General government,15.782399
+NPL,2010,G1112,Corporate income tax,Taxes,1.7679913,11.202297401773242,General government,15.782399
+NPL,2010,G1113,Other income taxes,Taxes,0.38026362999999974,2.409415857610758,General government,15.782399
+NPL,2010,G11412,VAT / sales tax,Taxes,3.9296323,24.89882710634052,General government,15.782399
+NPL,2010,G1142,Excise taxes,Taxes,2.0457444,12.962188884533628,General government,15.782399
+NPL,2010,G115,Trade taxes (customs),Taxes,2.3157304,14.672866683861688,General government,15.782399
+NPL,2010,G11NEC,Other taxes,Taxes,0.60385924,3.8261561554566277,General government,15.782399
+NPL,2010,G13,Grants (e.g. foreign aid),Grants,2.8331333,17.951220577537487,General government,15.782399
+NPL,2010,G14X,Other non-tax revenue,Other revenue,1.5811734,10.018587009208112,General government,15.782399
+NPL,2011,G1111,Personal income tax,Taxes,0.76065511,4.867046386086052,General government,15.62868
+NPL,2011,G1112,Corporate income tax,Taxes,1.5716558,10.056228612677279,General government,15.62868
+NPL,2011,G1113,Other income taxes,Taxes,0.34109968999999984,2.1825239739854925,General government,15.62868
+NPL,2011,G11412,VAT / sales tax,Taxes,3.9549602,25.30578509953633,General government,15.62868
+NPL,2011,G1142,Excise taxes,Taxes,1.8739092,11.990194872566365,General government,15.62868
+NPL,2011,G114X,Other goods & services taxes,Taxes,0.20639779999999996,1.3206348756220299,General government,15.62868
+NPL,2011,G115,Trade taxes (customs),Taxes,2.1056081,13.472718659076016,General government,15.62868
+NPL,2011,G11NEC,Other taxes,Taxes,0.20550009999999996,1.3148909484685143,General government,15.62868
+NPL,2011,G13,Grants (e.g. foreign aid),Grants,2.8535158,18.25820083168763,General government,15.62868
+NPL,2011,G14X,Other non-tax revenue,Other revenue,1.7553783,11.231775740294282,General government,15.62868
+NPL,2012,G1111,Personal income tax,Taxes,0.53688398,3.4410149560111853,General government,15.602489
+NPL,2012,G1112,Corporate income tax,Taxes,1.7410268,11.158647828561199,General government,15.602489
+NPL,2012,G1113,Other income taxes,Taxes,0.3057438200000002,1.9595836279711538,General government,15.602489
+NPL,2012,G11412,VAT / sales tax,Taxes,4.1053797,26.312338371140658,General government,15.602489
+NPL,2012,G1142,Excise taxes,Taxes,1.9387706,12.426034076998869,General government,15.602489
+NPL,2012,G114X,Other goods & services taxes,Taxes,0.24206509999999937,1.551451822846979,General government,15.602489
+NPL,2012,G115,Trade taxes (customs),Taxes,2.2594253,14.481185021184762,General government,15.602489
+NPL,2012,G113,Property taxes,Taxes,0.20405155,1.3078140929950344,General government,15.602489
+NPL,2012,G11NEC,Other taxes,Taxes,0.2236591500000003,1.4334837858241738,General government,15.602489
+NPL,2012,G13,Grants (e.g. foreign aid),Grants,1.7047978,10.926447696902718,General government,15.602489
+NPL,2012,G14X,Other non-tax revenue,Other revenue,2.3406851,15.001998078639888,General government,15.602489
+NPL,2013,G1111,Personal income tax,Taxes,0.99557761,5.83249359002975,General government,17.069502
+NPL,2013,G1112,Corporate income tax,Taxes,2.0570497,12.051023515507364,General government,17.069502
+NPL,2013,G1113,Other income taxes,Taxes,0.3854836900000005,2.2583183153205084,General government,17.069502
+NPL,2013,G11412,VAT / sales tax,Taxes,4.2838994,25.096803644300813,General government,17.069502
+NPL,2013,G1142,Excise taxes,Taxes,2.0590694,12.06285572947588,General government,17.069502
+NPL,2013,G114X,Other goods & services taxes,Taxes,0.49338099999999985,2.890424102589518,General government,17.069502
+NPL,2013,G115,Trade taxes (customs),Taxes,2.7405544,16.055268630566964,General government,17.069502
+NPL,2013,G113,Property taxes,Taxes,0.27395394,1.6049322352813808,General government,17.069502
+NPL,2013,G11NEC,Other taxes,Taxes,0.008913860000001267,0.052220972820421284,General government,17.069502
+NPL,2013,G13,Grants (e.g. foreign aid),Grants,1.883438,11.033936432357546,General government,17.069502
+NPL,2013,G14X,Other non-tax revenue,Other revenue,1.8881808,11.061721660069521,General government,17.069502
+NPL,2014,G1111,Personal income tax,Taxes,1.0135983,5.652916081394231,General government,17.930538
+NPL,2014,G1112,Corporate income tax,Taxes,2.0942838,11.679982663766722,General government,17.930538
+NPL,2014,G1113,Other income taxes,Taxes,0.2790287,1.556164631886741,General government,17.930538
+NPL,2014,G11412,VAT / sales tax,Taxes,4.5225414,25.222563029980595,General government,17.930538
+NPL,2014,G1142,Excise taxes,Taxes,2.1080676,11.75685598200603,General government,17.930538
+NPL,2014,G114X,Other goods & services taxes,Taxes,0.5017287000000001,2.7981797490455764,General government,17.930538
+NPL,2014,G115,Trade taxes (customs),Taxes,2.965889,16.540992248832953,General government,17.930538
+NPL,2014,G113,Property taxes,Taxes,0.29881498,1.6665142451437573,General government,17.930538
+NPL,2014,G11NEC,Other taxes,Taxes,0.2110185200000002,1.1768666000919807,General government,17.930538
+NPL,2014,G121,Social contributions,Social contributions,0.1225075,0.6832337986768563,General government,17.930538
+NPL,2014,G13,Grants (e.g. foreign aid),Grants,1.9566641,10.912466957350631,General government,17.930538
+NPL,2014,G14X,Other non-tax revenue,Other revenue,1.856396,10.35326401182394,General government,17.930538
+NPL,2015,G1111,Personal income tax,Taxes,1.0720975,5.875480302110963,General government,18.246976
+NPL,2015,G1112,Corporate income tax,Taxes,2.2151541,12.13984202060945,General government,18.246976
+NPL,2015,G1113,Other income taxes,Taxes,0.2679676,1.4685589280862514,General government,18.246976
+NPL,2015,G11412,VAT / sales tax,Taxes,4.6367227,25.41090981949008,General government,18.246976
+NPL,2015,G1142,Excise taxes,Taxes,2.2084544,12.103125252423672,General government,18.246976
+NPL,2015,G114X,Other goods & services taxes,Taxes,0.5762092000000001,3.1578338765784992,General government,18.246976
+NPL,2015,G115,Trade taxes (customs),Taxes,3.0809472,16.884699932090065,General government,18.246976
+NPL,2015,G113,Property taxes,Taxes,0.38782228,2.1254057274266223,General government,18.246976
+NPL,2015,G11NEC,Other taxes,Taxes,0.2414594,1.3232844479718795,General government,18.246976
+NPL,2015,G121,Social contributions,Social contributions,0.12374185,0.6781498904920211,General government,18.246976
+NPL,2015,G13,Grants (e.g. foreign aid),Grants,1.5008109,8.224984089733843,General government,18.246976
+NPL,2015,G14X,Other non-tax revenue,Other revenue,1.9355892,10.607725712986664,General government,18.246976
+NPL,2016,G1111,Personal income tax,Taxes,1.3373932,6.643997520662527,General government,20.129345
+NPL,2016,G1112,Corporate income tax,Taxes,2.7633047,13.727742578349515,General government,20.129345
+NPL,2016,G1113,Other income taxes,Taxes,0.2754500999999996,1.3684006928300836,General government,20.129345
+NPL,2016,G11412,VAT / sales tax,Taxes,4.6802379,23.250820329960398,General government,20.129345
+NPL,2016,G1142,Excise taxes,Taxes,2.6629176,13.2290323684378,General government,20.129345
+NPL,2016,G114X,Other goods & services taxes,Taxes,0.6702118000000006,3.329526079180583,General government,20.129345
+NPL,2016,G115,Trade taxes (customs),Taxes,3.1750771,15.77337493589198,General government,20.129345
+NPL,2016,G113,Property taxes,Taxes,0.50415913,2.5045977575924394,General government,20.129345
+NPL,2016,G11NEC,Other taxes,Taxes,0.21744068,1.0802173502984567,General government,20.129345
+NPL,2016,G121,Social contributions,Social contributions,0.12374185,0.6147336060944488,General government,20.129345
+NPL,2016,G13,Grants (e.g. foreign aid),Grants,1.6505305,8.199623379106368,General government,20.129345
+NPL,2016,G14X,Other non-tax revenue,Other revenue,2.0688807,10.277933401595396,General government,20.129345
+NPL,2017,G1111,Personal income tax,Taxes,1.1326928,5.407755989483629,General government,20.945708
+NPL,2017,G1112,Corporate income tax,Taxes,3.0108592,14.374587595411471,General government,20.945708
+NPL,2017,G1113,Other income taxes,Taxes,0.26261540000000005,1.2537909681077157,General government,20.945708
+NPL,2017,G11412,VAT / sales tax,Taxes,5.2099135,24.87341751825086,General government,20.945708
+NPL,2017,G1142,Excise taxes,Taxes,2.7518487,13.138007312819273,General government,20.945708
+NPL,2017,G114X,Other goods & services taxes,Taxes,1.034167300000001,4.9373708482150835,General government,20.945708
+NPL,2017,G115,Trade taxes (customs),Taxes,3.6782152,17.560710440120854,General government,20.945708
+NPL,2017,G113,Property taxes,Taxes,0.59451214,2.8383482140133047,General government,20.945708
+NPL,2017,G11NEC,Other taxes,Taxes,0.19423999,0.9273498245241253,General government,20.945708
+NPL,2017,G121,Social contributions,Social contributions,0.13443956,0.6418477594397561,General government,20.945708
+NPL,2017,G13,Grants (e.g. foreign aid),Grants,1.0377249,4.954355711814624,General government,20.945708
+NPL,2017,G14X,Other non-tax revenue,Other revenue,1.9044797,9.092457817799305,General government,20.945708
+NPL,2018,G1111,Personal income tax,Taxes,1.1981339,5.40534447618163,General government,22.165727
+NPL,2018,G1112,Corporate income tax,Taxes,2.5346668,11.435071811540402,General government,22.165727
+NPL,2018,G1113,Other income taxes,Taxes,0.3287721000000001,1.4832452822323405,General government,22.165727
+NPL,2018,G11412,VAT / sales tax,Taxes,5.9837071,26.995311726071517,General government,22.165727
+NPL,2018,G1142,Excise taxes,Taxes,2.9681874,13.39088675052255,General government,22.165727
+NPL,2018,G114X,Other goods & services taxes,Taxes,1.1186655,5.046825218049469,General government,22.165727
+NPL,2018,G115,Trade taxes (customs),Taxes,3.6709277,16.56127813899359,General government,22.165727
+NPL,2018,G11NEC,Other taxes,Taxes,0.20008971,0.9026986121411672,General government,22.165727
+NPL,2018,G121,Social contributions,Social contributions,0.14750795,0.665477608742542,General government,22.165727
+NPL,2018,G13,Grants (e.g. foreign aid),Grants,1.1377106,5.132746604701934,General government,22.165727
+NPL,2018,G14X,Other non-tax revenue,Other revenue,2.877061,12.979772781646187,General government,22.165727
+NPL,2019,G1111,Personal income tax,Taxes,1.4225522,6.364225320115497,General government,22.352323
+NPL,2019,G1112,Corporate income tax,Taxes,2.7175432,12.15776633149047,General government,22.352323
+NPL,2019,G1113,Other income taxes,Taxes,0.4074236999999994,1.8227353819108618,General government,22.352323
+NPL,2019,G11412,VAT / sales tax,Taxes,6.2611285,28.011086364491064,General government,22.352323
+NPL,2019,G1142,Excise taxes,Taxes,3.157822,14.12748912048202,General government,22.352323
+NPL,2019,G114X,Other goods & services taxes,Taxes,0.8045395000000002,3.5993551990099655,General government,22.352323
+NPL,2019,G115,Trade taxes (customs),Taxes,4.0261419,18.012185579100663,General government,22.352323
+NPL,2019,G11NEC,Other taxes,Taxes,0.14873409,0.6654077520264897,General government,22.352323
+NPL,2019,G121,Social contributions,Social contributions,0.15564416,0.696322078022942,General government,22.352323
+NPL,2019,G13,Grants (e.g. foreign aid),Grants,0.593395,2.6547352595074796,General government,22.352323
+NPL,2019,G14X,Other non-tax revenue,Other revenue,2.6573063,11.888278010298976,General government,22.352323
+NPL,2020,G1111,Personal income tax,Taxes,1.489643,6.696613246054503,General government,22.244722
+NPL,2020,G1112,Corporate income tax,Taxes,3.166896,14.236617567079508,General government,22.244722
+NPL,2020,G1113,Other income taxes,Taxes,0.4272832999999996,1.9208300288041342,General government,22.244722
+NPL,2020,G11412,VAT / sales tax,Taxes,5.7620877,25.90316795148081,General government,22.244722
+NPL,2020,G1142,Excise taxes,Taxes,2.5875603,11.63224381945524,General government,22.244722
+NPL,2020,G114X,Other goods & services taxes,Taxes,0.7326397999999994,3.2935444192109906,General government,22.244722
+NPL,2020,G115,Trade taxes (customs),Taxes,3.548492,15.952062696040885,General government,22.244722
+NPL,2020,G11NEC,Other taxes,Taxes,0.12019817000000312,0.5403446714236444,General government,22.244722
+NPL,2020,G121,Social contributions,Social contributions,0.16737401,0.752421226032854,General government,22.244722
+NPL,2020,G13,Grants (e.g. foreign aid),Grants,0.60994105,2.7419585194186737,General government,22.244722
+NPL,2020,G14X,Other non-tax revenue,Other revenue,3.6324959,16.329697894179123,General government,22.244722
+NPL,2021,G1111,Personal income tax,Taxes,1.9193001,8.248347311573106,General government,23.268905
+NPL,2021,G1112,Corporate income tax,Taxes,2.403623,10.329764120829923,General government,23.268905
+NPL,2021,G1113,Other income taxes,Taxes,0.7660841999999994,3.2923087700087277,General government,23.268905
+NPL,2021,G11412,VAT / sales tax,Taxes,6.4790008,27.844029618067545,General government,23.268905
+NPL,2021,G1142,Excise taxes,Taxes,3.1554903,13.560974613975173,General government,23.268905
+NPL,2021,G114X,Other goods & services taxes,Taxes,0.9976468999999999,4.2874681898439135,General government,23.268905
+NPL,2021,G115,Trade taxes (customs),Taxes,4.1114333,17.669216922755925,General government,23.268905
+NPL,2021,G121,Social contributions,Social contributions,0.15828881,0.6802589550303292,General government,23.268905
+NPL,2021,G13,Grants (e.g. foreign aid),Grants,0.83816149,3.602066749595651,General government,23.268905
+NPL,2021,G14X,Other non-tax revenue,Other revenue,2.4398524,10.485462895654093,General government,23.268905
+NPL,2022,G1111,Personal income tax,Taxes,1.8588029,8.104916294675949,General government,22.934264
+NPL,2022,G1112,Corporate income tax,Taxes,2.4718572,10.77800970635029,General government,22.934264
+NPL,2022,G1113,Other income taxes,Taxes,0.7368648000000007,3.212942870109111,General government,22.934264
+NPL,2022,G11412,VAT / sales tax,Taxes,6.3151966,27.53607702431611,General government,22.934264
+NPL,2022,G1142,Excise taxes,Taxes,3.3513386,14.612802050242381,General government,22.934264
+NPL,2022,G114X,Other goods & services taxes,Taxes,0.8956587999999996,3.905330469728611,General government,22.934264
+NPL,2022,G115,Trade taxes (customs),Taxes,3.992784,17.40968883937152,General government,22.934264
+NPL,2022,G121,Social contributions,Social contributions,0.15685541,0.6839347885766032,General government,22.934264
+NPL,2022,G13,Grants (e.g. foreign aid),Grants,0.55235168,2.408412495818484,General government,22.934264
+NPL,2022,G14X,Other non-tax revenue,Other revenue,2.6025332,11.34779472321414,General government,22.934264
+NPL,2023,G1111,Personal income tax,Taxes,1.4848399,7.706840955900802,General government,19.266518
+NPL,2023,G1112,Corporate income tax,Taxes,2.2152149,11.497743909927054,General government,19.266518
+NPL,2023,G1113,Other income taxes,Taxes,0.8289050000000002,4.302308284247315,General government,19.266518
+NPL,2023,G11412,VAT / sales tax,Taxes,5.3406354,27.719774792725907,General government,19.266518
+NPL,2023,G1142,Excise taxes,Taxes,2.6656326,13.83557008069647,General government,19.266518
+NPL,2023,G114X,Other goods & services taxes,Taxes,0.6203526000000008,3.219848028585138,General government,19.266518
+NPL,2023,G115,Trade taxes (customs),Taxes,2.8115391,14.592876097279227,General government,19.266518
+NPL,2023,G121,Social contributions,Social contributions,0.16158759,0.8386963850966739,General government,19.266518
+NPL,2023,G13,Grants (e.g. foreign aid),Grants,0.43566641,2.26126179105119,General government,19.266518
+NPL,2023,G14X,Other non-tax revenue,Other revenue,2.7021234,14.024970158074229,General government,19.266518
+NPL,2024,G1111,Personal income tax,Taxes,1.7198795,8.876589420820798,General government,19.375454
+NPL,2024,G1112,Corporate income tax,Taxes,2.6,13.419040400292038,General government,19.375454
+NPL,2024,G1113,Other income taxes,Taxes,0.6452594999999994,3.3302935766047046,General government,19.375454
+NPL,2024,G11412,VAT / sales tax,Taxes,5.4378211,28.065515780946342,General government,19.375454
+NPL,2024,G1142,Excise taxes,Taxes,2.5713849,13.271353022231116,General government,19.375454
+NPL,2024,G114X,Other goods & services taxes,Taxes,0.6388922999999993,3.297431378898266,General government,19.375454
+NPL,2024,G115,Trade taxes (customs),Taxes,2.7563886,14.226188454732467,General government,19.375454
+NPL,2024,G11NEC,Other taxes,Taxes,0.011041910000000925,0.05698916784092349,General government,19.375454
+NPL,2024,G121,Social contributions,Social contributions,0.16405274,0.8467039791686944,General government,19.375454
+NPL,2024,G13,Grants (e.g. foreign aid),Grants,0.41011739,2.1166853174124336,General government,19.375454
+NPL,2024,G14X,Other non-tax revenue,Other revenue,2.4206067,12.493161192506765,General government,19.375454

@@ -1,0 +1,169 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+LBY,1990,G111,Income taxes,Taxes,2.1855529,6.553466152749823,Central government,33.349571
+LBY,1990,G115,Trade taxes (customs),Taxes,2.5699242,7.706018582223595,Central government,33.349571
+LBY,1990,G11NEC,Other taxes,Taxes,0.9218206999999997,2.7641155500533285,Central government,33.349571
+LBY,1990,NONTAXRES,Resource (extractive) revenue,Other revenue,22.268952,66.77432661968992,Central government,33.349571
+LBY,1990,G14X,Other non-tax revenue,Other revenue,5.403322000000003,16.20207309528335,Central government,33.349571
+LBY,1991,G111,Income taxes,Taxes,2.9266434,8.155111748369118,Central government,35.887226
+LBY,1991,G115,Trade taxes (customs),Taxes,2.4561809,6.844164790869238,Central government,35.887226
+LBY,1991,G11NEC,Other taxes,Taxes,0.5936788999999999,1.6542902945226785,Central government,35.887226
+LBY,1991,NONTAXRES,Resource (extractive) revenue,Other revenue,22.708472,63.27731174720882,Central government,35.887226
+LBY,1991,G14X,Other non-tax revenue,Other revenue,7.202251,20.06912141903015,Central government,35.887226
+LBY,1992,G111,Income taxes,Taxes,3.1953845,12.407400288733418,Central government,25.75386
+LBY,1992,G115,Trade taxes (customs),Taxes,2.5645525,9.957934461086609,Central government,25.75386
+LBY,1992,G11NEC,Other taxes,Taxes,0.6260384999999996,2.430853083770742,Central government,25.75386
+LBY,1992,NONTAXRES,Resource (extractive) revenue,Other revenue,12.146871,47.1652443556034,Central government,25.75386
+LBY,1992,G14X,Other non-tax revenue,Other revenue,7.221012999999999,28.03856586934929,Central government,25.75386
+LBY,1993,G111,Income taxes,Taxes,3.4794342,14.23521803492835,Central government,24.442437
+LBY,1993,G115,Trade taxes (customs),Taxes,2.3519505,9.622405900033618,Central government,24.442437
+LBY,1993,G11NEC,Other taxes,Taxes,0.5307363000000005,2.1713722735584855,Central government,24.442437
+LBY,1993,NONTAXRES,Resource (extractive) revenue,Other revenue,10.480448,42.8780812649737,Central government,24.442437
+LBY,1993,G14X,Other non-tax revenue,Other revenue,7.599867999999999,31.09292252650584,Central government,24.442437
+LBY,1994,G111,Income taxes,Taxes,5.5791264,21.572101868188195,Central government,25.862692
+LBY,1994,G115,Trade taxes (customs),Taxes,2.6037912,10.06774985594375,Central government,25.862692
+LBY,1994,G11NEC,Other taxes,Taxes,0.76437703,2.955519910225218,Central government,25.862692
+LBY,1994,NONTAXRES,Resource (extractive) revenue,Other revenue,12.945776,50.055793436539794,Central government,25.862692
+LBY,1994,G14X,Other non-tax revenue,Other revenue,3.9696219999999993,15.348834929103049,Central government,25.862692
+LBY,1995,G1112,Corporate income tax,Taxes,1.7213943,5.472201422906528,Central government,31.457071
+LBY,1995,G1113,Other income taxes,Taxes,1.3092445000000001,4.16200379879993,Central government,31.457071
+LBY,1995,G115,Trade taxes (customs),Taxes,4.1447235,13.175808607158812,Central government,31.457071
+LBY,1995,G11NEC,Other taxes,Taxes,0.77275694,2.4565444573790525,Central government,31.457071
+LBY,1995,NONTAXRES,Resource (extractive) revenue,Other revenue,19.562214,62.18701623794269,Central government,31.457071
+LBY,1995,G14X,Other non-tax revenue,Other revenue,3.946738,12.546425475812985,Central government,31.457071
+LBY,1996,G1111,Personal income tax,Taxes,0.9386046,2.2306524866888684,Central government,42.07758
+LBY,1996,G1112,Corporate income tax,Taxes,1.794612,4.2650075659566165,Central government,42.07758
+LBY,1996,G1113,Other income taxes,Taxes,0.1867508999999996,0.4438251841897891,Central government,42.07758
+LBY,1996,G115,Trade taxes (customs),Taxes,3.7469096,8.904764814319462,Central government,42.07758
+LBY,1996,G11NEC,Other taxes,Taxes,0.73267259,1.7412421959281614,Central government,42.07758
+LBY,1996,NONTAXRES,Resource (extractive) revenue,Other revenue,29.346942,69.74484159678525,Central government,42.07758
+LBY,1996,G14X,Other non-tax revenue,Other revenue,5.331088999999999,12.669666156131845,Central government,42.07758
+LBY,1997,G1111,Personal income tax,Taxes,0.88983655,2.7618606746003507,Central government,32.218734
+LBY,1997,G1112,Corporate income tax,Taxes,1.3208511,4.099636849141133,Central government,32.218734
+LBY,1997,G1113,Other income taxes,Taxes,0.12192515000000004,0.37842936102113256,Central government,32.218734
+LBY,1997,G115,Trade taxes (customs),Taxes,3.7961274,11.78236045915722,Central government,32.218734
+LBY,1997,G11NEC,Other taxes,Taxes,0.69664601,2.162238918075733,Central government,32.218734
+LBY,1997,NONTAXRES,Resource (extractive) revenue,Other revenue,20.490817,63.59907520401622,Central government,32.218734
+LBY,1997,G14X,Other non-tax revenue,Other revenue,4.902531,15.216398533988215,Central government,32.218734
+LBY,1998,G1111,Personal income tax,Taxes,1.0793003,3.5392470846636663,Central government,30.495195
+LBY,1998,G1112,Corporate income tax,Taxes,1.4667414,4.809745928825837,Central government,30.495195
+LBY,1998,G1113,Other income taxes,Taxes,0.05742429999999987,0.1883060593644339,Central government,30.495195
+LBY,1998,G115,Trade taxes (customs),Taxes,4.5160361,14.80900876351176,Central government,30.495195
+LBY,1998,G11NEC,Other taxes,Taxes,0.7866438999999998,2.5795667153464663,Central government,30.495195
+LBY,1998,NONTAXRES,Resource (extractive) revenue,Other revenue,17.573223,57.62620307887849,Central government,30.495195
+LBY,1998,G14X,Other non-tax revenue,Other revenue,5.015826000000001,16.447922369409348,Central government,30.495195
+LBY,1999,G111,Income taxes,Taxes,1.9604212,6.004585777902901,Central government,32.648733
+LBY,1999,G115,Trade taxes (customs),Taxes,11.766984,36.041165426700644,Central government,32.648733
+LBY,1999,G11NEC,Other taxes,Taxes,0.84084416,2.5754265892292487,Central government,32.648733
+LBY,1999,NONTAXRES,Resource (extractive) revenue,Other revenue,14.459268,44.28737813674251,Central government,32.648733
+LBY,1999,G14X,Other non-tax revenue,Other revenue,3.6212159999999987,11.091444069424686,Central government,32.648733
+LBY,2000,G111,Income taxes,Taxes,1.663353,4.1163404625032465,Central government,40.408538
+LBY,2000,G115,Trade taxes (customs),Taxes,7.8402363,19.40242505185414,Central government,40.408538
+LBY,2000,G11NEC,Other taxes,Taxes,0.6865966999999998,1.6991376921382302,Central government,40.408538
+LBY,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,27.518358,68.10035542488569,Central government,40.408538
+LBY,2000,G14X,Other non-tax revenue,Other revenue,2.6999940000000002,6.681741368618683,Central government,40.408538
+LBY,2001,G111,Income taxes,Taxes,1.7871813,4.824251869396914,Central government,37.045771
+LBY,2001,G115,Trade taxes (customs),Taxes,7.1893096,19.40655952335288,Central government,37.045771
+LBY,2001,G11NEC,Other taxes,Taxes,0.67318571,1.8171728967390097,Central government,37.045771
+LBY,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,24.860616,67.10783803095904,Central government,37.045771
+LBY,2001,G14X,Other non-tax revenue,Other revenue,2.5354780000000012,6.8441766268004,Central government,37.045771
+LBY,2002,G111,Income taxes,Taxes,1.8836772,3.935361699976628,Central government,47.865414
+LBY,2002,G115,Trade taxes (customs),Taxes,1.4120781,2.950101042851592,Central government,47.865414
+LBY,2002,G11NEC,Other taxes,Taxes,0.98895846,2.0661232435960195,Central government,47.865414
+LBY,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,37.808601,78.98939388611704,Central government,47.865414
+LBY,2002,G14X,Other non-tax revenue,Other revenue,5.772099999999995,12.059020127458716,Central government,47.865414
+LBY,2003,G111,Income taxes,Taxes,0.20175416,0.4213245827598529,Central government,47.885684
+LBY,2003,G115,Trade taxes (customs),Taxes,1.1091377,2.3162197928197514,Central government,47.885684
+LBY,2003,G11NEC,Other taxes,Taxes,0.77743954,1.6235322722045087,Central government,47.885684
+LBY,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,41.80997,87.31204434868638,Central government,47.885684
+LBY,2003,G14X,Other non-tax revenue,Other revenue,3.9873830000000012,8.326879003529498,Central government,47.885684
+LBY,2004,G111,Income taxes,Taxes,0.69533136,1.3277758690149843,Central government,52.368127
+LBY,2004,G115,Trade taxes (customs),Taxes,1.3546585,2.5867995757534006,Central government,52.368127
+LBY,2004,G11NEC,Other taxes,Taxes,1.5864356400000001,3.029391570282898,Central government,52.368127
+LBY,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,45.322553,86.54606372931703,Central government,52.368127
+LBY,2004,G14X,Other non-tax revenue,Other revenue,3.4091489999999993,6.50996925563168,Central government,52.368127
+LBY,2005,G111,Income taxes,Taxes,0.62111404,1.0611284859166352,Central government,58.533349
+LBY,2005,G115,Trade taxes (customs),Taxes,0.80885632,1.3818726141912707,Central government,58.533349
+LBY,2005,G11NEC,Other taxes,Taxes,0.9559211400000002,1.6331222394262803,Central government,58.533349
+LBY,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,54.388938,92.91957307961314,Central government,58.533349
+LBY,2005,G14X,Other non-tax revenue,Other revenue,1.7585189999999997,3.0043027266387914,Central government,58.533349
+LBY,2006,G111,Income taxes,Taxes,0.87537054,1.5201179112175418,Central government,57.5857
+LBY,2006,G115,Trade taxes (customs),Taxes,0.66761256,1.1593374049460197,Central government,57.5857
+LBY,2006,G11NEC,Other taxes,Taxes,0.7208188999999998,1.2517324613575938,Central government,57.5857
+LBY,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,53.122704,92.24981896547231,Central government,57.5857
+LBY,2006,G14X,Other non-tax revenue,Other revenue,2.1991939999999985,3.818993257006511,Central government,57.5857
+LBY,2007,G111,Income taxes,Taxes,1.6018328,2.5917763800679876,Central government,61.804437
+LBY,2007,G115,Trade taxes (customs),Taxes,0.61465677,0.9945188401279345,Central government,61.804437
+LBY,2007,G11NEC,Other taxes,Taxes,0.5762407300000004,0.9323614257662447,Central government,61.804437
+LBY,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,55.583365,89.93426313389118,Central government,61.804437
+LBY,2007,G14X,Other non-tax revenue,Other revenue,3.428340999999996,5.54707908754188,Central government,61.804437
+LBY,2008,G111,Income taxes,Taxes,2.6296939,3.8272927610236764,Central government,68.708982
+LBY,2008,G115,Trade taxes (customs),Taxes,0.47051727,0.6847973223832716,Central government,68.708982
+LBY,2008,G11NEC,Other taxes,Taxes,0.22751298,0.33112552810535273,Central government,68.708982
+LBY,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,61.609297,89.667020340222,Central government,68.708982
+LBY,2008,G14X,Other non-tax revenue,Other revenue,3.7719610000000046,5.489764048265711,Central government,68.708982
+LBY,2009,G111,Income taxes,Taxes,3.2860265,5.994423844377986,Central government,54.818054
+LBY,2009,G115,Trade taxes (customs),Taxes,1.1501355,2.098096185610675,Central government,54.818054
+LBY,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,46.371439,84.59154533285694,Central government,54.818054
+LBY,2009,G14X,Other non-tax revenue,Other revenue,4.010452999999998,7.315934637154391,Central government,54.818054
+LBY,2010,G111,Income taxes,Taxes,2.3541338,3.655049960784894,Central government,64.407705
+LBY,2010,G115,Trade taxes (customs),Taxes,1.4597603,2.2664373738104198,Central government,64.407705
+LBY,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,58.343352,90.58442916016892,Central government,64.407705
+LBY,2010,G14X,Other non-tax revenue,Other revenue,2.2504589999999993,3.494083505235772,Central government,64.407705
+LBY,2011,G111,Income taxes,Taxes,0.78179984,2.77473084963284,Central government,28.1757
+LBY,2011,G115,Trade taxes (customs),Taxes,0.40277785,1.429522070436582,Central government,28.1757
+LBY,2011,G13,Grants (e.g. foreign aid),Grants,0.12248288,0.43471104533339017,Central government,28.1757
+LBY,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,26.845751,95.27980138914029,Central government,28.1757
+LBY,2011,G14X,Other non-tax revenue,Other revenue,0.022888000000001796,0.08123311931913597,Central government,28.1757
+LBY,2012,G111,Income taxes,Taxes,0.42824718,0.6692201326806994,Central government,63.991975
+LBY,2012,G115,Trade taxes (customs),Taxes,0.59954606,0.9369081982545467,Central government,63.991975
+LBY,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,61.231639,95.68643411927825,Central government,63.991975
+LBY,2012,G14X,Other non-tax revenue,Other revenue,1.7325420000000022,2.7074363621376,Central government,63.991975
+LBY,2013,G111,Income taxes,Taxes,0.88809391,1.5536965494058037,Central government,57.160061
+LBY,2013,G115,Trade taxes (customs),Taxes,0.15820803,0.27678071826806,Central government,57.160061
+LBY,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,54.0318,94.52718938043893,Central government,57.160061
+LBY,2013,G14X,Other non-tax revenue,Other revenue,2.0819600000000023,3.642333351887201,Central government,57.160061
+LBY,2014,G111,Income taxes,Taxes,0.90547077,3.0682393027406953,Central government,29.511087
+LBY,2014,G115,Trade taxes (customs),Taxes,0.08219099,0.2785088532997785,Central government,29.511087
+LBY,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,27.364121,92.72488336332715,Central government,29.511087
+LBY,2014,G14X,Other non-tax revenue,Other revenue,1.1593039999999988,3.9283676673787,Central government,29.511087
+LBY,2015,G111,Income taxes,Taxes,0.99763706,3.985679297501922,Central government,25.03054
+LBY,2015,G115,Trade taxes (customs),Taxes,0.06747017,0.2695513935377814,Central government,25.03054
+LBY,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,15.749528,62.921246826001884,Central government,25.03054
+LBY,2015,G14X,Other non-tax revenue,Other revenue,8.215905000000001,32.82352248295842,Central government,25.03054
+LBY,2016,G111,Income taxes,Taxes,1.0330537,8.104960927567305,Central government,12.745943
+LBY,2016,G115,Trade taxes (customs),Taxes,0.09366507,0.7348618301525435,Central government,12.745943
+LBY,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,9.6049928,75.35725524584568,Central government,12.745943
+LBY,2016,G14X,Other non-tax revenue,Other revenue,2.014231200000001,15.802920191938728,Central government,12.745943
+LBY,2017,G111,Income taxes,Taxes,0.90294129,3.7837716347438195,Central government,23.863525
+LBY,2017,G115,Trade taxes (customs),Taxes,0.17563127,0.7359820898211812,Central government,23.863525
+LBY,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,20.521296,85.99440359293105,Central government,23.863525
+LBY,2017,G14X,Other non-tax revenue,Other revenue,2.263656000000001,9.485840838685823,Central government,23.863525
+LBY,2018,G111,Income taxes,Taxes,1.0155339,2.163070703852065,Central government,46.948715
+LBY,2018,G115,Trade taxes (customs),Taxes,0.42961767,0.9150786555073979,Central government,46.948715
+LBY,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,31.981103,68.1192296743372,Central government,46.948715
+LBY,2018,G14X,Other non-tax revenue,Other revenue,13.522459999999999,28.802620050410322,Central government,46.948715
+LBY,2019,G111,Income taxes,Taxes,0.9763961,1.6482117919423764,Central government,59.239723
+LBY,2019,G115,Trade taxes (customs),Taxes,0.306292,0.5170382042468362,Central government,59.239723
+LBY,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,32.420585,54.72777953401302,Central government,59.239723
+LBY,2019,G14X,Other non-tax revenue,Other revenue,25.536448999999998,43.106968950546914,Central government,59.239723
+LBY,2020,G111,Income taxes,Taxes,0.97286848,2.774125673703947,Central government,35.069373
+LBY,2020,G115,Trade taxes (customs),Taxes,0.20287305,0.5784906676261363,Central government,35.069373
+LBY,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,8.1149219,23.13962641989636,Central government,35.069373
+LBY,2020,G14X,Other non-tax revenue,Other revenue,25.7787091,73.50775589857281,Central government,35.069373
+LBY,2021,G111,Income taxes,Taxes,0.4777689,0.6007065135077965,Central government,79.534496
+LBY,2021,G115,Trade taxes (customs),Taxes,0.19548522,0.2457867076498796,Central government,79.534496
+LBY,2021,G121,Social contributions,Social contributions,0.19548522,0.2457867076498796,Central government,79.534496
+LBY,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,78.118612,98.2197858726014,Central government,79.534496
+LBY,2021,G14X,Other non-tax revenue,Other revenue,0.5471450000000004,0.6879341985910418,Central government,79.534496
+LBY,2022,G111,Income taxes,Taxes,0.66345747,0.7734068970681791,Central government,85.783754
+LBY,2022,G115,Trade taxes (customs),Taxes,0.10136823,0.11816716484568861,Central government,85.783754
+LBY,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,83.93866,97.84913353174075,Central government,85.783754
+LBY,2022,G14X,Other non-tax revenue,Other revenue,1.0802680000000038,1.2592920566288155,Central government,85.783754
+LBY,2023,G111,Income taxes,Taxes,1.1325493,1.5393398100405522,Central government,73.573703
+LBY,2023,G115,Trade taxes (customs),Taxes,0.15714121,0.21358339133752724,Central government,73.573703
+LBY,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,71.586551,97.29910019616656,Central government,73.573703
+LBY,2023,G14X,Other non-tax revenue,Other revenue,0.6974610000000041,0.947975936456541,Central government,73.573703
+LBY,2024,G111,Income taxes,Taxes,1.0670803,1.5289585153576157,Central government,69.791318
+LBY,2024,G115,Trade taxes (customs),Taxes,0.15067173,0.21588893038992804,Central government,69.791318
+LBY,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,55.402807,79.3835229995011,Central government,69.791318
+LBY,2024,G14X,Other non-tax revenue,Other revenue,13.170758999999997,18.87162955475136,Central government,69.791318

@@ -1,0 +1,360 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+EGY,1990,G1111,Personal income tax,Taxes,0.55914676,3.61160818871907,Central government,15.481933
+EGY,1990,G1112,Corporate income tax,Taxes,3.6418762,23.52339465620992,Central government,15.481933
+EGY,1990,G114,Goods & services taxes,Taxes,2.8442262,18.371260229585026,Central government,15.481933
+EGY,1990,G115,Trade taxes (customs),Taxes,2.8867807,18.64612577770489,Central government,15.481933
+EGY,1990,G11NEC,Other taxes,Taxes,1.6873367,10.898746945875557,Central government,15.481933
+EGY,1990,NONTAXRES,Resource (extractive) revenue,Other revenue,0.7738987,4.998721412888171,Central government,15.481933
+EGY,1990,G14X,Other non-tax revenue,Other revenue,3.0876777,19.94374798030711,Central government,15.481933
+EGY,1991,G1111,Personal income tax,Taxes,0.65769161,3.2208075637690814,Central government,20.420084
+EGY,1991,G1112,Corporate income tax,Taxes,4.8219315,23.613671226817676,Central government,20.420084
+EGY,1991,G114,Goods & services taxes,Taxes,2.8847774,14.127157361350717,Central government,20.420084
+EGY,1991,G115,Trade taxes (customs),Taxes,2.7941203,13.683196895762036,Central government,20.420084
+EGY,1991,G11NEC,Other taxes,Taxes,2.0996527,10.282292178621793,Central government,20.420084
+EGY,1991,NONTAXRES,Resource (extractive) revenue,Other revenue,2.7676074,13.5533595258472,Central government,20.420084
+EGY,1991,G14X,Other non-tax revenue,Other revenue,4.3925931,21.511141188253685,Central government,20.420084
+EGY,1992,G1111,Personal income tax,Taxes,0.62217852,2.538920833250189,Central government,24.505629
+EGY,1992,G1112,Corporate income tax,Taxes,6.2122132,25.35014791907606,Central government,24.505629
+EGY,1992,G114,Goods & services taxes,Taxes,4.3237989,17.644104952376452,Central government,24.505629
+EGY,1992,G115,Trade taxes (customs),Taxes,3.1368737,12.800625113519839,Central government,24.505629
+EGY,1992,G11NEC,Other taxes,Taxes,2.306162849999997,9.410747424601904,Central government,24.505629
+EGY,1992,NONTAXRES,Resource (extractive) revenue,Other revenue,2.5399925,10.36493492984816,Central government,24.505629
+EGY,1992,G14X,Other non-tax revenue,Other revenue,5.3616747,21.879359636106464,Central government,24.505629
+EGY,1993,G1111,Personal income tax,Taxes,0.62784194,2.4866913272828417,Central government,25.248085
+EGY,1993,G1112,Corporate income tax,Taxes,6.1010252,24.164308699055788,Central government,25.248085
+EGY,1993,G114,Goods & services taxes,Taxes,4.3537236,17.24377749837265,Central government,25.248085
+EGY,1993,G115,Trade taxes (customs),Taxes,3.0326521,12.011414331027483,Central government,25.248085
+EGY,1993,G11NEC,Other taxes,Taxes,2.4290278,9.620641723916883,Central government,25.248085
+EGY,1993,NONTAXRES,Resource (extractive) revenue,Other revenue,2.8007684,11.092993389399632,Central government,25.248085
+EGY,1993,G14X,Other non-tax revenue,Other revenue,5.8982026,23.36098995230728,Central government,25.248085
+EGY,1994,G1111,Personal income tax,Taxes,0.72931512,2.8515575017891988,Central government,25.576027
+EGY,1994,G1112,Corporate income tax,Taxes,5.7937619,22.6530957009714,Central government,25.576027
+EGY,1994,G114,Goods & services taxes,Taxes,4.3911074,17.16884088133544,Central government,25.576027
+EGY,1994,G115,Trade taxes (customs),Taxes,3.3259378,13.004122119495156,Central government,25.576027
+EGY,1994,G113,Property taxes,Taxes,0.00652145,0.025498291698714773,Central government,25.576027
+EGY,1994,G11NEC,Other taxes,Taxes,2.8031353500000016,10.960010860357585,Central government,25.576027
+EGY,1994,NONTAXRES,Resource (extractive) revenue,Other revenue,2.5053224,9.795588612122177,Central government,25.576027
+EGY,1994,G14X,Other non-tax revenue,Other revenue,6.0209257,23.541286032230325,Central government,25.576027
+EGY,1995,G1111,Personal income tax,Taxes,0.63449574,2.6926500726447493,Central government,23.563988
+EGY,1995,G1112,Corporate income tax,Taxes,5.0223531,21.31368043473796,Central government,23.563988
+EGY,1995,G114,Goods & services taxes,Taxes,4.3510277,18.464733983059237,Central government,23.563988
+EGY,1995,G115,Trade taxes (customs),Taxes,3.2713127,13.882678517744962,Central government,23.563988
+EGY,1995,G113,Property taxes,Taxes,0.00979016,0.041547126912473385,Central government,23.563988
+EGY,1995,G11NEC,Other taxes,Taxes,2.6918286399999998,11.423485022993562,Central government,23.563988
+EGY,1995,NONTAXRES,Resource (extractive) revenue,Other revenue,2.0713186,8.790186958166844,Central government,23.563988
+EGY,1995,G14X,Other non-tax revenue,Other revenue,5.5118612,23.391037204738016,Central government,23.563988
+EGY,1996,G1111,Personal income tax,Taxes,0.64591414,2.82774011461778,Central government,22.842061
+EGY,1996,G1112,Corporate income tax,Taxes,5.0367207,22.050201857348636,Central government,22.842061
+EGY,1996,G114,Goods & services taxes,Taxes,4.3323509,18.966549378421167,Central government,22.842061
+EGY,1996,G115,Trade taxes (customs),Taxes,3.2797348,14.35831341185366,Central government,22.842061
+EGY,1996,G113,Property taxes,Taxes,0.0099499,0.04355955323479286,Central government,22.842061
+EGY,1996,G11NEC,Other taxes,Taxes,2.5525636000000005,11.174838945054175,Central government,22.842061
+EGY,1996,NONTAXRES,Resource (extractive) revenue,Other revenue,1.9555693,8.561264437600038,Central government,22.842061
+EGY,1996,G14X,Other non-tax revenue,Other revenue,5.0292583,22.017532301869753,Central government,22.842061
+EGY,1997,G1111,Personal income tax,Taxes,0.64894353,3.035912023122096,Central government,21.375571
+EGY,1997,G1112,Corporate income tax,Taxes,4.7456076,22.20107991501139,Central government,21.375571
+EGY,1997,G11412,VAT / sales tax,Taxes,2.3776108,11.123028245654817,Central government,21.375571
+EGY,1997,G1142,Excise taxes,Taxes,1.8100163,8.467686313502456,Central government,21.375571
+EGY,1997,G115,Trade taxes (customs),Taxes,3.0043682,14.055148281185097,Central government,21.375571
+EGY,1997,G11NEC,Other taxes,Taxes,2.3946202899999998,11.202602681350593,Central government,21.375571
+EGY,1997,NONTAXRES,Resource (extractive) revenue,Other revenue,1.7704511,8.282590907162199,Central government,21.375571
+EGY,1997,G14X,Other non-tax revenue,Other revenue,4.6228444,21.626764496723855,Central government,21.375571
+EGY,1998,G1111,Personal income tax,Taxes,0.67142272,3.344321666610543,Central government,20.076499
+EGY,1998,G1112,Corporate income tax,Taxes,4.3935335,21.883961980061162,Central government,20.076499
+EGY,1998,G11412,VAT / sales tax,Taxes,2.4727152,12.316465875204852,Central government,20.076499
+EGY,1998,G1142,Excise taxes,Taxes,1.8043369,8.987308306360113,Central government,20.076499
+EGY,1998,G115,Trade taxes (customs),Taxes,2.940494,14.646447762057115,Central government,20.076499
+EGY,1998,G11NEC,Other taxes,Taxes,2.265100700000001,11.282348842864165,Central government,20.076499
+EGY,1998,NONTAXRES,Resource (extractive) revenue,Other revenue,1.2806338,6.378770388249287,Central government,20.076499
+EGY,1998,G14X,Other non-tax revenue,Other revenue,4.2482626,21.160375178592766,Central government,20.076499
+EGY,1999,G1111,Personal income tax,Taxes,1.6902988,7.6921993134310185,Central government,21.974194
+EGY,1999,G1112,Corporate income tax,Taxes,3.4854104,15.861379944129009,Central government,21.974194
+EGY,1999,G11412,VAT / sales tax,Taxes,3.3629743,15.304198643190277,Central government,21.974194
+EGY,1999,G1142,Excise taxes,Taxes,1.3495801,6.141659166201955,Central government,21.974194
+EGY,1999,G115,Trade taxes (customs),Taxes,3.4158444,15.544799504364075,Central government,21.974194
+EGY,1999,G11NEC,Other taxes,Taxes,1.0861569,4.94287481033434,Central government,21.974194
+EGY,1999,G13,Grants (e.g. foreign aid),Grants,0.50984137,2.3201823466198577,Central government,21.974194
+EGY,1999,NONTAXRES,Resource (extractive) revenue,Other revenue,0.67432628,3.068719062005186,Central government,21.974194
+EGY,1999,G14X,Other non-tax revenue,Other revenue,6.39976142,29.1239870732005,Central government,21.974194
+EGY,2000,G1111,Personal income tax,Taxes,1.696276,8.04519941688814,Central government,21.084325
+EGY,2000,G1112,Corporate income tax,Taxes,3.9255395,18.61828387383384,Central government,21.084325
+EGY,2000,G11412,VAT / sales tax,Taxes,3.6129058,17.13550603523942,Central government,21.084325
+EGY,2000,G1142,Excise taxes,Taxes,1.2206141,5.789201666217905,Central government,21.084325
+EGY,2000,G115,Trade taxes (customs),Taxes,2.5992228,12.32774958492743,Central government,21.084325
+EGY,2000,G11NEC,Other taxes,Taxes,0.82129289,3.8952771127589942,Central government,21.084325
+EGY,2000,G13,Grants (e.g. foreign aid),Grants,0.49579581,2.351490065005685,Central government,21.084325
+EGY,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,0.44937613,2.131328026240688,Central government,21.084325
+EGY,2000,G14X,Other non-tax revenue,Other revenue,6.26330207,29.705964218887896,Central government,21.084325
+EGY,2001,G1111,Personal income tax,Taxes,1.6692988,8.26908650241484,Central government,20.187221
+EGY,2001,G1112,Corporate income tax,Taxes,3.752374,18.587867669594196,Central government,20.187221
+EGY,2001,G1113,Other income taxes,Taxes,0.20849889999999993,1.0328261421851745,Central government,20.187221
+EGY,2001,G11412,VAT / sales tax,Taxes,3.3635205,16.661631798420757,Central government,20.187221
+EGY,2001,G1142,Excise taxes,Taxes,1.3651874,6.762631532836906,Central government,20.187221
+EGY,2001,G115,Trade taxes (customs),Taxes,2.4350128,12.062149375346923,Central government,20.187221
+EGY,2001,G11NEC,Other taxes,Taxes,0.8229835999999989,4.076755209114609,Central government,20.187221
+EGY,2001,G13,Grants (e.g. foreign aid),Grants,0.4165293,2.063331509308161,Central government,20.187221
+EGY,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,0.26792034,1.3271778948240989,Central government,20.187221
+EGY,2001,G14X,Other non-tax revenue,Other revenue,5.88589576,29.15654236595434,Central government,20.187221
+EGY,2002,G1111,Personal income tax,Taxes,1.6406205,8.331489503525908,Central government,19.691803
+EGY,2002,G1112,Corporate income tax,Taxes,3.2844286,16.679166453168357,Central government,19.691803
+EGY,2002,G1113,Other income taxes,Taxes,0.07635460000000016,0.3877481406857471,Central government,19.691803
+EGY,2002,G11412,VAT / sales tax,Taxes,3.121102,15.849752305565927,Central government,19.691803
+EGY,2002,G1142,Excise taxes,Taxes,1.0890951,5.530702800551071,Central government,19.691803
+EGY,2002,G115,Trade taxes (customs),Taxes,1.8312811,9.29971267740186,Central government,19.691803
+EGY,2002,G113,Property taxes,Taxes,0.11593755,0.5887604603803928,Central government,19.691803
+EGY,2002,G11NEC,Other taxes,Taxes,1.592378,8.086501779445996,Central government,19.691803
+EGY,2002,G13,Grants (e.g. foreign aid),Grants,1.0704959,5.436251317362864,Central government,19.691803
+EGY,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,0.24028364,1.220221632320819,Central government,19.691803
+EGY,2002,G14X,Other non-tax revenue,Other revenue,5.62982566,28.589691152201755,Central government,19.691803
+EGY,2003,G1111,Personal income tax,Taxes,1.5296756,7.515682902676401,Central government,20.353115
+EGY,2003,G1112,Corporate income tax,Taxes,3.2170811,15.806332675891145,Central government,20.353115
+EGY,2003,G1113,Other income taxes,Taxes,0.07205150000000016,0.3540072330775165,Central government,20.353115
+EGY,2003,G11412,VAT / sales tax,Taxes,2.9165966,14.329976369253798,Central government,20.353115
+EGY,2003,G1142,Excise taxes,Taxes,1.252121,6.151986991086266,Central government,20.353115
+EGY,2003,G115,Trade taxes (customs),Taxes,1.8753227,9.213934479566088,Central government,20.353115
+EGY,2003,G113,Property taxes,Taxes,0.10779261,0.5296123413433967,Central government,20.353115
+EGY,2003,G11NEC,Other taxes,Taxes,1.7190781,8.446265263390114,Central government,20.353115
+EGY,2003,G13,Grants (e.g. foreign aid),Grants,0.7493318,3.681656553645578,Central government,20.353115
+EGY,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,0.0227795,0.11192144182826548,Central government,20.353115
+EGY,2003,G14X,Other non-tax revenue,Other revenue,6.8912847,33.85862374824144,Central government,20.353115
+EGY,2004,G1111,Personal income tax,Taxes,1.5981385,7.991613629370149,Central government,19.997694
+EGY,2004,G1112,Corporate income tax,Taxes,3.7468951,18.73663512203744,Central government,19.997694
+EGY,2004,G1113,Other income taxes,Taxes,0.05649829999999989,0.28252406428869753,Central government,19.997694
+EGY,2004,G11412,VAT / sales tax,Taxes,3.0920208,15.461886167923486,Central government,19.997694
+EGY,2004,G1142,Excise taxes,Taxes,1.0237689,5.11943457626813,Central government,19.997694
+EGY,2004,G115,Trade taxes (customs),Taxes,1.8095514,9.048799982783617,Central government,19.997694
+EGY,2004,G113,Property taxes,Taxes,0.09833794,0.49174637967121365,Central government,19.997694
+EGY,2004,G11NEC,Other taxes,Taxes,1.7336720599999995,8.669359547720187,Central government,19.997694
+EGY,2004,G13,Grants (e.g. foreign aid),Grants,0.98974846,4.949312767688229,Central government,19.997694
+EGY,2004,G14X,Other non-tax revenue,Other revenue,5.8490633,29.248687762248856,Central government,19.997694
+EGY,2005,G1111,Personal income tax,Taxes,1.644181,8.397413874101233,Central government,19.579611
+EGY,2005,G1112,Corporate income tax,Taxes,3.9307306,20.075631378658596,Central government,19.579611
+EGY,2005,G1113,Other income taxes,Taxes,0.056080700000000316,0.28642396928885067,Central government,19.579611
+EGY,2005,G11412,VAT / sales tax,Taxes,3.3070223,16.8901324999998,Central government,19.579611
+EGY,2005,G1142,Excise taxes,Taxes,1.0600863,5.414235661015815,Central government,19.579611
+EGY,2005,G115,Trade taxes (customs),Taxes,1.3677242,6.985451220409439,Central government,19.579611
+EGY,2005,G113,Property taxes,Taxes,0.12739369,0.6506446309007048,Central government,19.579611
+EGY,2005,G11NEC,Other taxes,Taxes,1.8866093,9.635580943234606,Central government,19.579611
+EGY,2005,G13,Grants (e.g. foreign aid),Grants,0.50390006,2.5735958236985126,Central government,19.579611
+EGY,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,0.02719792,0.13890939668728408,Central government,19.579611
+EGY,2005,G14X,Other non-tax revenue,Other revenue,5.66868528,28.951980602005154,Central government,19.579611
+EGY,2006,G1111,Personal income tax,Taxes,1.4432999,6.19705272222509,Central government,23.290102
+EGY,2006,G1112,Corporate income tax,Taxes,5.9873258,25.707598017389532,Central government,23.290102
+EGY,2006,G1113,Other income taxes,Taxes,0.05143060000000066,0.2208259972412343,Central government,23.290102
+EGY,2006,G11412,VAT / sales tax,Taxes,3.2286185,13.862620696122326,Central government,23.290102
+EGY,2006,G1142,Excise taxes,Taxes,0.99879972,4.288515868243084,Central government,23.290102
+EGY,2006,G115,Trade taxes (customs),Taxes,1.4863207,6.381769817925228,Central government,23.290102
+EGY,2006,G113,Property taxes,Taxes,0.13642159,0.5857492165555995,Central government,23.290102
+EGY,2006,G11NEC,Other taxes,Taxes,1.7222762100000009,7.394884788396379,Central government,23.290102
+EGY,2006,G13,Grants (e.g. foreign aid),Grants,0.3550508,1.5244707816221672,Central government,23.290102
+EGY,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,3.54464,15.219512563749184,Central government,23.290102
+EGY,2006,G14X,Other non-tax revenue,Other revenue,4.3359179,18.616998328302728,Central government,23.290102
+EGY,2007,G1111,Personal income tax,Taxes,1.2372259,5.376479051700173,Central government,23.011824
+EGY,2007,G1112,Corporate income tax,Taxes,6.233222,27.08704005274756,Central government,23.011824
+EGY,2007,G1113,Other income taxes,Taxes,0.0628112999999999,0.2729522867732194,Central government,23.011824
+EGY,2007,G11412,VAT / sales tax,Taxes,3.0764266,13.368895016660405,Central government,23.011824
+EGY,2007,G1142,Excise taxes,Taxes,0.82728596,3.595047301956471,Central government,23.011824
+EGY,2007,G115,Trade taxes (customs),Taxes,1.324107,5.754028870321547,Central government,23.011824
+EGY,2007,G113,Property taxes,Taxes,0.16942073,0.7362333796671658,Central government,23.011824
+EGY,2007,G11NEC,Other taxes,Taxes,1.6678905699999997,7.247972023648437,Central government,23.011824
+EGY,2007,G13,Grants (e.g. foreign aid),Grants,0.4962209,2.1563736047441346,Central government,23.011824
+EGY,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,1.7277518,7.508104509643118,Central government,23.011824
+EGY,2007,G14X,Other non-tax revenue,Other revenue,6.1894613,26.896873902137767,Central government,23.011824
+EGY,2008,G1111,Personal income tax,Taxes,1.2163065,5.1727655328859905,Central government,23.51366
+EGY,2008,G1112,Corporate income tax,Taxes,5.9009671,25.095910632372842,Central government,23.51366
+EGY,2008,G1113,Other income taxes,Taxes,0.06126830000000005,0.2605647100451399,Central government,23.51366
+EGY,2008,G11412,VAT / sales tax,Taxes,3.4522112,14.681726281659255,Central government,23.51366
+EGY,2008,G1142,Excise taxes,Taxes,0.76368168,3.2478213940322345,Central government,23.51366
+EGY,2008,G115,Trade taxes (customs),Taxes,1.4889817,6.332411457850458,Central government,23.51366
+EGY,2008,G113,Property taxes,Taxes,0.16122617,0.6856702444451438,Central government,23.51366
+EGY,2008,G11NEC,Other taxes,Taxes,1.5258234,6.489093573692908,Central government,23.51366
+EGY,2008,G13,Grants (e.g. foreign aid),Grants,0.15533193,0.6606029431402852,Central government,23.51366
+EGY,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,2.86387,12.179601133979142,Central government,23.51366
+EGY,2008,G14X,Other non-tax revenue,Other revenue,5.9239918,25.193831160270243,Central government,23.51366
+EGY,2009,G1111,Personal income tax,Taxes,1.2979479,5.034799838703674,Central government,25.779533
+EGY,2009,G1112,Corporate income tax,Taxes,5.9239687,22.979348135041175,Central government,25.779533
+EGY,2009,G1113,Other income taxes,Taxes,0.15135440000000067,0.5871107066062472,Central government,25.779533
+EGY,2009,G11412,VAT / sales tax,Taxes,3.3223797,12.887664271942164,Central government,25.779533
+EGY,2009,G1142,Excise taxes,Taxes,1.3207949,5.123424406696629,Central government,25.779533
+EGY,2009,G115,Trade taxes (customs),Taxes,1.2858212,4.9877598094359294,Central government,25.779533
+EGY,2009,G113,Property taxes,Taxes,0.20233702,0.7848746437817589,Central government,25.779533
+EGY,2009,G11NEC,Other taxes,Taxes,1.3899583,5.391712429015705,Central government,25.779533
+EGY,2009,G13,Grants (e.g. foreign aid),Grants,0.72853216,2.826009889656156,Central government,25.779533
+EGY,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,2.7754008,10.765907861307873,Central government,25.779533
+EGY,2009,G14X,Other non-tax revenue,Other revenue,7.381038200000001,28.631388007812685,Central government,25.779533
+EGY,2010,G1111,Personal income tax,Taxes,1.2862823,6.086655372282062,Central government,21.132826
+EGY,2010,G1112,Corporate income tax,Taxes,4.7461336,22.4585843822996,Central government,21.132826
+EGY,2010,G1113,Other income taxes,Taxes,0.5122128999999997,2.4237785123352573,Central government,21.132826
+EGY,2010,G11412,VAT / sales tax,Taxes,3.1420562,14.868130619337732,Central government,21.132826
+EGY,2010,G1142,Excise taxes,Taxes,1.2269544,5.805917247174367,Central government,21.132826
+EGY,2010,G115,Trade taxes (customs),Taxes,1.1588458,5.483629071329446,Central government,21.132826
+EGY,2010,G113,Property taxes,Taxes,0.18564517,0.878468257954507,Central government,21.132826
+EGY,2010,G11NEC,Other taxes,Taxes,1.1801987299999994,5.584670597049313,Central government,21.132826
+EGY,2010,G13,Grants (e.g. foreign aid),Grants,0.34151208,1.6160265413208448,Central government,21.132826
+EGY,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,2.5589839,12.109047214999617,Central government,21.132826
+EGY,2010,G14X,Other non-tax revenue,Other revenue,4.794001100000001,22.685092183917263,Central government,21.132826
+EGY,2011,G1111,Personal income tax,Taxes,1.3094322,7.116007525587977,Central government,18.40122
+EGY,2011,G1112,Corporate income tax,Taxes,4.8927487,26.58926255976506,Central government,18.40122
+EGY,2011,G1113,Other income taxes,Taxes,0.5202339,2.827170698464559,Central government,18.40122
+EGY,2011,G11412,VAT / sales tax,Taxes,2.8621779,15.554283357299136,Central government,18.40122
+EGY,2011,G1142,Excise taxes,Taxes,1.6076401,8.736595182275959,Central government,18.40122
+EGY,2011,G115,Trade taxes (customs),Taxes,0.96123382,5.223750490456612,Central government,18.40122
+EGY,2011,G113,Property taxes,Taxes,0.14769591,0.8026419443928176,Central government,18.40122
+EGY,2011,G11NEC,Other taxes,Taxes,1.0216634,5.55215034655311,Central government,18.40122
+EGY,2011,G13,Grants (e.g. foreign aid),Grants,0.15861374,0.8619740430254081,Central government,18.40122
+EGY,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,1.5658694,8.509595559424865,Central government,18.40122
+EGY,2011,G14X,Other non-tax revenue,Other revenue,3.3539103000000003,18.22656486906847,Central government,18.40122
+EGY,2012,G1111,Personal income tax,Taxes,1.220502,7.111462540634054,Central government,17.162461
+EGY,2012,G1112,Corporate income tax,Taxes,3.9313549,22.906708145736868,Central government,17.162461
+EGY,2012,G1113,Other income taxes,Taxes,0.6036572000000002,3.5173113728482552,Central government,17.162461
+EGY,2012,G11412,VAT / sales tax,Taxes,2.6179696,15.254045255901849,Central government,17.162461
+EGY,2012,G1142,Excise taxes,Taxes,1.472828,8.581682906539255,Central government,17.162461
+EGY,2012,G115,Trade taxes (customs),Taxes,0.83589396,4.870478364215922,Central government,17.162461
+EGY,2012,G113,Property taxes,Taxes,0.14207224,0.8278080763685524,Central government,17.162461
+EGY,2012,G11NEC,Other taxes,Taxes,0.899706099999999,5.2422906539521845,Central government,17.162461
+EGY,2012,G13,Grants (e.g. foreign aid),Grants,0.57113221,3.3277989853064907,Central government,17.162461
+EGY,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0076593,5.871298339266574,Central government,17.162461
+EGY,2012,G14X,Other non-tax revenue,Other revenue,3.8596857,22.489115359229995,Central government,17.162461
+EGY,2013,G1111,Personal income tax,Taxes,1.3350523,7.463702390292625,Central government,17.887266
+EGY,2013,G1112,Corporate income tax,Taxes,4.6735257,26.12766925923727,Central government,17.887266
+EGY,2013,G1113,Other income taxes,Taxes,0.7144243000000001,3.994038552342209,Central government,17.887266
+EGY,2013,G11412,VAT / sales tax,Taxes,2.5171815,14.072477593836867,Central government,17.887266
+EGY,2013,G1142,Excise taxes,Taxes,1.5577738,8.708842368643705,Central government,17.887266
+EGY,2013,G115,Trade taxes (customs),Taxes,0.85580802,4.78445403562512,Central government,17.887266
+EGY,2013,G113,Property taxes,Taxes,0.12979321,0.7256179340095908,Central government,17.887266
+EGY,2013,G11NEC,Other taxes,Taxes,1.0351801699999998,5.787246469080293,Central government,17.887266
+EGY,2013,G13,Grants (e.g. foreign aid),Grants,0.26346183,1.4729016161553141,Central government,17.887266
+EGY,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1089099,6.199437633453877,Central government,17.887266
+EGY,2013,G14X,Other non-tax revenue,Other revenue,3.6961552,20.66361175598328,Central government,17.887266
+EGY,2014,G1111,Personal income tax,Taxes,1.3913738,6.829126098845437,Central government,20.374112
+EGY,2014,G1112,Corporate income tax,Taxes,3.9925156,19.596022638925316,Central government,20.374112
+EGY,2014,G1113,Other income taxes,Taxes,0.6902007000000001,3.387635740885296,Central government,20.374112
+EGY,2014,G11412,VAT / sales tax,Taxes,2.3388448,11.479493192145013,Central government,20.374112
+EGY,2014,G1142,Excise taxes,Taxes,1.0956423,5.377619893323448,Central government,20.374112
+EGY,2014,G114X,Other goods & services taxes,Taxes,0.6630597,3.2544225731163157,Central government,20.374112
+EGY,2014,G115,Trade taxes (customs),Taxes,0.78826494,3.868953601511565,Central government,20.374112
+EGY,2014,G113,Property taxes,Taxes,0.15635147,0.7674026234861181,Central government,20.374112
+EGY,2014,G11NEC,Other taxes,Taxes,0.49340268999999864,2.421713839601935,Central government,20.374112
+EGY,2014,G13,Grants (e.g. foreign aid),Grants,4.2754683,20.984808074089315,Central government,20.374112
+EGY,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0502096,5.154627598002799,Central government,20.374112
+EGY,2014,G14X,Other non-tax revenue,Other revenue,3.4387779000000003,16.87817314442956,Central government,20.374112
+EGY,2015,G1111,Personal income tax,Taxes,1.4722552,8.153965654686404,Central government,18.055695
+EGY,2015,G1112,Corporate income tax,Taxes,3.5550472,19.689339707945386,Central government,18.055695
+EGY,2015,G1113,Other income taxes,Taxes,0.6582449999999995,3.6456363831277683,Central government,18.055695
+EGY,2015,G11412,VAT / sales tax,Taxes,2.5428921,14.083601027167973,Central government,18.055695
+EGY,2015,G1142,Excise taxes,Taxes,1.5527302,8.599669895405603,Central government,18.055695
+EGY,2015,G114X,Other goods & services taxes,Taxes,0.6751891999999997,3.7394804563877155,Central government,18.055695
+EGY,2015,G115,Trade taxes (customs),Taxes,0.84992432,4.7072367035026925,Central government,18.055695
+EGY,2015,G113,Property taxes,Taxes,0.17175457,0.9512487134128865,Central government,18.055695
+EGY,2015,G11NEC,Other taxes,Taxes,0.39761721000000116,2.202170570735455,Central government,18.055695
+EGY,2015,G13,Grants (e.g. foreign aid),Grants,0.99066248,5.48670355336932,Central government,18.055695
+EGY,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,1.2177747,6.744546107866382,Central government,18.055695
+EGY,2015,G14X,Other non-tax revenue,Other revenue,3.9716032,21.996401226392425,Central government,18.055695
+EGY,2016,G1111,Personal income tax,Taxes,1.4669891,8.548143755946352,Central government,17.161493
+EGY,2016,G1112,Corporate income tax,Taxes,3.5750934,20.832065026342065,Central government,17.161493
+EGY,2016,G1113,Other income taxes,Taxes,0.8175075999999999,4.763615821261854,Central government,17.161493
+EGY,2016,G11412,VAT / sales tax,Taxes,2.4975244,14.553071733923357,Central government,17.161493
+EGY,2016,G1142,Excise taxes,Taxes,1.6942177,9.872204540216961,Central government,17.161493
+EGY,2016,G114X,Other goods & services taxes,Taxes,0.7150144,4.166388065713459,Central government,17.161493
+EGY,2016,G115,Trade taxes (customs),Taxes,0.98086525,5.715500655193866,Central government,17.161493
+EGY,2016,G113,Property taxes,Taxes,0.17181117,1.0011434850043108,Central government,17.161493
+EGY,2016,G11NEC,Other taxes,Taxes,0.38395545,2.237307954421115,Central government,17.161493
+EGY,2016,G13,Grants (e.g. foreign aid),Grants,0.12371242,0.7208721254684257,Central government,17.161493
+EGY,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.417546,2.4330400496638838,Central government,17.161493
+EGY,2016,G14X,Other non-tax revenue,Other revenue,4.3172562,25.156646786844348,Central government,17.161493
+EGY,2017,G1111,Personal income tax,Taxes,1.3848902,7.68073750687231,Central government,18.030693
+EGY,2017,G1112,Corporate income tax,Taxes,3.1697557,17.579777438393524,Central government,18.030693
+EGY,2017,G1113,Other income taxes,Taxes,0.8547169999999995,4.740344700006814,Central government,18.030693
+EGY,2017,G11412,VAT / sales tax,Taxes,3.0778522,17.070071571846963,Central government,18.030693
+EGY,2017,G1142,Excise taxes,Taxes,1.9406576,10.763078268816402,Central government,18.030693
+EGY,2017,G114X,Other goods & services taxes,Taxes,0.6880029999999995,3.8157324291417947,Central government,18.030693
+EGY,2017,G115,Trade taxes (customs),Taxes,0.93698679,5.196621061653038,Central government,18.030693
+EGY,2017,G113,Property taxes,Taxes,0.15524768,0.8610189303317405,Central government,18.030693
+EGY,2017,G11NEC,Other taxes,Taxes,0.42918296,2.3802909849333025,Central government,18.030693
+EGY,2017,G13,Grants (e.g. foreign aid),Grants,0.48368391,2.682558623786673,Central government,18.030693
+EGY,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.36423589,2.0200881352702305,Central government,18.030693
+EGY,2017,G14X,Other non-tax revenue,Other revenue,4.54547991,25.209679461571447,Central government,18.030693
+EGY,2018,G1111,Personal income tax,Taxes,1.3743174,7.809733146677979,Central government,17.597495
+EGY,2018,G1112,Corporate income tax,Taxes,3.0571343,17.3725538776968,Central government,17.597495
+EGY,2018,G1113,Other income taxes,Taxes,0.9466375,5.379387804912007,Central government,17.597495
+EGY,2018,G11412,VAT / sales tax,Taxes,3.3491106,19.03174627979721,Central government,17.597495
+EGY,2018,G1142,Excise taxes,Taxes,2.255227,12.81561381321603,Central government,17.597495
+EGY,2018,G114X,Other goods & services taxes,Taxes,0.7017916,3.98801988578488,Central government,17.597495
+EGY,2018,G115,Trade taxes (customs),Taxes,0.81238481,4.616479845568929,Central government,17.597495
+EGY,2018,G113,Property taxes,Taxes,0.16475719,0.9362536542843172,Central government,17.597495
+EGY,2018,G11NEC,Other taxes,Taxes,0.82502679,4.688319502292798,Central government,17.597495
+EGY,2018,G13,Grants (e.g. foreign aid),Grants,0.06844542,0.3889497908651204,Central government,17.597495
+EGY,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,0.42334233,2.405696549423654,Central government,17.597495
+EGY,2018,G14X,Other non-tax revenue,Other revenue,3.61931977,20.567244201518456,Central government,17.597495
+EGY,2019,G1111,Personal income tax,Taxes,1.543633,9.17090720217338,Central government,16.831846
+EGY,2019,G1112,Corporate income tax,Taxes,2.9087688,17.281341314533453,Central government,16.831846
+EGY,2019,G1113,Other income taxes,Taxes,0.8551036000000005,5.0802721656277035,Central government,16.831846
+EGY,2019,G11412,VAT / sales tax,Taxes,3.5325036,20.98702392793066,Central government,16.831846
+EGY,2019,G1142,Excise taxes,Taxes,1.988742,11.815352697865809,Central government,16.831846
+EGY,2019,G114X,Other goods & services taxes,Taxes,0.7435095999999997,4.417278942290717,Central government,16.831846
+EGY,2019,G115,Trade taxes (customs),Taxes,0.75089171,4.461136935587205,Central government,16.831846
+EGY,2019,G113,Property taxes,Taxes,0.21406362,1.2717774201389227,Central government,16.831846
+EGY,2019,G11NEC,Other taxes,Taxes,0.6171910700000004,3.666805535370193,Central government,16.831846
+EGY,2019,G13,Grants (e.g. foreign aid),Grants,0.04661365,0.2769372373514878,Central government,16.831846
+EGY,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,0.27565761,1.6377146387016217,Central government,16.831846
+EGY,2019,G14X,Other non-tax revenue,Other revenue,3.35516799,19.933451982428842,Central government,16.831846
+EGY,2020,G1111,Personal income tax,Taxes,1.5762133,9.942098224481445,Central government,15.85393
+EGY,2020,G1112,Corporate income tax,Taxes,3.0698323,19.363225941112024,Central government,15.85393
+EGY,2020,G1113,Other income taxes,Taxes,0.8130886999999998,5.1286254979677715,Central government,15.85393
+EGY,2020,G11412,VAT / sales tax,Taxes,3.1487501,19.861006615377356,Central government,15.85393
+EGY,2020,G1142,Excise taxes,Taxes,1.6299304,10.280923359718084,Central government,15.85393
+EGY,2020,G114X,Other goods & services taxes,Taxes,0.5845611000000004,3.6871684018977153,Central government,15.85393
+EGY,2020,G115,Trade taxes (customs),Taxes,0.5294022,3.3392489916539665,Central government,15.85393
+EGY,2020,G113,Property taxes,Taxes,0.17268147,1.089202924685286,Central government,15.85393
+EGY,2020,G11NEC,Other taxes,Taxes,0.49700942999999975,3.1349288649915166,Central government,15.85393
+EGY,2020,G13,Grants (e.g. foreign aid),Grants,0.08553457,0.5395165086659172,Central government,15.85393
+EGY,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,0.2156958,1.3605194361753608,Central government,15.85393
+EGY,2020,G14X,Other non-tax revenue,Other revenue,3.5312307,22.27353523327355,Central government,15.85393
+EGY,2021,G1111,Personal income tax,Taxes,1.8386817,11.050911449325804,Central government,16.638281
+EGY,2021,G1112,Corporate income tax,Taxes,2.9646141,17.818031201660798,Central government,16.638281
+EGY,2021,G1113,Other income taxes,Taxes,0.8758534999999998,5.264086476241144,Central government,16.638281
+EGY,2021,G11412,VAT / sales tax,Taxes,3.507429,21.08047700360392,Central government,16.638281
+EGY,2021,G1142,Excise taxes,Taxes,1.5909607,9.562049709341968,Central government,16.638281
+EGY,2021,G114X,Other goods & services taxes,Taxes,0.6784019000000001,4.077355707599843,Central government,16.638281
+EGY,2021,G115,Trade taxes (customs),Taxes,0.5422341,3.258955056715295,Central government,16.638281
+EGY,2021,G113,Property taxes,Taxes,0.22875989,1.3749009888701844,Central government,16.638281
+EGY,2021,G11NEC,Other taxes,Taxes,0.28965346,1.7408857321258127,Central government,16.638281
+EGY,2021,G13,Grants (e.g. foreign aid),Grants,0.04434272,0.26651022422328363,Central government,16.638281
+EGY,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.27428674,1.6485281141723716,Central government,16.638281
+EGY,2021,G14X,Other non-tax revenue,Other revenue,3.8030631599999998,22.85730815581249,Central government,16.638281
+EGY,2022,G1111,Personal income tax,Taxes,1.9123137,11.132397682279699,Central government,17.177914
+EGY,2022,G1112,Corporate income tax,Taxes,2.9897992,17.404902597602945,Central government,17.177914
+EGY,2022,G1113,Other income taxes,Taxes,0.9821611999999997,5.7175813081844495,Central government,17.177914
+EGY,2022,G11412,VAT / sales tax,Taxes,3.2486656,18.91187486443348,Central government,17.177914
+EGY,2022,G1142,Excise taxes,Taxes,1.8209053,10.600270207430308,Central government,17.177914
+EGY,2022,G114X,Other goods & services taxes,Taxes,0.7220950000000002,4.203624491309015,Central government,17.177914
+EGY,2022,G115,Trade taxes (customs),Taxes,0.54773605,3.188606311569612,Central government,17.177914
+EGY,2022,G113,Property taxes,Taxes,0.19304686,1.1238085136530547,Central government,17.177914
+EGY,2022,G11NEC,Other taxes,Taxes,0.2246860899999995,1.3079940323371015,Central government,17.177914
+EGY,2022,G13,Grants (e.g. foreign aid),Grants,0.05204208,0.3029592533761666,Central government,17.177914
+EGY,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,0.39591074,2.3047661083877817,Central government,17.177914
+EGY,2022,G14X,Other non-tax revenue,Other revenue,4.08855216,23.801214513007803,Central government,17.177914
+EGY,2023,G1111,Personal income tax,Taxes,1.8834563,12.228919676066289,Central government,15.401657
+EGY,2023,G1112,Corporate income tax,Taxes,3.1723411,20.597400904381892,Central government,15.401657
+EGY,2023,G1113,Other income taxes,Taxes,1.0892915000000003,7.072560301676108,Central government,15.401657
+EGY,2023,G11412,VAT / sales tax,Taxes,3.3167683,21.535138948975316,Central government,15.401657
+EGY,2023,G1142,Excise taxes,Taxes,1.3961745,9.065092624804736,Central government,15.401657
+EGY,2023,G114X,Other goods & services taxes,Taxes,0.7575480999999995,4.918614180566136,Central government,15.401657
+EGY,2023,G115,Trade taxes (customs),Taxes,0.58480528,3.7970282587705673,Central government,15.401657
+EGY,2023,G113,Property taxes,Taxes,0.17112402,1.111075364597289,Central government,15.401657
+EGY,2023,G11NEC,Other taxes,Taxes,0.02159421,0.14020705421097768,Central government,15.401657
+EGY,2023,G13,Grants (e.g. foreign aid),Grants,0.05348629,0.3472761986464924,Central government,15.401657
+EGY,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,0.34370144,2.231587375989726,Central government,15.401657
+EGY,2023,G14X,Other non-tax revenue,Other revenue,2.6113662599999996,16.955099111314468,Central government,15.401657
+EGY,2024,G1111,Personal income tax,Taxes,2.0194209,14.124958626046915,Central government,14.296827
+EGY,2024,G1112,Corporate income tax,Taxes,2.8637511,20.03067602340668,Central government,14.296827
+EGY,2024,G1113,Other income taxes,Taxes,1.1594617999999999,8.109923965569475,Central government,14.296827
+EGY,2024,G11412,VAT / sales tax,Taxes,3.1865202,22.2883035359606,Central government,14.296827
+EGY,2024,G1142,Excise taxes,Taxes,1.0332762,7.22731134172127,Central government,14.296827
+EGY,2024,G114X,Other goods & services taxes,Taxes,0.6904241000000004,4.82921210081845,Central government,14.296827
+EGY,2024,G115,Trade taxes (customs),Taxes,0.54257594,3.7950794230110785,Central government,14.296827
+EGY,2024,G113,Property taxes,Taxes,0.1587951,1.1107016954806115,Central government,14.296827
+EGY,2024,G11NEC,Other taxes,Taxes,0.07133965999999889,0.4989894607390853,Central government,14.296827
+EGY,2024,G13,Grants (e.g. foreign aid),Grants,0.04273311,0.2988992590461511,Central government,14.296827
+EGY,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,0.07842435,0.5485437429238363,Central government,14.296827
+EGY,2024,G14X,Other non-tax revenue,Other revenue,2.45010455,17.137400825275844,Central government,14.296827

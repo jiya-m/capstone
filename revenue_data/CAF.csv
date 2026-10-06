@@ -1,0 +1,232 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+CAF,1990,G111,Income taxes,Taxes,2.557558,16.595874349466214,General government,15.410806
+CAF,1990,G114,Goods & services taxes,Taxes,3.6334954,23.577581860416647,General government,15.410806
+CAF,1990,G115,Trade taxes (customs),Taxes,4.2452796,27.547420946055645,General government,15.410806
+CAF,1990,G13,Grants (e.g. foreign aid),Grants,4.7407911,30.7627719147201,General government,15.410806
+CAF,1990,G14X,Other non-tax revenue,Other revenue,0.23368149,1.5163482688705574,General government,15.410806
+CAF,1991,G111,Income taxes,Taxes,2.1887179,14.95335147596075,General government,14.636972
+CAF,1991,G114,Goods & services taxes,Taxes,2.789978,19.061168935566354,General government,14.636972
+CAF,1991,G115,Trade taxes (customs),Taxes,3.4442459,23.531136430298652,General government,14.636972
+CAF,1991,G13,Grants (e.g. foreign aid),Grants,5.4774742,37.42218077218034,General government,14.636972
+CAF,1991,G14X,Other non-tax revenue,Other revenue,0.73655621,5.0321623859939,General government,14.636972
+CAF,1992,G111,Income taxes,Taxes,2.0280155,12.864073801484938,General government,15.764955
+CAF,1992,G114,Goods & services taxes,Taxes,3.1104353,19.730060866864157,General government,15.764955
+CAF,1992,G115,Trade taxes (customs),Taxes,3.088734,19.5924055457938,General government,15.764955
+CAF,1992,G13,Grants (e.g. foreign aid),Grants,6.8345947,43.353086119922565,General government,15.764955
+CAF,1992,G14X,Other non-tax revenue,Other revenue,0.70317592,4.46037366593454,General government,15.764955
+CAF,1993,G111,Income taxes,Taxes,1.7802301,11.897810350692758,General government,14.96267
+CAF,1993,G114,Goods & services taxes,Taxes,2.8958773,19.35401435706328,General government,14.96267
+CAF,1993,G115,Trade taxes (customs),Taxes,2.5556677,17.08029181957498,General government,14.96267
+CAF,1993,G13,Grants (e.g. foreign aid),Grants,7.2167578,48.231751418697336,General government,14.96267
+CAF,1993,G14X,Other non-tax revenue,Other revenue,0.51413699,3.436131318808742,General government,14.96267
+CAF,1994,G111,Income taxes,Taxes,1.8246734,12.346948855903822,General government,14.778334
+CAF,1994,G114,Goods & services taxes,Taxes,2.5338933,17.146000474066952,General government,14.778334
+CAF,1994,G115,Trade taxes (customs),Taxes,2.4230447,16.395925422307805,General government,14.778334
+CAF,1994,G13,Grants (e.g. foreign aid),Grants,7.3115732,49.47494732843535,General government,14.778334
+CAF,1994,G14X,Other non-tax revenue,Other revenue,0.68514988,4.636177919286071,General government,14.778334
+CAF,1995,G111,Income taxes,Taxes,1.8899721,12.015977625731187,General government,15.728825
+CAF,1995,G114,Goods & services taxes,Taxes,3.0010711,19.080071706258774,General government,15.728825
+CAF,1995,G115,Trade taxes (customs),Taxes,3.9065611,24.836954350358827,General government,15.728825
+CAF,1995,G13,Grants (e.g. foreign aid),Grants,6.5324218,41.53153064568448,General government,15.728825
+CAF,1995,G14X,Other non-tax revenue,Other revenue,0.39879896,2.535465671966727,General government,15.728825
+CAF,1996,G111,Income taxes,Taxes,1.5666664,14.706599382611284,General government,10.652812
+CAF,1996,G114,Goods & services taxes,Taxes,2.3171327,21.751371150391954,General government,10.652812
+CAF,1996,G115,Trade taxes (customs),Taxes,2.4986687,23.45548456312725,General government,10.652812
+CAF,1996,G13,Grants (e.g. foreign aid),Grants,4.2192262,39.60668935519224,General government,10.652812
+CAF,1996,G14X,Other non-tax revenue,Other revenue,0.05111811,0.4798555486772779,General government,10.652812
+CAF,1997,G111,Income taxes,Taxes,2.0751336,16.092580401003843,General government,12.894971
+CAF,1997,G114,Goods & services taxes,Taxes,3.8056176,29.512416551626018,General government,12.894971
+CAF,1997,G115,Trade taxes (customs),Taxes,1.6147387,12.522235848507501,General government,12.894971
+CAF,1997,G13,Grants (e.g. foreign aid),Grants,4.9427964,38.33119393989493,General government,12.894971
+CAF,1997,G14X,Other non-tax revenue,Other revenue,0.45668485,3.541573258967702,General government,12.894971
+CAF,1998,G111,Income taxes,Taxes,2.2844641,12.655420086112056,General government,18.05127
+CAF,1998,G114,Goods & services taxes,Taxes,4.4805297,24.821132256708093,General government,18.05127
+CAF,1998,G115,Trade taxes (customs),Taxes,1.5225957,8.434839577828273,General government,18.05127
+CAF,1998,G13,Grants (e.g. foreign aid),Grants,8.7590639,48.52325462921434,General government,18.05127
+CAF,1998,G14X,Other non-tax revenue,Other revenue,1.004617,5.565353450137227,General government,18.05127
+CAF,1999,G111,Income taxes,Taxes,2.2957195,12.970400419662706,General government,17.699681
+CAF,1999,G114,Goods & services taxes,Taxes,4.5407083,25.65418154956907,General government,17.699681
+CAF,1999,G115,Trade taxes (customs),Taxes,1.5479118,8.745422017071707,General government,17.699681
+CAF,1999,G13,Grants (e.g. foreign aid),Grants,8.3464482,47.15592442193962,General government,17.699681
+CAF,1999,G14X,Other non-tax revenue,Other revenue,0.96889321,5.474071591756895,General government,17.699681
+CAF,2000,G111,Income taxes,Taxes,2.0465378,13.503641693011973,General government,15.155451
+CAF,2000,G114,Goods & services taxes,Taxes,4.9213008,32.472150119452074,General government,15.155451
+CAF,2000,G115,Trade taxes (customs),Taxes,1.7043389,11.245715485471202,General government,15.155451
+CAF,2000,G13,Grants (e.g. foreign aid),Grants,5.3268097,35.14781381299706,General government,15.155451
+CAF,2000,G14X,Other non-tax revenue,Other revenue,1.1564635,7.630676909581907,General government,15.155451
+CAF,2001,G111,Income taxes,Taxes,2.3011453,17.34685684586738,General government,13.265488
+CAF,2001,G114,Goods & services taxes,Taxes,3.7628353,28.36559920126575,General government,13.265488
+CAF,2001,G115,Trade taxes (customs),Taxes,1.7937405,13.52185786448799,General government,13.265488
+CAF,2001,G13,Grants (e.g. foreign aid),Grants,3.6854731,27.782415249917104,General government,13.265488
+CAF,2001,G14X,Other non-tax revenue,Other revenue,1.7222943,12.983270838461774,General government,13.265488
+CAF,2002,G111,Income taxes,Taxes,2.5151863,16.255589909148,General government,15.472747
+CAF,2002,G114,Goods & services taxes,Taxes,4.8621875,31.424203472079004,General government,15.472747
+CAF,2002,G115,Trade taxes (customs),Taxes,1.5887078,10.267781150948826,General government,15.472747
+CAF,2002,G13,Grants (e.g. foreign aid),Grants,4.0196555,25.97893896927288,General government,15.472747
+CAF,2002,G14X,Other non-tax revenue,Other revenue,2.4870095,16.073483913360697,General government,15.472747
+CAF,2003,G111,Income taxes,Taxes,2.0334031,22.0277308928196,General government,9.2311055
+CAF,2003,G114,Goods & services taxes,Taxes,2.9655484,32.12560367633537,General government,9.2311055
+CAF,2003,G115,Trade taxes (customs),Taxes,1.5537203,16.831356582032818,General government,9.2311055
+CAF,2003,G13,Grants (e.g. foreign aid),Grants,1.4600425,15.816550728224795,General government,9.2311055
+CAF,2003,G14X,Other non-tax revenue,Other revenue,1.2183913,13.198758120587419,General government,9.2311055
+CAF,2004,G111,Income taxes,Taxes,2.2544388,19.884304691595545,General government,11.33778
+CAF,2004,G114,Goods & services taxes,Taxes,3.1940774,28.171981528236337,General government,11.33778
+CAF,2004,G115,Trade taxes (customs),Taxes,1.5248975,13.44970043695678,General government,11.33778
+CAF,2004,G13,Grants (e.g. foreign aid),Grants,3.2805019,28.934251540098625,General government,11.33778
+CAF,2004,G14X,Other non-tax revenue,Other revenue,1.0838648,9.559761803112714,General government,11.33778
+CAF,2005,G111,Income taxes,Taxes,1.9776197,16.741195679907058,General government,11.812894
+CAF,2005,G114,Goods & services taxes,Taxes,3.5363044,29.93596996637742,General government,11.812894
+CAF,2005,G115,Trade taxes (customs),Taxes,1.2799551,10.835237326263995,General government,11.812894
+CAF,2005,G13,Grants (e.g. foreign aid),Grants,3.9519863,33.45485280744922,General government,11.812894
+CAF,2005,G14X,Other non-tax revenue,Other revenue,1.0670282,9.032741680404481,General government,11.812894
+CAF,2006,G111,Income taxes,Taxes,2.1756145,9.910036815295427,General government,21.953647
+CAF,2006,G114,Goods & services taxes,Taxes,3.4432576,15.684216841056067,General government,21.953647
+CAF,2006,G115,Trade taxes (customs),Taxes,1.8981398,8.64612517455528,General government,21.953647
+CAF,2006,G13,Grants (e.g. foreign aid),Grants,12.826061,58.42337266332104,General government,21.953647
+CAF,2006,G14X,Other non-tax revenue,Other revenue,1.610574,7.3362480502670016,General government,21.953647
+CAF,2007,G111,Income taxes,Taxes,1.7168423,12.337662020347297,General government,13.915459
+CAF,2007,G114,Goods & services taxes,Taxes,3.6310501,26.093642329728397,General government,13.915459
+CAF,2007,G115,Trade taxes (customs),Taxes,1.7287318,12.42310296771382,General government,13.915459
+CAF,2007,G13,Grants (e.g. foreign aid),Grants,3.9734674,28.554339458008535,General government,13.915459
+CAF,2007,G14X,Other non-tax revenue,Other revenue,2.865367,20.591250349701003,General government,13.915459
+CAF,2008,G1111,Personal income tax,Taxes,0.92033635,6.220246911677807,General government,14.795817
+CAF,2008,G1112,Corporate income tax,Taxes,0.32760879,2.21419871575865,General government,14.795817
+CAF,2008,G1113,Other income taxes,Taxes,0.3588698600000001,2.4254818777496374,General government,14.795817
+CAF,2008,G114,Goods & services taxes,Taxes,4.3432512,29.354588529987904,General government,14.795817
+CAF,2008,G115,Trade taxes (customs),Taxes,1.8100531,12.23354614348096,General government,14.795817
+CAF,2008,G13,Grants (e.g. foreign aid),Grants,4.6412955,31.368970703003423,General government,14.795817
+CAF,2008,G14X,Other non-tax revenue,Other revenue,2.3944019,16.182965090741526,General government,14.795817
+CAF,2009,G1111,Personal income tax,Taxes,0.92594245,5.991132611454901,General government,15.455215
+CAF,2009,G1112,Corporate income tax,Taxes,0.47114928,3.048480838384174,General government,15.455215
+CAF,2009,G1113,Other income taxes,Taxes,0.49361697000000004,3.1938537071440627,General government,15.455215
+CAF,2009,G11412,VAT / sales tax,Taxes,2.6211222,16.95946728765747,General government,15.455215
+CAF,2009,G114X,Other goods & services taxes,Taxes,1.9553389000000005,12.65164444100857,General government,15.455215
+CAF,2009,G115,Trade taxes (customs),Taxes,1.8713773,12.108387049720447,General government,15.455215
+CAF,2009,G13,Grants (e.g. foreign aid),Grants,5.0843423,32.89725939374485,General government,15.455215
+CAF,2009,G14X,Other non-tax revenue,Other revenue,2.032326,13.149774670885531,General government,15.455215
+CAF,2010,G1111,Personal income tax,Taxes,0.70179697,4.410383424729675,General government,15.91238
+CAF,2010,G1112,Corporate income tax,Taxes,0.59544682,3.7420349438613205,General government,15.91238
+CAF,2010,G1113,Other income taxes,Taxes,0.37819720999999995,2.376748229994507,General government,15.91238
+CAF,2010,G11412,VAT / sales tax,Taxes,2.880683,18.103407535516368,General government,15.91238
+CAF,2010,G114X,Other goods & services taxes,Taxes,1.5814407000000004,9.938429700648175,General government,15.91238
+CAF,2010,G115,Trade taxes (customs),Taxes,2.5345874,15.92839914582231,General government,15.91238
+CAF,2010,G13,Grants (e.g. foreign aid),Grants,5.1403554,32.304126723972146,General government,15.91238
+CAF,2010,G14X,Other non-tax revenue,Other revenue,2.0998721,13.196467781689474,General government,15.91238
+CAF,2011,G1111,Personal income tax,Taxes,0.31456476,2.616312310702613,General government,12.023211
+CAF,2011,G1112,Corporate income tax,Taxes,0.94651398,7.87238906903026,General government,12.023211
+CAF,2011,G1113,Other income taxes,Taxes,0.37527486,3.1212531121260993,General government,12.023211
+CAF,2011,G11412,VAT / sales tax,Taxes,2.8238715,23.486832311706674,General government,12.023211
+CAF,2011,G114X,Other goods & services taxes,Taxes,0.30086749999999984,2.5023888376444905,General government,12.023211
+CAF,2011,G115,Trade taxes (customs),Taxes,2.8200987,23.45545300817051,General government,12.023211
+CAF,2011,G13,Grants (e.g. foreign aid),Grants,2.2895747,19.04295469677927,General government,12.023211
+CAF,2011,G14X,Other non-tax revenue,Other revenue,2.1524454,17.90241665384009,General government,12.023211
+CAF,2012,G1111,Personal income tax,Taxes,0.32642716,2.198155588453317,General government,14.850048
+CAF,2012,G1112,Corporate income tax,Taxes,0.98220748,6.614170405375121,General government,14.850048
+CAF,2012,G1113,Other income taxes,Taxes,0.41027956,2.7628163895497173,General government,14.850048
+CAF,2012,G11412,VAT / sales tax,Taxes,2.9562208,19.907146428078885,General government,14.850048
+CAF,2012,G114X,Other goods & services taxes,Taxes,1.6896824000000001,11.378295881602538,General government,14.850048
+CAF,2012,G115,Trade taxes (customs),Taxes,2.478358,16.689225516308095,General government,14.850048
+CAF,2012,G13,Grants (e.g. foreign aid),Grants,4.5633817,30.72974376917839,General government,14.850048
+CAF,2012,G14X,Other non-tax revenue,Other revenue,1.4434904,9.720442654461454,General government,14.850048
+CAF,2013,G1111,Personal income tax,Taxes,0.27635421,3.702508684129622,General government,7.4639719
+CAF,2013,G1112,Corporate income tax,Taxes,0.16124529,2.1603147876777395,General government,7.4639719
+CAF,2013,G1113,Other income taxes,Taxes,0.39378631,5.275827831486119,General government,7.4639719
+CAF,2013,G11412,VAT / sales tax,Taxes,2.5055992,33.56924722423528,General government,7.4639719
+CAF,2013,G114X,Other goods & services taxes,Taxes,0.23760920000000008,3.1834149602030397,General government,7.4639719
+CAF,2013,G115,Trade taxes (customs),Taxes,1.0062078,13.480862540646523,General government,7.4639719
+CAF,2013,G13,Grants (e.g. foreign aid),Grants,2.4762053,33.175436795183245,General government,7.4639719
+CAF,2013,G14X,Other non-tax revenue,Other revenue,0.40696465,5.452387176438427,General government,7.4639719
+CAF,2014,G1111,Personal income tax,Taxes,0.11995534,0.9216731060537665,General government,13.014955
+CAF,2014,G1112,Corporate income tax,Taxes,0.36094128,2.773281044767346,General government,13.014955
+CAF,2014,G1113,Other income taxes,Taxes,0.31934277000000005,2.453660193216189,General government,13.014955
+CAF,2014,G11412,VAT / sales tax,Taxes,1.0900819,8.375610211483636,General government,13.014955
+CAF,2014,G114X,Other goods & services taxes,Taxes,0.8252272,6.340607401254942,General government,13.014955
+CAF,2014,G115,Trade taxes (customs),Taxes,0.9043574,6.948601819983241,General government,13.014955
+CAF,2014,G13,Grants (e.g. foreign aid),Grants,8.9801254,68.99851286462382,General government,13.014955
+CAF,2014,G14X,Other non-tax revenue,Other revenue,0.41492368,3.188053128113005,General government,13.014955
+CAF,2015,G1111,Personal income tax,Taxes,0.186503,1.5337597765507989,General government,12.159857
+CAF,2015,G1112,Corporate income tax,Taxes,0.5793163,4.7641702216062765,General government,12.159857
+CAF,2015,G1113,Other income taxes,Taxes,0.4220563999999999,3.470899287174117,General government,12.159857
+CAF,2015,G11412,VAT / sales tax,Taxes,1.691479,13.910352396907118,General government,12.159857
+CAF,2015,G114X,Other goods & services taxes,Taxes,1.2555408000000001,10.325292230464985,General government,12.159857
+CAF,2015,G115,Trade taxes (customs),Taxes,1.3873663,11.409396236425732,General government,12.159857
+CAF,2015,G13,Grants (e.g. foreign aid),Grants,6.1298013,50.41014177889253,General government,12.159857
+CAF,2015,G14X,Other non-tax revenue,Other revenue,0.50779419,4.175988071978434,General government,12.159857
+CAF,2016,G1111,Personal income tax,Taxes,0.37604108,3.121361580494324,General government,12.047341
+CAF,2016,G1112,Corporate income tax,Taxes,0.82874443,6.879064978354672,General government,12.047341
+CAF,2016,G1113,Other income taxes,Taxes,0.34505669000000005,2.864172965513608,General government,12.047341
+CAF,2016,G11412,VAT / sales tax,Taxes,1.7911199,14.867345987621444,General government,12.047341
+CAF,2016,G114X,Other goods & services taxes,Taxes,1.3071519,10.850127652356914,General government,12.047341
+CAF,2016,G115,Trade taxes (customs),Taxes,1.5514458,12.877910345165693,General government,12.047341
+CAF,2016,G13,Grants (e.g. foreign aid),Grants,5.2616505,43.674786065098914,General government,12.047341
+CAF,2016,G14X,Other non-tax revenue,Other revenue,0.58613091,4.865230425394417,General government,12.047341
+CAF,2017,G1111,Personal income tax,Taxes,0.46067919,3.818959624304171,General government,12.06295
+CAF,2017,G1112,Corporate income tax,Taxes,0.62327185,5.166827766010801,General government,12.06295
+CAF,2017,G1113,Other income taxes,Taxes,0.05419756000000009,0.44928943583451875,General government,12.06295
+CAF,2017,G11412,VAT / sales tax,Taxes,2.303396,19.094798536013165,General government,12.06295
+CAF,2017,G114X,Other goods & services taxes,Taxes,0.8807101999999998,7.30095208883399,General government,12.06295
+CAF,2017,G115,Trade taxes (customs),Taxes,2.303396,19.094798536013165,General government,12.06295
+CAF,2017,G13,Grants (e.g. foreign aid),Grants,4.7422858,39.31281983262801,General government,12.06295
+CAF,2017,G14X,Other non-tax revenue,Other revenue,0.69501311,5.76155177630679,General government,12.06295
+CAF,2018,G1111,Personal income tax,Taxes,0.71055987,4.46485910153221,General government,15.914497
+CAF,2018,G1112,Corporate income tax,Taxes,0.79371049,4.987342594028129,General government,15.914497
+CAF,2018,G1113,Other income taxes,Taxes,0.12850553999999992,0.8074747168965665,General government,15.914497
+CAF,2018,G11412,VAT / sales tax,Taxes,2.5020778,15.722003605511366,General government,15.914497
+CAF,2018,G114X,Other goods & services taxes,Taxes,1.3984423000000001,8.787222716535677,General government,15.914497
+CAF,2018,G115,Trade taxes (customs),Taxes,2.1921528,13.774565373399595,General government,15.914497
+CAF,2018,G13,Grants (e.g. foreign aid),Grants,7.4180152,46.611684784597074,General government,15.914497
+CAF,2018,G14X,Other non-tax revenue,Other revenue,0.77103305,4.844847107499386,General government,15.914497
+CAF,2019,G1111,Personal income tax,Taxes,0.8803467,5.150879395204276,General government,17.091192
+CAF,2019,G1112,Corporate income tax,Taxes,0.65640192,3.840585901782247,General government,17.091192
+CAF,2019,G1113,Other income taxes,Taxes,0.10697957999999996,0.6259339807028381,General government,17.091192
+CAF,2019,G11412,VAT / sales tax,Taxes,2.4013836,14.050415938654018,General government,17.091192
+CAF,2019,G1142,Excise taxes,Taxes,0.40920375,2.394237593342852,General government,17.091192
+CAF,2019,G114X,Other goods & services taxes,Taxes,0.98334595,5.753524596857777,General government,17.091192
+CAF,2019,G115,Trade taxes (customs),Taxes,1.8306066,10.71081860892414,General government,17.091192
+CAF,2019,G13,Grants (e.g. foreign aid),Grants,8.98671,52.580942678238266,General government,17.091192
+CAF,2019,G14X,Other non-tax revenue,Other revenue,0.83621415,4.892661306293597,General government,17.091192
+CAF,2020,G1111,Personal income tax,Taxes,1.2012,5.733514986922269,General government,20.950499
+CAF,2020,G1112,Corporate income tax,Taxes,0.53308199,2.5444834989371854,General government,20.950499
+CAF,2020,G1113,Other income taxes,Taxes,0.23053270999999997,1.100368587879458,General government,20.950499
+CAF,2020,G11412,VAT / sales tax,Taxes,1.4780172,7.054806665941465,General government,20.950499
+CAF,2020,G1142,Excise taxes,Taxes,0.88640789,4.230963138395892,General government,20.950499
+CAF,2020,G114X,Other goods & services taxes,Taxes,1.0367811099999997,4.948717975643443,General government,20.950499
+CAF,2020,G115,Trade taxes (customs),Taxes,1.8804117,8.975498387890426,General government,20.950499
+CAF,2020,G13,Grants (e.g. foreign aid),Grants,12.133915,57.91706918293449,General government,20.950499
+CAF,2020,G14X,Other non-tax revenue,Other revenue,1.5701514,7.494577575455363,General government,20.950499
+CAF,2021,G1111,Personal income tax,Taxes,1.3579671,10.275423828768657,General government,13.215679
+CAF,2021,G1112,Corporate income tax,Taxes,0.59492739,4.5016783393302715,General government,13.215679
+CAF,2021,G1113,Other income taxes,Taxes,0.28129910999999985,2.128525483353326,General government,13.215679
+CAF,2021,G11412,VAT / sales tax,Taxes,1.6520304,12.500532993774456,General government,13.215679
+CAF,2021,G1142,Excise taxes,Taxes,1.0154137,7.683401261369404,General government,13.215679
+CAF,2021,G114X,Other goods & services taxes,Taxes,0.9138001,6.914514587482409,General government,13.215679
+CAF,2021,G115,Trade taxes (customs),Taxes,2.0861607,15.785496841139013,General government,13.215679
+CAF,2021,G13,Grants (e.g. foreign aid),Grants,4.7143265,35.672221259775405,General government,13.215679
+CAF,2021,G14X,Other non-tax revenue,Other revenue,0.59975469,4.538205405007059,General government,13.215679
+CAF,2022,G1111,Personal income tax,Taxes,1.2527105,10.417986602322054,General government,12.024497
+CAF,2022,G1112,Corporate income tax,Taxes,0.43935658,3.6538457720934225,General government,12.024497
+CAF,2022,G1113,Other income taxes,Taxes,0.28356412,2.358220197770549,General government,12.024497
+CAF,2022,G11412,VAT / sales tax,Taxes,1.4665231,12.196128321584123,General government,12.024497
+CAF,2022,G1142,Excise taxes,Taxes,0.98405652,8.18376443822229,General government,12.024497
+CAF,2022,G114X,Other goods & services taxes,Taxes,0.6899176799999998,5.737601103323643,General government,12.024497
+CAF,2022,G115,Trade taxes (customs),Taxes,1.9224091,15.98743863644633,General government,12.024497
+CAF,2022,G13,Grants (e.g. foreign aid),Grants,4.4252614,36.80204961718844,General government,12.024497
+CAF,2022,G14X,Other non-tax revenue,Other revenue,0.56069813,4.662965311049145,General government,12.024497
+CAF,2023,G1111,Personal income tax,Taxes,1.2574248,9.089856819144911,General government,13.833274
+CAF,2023,G1112,Corporate income tax,Taxes,0.58166841,4.204849914777948,General government,13.833274
+CAF,2023,G1113,Other income taxes,Taxes,0.1707597900000002,1.2344134150744082,General government,13.833274
+CAF,2023,G11412,VAT / sales tax,Taxes,1.6340543,11.81249138851728,General government,13.833274
+CAF,2023,G1142,Excise taxes,Taxes,0.9783373,7.072348165734302,General government,13.833274
+CAF,2023,G114X,Other goods & services taxes,Taxes,0.45442839999999984,3.2850386683586246,General government,13.833274
+CAF,2023,G115,Trade taxes (customs),Taxes,2.0163384,14.57600275972268,General government,13.833274
+CAF,2023,G13,Grants (e.g. foreign aid),Grants,5.8031333,41.95054113726078,General government,13.833274
+CAF,2023,G14X,Other non-tax revenue,Other revenue,0.93712901,6.774455635014531,General government,13.833274
+CAF,2024,G1111,Personal income tax,Taxes,1.2855987,8.825903481727703,General government,14.566199
+CAF,2024,G1112,Corporate income tax,Taxes,0.55355957,3.8003020197567805,General government,14.566199
+CAF,2024,G1113,Other income taxes,Taxes,0.17570162999999983,1.2062283727902272,General government,14.566199
+CAF,2024,G11412,VAT / sales tax,Taxes,2.1069502,14.46465301031098,General government,14.566199
+CAF,2024,G1142,Excise taxes,Taxes,1.0013191,6.874264676069173,General government,14.566199
+CAF,2024,G114X,Other goods & services taxes,Taxes,0.6467362000000003,4.439979038046124,General government,14.566199
+CAF,2024,G115,Trade taxes (customs),Taxes,2.0251646,13.903177791181411,General government,14.566199
+CAF,2024,G13,Grants (e.g. foreign aid),Grants,5.4009778,37.07884020865456,General government,14.566199
+CAF,2024,G14X,Other non-tax revenue,Other revenue,1.3701916,9.406651401463034,General government,14.566199

@@ -1,0 +1,81 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+SOM,2013,G1111,Personal income tax,Taxes,0.01173793,0.6215661548273442,Central government,1.8884442
+SOM,2013,G11412,VAT / sales tax,Taxes,0.0277224,1.468002072817402,Central government,1.8884442
+SOM,2013,G115,Trade taxes (customs),Taxes,1.0006713,52.989190784668146,Central government,1.8884442
+SOM,2013,G11NEC,Other taxes,Taxes,0.06827366999999994,3.6153395477610584,Central government,1.8884442
+SOM,2013,G13,Grants (e.g. foreign aid),Grants,0.71003919,37.599161786194166,Central government,1.8884442
+SOM,2013,G14X,Other non-tax revenue,Other revenue,0.06999966,3.7067370060497424,Central government,1.8884442
+SOM,2014,G1111,Personal income tax,Taxes,0.01668461,0.7400106954336445,Central government,2.2546444
+SOM,2014,G11412,VAT / sales tax,Taxes,0.07500602,3.3267338596413016,Central government,2.2546444
+SOM,2014,G115,Trade taxes (customs),Taxes,0.99744079,44.239383039926246,Central government,2.2546444
+SOM,2014,G11NEC,Other taxes,Taxes,0.05651311,2.506519830683369,Central government,2.2546444
+SOM,2014,G13,Grants (e.g. foreign aid),Grants,0.94611975,41.96314652611034,Central government,2.2546444
+SOM,2014,G14X,Other non-tax revenue,Other revenue,0.16288016,7.2242060482051,Central government,2.2546444
+SOM,2015,G1111,Personal income tax,Taxes,0.01640569,0.7948631355332711,Central government,2.0639641
+SOM,2015,G1112,Corporate income tax,Taxes,0.01126907,0.5459915623630534,Central government,2.0639641
+SOM,2015,G11412,VAT / sales tax,Taxes,0.07016555,3.399552781956535,Central government,2.0639641
+SOM,2015,G115,Trade taxes (customs),Taxes,1.0399421,50.38566731292951,Central government,2.0639641
+SOM,2015,G11NEC,Other taxes,Taxes,0.0663322800000002,3.2138291085514266,Central government,2.0639641
+SOM,2015,G13,Grants (e.g. foreign aid),Grants,0.39346943,19.063772682909953,Central government,2.0639641
+SOM,2015,G14X,Other non-tax revenue,Other revenue,0.46638001,22.596323415756263,Central government,2.0639641
+SOM,2016,G1111,Personal income tax,Taxes,0.02741987,1.1847097916037206,Central government,2.3144799
+SOM,2016,G11412,VAT / sales tax,Taxes,0.03896738,1.6836344096140134,Central government,2.3144799
+SOM,2016,G115,Trade taxes (customs),Taxes,1.0324503,44.60830703260807,Central government,2.3144799
+SOM,2016,G11NEC,Other taxes,Taxes,0.09483074,4.0972807756939265,Central government,2.3144799
+SOM,2016,G13,Grants (e.g. foreign aid),Grants,0.79005394,34.135269007952935,Central government,2.3144799
+SOM,2016,G14X,Other non-tax revenue,Other revenue,0.32615659,14.092003564170078,Central government,2.3144799
+SOM,2017,G1111,Personal income tax,Taxes,0.03977991,1.2224358604614274,Central government,3.2541511
+SOM,2017,G11412,VAT / sales tax,Taxes,0.10784749,3.3141512697428217,Central government,3.2541511
+SOM,2017,G115,Trade taxes (customs),Taxes,1.1244203,34.553413945652366,Central government,3.2541511
+SOM,2017,G11NEC,Other taxes,Taxes,0.08357576000000008,2.568281479000778,Central government,3.2541511
+SOM,2017,G13,Grants (e.g. foreign aid),Grants,1.52558,46.88104372289289,Central government,3.2541511
+SOM,2017,G14X,Other non-tax revenue,Other revenue,0.37094458,11.39911972741524,Central government,3.2541511
+SOM,2018,G1111,Personal income tax,Taxes,0.09205742,2.682664295427258,Central government,3.4315669
+SOM,2018,G1112,Corporate income tax,Taxes,0.01751773,0.5104877891204743,Central government,3.4315669
+SOM,2018,G11412,VAT / sales tax,Taxes,0.28039177,8.170954498949154,Central government,3.4315669
+SOM,2018,G115,Trade taxes (customs),Taxes,1.2744189,37.1381044618422,Central government,3.4315669
+SOM,2018,G11NEC,Other taxes,Taxes,0.10043257000000004,2.926726271896376,Central government,3.4315669
+SOM,2018,G13,Grants (e.g. foreign aid),Grants,1.1018656,32.10969309675997,Central government,3.4315669
+SOM,2018,G14X,Other non-tax revenue,Other revenue,0.56488289,16.461369003180444,Central government,3.4315669
+SOM,2019,G1111,Personal income tax,Taxes,0.1182636,3.0255753880285927,Central government,3.908797
+SOM,2019,G1112,Corporate income tax,Taxes,0.01685412,0.4311843260215355,Central government,3.908797
+SOM,2019,G11412,VAT / sales tax,Taxes,0.28838727,7.377903482836279,Central government,3.908797
+SOM,2019,G115,Trade taxes (customs),Taxes,1.2366008,31.63635256576384,Central government,3.908797
+SOM,2019,G11NEC,Other taxes,Taxes,0.12813360999999993,3.2780830009847004,Central government,3.908797
+SOM,2019,G13,Grants (e.g. foreign aid),Grants,1.2547094,32.09963065362566,Central government,3.908797
+SOM,2019,G14X,Other non-tax revenue,Other revenue,0.86584818,22.151270071073018,Central government,3.908797
+SOM,2020,G1111,Personal income tax,Taxes,0.15040181,2.611414479990891,Central government,5.7594001
+SOM,2020,G1112,Corporate income tax,Taxes,0.03687727,0.6402970606572732,Central government,5.7594001
+SOM,2020,G11412,VAT / sales tax,Taxes,0.24679661,4.285109607169387,Central government,5.7594001
+SOM,2020,G115,Trade taxes (customs),Taxes,1.0553328,18.32365817359067,Central government,5.7594001
+SOM,2020,G11NEC,Other taxes,Taxes,0.12780783,2.2191170300291883,Central government,5.7594001
+SOM,2020,G13,Grants (e.g. foreign aid),Grants,3.311115,57.490622326387154,Central government,5.7594001
+SOM,2020,G14X,Other non-tax revenue,Other revenue,0.83106885,14.429781322175428,Central government,5.7594001
+SOM,2021,G1111,Personal income tax,Taxes,0.15678931,3.9491292188422795,Central government,3.9702248
+SOM,2021,G1112,Corporate income tax,Taxes,0.00969578,0.24421236433444726,Central government,3.9702248
+SOM,2021,G11412,VAT / sales tax,Taxes,0.24704144,6.222353864360216,Central government,3.9702248
+SOM,2021,G115,Trade taxes (customs),Taxes,1.1490404,28.941443885876026,Central government,3.9702248
+SOM,2021,G11NEC,Other taxes,Taxes,0.15366031,3.8703175618118513,Central government,3.9702248
+SOM,2021,G13,Grants (e.g. foreign aid),Grants,1.5497124,39.03336598421279,Central government,3.9702248
+SOM,2021,G14X,Other non-tax revenue,Other revenue,0.70428522,17.739177120562385,Central government,3.9702248
+SOM,2022,G1111,Personal income tax,Taxes,0.16421998,2.3192745676596,Central government,7.0806614
+SOM,2022,G1112,Corporate income tax,Taxes,0.01868374,0.26386998105080983,Central government,7.0806614
+SOM,2022,G11412,VAT / sales tax,Taxes,0.25192059,3.5578680344304106,Central government,7.0806614
+SOM,2022,G115,Trade taxes (customs),Taxes,1.1409226,16.11322063154597,Central government,7.0806614
+SOM,2022,G11NEC,Other taxes,Taxes,0.20925156,2.955254417587293,Central government,7.0806614
+SOM,2022,G13,Grants (e.g. foreign aid),Grants,4.5010469,63.56816998158862,Central government,7.0806614
+SOM,2022,G14X,Other non-tax revenue,Other revenue,0.79461607,11.222342386137305,Central government,7.0806614
+SOM,2023,G1111,Personal income tax,Taxes,0.19038885,2.8292590335514345,Central government,6.7292831
+SOM,2023,G1112,Corporate income tax,Taxes,0.03192927,0.47448248982124114,Central government,6.7292831
+SOM,2023,G11412,VAT / sales tax,Taxes,0.3166587,4.705682541428522,Central government,6.7292831
+SOM,2023,G115,Trade taxes (customs),Taxes,1.4047733,20.875526844754088,Central government,6.7292831
+SOM,2023,G11NEC,Other taxes,Taxes,0.10252977,1.5236358535725747,Central government,6.7292831
+SOM,2023,G13,Grants (e.g. foreign aid),Grants,3.7253757,55.360662415882004,Central government,6.7292831
+SOM,2023,G14X,Other non-tax revenue,Other revenue,0.95594443,14.205739538584726,Central government,6.7292831
+SOM,2024,G1111,Personal income tax,Taxes,0.26205938,3.4916712132492274,Central government,7.5052708
+SOM,2024,G1112,Corporate income tax,Taxes,0.03537246,0.4713015818163417,Central government,7.5052708
+SOM,2024,G11412,VAT / sales tax,Taxes,0.38506124,5.130544256977377,Central government,7.5052708
+SOM,2024,G115,Trade taxes (customs),Taxes,1.3886638,18.502514259711987,Central government,7.5052708
+SOM,2024,G11NEC,Other taxes,Taxes,0.12244236,1.6314182827353811,Central government,7.5052708
+SOM,2024,G13,Grants (e.g. foreign aid),Grants,4.4680708,59.532439522368726,Central government,7.5052708
+SOM,2024,G14X,Other non-tax revenue,Other revenue,0.84359761,11.240068912636705,Central government,7.5052708

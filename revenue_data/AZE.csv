@@ -1,0 +1,322 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+AZE,1994,G1111,Personal income tax,Taxes,0.78434862,4.389704718172738,Central government,17.867913
+AZE,1994,G1112,Corporate income tax,Taxes,2.750863,15.395547314339396,Central government,17.867913
+AZE,1994,G11412,VAT / sales tax,Taxes,1.7690165,9.90052111849884,Central government,17.867913
+AZE,1994,G1142,Excise taxes,Taxes,1.0439172,5.84241259737497,Central government,17.867913
+AZE,1994,G115,Trade taxes (customs),Taxes,0.36113893,2.021158990420426,Central government,17.867913
+AZE,1994,G121,Social contributions,Social contributions,2.2825109,12.774356467932208,Central government,17.867913
+AZE,1994,G14X,Other non-tax revenue,Other revenue,8.8761178,49.67629851343018,Central government,17.867913
+AZE,1995,G1111,Personal income tax,Taxes,1.0956135,6.235098069460265,Central government,17.571712
+AZE,1995,G1112,Corporate income tax,Taxes,3.8311463,21.80291945923433,Central government,17.571712
+AZE,1995,G11412,VAT / sales tax,Taxes,1.6510076,9.395826447396116,Central government,17.571712
+AZE,1995,G1142,Excise taxes,Taxes,0.82839066,4.714342242884844,Central government,17.571712
+AZE,1995,G115,Trade taxes (customs),Taxes,0.64638673,3.6785642494800705,Central government,17.571712
+AZE,1995,G11NEC,Other taxes,Taxes,1.8183522,10.348178707015592,Central government,17.571712
+AZE,1995,G121,Social contributions,Social contributions,2.3994751,13.65532878494832,Central government,17.571712
+AZE,1995,G14X,Other non-tax revenue,Other revenue,5.3013403,30.16974203958047,Central government,17.571712
+AZE,1996,G1111,Personal income tax,Taxes,1.5586855,8.863223343728654,Central government,17.585989
+AZE,1996,G1112,Corporate income tax,Taxes,4.2890793,24.38918420352493,Central government,17.585989
+AZE,1996,G11412,VAT / sales tax,Taxes,3.4224184,19.461051414725084,Central government,17.585989
+AZE,1996,G1142,Excise taxes,Taxes,1.5101791,8.587399223468191,Central government,17.585989
+AZE,1996,G115,Trade taxes (customs),Taxes,0.81801842,4.651534870725384,Central government,17.585989
+AZE,1996,G113,Property taxes,Taxes,0.13800718,0.7847564241652099,Central government,17.585989
+AZE,1996,G11NEC,Other taxes,Taxes,1.0404153,5.916160235103522,Central government,17.585989
+AZE,1996,G121,Social contributions,Social contributions,2.319516,13.189567977216774,Central government,17.585989
+AZE,1996,NONTAXRES,Resource (extractive) revenue,Other revenue,0.30483081,1.7333731218258681,Central government,17.585989
+AZE,1996,G14X,Other non-tax revenue,Other revenue,2.18483919,12.423749185516387,Central government,17.585989
+AZE,1997,G1111,Personal income tax,Taxes,1.9245463,10.94316534087452,Central government,17.586742
+AZE,1997,G1112,Corporate income tax,Taxes,2.6251142,14.926665432407388,Central government,17.586742
+AZE,1997,G11412,VAT / sales tax,Taxes,3.8028861,21.623595839088658,Central government,17.586742
+AZE,1997,G1142,Excise taxes,Taxes,1.2888188,7.328354336202505,Central government,17.586742
+AZE,1997,G115,Trade taxes (customs),Taxes,1.3591932,7.728510308009907,Central government,17.586742
+AZE,1997,G113,Property taxes,Taxes,0.20721386,1.1782390119171593,Central government,17.586742
+AZE,1997,G11NEC,Other taxes,Taxes,0.75482765,4.29202653000022,Central government,17.586742
+AZE,1997,G121,Social contributions,Social contributions,2.3356391,13.28068067154911,Central government,17.586742
+AZE,1997,NONTAXRES,Resource (extractive) revenue,Other revenue,1.9875673,11.301509134914316,Central government,17.586742
+AZE,1997,G14X,Other non-tax revenue,Other revenue,1.3009359,7.3972533950362225,Central government,17.586742
+AZE,1998,G1111,Personal income tax,Taxes,2.4651026,12.11192644431045,Central government,20.352688
+AZE,1998,G1112,Corporate income tax,Taxes,2.0558656,10.101199409139472,Central government,20.352688
+AZE,1998,G11412,VAT / sales tax,Taxes,4.3411619,21.32967350553401,Central government,20.352688
+AZE,1998,G1142,Excise taxes,Taxes,0.57159584,2.8084538022692627,Central government,20.352688
+AZE,1998,G115,Trade taxes (customs),Taxes,1.7690984,8.692210090382165,Central government,20.352688
+AZE,1998,G113,Property taxes,Taxes,0.43995855,2.1616729446252996,Central government,20.352688
+AZE,1998,G11NEC,Other taxes,Taxes,0.1919211499999989,0.9429769178400362,Central government,20.352688
+AZE,1998,G121,Social contributions,Social contributions,2.6367996,12.955534915093278,Central government,20.352688
+AZE,1998,G13,Grants (e.g. foreign aid),Grants,0.07581057,0.37248431263723,Central government,20.352688
+AZE,1998,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0331205,5.076088721057386,Central government,20.352688
+AZE,1998,G14X,Other non-tax revenue,Other revenue,4.7722531,23.44777800357378,Central government,20.352688
+AZE,1999,G1111,Personal income tax,Taxes,2.3751518,12.858130153805028,Central government,18.471984
+AZE,1999,G1112,Corporate income tax,Taxes,1.9483826,10.547770908877926,Central government,18.471984
+AZE,1999,G11412,VAT / sales tax,Taxes,4.1883149,22.67387630100985,Central government,18.471984
+AZE,1999,G1142,Excise taxes,Taxes,0.6059072,3.280141352955872,Central government,18.471984
+AZE,1999,G115,Trade taxes (customs),Taxes,1.6394165,8.875150941213738,Central government,18.471984
+AZE,1999,G113,Property taxes,Taxes,0.31638173,1.7127652483626528,Central government,18.471984
+AZE,1999,G11NEC,Other taxes,Taxes,0.7419092700000008,4.016402638338522,Central government,18.471984
+AZE,1999,G121,Social contributions,Social contributions,2.423807,13.121530115971412,Central government,18.471984
+AZE,1999,G13,Grants (e.g. foreign aid),Grants,0.32460173,1.7572650693274756,Central government,18.471984
+AZE,1999,NONTAXRES,Resource (extractive) revenue,Other revenue,0.95161401,5.151660957739342,Central government,18.471984
+AZE,1999,G14X,Other non-tax revenue,Other revenue,2.95649769,16.005306312398186,Central government,18.471984
+AZE,2000,G1111,Personal income tax,Taxes,2.0176639,10.974849157716795,Central government,18.384434
+AZE,2000,G1112,Corporate income tax,Taxes,2.6645175,14.493334415408167,Central government,18.384434
+AZE,2000,G11412,VAT / sales tax,Taxes,4.0552595,22.05811448968187,Central government,18.384434
+AZE,2000,G1142,Excise taxes,Taxes,0.4758017,2.5880682538282116,Central government,18.384434
+AZE,2000,G115,Trade taxes (customs),Taxes,1.3190267,7.174693003874909,Central government,18.384434
+AZE,2000,G113,Property taxes,Taxes,0.24866366,1.3525771856778404,Central government,18.384434
+AZE,2000,G11NEC,Other taxes,Taxes,1.3053772,7.100448129107482,Central government,18.384434
+AZE,2000,G121,Social contributions,Social contributions,2.3859912,12.97832285726066,Central government,18.384434
+AZE,2000,G13,Grants (e.g. foreign aid),Grants,0.47077849,2.5607450846732625,Central government,18.384434
+AZE,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0672516,5.805191500592295,Central government,18.384434
+AZE,2000,G14X,Other non-tax revenue,Other revenue,2.3741025,12.913655650209302,Central government,18.384434
+AZE,2001,G1111,Personal income tax,Taxes,1.7819195,4.622496178697459,Central government,38.548858
+AZE,2001,G1112,Corporate income tax,Taxes,2.2138522,5.74297735374744,Central government,38.548858
+AZE,2001,G11412,VAT / sales tax,Taxes,4.7646651,12.360068015150599,Central government,38.548858
+AZE,2001,G1142,Excise taxes,Taxes,2.0865453,5.412729181048382,Central government,38.548858
+AZE,2001,G115,Trade taxes (customs),Taxes,0.97955074,2.5410629113662364,Central government,38.548858
+AZE,2001,G113,Property taxes,Taxes,0.23400715,0.6070404171809575,Central government,38.548858
+AZE,2001,G11NEC,Other taxes,Taxes,0.45243939,1.1736777959763105,Central government,38.548858
+AZE,2001,G121,Social contributions,Social contributions,2.1254287,5.513597019306376,Central government,38.548858
+AZE,2001,G13,Grants (e.g. foreign aid),Grants,0.10422718,0.2703768274977698,Central government,38.548858
+AZE,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,21.775481,56.48800504837571,Central government,38.548858
+AZE,2001,G14X,Other non-tax revenue,Other revenue,2.030742,5.2679692516527465,Central government,38.548858
+AZE,2002,G1111,Personal income tax,Taxes,1.816047,4.269849700934088,Central government,42.531871
+AZE,2002,G1112,Corporate income tax,Taxes,2.4311823,5.71614226755764,Central government,42.531871
+AZE,2002,G11412,VAT / sales tax,Taxes,5.5238635,12.987586176721047,Central government,42.531871
+AZE,2002,G1142,Excise taxes,Taxes,1.429406,3.3607878989989746,Central government,42.531871
+AZE,2002,G115,Trade taxes (customs),Taxes,0.9130029,2.1466323060564814,Central government,42.531871
+AZE,2002,G113,Property taxes,Taxes,0.32926003,0.7741489293091253,Central government,42.531871
+AZE,2002,G11NEC,Other taxes,Taxes,0.5378182700000004,1.2645064688944672,Central government,42.531871
+AZE,2002,G121,Social contributions,Social contributions,2.113501,4.96921699315816,Central government,42.531871
+AZE,2002,G13,Grants (e.g. foreign aid),Grants,0.18653278,0.43857176322936803,Central government,42.531871
+AZE,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,25.146595,59.12412021289132,Central government,42.531871
+AZE,2002,G14X,Other non-tax revenue,Other revenue,2.1046629999999986,4.948437282249323,Central government,42.531871
+AZE,2003,G1111,Personal income tax,Taxes,2.1049042,9.046861836767615,Central government,23.266677
+AZE,2003,G1112,Corporate income tax,Taxes,2.494909,10.723099425763916,Central government,23.266677
+AZE,2003,G11412,VAT / sales tax,Taxes,5.733244,24.641438002013064,Central government,23.266677
+AZE,2003,G1142,Excise taxes,Taxes,0.93814135,4.032124206321908,Central government,23.266677
+AZE,2003,G115,Trade taxes (customs),Taxes,0.82106102,3.528913861018232,Central government,23.266677
+AZE,2003,G113,Property taxes,Taxes,0.37219051,1.599671909498815,Central government,23.266677
+AZE,2003,G11NEC,Other taxes,Taxes,0.8298198699999991,3.566559330013431,Central government,23.266677
+AZE,2003,G121,Social contributions,Social contributions,2.0852321,8.962311304378028,Central government,23.266677
+AZE,2003,G13,Grants (e.g. foreign aid),Grants,0.07951221,0.3417428585139658,Central government,23.266677
+AZE,2003,G14X,Other non-tax revenue,Other revenue,7.8076636,33.55727726571102,Central government,23.266677
+AZE,2004,G1111,Personal income tax,Taxes,2.5975257,9.991524885863104,Central government,25.99729
+AZE,2004,G1112,Corporate income tax,Taxes,2.6194348,10.075799439095384,Central government,25.99729
+AZE,2004,G11412,VAT / sales tax,Taxes,5.3069675,20.413541180638443,Central government,25.99729
+AZE,2004,G1142,Excise taxes,Taxes,0.84925049,3.266688527919641,Central government,25.99729
+AZE,2004,G115,Trade taxes (customs),Taxes,0.89690963,3.4500120204836735,Central government,25.99729
+AZE,2004,G113,Property taxes,Taxes,0.37729762,1.4512959620021935,Central government,25.99729
+AZE,2004,G11NEC,Other taxes,Taxes,0.66525876,2.558954260232509,Central government,25.99729
+AZE,2004,G121,Social contributions,Social contributions,2.1310607,8.197241712501572,Central government,25.99729
+AZE,2004,G14X,Other non-tax revenue,Other revenue,10.553584,40.594938934019666,Central government,25.99729
+AZE,2005,G1111,Personal income tax,Taxes,2.53506,10.044305902216344,Central government,25.238777
+AZE,2005,G1112,Corporate income tax,Taxes,2.8380298,11.24471983732372,Central government,25.238777
+AZE,2005,G11412,VAT / sales tax,Taxes,4.7902276,18.979634152895642,Central government,25.238777
+AZE,2005,G1142,Excise taxes,Taxes,1.1257912,4.460561562575727,Central government,25.238777
+AZE,2005,G115,Trade taxes (customs),Taxes,0.80428251,3.186693633382395,Central government,25.238777
+AZE,2005,G113,Property taxes,Taxes,0.32289053,1.279342996319126,Central government,25.238777
+AZE,2005,G11NEC,Other taxes,Taxes,1.1881264,4.707543415974003,Central government,25.238777
+AZE,2005,G121,Social contributions,Social contributions,1.5836356,6.274612989057427,Central government,25.238777
+AZE,2005,G13,Grants (e.g. foreign aid),Grants,0.08784188,0.34804332589594716,Central government,25.238777
+AZE,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,5.6985677,22.578620302197745,Central government,25.238777
+AZE,2005,G14X,Other non-tax revenue,Other revenue,4.2643241,16.895921882161918,Central government,25.238777
+AZE,2006,G1111,Personal income tax,Taxes,2.1727817,8.369069602603739,Central government,25.962046
+AZE,2006,G1112,Corporate income tax,Taxes,7.2575935,27.954628460330127,Central government,25.962046
+AZE,2006,G11412,VAT / sales tax,Taxes,3.9359827,15.160525869186117,Central government,25.962046
+AZE,2006,G1142,Excise taxes,Taxes,0.99949989,3.849850239075918,Central government,25.962046
+AZE,2006,G115,Trade taxes (customs),Taxes,0.74148361,2.8560291819835766,Central government,25.962046
+AZE,2006,G113,Property taxes,Taxes,0.29762017,1.146366391924581,Central government,25.962046
+AZE,2006,G11NEC,Other taxes,Taxes,0.85026988,3.27504958584543,Central government,25.962046
+AZE,2006,G121,Social contributions,Social contributions,1.5686592,6.04212472314393,Central government,25.962046
+AZE,2006,G13,Grants (e.g. foreign aid),Grants,0.02667207,0.10273485379388049,Central government,25.962046
+AZE,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,5.7937271,22.31614218694474,Central government,25.962046
+AZE,2006,G14X,Other non-tax revenue,Other revenue,2.3177558000000005,8.927477441492863,Central government,25.962046
+AZE,2007,G1111,Personal income tax,Taxes,2.0753973,7.306493005378897,Central government,28.404835
+AZE,2007,G1112,Corporate income tax,Taxes,8.6660927,30.509216570974203,Central government,28.404835
+AZE,2007,G11412,VAT / sales tax,Taxes,4.1577686,14.637538168660047,Central government,28.404835
+AZE,2007,G1142,Excise taxes,Taxes,1.4205714,5.001160499602321,Central government,28.404835
+AZE,2007,G115,Trade taxes (customs),Taxes,0.56514197,1.9895977752553933,Central government,28.404835
+AZE,2007,G113,Property taxes,Taxes,0.25511067,0.898124096987369,Central government,28.404835
+AZE,2007,G11NEC,Other taxes,Taxes,0.7855848,2.7656727925453017,Central government,28.404835
+AZE,2007,G121,Social contributions,Social contributions,1.9417563,6.8360062066672285,Central government,28.404835
+AZE,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,7.0357718,24.769627215060023,Central government,28.404835
+AZE,2007,G14X,Other non-tax revenue,Other revenue,1.5016396999999992,5.2865636688692135,Central government,28.404835
+AZE,2008,G1111,Personal income tax,Taxes,1.5626098,3.213075560449002,Central government,48.632837
+AZE,2008,G1112,Corporate income tax,Taxes,7.1313569,14.66366623851288,Central government,48.632837
+AZE,2008,G11412,VAT / sales tax,Taxes,4.7607691,9.789207033099878,Central government,48.632837
+AZE,2008,G1142,Excise taxes,Taxes,1.2130252,2.4942513635385897,Central government,48.632837
+AZE,2008,G115,Trade taxes (customs),Taxes,0.62466169,1.28444427373217,Central government,48.632837
+AZE,2008,G113,Property taxes,Taxes,0.28126654,0.5783469716150839,Central government,48.632837
+AZE,2008,G11NEC,Other taxes,Taxes,0.81298398,1.6716770605013234,Central government,48.632837
+AZE,2008,G121,Social contributions,Social contributions,1.4912284,3.0662994223429734,Central government,48.632837
+AZE,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,29.928216,61.53911193788673,Central government,48.632837
+AZE,2008,G14X,Other non-tax revenue,Other revenue,0.8267190000000006,1.6999193363940512,Central government,48.632837
+AZE,2009,G1111,Personal income tax,Taxes,1.6344067,4.049277593653617,Central government,40.36292
+AZE,2009,G1112,Corporate income tax,Taxes,3.737208,9.25901283763891,Central government,40.36292
+AZE,2009,G11412,VAT / sales tax,Taxes,5.6536141,14.00694998270269,Central government,40.36292
+AZE,2009,G1142,Excise taxes,Taxes,1.3627161,3.3761583149659393,Central government,40.36292
+AZE,2009,G115,Trade taxes (customs),Taxes,0.60901821,1.508855655009266,Central government,40.36292
+AZE,2009,G113,Property taxes,Taxes,0.18585922,0.4604701969956059,Central government,40.36292
+AZE,2009,G11NEC,Other taxes,Taxes,0.89035567,2.2058752358965816,Central government,40.36292
+AZE,2009,G121,Social contributions,Social contributions,1.6354106,4.051764777398194,Central government,40.36292
+AZE,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,23.827424,59.0329531307504,Central government,40.36292
+AZE,2009,G14X,Other non-tax revenue,Other revenue,0.8269079999999995,2.048682274988791,Central government,40.36292
+AZE,2010,G1111,Personal income tax,Taxes,1.3898505,3.035318160137723,Central government,45.789285
+AZE,2010,G1112,Corporate income tax,Taxes,3.3672436,7.353780603516364,Central government,45.789285
+AZE,2010,G11412,VAT / sales tax,Taxes,4.9039736,10.709871403374652,Central government,45.789285
+AZE,2010,G1142,Excise taxes,Taxes,1.2125571,2.6481240866078273,Central government,45.789285
+AZE,2010,G115,Trade taxes (customs),Taxes,0.51383492,1.1221728264938666,Central government,45.789285
+AZE,2010,G113,Property taxes,Taxes,0.23975784,0.5236112270977307,Central government,45.789285
+AZE,2010,G11NEC,Other taxes,Taxes,0.4639319,1.0131887718407109,Central government,45.789285
+AZE,2010,G121,Social contributions,Social contributions,1.6416881,3.5853105806789967,Central government,45.789285
+AZE,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,21.57592,47.12001887805825,Central government,45.789285
+AZE,2010,G14X,Other non-tax revenue,Other revenue,10.480528000000003,22.88860346219388,Central government,45.789285
+AZE,2011,G1111,Personal income tax,Taxes,1.3741792,3.0815158031209435,Central government,44.594261
+AZE,2011,G1112,Corporate income tax,Taxes,4.0973849,9.188143963188445,Central government,44.594261
+AZE,2011,G11412,VAT / sales tax,Taxes,4.2676561,9.56996708612348,Central government,44.594261
+AZE,2011,G1142,Excise taxes,Taxes,0.92084477,2.0649400827608733,Central government,44.594261
+AZE,2011,G115,Trade taxes (customs),Taxes,0.44641143,1.0010513011977034,Central government,44.594261
+AZE,2011,G113,Property taxes,Taxes,0.19943077,0.4472117387481766,Central government,44.594261
+AZE,2011,G11NEC,Other taxes,Taxes,0.73099127,1.6392048070938992,Central government,44.594261
+AZE,2011,G121,Social contributions,Social contributions,1.4286985,3.2037721176722718,Central government,44.594261
+AZE,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,24.818422,55.65384747602388,Central government,44.594261
+AZE,2011,G14X,Other non-tax revenue,Other revenue,6.310241999999999,14.150345489523861,Central government,44.594261
+AZE,2012,G1111,Personal income tax,Taxes,1.4851024,3.6812886118394204,Central government,40.341917
+AZE,2012,G1112,Corporate income tax,Taxes,4.1137154,10.19712422144658,Central government,40.341917
+AZE,2012,G11412,VAT / sales tax,Taxes,4.3236651,10.71754991038837,Central government,40.341917
+AZE,2012,G1142,Excise taxes,Taxes,0.97076018,2.406331304468423,Central government,40.341917
+AZE,2012,G115,Trade taxes (customs),Taxes,0.42123569,1.0441637886366089,Central government,40.341917
+AZE,2012,G113,Property taxes,Taxes,0.19196211,0.47583784757715436,Central government,40.341917
+AZE,2012,G11NEC,Other taxes,Taxes,0.97895057,2.426633735757689,Central government,40.341917
+AZE,2012,G121,Social contributions,Social contributions,0.28772365,0.7132126351030551,Central government,40.341917
+AZE,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,25.295316,62.702315155964655,Central government,40.341917
+AZE,2012,G14X,Other non-tax revenue,Other revenue,2.273486000000002,5.63554278881804,Central government,40.341917
+AZE,2013,G1111,Personal income tax,Taxes,1.4776048,3.748095507693528,Central government,39.422816
+AZE,2013,G1112,Corporate income tax,Taxes,4.0816747,10.353584806259649,Central government,39.422816
+AZE,2013,G11412,VAT / sales tax,Taxes,4.6577979,11.814980152158649,Central government,39.422816
+AZE,2013,G1142,Excise taxes,Taxes,1.0197312,2.586652351004092,Central government,39.422816
+AZE,2013,G115,Trade taxes (customs),Taxes,0.51252965,1.3000838104510326,Central government,39.422816
+AZE,2013,G113,Property taxes,Taxes,0.21521314,0.5459101129277723,Central government,39.422816
+AZE,2013,G11NEC,Other taxes,Taxes,0.97349694,2.469374427835776,Central government,39.422816
+AZE,2013,G121,Social contributions,Social contributions,0.65344179,1.6575218472748718,Central government,39.422816
+AZE,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,19.943522,50.588780718489176,Central government,39.422816
+AZE,2013,G14X,Other non-tax revenue,Other revenue,5.887803999999999,14.935016265905457,Central government,39.422816
+AZE,2014,G1111,Personal income tax,Taxes,1.6611284,4.246614797283732,Central government,39.116531
+AZE,2014,G1112,Corporate income tax,Taxes,3.90161,9.974325139002005,Central government,39.116531
+AZE,2014,G11412,VAT / sales tax,Taxes,5.2861943,13.513964926309677,Central government,39.116531
+AZE,2014,G1142,Excise taxes,Taxes,1.3510331,3.453867355515751,Central government,39.116531
+AZE,2014,G115,Trade taxes (customs),Taxes,0.62002132,1.585062125326008,Central government,39.116531
+AZE,2014,G113,Property taxes,Taxes,0.2394343,0.6121051457294162,Central government,39.116531
+AZE,2014,G11NEC,Other taxes,Taxes,1.1697205799999995,2.990348442489639,Central government,39.116531
+AZE,2014,G121,Social contributions,Social contributions,0.76935215,1.9668210022247845,Central government,39.116531
+AZE,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,19.898877,50.87076081387139,Central government,39.116531
+AZE,2014,G14X,Other non-tax revenue,Other revenue,4.219160000000002,10.78613025224759,Central government,39.116531
+AZE,2015,G1111,Personal income tax,Taxes,1.8067304,5.334923991703538,Central government,33.866094
+AZE,2015,G1112,Corporate income tax,Taxes,4.0660169,12.00615825719324,Central government,33.866094
+AZE,2015,G11412,VAT / sales tax,Taxes,6.3525193,18.757755789867577,Central government,33.866094
+AZE,2015,G1142,Excise taxes,Taxes,1.1919823,3.519692240721673,Central government,33.866094
+AZE,2015,G115,Trade taxes (customs),Taxes,0.71239426,2.1035618979045725,Central government,33.866094
+AZE,2015,G113,Property taxes,Taxes,0.27252666,0.8047183004242541,Central government,33.866094
+AZE,2015,G11NEC,Other taxes,Taxes,1.2278411,3.625576313095558,Central government,33.866094
+AZE,2015,G121,Social contributions,Social contributions,0.87694434,2.589446327384885,Central government,33.866094
+AZE,2015,G13,Grants (e.g. foreign aid),Grants,0.03677823,0.10859897060424223,Central government,33.866094
+AZE,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,14.411916,42.55558905457952,Central government,33.866094
+AZE,2015,G14X,Other non-tax revenue,Other revenue,2.910445000000001,8.593978856520932,Central government,33.866094
+AZE,2016,G1111,Personal income tax,Taxes,1.8960632,5.535126901837299,Central government,34.255099
+AZE,2016,G1112,Corporate income tax,Taxes,3.2854439,9.59110904919586,Central government,34.255099
+AZE,2016,G11412,VAT / sales tax,Taxes,5.9968358,17.506403353264282,Central government,34.255099
+AZE,2016,G1142,Excise taxes,Taxes,1.0345022,3.019994775084433,Central government,34.255099
+AZE,2016,G115,Trade taxes (customs),Taxes,0.99329419,2.899697326812572,Central government,34.255099
+AZE,2016,G113,Property taxes,Taxes,0.28911779,0.8440138795103175,Central government,34.255099
+AZE,2016,G11NEC,Other taxes,Taxes,1.4159655,4.133590447366682,Central government,34.255099
+AZE,2016,G121,Social contributions,Social contributions,0.92030438,2.6866201145703883,Central government,34.255099
+AZE,2016,G13,Grants (e.g. foreign aid),Grants,0.03309877,0.09662435948586807,Central government,34.255099
+AZE,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,15.75581,45.99551733889311,Central government,34.255099
+AZE,2016,G14X,Other non-tax revenue,Other revenue,2.6346629999999998,7.691301665775363,Central government,34.255099
+AZE,2017,G1111,Personal income tax,Taxes,1.4790056,4.320885189723975,Central government,34.229227
+AZE,2017,G1112,Corporate income tax,Taxes,3.2519943,9.500636108434467,Central government,34.229227
+AZE,2017,G11412,VAT / sales tax,Taxes,5.2156877,15.237526982423528,Central government,34.229227
+AZE,2017,G1142,Excise taxes,Taxes,0.87093995,2.54443359179569,Central government,34.229227
+AZE,2017,G115,Trade taxes (customs),Taxes,1.0050073,2.9361086652643364,Central government,34.229227
+AZE,2017,G113,Property taxes,Taxes,0.25391752,0.7418149407814555,Central government,34.229227
+AZE,2017,G11NEC,Other taxes,Taxes,1.188408,3.471910131070152,Central government,34.229227
+AZE,2017,G121,Social contributions,Social contributions,0.94572193,2.7629076461469606,Central government,34.229227
+AZE,2017,G13,Grants (e.g. foreign aid),Grants,0.02843421,0.08306997408968657,Central government,34.229227
+AZE,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,17.41397,50.874564009289486,Central government,34.229227
+AZE,2017,G14X,Other non-tax revenue,Other revenue,2.5761400000000023,7.526141329455095,Central government,34.229227
+AZE,2018,G1111,Personal income tax,Taxes,1.243445,3.2203641267630747,Central government,38.611938
+AZE,2018,G1112,Corporate income tax,Taxes,3.1211265,8.083319982540115,Central government,38.611938
+AZE,2018,G11412,VAT / sales tax,Taxes,5.3533437,13.864478131089923,Central government,38.611938
+AZE,2018,G1142,Excise taxes,Taxes,0.90957898,2.355693671734374,Central government,38.611938
+AZE,2018,G115,Trade taxes (customs),Taxes,1.102607,2.855611650469344,Central government,38.611938
+AZE,2018,G113,Property taxes,Taxes,0.29066573,0.7527872079355353,Central government,38.611938
+AZE,2018,G11NEC,Other taxes,Taxes,1.1091000700000022,2.8724278745086615,Central government,38.611938
+AZE,2018,G121,Social contributions,Social contributions,0.92268891,2.38964672014132,Central government,38.611938
+AZE,2018,G13,Grants (e.g. foreign aid),Grants,0.02497128,0.0646724336913625,Central government,38.611938
+AZE,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,22.162139,57.39711640477616,Central government,38.611938
+AZE,2018,G14X,Other non-tax revenue,Other revenue,2.3722710000000014,6.1438796467558845,Central government,38.611938
+AZE,2019,G1111,Personal income tax,Taxes,1.1624488,2.802796266777897,Central government,41.474609
+AZE,2019,G1112,Corporate income tax,Taxes,3.1095666,7.497518736117443,Central government,41.474609
+AZE,2019,G11412,VAT / sales tax,Taxes,6.3309229,15.264575153227135,Central government,41.474609
+AZE,2019,G1142,Excise taxes,Taxes,1.0436831,2.5164386563771086,Central government,41.474609
+AZE,2019,G115,Trade taxes (customs),Taxes,1.3547372,3.266425468911096,Central government,41.474609
+AZE,2019,G113,Property taxes,Taxes,0.32078436,0.7734475760555964,Central government,41.474609
+AZE,2019,G11NEC,Other taxes,Taxes,1.322445040000001,3.1885653984338487,Central government,41.474609
+AZE,2019,G121,Social contributions,Social contributions,2.3478501,5.660933621535944,Central government,41.474609
+AZE,2019,G13,Grants (e.g. foreign aid),Grants,0.02442116,0.05888219427675929,Central government,41.474609
+AZE,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,23.400836,56.422077067206594,Central government,41.474609
+AZE,2019,G14X,Other non-tax revenue,Other revenue,1.056913999999999,2.548339861080584,Central government,41.474609
+AZE,2020,G1111,Personal income tax,Taxes,1.5858778,4.7043716045750825,Central government,33.710725
+AZE,2020,G1112,Corporate income tax,Taxes,3.2402336,9.61187737165505,Central government,33.710725
+AZE,2020,G11412,VAT / sales tax,Taxes,6.6380906,19.691331152524345,Central government,33.710725
+AZE,2020,G1142,Excise taxes,Taxes,1.2368745,3.6690830001044237,Central government,33.710725
+AZE,2020,G115,Trade taxes (customs),Taxes,1.400698,4.15505147861021,Central government,33.710725
+AZE,2020,G113,Property taxes,Taxes,0.31359322,0.9302476140061149,Central government,33.710725
+AZE,2020,G11NEC,Other taxes,Taxes,1.3207097,3.9177729901805023,Central government,33.710725
+AZE,2020,G121,Social contributions,Social contributions,3.2580076,9.664602430861832,Central government,33.710725
+AZE,2020,G13,Grants (e.g. foreign aid),Grants,0.02755652,0.08174407272042357,Central government,33.710725
+AZE,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,13.076906,38.7915293738884,Central government,33.710725
+AZE,2020,G14X,Other non-tax revenue,Other revenue,1.612178,4.782388910873617,Central government,33.710725
+AZE,2021,G1111,Personal income tax,Taxes,1.2818229,3.524108908910781,Central government,36.372965
+AZE,2021,G1112,Corporate income tax,Taxes,3.1729076,8.723258057186154,Central government,36.372965
+AZE,2021,G11412,VAT / sales tax,Taxes,5.5946577,15.381362778646173,Central government,36.372965
+AZE,2021,G1142,Excise taxes,Taxes,1.18644,3.261873207202107,Central government,36.372965
+AZE,2021,G115,Trade taxes (customs),Taxes,1.2934105,3.5559666362090634,Central government,36.372965
+AZE,2021,G113,Property taxes,Taxes,0.27574161,0.7580949477173501,Central government,36.372965
+AZE,2021,G11NEC,Other taxes,Taxes,1.8868417900000003,5.187484138287875,Central government,36.372965
+AZE,2021,G121,Social contributions,Social contributions,3.2459303,8.924018979481051,Central government,36.372965
+AZE,2021,G13,Grants (e.g. foreign aid),Grants,0.02145849,0.05899571288730517,Central government,36.372965
+AZE,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,17.299891,47.562498685493466,Central government,36.372965
+AZE,2021,G14X,Other non-tax revenue,Other revenue,1.113863000000002,3.0623376455562585,Central government,36.372965
+AZE,2022,G1111,Personal income tax,Taxes,1.0911925,3.3951462443487412,Central government,32.139779
+AZE,2022,G1112,Corporate income tax,Taxes,5.8967237,18.347119618231627,Central government,32.139779
+AZE,2022,G11412,VAT / sales tax,Taxes,5.1973275,16.171011936276535,Central government,32.139779
+AZE,2022,G1142,Excise taxes,Taxes,1.0142365,3.1557046477650936,Central government,32.139779
+AZE,2022,G115,Trade taxes (customs),Taxes,1.0599174,3.2978366144652598,Central government,32.139779
+AZE,2022,G113,Property taxes,Taxes,0.19989147,0.6219441332742381,Central government,32.139779
+AZE,2022,G11NEC,Other taxes,Taxes,0.7531389299999992,2.3433232996582425,Central government,32.139779
+AZE,2022,G121,Social contributions,Social contributions,3.2580076,10.136994404928238,Central government,32.139779
+AZE,2022,G13,Grants (e.g. foreign aid),Grants,0.01492841,0.046448390312065185,Central government,32.139779
+AZE,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,12.703475,39.52570736733264,Central government,32.139779
+AZE,2022,G14X,Other non-tax revenue,Other revenue,0.950940000000001,2.9587633434073233,Central government,32.139779
+AZE,2023,G1111,Personal income tax,Taxes,1.3457496,3.3107779536433317,Central government,40.647534
+AZE,2023,G1112,Corporate income tax,Taxes,6.5191296,16.03819206531711,Central government,40.647534
+AZE,2023,G11412,VAT / sales tax,Taxes,6.6010766,16.23979593052889,Central government,40.647534
+AZE,2023,G1142,Excise taxes,Taxes,1.1794192,2.901576255689509,Central government,40.647534
+AZE,2023,G115,Trade taxes (customs),Taxes,1.321466,3.2510360763170496,Central government,40.647534
+AZE,2023,G113,Property taxes,Taxes,0.2766218,0.6805377143988264,Central government,40.647534
+AZE,2023,G11NEC,Other taxes,Taxes,0.83368256,2.0510040203503936,Central government,40.647534
+AZE,2023,G121,Social contributions,Social contributions,4.4002846,10.825465037059098,Central government,40.647534
+AZE,2023,G13,Grants (e.g. foreign aid),Grants,0.01624321,0.03996112022949805,Central government,40.647534
+AZE,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,17.72569,43.60827873559544,Central government,40.647534
+AZE,2023,G14X,Other non-tax revenue,Other revenue,0.42817099999999897,1.0533750908708541,Central government,40.647534
+AZE,2024,G1111,Personal income tax,Taxes,1.4033919,3.785021024200517,Central government,37.077519
+AZE,2024,G1112,Corporate income tax,Taxes,4.6258109,12.476052847729786,Central government,37.077519
+AZE,2024,G11412,VAT / sales tax,Taxes,7.0402178,18.98783396708411,Central government,37.077519
+AZE,2024,G1142,Excise taxes,Taxes,1.3110174,3.535882188070701,Central government,37.077519
+AZE,2024,G115,Trade taxes (customs),Taxes,1.4174786,3.8230135875476514,Central government,37.077519
+AZE,2024,G113,Property taxes,Taxes,0.31091446,0.8385524868911889,Central government,37.077519
+AZE,2024,G11NEC,Other taxes,Taxes,1.6763809399999998,4.521286678702524,Central government,37.077519
+AZE,2024,G121,Social contributions,Social contributions,4.4002846,11.867796674233164,Central government,37.077519
+AZE,2024,G13,Grants (e.g. foreign aid),Grants,0.01583068,0.04269616821031291,Central government,37.077519
+AZE,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,14.41564,38.87973165393497,Central government,37.077519
+AZE,2024,G14X,Other non-tax revenue,Other revenue,0.46055199999999985,1.24213272339508,Central government,37.077519

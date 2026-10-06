@@ -1,0 +1,110 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+SOM,2017,GF01,General public services,Government spending,45.35811065521472,1.848898815681047,General government,4.076225373969547
+SOM,2017,GF02,Defence,Government spending,22.60933632089972,0.921607503998627,General government,4.076225373969547
+SOM,2017,GF03,Public order and safety,Government spending,18.86990245858406,0.7691797520601066,General government,4.076225373969547
+SOM,2017,GF04,Economic affairs,Government spending,6.384139913088208,0.2602319310470189,General government,4.076225373969547
+SOM,2017,GF05,Environmental protection,Government spending,1.124681429512394,0.0458445498061076,General government,4.076225373969547
+SOM,2017,GF06,Housing and community amenities,Government spending,1.148463108012534,0.0468139446194861,General government,4.076225373969547
+SOM,2017,GF08,"Recreation, culture and religion",Government spending,1.886804440411722,0.0769104013572467,General government,4.076225373969547
+SOM,2017,GF09,Education,Government spending,1.704693733343797,0.0694871585070286,General government,4.076225373969547
+SOM,2017,GF10,Social protection,Government spending,0.3724242830992249,0.0151808531265147,General government,4.076225373969547
+SOM,2017,GF0712,Medical products,Health,0.0,0.0,General government,4.076225373969547
+SOM,2017,GF072,Outpatient services,Health,0.0,0.0,General government,4.076225373969547
+SOM,2017,GF073,Hospital services,Health,0.0,0.0,General government,4.076225373969547
+SOM,2017,GF0740,Public health services,Health,0.0,0.0,General government,4.076225373969547
+SOM,2017,GF075,Health R&D,Health,0.0,0.0,General government,4.076225373969547
+SOM,2017,GF0760,Other health,Health,0.5414436578335415,0.0220704637663596,General government,4.076225373969547
+SOM,2018,GF01,General public services,Government spending,42.0567731373859,1.940078867157577,General government,4.612999815320983
+SOM,2018,GF02,Defence,Government spending,24.23112509757919,1.117781756001524,General government,4.612999815320983
+SOM,2018,GF03,Public order and safety,Government spending,17.01428032685222,0.7848687200558871,General government,4.612999815320983
+SOM,2018,GF04,Economic affairs,Government spending,7.192533532585975,0.3317915585750908,General government,4.612999815320983
+SOM,2018,GF05,Environmental protection,Government spending,2.030053642005118,0.0936463707566129,General government,4.612999815320983
+SOM,2018,GF06,Housing and community amenities,Government spending,1.598201448811463,0.07372502988213,General government,4.612999815320983
+SOM,2018,GF08,"Recreation, culture and religion",Government spending,1.881620887007077,0.0867991680426775,General government,4.612999815320983
+SOM,2018,GF09,Education,Government spending,3.002483834337073,0.1385045737330116,General government,4.612999815320983
+SOM,2018,GF10,Social protection,Government spending,0.3952709862695722,0.0182338498666328,General government,4.612999815320983
+SOM,2018,GF0712,Medical products,Health,0.0,0.0,General government,4.612999815320983
+SOM,2018,GF072,Outpatient services,Health,0.0,0.0,General government,4.612999815320983
+SOM,2018,GF073,Hospital services,Health,0.0,0.0,General government,4.612999815320983
+SOM,2018,GF0740,Public health services,Health,0.0,0.0,General government,4.612999815320983
+SOM,2018,GF075,Health R&D,Health,0.0,0.0,General government,4.612999815320983
+SOM,2018,GF0760,Other health,Health,0.5976571071664535,0.0275699212498412,General government,4.612999815320983
+SOM,2019,GF01,General public services,Government spending,41.61762484969385,1.572178421259388,General government,3.777674547592432
+SOM,2019,GF02,Defence,Government spending,19.28368353798381,0.7284748048526863,General government,3.777674547592432
+SOM,2019,GF03,Public order and safety,Government spending,23.22773701468448,0.8774683091854419,General government,3.777674547592432
+SOM,2019,GF04,Economic affairs,Government spending,7.158293310910982,0.2704170244482958,General government,3.777674547592432
+SOM,2019,GF05,Environmental protection,Government spending,0.6782583691178281,0.0256223937770797,General government,3.777674547592432
+SOM,2019,GF06,Housing and community amenities,Government spending,0.4891855520512065,0.0184798380903379,General government,3.777674547592432
+SOM,2019,GF08,"Recreation, culture and religion",Government spending,0.7663617507839399,0.0289506528018486,General government,3.777674547592432
+SOM,2019,GF09,Education,Government spending,4.189874734651108,0.1582798314269209,General government,3.777674547592432
+SOM,2019,GF10,Social protection,Government spending,1.723528892834909,0.065109312305026,General government,3.777674547592432
+SOM,2019,GF0712,Medical products,Health,0.0,0.0,General government,3.777674547592432
+SOM,2019,GF072,Outpatient services,Health,0.0,0.0,General government,3.777674547592432
+SOM,2019,GF073,Hospital services,Health,0.0,0.0,General government,3.777674547592432
+SOM,2019,GF0740,Public health services,Health,0.0,0.0,General government,3.777674547592432
+SOM,2019,GF075,Health R&D,Health,0.0,0.0,General government,3.777674547592432
+SOM,2019,GF0760,Other health,Health,0.8654519872878838,0.0326939594454072,General government,3.777674547592432
+SOM,2021,GF01,General public services,Government spending,30.768965256896035,1.8965716912096484,General government,6.163911185750981
+SOM,2021,GF02,Defence,Government spending,15.80936884909503,0.9744754548859996,General government,6.163911185750981
+SOM,2021,GF03,Public order and safety,Government spending,26.65470269041177,1.642972200662959,General government,6.163911185750981
+SOM,2021,GF04,Economic affairs,Government spending,14.44557441992996,0.8904123775160449,General government,6.163911185750981
+SOM,2021,GF05,Environmental protection,Government spending,0.129861125254682,0.0080045244255154,General government,6.163911185750981
+SOM,2021,GF06,Housing and community amenities,Government spending,1.608359352286403,0.0991378420226536,General government,6.163911185750981
+SOM,2021,GF08,"Recreation, culture and religion",Government spending,0.6270195786830062,0.0386489299472904,General government,6.163911185750981
+SOM,2021,GF09,Education,Government spending,4.227235166037116,0.2605630212473608,General government,6.163911185750981
+SOM,2021,GF10,Social protection,Government spending,0.4592654312490549,0.0283087132890479,General government,6.163911185750981
+SOM,2021,GF0170,Interest on public debt,Government spending,0.2464791552500733,0.0151927562210038,General government,6.163911185750981
+SOM,2021,GF0712,Medical products,Health,0.0,0.0,General government,6.163911185750981
+SOM,2021,GF072,Outpatient services,Health,0.408070337998416,0.0251530932096162,General government,6.163911185750981
+SOM,2021,GF073,Hospital services,Health,2.494809821679975,0.1537778616617461,General government,6.163911185750981
+SOM,2021,GF0740,Public health services,Health,0.526254698166425,0.0324378722058203,General government,6.163911185750981
+SOM,2021,GF075,Health R&D,Health,0.0,0.0,General government,6.163911185750981
+SOM,2021,GF0760,Other health,Health,1.594034117062115,0.0982548472462785,General government,6.163911185750981
+SOM,2022,GF01,General public services,Government spending,28.46911351341212,2.3517845902983243,General government,8.260828315537019
+SOM,2022,GF02,Defence,Government spending,11.87134766053362,0.9806716489772028,General government,8.260828315537019
+SOM,2022,GF03,Public order and safety,Government spending,21.50313471068482,1.776337040908321,General government,8.260828315537019
+SOM,2022,GF04,Economic affairs,Government spending,26.7936069443406,2.213373869211781,General government,8.260828315537019
+SOM,2022,GF05,Environmental protection,Government spending,0.1242329947732314,0.0102626744094667,General government,8.260828315537019
+SOM,2022,GF06,Housing and community amenities,Government spending,1.994558333837048,0.1647670396115143,General government,8.260828315537019
+SOM,2022,GF08,"Recreation, culture and religion",Government spending,0.6061910538188305,0.0500764022201182,General government,8.260828315537019
+SOM,2022,GF09,Education,Government spending,3.628678873861116,0.2997589318918289,General government,8.260828315537019
+SOM,2022,GF10,Social protection,Government spending,1.883944143530125,0.1556293912576379,General government,8.260828315537019
+SOM,2022,GF0170,Interest on public debt,Government spending,0.082226198977263,0.0067925651279035,General government,8.260828315537019
+SOM,2022,GF0712,Medical products,Health,0.0,0.0,General government,8.260828315537019
+SOM,2022,GF072,Outpatient services,Health,0.1943306050977708,0.016053317651671,General government,8.260828315537019
+SOM,2022,GF073,Hospital services,Health,0.2157887689069093,0.0178259397236107,General government,8.260828315537019
+SOM,2022,GF0740,Public health services,Health,0.6640786818096572,0.0548583997843771,General government,8.260828315537019
+SOM,2022,GF075,Health R&D,Health,0.0,0.0,General government,8.260828315537019
+SOM,2022,GF0760,Other health,Health,1.968767516416954,0.1626365044632667,General government,8.260828315537019
+SOM,2023,GF01,General public services,Government spending,36.350860569908434,3.11795814748039,General government,8.577398440083874
+SOM,2023,GF02,Defence,Government spending,12.33472043188106,1.057998117912873,General government,8.577398440083874
+SOM,2023,GF03,Public order and safety,Government spending,20.17097873884182,1.730145215695068,General government,8.577398440083874
+SOM,2023,GF04,Economic affairs,Government spending,17.76621552393047,1.523879093211551,General government,8.577398440083874
+SOM,2023,GF05,Environmental protection,Government spending,0.2348279128978038,0.0201421257377777,General government,8.577398440083874
+SOM,2023,GF06,Housing and community amenities,Government spending,1.527917595333124,0.1310555799878704,General government,8.577398440083874
+SOM,2023,GF08,"Recreation, culture and religion",Government spending,0.6712420749545759,0.0575751072663404,General government,8.577398440083874
+SOM,2023,GF09,Education,Government spending,3.965218676369486,0.3401126048928307,General government,8.577398440083874
+SOM,2023,GF10,Social protection,Government spending,0.4065156292672711,0.034868465243468,General government,8.577398440083874
+SOM,2023,GF0170,Interest on public debt,Government spending,0.2502479003860639,0.0214647595040568,General government,8.577398440083874
+SOM,2023,GF0712,Medical products,Health,0.0,0.0,General government,8.577398440083874
+SOM,2023,GF072,Outpatient services,Health,0.2328786459655751,0.0199749293463396,General government,8.577398440083874
+SOM,2023,GF073,Hospital services,Health,0.9549373098586132,0.0819087779195915,General government,8.577398440083874
+SOM,2023,GF0740,Public health services,Health,1.825373674351878,0.1565695730695597,General government,8.577398440083874
+SOM,2023,GF075,Health R&D,Health,0.0,0.0,General government,8.577398440083874
+SOM,2023,GF0760,Other health,Health,3.308065316053836,0.2837459428161574,General government,8.577398440083874
+SOM,2024,GF01,General public services,Government spending,30.357549700613248,2.812700879368473,General government,9.26524343073596
+SOM,2024,GF02,Defence,Government spending,13.99957257407011,1.297094478250144,General government,9.26524343073596
+SOM,2024,GF03,Public order and safety,Government spending,18.43960599327473,1.708474382945481,General government,9.26524343073596
+SOM,2024,GF04,Economic affairs,Government spending,23.46124105622068,2.173741095730614,General government,9.26524343073596
+SOM,2024,GF05,Environmental protection,Government spending,0.2417383799829725,0.0223976493709398,General government,9.26524343073596
+SOM,2024,GF06,Housing and community amenities,Government spending,1.35945523767212,0.125956837102212,General government,9.26524343073596
+SOM,2024,GF08,"Recreation, culture and religion",Government spending,0.524504841356777,0.0485966503577008,General government,9.26524343073596
+SOM,2024,GF09,Education,Government spending,4.448348688032868,0.4121503345941946,General government,9.26524343073596
+SOM,2024,GF10,Social protection,Government spending,0.3390690199992683,0.031415570101143,General government,9.26524343073596
+SOM,2024,GF0170,Interest on public debt,Government spending,0.5169036046341823,0.0478923772716059,General government,9.26524343073596
+SOM,2024,GF0712,Medical products,Health,0.0,0.0,General government,9.26524343073596
+SOM,2024,GF072,Outpatient services,Health,0.6618192673014365,0.0613191661869912,General government,9.26524343073596
+SOM,2024,GF073,Hospital services,Health,0.3328167267456471,0.0308362799111915,General government,9.26524343073596
+SOM,2024,GF0740,Public health services,Health,2.966638959113548,0.2748663212729216,General government,9.26524343073596
+SOM,2024,GF075,Health R&D,Health,0.0,0.0,General government,9.26524343073596
+SOM,2024,GF0760,Other health,Health,2.350735950982408,0.217801408272346,General government,9.26524343073596

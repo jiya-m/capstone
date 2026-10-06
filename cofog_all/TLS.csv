@@ -1,0 +1,12 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+TLS,2012,GF01,General public services,Government spending,12.2360532924601,15.357748870608,General government,125.51227510648
+TLS,2012,GF02,Defence,Government spending,2.74228730189367,3.44190718256286,General government,125.51227510648
+TLS,2012,GF03,Public order and safety,Government spending,3.36329918967764,4.22135333160222,General government,125.51227510648
+TLS,2012,GF04,Economic affairs,Government spending,39.9907906084548,50.1933511257404,General government,125.51227510648
+TLS,2012,GF05,Environmental protection,Government spending,0.165715818716021,0.207993694281809,General government,125.51227510648
+TLS,2012,GF06,Housing and community amenities,Government spending,1.38323986043136,1.7361358190071,General government,125.51227510648
+TLS,2012,GF08,"Recreation, culture and religion",Government spending,0.670070102512068,0.841020230471221,General government,125.51227510648
+TLS,2012,GF09,Education,Government spending,7.48167282450187,9.39041777805557,General government,125.51227510648
+TLS,2012,GF10,Social protection,Government spending,11.0199570950044,13.8313988656981,General government,125.51227510648
+TLS,2012,GF07,Health (no breakdown),Health,3.66044543258834,4.59430834147288,General government,125.51227510648
+TLS,2012,UNCL,Unclassified,Unclassified,17.286468473759726,,General government,125.51227510648

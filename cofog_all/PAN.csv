@@ -1,0 +1,193 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+PAN,2014,GF01,General public services,Government spending,16.32883066590879,2.7336439315648136,Central government (budgetary),16.7412106077632
+PAN,2014,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),16.7412106077632
+PAN,2014,GF03,Public order and safety,Government spending,10.52874752497255,1.76263979751531,Central government (budgetary),16.7412106077632
+PAN,2014,GF04,Economic affairs,Government spending,19.97887356409059,3.344705300423131,Central government (budgetary),16.7412106077632
+PAN,2014,GF05,Environmental protection,Government spending,1.799594969118962,0.3012739838669166,Central government (budgetary),16.7412106077632
+PAN,2014,GF06,Housing and community amenities,Government spending,2.687976938855896,0.4499998804219719,Central government (budgetary),16.7412106077632
+PAN,2014,GF08,"Recreation, culture and religion",Government spending,0.8542422284284902,0.1430104905616632,Central government (budgetary),16.7412106077632
+PAN,2014,GF09,Education,Government spending,17.40377810346729,2.913603146009235,Central government (budgetary),16.7412106077632
+PAN,2014,GF10,Social protection,Government spending,8.638271627754259,1.446151246072995,Central government (budgetary),16.7412106077632
+PAN,2014,GF0170,Interest on public debt,Government spending,10.64659245582287,1.782368465579535,Central government (budgetary),16.7412106077632
+PAN,2014,GF0712,Medical products,Health,0.0223240250778222,0.003737312054408,Central government (budgetary),16.7412106077632
+PAN,2014,GF072,Outpatient services,Health,1.851809964807009,0.310015406263887,Central government (budgetary),16.7412106077632
+PAN,2014,GF073,Hospital services,Health,4.607281070341456,0.7713146272774697,Central government (budgetary),16.7412106077632
+PAN,2014,GF0740,Public health services,Health,1.25156316208965,0.209526824854609,Central government (budgetary),16.7412106077632
+PAN,2014,GF075,Health R&D,Health,0.0777859889159864,0.0130223162277566,Central government (budgetary),16.7412106077632
+PAN,2014,GF0760,Other health,Health,3.32232771034836,0.5561978790694959,Central government (budgetary),16.7412106077632
+PAN,2015,GF01,General public services,Government spending,17.92190066486872,3.04319032906562,Central government (budgetary),16.98028789452568
+PAN,2015,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),16.98028789452568
+PAN,2015,GF03,Public order and safety,Government spending,8.783034541045032,1.491384550945078,Central government (budgetary),16.98028789452568
+PAN,2015,GF04,Economic affairs,Government spending,16.60028399131974,2.81877601303495,Central government (budgetary),16.98028789452568
+PAN,2015,GF05,Environmental protection,Government spending,2.732114994272341,0.4639209916369472,Central government (budgetary),16.98028789452568
+PAN,2015,GF06,Housing and community amenities,Government spending,3.800584342314614,0.6453501629992867,Central government (budgetary),16.98028789452568
+PAN,2015,GF08,"Recreation, culture and religion",Government spending,1.162357073186461,0.1973715773894437,Central government (budgetary),16.98028789452568
+PAN,2015,GF09,Education,Government spending,17.65074817552449,2.997147855741797,Central government (budgetary),16.98028789452568
+PAN,2015,GF10,Social protection,Government spending,9.117174085276067,1.548122407524964,Central government (budgetary),16.98028789452568
+PAN,2015,GF0170,Interest on public debt,Government spending,10.48017984339469,1.779564709272468,Central government (budgetary),16.98028789452568
+PAN,2015,GF0712,Medical products,Health,0.069985408986682,0.0118837239300998,Central government (budgetary),16.98028789452568
+PAN,2015,GF072,Outpatient services,Health,1.013911338037521,0.1721650641940086,Central government (budgetary),16.98028789452568
+PAN,2015,GF073,Hospital services,Health,6.248831257842824,1.061069537624822,Central government (budgetary),16.98028789452568
+PAN,2015,GF0740,Public health services,Health,1.01366295581534,0.1721228881776034,Central government (budgetary),16.98028789452568
+PAN,2015,GF075,Health R&D,Health,0.1128926130627063,0.0191694907097004,Central government (budgetary),16.98028789452568
+PAN,2015,GF0760,Other health,Health,3.292338715052767,0.5590485922788873,Central government (budgetary),16.98028789452568
+PAN,2016,GF01,General public services,Government spending,18.96972559061414,3.060357592934357,Central government (budgetary),16.13285114914136
+PAN,2016,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),16.13285114914136
+PAN,2016,GF03,Public order and safety,Government spending,10.11976040603587,1.632605882955511,Central government (budgetary),16.13285114914136
+PAN,2016,GF04,Economic affairs,Government spending,13.42699760152169,2.166157536852274,Central government (budgetary),16.13285114914136
+PAN,2016,GF05,Environmental protection,Government spending,2.096906994992376,0.3382908842380532,Central government (budgetary),16.13285114914136
+PAN,2016,GF06,Housing and community amenities,Government spending,5.863402133488484,0.945933938471276,Central government (budgetary),16.13285114914136
+PAN,2016,GF08,"Recreation, culture and religion",Government spending,1.399999498829811,0.2258598352349385,Central government (budgetary),16.13285114914136
+PAN,2016,GF09,Education,Government spending,18.75790179053427,3.026184374569016,Central government (budgetary),16.13285114914136
+PAN,2016,GF10,Social protection,Government spending,8.596899292728189,1.386924966337425,Central government (budgetary),16.13285114914136
+PAN,2016,GF0170,Interest on public debt,Government spending,10.64388799537901,1.717162606775822,Central government (budgetary),16.13285114914136
+PAN,2016,GF0712,Medical products,Health,0.0725456905748882,0.0117036882755634,Central government (budgetary),16.13285114914136
+PAN,2016,GF072,Outpatient services,Health,1.322837670129543,0.2134114322667688,Central government (budgetary),16.13285114914136
+PAN,2016,GF073,Hospital services,Health,4.211320134284769,0.679406008677982,Central government (budgetary),16.13285114914136
+PAN,2016,GF0740,Public health services,Health,1.028773824663516,0.1659705497942935,Central government (budgetary),16.13285114914136
+PAN,2016,GF075,Health R&D,Health,0.1522147005355417,0.0245565710645102,Central government (budgetary),16.13285114914136
+PAN,2016,GF0760,Other health,Health,3.336826675687909,0.5383252806935723,Central government (budgetary),16.13285114914136
+PAN,2017,GF01,General public services,Government spending,20.677831221154882,3.377367806683207,Central government (budgetary),16.33327872039076
+PAN,2017,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),16.33327872039076
+PAN,2017,GF03,Public order and safety,Government spending,10.54153527428815,1.721778337757792,Central government (budgetary),16.33327872039076
+PAN,2017,GF04,Economic affairs,Government spending,11.79114003091277,1.925879765560552,Central government (budgetary),16.33327872039076
+PAN,2017,GF05,Environmental protection,Government spending,1.836855080537191,0.3000186599937975,Central government (budgetary),16.33327872039076
+PAN,2017,GF06,Housing and community amenities,Government spending,5.740063606892671,0.9375405876414948,Central government (budgetary),16.33327872039076
+PAN,2017,GF08,"Recreation, culture and religion",Government spending,1.027743732236712,0.1678642483175686,Central government (budgetary),16.33327872039076
+PAN,2017,GF09,Education,Government spending,19.17150379586054,3.131335149868197,Central government (budgetary),16.33327872039076
+PAN,2017,GF10,Social protection,Government spending,8.622590116706585,1.408351676678553,Central government (budgetary),16.33327872039076
+PAN,2017,GF0170,Interest on public debt,Government spending,10.27756783159935,1.678663799612343,Central government (budgetary),16.33327872039076
+PAN,2017,GF0712,Medical products,Health,0.0387550017829156,0.006329962459296,Central government (budgetary),16.33327872039076
+PAN,2017,GF072,Outpatient services,Health,1.288993381400768,0.210534881671577,Central government (budgetary),16.33327872039076
+PAN,2017,GF073,Hospital services,Health,4.698511800758839,0.767421028128392,Central government (budgetary),16.33327872039076
+PAN,2017,GF0740,Public health services,Health,0.6370066612734532,0.1040440734532486,Central government (budgetary),16.33327872039076
+PAN,2017,GF075,Health R&D,Health,0.1367034225852814,0.0223281510311676,Central government (budgetary),16.33327872039076
+PAN,2017,GF0760,Other health,Health,3.513199042009876,0.5738205915335711,Central government (budgetary),16.33327872039076
+PAN,2018,GF01,General public services,Government spending,13.69404311680486,2.1893621140442088,Central government (budgetary),15.98769695238873
+PAN,2018,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),15.98769695238873
+PAN,2018,GF03,Public order and safety,Government spending,10.27152935460783,1.64218098559035,Central government (budgetary),15.98769695238873
+PAN,2018,GF04,Economic affairs,Government spending,15.90092918919696,2.542192371382732,Central government (budgetary),15.98769695238873
+PAN,2018,GF05,Environmental protection,Government spending,1.850767087977914,0.2958950333204587,Central government (budgetary),15.98769695238873
+PAN,2018,GF06,Housing and community amenities,Government spending,7.441764105811171,1.189766693148731,Central government (budgetary),15.98769695238873
+PAN,2018,GF08,"Recreation, culture and religion",Government spending,1.28435842538612,0.2053393328332046,Central government (budgetary),15.98769695238873
+PAN,2018,GF09,Education,Government spending,19.87511628194787,3.177573360092697,Central government (budgetary),15.98769695238873
+PAN,2018,GF10,Social protection,Government spending,8.832159635560066,1.412058916884545,Central government (budgetary),15.98769695238873
+PAN,2018,GF0170,Interest on public debt,Government spending,10.74694908505365,1.718189651345891,Central government (budgetary),15.98769695238873
+PAN,2018,GF0712,Medical products,Health,0.0552601945938594,0.0088348324469665,Central government (budgetary),15.98769695238873
+PAN,2018,GF072,Outpatient services,Health,1.265001162876982,0.2022445523649652,Central government (budgetary),15.98769695238873
+PAN,2018,GF073,Hospital services,Health,4.742214087518835,0.758170817145998,Central government (budgetary),15.98769695238873
+PAN,2018,GF0740,Public health services,Health,0.7119378789239935,0.1138224705716323,Central government (budgetary),15.98769695238873
+PAN,2018,GF075,Health R&D,Health,0.144640482652537,0.02312468203696,Central government (budgetary),15.98769695238873
+PAN,2018,GF0760,Other health,Health,3.183329911087359,0.5089411391793927,Central government (budgetary),15.98769695238873
+PAN,2019,GF01,General public services,Government spending,18.485750813914557,3.1112701984551228,General government,16.83064014967254
+PAN,2019,GF02,Defence,Government spending,0.0,0.0,General government,16.83064014967254
+PAN,2019,GF03,Public order and safety,Government spending,10.7505200294465,1.809381340374611,General government,16.83064014967254
+PAN,2019,GF04,Economic affairs,Government spending,16.999391431873,2.861106399532811,General government,16.83064014967254
+PAN,2019,GF05,Environmental protection,Government spending,1.878461570164268,0.3161571072242365,General government,16.83064014967254
+PAN,2019,GF06,Housing and community amenities,Government spending,1.072249089067568,0.1804663856891042,General government,16.83064014967254
+PAN,2019,GF08,"Recreation, culture and religion",Government spending,0.8026178734879773,0.1350857260637154,General government,16.83064014967254
+PAN,2019,GF09,Education,Government spending,19.45269079041155,3.274012386362659,General government,16.83064014967254
+PAN,2019,GF10,Social protection,Government spending,6.758754819703738,1.137541702302985,General government,16.83064014967254
+PAN,2019,GF0170,Interest on public debt,Government spending,10.76662811148674,1.812092433697817,General government,16.83064014967254
+PAN,2019,GF0712,Medical products,Health,0.0,0.0,General government,16.83064014967254
+PAN,2019,GF072,Outpatient services,Health,0.0,0.0,General government,16.83064014967254
+PAN,2019,GF073,Hospital services,Health,5.469940505662209,0.9206260029091848,General government,16.83064014967254
+PAN,2019,GF0740,Public health services,Health,4.842956724025775,0.815100618825148,General government,16.83064014967254
+PAN,2019,GF075,Health R&D,Health,0.0035621977977482,0.0005995406927585,General government,16.83064014967254
+PAN,2019,GF0760,Other health,Health,2.71647604295835,0.4572003075423838,General government,16.83064014967254
+PAN,2020,GF01,General public services,Government spending,16.70123419354184,3.326525845075359,General government,19.91784443308798
+PAN,2020,GF02,Defence,Government spending,0.0,0.0,General government,19.91784443308798
+PAN,2020,GF03,Public order and safety,Government spending,10.5435309318792,2.100044088766211,General government,19.91784443308798
+PAN,2020,GF04,Economic affairs,Government spending,8.975283432870189,1.787682991587802,General government,19.91784443308798
+PAN,2020,GF05,Environmental protection,Government spending,1.668803607568991,0.3323897064493516,General government,19.91784443308798
+PAN,2020,GF06,Housing and community amenities,Government spending,3.028626016111438,0.6032370183491061,General government,19.91784443308798
+PAN,2020,GF08,"Recreation, culture and religion",Government spending,0.5222020636906306,0.1040113946722748,General government,19.91784443308798
+PAN,2020,GF09,Education,Government spending,21.28723728732976,4.239958806992639,General government,19.91784443308798
+PAN,2020,GF10,Social protection,Government spending,11.19496675141232,2.229796061882229,General government,19.91784443308798
+PAN,2020,GF0170,Interest on public debt,Government spending,12.45327455451567,2.480423852593761,General government,19.91784443308798
+PAN,2020,GF0712,Medical products,Health,0.0,0.0,General government,19.91784443308798
+PAN,2020,GF072,Outpatient services,Health,0.0,0.0,General government,19.91784443308798
+PAN,2020,GF073,Hospital services,Health,6.453347551630664,1.285367726060287,General government,19.91784443308798
+PAN,2020,GF0740,Public health services,Health,4.652365819746827,0.9266509864353312,General government,19.91784443308798
+PAN,2020,GF075,Health R&D,Health,0.0487320108280846,0.0097063661058534,General government,19.91784443308798
+PAN,2020,GF0760,Other health,Health,2.470395778874378,0.4920495881177708,General government,19.91784443308798
+PAN,2021,GF01,General public services,Government spending,14.114299976114419,2.7061095514273843,General government,19.17282157816488
+PAN,2021,GF02,Defence,Government spending,0.0,0.0,General government,19.17282157816488
+PAN,2021,GF03,Public order and safety,Government spending,10.63298737357145,2.038643697563654,General government,19.17282157816488
+PAN,2021,GF04,Economic affairs,Government spending,7.990810067075868,1.532063756810493,General government,19.17282157816488
+PAN,2021,GF05,Environmental protection,Government spending,1.507896437594075,0.2891062935634162,General government,19.17282157816488
+PAN,2021,GF06,Housing and community amenities,Government spending,1.868827617941446,0.3583069847913823,General government,19.17282157816488
+PAN,2021,GF08,"Recreation, culture and religion",Government spending,2.861617123588346,0.5486527453558075,General government,19.17282157816488
+PAN,2021,GF09,Education,Government spending,20.44894915083278,3.920640535298831,General government,19.17282157816488
+PAN,2021,GF10,Social protection,Government spending,13.38856480390392,2.566965641729479,General government,19.17282157816488
+PAN,2021,GF0170,Interest on public debt,Government spending,11.94473618175377,2.290142956110155,General government,19.17282157816488
+PAN,2021,GF0712,Medical products,Health,0.0,0.0,General government,19.17282157816488
+PAN,2021,GF072,Outpatient services,Health,0.0,0.0,General government,19.17282157816488
+PAN,2021,GF073,Hospital services,Health,6.636525720755134,1.272409235429402,General government,19.17282157816488
+PAN,2021,GF0740,Public health services,Health,6.784528212532662,1.300785489109146,General government,19.17282157816488
+PAN,2021,GF075,Health R&D,Health,0.0166971296631151,0.0032013108789839,General government,19.17282157816488
+PAN,2021,GF0760,Other health,Health,1.803560204673011,0.3457933800967416,General government,19.17282157816488
+PAN,2022,GF01,General public services,Government spending,15.804281065460781,2.5253848089017903,Central government (budgetary),15.97911855934309
+PAN,2022,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),15.97911855934309
+PAN,2022,GF03,Public order and safety,Government spending,13.47597236333968,2.153341600962356,Central government (budgetary),15.97911855934309
+PAN,2022,GF04,Economic affairs,Government spending,11.35941130536778,1.81513380012814,Central government (budgetary),15.97911855934309
+PAN,2022,GF05,Environmental protection,Government spending,1.890697559386851,0.302116804613031,Central government (budgetary),15.97911855934309
+PAN,2022,GF06,Housing and community amenities,Government spending,1.904449546704942,0.3043142509708547,Central government (budgetary),15.97911855934309
+PAN,2022,GF08,"Recreation, culture and religion",Government spending,0.0,0.0,Central government (budgetary),15.97911855934309
+PAN,2022,GF09,Education,Government spending,20.78447870492275,3.321176494201023,Central government (budgetary),15.97911855934309
+PAN,2022,GF10,Social protection,Government spending,9.507701027100872,1.519246819388329,Central government (budgetary),15.97911855934309
+PAN,2022,GF0170,Interest on public debt,Government spending,10.8348724006708,1.731317106656729,Central government (budgetary),15.97911855934309
+PAN,2022,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),15.97911855934309
+PAN,2022,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),15.97911855934309
+PAN,2022,GF073,Hospital services,Health,6.946764107321332,1.110031672746767,Central government (budgetary),15.97911855934309
+PAN,2022,GF0740,Public health services,Health,4.941473797251515,0.7896039566416925,Central government (budgetary),15.97911855934309
+PAN,2022,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),15.97911855934309
+PAN,2022,GF0760,Other health,Health,2.5498981224727,0.4074512441323762,Central government (budgetary),15.97911855934309
+PAN,2023,GF01,General public services,Government spending,6.255577207695582,1.0098810972056507,Central government (budgetary),16.14369167985491
+PAN,2023,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),16.14369167985491
+PAN,2023,GF03,Public order and safety,Government spending,13.63870247817011,2.201790077208514,Central government (budgetary),16.14369167985491
+PAN,2023,GF04,Economic affairs,Government spending,15.02729410631909,2.425960028349162,Central government (budgetary),16.14369167985491
+PAN,2023,GF05,Environmental protection,Government spending,1.852397453878169,0.2990453336395743,Central government (budgetary),16.14369167985491
+PAN,2023,GF06,Housing and community amenities,Government spending,2.100024430518555,0.3390214692645445,Central government (budgetary),16.14369167985491
+PAN,2023,GF08,"Recreation, culture and religion",Government spending,0.0172630734584616,0.0027868973536009,Central government (budgetary),16.14369167985491
+PAN,2023,GF09,Education,Government spending,20.71883633894872,3.344785058213621,Central government (budgetary),16.14369167985491
+PAN,2023,GF10,Social protection,Government spending,7.93392294979617,1.280828059132344,Central government (budgetary),16.14369167985491
+PAN,2023,GF0170,Interest on public debt,Government spending,15.82132716788952,2.554146277645206,Central government (budgetary),16.14369167985491
+PAN,2023,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),16.14369167985491
+PAN,2023,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),16.14369167985491
+PAN,2023,GF073,Hospital services,Health,5.816130724539916,0.9389382118670356,Central government (budgetary),16.14369167985491
+PAN,2023,GF0740,Public health services,Health,8.315136619957668,1.342370018684675,Central government (budgetary),16.14369167985491
+PAN,2023,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),16.14369167985491
+PAN,2023,GF0760,Other health,Health,2.503387448828041,0.4041391512909846,Central government (budgetary),16.14369167985491
+PAN,2024,GF01,General public services,Government spending,11.49254818954035,2.1823293128958436,Central government (budgetary),18.98908124555037
+PAN,2024,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),18.98908124555037
+PAN,2024,GF03,Public order and safety,Government spending,10.94285002473762,2.077946681776155,Central government (budgetary),18.98908124555037
+PAN,2024,GF04,Economic affairs,Government spending,14.03180401134867,2.664510663931395,Central government (budgetary),18.98908124555037
+PAN,2024,GF05,Environmental protection,Government spending,1.988502332653169,0.3775983235171744,Central government (budgetary),18.98908124555037
+PAN,2024,GF06,Housing and community amenities,Government spending,2.577609568441668,0.4894643751444686,Central government (budgetary),18.98908124555037
+PAN,2024,GF08,"Recreation, culture and religion",Government spending,0.0119825081611549,0.0022753682099764,Central government (budgetary),18.98908124555037
+PAN,2024,GF09,Education,Government spending,21.36431591530118,4.056887306712588,Central government (budgetary),18.98908124555037
+PAN,2024,GF10,Social protection,Government spending,6.062107215264374,1.151138464298923,Central government (budgetary),18.98908124555037
+PAN,2024,GF0170,Interest on public debt,Government spending,16.39763727005586,3.113760663561555,Central government (budgetary),18.98908124555037
+PAN,2024,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),18.98908124555037
+PAN,2024,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),18.98908124555037
+PAN,2024,GF073,Hospital services,Health,4.840564093490869,0.9191786484559196,Central government (budgetary),18.98908124555037
+PAN,2024,GF0740,Public health services,Health,7.237322449585425,1.374301039954232,Central government (budgetary),18.98908124555037
+PAN,2024,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.98908124555037
+PAN,2024,GF0760,Other health,Health,3.052756421419666,0.5796903970921363,Central government (budgetary),18.98908124555037
+PAN,2025,GF01,General public services,Government spending,9.623722558834789,1.6508321139500928,Central government (budgetary),17.15377915206619
+PAN,2025,GF02,Defence,Government spending,0.0,0.0,Central government (budgetary),17.15377915206619
+PAN,2025,GF03,Public order and safety,Government spending,10.9922581462546,1.885587686233519,Central government (budgetary),17.15377915206619
+PAN,2025,GF04,Economic affairs,Government spending,10.25503759338149,1.759126500730024,Central government (budgetary),17.15377915206619
+PAN,2025,GF05,Environmental protection,Government spending,2.147811063758884,0.3684307664808424,Central government (budgetary),17.15377915206619
+PAN,2025,GF06,Housing and community amenities,Government spending,0.7269963211673459,0.1247073433766923,Central government (budgetary),17.15377915206619
+PAN,2025,GF08,"Recreation, culture and religion",Government spending,0.0064810962783299,0.0011117529422175,Central government (budgetary),17.15377915206619
+PAN,2025,GF09,Education,Government spending,19.39529301533898,3.327025729747367,Central government (budgetary),17.15377915206619
+PAN,2025,GF10,Social protection,Government spending,4.901525686523929,0.8407968913481108,Central government (budgetary),17.15377915206619
+PAN,2025,GF0170,Interest on public debt,Government spending,19.45393131291994,3.337084413812937,Central government (budgetary),17.15377915206619
+PAN,2025,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),17.15377915206619
+PAN,2025,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),17.15377915206619
+PAN,2025,GF073,Hospital services,Health,5.462370273543425,0.9370029331917528,Central government (budgetary),17.15377915206619
+PAN,2025,GF0740,Public health services,Health,7.834990002688452,1.343996881647642,Central government (budgetary),17.15377915206619
+PAN,2025,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),17.15377915206619
+PAN,2025,GF0760,Other health,Health,9.199582929309836,1.578076138604991,Central government (budgetary),17.15377915206619

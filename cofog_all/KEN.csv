@@ -1,0 +1,193 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+KEN,2005,GF01,General public services,Government spending,15.963541151341047,2.249878490021456,Central government (budgetary),14.09385592264064
+KEN,2005,GF02,Defence,Government spending,8.974928880589824,1.264913545589794,Central government (budgetary),14.09385592264064
+KEN,2005,GF03,Public order and safety,Government spending,9.07402858572708,1.2788805152516,Central government (budgetary),14.09385592264064
+KEN,2005,GF04,Economic affairs,Government spending,14.77202959632775,2.081948568156266,Central government (budgetary),14.09385592264064
+KEN,2005,GF05,Environmental protection,Government spending,0.2467296589825097,0.0347737226554174,Central government (budgetary),14.09385592264064
+KEN,2005,GF06,Housing and community amenities,Government spending,2.637975842050478,0.3717925144526606,Central government (budgetary),14.09385592264064
+KEN,2005,GF08,"Recreation, culture and religion",Government spending,0.7660860860550761,0.1079710692119992,Central government (budgetary),14.09385592264064
+KEN,2005,GF09,Education,Government spending,29.67632530763429,4.182538531992117,Central government (budgetary),14.09385592264064
+KEN,2005,GF10,Social protection,Government spending,4.989756958880142,0.7032491566745023,Central government (budgetary),14.09385592264064
+KEN,2005,GF0170,Interest on public debt,Government spending,9.593473919154164,1.352090392141694,Central government (budgetary),14.09385592264064
+KEN,2005,GF0740,Public health services,Health,0.5615190625779223,0.0791396876578946,Central government (budgetary),14.09385592264064
+KEN,2005,GF07_rest,Health (not broken down),Health,5.87127930961236,0.827489646712576,Central government (budgetary),14.09385592264064
+KEN,2006,GF01,General public services,Government spending,15.23063905124268,2.5322770899168674,Central government (budgetary),16.62620380797651
+KEN,2006,GF02,Defence,Government spending,7.200479682289046,1.197166427129316,Central government (budgetary),16.62620380797651
+KEN,2006,GF03,Public order and safety,Government spending,11.19188575987579,1.860785736392849,Central government (budgetary),16.62620380797651
+KEN,2006,GF04,Economic affairs,Government spending,13.91491101534939,2.313521465110563,Central government (budgetary),16.62620380797651
+KEN,2006,GF05,Environmental protection,Government spending,1.058492984709896,0.1759872009310009,Central government (budgetary),16.62620380797651
+KEN,2006,GF06,Housing and community amenities,Government spending,1.717401388165519,0.2855386549974169,Central government (budgetary),16.62620380797651
+KEN,2006,GF08,"Recreation, culture and religion",Government spending,0.8289257901458068,0.1378188912865215,Central government (budgetary),16.62620380797651
+KEN,2006,GF09,Education,Government spending,27.00040137459208,4.489141761511369,Central government (budgetary),16.62620380797651
+KEN,2006,GF10,Social protection,Government spending,6.947797186221988,1.155154920346125,Central government (budgetary),16.62620380797651
+KEN,2006,GF0170,Interest on public debt,Government spending,8.84381390652447,1.470390524496928,Central government (budgetary),16.62620380797651
+KEN,2006,GF072,Outpatient services,Health,1.166154448588824,0.1938872153381625,Central government (budgetary),16.62620380797651
+KEN,2006,GF073,Hospital services,Health,3.999931268458535,0.665036724872896,Central government (budgetary),16.62620380797651
+KEN,2006,GF0740,Public health services,Health,0.6870370345510731,0.1142281776007394,Central government (budgetary),16.62620380797651
+KEN,2006,GF07_rest,Health (not broken down),Health,0.6036942962163829,0.10037144406606502,Central government (budgetary),16.62620380797651
+KEN,2007,GF01,General public services,Government spending,14.265866089965744,2.3881503714722676,Central government (budgetary),16.74031114838541
+KEN,2007,GF02,Defence,Government spending,6.073167404649754,1.016667120100692,Central government (budgetary),16.74031114838541
+KEN,2007,GF03,Public order and safety,Government spending,10.08287497226728,1.687904643060222,Central government (budgetary),16.74031114838541
+KEN,2007,GF04,Economic affairs,Government spending,17.2651314465082,2.890236724323208,Central government (budgetary),16.74031114838541
+KEN,2007,GF05,Environmental protection,Government spending,1.219554985426382,0.2041572991860227,Central government (budgetary),16.74031114838541
+KEN,2007,GF06,Housing and community amenities,Government spending,2.006636782496421,0.3359172410078508,Central government (budgetary),16.74031114838541
+KEN,2007,GF08,"Recreation, culture and religion",Government spending,0.9878816448721152,0.1653744611293799,Central government (budgetary),16.74031114838541
+KEN,2007,GF09,Education,Government spending,26.50297570715816,4.436680596959276,Central government (budgetary),16.74031114838541
+KEN,2007,GF10,Social protection,Government spending,6.537297198602512,1.094363891740744,Central government (budgetary),16.74031114838541
+KEN,2007,GF0170,Interest on public debt,Government spending,9.427160803180048,1.57813605091097,Central government (budgetary),16.74031114838541
+KEN,2007,GF072,Outpatient services,Health,1.097468559474219,0.1837196516116875,Central government (budgetary),16.74031114838541
+KEN,2007,GF073,Hospital services,Health,4.15708775058893,0.6959094241600031,Central government (budgetary),16.74031114838541
+KEN,2007,GF0740,Public health services,Health,0.888873585311658,0.1488002038969806,Central government (budgetary),16.74031114838541
+KEN,2007,GF07_rest,Health (not broken down),Health,0.508647293912075,0.08514913964872384,Central government (budgetary),16.74031114838541
+KEN,2009,GF01,General public services,Government spending,14.286986137959529,2.663691059346511,Central government (budgetary),18.64417753069186
+KEN,2009,GF02,Defence,Government spending,6.743423740583669,1.257255893841241,Central government (budgetary),18.64417753069186
+KEN,2009,GF03,Public order and safety,Government spending,9.834597077625592,1.833579738580749,Central government (budgetary),18.64417753069186
+KEN,2009,GF04,Economic affairs,Government spending,21.42326477324177,3.994191517193367,Central government (budgetary),18.64417753069186
+KEN,2009,GF05,Environmental protection,Government spending,0.9143302003160696,0.1704693457636585,Central government (budgetary),18.64417753069186
+KEN,2009,GF06,Housing and community amenities,Government spending,3.082209598211018,0.5746526293584865,Central government (budgetary),18.64417753069186
+KEN,2009,GF08,"Recreation, culture and religion",Government spending,0.8341926816817677,0.155528364520788,Central government (budgetary),18.64417753069186
+KEN,2009,GF09,Education,Government spending,23.65076496264474,4.409490607002155,Central government (budgetary),18.64417753069186
+KEN,2009,GF10,Social protection,Government spending,7.160422561697546,1.335001894350604,Central government (budgetary),18.64417753069186
+KEN,2009,GF0170,Interest on public debt,Government spending,8.291870919998852,1.545951134940398,Central government (budgetary),18.64417753069186
+KEN,2009,GF072,Outpatient services,Health,0.3691631414715432,0.0688274314738336,Central government (budgetary),18.64417753069186
+KEN,2009,GF073,Hospital services,Health,3.622814263218589,0.6754439228417001,Central government (budgetary),18.64417753069186
+KEN,2009,GF0740,Public health services,Health,0.842479612959531,0.1570733947000606,Central government (budgetary),18.64417753069186
+KEN,2009,GF07_rest,Health (not broken down),Health,0.4349551568668675,0.08109381162515816,Central government (budgetary),18.64417753069186
+KEN,2010,GF01,General public services,Government spending,16.842810947741604,3.224649965911996,Central government (budgetary),19.14555697334108
+KEN,2010,GF02,Defence,Government spending,7.73056481957776,1.480059691893322,Central government (budgetary),19.14555697334108
+KEN,2010,GF03,Public order and safety,Government spending,8.6486590688372,1.655833949454256,Central government (budgetary),19.14555697334108
+KEN,2010,GF04,Economic affairs,Government spending,22.08479755161147,4.228257497690809,Central government (budgetary),19.14555697334108
+KEN,2010,GF05,Environmental protection,Government spending,0.8125736864515172,0.1555717580899531,Central government (budgetary),19.14555697334108
+KEN,2010,GF06,Housing and community amenities,Government spending,2.794233167018044,0.5349715029594323,Central government (budgetary),19.14555697334108
+KEN,2010,GF08,"Recreation, culture and religion",Government spending,0.4708421923918388,0.0901453601989077,Central government (budgetary),19.14555697334108
+KEN,2010,GF09,Education,Government spending,22.98924589187127,4.401419169969688,Central government (budgetary),19.14555697334108
+KEN,2010,GF10,Social protection,Government spending,4.696580353520168,0.8991864673819475,Central government (budgetary),19.14555697334108
+KEN,2010,GF0170,Interest on public debt,Government spending,8.099234592633069,1.550643573337113,Central government (budgetary),19.14555697334108
+KEN,2010,GF072,Outpatient services,Health,1.158677484384047,0.2218352579100229,Central government (budgetary),19.14555697334108
+KEN,2010,GF073,Hospital services,Health,3.497553506137825,0.6696260991907057,Central government (budgetary),19.14555697334108
+KEN,2010,GF0740,Public health services,Health,0.4818737991862685,0.0922574227628102,Central government (budgetary),19.14555697334108
+KEN,2010,GF07_rest,Health (not broken down),Health,0.2738152959502118,0.05242346348787008,Central government (budgetary),19.14555697334108
+KEN,2011,GF01,General public services,Government spending,15.733395699210975,2.9366957188738283,Central government (budgetary),18.66536490289317
+KEN,2011,GF02,Defence,Government spending,6.920427969567955,1.29172313336174,Central government (budgetary),18.66536490289317
+KEN,2011,GF03,Public order and safety,Government spending,9.490459139770318,1.771428829398106,Central government (budgetary),18.66536490289317
+KEN,2011,GF04,Economic affairs,Government spending,23.03394093237054,4.299369126543834,Central government (budgetary),18.66536490289317
+KEN,2011,GF05,Environmental protection,Government spending,0.7321904819328368,0.1366660252370161,Central government (budgetary),18.66536490289317
+KEN,2011,GF06,Housing and community amenities,Government spending,3.1387162177563,0.5858528353105003,Central government (budgetary),18.66536490289317
+KEN,2011,GF08,"Recreation, culture and religion",Government spending,0.5071896347549023,0.0946687960766535,Central government (budgetary),18.66536490289317
+KEN,2011,GF09,Education,Government spending,22.79062851089156,4.253953975220718,Central government (budgetary),18.66536490289317
+KEN,2011,GF10,Social protection,Government spending,3.685563975620735,0.6879239647791868,Central government (budgetary),18.66536490289317
+KEN,2011,GF0170,Interest on public debt,Government spending,8.839430891052723,1.649912031154052,Central government (budgetary),18.66536490289317
+KEN,2011,GF072,Outpatient services,Health,1.570891705812464,0.2932126691191794,Central government (budgetary),18.66536490289317
+KEN,2011,GF073,Hospital services,Health,2.636131908394712,0.4920436400234746,Central government (budgetary),18.66536490289317
+KEN,2011,GF0740,Public health services,Health,0.6968999775734162,0.1300789238222588,Central government (budgetary),18.66536490289317
+KEN,2011,GF07_rest,Health (not broken down),Health,1.0472406177926903,0.19547128272231828,Central government (budgetary),18.66536490289317
+KEN,2017,GF01,General public services,Government spending,23.276164170205167,6.2639275540692365,Central government (budgetary),26.91133946411765
+KEN,2017,GF02,Defence,Government spending,5.6595471966311,1.523059958217349,Central government (budgetary),26.91133946411765
+KEN,2017,GF03,Public order and safety,Government spending,5.967265401560553,1.605871048938803,Central government (budgetary),26.91133946411765
+KEN,2017,GF04,Economic affairs,Government spending,21.32281965320829,5.738256380196476,Central government (budgetary),26.91133946411765
+KEN,2017,GF05,Environmental protection,Government spending,0.4951336060587109,0.1332470855273867,Central government (budgetary),26.91133946411765
+KEN,2017,GF06,Housing and community amenities,Government spending,2.739877305311021,0.737337682532568,Central government (budgetary),26.91133946411765
+KEN,2017,GF08,"Recreation, culture and religion",Government spending,0.3910143613568652,0.1052272021381977,Central government (budgetary),26.91133946411765
+KEN,2017,GF09,Education,Government spending,14.25657335932408,3.836634852678665,Central government (budgetary),26.91133946411765
+KEN,2017,GF10,Social protection,Government spending,3.672549599005665,0.9883322895765058,Central government (budgetary),26.91133946411765
+KEN,2017,GF0170,Interest on public debt,Government spending,19.73959565108758,5.312189594508383,Central government (budgetary),26.91133946411765
+KEN,2017,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),26.91133946411765
+KEN,2017,GF072,Outpatient services,Health,0.5093353555296345,0.1370689665373504,Central government (budgetary),26.91133946411765
+KEN,2017,GF073,Hospital services,Health,0.8271890390218231,0.2226076503011354,Central government (budgetary),26.91133946411765
+KEN,2017,GF0740,Public health services,Health,0.2916956111398876,0.0784991961157877,Central government (budgetary),26.91133946411765
+KEN,2017,GF075,Health R&D,Health,0.2106642624276808,0.0566925747914928,Central government (budgetary),26.91133946411765
+KEN,2017,GF0760,Other health,Health,0.6405754281319308,0.1723874279883089,Central government (budgetary),26.91133946411765
+KEN,2018,GF01,General public services,Government spending,25.029321035064168,5.931346984888678,Central government (budgetary),23.69759441967809
+KEN,2018,GF02,Defence,Government spending,6.608211335539263,1.565987120691287,Central government (budgetary),23.69759441967809
+KEN,2018,GF03,Public order and safety,Government spending,6.778851627430393,1.606424764980202,Central government (budgetary),23.69759441967809
+KEN,2018,GF04,Economic affairs,Government spending,17.2391873600587,4.08527270183512,Central government (budgetary),23.69759441967809
+KEN,2018,GF05,Environmental protection,Government spending,0.5120112332544813,0.1213343454398389,Central government (budgetary),23.69759441967809
+KEN,2018,GF06,Housing and community amenities,Government spending,2.84427593759544,0.6740249758678637,Central government (budgetary),23.69759441967809
+KEN,2018,GF08,"Recreation, culture and religion",Government spending,0.3795018405839268,0.0899328069967922,Central government (budgetary),23.69759441967809
+KEN,2018,GF09,Education,Government spending,18.63421805452899,4.41586141784071,Central government (budgetary),23.69759441967809
+KEN,2018,GF10,Social protection,Government spending,4.479341546235071,1.061496192298924,Central government (budgetary),23.69759441967809
+KEN,2018,GF0170,Interest on public debt,Government spending,14.70117844357259,3.483825642470978,Central government (budgetary),23.69759441967809
+KEN,2018,GF072,Outpatient services,Health,0.4144250456757572,0.0982087664978066,Central government (budgetary),23.69759441967809
+KEN,2018,GF073,Hospital services,Health,0.6375179133904514,0.1510764094680638,Central government (budgetary),23.69759441967809
+KEN,2018,GF0740,Public health services,Health,1.391642285179369,0.3297857445145468,Central government (budgetary),23.69759441967809
+KEN,2018,GF0760,Other health,Health,0.349864553985944,0.0829094830218047,Central government (budgetary),23.69759441967809
+KEN,2019,GF01,General public services,Government spending,9.018880163766092,2.1646846471585985,Central government (budgetary),24.00170096344502
+KEN,2019,GF02,Defence,Government spending,5.789447394332372,1.389565851023616,Central government (budgetary),24.00170096344502
+KEN,2019,GF03,Public order and safety,Government spending,6.778866899202672,1.627043361856583,Central government (budgetary),24.00170096344502
+KEN,2019,GF04,Economic affairs,Government spending,18.07073419343659,4.337283583007659,Central government (budgetary),24.00170096344502
+KEN,2019,GF05,Environmental protection,Government spending,0.2985783423828049,0.0716638808803318,Central government (budgetary),24.00170096344502
+KEN,2019,GF06,Housing and community amenities,Government spending,3.428894658903122,0.8229930423814654,Central government (budgetary),24.00170096344502
+KEN,2019,GF08,"Recreation, culture and religion",Government spending,0.3380221008857166,0.0811310538449441,Central government (budgetary),24.00170096344502
+KEN,2019,GF09,Education,Government spending,18.52003933716804,4.445124460019457,Central government (budgetary),24.00170096344502
+KEN,2019,GF10,Social protection,Government spending,19.34526429742264,4.643192487255476,Central government (budgetary),24.00170096344502
+KEN,2019,GF0170,Interest on public debt,Government spending,15.29052066394155,3.669985045513019,Central government (budgetary),24.00170096344502
+KEN,2019,GF0712,Medical products,Health,0.1072547632082988,0.0257429675343069,Central government (budgetary),24.00170096344502
+KEN,2019,GF072,Outpatient services,Health,0.3816713829966978,0.0916076240099123,Central government (budgetary),24.00170096344502
+KEN,2019,GF073,Hospital services,Health,0.9539054277233926,0.2289535282362399,Central government (budgetary),24.00170096344502
+KEN,2019,GF0740,Public health services,Health,1.043782436247133,0.250525539056998,Central government (budgetary),24.00170096344502
+KEN,2019,GF075,Health R&D,Health,0.3354483708406877,0.0805133148559299,Central government (budgetary),24.00170096344502
+KEN,2019,GF0760,Other health,Health,0.2986895675421932,0.0716905768104843,Central government (budgetary),24.00170096344502
+KEN,2020,GF01,General public services,Government spending,14.95200789864132,3.862033344522806,General government,25.82952985781759
+KEN,2020,GF02,Defence,Government spending,4.98728540443414,1.288192372632895,General government,25.82952985781759
+KEN,2020,GF03,Public order and safety,Government spending,6.242452276364811,1.612396074583663,General government,25.82952985781759
+KEN,2020,GF04,Economic affairs,Government spending,20.55648980839826,5.309644672779459,General government,25.82952985781759
+KEN,2020,GF05,Environmental protection,Government spending,0.8368733104478775,0.216160441594241,General government,25.82952985781759
+KEN,2020,GF06,Housing and community amenities,Government spending,4.552294783508014,1.175836340322075,General government,25.82952985781759
+KEN,2020,GF08,"Recreation, culture and religion",Government spending,0.8026843474276927,0.2073295931828642,General government,25.82952985781759
+KEN,2020,GF09,Education,Government spending,17.92133301065071,4.628996060904945,General government,25.82952985781759
+KEN,2020,GF10,Social protection,Government spending,5.463727183538135,1.411255044221679,General government,25.82952985781759
+KEN,2020,GF0170,Interest on public debt,Government spending,16.10183531273958,4.159028359760685,General government,25.82952985781759
+KEN,2020,GF0712,Medical products,Health,0.1104655139565263,0.0285327229099926,General government,25.82952985781759
+KEN,2020,GF072,Outpatient services,Health,0.5220622612398299,0.1348462276433395,General government,25.82952985781759
+KEN,2020,GF073,Hospital services,Health,1.744884082178173,0.4506953549905176,General government,25.82952985781759
+KEN,2020,GF0740,Public health services,Health,3.286653677643535,0.8489271929899966,General government,25.82952985781759
+KEN,2020,GF075,Health R&D,Health,0.9239487511444296,0.2386516185477832,General government,25.82952985781759
+KEN,2020,GF0760,Other health,Health,0.9950023776869636,0.2570044362306492,General government,25.82952985781759
+KEN,2021,GF01,General public services,Government spending,25.065436201557084,5.6804474460152194,Central government (budgetary),22.6624719407929
+KEN,2021,GF02,Defence,Government spending,5.784533939515903,1.310918380948434,Central government (budgetary),22.6624719407929
+KEN,2021,GF03,Public order and safety,Government spending,5.880916699467295,1.33276109687818,Central government (budgetary),22.6624719407929
+KEN,2021,GF04,Economic affairs,Government spending,15.94157882891158,3.612755829021467,Central government (budgetary),22.6624719407929
+KEN,2021,GF05,Environmental protection,Government spending,0.4251846075092566,0.0963573423733556,Central government (budgetary),22.6624719407929
+KEN,2021,GF06,Housing and community amenities,Government spending,2.93128666073927,0.6643020169942421,Central government (budgetary),22.6624719407929
+KEN,2021,GF08,"Recreation, culture and religion",Government spending,0.2509001683273371,0.0568601802465849,Central government (budgetary),22.6624719407929
+KEN,2021,GF09,Education,Government spending,16.38459562826325,3.713154386867539,Central government (budgetary),22.6624719407929
+KEN,2021,GF10,Social protection,Government spending,5.838898326844111,1.323238694972473,Central government (budgetary),22.6624719407929
+KEN,2021,GF0170,Interest on public debt,Government spending,18.16525637463785,4.116696128875396,Central government (budgetary),22.6624719407929
+KEN,2021,GF0712,Medical products,Health,0.1227002529836477,0.027806910403701,Central government (budgetary),22.6624719407929
+KEN,2021,GF072,Outpatient services,Health,0.2723704562810424,0.0617258782297008,Central government (budgetary),22.6624719407929
+KEN,2021,GF073,Hospital services,Health,0.8803391110547923,0.199506604026618,Central government (budgetary),22.6624719407929
+KEN,2021,GF0740,Public health services,Health,1.513231773177994,0.3429357259956258,Central government (budgetary),22.6624719407929
+KEN,2021,GF075,Health R&D,Health,0.2470267654650061,0.0559823714097552,Central government (budgetary),22.6624719407929
+KEN,2021,GF0760,Other health,Health,0.2957442052645877,0.0670229475346081,Central government (budgetary),22.6624719407929
+KEN,2022,GF01,General public services,Government spending,24.734923236445134,5.531726452199751,Central government (budgetary),22.36403323075266
+KEN,2022,GF02,Defence,Government spending,5.880188647690404,1.315047343200427,Central government (budgetary),22.36403323075266
+KEN,2022,GF03,Public order and safety,Government spending,6.284911529584908,1.405559702999774,Central government (budgetary),22.36403323075266
+KEN,2022,GF04,Economic affairs,Government spending,16.34612168444994,3.655652085449652,Central government (budgetary),22.36403323075266
+KEN,2022,GF05,Environmental protection,Government spending,0.3043783657223133,0.06807127885736,Central government (budgetary),22.36403323075266
+KEN,2022,GF06,Housing and community amenities,Government spending,1.963407699769208,0.439097150431542,Central government (budgetary),22.36403323075266
+KEN,2022,GF08,"Recreation, culture and religion",Government spending,0.5753085593872295,0.1286621974007244,Central government (budgetary),22.36403323075266
+KEN,2022,GF09,Education,Government spending,15.85777837241195,3.546438824865316,Central government (budgetary),22.36403323075266
+KEN,2022,GF10,Social protection,Government spending,5.783188948723952,1.29335429828984,Central government (budgetary),22.36403323075266
+KEN,2022,GF0170,Interest on public debt,Government spending,19.31966418035254,4.320656117363861,Central government (budgetary),22.36403323075266
+KEN,2022,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),22.36403323075266
+KEN,2022,GF072,Outpatient services,Health,0.2943439141050942,0.0658271707631613,Central government (budgetary),22.36403323075266
+KEN,2022,GF073,Hospital services,Health,0.842893935846406,0.1885050799126892,Central government (budgetary),22.36403323075266
+KEN,2022,GF0740,Public health services,Health,1.03020369936783,0.2303950976710646,Central government (budgetary),22.36403323075266
+KEN,2022,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),22.36403323075266
+KEN,2022,GF0760,Other health,Health,0.7826872261430913,0.1750404313474971,Central government (budgetary),22.36403323075266
+KEN,2023,GF01,General public services,Government spending,24.56907344068905,5.108681910180186,General government,20.79314029693791
+KEN,2023,GF02,Defence,Government spending,5.191879603201295,1.079554809941749,General government,20.79314029693791
+KEN,2023,GF03,Public order and safety,Government spending,5.813759036154993,1.208863072913613,General government,20.79314029693791
+KEN,2023,GF04,Economic affairs,Government spending,13.72294050422364,2.853430271908542,General government,20.79314029693791
+KEN,2023,GF05,Environmental protection,Government spending,0.2392850281255695,0.049754871607717,General government,20.79314029693791
+KEN,2023,GF06,Housing and community amenities,Government spending,1.715044217509974,0.3566115503013699,General government,20.79314029693791
+KEN,2023,GF08,"Recreation, culture and religion",Government spending,0.2798187916523484,0.0581831139254691,General government,20.79314029693791
+KEN,2023,GF09,Education,Government spending,18.42917570333482,3.832004359563603,General government,20.79314029693791
+KEN,2023,GF10,Social protection,Government spending,5.491282356040059,1.141810044392407,General government,20.79314029693791
+KEN,2023,GF0170,Interest on public debt,Government spending,21.7476896724891,4.522027624943336,General government,20.79314029693791
+KEN,2023,GF0712,Medical products,Health,0.0,0.0,General government,20.79314029693791
+KEN,2023,GF072,Outpatient services,Health,0.3455463057263065,0.0718499281405569,General government,20.79314029693791
+KEN,2023,GF073,Hospital services,Health,0.8548917269327515,0.1777588361680424,General government,20.79314029693791
+KEN,2023,GF0740,Public health services,Health,0.9504596559744763,0.1976304097325663,General government,20.79314029693791
+KEN,2023,GF075,Health R&D,Health,0.6491539579456915,0.134979493218773,General government,20.79314029693791
+KEN,2023,GF0760,Other health,Health,0.0,0.0,General government,20.79314029693791

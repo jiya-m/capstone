@@ -1,0 +1,239 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+PHL,2005,GF01,General public services,Government spending,27.74467649467649,4.579975934889003,Central government (budgetary),16.50758456588162
+PHL,2005,GF02,Defence,Government spending,4.521908271908272,0.7464578319768542,Central government (budgetary),16.50758456588162
+PHL,2005,GF03,Public order and safety,Government spending,5.57022932022932,0.919510315550388,Central government (budgetary),16.50758456588162
+PHL,2005,GF04,Economic affairs,Government spending,8.944512694512696,1.4765229970527,Central government (budgetary),16.50758456588162
+PHL,2005,GF05,Environmental protection,Government spending,0.6961506961506962,0.1149176648730498,Central government (budgetary),16.50758456588162
+PHL,2005,GF06,Housing and community amenities,Government spending,0.1812039312039312,0.0299123921801909,Central government (budgetary),16.50758456588162
+PHL,2005,GF08,"Recreation, culture and religion",Government spending,0.7821457821457821,0.1291133764161912,Central government (budgetary),16.50758456588162
+PHL,2005,GF09,Education,Government spending,13.82678132678133,2.282467620257956,Central government (budgetary),16.50758456588162
+PHL,2005,GF10,Social protection,Government spending,4.103194103194103,0.6773382364870346,Central government (budgetary),16.50758456588162
+PHL,2005,GF0170,Interest on public debt,Government spending,32.30651105651106,5.333024632939459,Central government (budgetary),16.50758456588162
+PHL,2005,GF07,Health (no breakdown),Health,1.322686322686323,0.2183435632587946,Central government (budgetary),16.50758456588162
+PHL,2006,GF01,General public services,Government spending,24.127929042591152,3.882058195684335,Central government (budgetary),16.08947949420625
+PHL,2006,GF02,Defence,Government spending,4.996261604208257,0.8038724862859876,Central government (budgetary),16.08947949420625
+PHL,2006,GF03,Public order and safety,Government spending,5.740714735731473,0.9236511202263916,Central government (budgetary),16.08947949420625
+PHL,2006,GF04,Economic affairs,Government spending,11.93288346072977,1.919938837481644,Central government (budgetary),16.08947949420625
+PHL,2006,GF05,Environmental protection,Government spending,0.7182653843526313,0.1155651617293983,Central government (budgetary),16.08947949420625
+PHL,2006,GF06,Housing and community amenities,Government spending,0.2738327475880705,0.0440582637716041,Central government (budgetary),16.08947949420625
+PHL,2006,GF08,"Recreation, culture and religion",Government spending,0.8400953385810036,0.1351669672327731,Central government (budgetary),16.08947949420625
+PHL,2006,GF09,Education,Government spending,13.853697785807,2.228987864436722,Central government (budgetary),16.08947949420625
+PHL,2006,GF10,Social protection,Government spending,5.556167024692389,0.8939583541017312,Central government (budgetary),16.08947949420625
+PHL,2006,GF0170,Interest on public debt,Government spending,30.6756249003727,4.935548378065091,Central government (budgetary),16.08947949420625
+PHL,2006,GF07,Health (no breakdown),Health,1.284527975345564,0.2066738651905673,Central government (budgetary),16.08947949420625
+PHL,2007,GF01,General public services,Government spending,21.733062596886533,3.4570797345963453,Central government (budgetary),15.90700675150867
+PHL,2007,GF02,Defence,Government spending,5.431147791532936,0.863933045883558,Central government (budgetary),15.90700675150867
+PHL,2007,GF03,Public order and safety,Government spending,6.288596318857667,1.000327441015815,Central government (budgetary),15.90700675150867
+PHL,2007,GF04,Economic affairs,Government spending,18.04676753782669,2.870700530671165,Central government (budgetary),15.90700675150867
+PHL,2007,GF05,Environmental protection,Government spending,0.7908124276762516,0.1257945862622309,Central government (budgetary),15.90700675150867
+PHL,2007,GF06,Housing and community amenities,Government spending,1.928604178948058,0.3067831969551459,Central government (budgetary),15.90700675150867
+PHL,2007,GF08,"Recreation, culture and religion",Government spending,0.8718586930416365,0.1386866211657484,Central government (budgetary),15.90700675150867
+PHL,2007,GF09,Education,Government spending,14.54212790113753,2.313217267046972,Central government (budgetary),15.90700675150867
+PHL,2007,GF10,Social protection,Government spending,4.556145062334884,0.7247463026741388,Central government (budgetary),15.90700675150867
+PHL,2007,GF0170,Interest on public debt,Government spending,24.21807384118251,3.852370641002256,Central government (budgetary),15.90700675150867
+PHL,2007,GF07,Health (no breakdown),Health,1.592803650575315,0.2533673842352919,Central government (budgetary),15.90700675150867
+PHL,2008,GF01,General public services,Government spending,25.19329158682812,3.960647432442353,Central government (budgetary),15.72103993950957
+PHL,2008,GF02,Defence,Government spending,4.823499199968394,0.7583042357089558,Central government (budgetary),15.72103993950957
+PHL,2008,GF03,Public order and safety,Government spending,5.900005926160046,0.9275422880850523,Central government (budgetary),15.72103993950957
+PHL,2008,GF04,Economic affairs,Government spending,16.18663453370997,2.544707279906994,Central government (budgetary),15.72103993950957
+PHL,2008,GF05,Environmental protection,Government spending,0.8051676115599629,0.126580721793337,Central government (budgetary),15.72103993950957
+PHL,2008,GF06,Housing and community amenities,Government spending,1.480749856784466,0.2327892763893166,Central government (budgetary),15.72103993950957
+PHL,2008,GF08,"Recreation, culture and religion",Government spending,0.8258696639867255,0.1298352997236466,Central government (budgetary),15.72103993950957
+PHL,2008,GF09,Education,Government spending,14.67396242814531,2.306899494037352,Central government (budgetary),15.72103993950957
+PHL,2008,GF10,Social protection,Government spending,5.495999841969065,0.8640283302313396,Central government (budgetary),15.72103993950957
+PHL,2008,GF0170,Interest on public debt,Government spending,22.34991999683938,3.513639849151555,Central government (budgetary),15.72103993950957
+PHL,2008,GF07,Health (no breakdown),Health,2.264899354048555,0.3560657320396676,Central government (budgetary),15.72103993950957
+PHL,2009,GF01,General public services,Government spending,23.674087357463733,4.021681391195984,Central government (budgetary),16.98769346615623
+PHL,2009,GF02,Defence,Government spending,4.559757362985227,0.7745976036244188,Central government (budgetary),16.98769346615623
+PHL,2009,GF03,Public order and safety,Government spending,5.934167240214433,1.008078140536691,Central government (budgetary),16.98769346615623
+PHL,2009,GF04,Economic affairs,Government spending,18.75364386998461,3.185811534367584,Central government (budgetary),16.98769346615623
+PHL,2009,GF05,Environmental protection,Government spending,1.060730114029013,0.1801935802744582,Central government (budgetary),16.98769346615623
+PHL,2009,GF06,Housing and community amenities,Government spending,0.4049562946078091,0.0687927339998791,Central government (budgetary),16.98769346615623
+PHL,2009,GF08,"Recreation, culture and religion",Government spending,0.7684487690296835,0.1305417213272135,Central government (budgetary),16.98769346615623
+PHL,2009,GF09,Education,Government spending,15.55019542719311,2.641619532559808,Central government (budgetary),16.98769346615623
+PHL,2009,GF10,Social protection,Government spending,6.329160992577906,1.075178468398666,Central government (budgetary),16.98769346615623
+PHL,2009,GF0170,Interest on public debt,Government spending,20.26780997362733,3.44303343062285,Central government (budgetary),16.98769346615623
+PHL,2009,GF07,Health (no breakdown),Health,2.697042598287144,0.4581653292486754,Central government (budgetary),16.98769346615623
+PHL,2010,GF01,General public services,Government spending,24.269266001916332,3.923505745175968,Central government (budgetary),16.16656121724556
+PHL,2010,GF02,Defence,Government spending,4.827293020121508,0.7804072812337657,Central government (budgetary),16.16656121724556
+PHL,2010,GF03,Public order and safety,Government spending,6.258357638486728,1.01176121882012,Central government (budgetary),16.16656121724556
+PHL,2010,GF04,Economic affairs,Government spending,17.41870057805903,2.816004892200619,Central government (budgetary),16.16656121724556
+PHL,2010,GF05,Environmental protection,Government spending,0.9764617312288756,0.157860283542092,Central government (budgetary),16.16656121724556
+PHL,2010,GF06,Housing and community amenities,Government spending,0.3622082065429122,0.0585566114446471,Central government (budgetary),16.16656121724556
+PHL,2010,GF08,"Recreation, culture and religion",Government spending,0.7417239636528276,0.1199112586469146,Central government (budgetary),16.16656121724556
+PHL,2010,GF09,Education,Government spending,15.76691533383172,2.548968019515182,Central government (budgetary),16.16656121724556
+PHL,2010,GF10,Social protection,Government spending,6.815752898192118,1.101872864702417,Central government (budgetary),16.16656121724556
+PHL,2010,GF0170,Interest on public debt,Government spending,19.92901930022217,3.2218371051671,Central government (budgetary),16.16656121724556
+PHL,2010,GF07,Health (no breakdown),Health,2.63430132774578,0.4258759367967342,Central government (budgetary),16.16656121724556
+PHL,2011,GF01,General public services,Government spending,25.28414250306713,3.8151690021806544,Central government (budgetary),15.08917694842864
+PHL,2011,GF02,Defence,Government spending,4.639567896960044,0.7000726096147905,Central government (budgetary),15.08917694842864
+PHL,2011,GF03,Public order and safety,Government spending,6.661261894527244,1.005129594263466,Central government (budgetary),15.08917694842864
+PHL,2011,GF04,Economic affairs,Government spending,14.93559349493646,2.253658130748959,Central government (budgetary),15.08917694842864
+PHL,2011,GF05,Environmental protection,Government spending,0.9096218445124142,0.1372544496800386,Central government (budgetary),15.08917694842864
+PHL,2011,GF06,Housing and community amenities,Government spending,1.462554858872733,0.2206874906231474,Central government (budgetary),15.08917694842864
+PHL,2011,GF08,"Recreation, culture and religion",Government spending,0.8356709734991958,0.1260958718979499,Central government (budgetary),15.08917694842864
+PHL,2011,GF09,Education,Government spending,16.56754288431915,2.499905861821715,Central government (budgetary),15.08917694842864
+PHL,2011,GF10,Social protection,Government spending,7.570622428541378,1.142344614340034,Central government (budgetary),15.08917694842864
+PHL,2011,GF0170,Interest on public debt,Government spending,18.4870644770589,2.789545871513511,Central government (budgetary),15.08917694842864
+PHL,2011,GF07,Health (no breakdown),Health,2.646356743705357,0.3993134517443755,Central government (budgetary),15.08917694842864
+PHL,2012,GF01,General public services,Government spending,20.86025712946739,3.2678096980187936,Central government (budgetary),15.66524169734541
+PHL,2012,GF02,Defence,Government spending,4.292282191395005,0.6723963796141417,Central government (budgetary),15.66524169734541
+PHL,2012,GF03,Public order and safety,Government spending,6.574542843753102,1.02991802696945,Central government (budgetary),15.66524169734541
+PHL,2012,GF04,Economic affairs,Government spending,19.83040028441686,3.106480134104974,Central government (budgetary),15.66524169734541
+PHL,2012,GF05,Environmental protection,Government spending,0.9989796083265808,0.1564925701515534,Central government (budgetary),15.66524169734541
+PHL,2012,GF06,Housing and community amenities,Government spending,0.8176407713422306,0.1280854030467998,Central government (budgetary),15.66524169734541
+PHL,2012,GF08,"Recreation, culture and religion",Government spending,0.8859746933630678,0.1387900770926395,Central government (budgetary),15.66524169734541
+PHL,2012,GF09,Education,Government spending,16.06926427913484,2.517289088311662,Central government (budgetary),15.66524169734541
+PHL,2012,GF10,Social protection,Government spending,8.378523756426505,1.312515997113716,Central government (budgetary),15.66524169734541
+PHL,2012,GF0170,Interest on public debt,Government spending,18.26708867480671,2.861583591976883,Central government (budgetary),15.66524169734541
+PHL,2012,GF07,Health (no breakdown),Health,3.025045767567705,0.4738807309447987,Central government (budgetary),15.66524169734541
+PHL,2013,GF01,General public services,Government spending,17.071273104759555,2.6255969312049614,Central government (budgetary),15.38020577078655
+PHL,2013,GF02,Defence,Government spending,4.828947354222442,0.7427020396423645,Central government (budgetary),15.38020577078655
+PHL,2013,GF03,Public order and safety,Government spending,6.706571576869828,1.031484508687664,Central government (budgetary),15.38020577078655
+PHL,2013,GF04,Economic affairs,Government spending,20.38355330672287,3.135032441971943,Central government (budgetary),15.38020577078655
+PHL,2013,GF05,Environmental protection,Government spending,1.37741002241279,0.2118484957545243,Central government (budgetary),15.38020577078655
+PHL,2013,GF06,Housing and community amenities,Government spending,1.262540425573242,0.1941813153925288,Central government (budgetary),15.38020577078655
+PHL,2013,GF08,"Recreation, culture and religion",Government spending,0.8303631260500937,0.1277115574312401,Central government (budgetary),15.38020577078655
+PHL,2013,GF09,Education,Government spending,17.75622826299257,2.730944443978815,Central government (budgetary),15.38020577078655
+PHL,2013,GF10,Social protection,Government spending,9.145324877549765,1.406569784574087,Central government (budgetary),15.38020577078655
+PHL,2013,GF0170,Interest on public debt,Government spending,17.52255037482343,2.695004303937574,Central government (budgetary),15.38020577078655
+PHL,2013,GF07,Health (no breakdown),Health,3.115237568023412,0.4791299482108474,Central government (budgetary),15.38020577078655
+PHL,2014,GF01,General public services,Government spending,11.049488097934208,1.6476325730902217,Central government (budgetary),14.91139280378301
+PHL,2014,GF02,Defence,Government spending,4.546844040740925,0.6779977750902791,Central government (budgetary),14.91139280378301
+PHL,2014,GF03,Public order and safety,Government spending,6.824683825194661,1.01765541279102,Central government (budgetary),14.91139280378301
+PHL,2014,GF04,Economic affairs,Government spending,22.72579090671815,3.388731949867144,Central government (budgetary),14.91139280378301
+PHL,2014,GF05,Environmental protection,Government spending,1.28963166003325,0.1923020425495055,Central government (budgetary),14.91139280378301
+PHL,2014,GF06,Housing and community amenities,Government spending,0.8920836714361592,0.1330221003862547,Central government (budgetary),14.91139280378301
+PHL,2014,GF08,"Recreation, culture and religion",Government spending,1.161770396105868,0.1732361472414118,Central government (budgetary),14.91139280378301
+PHL,2014,GF09,Education,Government spending,19.38941422479412,2.89123171741163,Central government (budgetary),14.91139280378301
+PHL,2014,GF10,Social protection,Government spending,11.07051056150289,1.650767315209981,Central government (budgetary),14.91139280378301
+PHL,2014,GF0170,Interest on public debt,Government spending,16.45368304421522,2.453473309412374,Central government (budgetary),14.91139280378301
+PHL,2014,GF07,Health (no breakdown),Health,4.596099571324547,0.6853424607331904,Central government (budgetary),14.91139280378301
+PHL,2017,GF01,General public services,Government spending,27.221060957025458,5.450779502448895,Central government (budgetary),20.02412584525699
+PHL,2017,GF02,Defence,Government spending,4.068261481791446,0.8146337988280359,Central government (budgetary),20.02412584525699
+PHL,2017,GF03,Public order and safety,Government spending,6.847614523439525,1.371174949571625,Central government (budgetary),20.02412584525699
+PHL,2017,GF04,Economic affairs,Government spending,17.45893193725712,3.495998502354129,Central government (budgetary),20.02412584525699
+PHL,2017,GF05,Environmental protection,Government spending,0.2595415518874593,0.0519709269706778,Central government (budgetary),20.02412584525699
+PHL,2017,GF06,Housing and community amenities,Government spending,0.4476334189646862,0.0896346791389152,Central government (budgetary),20.02412584525699
+PHL,2017,GF08,"Recreation, culture and religion",Government spending,0.1952586765566552,0.0390988431174879,Central government (budgetary),20.02412584525699
+PHL,2017,GF09,Education,Government spending,19.83184957677472,3.971154516695436,Central government (budgetary),20.02412584525699
+PHL,2017,GF10,Social protection,Government spending,9.392395845475685,1.88074516398274,Central government (budgetary),20.02412584525699
+PHL,2017,GF0170,Interest on public debt,Government spending,9.3668353621426,1.875626900633467,Central government (budgetary),20.02412584525699
+PHL,2017,GF0712,Medical products,Health,0.0103275557601564,0.0020680027621528,Central government (budgetary),20.02412584525699
+PHL,2017,GF072,Outpatient services,Health,0.0026482172862521,0.0005302823620549,Central government (budgetary),20.02412584525699
+PHL,2017,GF073,Hospital services,Health,1.835150241781813,0.3674727938639282,Central government (budgetary),20.02412584525699
+PHL,2017,GF0740,Public health services,Health,1.452102504090465,0.2907708328212028,Central government (budgetary),20.02412584525699
+PHL,2017,GF075,Health R&D,Health,0.0248761762887297,0.0049812368455432,Central government (budgetary),20.02412584525699
+PHL,2017,GF0760,Other health,Health,1.585511973477233,0.3174849128606987,Central government (budgetary),20.02412584525699
+PHL,2018,GF01,General public services,Government spending,27.235769209811792,5.609935702287482,Central government (budgetary),20.59767675027324
+PHL,2018,GF02,Defence,Government spending,3.386086749658777,0.6974552031785487,Central government (budgetary),20.59767675027324
+PHL,2018,GF03,Public order and safety,Government spending,5.19352858230745,1.069746229316737,Central government (budgetary),20.59767675027324
+PHL,2018,GF04,Economic affairs,Government spending,18.42050414584001,3.794195899730805,Central government (budgetary),20.59767675027324
+PHL,2018,GF05,Environmental protection,Government spending,0.5994976350305207,0.1234825849891195,Central government (budgetary),20.59767675027324
+PHL,2018,GF06,Housing and community amenities,Government spending,0.1616658050265735,0.0332993999351006,Central government (budgetary),20.59767675027324
+PHL,2018,GF08,"Recreation, culture and religion",Government spending,0.1760101057757352,0.0362539926354999,Central government (budgetary),20.59767675027324
+PHL,2018,GF09,Education,Government spending,18.75965467059876,3.864053028517468,Central government (budgetary),20.59767675027324
+PHL,2018,GF10,Social protection,Government spending,12.19334879412472,2.51154656964715,Central government (budgetary),20.59767675027324
+PHL,2018,GF0170,Interest on public debt,Government spending,9.282189567022533,1.911915402362888,Central government (budgetary),20.59767675027324
+PHL,2018,GF0712,Medical products,Health,0.0043731800898675,0.0009007734986182,Central government (budgetary),20.59767675027324
+PHL,2018,GF072,Outpatient services,Health,0.0033318226944039,0.0006862780684855,Central government (budgetary),20.59767675027324
+PHL,2018,GF073,Hospital services,Health,1.870683761251713,0.385317394162481,Central government (budgetary),20.59767675027324
+PHL,2018,GF0740,Public health services,Health,1.041351760470256,0.214494269454943,Central government (budgetary),20.59767675027324
+PHL,2018,GF075,Health R&D,Health,0.011863601265747,0.0024436262396599,Central government (budgetary),20.59767675027324
+PHL,2018,GF0760,Other health,Health,1.66014060903114,0.3419503962482517,Central government (budgetary),20.59767675027324
+PHL,2019,GF01,General public services,Government spending,27.30071100883545,5.121749096110107,Central government (budgetary),18.76049709640358
+PHL,2019,GF02,Defence,Government spending,4.536501323508183,0.8510701990750626,Central government (budgetary),18.76049709640358
+PHL,2019,GF03,Public order and safety,Government spending,7.073852433161133,1.327089880327069,Central government (budgetary),18.76049709640358
+PHL,2019,GF04,Economic affairs,Government spending,14.04925931132071,2.635710885166533,Central government (budgetary),18.76049709640358
+PHL,2019,GF05,Environmental protection,Government spending,0.5448504421072734,0.1022166513712771,Central government (budgetary),18.76049709640358
+PHL,2019,GF06,Housing and community amenities,Government spending,0.1719508393125693,0.0322588322164761,Central government (budgetary),18.76049709640358
+PHL,2019,GF08,"Recreation, culture and religion",Government spending,0.4293052383365854,0.0805397967728435,Central government (budgetary),18.76049709640358
+PHL,2019,GF09,Education,Government spending,18.38967973371251,3.449995332481054,Central government (budgetary),18.76049709640358
+PHL,2019,GF10,Social protection,Government spending,11.84564997500966,2.222302819611818,Central government (budgetary),18.76049709640358
+PHL,2019,GF0170,Interest on public debt,Government spending,10.91232598766765,2.047206600066483,Central government (budgetary),18.76049709640358
+PHL,2019,GF0712,Medical products,Health,0.0136761359295251,0.0025657110839587,Central government (budgetary),18.76049709640358
+PHL,2019,GF072,Outpatient services,Health,0.0034459344358622,0.0006464744297839,Central government (budgetary),18.76049709640358
+PHL,2019,GF073,Hospital services,Health,1.700348114999703,0.3189937587432723,Central government (budgetary),18.76049709640358
+PHL,2019,GF0740,Public health services,Health,1.095743955021105,0.2055670128657521,Central government (budgetary),18.76049709640358
+PHL,2019,GF075,Health R&D,Health,0.0339541347251763,0.0063699644592256,Central government (budgetary),18.76049709640358
+PHL,2019,GF0760,Other health,Health,1.898745431916902,0.3562140816228661,Central government (budgetary),18.76049709640358
+PHL,2020,GF01,General public services,Government spending,27.71788961848541,6.199227098457934,Central government (budgetary),22.36543684885588
+PHL,2020,GF02,Defence,Government spending,4.247691894861995,0.9500148482793292,Central government (budgetary),22.36543684885588
+PHL,2020,GF03,Public order and safety,Government spending,6.118796821230198,1.368495638962041,Central government (budgetary),22.36543684885588
+PHL,2020,GF04,Economic affairs,Government spending,16.01622954450244,3.582099704343491,Central government (budgetary),22.36543684885588
+PHL,2020,GF05,Environmental protection,Government spending,0.6635857518429684,0.1484138522664446,Central government (budgetary),22.36543684885588
+PHL,2020,GF06,Housing and community amenities,Government spending,0.2284231728949069,0.0510878404819632,Central government (budgetary),22.36543684885588
+PHL,2020,GF08,"Recreation, culture and religion",Government spending,0.1659162887773966,0.0371079027884739,Central government (budgetary),22.36543684885588
+PHL,2020,GF09,Education,Government spending,17.33332022066925,3.876672787763748,Central government (budgetary),22.36543684885588
+PHL,2020,GF10,Social protection,Government spending,13.30861992173613,2.976530984050146,Central government (budgetary),22.36543684885588
+PHL,2020,GF0170,Interest on public debt,Government spending,9.474896160365628,2.119101917241245,Central government (budgetary),22.36543684885588
+PHL,2020,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),22.36543684885588
+PHL,2020,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),22.36543684885588
+PHL,2020,GF073,Hospital services,Health,0.2829506264834298,0.0632831436795935,Central government (budgetary),22.36543684885588
+PHL,2020,GF0740,Public health services,Health,2.626990549668789,0.5875379124115852,Central government (budgetary),22.36543684885588
+PHL,2020,GF075,Health R&D,Health,0.0252823438066947,0.0056545066379969,Central government (budgetary),22.36543684885588
+PHL,2020,GF0760,Other health,Health,1.789407084674769,0.4002087114918886,Central government (budgetary),22.36543684885588
+PHL,2021,GF01,General public services,Government spending,29.9898383537624,7.108319421702022,Central government (budgetary),23.70242659480771
+PHL,2021,GF02,Defence,Government spending,4.46947645256664,1.059374375341823,Central government (budgetary),23.70242659480771
+PHL,2021,GF03,Public order and safety,Government spending,5.715357904758855,1.354678512006007,Central government (budgetary),23.70242659480771
+PHL,2021,GF04,Economic affairs,Government spending,16.12532465747101,3.822093240111494,Central government (budgetary),23.70242659480771
+PHL,2021,GF05,Environmental protection,Government spending,0.5590908240194955,0.1325180921615265,Central government (budgetary),23.70242659480771
+PHL,2021,GF06,Housing and community amenities,Government spending,0.1611902916934184,0.0382060105665889,Central government (budgetary),23.70242659480771
+PHL,2021,GF08,"Recreation, culture and religion",Government spending,0.1090318675954164,0.0258431983817515,Central government (budgetary),23.70242659480771
+PHL,2021,GF09,Education,Government spending,16.66264027220479,3.949450079276206,Central government (budgetary),23.70242659480771
+PHL,2021,GF10,Social protection,Government spending,9.984056795096903,2.366463733041754,Central government (budgetary),23.70242659480771
+PHL,2021,GF0170,Interest on public debt,Government spending,9.333881337257097,2.212356372409819,Central government (budgetary),23.70242659480771
+PHL,2021,GF0712,Medical products,Health,0.6314650068166195,0.1496725297126068,Central government (budgetary),23.70242659480771
+PHL,2021,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),23.70242659480771
+PHL,2021,GF073,Hospital services,Health,1.467121230953728,0.3477433328236466,Central government (budgetary),23.70242659480771
+PHL,2021,GF0740,Public health services,Health,3.184674311446701,0.754845090954352,Central government (budgetary),23.70242659480771
+PHL,2021,GF075,Health R&D,Health,0.039879807441875,0.009452482085061,Central government (budgetary),23.70242659480771
+PHL,2021,GF0760,Other health,Health,1.566970886915056,0.3714101242330486,Central government (budgetary),23.70242659480771
+PHL,2022,GF01,General public services,Government spending,31.064258947762593,7.222009434601236,Central government (budgetary),23.24861329138967
+PHL,2022,GF02,Defence,Government spending,4.308128392361788,1.001580110036755,Central government (budgetary),23.24861329138967
+PHL,2022,GF03,Public order and safety,Government spending,5.466491123394291,1.270883381886081,Central government (budgetary),23.24861329138967
+PHL,2022,GF04,Economic affairs,Government spending,17.16514237295725,3.9906575712053,Central government (budgetary),23.24861329138967
+PHL,2022,GF05,Environmental protection,Government spending,0.4653927842273174,0.1081973686910406,Central government (budgetary),23.24861329138967
+PHL,2022,GF06,Housing and community amenities,Government spending,0.2149000890287596,0.0499612906611484,Central government (budgetary),23.24861329138967
+PHL,2022,GF08,"Recreation, culture and religion",Government spending,0.0950309246241928,0.0220933721731106,Central government (budgetary),23.24861329138967
+PHL,2022,GF09,Education,Government spending,14.48394665779441,3.36731674780178,Central government (budgetary),23.24861329138967
+PHL,2022,GF10,Social protection,Government spending,11.4188637431116,2.654727473906719,Central government (budgetary),23.24861329138967
+PHL,2022,GF0170,Interest on public debt,Government spending,9.819012226474658,2.282784181567364,Central government (budgetary),23.24861329138967
+PHL,2022,GF0712,Medical products,Health,0.3214633122759353,0.0747357623447245,Central government (budgetary),23.24861329138967
+PHL,2022,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),23.24861329138967
+PHL,2022,GF073,Hospital services,Health,1.442611280504532,0.3353871179024632,Central government (budgetary),23.24861329138967
+PHL,2022,GF0740,Public health services,Health,1.612002900136053,0.3747683204986173,Central government (budgetary),23.24861329138967
+PHL,2022,GF075,Health R&D,Health,0.0372368667017073,0.0086570551413101,Central government (budgetary),23.24861329138967
+PHL,2022,GF0760,Other health,Health,2.085518378644917,0.4848541029720165,Central government (budgetary),23.24861329138967
+PHL,2023,GF01,General public services,Government spending,31.064258947762593,6.543196098276667,Central government (budgetary),21.06342246657051
+PHL,2023,GF02,Defence,Government spending,4.308128392361788,0.9074392836854358,Central government (budgetary),21.06342246657051
+PHL,2023,GF03,Public order and safety,Government spending,5.466491123394291,1.151430119418116,Central government (budgetary),21.06342246657051
+PHL,2023,GF04,Economic affairs,Government spending,17.16514237295725,3.615566455004293,Central government (budgetary),21.06342246657051
+PHL,2023,GF05,Environmental protection,Government spending,0.4653927842273174,0.0980276482707348,Central government (budgetary),21.06342246657051
+PHL,2023,GF06,Housing and community amenities,Government spending,0.2149000890287596,0.0452653136331637,Central government (budgetary),21.06342246657051
+PHL,2023,GF08,"Recreation, culture and religion",Government spending,0.0950309246241928,0.0200167651274819,Central government (budgetary),21.06342246657051
+PHL,2023,GF09,Education,Government spending,14.48394665779441,3.050814874363956,Central government (budgetary),21.06342246657051
+PHL,2023,GF10,Social protection,Government spending,11.4188637431116,2.405203511093643,Central government (budgetary),21.06342246657051
+PHL,2023,GF0170,Interest on public debt,Government spending,9.819012226474658,2.068220027306568,Central government (budgetary),21.06342246657051
+PHL,2023,GF0712,Medical products,Health,0.3214633122759353,0.067711175539711,Central government (budgetary),21.06342246657051
+PHL,2023,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),21.06342246657051
+PHL,2023,GF073,Hospital services,Health,1.442611280504532,0.303863308563072,Central government (budgetary),21.06342246657051
+PHL,2023,GF0740,Public health services,Health,1.612002900136053,0.3395429810290256,Central government (budgetary),21.06342246657051
+PHL,2023,GF075,Health R&D,Health,0.0372368667017073,0.0078433585466943,Central government (budgetary),21.06342246657051
+PHL,2023,GF0760,Other health,Health,2.085518378644917,0.4392815467119506,Central government (budgetary),21.06342246657051
+PHL,2024,GF01,General public services,Government spending,23.593710682683387,5.279114119598043,Central government (budgetary),22.37509050864412
+PHL,2024,GF02,Defence,Government spending,4.027056482079373,0.9010575326994796,Central government (budgetary),22.37509050864412
+PHL,2024,GF03,Public order and safety,Government spending,5.246849164641424,1.173987249440556,Central government (budgetary),22.37509050864412
+PHL,2024,GF04,Economic affairs,Government spending,18.66458557214073,4.17621791482982,Central government (budgetary),22.37509050864412
+PHL,2024,GF05,Environmental protection,Government spending,0.3237740094930222,0.0724447276675297,Central government (budgetary),22.37509050864412
+PHL,2024,GF06,Housing and community amenities,Government spending,0.1487477859782651,0.033282451742241,Central government (budgetary),22.37509050864412
+PHL,2024,GF08,"Recreation, culture and religion",Government spending,0.1199344509302144,0.0268354419466808,Central government (budgetary),22.37509050864412
+PHL,2024,GF09,Education,Government spending,15.11856814117148,3.382793305198154,Central government (budgetary),22.37509050864412
+PHL,2024,GF10,Social protection,Government spending,14.07429176230976,3.149135520267451,Central government (budgetary),22.37509050864412
+PHL,2024,GF0170,Interest on public debt,Government spending,12.89946816160276,2.886267676292348,Central government (budgetary),22.37509050864412
+PHL,2024,GF0712,Medical products,Health,0.2724845831758176,0.0609686721076908,Central government (budgetary),22.37509050864412
+PHL,2024,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),22.37509050864412
+PHL,2024,GF073,Hospital services,Health,1.661794311994172,0.3718279813761957,Central government (budgetary),22.37509050864412
+PHL,2024,GF0740,Public health services,Health,1.978369212554367,0.4426619019041896,Central government (budgetary),22.37509050864412
+PHL,2024,GF075,Health R&D,Health,0.0274951883420401,0.0061520732770536,Central government (budgetary),22.37509050864412
+PHL,2024,GF0760,Other health,Health,1.842870490903182,0.4123439402966812,Central government (budgetary),22.37509050864412

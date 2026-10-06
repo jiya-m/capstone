@@ -1,0 +1,17 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+GIN,2023,GF01,General public services,Government spending,16.593527062305267,2.6304158861240268,Central government (budgetary),15.85206012107828
+GIN,2023,GF02,Defence,Government spending,15.15089771806515,2.401729415150766,Central government (budgetary),15.85206012107828
+GIN,2023,GF03,Public order and safety,Government spending,3.667653220054477,0.5813985934756993,Central government (budgetary),15.85206012107828
+GIN,2023,GF04,Economic affairs,Government spending,25.32116153267898,4.013925749515619,Central government (budgetary),15.85206012107828
+GIN,2023,GF05,Environmental protection,Government spending,1.344912510306232,0.213196339709647,Central government (budgetary),15.85206012107828
+GIN,2023,GF06,Housing and community amenities,Government spending,9.414182204270428,1.492341822928801,Central government (budgetary),15.85206012107828
+GIN,2023,GF08,"Recreation, culture and religion",Government spending,3.016873595928536,0.4782366162035278,Central government (budgetary),15.85206012107828
+GIN,2023,GF09,Education,Government spending,11.1136448776637,1.761741667650387,Central government (budgetary),15.85206012107828
+GIN,2023,GF10,Social protection,Government spending,6.73389685229864,1.067461377517779,Central government (budgetary),15.85206012107828
+GIN,2023,GF0170,Interest on public debt,Government spending,3.380100448038102,0.5358155551758365,Central government (budgetary),15.85206012107828
+GIN,2023,GF0712,Medical products,Health,0.6099438370005283,0.0966886637461354,Central government (budgetary),15.85206012107828
+GIN,2023,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),15.85206012107828
+GIN,2023,GF073,Hospital services,Health,1.007321030926545,0.1596811354347416,Central government (budgetary),15.85206012107828
+GIN,2023,GF0740,Public health services,Health,1.654712008834683,0.2623059424711761,Central government (budgetary),15.85206012107828
+GIN,2023,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),15.85206012107828
+GIN,2023,GF0760,Other health,Health,0.99117310162873,0.1571213559741426,Central government (budgetary),15.85206012107828

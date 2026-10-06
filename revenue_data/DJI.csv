@@ -1,0 +1,308 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+DJI,1990,G11NEC,Other taxes,Taxes,16.70532,62.024065841897915,Central government,26.93361
+DJI,1990,G13,Grants (e.g. foreign aid),Grants,8.5687384,31.81429596700925,Central government,26.93361
+DJI,1990,G14X,Other non-tax revenue,Other revenue,1.659551,6.16163596339295,Central government,26.93361
+DJI,1991,G11NEC,Other taxes,Taxes,17.112487,63.80607879977112,Central government,26.819524
+DJI,1991,G13,Grants (e.g. foreign aid),Grants,8.5679376,31.94664233533804,Central government,26.819524
+DJI,1991,G14X,Other non-tax revenue,Other revenue,1.1391,4.247278864890841,Central government,26.819524
+DJI,1992,G11NEC,Other taxes,Taxes,17.757677,61.80519058884524,Central government,28.731692
+DJI,1992,G13,Grants (e.g. foreign aid),Grants,9.909878,34.49110480510512,Central government,28.731692
+DJI,1992,G14X,Other non-tax revenue,Other revenue,1.0641367,3.703703561906483,Central government,28.731692
+DJI,1993,G11NEC,Other taxes,Taxes,19.305123,68.43275699411642,Central government,28.210354
+DJI,1993,G13,Grants (e.g. foreign aid),Grants,7.7964816,27.636950603313945,Central government,28.210354
+DJI,1993,G14X,Other non-tax revenue,Other revenue,1.1087489,3.9302906301707523,Central government,28.210354
+DJI,1994,G11NEC,Other taxes,Taxes,19.812873,76.33875298543443,Central government,25.953886
+DJI,1994,G13,Grants (e.g. foreign aid),Grants,5.1055624,19.6716683595217,Central government,25.953886
+DJI,1994,G14X,Other non-tax revenue,Other revenue,1.0354507,3.989578655043878,Central government,25.953886
+DJI,1995,G11NEC,Other taxes,Taxes,18.968247,86.74960448334484,Central government,21.865514
+DJI,1995,G13,Grants (e.g. foreign aid),Grants,1.4317328,6.547903669001773,Central government,21.865514
+DJI,1995,G14X,Other non-tax revenue,Other revenue,1.4655343,6.702491847653379,Central government,21.865514
+DJI,1996,G11NEC,Other taxes,Taxes,19.043756,86.96585911532979,Central government,21.897968
+DJI,1996,G13,Grants (e.g. foreign aid),Grants,1.3062884,5.965340711065063,Central government,21.897968
+DJI,1996,G14X,Other non-tax revenue,Other revenue,1.5479234,7.0687992602783964,Central government,21.897968
+DJI,1997,G11NEC,Other taxes,Taxes,17.436286,78.77096718553638,Central government,22.135422
+DJI,1997,G13,Grants (e.g. foreign aid),Grants,2.6854479,12.131902883983873,Central government,22.135422
+DJI,1997,G14X,Other non-tax revenue,Other revenue,2.0136875,9.097127219892172,Central government,22.135422
+DJI,1998,G1111,Personal income tax,Taxes,2.4706913,12.10178921628361,Central government,20.415917
+DJI,1998,G1112,Corporate income tax,Taxes,0.85757602,4.200526480576273,Central government,20.415917
+DJI,1998,G1113,Other income taxes,Taxes,1.2602706799999999,6.172980867671493,Central government,20.415917
+DJI,1998,G11412,VAT / sales tax,Taxes,4.8790701,23.898363151103414,Central government,20.415917
+DJI,1998,G1142,Excise taxes,Taxes,3.1709282,15.531646829520788,Central government,20.415917
+DJI,1998,G114X,Other goods & services taxes,Taxes,1.4246199999999996,6.977986668468841,Central government,20.415917
+DJI,1998,G113,Property taxes,Taxes,0.67219628,3.292510761069162,Central government,20.415917
+DJI,1998,G11NEC,Other taxes,Taxes,1.0437347,5.11235755641387,Central government,20.415917
+DJI,1998,G13,Grants (e.g. foreign aid),Grants,3.6172416,17.71775186465928,Central government,20.415917
+DJI,1998,G14X,Other non-tax revenue,Other revenue,1.0195886,4.994086604233278,Central government,20.415917
+DJI,1999,G1111,Personal income tax,Taxes,1.9205045,10.479925437456055,Central government,18.325555
+DJI,1999,G1112,Corporate income tax,Taxes,0.98396218,5.369344502799506,Central government,18.325555
+DJI,1999,G1113,Other income taxes,Taxes,1.2062428199999997,6.582298980849418,Central government,18.325555
+DJI,1999,G11412,VAT / sales tax,Taxes,4.6901209,25.59333619090936,Central government,18.325555
+DJI,1999,G1142,Excise taxes,Taxes,3.6728167,20.042048931123773,Central government,18.325555
+DJI,1999,G114X,Other goods & services taxes,Taxes,1.2447714999999993,6.7925446187032215,Central government,18.325555
+DJI,1999,G113,Property taxes,Taxes,0.53125067,2.8989608773104005,Central government,18.325555
+DJI,1999,G11NEC,Other taxes,Taxes,1.0173043,5.551287805471648,Central government,18.325555
+DJI,1999,G13,Grants (e.g. foreign aid),Grants,2.1946506,11.975902503362109,Central government,18.325555
+DJI,1999,G14X,Other non-tax revenue,Other revenue,0.86393065,4.714349169779578,Central government,18.325555
+DJI,2000,G1111,Personal income tax,Taxes,1.8633956,9.689385128107343,Central government,19.231309
+DJI,2000,G1112,Corporate income tax,Taxes,1.0931056,5.683989564046868,Central government,19.231309
+DJI,2000,G1113,Other income taxes,Taxes,1.3200854,6.864251392775442,Central government,19.231309
+DJI,2000,G11412,VAT / sales tax,Taxes,5.2363866,27.22844598702529,Central government,19.231309
+DJI,2000,G1142,Excise taxes,Taxes,2.805902,14.590280834475863,Central government,19.231309
+DJI,2000,G114X,Other goods & services taxes,Taxes,1.2112792000000003,6.298475034751484,Central government,19.231309
+DJI,2000,G113,Property taxes,Taxes,0.52313426,2.7202217923276404,Central government,19.231309
+DJI,2000,G11NEC,Other taxes,Taxes,1.1500307,5.979991774933287,Central government,19.231309
+DJI,2000,G13,Grants (e.g. foreign aid),Grants,2.0990222,10.91460905469947,Central government,19.231309
+DJI,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,0.39847555,2.0720146962268204,Central government,19.231309
+DJI,2000,G14X,Other non-tax revenue,Other revenue,1.53049195,7.958334740630495,Central government,19.231309
+DJI,2001,G1111,Personal income tax,Taxes,1.8145251,10.457307372521596,Central government,17.351743
+DJI,2001,G1112,Corporate income tax,Taxes,1.0147745,5.848256858115061,Central government,17.351743
+DJI,2001,G1113,Other income taxes,Taxes,1.3941879000000001,8.03485793905546,Central government,17.351743
+DJI,2001,G11412,VAT / sales tax,Taxes,4.5800112,26.39510739641545,Central government,17.351743
+DJI,2001,G1142,Excise taxes,Taxes,2.5712708,14.818515926613255,Central government,17.351743
+DJI,2001,G114X,Other goods & services taxes,Taxes,1.2429773999999987,7.163415225778752,Central government,17.351743
+DJI,2001,G113,Property taxes,Taxes,0.47097192,2.714262884137922,Central government,17.351743
+DJI,2001,G11NEC,Other taxes,Taxes,1.3615874,7.846977678265521,Central government,17.351743
+DJI,2001,G13,Grants (e.g. foreign aid),Grants,1.1313037,6.519827431745617,Central government,17.351743
+DJI,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,0.57016041,3.2858970421588194,Central government,17.351743
+DJI,2001,G14X,Other non-tax revenue,Other revenue,1.19997259,6.915573784143761,Central government,17.351743
+DJI,2002,G1111,Personal income tax,Taxes,3.0396514,16.143881552438355,Central government,18.828504
+DJI,2002,G1112,Corporate income tax,Taxes,1.3095227,6.955001273839912,Central government,18.828504
+DJI,2002,G1113,Other income taxes,Taxes,1.2658494999999998,6.7230486993387855,Central government,18.828504
+DJI,2002,G11412,VAT / sales tax,Taxes,4.8571264,25.796666448929418,Central government,18.828504
+DJI,2002,G1142,Excise taxes,Taxes,2.6828753,14.249009298619745,Central government,18.828504
+DJI,2002,G114X,Other goods & services taxes,Taxes,0.060470499999999205,0.32116465375493747,Central government,18.828504
+DJI,2002,G113,Property taxes,Taxes,0.43538773,2.31238619747811,Central government,18.828504
+DJI,2002,G11NEC,Other taxes,Taxes,1.0837664700000005,5.755988177520701,Central government,18.828504
+DJI,2002,G13,Grants (e.g. foreign aid),Grants,2.4604782,13.067836865489488,Central government,18.828504
+DJI,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,0.79283568,4.210826711400828,Central government,18.828504
+DJI,2002,G14X,Other non-tax revenue,Other revenue,0.8405402200000001,4.464190121189713,Central government,18.828504
+DJI,2003,G1111,Personal income tax,Taxes,3.5355149,16.284470608393182,Central government,21.71096
+DJI,2003,G1112,Corporate income tax,Taxes,1.0946756,5.042041438978285,Central government,21.71096
+DJI,2003,G1113,Other income taxes,Taxes,1.1910582,5.485976668005469,Central government,21.71096
+DJI,2003,G11412,VAT / sales tax,Taxes,4.7444453,21.852766068382053,Central government,21.71096
+DJI,2003,G1142,Excise taxes,Taxes,2.4606265,11.333568391264137,Central government,21.71096
+DJI,2003,G113,Property taxes,Taxes,0.46467862,2.1402951320439074,Central government,21.71096
+DJI,2003,G11NEC,Other taxes,Taxes,1.05573988,4.862704735304197,Central government,21.71096
+DJI,2003,G13,Grants (e.g. foreign aid),Grants,1.9276503,8.878696750397035,Central government,21.71096
+DJI,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,0.96510175,4.445228354711169,Central government,21.71096
+DJI,2003,G14X,Other non-tax revenue,Other revenue,4.271468850000001,19.67425139192371,Central government,21.71096
+DJI,2004,G1111,Personal income tax,Taxes,3.3899088,14.721395309672014,Central government,23.027089
+DJI,2004,G1112,Corporate income tax,Taxes,1.45445,6.316256475145425,Central government,23.027089
+DJI,2004,G1113,Other income taxes,Taxes,1.0912885,4.7391509191630785,Central government,23.027089
+DJI,2004,G11412,VAT / sales tax,Taxes,4.5593612,19.799989481953187,Central government,23.027089
+DJI,2004,G1142,Excise taxes,Taxes,2.1200458,9.206746888414772,Central government,23.027089
+DJI,2004,G113,Property taxes,Taxes,0.43831917,1.9034936200576633,Central government,23.027089
+DJI,2004,G11NEC,Other taxes,Taxes,1.091288529999999,4.739151049444414,Central government,23.027089
+DJI,2004,G13,Grants (e.g. foreign aid),Grants,2.6281113,11.413128685089113,Central government,23.027089
+DJI,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,0.57119783,2.4805472806397715,Central government,23.027089
+DJI,2004,G14X,Other non-tax revenue,Other revenue,5.68311777,24.680139856149424,Central government,23.027089
+DJI,2005,G1111,Personal income tax,Taxes,3.0307488,12.10664151474329,Central government,25.03377
+DJI,2005,G1112,Corporate income tax,Taxes,1.6450699,6.571402930521524,Central government,25.03377
+DJI,2005,G1113,Other income taxes,Taxes,1.1347646999999996,4.532935697767234,Central government,25.03377
+DJI,2005,G11412,VAT / sales tax,Taxes,4.728375,18.887986055549803,Central government,25.03377
+DJI,2005,G1142,Excise taxes,Taxes,2.0807788,8.31188747911992,Central government,25.03377
+DJI,2005,G113,Property taxes,Taxes,0.42497167,1.6975935658579773,Central government,25.03377
+DJI,2005,G11NEC,Other taxes,Taxes,1.0906853,4.356855946787883,Central government,25.03377
+DJI,2005,G13,Grants (e.g. foreign aid),Grants,3.15225,12.591990703699869,Central government,25.03377
+DJI,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,0.5600358,2.237121290297127,Central government,25.03377
+DJI,2005,G14X,Other non-tax revenue,Other revenue,7.1860901,28.705584815655378,Central government,25.03377
+DJI,2006,G1111,Personal income tax,Taxes,2.9566854,12.262720353052625,Central government,24.11117
+DJI,2006,G1112,Corporate income tax,Taxes,2.0216519,8.384710764600628,Central government,24.11117
+DJI,2006,G1113,Other income taxes,Taxes,1.0834927999999997,4.493737890052818,Central government,24.11117
+DJI,2006,G11412,VAT / sales tax,Taxes,4.7184031,19.569365658002233,Central government,24.11117
+DJI,2006,G1142,Excise taxes,Taxes,2.0586365,8.538102737642301,Central government,24.11117
+DJI,2006,G113,Property taxes,Taxes,0.30160691,1.250901159074385,Central government,24.11117
+DJI,2006,G11NEC,Other taxes,Taxes,1.1861123899999997,4.919348046248306,Central government,24.11117
+DJI,2006,G13,Grants (e.g. foreign aid),Grants,2.1732367,9.013401937551734,Central government,24.11117
+DJI,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,0.45787992,1.8990364731527096,Central government,24.11117
+DJI,2006,G14X,Other non-tax revenue,Other revenue,7.15346478,29.668674980622264,Central government,24.11117
+DJI,2007,G1111,Personal income tax,Taxes,2.7963834,11.326179193725812,Central government,24.689556
+DJI,2007,G1112,Corporate income tax,Taxes,1.7251767,6.987475481738506,Central government,24.689556
+DJI,2007,G1113,Other income taxes,Taxes,1.1066458000000003,4.482242540412757,Central government,24.689556
+DJI,2007,G11412,VAT / sales tax,Taxes,4.4705277,18.106958373703304,Central government,24.689556
+DJI,2007,G1142,Excise taxes,Taxes,1.9723055,7.988420156467452,Central government,24.689556
+DJI,2007,G113,Property taxes,Taxes,0.27264502,1.1042929066153655,Central government,24.689556
+DJI,2007,G11NEC,Other taxes,Taxes,2.1551717799999994,8.729082633497617,Central government,24.689556
+DJI,2007,G13,Grants (e.g. foreign aid),Grants,3.3497063,13.56730046393219,Central government,24.689556
+DJI,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,0.28256797,1.1444837866750817,Central government,24.689556
+DJI,2007,G14X,Other non-tax revenue,Other revenue,6.55842623,26.56356446323191,Central government,24.689556
+DJI,2008,G1111,Personal income tax,Taxes,2.8642375,9.726082044720172,Central government,29.449037
+DJI,2008,G1112,Corporate income tax,Taxes,1.9185871,6.514940030127301,Central government,29.449037
+DJI,2008,G1113,Other income taxes,Taxes,0.9543656999999997,3.2407365307055698,Central government,29.449037
+DJI,2008,G11412,VAT / sales tax,Taxes,5.4332138,18.449546584494424,Central government,29.449037
+DJI,2008,G1142,Excise taxes,Taxes,1.6861249,5.7255688870233685,Central government,29.449037
+DJI,2008,G113,Property taxes,Taxes,0.20810826,0.7066725475607233,Central government,29.449037
+DJI,2008,G11NEC,Other taxes,Taxes,1.0816742,3.673037593725051,Central government,29.449037
+DJI,2008,G13,Grants (e.g. foreign aid),Grants,9.1462235,31.05780165239359,Central government,29.449037
+DJI,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,0.08552394,0.29041336733693535,Central government,29.449037
+DJI,2008,G14X,Other non-tax revenue,Other revenue,6.07097806,20.615200626084988,Central government,29.449037
+DJI,2009,G1111,Personal income tax,Taxes,2.9937736,11.038516702885376,Central government,27.121158
+DJI,2009,G1112,Corporate income tax,Taxes,1.790897,6.603320454040783,Central government,27.121158
+DJI,2009,G1113,Other income taxes,Taxes,1.239184,4.56906737434932,Central government,27.121158
+DJI,2009,G11412,VAT / sales tax,Taxes,5.533706,20.403649130267237,Central government,27.121158
+DJI,2009,G1142,Excise taxes,Taxes,1.6054141,5.919415669206813,Central government,27.121158
+DJI,2009,G113,Property taxes,Taxes,0.34570864,1.2746824265441405,Central government,27.121158
+DJI,2009,G11NEC,Other taxes,Taxes,1.2597056600000003,4.644733980094303,Central government,27.121158
+DJI,2009,G13,Grants (e.g. foreign aid),Grants,4.7152132,17.385736739032506,Central government,27.121158
+DJI,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,1.6444839,6.063472200361471,Central government,27.121158
+DJI,2009,G14X,Other non-tax revenue,Other revenue,5.9930723,22.097405323218055,Central government,27.121158
+DJI,2010,G1111,Personal income tax,Taxes,2.9425225,11.50098511975424,Central government,25.58496
+DJI,2010,G1112,Corporate income tax,Taxes,1.8260677,7.137269959826594,Central government,25.58496
+DJI,2010,G1113,Other income taxes,Taxes,1.0310476000000002,4.029897173380432,Central government,25.58496
+DJI,2010,G11412,VAT / sales tax,Taxes,5.5013867,21.502424051035764,Central government,25.58496
+DJI,2010,G1142,Excise taxes,Taxes,1.6387404,6.405092554276173,Central government,25.58496
+DJI,2010,G114X,Other goods & services taxes,Taxes,0.014763199999999532,0.057702649179386195,Central government,25.58496
+DJI,2010,G113,Property taxes,Taxes,0.45718218,1.7869176698553042,Central government,25.58496
+DJI,2010,G11NEC,Other taxes,Taxes,1.37905572,5.390102986479108,Central government,25.58496
+DJI,2010,G13,Grants (e.g. foreign aid),Grants,3.9021968,15.251916453027158,Central government,25.58496
+DJI,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0646564,4.161258720723841,Central government,25.58496
+DJI,2010,G14X,Other non-tax revenue,Other revenue,5.8273413000000005,22.776432662461996,Central government,25.58496
+DJI,2011,G1111,Personal income tax,Taxes,2.6836459,11.138547299862633,Central government,24.09332
+DJI,2011,G1112,Corporate income tax,Taxes,1.9833113,8.231788972383445,Central government,24.09332
+DJI,2011,G1113,Other income taxes,Taxes,1.2228372999999997,5.075420384666362,Central government,24.09332
+DJI,2011,G11412,VAT / sales tax,Taxes,5.5257239,22.934671458008456,Central government,24.09332
+DJI,2011,G1142,Excise taxes,Taxes,1.4811785,6.1476727543636,Central government,24.09332
+DJI,2011,G114X,Other goods & services taxes,Taxes,0.013256699999999899,0.055022303795775676,Central government,24.09332
+DJI,2011,G113,Property taxes,Taxes,0.33885071,1.4064093407133316,Central government,24.09332
+DJI,2011,G11NEC,Other taxes,Taxes,1.1235746900000003,4.663428148062864,Central government,24.09332
+DJI,2011,G13,Grants (e.g. foreign aid),Grants,4.30515,17.868645378290637,Central government,24.09332
+DJI,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,0.34434734,1.429223257126389,Central government,24.09332
+DJI,2011,G14X,Other non-tax revenue,Other revenue,5.07144416,21.04917070272651,Central government,24.09332
+DJI,2012,G1111,Personal income tax,Taxes,2.7653656,11.317340682425225,Central government,24.434765
+DJI,2012,G1112,Corporate income tax,Taxes,1.5313822,6.2672270431084565,Central government,24.434765
+DJI,2012,G1113,Other income taxes,Taxes,1.1718996000000002,4.796033847675639,Central government,24.434765
+DJI,2012,G11412,VAT / sales tax,Taxes,4.8243719,19.74388499336908,Central government,24.434765
+DJI,2012,G1142,Excise taxes,Taxes,1.3673542,5.595937591378513,Central government,24.434765
+DJI,2012,G114X,Other goods & services taxes,Taxes,0.010653100000000082,0.04359812750398902,Central government,24.434765
+DJI,2012,G113,Property taxes,Taxes,0.27757228,1.1359727830408848,Central government,24.434765
+DJI,2012,G11NEC,Other taxes,Taxes,1.2053384,4.9328831277894425,Central government,24.434765
+DJI,2012,G13,Grants (e.g. foreign aid),Grants,6.0882432,24.916315749302274,Central government,24.434765
+DJI,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,0.55011393,2.2513575637007355,Central government,24.434765
+DJI,2012,G14X,Other non-tax revenue,Other revenue,4.64247037,18.99944759034924,Central government,24.434765
+DJI,2013,G1111,Personal income tax,Taxes,3.0553641,13.53830153865841,Central government,22.568297
+DJI,2013,G1112,Corporate income tax,Taxes,1.3727134,6.082485532692165,Central government,22.568297
+DJI,2013,G1113,Other income taxes,Taxes,0.9592759000000004,4.250546241925123,Central government,22.568297
+DJI,2013,G11412,VAT / sales tax,Taxes,5.4881805,24.31809763935666,Central government,22.568297
+DJI,2013,G1142,Excise taxes,Taxes,1.356214,6.009376781952134,Central government,22.568297
+DJI,2013,G113,Property taxes,Taxes,0.28606952,1.2675724712414056,Central government,22.568297
+DJI,2013,G11NEC,Other taxes,Taxes,1.578411,6.993930468036645,Central government,22.568297
+DJI,2013,G13,Grants (e.g. foreign aid),Grants,3.208565,14.217133884758782,Central government,22.568297
+DJI,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,0.61693405,2.7336313856557273,Central government,22.568297
+DJI,2013,G14X,Other non-tax revenue,Other revenue,4.6465691499999995,20.58892237194503,Central government,22.568297
+DJI,2014,G1111,Personal income tax,Taxes,2.7543114,12.447577287936177,Central government,22.127289
+DJI,2014,G1112,Corporate income tax,Taxes,1.2869501,5.816121893649059,Central government,22.127289
+DJI,2014,G1113,Other income taxes,Taxes,1.0895619999999997,4.924064579262284,Central government,22.127289
+DJI,2014,G11412,VAT / sales tax,Taxes,5.3406883,24.13620710607612,Central government,22.127289
+DJI,2014,G1142,Excise taxes,Taxes,1.3094848,5.9179631088110245,Central government,22.127289
+DJI,2014,G113,Property taxes,Taxes,0.28632676,1.2939983745862405,Central government,22.127289
+DJI,2014,G11NEC,Other taxes,Taxes,1.2579706399999997,5.685154833020889,Central government,22.127289
+DJI,2014,G13,Grants (e.g. foreign aid),Grants,3.3360868,15.076798608270538,Central government,22.127289
+DJI,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.71467007,3.2298130602442985,Central government,22.127289
+DJI,2014,G14X,Other non-tax revenue,Other revenue,4.748302529999999,21.4590342721153,Central government,22.127289
+DJI,2015,G1111,Personal income tax,Taxes,2.4903373,9.393952585071185,Central government,26.510005
+DJI,2015,G1112,Corporate income tax,Taxes,1.7738721,6.6913306881684855,Central government,26.510005
+DJI,2015,G1113,Other income taxes,Taxes,1.1646329999999996,4.393182875672787,Central government,26.510005
+DJI,2015,G11412,VAT / sales tax,Taxes,5.9166979,22.31873551136637,Central government,26.510005
+DJI,2015,G1142,Excise taxes,Taxes,1.3152601,4.9613725082284965,Central government,26.510005
+DJI,2015,G113,Property taxes,Taxes,0.33397906,1.2598226971288764,Central government,26.510005
+DJI,2015,G11NEC,Other taxes,Taxes,1.3417187400000004,5.06117875119224,Central government,26.510005
+DJI,2015,G13,Grants (e.g. foreign aid),Grants,4.9017636,18.490240194221013,Central government,26.510005
+DJI,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,1.6081591,6.066234615949714,Central government,26.510005
+DJI,2015,G14X,Other non-tax revenue,Other revenue,5.6617273,21.356945424944282,Central government,26.510005
+DJI,2016,G1111,Personal income tax,Taxes,2.4345766,9.994553560480009,Central government,24.359033
+DJI,2016,G1112,Corporate income tax,Taxes,1.8317105,7.519635529045837,Central government,24.359033
+DJI,2016,G1113,Other income taxes,Taxes,1.0225609999999998,4.197871894175766,Central government,24.359033
+DJI,2016,G11412,VAT / sales tax,Taxes,5.6042134,23.00671541435984,Central government,24.359033
+DJI,2016,G1142,Excise taxes,Taxes,1.3543426,5.559919394172995,Central government,24.359033
+DJI,2016,G113,Property taxes,Taxes,0.32098135,1.3177097383135037,Central government,24.359033
+DJI,2016,G11NEC,Other taxes,Taxes,1.4254078,5.8516600392142,Central government,24.359033
+DJI,2016,G13,Grants (e.g. foreign aid),Grants,3.0767553,12.630859771814421,Central government,24.359033
+DJI,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,1.2290605,5.045604642844402,Central government,24.359033
+DJI,2016,G14X,Other non-tax revenue,Other revenue,6.0581277,24.870148581021258,Central government,24.359033
+DJI,2017,G1111,Personal income tax,Taxes,2.3091084,9.761627512005626,Central government,23.654953
+DJI,2017,G1112,Corporate income tax,Taxes,1.5328879,6.480198459916619,Central government,23.654953
+DJI,2017,G1113,Other income taxes,Taxes,1.1685062000000004,4.9397950611020045,Central government,23.654953
+DJI,2017,G11412,VAT / sales tax,Taxes,5.6846799,24.03166854738625,Central government,23.654953
+DJI,2017,G1142,Excise taxes,Taxes,1.4045701,5.937742087249127,Central government,23.654953
+DJI,2017,G113,Property taxes,Taxes,0.32018333,1.3535572444384059,Central government,23.654953
+DJI,2017,G11NEC,Other taxes,Taxes,1.0621858,4.490331475188304,Central government,23.654953
+DJI,2017,G13,Grants (e.g. foreign aid),Grants,1.8174274,7.683073392705537,Central government,23.654953
+DJI,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.87378276,3.6938680875840255,Central government,23.654953
+DJI,2017,G14X,Other non-tax revenue,Other revenue,7.4781587400000005,31.61350073280636,Central government,23.654953
+DJI,2018,G1111,Personal income tax,Taxes,2.5369659,10.599495821540698,Central government,23.934779
+DJI,2018,G1112,Corporate income tax,Taxes,1.4139105,5.90734721218859,Central government,23.934779
+DJI,2018,G1113,Other income taxes,Taxes,1.0960171999999995,4.579182452447125,Central government,23.934779
+DJI,2018,G11412,VAT / sales tax,Taxes,5.6714785,23.695554072172552,Central government,23.934779
+DJI,2018,G1142,Excise taxes,Taxes,1.4011638,5.854091236856626,Central government,23.934779
+DJI,2018,G114X,Other goods & services taxes,Taxes,0.008884100000000394,0.03711795291696821,Central government,23.934779
+DJI,2018,G113,Property taxes,Taxes,0.33411625,1.3959445792250684,Central government,23.934779
+DJI,2018,G11NEC,Other taxes,Taxes,0.86426025,3.610897138427725,Central government,23.934779
+DJI,2018,G13,Grants (e.g. foreign aid),Grants,3.4027712,14.216848210714627,Central government,23.934779
+DJI,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,0.57610912,2.4069957779848314,Central government,23.934779
+DJI,2018,G14X,Other non-tax revenue,Other revenue,6.62910208,27.696525127723135,Central government,23.934779
+DJI,2019,G1111,Personal income tax,Taxes,2.4976602,10.634371644107633,Central government,23.486674
+DJI,2019,G1112,Corporate income tax,Taxes,1.424528,6.065260666537969,Central government,23.486674
+DJI,2019,G1113,Other income taxes,Taxes,0.8661931999999997,3.68801985330064,Central government,23.486674
+DJI,2019,G11412,VAT / sales tax,Taxes,5.5210478,23.507150480310663,Central government,23.486674
+DJI,2019,G1142,Excise taxes,Taxes,1.3911918,5.923324009180695,Central government,23.486674
+DJI,2019,G114X,Other goods & services taxes,Taxes,0.007286600000000032,0.03102440132647148,Central government,23.486674
+DJI,2019,G113,Property taxes,Taxes,0.36032178,1.5341541335312099,Central government,23.486674
+DJI,2019,G11NEC,Other taxes,Taxes,0.94197368,4.010672945858575,Central government,23.486674
+DJI,2019,G13,Grants (e.g. foreign aid),Grants,4.036952,17.188265992877493,Central government,23.486674
+DJI,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,0.77419999,3.2963372761932996,Central government,23.486674
+DJI,2019,G14X,Other non-tax revenue,Other revenue,5.665318610000001,24.121417149145937,Central government,23.486674
+DJI,2020,G1111,Personal income tax,Taxes,2.5803846,10.875468191826297,Central government,23.726653
+DJI,2020,G1112,Corporate income tax,Taxes,1.1852254,4.995333307230481,Central government,23.726653
+DJI,2020,G1113,Other income taxes,Taxes,0.8411161999999999,3.5450267679979977,Central government,23.726653
+DJI,2020,G11412,VAT / sales tax,Taxes,4.7321444,19.94442452544824,Central government,23.726653
+DJI,2020,G1142,Excise taxes,Taxes,1.4565699,6.138960686954035,Central government,23.726653
+DJI,2020,G114X,Other goods & services taxes,Taxes,0.006729499999999389,0.02836261819144651,Central government,23.726653
+DJI,2020,G113,Property taxes,Taxes,0.36472414,1.5371916974551785,Central government,23.726653
+DJI,2020,G11NEC,Other taxes,Taxes,0.6206788600000013,2.6159562412785373,Central government,23.726653
+DJI,2020,G13,Grants (e.g. foreign aid),Grants,3.3938282,14.303864097477215,Central government,23.726653
+DJI,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1623052,4.8987322400677416,Central government,23.726653
+DJI,2020,G14X,Other non-tax revenue,Other revenue,7.382946499999999,31.11667920460589,Central government,23.726653
+DJI,2021,G1111,Personal income tax,Taxes,2.6331271,13.191478549669517,Central government,19.960818
+DJI,2021,G1112,Corporate income tax,Taxes,1.1008982,5.5152958589313,Central government,19.960818
+DJI,2021,G1113,Other income taxes,Taxes,0.7718445000000003,3.866797833431739,Central government,19.960818
+DJI,2021,G11412,VAT / sales tax,Taxes,4.8348904,24.221904442669356,Central government,19.960818
+DJI,2021,G1142,Excise taxes,Taxes,1.4669024,7.348909038252933,Central government,19.960818
+DJI,2021,G114X,Other goods & services taxes,Taxes,0.007463100000000278,0.03738874722911866,Central government,19.960818
+DJI,2021,G113,Property taxes,Taxes,0.34396332,1.7231924572319781,Central government,19.960818
+DJI,2021,G11NEC,Other taxes,Taxes,0.42255745,2.1169344759992974,Central government,19.960818
+DJI,2021,G13,Grants (e.g. foreign aid),Grants,1.8279478,9.157679549010599,Central government,19.960818
+DJI,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.80003812,4.008042642110944,Central government,19.960818
+DJI,2021,G14X,Other non-tax revenue,Other revenue,5.75118618,28.81237640546322,Central government,19.960818
+DJI,2022,G1111,Personal income tax,Taxes,2.4471443,12.982982366945144,Central government,18.848861
+DJI,2022,G1112,Corporate income tax,Taxes,1.395117,7.401598430801734,Central government,18.848861
+DJI,2022,G1113,Other income taxes,Taxes,0.7931215999999996,4.207795898118192,Central government,18.848861
+DJI,2022,G11412,VAT / sales tax,Taxes,4.6679731,24.765279451103176,Central government,18.848861
+DJI,2022,G1142,Excise taxes,Taxes,1.2816119,6.799412972486773,Central government,18.848861
+DJI,2022,G114X,Other goods & services taxes,Taxes,0.1006233000000003,0.5338428672162223,Central government,18.848861
+DJI,2022,G113,Property taxes,Taxes,0.34934386,1.853395067213876,Central government,18.848861
+DJI,2022,G11NEC,Other taxes,Taxes,0.6254429400000003,3.3182001819632516,Central government,18.848861
+DJI,2022,G13,Grants (e.g. foreign aid),Grants,1.0668254,5.659893189301995,Central government,18.848861
+DJI,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,0.87256999,4.629298237171997,Central government,18.848861
+DJI,2022,G14X,Other non-tax revenue,Other revenue,5.24908731,27.848299746069536,Central government,18.848861
+DJI,2023,G1111,Personal income tax,Taxes,2.3974377,13.27880681865922,Central government,18.054616
+DJI,2023,G1112,Corporate income tax,Taxes,1.0030741,5.555776151639086,Central government,18.054616
+DJI,2023,G1113,Other income taxes,Taxes,1.0295049000000005,5.702169731444152,Central government,18.054616
+DJI,2023,G11412,VAT / sales tax,Taxes,4.728655,26.190835431130086,Central government,18.054616
+DJI,2023,G1142,Excise taxes,Taxes,1.0234718,5.668753901945159,Central government,18.054616
+DJI,2023,G114X,Other goods & services taxes,Taxes,0.1782636000000004,0.9873574221339496,Central government,18.054616
+DJI,2023,G113,Property taxes,Taxes,0.27206393,1.5068939513194546,Central government,18.054616
+DJI,2023,G11NEC,Other taxes,Taxes,0.4527699700000001,2.507779436737869,Central government,18.054616
+DJI,2023,G13,Grants (e.g. foreign aid),Grants,1.7484489,9.684220438928286,Central government,18.054616
+DJI,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,0.16073893,0.8902926652517341,Central government,18.054616
+DJI,2023,G14X,Other non-tax revenue,Other revenue,5.06018807,28.027114050811015,Central government,18.054616
+DJI,2024,G1111,Personal income tax,Taxes,2.5147493,13.95243160535126,Central government,18.023735
+DJI,2024,G1112,Corporate income tax,Taxes,1.7194654,9.540005992353969,Central government,18.023735
+DJI,2024,G1113,Other income taxes,Taxes,0.7248688000000001,4.021745767998839,Central government,18.023735
+DJI,2024,G11412,VAT / sales tax,Taxes,4.3033185,23.875842036139655,Central government,18.023735
+DJI,2024,G1142,Excise taxes,Taxes,0.83724445,4.645232797394529,Central government,18.023735
+DJI,2024,G114X,Other goods & services taxes,Taxes,0.1709176500000007,0.9482920710117603,Central government,18.023735
+DJI,2024,G113,Property taxes,Taxes,0.32558778,1.8064390084483382,Central government,18.023735
+DJI,2024,G11NEC,Other taxes,Taxes,0.43722253,2.425815347137641,Central government,18.023735
+DJI,2024,G13,Grants (e.g. foreign aid),Grants,1.5424442,8.557849963640805,Central government,18.023735
+DJI,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,0.29506794,1.6371076241205789,Central government,18.023735
+DJI,2024,G14X,Other non-tax revenue,Other revenue,5.15284846,28.589237786402634,Central government,18.023735

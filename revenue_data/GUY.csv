@@ -1,0 +1,259 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+GUY,1991,G1111,Personal income tax,Taxes,0.57959145,4.649099692895002,Central government,12.466746
+GUY,1991,G1112,Corporate income tax,Taxes,2.4896782,19.97055366332161,Central government,12.466746
+GUY,1991,G1113,Other income taxes,Taxes,0.9809285499999993,7.868360757490361,Central government,12.466746
+GUY,1991,G114X,Other goods & services taxes,Taxes,3.9614828,31.77639778655954,Central government,12.466746
+GUY,1991,G115,Trade taxes (customs),Taxes,1.7140658,13.74910341479645,Central government,12.466746
+GUY,1991,G113,Property taxes,Taxes,1.6626485,13.336667804092583,Central government,12.466746
+GUY,1991,G14X,Other non-tax revenue,Other revenue,1.0783507,8.64981688084445,Central government,12.466746
+GUY,1992,G1111,Personal income tax,Taxes,1.3428616,7.917486453688897,Central government,16.960706
+GUY,1992,G1112,Corporate income tax,Taxes,2.7524673,16.22849485157045,Central government,16.960706
+GUY,1992,G1113,Other income taxes,Taxes,1.5542829999999999,9.164023007061145,Central government,16.960706
+GUY,1992,G114X,Other goods & services taxes,Taxes,4.5095125,26.587999933493336,Central government,16.960706
+GUY,1992,G115,Trade taxes (customs),Taxes,1.817076,10.713445536995925,Central government,16.960706
+GUY,1992,G113,Property taxes,Taxes,4.1236417,24.31291303557765,Central government,16.960706
+GUY,1992,G14X,Other non-tax revenue,Other revenue,0.86086359,5.075635353858502,Central government,16.960706
+GUY,1993,G1111,Personal income tax,Taxes,1.7183218,9.939505315887503,Central government,17.2878
+GUY,1993,G1112,Corporate income tax,Taxes,2.3453221,13.566342160367427,Central government,17.2878
+GUY,1993,G1113,Other income taxes,Taxes,1.3285955,7.6851623688381405,Central government,17.2878
+GUY,1993,G114X,Other goods & services taxes,Taxes,5.0368668,29.135383333911776,Central government,17.2878
+GUY,1993,G115,Trade taxes (customs),Taxes,2.376886,13.748921204548871,Central government,17.2878
+GUY,1993,G113,Property taxes,Taxes,3.3575855,19.421704901722602,Central government,17.2878
+GUY,1993,G14X,Other non-tax revenue,Other revenue,1.124222,6.502978979395874,Central government,17.2878
+GUY,1994,G1111,Personal income tax,Taxes,1.9635623,13.354182689519709,Central government,14.703725
+GUY,1994,G1112,Corporate income tax,Taxes,2.1375411,14.537412108470871,Central government,14.703725
+GUY,1994,G1113,Other income taxes,Taxes,0.8135197000000001,5.532745610018723,Central government,14.703725
+GUY,1994,G114X,Other goods & services taxes,Taxes,4.9431482,33.61833954755116,Central government,14.703725
+GUY,1994,G115,Trade taxes (customs),Taxes,2.0067803,13.648108208193428,Central government,14.703725
+GUY,1994,G113,Property taxes,Taxes,1.8407321,12.518814781615669,Central government,14.703725
+GUY,1994,G14X,Other non-tax revenue,Other revenue,0.99844131,6.790397054630444,Central government,14.703725
+GUY,1995,G1111,Personal income tax,Taxes,2.2362039,14.427627088594903,Central government,15.499457
+GUY,1995,G1112,Corporate income tax,Taxes,2.4705071,15.939313565514322,Central government,15.499457
+GUY,1995,G1113,Other income taxes,Taxes,0.9760738999999998,6.2974714605007485,Central government,15.499457
+GUY,1995,G114X,Other goods & services taxes,Taxes,5.2647744,33.96747575155422,Central government,15.499457
+GUY,1995,G115,Trade taxes (customs),Taxes,2.1205235,13.681275795378978,Central government,15.499457
+GUY,1995,G113,Property taxes,Taxes,1.5500532,10.000693379115926,Central government,15.499457
+GUY,1995,G14X,Other non-tax revenue,Other revenue,0.8813213,5.686142959340906,Central government,15.499457
+GUY,1996,G1111,Personal income tax,Taxes,2.1655846,13.251019701241715,Central government,16.342777
+GUY,1996,G1112,Corporate income tax,Taxes,2.9106295,17.80988322853576,Central government,16.342777
+GUY,1996,G1113,Other income taxes,Taxes,0.9331640000000001,5.709947581124065,Central government,16.342777
+GUY,1996,G114X,Other goods & services taxes,Taxes,5.5020283,33.66642217537448,Central government,16.342777
+GUY,1996,G115,Trade taxes (customs),Taxes,2.1533557,13.176192148984226,Central government,16.342777
+GUY,1996,G113,Property taxes,Taxes,1.521578,9.310400551876832,Central government,16.342777
+GUY,1996,G14X,Other non-tax revenue,Other revenue,1.1564365,7.076132165298468,Central government,16.342777
+GUY,1997,G1111,Personal income tax,Taxes,2.017349,13.406197711500075,Central government,15.047883
+GUY,1997,G1112,Corporate income tax,Taxes,2.3864734,15.85919651663436,Central government,15.047883
+GUY,1997,G1113,Other income taxes,Taxes,0.9927411000000004,6.597214196914899,Central government,15.047883
+GUY,1997,G114X,Other goods & services taxes,Taxes,5.1637584,34.3155131039891,Central government,15.047883
+GUY,1997,G115,Trade taxes (customs),Taxes,1.9106836,12.6973578224297,Central government,15.047883
+GUY,1997,G113,Property taxes,Taxes,1.4876511,9.886115279176073,Central government,15.047883
+GUY,1997,G14X,Other non-tax revenue,Other revenue,1.0892268,7.2384053693557995,Central government,15.047883
+GUY,1998,G1111,Personal income tax,Taxes,2.1072176,14.408986559314961,Central government,14.624329
+GUY,1998,G1112,Corporate income tax,Taxes,2.4335507,16.640426374434,Central government,14.624329
+GUY,1998,G1113,Other income taxes,Taxes,0.7080143999999997,4.841346225184073,Central government,14.624329
+GUY,1998,G114X,Other goods & services taxes,Taxes,5.0674619,34.650901931979234,Central government,14.624329
+GUY,1998,G115,Trade taxes (customs),Taxes,1.9469291,13.312946529033912,Central government,14.624329
+GUY,1998,G113,Property taxes,Taxes,1.4961732,10.23071349119676,Central government,14.624329
+GUY,1998,G14X,Other non-tax revenue,Other revenue,0.86498203,5.914678410202614,Central government,14.624329
+GUY,1999,G1111,Personal income tax,Taxes,2.1330713,15.678727466045542,Central government,13.604875
+GUY,1999,G1112,Corporate income tax,Taxes,2.2352182,16.42953847109793,Central government,13.604875
+GUY,1999,G1113,Other income taxes,Taxes,0.7731578000000003,5.682946666830757,Central government,13.604875
+GUY,1999,G114X,Other goods & services taxes,Taxes,4.6429412,34.12704006456533,Central government,13.604875
+GUY,1999,G115,Trade taxes (customs),Taxes,1.7154356,12.60897713918532,Central government,13.604875
+GUY,1999,G113,Property taxes,Taxes,1.2037186,8.84770043795999,Central government,13.604875
+GUY,1999,G14X,Other non-tax revenue,Other revenue,0.90133247,6.625069754315137,Central government,13.604875
+GUY,2000,G1111,Personal income tax,Taxes,2.6264766,17.341001603784594,Central government,15.146049
+GUY,2000,G1112,Corporate income tax,Taxes,2.6309779,17.370720905498192,Central government,15.146049
+GUY,2000,G1113,Other income taxes,Taxes,0.6105991999999998,4.031409115340904,Central government,15.146049
+GUY,2000,G114X,Other goods & services taxes,Taxes,5.6148719,37.07152868711833,Central government,15.146049
+GUY,2000,G115,Trade taxes (customs),Taxes,1.8118604,11.962594337308694,Central government,15.146049
+GUY,2000,G113,Property taxes,Taxes,0.69426101,4.583776336653869,Central government,15.146049
+GUY,2000,G14X,Other non-tax revenue,Other revenue,1.1570015,7.638965779128274,Central government,15.146049
+GUY,2001,G1111,Personal income tax,Taxes,2.7755736,18.96986683581785,Central government,14.631487
+GUY,2001,G1112,Corporate income tax,Taxes,2.5015305,17.096898626913312,Central government,14.631487
+GUY,2001,G1113,Other income taxes,Taxes,0.6584843999999999,4.500461231315723,Central government,14.631487
+GUY,2001,G114X,Other goods & services taxes,Taxes,5.1031649,34.87796489857798,Central government,14.631487
+GUY,2001,G115,Trade taxes (customs),Taxes,1.700345,11.621135978865306,Central government,14.631487
+GUY,2001,G113,Property taxes,Taxes,0.66948866,4.575670675167876,Central government,14.631487
+GUY,2001,G14X,Other non-tax revenue,Other revenue,1.2228995,8.357998746128812,Central government,14.631487
+GUY,2002,G1111,Personal income tax,Taxes,3.0350022,20.195265115396396,Central government,15.028286
+GUY,2002,G1112,Corporate income tax,Taxes,2.5163541,16.744119056557746,Central government,15.028286
+GUY,2002,G1113,Other income taxes,Taxes,0.8703712000000001,5.791553341478863,Central government,15.028286
+GUY,2002,G114X,Other goods & services taxes,Taxes,5.0927337,33.887654919529744,Central government,15.028286
+GUY,2002,G115,Trade taxes (customs),Taxes,1.5626889,10.398317545992937,Central government,15.028286
+GUY,2002,G113,Property taxes,Taxes,0.68152661,4.534959009962947,Central government,15.028286
+GUY,2002,G14X,Other non-tax revenue,Other revenue,1.2696089,8.448128415975049,Central government,15.028286
+GUY,2003,G1111,Personal income tax,Taxes,3.0827441,21.01475040270822,Central government,14.66943
+GUY,2003,G1112,Corporate income tax,Taxes,2.4492192,16.696076125657235,Central government,14.66943
+GUY,2003,G1113,Other income taxes,Taxes,0.6869800000000001,4.683072212076407,Central government,14.66943
+GUY,2003,G114X,Other goods & services taxes,Taxes,5.1829495,35.33163524417786,Central government,14.66943
+GUY,2003,G115,Trade taxes (customs),Taxes,1.435547,9.785976687574092,Central government,14.66943
+GUY,2003,G113,Property taxes,Taxes,0.62516644,4.261695512368238,Central government,14.66943
+GUY,2003,G14X,Other non-tax revenue,Other revenue,1.2068236,8.226792724734363,Central government,14.66943
+GUY,2004,G1111,Personal income tax,Taxes,3.0651151,19.48215279385944,Central government,15.732938
+GUY,2004,G1112,Corporate income tax,Taxes,2.7415261,17.425391421207504,Central government,15.732938
+GUY,2004,G1113,Other income taxes,Taxes,0.6582585000000001,4.183951419917877,Central government,15.732938
+GUY,2004,G114X,Other goods & services taxes,Taxes,6.1540047,39.11541849098232,Central government,15.732938
+GUY,2004,G115,Trade taxes (customs),Taxes,1.4744455,9.371710875463856,Central government,15.732938
+GUY,2004,G113,Property taxes,Taxes,0.60553451,3.848832902155879,Central government,15.732938
+GUY,2004,G14X,Other non-tax revenue,Other revenue,1.034054,6.572542096413127,Central government,15.732938
+GUY,2005,G1111,Personal income tax,Taxes,3.2555559,19.86618406026114,Central government,16.387424
+GUY,2005,G1112,Corporate income tax,Taxes,2.9959964,18.28228964714744,Central government,16.387424
+GUY,2005,G1113,Other income taxes,Taxes,0.6546273999999999,3.994693631060118,Central government,16.387424
+GUY,2005,G114X,Other goods & services taxes,Taxes,6.4683829,39.471626109582616,Central government,16.387424
+GUY,2005,G115,Trade taxes (customs),Taxes,1.4044446,8.570258285548048,Central government,16.387424
+GUY,2005,G113,Property taxes,Taxes,0.68150077,4.158681389568428,Central government,16.387424
+GUY,2005,G14X,Other non-tax revenue,Other revenue,0.92691646,5.656266876832213,Central government,16.387424
+GUY,2006,G1111,Personal income tax,Taxes,3.0970323,19.044044759241675,Central government,16.262471
+GUY,2006,G1112,Corporate income tax,Taxes,3.0931908,19.020422888090177,Central government,16.262471
+GUY,2006,G1113,Other income taxes,Taxes,0.8534030000000001,5.247683380528878,Central government,16.262471
+GUY,2006,G114X,Other goods & services taxes,Taxes,6.1994847,38.12141840142706,Central government,16.262471
+GUY,2006,G115,Trade taxes (customs),Taxes,1.3693605,8.42037154521687,Central government,16.262471
+GUY,2006,G113,Property taxes,Taxes,0.62129563,3.820425697995224,Central government,16.262471
+GUY,2006,G14X,Other non-tax revenue,Other revenue,1.0287043,6.325633327500128,Central government,16.262471
+GUY,2007,G1111,Personal income tax,Taxes,2.8656696,16.04711593871727,Central government,17.857848
+GUY,2007,G1112,Corporate income tax,Taxes,2.9383391,16.454049065867938,Central government,17.857848
+GUY,2007,G1113,Other income taxes,Taxes,0.7208638,4.036677841236233,Central government,17.857848
+GUY,2007,G11412,VAT / sales tax,Taxes,5.0958888,28.535850184686613,Central government,17.857848
+GUY,2007,G1142,Excise taxes,Taxes,3.4151391,19.124023608495044,Central government,17.857848
+GUY,2007,G115,Trade taxes (customs),Taxes,1.5781666,8.837383905252455,Central government,17.857848
+GUY,2007,G113,Property taxes,Taxes,0.57629893,3.2271465437148463,Central government,17.857848
+GUY,2007,G14X,Other non-tax revenue,Other revenue,0.66748224,3.7377529120296016,Central government,17.857848
+GUY,2008,G1111,Personal income tax,Taxes,2.4990205,15.276799458642106,Central government,16.358272
+GUY,2008,G1112,Corporate income tax,Taxes,2.9645318,18.122523523663496,Central government,16.358272
+GUY,2008,G1113,Other income taxes,Taxes,0.6965380000000003,4.2580168275224874,Central government,16.358272
+GUY,2008,G11412,VAT / sales tax,Taxes,4.7333725,28.935649965877204,Central government,16.358272
+GUY,2008,G1142,Excise taxes,Taxes,2.5836482,15.794138312623549,Central government,16.358272
+GUY,2008,G115,Trade taxes (customs),Taxes,1.5290123,9.347027876280777,Central government,16.358272
+GUY,2008,G113,Property taxes,Taxes,0.59712632,3.650301805094017,Central government,16.358272
+GUY,2008,G14X,Other non-tax revenue,Other revenue,0.75502298,4.61554223029637,Central government,16.358272
+GUY,2009,G1111,Personal income tax,Taxes,2.5141792,14.030825882383406,Central government,17.918968
+GUY,2009,G1112,Corporate income tax,Taxes,3.0325602,16.923743599519792,Central government,17.918968
+GUY,2009,G1113,Other income taxes,Taxes,0.7222131000000003,4.030439141361268,Central government,17.918968
+GUY,2009,G11412,VAT / sales tax,Taxes,4.3905179,24.502068980758267,Central government,17.918968
+GUY,2009,G1142,Excise taxes,Taxes,4.0452453,22.575213594890066,Central government,17.918968
+GUY,2009,G115,Trade taxes (customs),Taxes,1.5260808,8.516566355830314,Central government,17.918968
+GUY,2009,G113,Property taxes,Taxes,0.59186854,3.303028053847744,Central government,17.918968
+GUY,2009,G14X,Other non-tax revenue,Other revenue,1.0963029,6.118114056568436,Central government,17.918968
+GUY,2010,G1111,Personal income tax,Taxes,2.6204122,14.27048476780972,Central government,18.362461
+GUY,2010,G1112,Corporate income tax,Taxes,3.3004557,17.97392898479131,Central government,18.362461
+GUY,2010,G1113,Other income taxes,Taxes,0.7485386000000003,4.076461210727692,Central government,18.362461
+GUY,2010,G11412,VAT / sales tax,Taxes,4.2779133,23.297058602330047,Central government,18.362461
+GUY,2010,G1142,Excise taxes,Taxes,3.941496,21.464965943290498,Central government,18.362461
+GUY,2010,G115,Trade taxes (customs),Taxes,1.6539158,9.007048673922304,Central government,18.362461
+GUY,2010,G113,Property taxes,Taxes,0.61536894,3.3512334757307314,Central government,18.362461
+GUY,2010,G14X,Other non-tax revenue,Other revenue,1.2043604,6.558818014644116,Central government,18.362461
+GUY,2011,G1111,Personal income tax,Taxes,2.4805638,13.931010445995403,Central government,17.806058
+GUY,2011,G1112,Corporate income tax,Taxes,2.9946758,16.818297458089827,Central government,17.806058
+GUY,2011,G1113,Other income taxes,Taxes,0.8658185999999999,4.862494551011795,Central government,17.806058
+GUY,2011,G11412,VAT / sales tax,Taxes,4.0657031,22.833257647481553,Central government,17.806058
+GUY,2011,G1142,Excise taxes,Taxes,3.7459741,21.03763842620304,Central government,17.806058
+GUY,2011,G115,Trade taxes (customs),Taxes,1.6384177,9.201462221452946,Central government,17.806058
+GUY,2011,G113,Property taxes,Taxes,0.61490476,3.453345821966884,Central government,17.806058
+GUY,2011,G14X,Other non-tax revenue,Other revenue,1.3999999,7.86249207994268,Central government,17.806058
+GUY,2012,G1111,Personal income tax,Taxes,1.9456087,12.485463734219119,Central government,15.582991
+GUY,2012,G1112,Corporate income tax,Taxes,2.6405286,16.944940714167437,Central government,15.582991
+GUY,2012,G1113,Other income taxes,Taxes,0.7068613999999998,4.536108609516061,Central government,15.582991
+GUY,2012,G11412,VAT / sales tax,Taxes,3.563435,22.8674647999606,Central government,15.582991
+GUY,2012,G1142,Excise taxes,Taxes,3.2832046,21.069155357560533,Central government,15.582991
+GUY,2012,G115,Trade taxes (customs),Taxes,1.5536773,9.970340687636458,Central government,15.582991
+GUY,2012,G113,Property taxes,Taxes,0.55819378,3.5820708433595536,Central government,15.582991
+GUY,2012,G14X,Other non-tax revenue,Other revenue,1.3314817,8.54445525358024,Central government,15.582991
+GUY,2013,G1111,Personal income tax,Taxes,1.8971402,11.426723704109842,Central government,16.602661
+GUY,2013,G1112,Corporate income tax,Taxes,2.9118888,17.53868732247198,Central government,16.602661
+GUY,2013,G1113,Other income taxes,Taxes,0.7011299000000006,4.222997144855277,Central government,16.602661
+GUY,2013,G11412,VAT / sales tax,Taxes,3.6758647,22.140214150008845,Central government,16.602661
+GUY,2013,G1142,Excise taxes,Taxes,3.3867927,20.39909566303859,Central government,16.602661
+GUY,2013,G115,Trade taxes (customs),Taxes,1.7459515,10.51609437788316,Central government,16.602661
+GUY,2013,G113,Property taxes,Taxes,0.62036723,3.7365530140017915,Central government,16.602661
+GUY,2013,G14X,Other non-tax revenue,Other revenue,1.6635255,10.019631792759004,Central government,16.602661
+GUY,2014,G1111,Personal income tax,Taxes,2.1005234,12.369223782587213,Central government,16.981853
+GUY,2014,G1112,Corporate income tax,Taxes,3.2886113,19.36544439526122,Central government,16.981853
+GUY,2014,G1113,Other income taxes,Taxes,0.6171871000000002,3.634391959464024,Central government,16.981853
+GUY,2014,G11412,VAT / sales tax,Taxes,4.0133023,23.63288800109152,Central government,16.981853
+GUY,2014,G1142,Excise taxes,Taxes,3.6976941,21.774385280569792,Central government,16.981853
+GUY,2014,G115,Trade taxes (customs),Taxes,1.6260446,9.575189468428444,Central government,16.981853
+GUY,2014,G113,Property taxes,Taxes,0.6032669,3.5524209283874972,Central government,16.981853
+GUY,2014,G14X,Other non-tax revenue,Other revenue,1.0352232,6.096055595346396,Central government,16.981853
+GUY,2015,G1111,Personal income tax,Taxes,2.250964,12.226475756781253,Central government,18.410571
+GUY,2015,G1112,Corporate income tax,Taxes,3.2534987,17.671905450406726,Central government,18.410571
+GUY,2015,G1113,Other income taxes,Taxes,0.6622009999999996,3.596852047663267,Central government,18.410571
+GUY,2015,G11412,VAT / sales tax,Taxes,4.0520556,22.009396666730215,Central government,18.410571
+GUY,2015,G1142,Excise taxes,Taxes,3.7333998,20.278566047734206,Central government,18.410571
+GUY,2015,G115,Trade taxes (customs),Taxes,1.5871062,8.620624531417304,Central government,18.410571
+GUY,2015,G113,Property taxes,Taxes,0.62940898,3.4187368767649846,Central government,18.410571
+GUY,2015,G14X,Other non-tax revenue,Other revenue,2.2419362,12.177439798037769,Central government,18.410571
+GUY,2016,G1111,Personal income tax,Taxes,2.4552108,12.81575859501444,Central government,19.157748
+GUY,2016,G1112,Corporate income tax,Taxes,3.325242,17.357164909018405,Central government,19.157748
+GUY,2016,G1113,Other income taxes,Taxes,0.7687268000000009,4.012615574319711,Central government,19.157748
+GUY,2016,G11412,VAT / sales tax,Taxes,3.8630717,20.16453916805516,Central government,19.157748
+GUY,2016,G1142,Excise taxes,Taxes,3.5592777,18.578789151554005,Central government,19.157748
+GUY,2016,G115,Trade taxes (customs),Taxes,1.8308649,9.556785339362817,Central government,19.157748
+GUY,2016,G113,Property taxes,Taxes,0.5905305,3.0824629522618485,Central government,19.157748
+GUY,2016,G14X,Other non-tax revenue,Other revenue,2.7648241,14.431884310413615,Central government,19.157748
+GUY,2017,G1111,Personal income tax,Taxes,2.2100322,11.10806847175008,Central government,19.895738
+GUY,2017,G1112,Corporate income tax,Taxes,3.5632913,17.909822194079958,Central government,19.895738
+GUY,2017,G1113,Other income taxes,Taxes,1.1361854,5.7106974368078225,Central government,19.895738
+GUY,2017,G11412,VAT / sales tax,Taxes,4.3402332,21.814889198882696,Central government,19.895738
+GUY,2017,G1142,Excise taxes,Taxes,3.4434831,17.307641968345177,Central government,19.895738
+GUY,2017,G115,Trade taxes (customs),Taxes,1.8864683,9.481770919982962,Central government,19.895738
+GUY,2017,G113,Property taxes,Taxes,0.8757153,4.401522074727763,Central government,19.895738
+GUY,2017,G14X,Other non-tax revenue,Other revenue,2.440329,12.265586730183117,Central government,19.895738
+GUY,2018,G1111,Personal income tax,Taxes,2.5951081,11.89181049617106,Central government,21.822649
+GUY,2018,G1112,Corporate income tax,Taxes,3.8790437,17.77531062646917,Central government,21.822649
+GUY,2018,G1113,Other income taxes,Taxes,1.3928094999999998,6.382403350082705,Central government,21.822649
+GUY,2018,G11412,VAT / sales tax,Taxes,4.8302544,22.134133823980758,Central government,21.822649
+GUY,2018,G1142,Excise taxes,Taxes,4.0047742,18.35145744655302,Central government,21.822649
+GUY,2018,G115,Trade taxes (customs),Taxes,2.2078113,10.117063559281045,Central government,21.822649
+GUY,2018,G113,Property taxes,Taxes,1.0517893,4.81971407568741,Central government,21.822649
+GUY,2018,G14X,Other non-tax revenue,Other revenue,1.8610588,8.528106621774837,Central government,21.822649
+GUY,2019,G1111,Personal income tax,Taxes,2.7078863,12.141051530767967,Central government,22.303556
+GUY,2019,G1112,Corporate income tax,Taxes,3.7160404,16.66120102118601,Central government,22.303556
+GUY,2019,G1113,Other income taxes,Taxes,2.2525182999999993,10.099368187762481,Central government,22.303556
+GUY,2019,G11412,VAT / sales tax,Taxes,4.8831133,21.89387723032478,Central government,22.303556
+GUY,2019,G1142,Excise taxes,Taxes,4.0673663,18.23640226061524,Central government,22.303556
+GUY,2019,G115,Trade taxes (customs),Taxes,2.3167558,10.38738279077876,Central government,22.303556
+GUY,2019,G113,Property taxes,Taxes,1.0062493,4.511609148470966,Central government,22.303556
+GUY,2019,G14X,Other non-tax revenue,Other revenue,1.3536269,6.069107830093789,Central government,22.303556
+GUY,2020,G1111,Personal income tax,Taxes,3.0407719,15.23122465693304,Central government,19.964067
+GUY,2020,G1112,Corporate income tax,Taxes,3.1244165,15.65020040908969,Central government,19.964067
+GUY,2020,G1113,Other income taxes,Taxes,3.0131887,15.093060424371856,Central government,19.964067
+GUY,2020,G11412,VAT / sales tax,Taxes,4.6175962,23.129536647323107,Central government,19.964067
+GUY,2020,G1142,Excise taxes,Taxes,2.7310237,13.67969610548838,Central government,19.964067
+GUY,2020,G115,Trade taxes (customs),Taxes,1.7217549,8.624269280466345,Central government,19.964067
+GUY,2020,G113,Property taxes,Taxes,0.89030185,4.459521442510403,Central government,19.964067
+GUY,2020,G14X,Other non-tax revenue,Other revenue,0.82501328,4.13249103381717,Central government,19.964067
+GUY,2021,G1111,Personal income tax,Taxes,2.5591461,16.067711470430748,Central government,15.927259
+GUY,2021,G1112,Corporate income tax,Taxes,2.480162,15.571806320837434,Central government,15.927259
+GUY,2021,G1113,Other income taxes,Taxes,2.2884329,14.368026724477007,Central government,15.927259
+GUY,2021,G11412,VAT / sales tax,Taxes,3.1417623,19.7256929352634,Central government,15.927259
+GUY,2021,G1142,Excise taxes,Taxes,2.5111629,15.766446836485866,Central government,15.927259
+GUY,2021,G115,Trade taxes (customs),Taxes,1.5275578,9.590838907089346,Central government,15.927259
+GUY,2021,G113,Property taxes,Taxes,0.70600915,4.4327095345139,Central government,15.927259
+GUY,2021,G14X,Other non-tax revenue,Other revenue,0.71302634,4.476767270902296,Central government,15.927259
+GUY,2022,G1111,Personal income tax,Taxes,1.8815586,13.43808115748305,Central government,14.001691
+GUY,2022,G1112,Corporate income tax,Taxes,1.9051196,13.606353689707907,Central government,14.001691
+GUY,2022,G1113,Other income taxes,Taxes,1.5406241999999999,11.003129550566427,Central government,14.001691
+GUY,2022,G11412,VAT / sales tax,Taxes,1.7165107,12.25930996477497,Central government,14.001691
+GUY,2022,G1142,Excise taxes,Taxes,1.0605831,7.574678658456325,Central government,14.001691
+GUY,2022,G115,Trade taxes (customs),Taxes,0.98650231,7.045594064316947,Central government,14.001691
+GUY,2022,G11NEC,Other taxes,Taxes,0.4352470900000013,3.108532319417714,Central government,14.001691
+GUY,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,4.1281697,29.483365259239044,Central government,14.001691
+GUY,2022,G14X,Other non-tax revenue,Other revenue,0.34737550000000006,2.4809539076387277,Central government,14.001691
+GUY,2023,G1111,Personal income tax,Taxes,1.9229722,11.33470998313562,Central government,16.965341
+GUY,2023,G1112,Corporate income tax,Taxes,3.9519116,23.294029869485087,Central government,16.965341
+GUY,2023,G1113,Other income taxes,Taxes,0.13012029999999974,0.766977215488918,Central government,16.965341
+GUY,2023,G11412,VAT / sales tax,Taxes,2.04232,12.038190095913784,Central government,16.965341
+GUY,2023,G1142,Excise taxes,Taxes,0.89989874,5.304336293623571,Central government,16.965341
+GUY,2023,G115,Trade taxes (customs),Taxes,1.1046325,6.511112862393983,Central government,16.965341
+GUY,2023,G11NEC,Other taxes,Taxes,0.3411757,2.011015870532753,Central government,16.965341
+GUY,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,5.9232794,34.91400143386449,Central government,16.965341
+GUY,2023,G14X,Other non-tax revenue,Other revenue,0.6490304999999994,3.825626021899586,Central government,16.965341
+GUY,2024,G1111,Personal income tax,Taxes,1.5005636,9.833046198492427,Central government,15.260414
+GUY,2024,G1112,Corporate income tax,Taxes,3.3465823,21.92982580875415,Central government,15.260414
+GUY,2024,G11412,VAT / sales tax,Taxes,1.559595,10.219873176943514,Central government,15.260414
+GUY,2024,G1142,Excise taxes,Taxes,0.63335692,4.15032582057493,Central government,15.260414
+GUY,2024,G115,Trade taxes (customs),Taxes,0.84972096,5.568138168557024,Central government,15.260414
+GUY,2024,G11NEC,Other taxes,Taxes,0.2827670400000008,1.8529446987325053,Central government,15.260414
+GUY,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,6.4157268,42.04162890616964,Central government,15.260414
+GUY,2024,G14X,Other non-tax revenue,Other revenue,0.6721018000000001,4.404217221775816,Central government,15.260414

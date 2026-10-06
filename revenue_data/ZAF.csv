@@ -1,0 +1,302 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+ZAF,1997,G1111,Personal income tax,Taxes,8.846509,39.669583596528675,General government,22.299572
+ZAF,1997,G1112,Corporate income tax,Taxes,3.357114,15.05399638050182,General government,22.299572
+ZAF,1997,G11412,VAT / sales tax,Taxes,5.1490217,23.089282650194576,General government,22.299572
+ZAF,1997,G1142,Excise taxes,Taxes,2.5050825,11.233310184836869,General government,22.299572
+ZAF,1997,G114X,Other goods & services taxes,Taxes,0.34919639999999985,1.5658691786112306,General government,22.299572
+ZAF,1997,G115,Trade taxes (customs),Taxes,0.58479795,2.6223554584756084,General government,22.299572
+ZAF,1997,G113,Property taxes,Taxes,0.04113556,0.18446039406165993,General government,22.299572
+ZAF,1997,G11NEC,Other taxes,Taxes,0.1905618899999995,0.8545190906003127,General government,22.299572
+ZAF,1997,G13,Grants (e.g. foreign aid),Grants,0.08116664,0.3639680704252206,General government,22.299572
+ZAF,1997,G14X,Other non-tax revenue,Other revenue,1.195898,5.3626549957640295,General government,22.299572
+ZAF,1998,G1111,Personal income tax,Taxes,9.226931,40.30165011773843,General government,22.894341
+ZAF,1998,G1112,Corporate income tax,Taxes,3.5883902,15.673472179029131,General government,22.894341
+ZAF,1998,G11412,VAT / sales tax,Taxes,5.1640057,22.555490111219747,General government,22.894341
+ZAF,1998,G1142,Excise taxes,Taxes,2.5770308,11.256027995032754,General government,22.894341
+ZAF,1998,G114X,Other goods & services taxes,Taxes,0.31625820000000004,1.3813615083136253,General government,22.894341
+ZAF,1998,G115,Trade taxes (customs),Taxes,0.62681721,2.7378299333978955,General government,22.894341
+ZAF,1998,G113,Property taxes,Taxes,0.03142836,0.13727367946008548,General government,22.894341
+ZAF,1998,G11NEC,Other taxes,Taxes,0.17613173000000146,0.7693131505038926,General government,22.894341
+ZAF,1998,G13,Grants (e.g. foreign aid),Grants,0.10618008,0.4637763557171367,General government,22.894341
+ZAF,1998,G14X,Other non-tax revenue,Other revenue,1.0814997,4.723804969587296,General government,22.894341
+ZAF,1999,G1111,Personal income tax,Taxes,9.3324547,39.848686129173984,General government,23.41973
+ZAF,1999,G1112,Corporate income tax,Taxes,3.2148127,13.726941770891465,General government,23.41973
+ZAF,1999,G11412,VAT / sales tax,Taxes,5.2257991,22.313660746729354,General government,23.41973
+ZAF,1999,G1142,Excise taxes,Taxes,2.4604565,10.505913176625008,General government,23.41973
+ZAF,1999,G114X,Other goods & services taxes,Taxes,0.4513823000000001,1.92735911131341,General government,23.41973
+ZAF,1999,G115,Trade taxes (customs),Taxes,0.63271722,2.7016418208066444,General government,23.41973
+ZAF,1999,G113,Property taxes,Taxes,0.03450399,0.14732872667618285,General government,23.41973
+ZAF,1999,G11NEC,Other taxes,Taxes,0.1748858900000001,0.7467459701713047,General government,23.41973
+ZAF,1999,G13,Grants (e.g. foreign aid),Grants,0.10241009,0.437281258152848,General government,23.41973
+ZAF,1999,G14X,Other non-tax revenue,Other revenue,1.7902862,7.644350297804457,General government,23.41973
+ZAF,2000,G1111,Personal income tax,Taxes,8.2551954,37.0600273442836,General government,22.2752
+ZAF,2000,G1112,Corporate income tax,Taxes,3.7228359,16.712917570949397,General government,22.2752
+ZAF,2000,G1113,Other income taxes,Taxes,0.11939569999999966,0.5360028070068298,General government,22.2752
+ZAF,2000,G11412,VAT / sales tax,Taxes,5.1707279,23.21293537931884,General government,22.2752
+ZAF,2000,G1142,Excise taxes,Taxes,2.208457,9.91442029448201,General government,22.2752
+ZAF,2000,G114X,Other goods & services taxes,Taxes,0.41511180000000003,1.8635603294059866,General government,22.2752
+ZAF,2000,G115,Trade taxes (customs),Taxes,0.68542774,3.0770889792542655,General government,22.2752
+ZAF,2000,G113,Property taxes,Taxes,0.04508431,0.2023968762021258,General government,22.2752
+ZAF,2000,G11NEC,Other taxes,Taxes,0.14828066,0.6656759831788379,General government,22.2752
+ZAF,2000,G13,Grants (e.g. foreign aid),Grants,0.0363675,0.16326452362874821,General government,22.2752
+ZAF,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,0.06543302,0.29374828734145475,General government,22.2752
+ZAF,2000,G14X,Other non-tax revenue,Other revenue,1.4028835800000001,6.297961624947905,General government,22.2752
+ZAF,2001,G1111,Personal income tax,Taxes,7.802882,33.48941217703399,General government,23.299549
+ZAF,2001,G1112,Corporate income tax,Taxes,4.8316338,20.73702714159832,General government,23.299549
+ZAF,2001,G1113,Other income taxes,Taxes,0.23303020000000085,1.0001489728406368,General government,23.299549
+ZAF,2001,G11412,VAT / sales tax,Taxes,5.2366286,22.475235894051,General government,23.299549
+ZAF,2001,G1142,Excise taxes,Taxes,2.0965898,8.998413660281578,General government,23.299549
+ZAF,2001,G114X,Other goods & services taxes,Taxes,0.4325261999999994,1.8563715546597037,General government,23.299549
+ZAF,2001,G115,Trade taxes (customs),Taxes,0.65972463,2.8314909872289804,General government,23.299549
+ZAF,2001,G113,Property taxes,Taxes,0.04305535,0.18479048671714632,General government,23.299549
+ZAF,2001,G11NEC,Other taxes,Taxes,0.15155142000000082,0.6504478691840809,General government,23.299549
+ZAF,2001,G13,Grants (e.g. foreign aid),Grants,0.04777257,0.20503645800182654,General government,23.299549
+ZAF,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14950156,0.6416500164874436,General government,23.299549
+ZAF,2001,G14X,Other non-tax revenue,Other revenue,1.61465284,6.9299746531574495,General government,23.299549
+ZAF,2002,G1111,Personal income tax,Taxes,6.9762229,31.790216882462754,General government,21.944559
+ZAF,2002,G1112,Corporate income tax,Taxes,5.11818,23.3232301455682,General government,21.944559
+ZAF,2002,G1113,Other income taxes,Taxes,0.24634710000000037,1.1225885195505654,General government,21.944559
+ZAF,2002,G11412,VAT / sales tax,Taxes,5.1555143,23.493360244787784,General government,21.944559
+ZAF,2002,G1142,Excise taxes,Taxes,1.8997133,8.656876176003355,General government,21.944559
+ZAF,2002,G114X,Other goods & services taxes,Taxes,0.41538079999999966,1.8928646504128865,General government,21.944559
+ZAF,2002,G115,Trade taxes (customs),Taxes,0.6228508,2.8382926264319095,General government,21.944559
+ZAF,2002,G113,Property taxes,Taxes,0.03314522,0.1510407203899609,General government,21.944559
+ZAF,2002,G11NEC,Other taxes,Taxes,0.14735357999999943,0.6714811630527614,General government,21.944559
+ZAF,2002,G13,Grants (e.g. foreign aid),Grants,0.05798576,0.26423752694232766,General government,21.944559
+ZAF,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,0.01888763,0.08606976335227333,General government,21.944559
+ZAF,2002,G14X,Other non-tax revenue,Other revenue,1.25297737,5.709740487380038,General government,21.944559
+ZAF,2003,G1111,Personal income tax,Taxes,6.6572777,30.46028743343723,General government,21.855597
+ZAF,2003,G1112,Corporate income tax,Taxes,4.8807601,22.331854286272577,General government,21.855597
+ZAF,2003,G1113,Other income taxes,Taxes,0.2614332000000008,1.1961842025372182,General government,21.855597
+ZAF,2003,G11412,VAT / sales tax,Taxes,5.4134765,24.76929123809237,General government,21.855597
+ZAF,2003,G1142,Excise taxes,Taxes,1.9324355,8.841833468442813,General government,21.855597
+ZAF,2003,G114X,Other goods & services taxes,Taxes,0.4552540000000005,2.083008749240256,General government,21.855597
+ZAF,2003,G115,Trade taxes (customs),Taxes,0.53658785,2.4551507208855208,General government,21.855597
+ZAF,2003,G113,Property taxes,Taxes,0.02913985,0.13332900425157956,General government,21.855597
+ZAF,2003,G11NEC,Other taxes,Taxes,0.09078129999999854,0.41536865610714285,General government,21.855597
+ZAF,2003,G13,Grants (e.g. foreign aid),Grants,0.07057171,0.3228999402066668,General government,21.855597
+ZAF,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,0.00833334,0.03812908866345771,General government,21.855597
+ZAF,2003,G14X,Other non-tax revenue,Other revenue,1.51954606,6.952663211863169,General government,21.855597
+ZAF,2004,G1111,Personal income tax,Taxes,6.7595479,29.132824793996864,General government,23.202514
+ZAF,2004,G1112,Corporate income tax,Taxes,5.0544863,21.78421781751964,General government,23.202514
+ZAF,2004,G1113,Other income taxes,Taxes,0.2688758,1.15882181598946,General government,23.202514
+ZAF,2004,G11412,VAT / sales tax,Taxes,5.9402106,25.601581231378358,General government,23.202514
+ZAF,2004,G1142,Excise taxes,Taxes,1.9730301,8.503518440424413,General government,23.202514
+ZAF,2004,G114X,Other goods & services taxes,Taxes,0.5452565999999992,2.34998926415928,General government,23.202514
+ZAF,2004,G115,Trade taxes (customs),Taxes,0.78593202,3.3872708910979146,General government,23.202514
+ZAF,2004,G113,Property taxes,Taxes,0.03219495,0.13875629723719976,General government,23.202514
+ZAF,2004,G11NEC,Other taxes,Taxes,0.0627567300000006,0.2704738315019832,General government,23.202514
+ZAF,2004,G13,Grants (e.g. foreign aid),Grants,0.05507031,0.23734630130827142,General government,23.202514
+ZAF,2004,G14X,Other non-tax revenue,Other revenue,1.7251532,7.435199315386615,General government,23.202514
+ZAF,2005,G1111,Personal income tax,Taxes,6.8817093,27.80179753364369,General government,24.654709
+ZAF,2005,G1112,Corporate income tax,Taxes,5.6824714,22.956930097805902,General government,24.654709
+ZAF,2005,G1113,Other income taxes,Taxes,0.2652152999999995,1.0714579404603093,General government,24.654709
+ZAF,2005,G11412,VAT / sales tax,Taxes,6.224932,25.14844664024092,General government,24.654709
+ZAF,2005,G1142,Excise taxes,Taxes,1.9297224,7.795992117966533,General government,24.654709
+ZAF,2005,G114X,Other goods & services taxes,Taxes,0.611268300000001,2.469496570471903,General government,24.654709
+ZAF,2005,G115,Trade taxes (customs),Taxes,0.98688078,3.9869541765451153,General government,24.654709
+ZAF,2005,G113,Property taxes,Taxes,0.03560152,0.14382854720846264,General government,24.654709
+ZAF,2005,G11NEC,Other taxes,Taxes,0.052095999999997956,0.2104655080842553,General government,24.654709
+ZAF,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,0.00718563,0.029029623557576913,General government,24.654709
+ZAF,2005,G14X,Other non-tax revenue,Other revenue,2.07566687,8.385601244015337,General government,24.654709
+ZAF,2006,G1111,Personal income tax,Taxes,6.8719582,26.52821863387537,General government,25.710952
+ZAF,2006,G1112,Corporate income tax,Taxes,6.7356825,26.00214564872764,General government,25.710952
+ZAF,2006,G1113,Other income taxes,Taxes,0.272017299999999,1.0500841531015774,General government,25.710952
+ZAF,2006,G11412,VAT / sales tax,Taxes,6.5349627,25.227295368272245,General government,25.710952
+ZAF,2006,G1142,Excise taxes,Taxes,1.8828301,7.268398190088151,General government,25.710952
+ZAF,2006,G114X,Other goods & services taxes,Taxes,0.5158451999999998,1.991347131132893,General government,25.710952
+ZAF,2006,G115,Trade taxes (customs),Taxes,1.1390488,4.397136117774025,General government,25.710952
+ZAF,2006,G113,Property taxes,Taxes,0.03858876,0.14896642737002452,General government,25.710952
+ZAF,2006,G11NEC,Other taxes,Taxes,0.046413440000000826,0.17917249320146886,General government,25.710952
+ZAF,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,0.00933129,0.036022119758542026,General government,25.710952
+ZAF,2006,G14X,Other non-tax revenue,Other revenue,1.85765511,7.171213716698072,General government,25.710952
+ZAF,2007,G1111,Personal income tax,Taxes,7.2253181,27.596965623967687,General government,26.056538
+ZAF,2007,G1112,Corporate income tax,Taxes,6.9249752,26.449811606388483,General government,26.056538
+ZAF,2007,G1113,Other income taxes,Taxes,0.2697887000000003,1.0304528294242077,General government,26.056538
+ZAF,2007,G11412,VAT / sales tax,Taxes,6.4109661,24.48656358508592,General government,26.056538
+ZAF,2007,G1142,Excise taxes,Taxes,1.8148417,6.931753497170329,General government,26.056538
+ZAF,2007,G114X,Other goods & services taxes,Taxes,0.6220780000000008,2.376015137856227,General government,26.056538
+ZAF,2007,G115,Trade taxes (customs),Taxes,1.1254336,4.298572317702968,General government,26.056538
+ZAF,2007,G113,Property taxes,Taxes,0.03063941,0.11702664613598837,General government,26.056538
+ZAF,2007,G11NEC,Other taxes,Taxes,0.032813189999999805,0.12532935767114736,General government,26.056538
+ZAF,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,0.01090916,0.04166732998321048,General government,26.056538
+ZAF,2007,G14X,Other non-tax revenue,Other revenue,1.71380404,6.54584206861383,General government,26.056538
+ZAF,2008,G1111,Personal income tax,Taxes,7.5074924,29.188686846207496,General government,25.539021
+ZAF,2008,G1112,Corporate income tax,Taxes,7.1761669,27.900512879669336,General government,25.539021
+ZAF,2008,G1113,Other income taxes,Taxes,0.2805906999999994,1.090920061971443,General government,25.539021
+ZAF,2008,G11412,VAT / sales tax,Taxes,5.9098318,22.977076836462572,General government,25.539021
+ZAF,2008,G1142,Excise taxes,Taxes,1.7330166,6.737866139788466,General government,25.539021
+ZAF,2008,G114X,Other goods & services taxes,Taxes,0.4716211000000001,1.8336349695091152,General government,25.539021
+ZAF,2008,G115,Trade taxes (customs),Taxes,0.85080932,3.307896363280334,General government,25.539021
+ZAF,2008,G113,Property taxes,Taxes,0.033772,0.1313035404698005,General government,25.539021
+ZAF,2008,G11NEC,Other taxes,Taxes,0.02083018000000185,0.08098650902000093,General government,25.539021
+ZAF,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,0.01033837,0.04019497168325154,General government,25.539021
+ZAF,2008,G14X,Other non-tax revenue,Other revenue,1.72608613,6.710920881938184,General government,25.539021
+ZAF,2009,G1111,Personal income tax,Taxes,7.3896413,30.930581457861294,General government,23.891052
+ZAF,2009,G1112,Corporate income tax,Taxes,5.459871,22.85320462238331,General government,23.891052
+ZAF,2009,G1113,Other income taxes,Taxes,0.2793216999999997,1.1691477629365157,General government,23.891052
+ZAF,2009,G11412,VAT / sales tax,Taxes,5.2945303,22.161143427254693,General government,23.891052
+ZAF,2009,G1142,Excise taxes,Taxes,1.827294,7.648445116606837,General government,23.891052
+ZAF,2009,G114X,Other goods & services taxes,Taxes,0.49405830000000006,2.0679637715409105,General government,23.891052
+ZAF,2009,G115,Trade taxes (customs),Taxes,0.6695482,2.8025061433041962,General government,23.891052
+ZAF,2009,G113,Property taxes,Taxes,0.02932319,0.12273712350548649,General government,23.891052
+ZAF,2009,G13,Grants (e.g. foreign aid),Grants,0.14273791,0.5974534315190474,General government,23.891052
+ZAF,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,0.03118864,0.13054527695138748,General government,23.891052
+ZAF,2009,G14X,Other non-tax revenue,Other revenue,2.27197176,9.50971836652484,General government,23.891052
+ZAF,2010,G1111,Personal income tax,Taxes,7.4670974,30.619982798576615,General government,24.386354
+ZAF,2010,G1112,Corporate income tax,Taxes,4.9671113,20.368404805408797,General government,24.386354
+ZAF,2010,G1113,Other income taxes,Taxes,0.2831613000000006,1.161146516613351,General government,24.386354
+ZAF,2010,G11412,VAT / sales tax,Taxes,6.0076783,24.635410033004522,General government,24.386354
+ZAF,2010,G1142,Excise taxes,Taxes,1.923149,7.88616863349068,General government,24.386354
+ZAF,2010,G114X,Other goods & services taxes,Taxes,0.5002959999999992,2.051540792034755,General government,24.386354
+ZAF,2010,G115,Trade taxes (customs),Taxes,0.87006306,3.567827564546959,General government,24.386354
+ZAF,2010,G113,Property taxes,Taxes,0.0277165,0.11365577650517171,General government,24.386354
+ZAF,2010,G13,Grants (e.g. foreign aid),Grants,0.10571983,0.4335204434414427,General government,24.386354
+ZAF,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14771288,0.6057194117661049,General government,24.386354
+ZAF,2010,G14X,Other non-tax revenue,Other revenue,2.0860029200000003,8.55397621145006,General government,24.386354
+ZAF,2011,G1111,Personal income tax,Taxes,7.5544409,30.554245281588017,General government,24.724685
+ZAF,2011,G1112,Corporate income tax,Taxes,5.2672535,21.3036222706174,General government,24.724685
+ZAF,2011,G1113,Other income taxes,Taxes,0.30576959999999964,1.2366976566132173,General government,24.724685
+ZAF,2011,G11412,VAT / sales tax,Taxes,5.7414338,23.221463893271036,General government,24.724685
+ZAF,2011,G1142,Excise taxes,Taxes,1.9109297,7.728833350151882,General government,24.724685
+ZAF,2011,G114X,Other goods & services taxes,Taxes,0.5397659999999997,2.1831056694958892,General government,24.724685
+ZAF,2011,G115,Trade taxes (customs),Taxes,1.0112683,4.090116011589227,General government,24.724685
+ZAF,2011,G113,Property taxes,Taxes,0.03299683,0.13345702887620206,General government,24.724685
+ZAF,2011,G13,Grants (e.g. foreign aid),Grants,0.08039228,0.3251498654077898,General government,24.724685
+ZAF,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,0.18429274,0.7453795265743527,General government,24.724685
+ZAF,2011,G14X,Other non-tax revenue,Other revenue,2.0959639599999997,8.477211984702736,General government,24.724685
+ZAF,2012,G1111,Personal income tax,Taxes,7.7580211,30.90462630401194,General government,25.103106
+ZAF,2012,G1112,Corporate income tax,Taxes,5.0649776,20.17669685974317,General government,25.103106
+ZAF,2012,G1113,Other income taxes,Taxes,0.3190483000000004,1.2709514910226662,General government,25.103106
+ZAF,2012,G11412,VAT / sales tax,Taxes,6.0291584,24.017579338588618,General government,25.103106
+ZAF,2012,G1142,Excise taxes,Taxes,1.9770215,7.875605114363139,General government,25.103106
+ZAF,2012,G114X,Other goods & services taxes,Taxes,0.5879202999999997,2.3420221386150373,General government,25.103106
+ZAF,2012,G115,Trade taxes (customs),Taxes,1.0831082,4.314638196564203,General government,25.103106
+ZAF,2012,G113,Property taxes,Taxes,0.0307056,0.1223179314942143,General government,25.103106
+ZAF,2012,G13,Grants (e.g. foreign aid),Grants,0.07884216,0.3140733262250496,General government,25.103106
+ZAF,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,0.17447909,0.6950498077807582,General government,25.103106
+ZAF,2012,G14X,Other non-tax revenue,Other revenue,1.9993267099999998,7.964459497561775,General government,25.103106
+ZAF,2013,G1111,Personal income tax,Taxes,8.0371842,30.750919321224117,General government,26.136403
+ZAF,2013,G1112,Corporate income tax,Taxes,5.0878515,19.466532942578212,General government,26.136403
+ZAF,2013,G1113,Other income taxes,Taxes,0.32248129999999886,1.2338396373823852,General government,26.136403
+ZAF,2013,G11412,VAT / sales tax,Taxes,6.143429,23.50525816425466,General government,26.136403
+ZAF,2013,G1142,Excise taxes,Taxes,1.9273159,7.37406712010065,General government,26.136403
+ZAF,2013,G114X,Other goods & services taxes,Taxes,0.6185588999999991,2.366656574739834,General government,26.136403
+ZAF,2013,G115,Trade taxes (customs),Taxes,1.1317732,4.330256156518554,General government,26.136403
+ZAF,2013,G113,Property taxes,Taxes,0.03138728,0.1200902817422887,General government,26.136403
+ZAF,2013,G13,Grants (e.g. foreign aid),Grants,0.06826084,0.2611715162182034,General government,26.136403
+ZAF,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,0.19434293,0.7435718296813835,General government,26.136403
+ZAF,2013,G14X,Other non-tax revenue,Other revenue,2.57349507,9.846401090463749,General government,26.136403
+ZAF,2014,G1111,Personal income tax,Taxes,8.561637,31.296599713999676,General government,27.356065
+ZAF,2014,G1112,Corporate income tax,Taxes,5.0282774,18.380595327593433,General government,27.356065
+ZAF,2014,G1113,Other income taxes,Taxes,0.3394416000000007,1.2408103592198099,General government,27.356065
+ZAF,2014,G11412,VAT / sales tax,Taxes,6.3208231,23.105426032860606,General government,27.356065
+ZAF,2014,G1142,Excise taxes,Taxes,2.0110473,7.351274336206945,General government,27.356065
+ZAF,2014,G114X,Other goods & services taxes,Taxes,0.6020277000000003,2.2006796064397376,General government,27.356065
+ZAF,2014,G115,Trade taxes (customs),Taxes,0.97564923,3.566432846029563,General government,27.356065
+ZAF,2014,G113,Property taxes,Taxes,0.04004942,0.14639848273383385,General government,27.356065
+ZAF,2014,G13,Grants (e.g. foreign aid),Grants,0.07526927,0.2751427342638989,General government,27.356065
+ZAF,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.13662261,0.4994165411418272,General government,27.356065
+ZAF,2014,G14X,Other non-tax revenue,Other revenue,3.26560009,11.937224019510676,General government,27.356065
+ZAF,2015,G1111,Personal income tax,Taxes,8.8056532,31.301367470122987,General government,28.131831
+ZAF,2015,G1112,Corporate income tax,Taxes,4.9208547,17.49211304753426,General government,28.131831
+ZAF,2015,G1113,Other income taxes,Taxes,0.34428710000000073,1.2238339152764957,General government,28.131831
+ZAF,2015,G11412,VAT / sales tax,Taxes,6.3588456,22.603724935632794,General government,28.131831
+ZAF,2015,G1142,Excise taxes,Taxes,2.1054713,7.484297798498078,General government,28.131831
+ZAF,2015,G114X,Other goods & services taxes,Taxes,0.6730008000000001,2.392309221136116,General government,28.131831
+ZAF,2015,G115,Trade taxes (customs),Taxes,1.0366269,3.684887286534795,General government,28.131831
+ZAF,2015,G113,Property taxes,Taxes,0.04788792,0.17022671087022279,General government,28.131831
+ZAF,2015,G13,Grants (e.g. foreign aid),Grants,0.06896944,0.2451649794303277,General government,28.131831
+ZAF,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,0.0982564,0.3492710435940621,General government,28.131831
+ZAF,2015,G14X,Other non-tax revenue,Other revenue,3.6719949,13.052803591369862,General government,28.131831
+ZAF,2016,G1111,Personal income tax,Taxes,8.9488219,32.55377063034871,General government,27.489356
+ZAF,2016,G1112,Corporate income tax,Taxes,5.0131241,18.236600741028635,General government,27.489356
+ZAF,2016,G1113,Other income taxes,Taxes,0.32176700000000036,1.1705148712832718,General government,27.489356
+ZAF,2016,G11412,VAT / sales tax,Taxes,6.0754987,22.101276945156517,General government,27.489356
+ZAF,2016,G1142,Excise taxes,Taxes,2.1319178,7.755430138123279,General government,27.489356
+ZAF,2016,G114X,Other goods & services taxes,Taxes,0.5806928999999998,2.1124281703798364,General government,27.489356
+ZAF,2016,G115,Trade taxes (customs),Taxes,0.9505147,3.457755430865678,General government,27.489356
+ZAF,2016,G113,Property taxes,Taxes,0.03991457,0.14520009126441522,General government,27.489356
+ZAF,2016,G13,Grants (e.g. foreign aid),Grants,0.0716842,0.2607707506861929,General government,27.489356
+ZAF,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.13069598,0.4754421311288631,General government,27.489356
+ZAF,2016,G14X,Other non-tax revenue,Other revenue,3.22447382,11.729899456356852,General government,27.489356
+ZAF,2017,G1111,Personal income tax,Taxes,9.1155118,33.50540488253765,General government,27.205633
+ZAF,2017,G1112,Corporate income tax,Taxes,4.8993805,18.008393925408527,General government,27.205633
+ZAF,2017,G1113,Other income taxes,Taxes,0.31531669999999945,1.1589929267301964,General government,27.205633
+ZAF,2017,G11412,VAT / sales tax,Taxes,5.8681842,21.56937447509094,General government,27.205633
+ZAF,2017,G1142,Excise taxes,Taxes,2.2109783,8.126776066265943,General government,27.205633
+ZAF,2017,G114X,Other goods & services taxes,Taxes,0.5838732000000002,2.1461118580377336,General government,27.205633
+ZAF,2017,G115,Trade taxes (customs),Taxes,0.98340945,3.6146661329058523,General government,27.205633
+ZAF,2017,G113,Property taxes,Taxes,0.05955073,0.2188874704435884,General government,27.205633
+ZAF,2017,G13,Grants (e.g. foreign aid),Grants,0.05642098,0.2073836138053772,General government,27.205633
+ZAF,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.15216897,0.5593194394645756,General government,27.205633
+ZAF,2017,G14X,Other non-tax revenue,Other revenue,2.96129873,10.884689209309624,General government,27.205633
+ZAF,2018,G1111,Personal income tax,Taxes,9.207742,34.412061331033165,General government,26.757154
+ZAF,2018,G1112,Corporate income tax,Taxes,4.5665322,17.066484501470374,General government,26.757154
+ZAF,2018,G1113,Other income taxes,Taxes,0.3251628000000002,1.215229772529517,General government,26.757154
+ZAF,2018,G11412,VAT / sales tax,Taxes,6.0554633,22.63106139023232,General government,26.757154
+ZAF,2018,G1142,Excise taxes,Taxes,2.308544,8.62771325623466,General government,26.757154
+ZAF,2018,G114X,Other goods & services taxes,Taxes,0.5384201999999996,2.0122358928244437,General government,26.757154
+ZAF,2018,G115,Trade taxes (customs),Taxes,1.0389882,3.8830068936140645,General government,26.757154
+ZAF,2018,G113,Property taxes,Taxes,0.04985427,0.18632018543242054,General government,26.757154
+ZAF,2018,G13,Grants (e.g. foreign aid),Grants,0.04497584,0.1680880463956022,General government,26.757154
+ZAF,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,0.17129401,0.6401764925384106,General government,26.757154
+ZAF,2018,G14X,Other non-tax revenue,Other revenue,2.45033339,9.15762223769502,General government,26.757154
+ZAF,2019,G1111,Personal income tax,Taxes,9.4071027,34.699628876268086,General government,27.110096
+ZAF,2019,G1112,Corporate income tax,Taxes,4.3289358,15.967984030746331,General government,27.110096
+ZAF,2019,G1113,Other income taxes,Taxes,0.32863350000000047,1.2122181345281864,General government,27.110096
+ZAF,2019,G11412,VAT / sales tax,Taxes,6.1641767,22.73756869027686,General government,27.110096
+ZAF,2019,G1142,Excise taxes,Taxes,2.3636748,8.718799077657268,General government,27.110096
+ZAF,2019,G114X,Other goods & services taxes,Taxes,0.5143294999999997,1.8971880438933144,General government,27.110096
+ZAF,2019,G115,Trade taxes (customs),Taxes,0.98171356,3.621210194165303,General government,27.110096
+ZAF,2019,G113,Property taxes,Taxes,0.04657789,0.17181012564470444,General government,27.110096
+ZAF,2019,G13,Grants (e.g. foreign aid),Grants,0.03313905,0.12223877776013778,General government,27.110096
+ZAF,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,0.21284479,0.7851126384797753,General government,27.110096
+ZAF,2019,G14X,Other non-tax revenue,Other revenue,2.72878671,10.06557376263072,General government,27.110096
+ZAF,2020,G1111,Personal income tax,Taxes,8.7805819,34.21811393915775,General government,25.660625
+ZAF,2020,G1112,Corporate income tax,Taxes,4.1299247,16.0944041698127,General government,25.660625
+ZAF,2020,G1113,Other income taxes,Taxes,0.22021840000000026,0.8581957766032599,General government,25.660625
+ZAF,2020,G11412,VAT / sales tax,Taxes,5.9535842,23.20124392917164,General government,25.660625
+ZAF,2020,G1142,Excise taxes,Taxes,2.0206876,7.874662444893684,General government,25.660625
+ZAF,2020,G114X,Other goods & services taxes,Taxes,0.5183164000000002,2.019890006576224,General government,25.660625
+ZAF,2020,G115,Trade taxes (customs),Taxes,0.83234941,3.243683308571011,General government,25.660625
+ZAF,2020,G113,Property taxes,Taxes,0.0524613,0.20444279903548726,General government,25.660625
+ZAF,2020,G13,Grants (e.g. foreign aid),Grants,0.03051135,0.11890337823026524,General government,25.660625
+ZAF,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,0.25637741,0.9991082056652946,General government,25.660625
+ZAF,2020,G14X,Other non-tax revenue,Other revenue,2.8654132900000002,11.166576379180166,General government,25.660625
+ZAF,2021,G1111,Personal income tax,Taxes,8.9499135,31.528852686163887,General government,28.38626
+ZAF,2021,G1112,Corporate income tax,Taxes,5.7575681,20.282823566446375,General government,28.38626
+ZAF,2021,G1113,Other income taxes,Taxes,0.31152540000000073,1.0974450696756235,General government,28.38626
+ZAF,2021,G11412,VAT / sales tax,Taxes,6.2970342,22.183260614925032,General government,28.38626
+ZAF,2021,G1142,Excise taxes,Taxes,2.3329146,8.218416943672244,General government,28.38626
+ZAF,2021,G114X,Other goods & services taxes,Taxes,0.5192013000000002,1.829047990482231,General government,28.38626
+ZAF,2021,G115,Trade taxes (customs),Taxes,0.94907941,3.3434272750637577,General government,28.38626
+ZAF,2021,G113,Property taxes,Taxes,0.06083948,0.21432598230394231,General government,28.38626
+ZAF,2021,G13,Grants (e.g. foreign aid),Grants,0.02783374,0.09805300220666795,General government,28.38626
+ZAF,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.45899758,1.6169616704257226,General government,28.38626
+ZAF,2021,G14X,Other non-tax revenue,Other revenue,2.7215157199999997,9.587385198634518,General government,28.38626
+ZAF,2022,G1111,Personal income tax,Taxes,9.029861,31.52813092776393,General government,28.640648
+ZAF,2022,G1112,Corporate income tax,Taxes,5.797909,20.24363764395275,General government,28.640648
+ZAF,2022,G1113,Other income taxes,Taxes,0.31339500000000076,1.0942315271637735,General government,28.640648
+ZAF,2022,G11412,VAT / sales tax,Taxes,6.3363274,22.123547623643155,General government,28.640648
+ZAF,2022,G1142,Excise taxes,Taxes,2.142212,7.4796212711388375,General government,28.640648
+ZAF,2022,G114X,Other goods & services taxes,Taxes,0.47775319999999954,1.6680949397513616,General government,28.640648
+ZAF,2022,G115,Trade taxes (customs),Taxes,1.1267054,3.933938226537333,General government,28.640648
+ZAF,2022,G113,Property taxes,Taxes,0.06577604,0.22965974792190455,General government,28.640648
+ZAF,2022,G13,Grants (e.g. foreign aid),Grants,0.01880556,0.06566038589629676,General government,28.640648
+ZAF,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,0.38284827,1.3367304748132793,General government,28.640648
+ZAF,2022,G14X,Other non-tax revenue,Other revenue,2.94899923,10.296552054269164,General government,28.640648
+ZAF,2023,G1111,Personal income tax,Taxes,9.2205334,33.3120529077518,General government,27.679271
+ZAF,2023,G1112,Corporate income tax,Taxes,5.0216375,18.142231780598557,General government,27.679271
+ZAF,2023,G1113,Other income taxes,Taxes,0.409831099999999,1.4806426802208734,General government,27.679271
+ZAF,2023,G11412,VAT / sales tax,Taxes,6.359441,22.97546420207382,General government,27.679271
+ZAF,2023,G1142,Excise taxes,Taxes,2.1726483,7.849369660060773,General government,27.679271
+ZAF,2023,G114X,Other goods & services taxes,Taxes,0.44140369999999907,1.5947085456116206,General government,27.679271
+ZAF,2023,G115,Trade taxes (customs),Taxes,1.0418635,3.764056864069867,General government,27.679271
+ZAF,2023,G113,Property taxes,Taxes,0.06157715,0.22246666106199112,General government,27.679271
+ZAF,2023,G11NEC,Other taxes,Taxes,0.00750236,0.027104615580374206,General government,27.679271
+ZAF,2023,G13,Grants (e.g. foreign aid),Grants,0.02911585,0.10519008972454512,General government,27.679271
+ZAF,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,0.22340898,0.8071346243186823,General government,27.679271
+ZAF,2023,G14X,Other non-tax revenue,Other revenue,2.69030752,9.71957505672747,General government,27.679271
+ZAF,2024,G11NEC,Other taxes,Taxes,25.233359,90.93766924660295,General government,27.747972
+ZAF,2024,UNCL,Unclassified,Unclassified,2.5146130000000007,9.062330753397042,General government,27.747972

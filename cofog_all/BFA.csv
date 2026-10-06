@@ -1,0 +1,129 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+BFA,2017,GF01,General public services,Government spending,58.768748612383476,14.979230985876852,Central government (budgetary),25.4884293771069
+BFA,2017,GF02,Defence,Government spending,0.9008958978592334,0.2296242146871039,Central government (budgetary),25.4884293771069
+BFA,2017,GF03,Public order and safety,Government spending,0.7509301589323492,0.1914003032308685,Central government (budgetary),25.4884293771069
+BFA,2017,GF04,Economic affairs,Government spending,20.93518999278273,5.336051116273577,Central government (budgetary),25.4884293771069
+BFA,2017,GF05,Environmental protection,Government spending,0.2664750226430397,0.0679202979540008,Central government (budgetary),25.4884293771069
+BFA,2017,GF06,Housing and community amenities,Government spending,2.697478857095634,0.6875449934532112,Central government (budgetary),25.4884293771069
+BFA,2017,GF08,"Recreation, culture and religion",Government spending,0.2310265620786652,0.0588850421177786,Central government (budgetary),25.4884293771069
+BFA,2017,GF09,Education,Government spending,7.142145211751878,1.8204206383078,Central government (budgetary),25.4884293771069
+BFA,2017,GF10,Social protection,Government spending,0.336728149263217,0.0858267165177941,Central government (budgetary),25.4884293771069
+BFA,2017,GF0170,Interest on public debt,Government spending,3.331373777405378,0.8491148525414284,Central government (budgetary),25.4884293771069
+BFA,2017,GF0712,Medical products,Health,0.0136818618596098,0.0034872916975599,Central government (budgetary),25.4884293771069
+BFA,2017,GF072,Outpatient services,Health,2.789433814741604,0.7109828678915528,Central government (budgetary),25.4884293771069
+BFA,2017,GF073,Hospital services,Health,1.447005394450708,0.3688189480474959,Central government (budgetary),25.4884293771069
+BFA,2017,GF0740,Public health services,Health,0.041885289274777,0.0106759023761984,Central government (budgetary),25.4884293771069
+BFA,2017,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),25.4884293771069
+BFA,2017,GF0760,Other health,Health,0.3470013974777804,0.088445206133698,Central government (budgetary),25.4884293771069
+BFA,2018,GF01,General public services,Government spending,50.4284132039733,11.849614348623291,Central government (budgetary),23.49789254857943
+BFA,2018,GF02,Defence,Government spending,6.852551509957312,1.610205190645826,Central government (budgetary),23.49789254857943
+BFA,2018,GF03,Public order and safety,Government spending,1.635436957746596,0.3842932190310515,Central government (budgetary),23.49789254857943
+BFA,2018,GF04,Economic affairs,Government spending,15.80081193947344,3.712857811340578,Central government (budgetary),23.49789254857943
+BFA,2018,GF05,Environmental protection,Government spending,0.2816742133761229,0.0661875039961777,Central government (budgetary),23.49789254857943
+BFA,2018,GF06,Housing and community amenities,Government spending,1.588601123964509,0.3732877851347056,Central government (budgetary),23.49789254857943
+BFA,2018,GF08,"Recreation, culture and religion",Government spending,0.9379587493262844,0.2204005390666898,Central government (budgetary),23.49789254857943
+BFA,2018,GF09,Education,Government spending,11.00965199104614,2.587036194828558,Central government (budgetary),23.49789254857943
+BFA,2018,GF10,Social protection,Government spending,0.5001934577878693,0.1175349212460175,Central government (budgetary),23.49789254857943
+BFA,2018,GF0170,Interest on public debt,Government spending,4.683110265056671,1.10043221801451,Central government (budgetary),23.49789254857943
+BFA,2018,GF0712,Medical products,Health,0.8428018149650444,0.1980406648779634,Central government (budgetary),23.49789254857943
+BFA,2018,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),23.49789254857943
+BFA,2018,GF073,Hospital services,Health,3.772089887942396,0.8863616287045345,Central government (budgetary),23.49789254857943
+BFA,2018,GF0740,Public health services,Health,1.033899631158787,0.2429446243898509,Central government (budgetary),23.49789254857943
+BFA,2018,GF075,Health R&D,Health,0.0497350354238875,0.011686685182903,Central government (budgetary),23.49789254857943
+BFA,2018,GF0760,Other health,Health,0.5830702188016422,0.1370092134967769,Central government (budgetary),23.49789254857943
+BFA,2019,GF01,General public services,Government spending,59.98983631417568,13.72389161268729,Central government (budgetary),22.8770279365545
+BFA,2019,GF02,Defence,Government spending,5.2835988952474,1.208730395321233,Central government (budgetary),22.8770279365545
+BFA,2019,GF03,Public order and safety,Government spending,1.5766769393543,0.3606968238852956,Central government (budgetary),22.8770279365545
+BFA,2019,GF04,Economic affairs,Government spending,14.18433422321394,3.244954102858913,Central government (budgetary),22.8770279365545
+BFA,2019,GF05,Environmental protection,Government spending,0.3538379868329232,0.0809476150979098,Central government (budgetary),22.8770279365545
+BFA,2019,GF06,Housing and community amenities,Government spending,1.627794221600502,0.3723909388251666,Central government (budgetary),22.8770279365545
+BFA,2019,GF08,"Recreation, culture and religion",Government spending,0.4709875512752907,0.1077479536829422,Central government (budgetary),22.8770279365545
+BFA,2019,GF09,Education,Government spending,6.600564471708559,1.510012978163058,Central government (budgetary),22.8770279365545
+BFA,2019,GF10,Social protection,Government spending,0.6135567158454637,0.140363541290573,Central government (budgetary),22.8770279365545
+BFA,2019,GF0170,Interest on public debt,Government spending,5.308578016410412,1.214444875848001,Central government (budgetary),22.8770279365545
+BFA,2019,GF0712,Medical products,Health,0.0136273598607072,0.0031175349223488,Central government (budgetary),22.8770279365545
+BFA,2019,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),22.8770279365545
+BFA,2019,GF073,Hospital services,Health,2.749341358614272,0.6289675906814339,Central government (budgetary),22.8770279365545
+BFA,2019,GF0740,Public health services,Health,0.6246992809125372,0.1429126290138162,Central government (budgetary),22.8770279365545
+BFA,2019,GF075,Health R&D,Health,0.0416207836051186,0.0095215982927558,Central government (budgetary),22.8770279365545
+BFA,2019,GF0760,Other health,Health,0.5609458813430321,0.1283277459837973,Central government (budgetary),22.8770279365545
+BFA,2020,GF01,General public services,Government spending,55.672881437874125,13.879800845825992,Central government (budgetary),24.93099061401122
+BFA,2020,GF02,Defence,Government spending,4.290915359859934,1.069767705621846,Central government (budgetary),24.93099061401122
+BFA,2020,GF03,Public order and safety,Government spending,1.362883415439264,0.3397803363830785,Central government (budgetary),24.93099061401122
+BFA,2020,GF04,Economic affairs,Government spending,18.72837825942643,4.669170226014122,Central government (budgetary),24.93099061401122
+BFA,2020,GF05,Environmental protection,Government spending,0.4456885473971906,0.1111145699193166,Central government (budgetary),24.93099061401122
+BFA,2020,GF06,Housing and community amenities,Government spending,1.042087160866782,0.2598026522655135,Central government (budgetary),24.93099061401122
+BFA,2020,GF08,"Recreation, culture and religion",Government spending,0.3515975410360058,0.0876567499547808,Central government (budgetary),24.93099061401122
+BFA,2020,GF09,Education,Government spending,6.925053766786924,1.726484504612879,Central government (budgetary),24.93099061401122
+BFA,2020,GF10,Social protection,Government spending,0.4639997396550576,0.1156797315424389,Central government (budgetary),24.93099061401122
+BFA,2020,GF0170,Interest on public debt,Government spending,5.474954460522316,1.364960382674208,Central government (budgetary),24.93099061401122
+BFA,2020,GF0712,Medical products,Health,0.025177135756632,0.0062769093523627,Central government (budgetary),24.93099061401122
+BFA,2020,GF072,Outpatient services,Health,0.0032372511345741,0.0008070787765126,Central government (budgetary),24.93099061401122
+BFA,2020,GF073,Hospital services,Health,1.533468288781384,0.3823088351449255,Central government (budgetary),24.93099061401122
+BFA,2020,GF0740,Public health services,Health,1.163704862526238,0.2901231500512087,Central government (budgetary),24.93099061401122
+BFA,2020,GF075,Health R&D,Health,0.0329635176515049,0.0082181314917446,Central government (budgetary),24.93099061401122
+BFA,2020,GF0760,Other health,Health,2.483009255285781,0.619038804380328,Central government (budgetary),24.93099061401122
+BFA,2021,GF01,General public services,Government spending,47.23065482164819,13.520375273844836,Central government (budgetary),28.62627106251293
+BFA,2021,GF02,Defence,Government spending,4.624995605824811,1.323963778752722,Central government (budgetary),28.62627106251293
+BFA,2021,GF03,Public order and safety,Government spending,1.374357131456805,0.393427197817802,Central government (budgetary),28.62627106251293
+BFA,2021,GF04,Economic affairs,Government spending,14.43751766485355,4.132922941439165,Central government (budgetary),28.62627106251293
+BFA,2021,GF05,Environmental protection,Government spending,0.4524624091152091,0.129523115689296,Central government (budgetary),28.62627106251293
+BFA,2021,GF06,Housing and community amenities,Government spending,1.303646012879735,0.373185241342595,Central government (budgetary),28.62627106251293
+BFA,2021,GF08,"Recreation, culture and religion",Government spending,0.521856172565302,0.1493879625149986,Central government (budgetary),28.62627106251293
+BFA,2021,GF09,Education,Government spending,7.419977227030885,2.124062793786591,Central government (budgetary),28.62627106251293
+BFA,2021,GF10,Social protection,Government spending,2.083690900160247,0.5964830051847879,Central government (budgetary),28.62627106251293
+BFA,2021,GF0170,Interest on public debt,Government spending,6.157988771881063,1.762802557837784,Central government (budgetary),28.62627106251293
+BFA,2021,GF0712,Medical products,Health,0.0067633508352173,0.001936095142998,Central government (budgetary),28.62627106251293
+BFA,2021,GF072,Outpatient services,Health,0.0025162646411488,0.0007203127368254,Central government (budgetary),28.62627106251293
+BFA,2021,GF073,Hospital services,Health,1.86457181713532,0.5337573825283797,Central government (budgetary),28.62627106251293
+BFA,2021,GF0740,Public health services,Health,1.830898127540126,0.5241178608681101,Central government (budgetary),28.62627106251293
+BFA,2021,GF075,Health R&D,Health,10.35036494578203,2.962923525338883,Central government (budgetary),28.62627106251293
+BFA,2021,GF0760,Other health,Health,0.3377387766503239,0.0966820176871368,Central government (budgetary),28.62627106251293
+BFA,2022,GF01,General public services,Government spending,53.31415019916543,17.689519086283127,Central government (budgetary),33.17978251589956
+BFA,2022,GF02,Defence,Government spending,10.69505644738081,3.548596469193648,Central government (budgetary),33.17978251589956
+BFA,2022,GF03,Public order and safety,Government spending,1.783896379258185,0.5918929389468724,Central government (budgetary),33.17978251589956
+BFA,2022,GF04,Economic affairs,Government spending,16.50008578395214,5.474692578052183,Central government (budgetary),33.17978251589956
+BFA,2022,GF05,Environmental protection,Government spending,0.3548294054497624,0.1177316250306906,Central government (budgetary),33.17978251589956
+BFA,2022,GF06,Housing and community amenities,Government spending,1.206738983812487,0.4003933703635598,Central government (budgetary),33.17978251589956
+BFA,2022,GF08,"Recreation, culture and religion",Government spending,0.3934261892400034,0.1305379539504246,Central government (budgetary),33.17978251589956
+BFA,2022,GF09,Education,Government spending,5.43962489398501,1.804855709504959,Central government (budgetary),33.17978251589956
+BFA,2022,GF10,Social protection,Government spending,0.6607870268416374,0.2192476983993342,Central government (budgetary),33.17978251589956
+BFA,2022,GF0170,Interest on public debt,Government spending,5.758285712760421,1.910586676138025,Central government (budgetary),33.17978251589956
+BFA,2022,GF0712,Medical products,Health,0.0045621980448119,0.0015137273892132,Central government (budgetary),33.17978251589956
+BFA,2022,GF072,Outpatient services,Health,0.0493684230363414,0.0163803353949873,Central government (budgetary),33.17978251589956
+BFA,2022,GF073,Hospital services,Health,2.349942934139176,0.7797059547951277,Central government (budgetary),33.17978251589956
+BFA,2022,GF0740,Public health services,Health,1.185707184694865,0.3934150651571516,Central government (budgetary),33.17978251589956
+BFA,2022,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),33.17978251589956
+BFA,2022,GF0760,Other health,Health,0.3035382382388148,0.1007133273002319,Central government (budgetary),33.17978251589956
+BFA,2023,GF01,General public services,Government spending,11.402107781162124,3.4090774452171635,Central government (budgetary),29.89866006046212
+BFA,2023,GF02,Defence,Government spending,17.58105594998715,5.256500153526307,Central government (budgetary),29.89866006046212
+BFA,2023,GF03,Public order and safety,Government spending,6.599363422280843,1.973121235782229,Central government (budgetary),29.89866006046212
+BFA,2023,GF04,Economic affairs,Government spending,23.1735214108691,6.928572390674159,Central government (budgetary),29.89866006046212
+BFA,2023,GF05,Environmental protection,Government spending,2.017156654666278,0.6031028110656603,Central government (budgetary),29.89866006046212
+BFA,2023,GF06,Housing and community amenities,Government spending,0.8841524859180694,0.2643497461807688,Central government (budgetary),29.89866006046212
+BFA,2023,GF08,"Recreation, culture and religion",Government spending,1.031025891873835,0.3082629265467056,Central government (budgetary),29.89866006046212
+BFA,2023,GF09,Education,Government spending,18.84475838208558,5.634330247875211,Central government (budgetary),29.89866006046212
+BFA,2023,GF10,Social protection,Government spending,2.256161162842726,0.6745619564945158,Central government (budgetary),29.89866006046212
+BFA,2023,GF0170,Interest on public debt,Government spending,7.809591726459297,2.33496328240404,Central government (budgetary),29.89866006046212
+BFA,2023,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),29.89866006046212
+BFA,2023,GF072,Outpatient services,Health,0.6617257701306376,0.1978471385438343,Central government (budgetary),29.89866006046212
+BFA,2023,GF073,Hospital services,Health,6.86841489896009,2.05356402218221,Central government (budgetary),29.89866006046212
+BFA,2023,GF0740,Public health services,Health,0.4368924738615294,0.130624995589602,Central government (budgetary),29.89866006046212
+BFA,2023,GF075,Health R&D,Health,0.0921458811336327,0.0275503837598623,Central government (budgetary),29.89866006046212
+BFA,2023,GF0760,Other health,Health,0.3419261077691373,0.1022313246198637,Central government (budgetary),29.89866006046212
+BFA,2024,GF01,General public services,Government spending,12.078583063270163,3.3754739416034547,Central government (budgetary),27.94594302926106
+BFA,2024,GF02,Defence,Government spending,18.26369785364502,5.103962597216011,Central government (budgetary),27.94594302926106
+BFA,2024,GF03,Public order and safety,Government spending,6.483795979500088,1.811957930564614,Central government (budgetary),27.94594302926106
+BFA,2024,GF04,Economic affairs,Government spending,22.26758198460156,6.222885775410751,Central government (budgetary),27.94594302926106
+BFA,2024,GF05,Environmental protection,Government spending,1.554008501727961,0.4342823305627693,Central government (budgetary),27.94594302926106
+BFA,2024,GF06,Housing and community amenities,Government spending,0.3631262287910544,0.1014790490222522,Central government (budgetary),27.94594302926106
+BFA,2024,GF08,"Recreation, culture and religion",Government spending,0.8447720315319356,0.236079510659046,Central government (budgetary),27.94594302926106
+BFA,2024,GF09,Education,Government spending,19.28508770301719,5.389399622628213,Central government (budgetary),27.94594302926106
+BFA,2024,GF10,Social protection,Government spending,1.427311958888778,0.398875786880888,Central government (budgetary),27.94594302926106
+BFA,2024,GF0170,Interest on public debt,Government spending,7.799381076438817,2.17961059225656,Central government (budgetary),27.94594302926106
+BFA,2024,GF0712,Medical products,Health,1.020809132022852,0.2852747384726005,Central government (budgetary),27.94594302926106
+BFA,2024,GF072,Outpatient services,Health,0.6443843786531972,0.1800792913478803,Central government (budgetary),27.94594302926106
+BFA,2024,GF073,Hospital services,Health,6.136063330328873,1.714780762533086,Central government (budgetary),27.94594302926106
+BFA,2024,GF0740,Public health services,Health,0.1192588211669243,0.0333280022206769,Central government (budgetary),27.94594302926106
+BFA,2024,GF075,Health R&D,Health,0.0232763111867869,0.006504784663573,Central government (budgetary),27.94594302926106
+BFA,2024,GF0760,Other health,Health,1.688861645228805,0.4719683132186828,Central government (budgetary),27.94594302926106

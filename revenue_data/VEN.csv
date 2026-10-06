@@ -1,0 +1,67 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+VEN,2007,G111,Income taxes,Taxes,3.3457992,10.097782253051879,General government,33.134
+VEN,2007,G11412,VAT / sales tax,Taxes,5.5786243,16.836555359623482,General government,33.134
+VEN,2007,G115,Trade taxes (customs),Taxes,1.7034378,5.141056876939218,General government,33.134
+VEN,2007,G11NEC,Other taxes,Taxes,2.0043387,6.049190206622403,General government,33.134
+VEN,2007,G121,Social contributions,Social contributions,0.85274728,2.5736321385701393,General government,33.134
+VEN,2007,G14X,Other non-tax revenue,Other revenue,19.649053,59.301783165192866,General government,33.134
+VEN,2008,G111,Income taxes,Taxes,3.2014211,10.189639397633307,General government,31.418394
+VEN,2008,G11412,VAT / sales tax,Taxes,4.5497094,14.481037233753035,General government,31.418394
+VEN,2008,G115,Trade taxes (customs),Taxes,1.239682,3.945720401398258,General government,31.418394
+VEN,2008,G11NEC,Other taxes,Taxes,2.3207445,7.386578913046088,General government,31.418394
+VEN,2008,G121,Social contributions,Social contributions,0.75040146,2.388414407857046,General government,31.418394
+VEN,2008,G14X,Other non-tax revenue,Other revenue,19.356436,61.60860964631227,General government,31.418394
+VEN,2009,G111,Income taxes,Taxes,3.6901316,15.010583507691244,General government,24.583532
+VEN,2009,G11412,VAT / sales tax,Taxes,5.8904673,23.96102927764814,General government,24.583532
+VEN,2009,G115,Trade taxes (customs),Taxes,0.90844131,3.6953246181224073,General government,24.583532
+VEN,2009,G11NEC,Other taxes,Taxes,1.7797287900000003,7.239516233875589,General government,24.583532
+VEN,2009,G121,Social contributions,Social contributions,0.95291992,3.8762530949580394,General government,24.583532
+VEN,2009,G14X,Other non-tax revenue,Other revenue,11.361843,46.21729294228348,General government,24.583532
+VEN,2010,G111,Income taxes,Taxes,2.7669611,10.497192148086855,General government,26.359058
+VEN,2010,G11412,VAT / sales tax,Taxes,5.5172203,20.931021260987514,General government,26.359058
+VEN,2010,G115,Trade taxes (customs),Taxes,0.83619459,3.1723233421751775,General government,26.359058
+VEN,2010,G11NEC,Other taxes,Taxes,1.7219090099999996,6.532513138508526,General government,26.359058
+VEN,2010,G121,Social contributions,Social contributions,0.89460827,3.3939309473695034,General government,26.359058
+VEN,2010,G14X,Other non-tax revenue,Other revenue,14.622166,55.473019162872426,General government,26.359058
+VEN,2011,G111,Income taxes,Taxes,2.7035444,8.688423855972948,General government,31.116626
+VEN,2011,G11412,VAT / sales tax,Taxes,6.2234672,20.00045602629835,General government,31.116626
+VEN,2011,G115,Trade taxes (customs),Taxes,1.085755,3.4893081999104245,General government,31.116626
+VEN,2011,G11NEC,Other taxes,Taxes,2.0000514,6.427597156137732,General government,31.116626
+VEN,2011,G121,Social contributions,Social contributions,1.0744365,3.4529337555277726,General government,31.116626
+VEN,2011,G14X,Other non-tax revenue,Other revenue,18.029372,57.94128100615277,General government,31.116626
+VEN,2012,G111,Income taxes,Taxes,2.7615839,9.809834141116571,General government,28.151178
+VEN,2012,G11412,VAT / sales tax,Taxes,6.4055143,22.75398291232449,General government,28.151178
+VEN,2012,G115,Trade taxes (customs),Taxes,1.0312979,3.6634271184307763,General government,28.151178
+VEN,2012,G11NEC,Other taxes,Taxes,2.0258473,7.196314407912368,General government,28.151178
+VEN,2012,G121,Social contributions,Social contributions,1.1293509,4.011735807165129,General government,28.151178
+VEN,2012,G14X,Other non-tax revenue,Other revenue,14.797584,52.56470561305066,General government,28.151178
+VEN,2013,G111,Income taxes,Taxes,2.7997208,10.727156579523568,General government,26.099374
+VEN,2013,G11412,VAT / sales tax,Taxes,6.7406093,25.826707935481547,General government,26.099374
+VEN,2013,G115,Trade taxes (customs),Taxes,0.98958259,3.791595001651762,General government,26.099374
+VEN,2013,G11NEC,Other taxes,Taxes,1.9535864,7.485184667138151,General government,26.099374
+VEN,2013,G121,Social contributions,Social contributions,1.1668067,4.470630846096218,General government,26.099374
+VEN,2013,G14X,Other non-tax revenue,Other revenue,12.449069,47.698724970108756,General government,26.099374
+VEN,2014,G111,Income taxes,Taxes,2.5138534,11.532392475615527,General government,21.798195
+VEN,2014,G11412,VAT / sales tax,Taxes,5.710284,26.196132294439973,General government,21.798195
+VEN,2014,G115,Trade taxes (customs),Taxes,0.82342174,3.777476713094823,General government,21.798195
+VEN,2014,G11NEC,Other taxes,Taxes,1.6751108600000013,7.684631043992409,General government,21.798195
+VEN,2014,G121,Social contributions,Social contributions,0.95327745,4.373194431924294,General government,21.798195
+VEN,2014,G14X,Other non-tax revenue,Other revenue,10.122247,46.436170517788284,General government,21.798195
+VEN,2015,G111,Income taxes,Taxes,2.2373723,15.031073605742165,General government,14.88498
+VEN,2015,G11412,VAT / sales tax,Taxes,6.6573925,44.72557235548856,General government,14.88498
+VEN,2015,G115,Trade taxes (customs),Taxes,0.84035146,5.64563378654187,General government,14.88498
+VEN,2015,G11NEC,Other taxes,Taxes,1.9731727399999996,13.256132960877338,General government,14.88498
+VEN,2015,G121,Social contributions,Social contributions,0.81409728,5.469253435342204,General government,14.88498
+VEN,2015,G14X,Other non-tax revenue,Other revenue,2.3625934,15.87233170618973,General government,14.88498
+VEN,2016,G111,Income taxes,Taxes,2.0345893,18.128376523110727,General government,11.223229
+VEN,2016,G11412,VAT / sales tax,Taxes,5.3582942,47.74289080317112,General government,11.223229
+VEN,2016,G115,Trade taxes (customs),Taxes,0.56349242,5.020768937337305,General government,11.223229
+VEN,2016,G11NEC,Other taxes,Taxes,2.6235352,23.375938292428163,General government,11.223229
+VEN,2016,G121,Social contributions,Social contributions,0.54461994,4.8526134165327495,General government,11.223229
+VEN,2016,G14X,Other non-tax revenue,Other revenue,0.09869843,0.8794120274199257,General government,11.223229
+VEN,2017,G111,Income taxes,Taxes,1.0172954,11.977910339831562,General government,8.4930958
+VEN,2017,G11412,VAT / sales tax,Taxes,3.170556,37.33098124243458,General government,8.4930958
+VEN,2017,G115,Trade taxes (customs),Taxes,0.11369918,1.3387248027980563,General government,8.4930958
+VEN,2017,G11NEC,Other taxes,Taxes,1.8126459200000007,21.342581818045673,General government,8.4930958
+VEN,2017,G121,Social contributions,Social contributions,0.54462036,6.412506968307127,General government,8.4930958
+VEN,2017,G14X,Other non-tax revenue,Other revenue,1.8342789,21.597294357612213,General government,8.4930958

@@ -1,0 +1,359 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+JOR,1990,G1111,Personal income tax,Taxes,0.92494167,2.5332675729364698,Central government,36.511803
+JOR,1990,G1112,Corporate income tax,Taxes,3.1815114,8.713651816062855,Central government,36.511803
+JOR,1990,G11412,VAT / sales tax,Taxes,3.2534913,8.91079327101883,Central government,36.511803
+JOR,1990,G1142,Excise taxes,Taxes,1.1804703,3.2331196969475777,Central government,36.511803
+JOR,1990,G115,Trade taxes (customs),Taxes,4.200027,11.503203444772515,Central government,36.511803
+JOR,1990,G113,Property taxes,Taxes,1.0760995,2.9472647378976324,Central government,36.511803
+JOR,1990,G13,Grants (e.g. foreign aid),Grants,10.498268,28.753080068710286,Central government,36.511803
+JOR,1990,G14X,Other non-tax revenue,Other revenue,12.196994,33.405619391653836,Central government,36.511803
+JOR,1991,G1111,Personal income tax,Taxes,0.96079608,2.7654225102453887,Central government,34.743193
+JOR,1991,G1112,Corporate income tax,Taxes,2.156752,6.207696569512192,Central government,34.743193
+JOR,1991,G11412,VAT / sales tax,Taxes,3.2284092,9.29220638989629,Central government,34.743193
+JOR,1991,G1142,Excise taxes,Taxes,1.424397,4.0997872590466855,Central government,34.743193
+JOR,1991,G115,Trade taxes (customs),Taxes,4.5755394,13.169599581707992,Central government,34.743193
+JOR,1991,G113,Property taxes,Taxes,1.1422051,3.287565135420915,Central government,34.743193
+JOR,1991,G13,Grants (e.g. foreign aid),Grants,8.3179409,23.941210296935,Central government,34.743193
+JOR,1991,G14X,Other non-tax revenue,Other revenue,12.937153,37.23651133619182,Central government,34.743193
+JOR,1992,G1111,Personal income tax,Taxes,1.0019958,2.683508551196531,Central government,37.338612
+JOR,1992,G1112,Corporate income tax,Taxes,1.9800309,5.302846430876619,Central government,37.338612
+JOR,1992,G11412,VAT / sales tax,Taxes,3.7689474,10.093857256597216,Central government,37.338612
+JOR,1992,G1142,Excise taxes,Taxes,1.679541,4.4980853568300105,Central government,37.338612
+JOR,1992,G115,Trade taxes (customs),Taxes,9.5666368,25.6210172327982,Central government,37.338612
+JOR,1992,G113,Property taxes,Taxes,1.1798229,3.1597585948439,Central government,37.338612
+JOR,1992,G13,Grants (e.g. foreign aid),Grants,3.7411474,10.019404312060658,Central government,37.338612
+JOR,1992,NONTAXRES,Resource (extractive) revenue,Other revenue,0.93664827,2.508497183329947,Central government,37.338612
+JOR,1992,G14X,Other non-tax revenue,Other revenue,13.48424973,36.113025081466915,Central government,37.338612
+JOR,1993,G1111,Personal income tax,Taxes,1.1895794,3.4696894640947025,Central government,34.283627
+JOR,1993,G1112,Corporate income tax,Taxes,1.8253829,5.324160637002149,Central government,34.283627
+JOR,1993,G11412,VAT / sales tax,Taxes,4.4205683,12.893632199600155,Central government,34.283627
+JOR,1993,G1142,Excise taxes,Taxes,1.5902318,4.638286878478523,Central government,34.283627
+JOR,1993,G115,Trade taxes (customs),Taxes,6.0286564,17.584001197168597,Central government,34.283627
+JOR,1993,G113,Property taxes,Taxes,1.2653421,3.69066928432475,Central government,34.283627
+JOR,1993,G13,Grants (e.g. foreign aid),Grants,4.0633394,11.851689685632495,Central government,34.283627
+JOR,1993,NONTAXRES,Resource (extractive) revenue,Other revenue,0.40075382,1.1688932297833208,Central government,34.283627
+JOR,1993,G14X,Other non-tax revenue,Other revenue,13.50104118,39.3789774239153,Central government,34.283627
+JOR,1994,G1111,Personal income tax,Taxes,1.2418392,3.8820204387644988,Central government,31.989507
+JOR,1994,G1112,Corporate income tax,Taxes,1.8316228,5.725698742403251,Central government,31.989507
+JOR,1994,G11412,VAT / sales tax,Taxes,5.0042295,15.643346738666526,Central government,31.989507
+JOR,1994,G1142,Excise taxes,Taxes,1.3740996,4.295469761381443,Central government,31.989507
+JOR,1994,G115,Trade taxes (customs),Taxes,5.0040495,15.642784054158758,Central government,31.989507
+JOR,1994,G113,Property taxes,Taxes,1.166249,3.6457235805478345,Central government,31.989507
+JOR,1994,G121,Social contributions,Social contributions,0.39360903,1.2304316849897061,Central government,31.989507
+JOR,1994,G13,Grants (e.g. foreign aid),Grants,3.9482387,12.342293052531257,Central government,31.989507
+JOR,1994,NONTAXRES,Resource (extractive) revenue,Other revenue,0.37570135,1.1744518288450023,Central government,31.989507
+JOR,1994,G14X,Other non-tax revenue,Other revenue,11.64932865,36.41609309577669,Central government,31.989507
+JOR,1995,G1111,Personal income tax,Taxes,1.2895902,3.8134024371895667,Central government,33.817312
+JOR,1995,G1112,Corporate income tax,Taxes,1.8905643,5.590522097084476,Central government,33.817312
+JOR,1995,G11412,VAT / sales tax,Taxes,5.5005822,16.265580777088374,Central government,33.817312
+JOR,1995,G1142,Excise taxes,Taxes,1.4544407,4.3008761311366195,Central government,33.817312
+JOR,1995,G115,Trade taxes (customs),Taxes,4.3883628,12.97667537857533,Central government,33.817312
+JOR,1995,G113,Property taxes,Taxes,1.2916769,3.819572945360057,Central government,33.817312
+JOR,1995,G121,Social contributions,Social contributions,0.36308851,1.0736764353121855,Central government,33.817312
+JOR,1995,G13,Grants (e.g. foreign aid),Grants,3.5411563,10.471430431845086,Central government,33.817312
+JOR,1995,NONTAXRES,Resource (extractive) revenue,Other revenue,0.88268068,2.6101444136068532,Central government,33.817312
+JOR,1995,G14X,Other non-tax revenue,Other revenue,13.21516932,39.078118686665576,Central government,33.817312
+JOR,1996,G1111,Personal income tax,Taxes,1.0077017,3.053641885289925,Central government,32.999996
+JOR,1996,G1112,Corporate income tax,Taxes,2.4512744,7.428105142800623,Central government,32.999996
+JOR,1996,G11412,VAT / sales tax,Taxes,6.1981653,18.782321367554104,Central government,32.999996
+JOR,1996,G1142,Excise taxes,Taxes,1.3416029,4.065463826116827,Central government,32.999996
+JOR,1996,G115,Trade taxes (customs),Taxes,4.5166631,13.686859537801153,Central government,32.999996
+JOR,1996,G113,Property taxes,Taxes,1.2976159,3.932169870566045,Central government,32.999996
+JOR,1996,G121,Social contributions,Social contributions,2.3992898,7.270576032797094,Central government,32.999996
+JOR,1996,G13,Grants (e.g. foreign aid),Grants,4.395862,13.320795554035824,Central government,32.999996
+JOR,1996,NONTAXRES,Resource (extractive) revenue,Other revenue,0.92572599,2.8052306127552256,Central government,32.999996
+JOR,1996,G14X,Other non-tax revenue,Other revenue,8.46609481,25.654835867252828,Central government,32.999996
+JOR,1997,G1111,Personal income tax,Taxes,0.84750292,2.740675582773146,Central government,30.923139
+JOR,1997,G1112,Corporate income tax,Taxes,1.8419827,5.956648514887186,Central government,30.923139
+JOR,1997,G1113,Other income taxes,Taxes,0.16797357999999996,0.5431970538307899,Central government,30.923139
+JOR,1997,G11412,VAT / sales tax,Taxes,6.0124988,19.443365047772158,Central government,30.923139
+JOR,1997,G1142,Excise taxes,Taxes,0.52300856,1.691317818672936,Central government,30.923139
+JOR,1997,G115,Trade taxes (customs),Taxes,4.6975331,15.190996942451411,Central government,30.923139
+JOR,1997,G113,Property taxes,Taxes,1.1426019,3.694973851134583,Central government,30.923139
+JOR,1997,G121,Social contributions,Social contributions,0.33022073,1.0678758388661642,Central government,30.923139
+JOR,1997,G13,Grants (e.g. foreign aid),Grants,4.2941015,13.886370009202494,Central government,30.923139
+JOR,1997,NONTAXRES,Resource (extractive) revenue,Other revenue,0.71579639,2.314759798479708,Central government,30.923139
+JOR,1997,G14X,Other non-tax revenue,Other revenue,10.349918610000001,33.46981886282632,Central government,30.923139
+JOR,1998,G1111,Personal income tax,Taxes,0.82072725,2.78605394615297,Central government,29.458412
+JOR,1998,G1112,Corporate income tax,Taxes,1.4526008,4.931022079533682,Central government,29.458412
+JOR,1998,G1113,Other income taxes,Taxes,0.13891894999999987,0.47157650588904754,Central government,29.458412
+JOR,1998,G11412,VAT / sales tax,Taxes,6.0516108,20.54289552335679,Central government,29.458412
+JOR,1998,G1142,Excise taxes,Taxes,0.27645549,0.9384602605191347,Central government,29.458412
+JOR,1998,G115,Trade taxes (customs),Taxes,5.0848805,17.261217271317953,Central government,29.458412
+JOR,1998,G113,Property taxes,Taxes,1.008717,3.424206980335532,Central government,29.458412
+JOR,1998,G121,Social contributions,Social contributions,0.29027827,0.98538329221548,Central government,29.458412
+JOR,1998,G13,Grants (e.g. foreign aid),Grants,3.6072995,12.245397002391032,Central government,29.458412
+JOR,1998,NONTAXRES,Resource (extractive) revenue,Other revenue,0.47861358,1.6247093699415975,Central government,29.458412
+JOR,1998,G14X,Other non-tax revenue,Other revenue,10.24830942,34.78907627471569,Central government,29.458412
+JOR,1999,G1111,Personal income tax,Taxes,0.77442065,2.584381182856145,Central government,29.965419
+JOR,1999,G1112,Corporate income tax,Taxes,1.5790135,5.269452431150721,Central government,29.965419
+JOR,1999,G1113,Other income taxes,Taxes,0.20785314999999982,0.6936433960759896,Central government,29.965419
+JOR,1999,G11412,VAT / sales tax,Taxes,6.243976,20.83727245729486,Central government,29.965419
+JOR,1999,G1142,Excise taxes,Taxes,0.36374303,1.2138760015336345,Central government,29.965419
+JOR,1999,G115,Trade taxes (customs),Taxes,4.6817248,15.623758840148371,Central government,29.965419
+JOR,1999,G113,Property taxes,Taxes,0.9722164,3.2444612237859913,Central government,29.965419
+JOR,1999,G121,Social contributions,Social contributions,0.31680845,1.0572468551165595,Central government,29.965419
+JOR,1999,G13,Grants (e.g. foreign aid),Grants,3.390387,11.314332030531594,Central government,29.965419
+JOR,1999,NONTAXRES,Resource (extractive) revenue,Other revenue,0.46264091,1.5439160386844581,Central government,29.965419
+JOR,1999,G14X,Other non-tax revenue,Other revenue,10.97263509,36.61765947607808,Central government,29.965419
+JOR,2000,G1111,Personal income tax,Taxes,0.80990902,2.780861458640528,Central government,29.124393
+JOR,2000,G1112,Corporate income tax,Taxes,1.5729371,5.4007549616570545,Central government,29.124393
+JOR,2000,G1113,Other income taxes,Taxes,0.21985547999999988,0.754884333555037,Central government,29.124393
+JOR,2000,G11412,VAT / sales tax,Taxes,7.5090367,25.78263759866171,Central government,29.124393
+JOR,2000,G1142,Excise taxes,Taxes,0.33301648,1.1434280535906791,Central government,29.124393
+JOR,2000,G115,Trade taxes (customs),Taxes,4.2791001,14.69249539380958,Central government,29.124393
+JOR,2000,G113,Property taxes,Taxes,0.82607487,2.8363676798345634,Central government,29.124393
+JOR,2000,G121,Social contributions,Social contributions,0.30391796,1.0435168897768958,Central government,29.124393
+JOR,2000,G13,Grants (e.g. foreign aid),Grants,4.0527783,13.915408640447888,Central government,29.124393
+JOR,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14064288,0.4829040728848838,Central government,29.124393
+JOR,2000,G14X,Other non-tax revenue,Other revenue,9.077124020000001,31.16674060812186,Central government,29.124393
+JOR,2001,G1111,Personal income tax,Taxes,0.79893232,2.7261397938254093,Central government,29.306359
+JOR,2001,G1112,Corporate income tax,Taxes,1.9706997,6.724478080758826,Central government,29.306359
+JOR,2001,G1113,Other income taxes,Taxes,0.19783088000000015,0.6750442070180609,Central government,29.306359
+JOR,2001,G11412,VAT / sales tax,Taxes,7.8371456,26.742133163624818,Central government,29.306359
+JOR,2001,G1142,Excise taxes,Taxes,0.28152853,0.9606397306973019,Central government,29.306359
+JOR,2001,G115,Trade taxes (customs),Taxes,3.652262,12.462353226211174,Central government,29.306359
+JOR,2001,G113,Property taxes,Taxes,0.78371456,2.6742133163624815,Central government,29.306359
+JOR,2001,G121,Social contributions,Social contributions,0.2769632,0.9450617806339663,Central government,29.306359
+JOR,2001,G13,Grants (e.g. foreign aid),Grants,4.1498827,14.160348861813018,Central government,29.306359
+JOR,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,0.2145704,0.7321632776316217,Central government,29.306359
+JOR,2001,G14X,Other non-tax revenue,Other revenue,9.1428293,31.19742456142332,Central government,29.306359
+JOR,2002,G1111,Personal income tax,Taxes,0.76518345,2.6917297828014517,Central government,28.427201
+JOR,2002,G1112,Corporate income tax,Taxes,1.7099941,6.015344486847911,Central government,28.427201
+JOR,2002,G1113,Other income taxes,Taxes,0.2998500500000001,1.0547997476415685,Central government,28.427201
+JOR,2002,G11412,VAT / sales tax,Taxes,7.2232752,25.4097301571422,Central government,28.427201
+JOR,2002,G1142,Excise taxes,Taxes,0.28146304,0.9901187062080816,Central government,28.427201
+JOR,2002,G115,Trade taxes (customs),Taxes,3.1088229,10.936084921054134,Central government,28.427201
+JOR,2002,G113,Property taxes,Taxes,0.7595259,2.6718278941332008,Central government,28.427201
+JOR,2002,G121,Social contributions,Social contributions,0.25458969,0.8955847790058564,Central government,28.427201
+JOR,2002,G13,Grants (e.g. foreign aid),Grants,4.8513479,17.065865223772523,Central government,28.427201
+JOR,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,0.26731917,0.9403640021262408,Central government,28.427201
+JOR,2002,G14X,Other non-tax revenue,Other revenue,8.90583013,31.32855029926683,Central government,28.427201
+JOR,2003,G1111,Personal income tax,Taxes,0.77222137,2.305913911213772,Central government,33.488733
+JOR,2003,G1112,Corporate income tax,Taxes,1.7111572,5.109650347741096,Central government,33.488733
+JOR,2003,G1113,Other income taxes,Taxes,0.12270183000000023,0.3663973411256255,Central government,33.488733
+JOR,2003,G11412,VAT / sales tax,Taxes,7.9542802,23.752107982808432,Central government,33.488733
+JOR,2003,G1142,Excise taxes,Taxes,0.28541515,0.852272146853648,Central government,33.488733
+JOR,2003,G115,Trade taxes (customs),Taxes,2.5340598,7.566902408654642,Central government,33.488733
+JOR,2003,G113,Property taxes,Taxes,0.80823169,2.413443566648274,Central government,33.488733
+JOR,2003,G11NEC,Other taxes,Taxes,0.25874084,0.7726205535533636,Central government,33.488733
+JOR,2003,G121,Social contributions,Social contributions,0.25207226,0.7527076477630951,Central government,33.488733
+JOR,2003,G13,Grants (e.g. foreign aid),Grants,11.2779,33.676698819248934,Central government,33.488733
+JOR,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,0.19072134,0.5695089622698883,Central government,33.488733
+JOR,2003,G14X,Other non-tax revenue,Other revenue,7.321232060000001,21.861776312119233,Central government,33.488733
+JOR,2004,G1111,Personal income tax,Taxes,0.77766275,2.190922915455586,Central government,35.494756
+JOR,2004,G1112,Corporate income tax,Taxes,1.7614241,4.962491034224967,Central government,35.494756
+JOR,2004,G1113,Other income taxes,Taxes,0.07189485000000007,0.20255062283521,Central government,35.494756
+JOR,2004,G11412,VAT / sales tax,Taxes,9.9095083,27.918231669663147,Central government,35.494756
+JOR,2004,G1142,Excise taxes,Taxes,0.31394089,0.8844711798263727,Central government,35.494756
+JOR,2004,G115,Trade taxes (customs),Taxes,3.1957266,9.00337664298691,Central government,35.494756
+JOR,2004,G113,Property taxes,Taxes,1.0892071,3.0686422810748293,Central government,35.494756
+JOR,2004,G121,Social contributions,Social contributions,0.21927933,0.6177795052967981,Central government,35.494756
+JOR,2004,G13,Grants (e.g. foreign aid),Grants,10.583187,29.816198495879686,Central government,35.494756
+JOR,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,0.16775468,0.47261820446834946,Central government,35.494756
+JOR,2004,G14X,Other non-tax revenue,Other revenue,7.40517072,20.862717448288148,Central government,35.494756
+JOR,2005,G1111,Personal income tax,Taxes,0.84516057,2.648672269147743,Central government,31.908839
+JOR,2005,G1112,Corporate income tax,Taxes,2.1188079,6.640191139514666,Central government,31.908839
+JOR,2005,G1113,Other income taxes,Taxes,0.08269042999999998,0.2591458435701781,Central government,31.908839
+JOR,2005,G11412,VAT / sales tax,Taxes,10.991383,34.4462015681611,Central government,31.908839
+JOR,2005,G1142,Excise taxes,Taxes,0.36190484,1.134183666162219,Central government,31.908839
+JOR,2005,G115,Trade taxes (customs),Taxes,3.2753999,10.264867048280886,Central government,31.908839
+JOR,2005,G113,Property taxes,Taxes,1.287608,4.035270603233167,Central government,31.908839
+JOR,2005,G121,Social contributions,Social contributions,0.19437619,0.6091609600712831,Central government,31.908839
+JOR,2005,G13,Grants (e.g. foreign aid),Grants,4.8228921,15.114595990158087,Central government,31.908839
+JOR,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,0.25344078,0.794265125095902,Central government,31.908839
+JOR,2005,G14X,Other non-tax revenue,Other revenue,7.67517482,24.05344431365867,Central government,31.908839
+JOR,2006,G1111,Personal income tax,Taxes,0.7429321,2.4089688106978624,Central government,30.840254
+JOR,2006,G1112,Corporate income tax,Taxes,2.8583241,9.268160048227877,Central government,30.840254
+JOR,2006,G1113,Other income taxes,Taxes,0.07232869999999991,0.2345269270480065,Central government,30.840254
+JOR,2006,G11412,VAT / sales tax,Taxes,10.88592,35.29776376031144,Central government,30.840254
+JOR,2006,G1142,Excise taxes,Taxes,0.35717889,1.1581580683479455,Central government,30.840254
+JOR,2006,G115,Trade taxes (customs),Taxes,2.7678826,8.97490208738229,Central government,30.840254
+JOR,2006,G113,Property taxes,Taxes,1.3170972,4.270708016866528,Central government,30.840254
+JOR,2006,G11NEC,Other taxes,Taxes,0.05025891,0.16296529204979956,Central government,30.840254
+JOR,2006,G121,Social contributions,Social contributions,0.15269398,0.4951125888911291,Central government,30.840254
+JOR,2006,G13,Grants (e.g. foreign aid),Grants,2.9740495,9.643401445396655,Central government,30.840254
+JOR,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,0.19644839,0.6369869392126277,Central government,30.840254
+JOR,2006,G14X,Other non-tax revenue,Other revenue,8.465139409999999,27.448345302214435,Central government,30.840254
+JOR,2007,G1111,Personal income tax,Taxes,0.70299405,2.283086959751045,Central government,30.791383
+JOR,2007,G1112,Corporate income tax,Taxes,3.113596,10.111906957865452,Central government,30.791383
+JOR,2007,G1113,Other income taxes,Taxes,0.07047215000000007,0.2288697133220683,Central government,30.791383
+JOR,2007,G11412,VAT / sales tax,Taxes,11.503229,37.35859802075145,Central government,30.791383
+JOR,2007,G1142,Excise taxes,Taxes,0.34926629,1.1342988069097124,Central government,30.791383
+JOR,2007,G115,Trade taxes (customs),Taxes,2.4510614,7.960218610511908,Central government,30.791383
+JOR,2007,G113,Property taxes,Taxes,1.2269013,3.984560550593002,Central government,30.791383
+JOR,2007,G121,Social contributions,Social contributions,0.14295521,0.46427018234289774,Central government,30.791383
+JOR,2007,G13,Grants (e.g. foreign aid),Grants,2.6975806,8.760829612622466,Central government,30.791383
+JOR,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,0.17751582,0.5765113570897417,Central government,30.791383
+JOR,2007,G14X,Other non-tax revenue,Other revenue,8.35581078,27.136847929175513,Central government,30.791383
+JOR,2008,G1111,Personal income tax,Taxes,0.71827733,2.4626358049541857,Central government,29.167014
+JOR,2008,G1112,Corporate income tax,Taxes,2.9571447,10.138661091601628,Central government,29.167014
+JOR,2008,G1113,Other income taxes,Taxes,0.07706396999999976,0.2642161792770414,Central government,29.167014
+JOR,2008,G11412,VAT / sales tax,Taxes,10.392285,35.63026712299037,Central government,29.167014
+JOR,2008,G1142,Excise taxes,Taxes,0.33678811,1.1546883407399877,Central government,29.167014
+JOR,2008,G115,Trade taxes (customs),Taxes,1.7690082,6.065098744766948,Central government,29.167014
+JOR,2008,G113,Property taxes,Taxes,0.90166504,3.091386180292573,Central government,29.167014
+JOR,2008,G121,Social contributions,Social contributions,0.13183343,0.45199494881443814,Central government,29.167014
+JOR,2008,G13,Grants (e.g. foreign aid),Grants,4.4665905,15.31384220544482,Central government,29.167014
+JOR,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14676489,0.5031879163221851,Central government,29.167014
+JOR,2008,G14X,Other non-tax revenue,Other revenue,7.26959281,24.9240213962252,Central government,29.167014
+JOR,2009,G1111,Personal income tax,Taxes,0.94249246,3.6682736941176386,Central government,25.693079
+JOR,2009,G1112,Corporate income tax,Taxes,3.3589926,13.07353078805088,Central government,25.693079
+JOR,2009,G1113,Other income taxes,Taxes,0.08724653999999976,0.3395721463753476,Central government,25.693079
+JOR,2009,G11412,VAT / sales tax,Taxes,9.6568168,37.585284275221966,Central government,25.693079
+JOR,2009,G1142,Excise taxes,Taxes,0.2605917,1.0142486211671076,Central government,25.693079
+JOR,2009,G115,Trade taxes (customs),Taxes,1.5509224,6.0363430828272024,Central government,25.693079
+JOR,2009,G113,Property taxes,Taxes,0.67386489,2.622748673635518,Central government,25.693079
+JOR,2009,G121,Social contributions,Social contributions,0.11766806,0.45797570532909726,Central government,25.693079
+JOR,2009,G13,Grants (e.g. foreign aid),Grants,1.9137992,7.448695410447508,Central government,25.693079
+JOR,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,0.4368068,1.700095185750032,Central government,25.693079
+JOR,2009,G14X,Other non-tax revenue,Other revenue,6.6938775999999995,26.053232417077705,Central government,25.693079
+JOR,2010,G1111,Personal income tax,Taxes,0.75992733,3.139254191418714,Central government,24.207257
+JOR,2010,G1112,Corporate income tax,Taxes,2.4401765,10.080351111239082,Central government,24.207257
+JOR,2010,G1113,Other income taxes,Taxes,0.04183746999999993,0.17283027977932375,Central government,24.207257
+JOR,2010,G11412,VAT / sales tax,Taxes,10.315598,42.613659201453515,Central government,24.207257
+JOR,2010,G115,Trade taxes (customs),Taxes,1.3807423,5.703836250426887,Central government,24.207257
+JOR,2010,G113,Property taxes,Taxes,0.51232806,2.116423434509742,Central government,24.207257
+JOR,2010,G11NEC,Other taxes,Taxes,0.05055834000000066,0.20885612938302203,Central government,24.207257
+JOR,2010,G121,Social contributions,Social contributions,0.1064625,0.43979580173003496,Central government,24.207257
+JOR,2010,G13,Grants (e.g. foreign aid),Grants,2.0852323,8.614079240783044,Central government,24.207257
+JOR,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,0.22424085,0.9263372962909429,Central government,24.207257
+JOR,2010,G14X,Other non-tax revenue,Other revenue,6.29015315,25.984576236787177,Central government,24.207257
+JOR,2011,G1111,Personal income tax,Taxes,0.68218193,2.641376449906084,Central government,25.826759
+JOR,2011,G1112,Corporate income tax,Taxes,2.4787534,9.597616952247087,Central government,25.826759
+JOR,2011,G1113,Other income taxes,Taxes,0.022421369999999996,0.08681449344844236,Central government,25.826759
+JOR,2011,G11412,VAT / sales tax,Taxes,9.6669473,37.42996672559651,Central government,25.826759
+JOR,2011,G115,Trade taxes (customs),Taxes,1.3691344,5.301224207032714,Central government,25.826759
+JOR,2011,G113,Property taxes,Taxes,0.35206312,1.3631718947003766,Central government,25.826759
+JOR,2011,G121,Social contributions,Social contributions,0.09783868,0.3788267819434874,Central government,25.826759
+JOR,2011,G13,Grants (e.g. foreign aid),Grants,5.7961612,22.442464422268394,Central government,25.826759
+JOR,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,0.24997436,0.967889002255374,Central government,25.826759
+JOR,2011,G14X,Other non-tax revenue,Other revenue,5.10842114,19.77956715358671,Central government,25.826759
+JOR,2012,G1111,Personal income tax,Taxes,0.58680691,2.607638869910259,Central government,22.503381
+JOR,2012,G1112,Corporate income tax,Taxes,2.4776786,11.010250415259822,Central government,22.503381
+JOR,2012,G11412,VAT / sales tax,Taxes,10.127539,45.004521764973894,Central government,22.503381
+JOR,2012,G115,Trade taxes (customs),Taxes,1.268892,5.63867269544963,Central government,22.503381
+JOR,2012,G113,Property taxes,Taxes,0.4581368,2.035857634015084,Central government,22.503381
+JOR,2012,G121,Social contributions,Social contributions,0.10818974,0.4807710450265229,Central government,22.503381
+JOR,2012,G13,Grants (e.g. foreign aid),Grants,1.4569192,6.474223584447155,Central government,22.503381
+JOR,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,0.51022816,2.267340005486287,Central government,22.503381
+JOR,2012,G14X,Other non-tax revenue,Other revenue,5.50698684,24.471819767882877,Central government,22.503381
+JOR,2013,G1111,Personal income tax,Taxes,0.53959812,2.292583895141769,Central government,23.536679
+JOR,2013,G1112,Corporate income tax,Taxes,2.2495519,9.55764348701876,Central government,23.536679
+JOR,2013,G11412,VAT / sales tax,Taxes,10.35497,43.9950336681606,Central government,23.536679
+JOR,2013,G115,Trade taxes (customs),Taxes,1.328556,5.644619535357107,Central government,23.536679
+JOR,2013,G113,Property taxes,Taxes,0.4619287,1.9625907857569513,Central government,23.536679
+JOR,2013,G121,Social contributions,Social contributions,0.08993302,0.3820973158569615,Central government,23.536679
+JOR,2013,G13,Grants (e.g. foreign aid),Grants,2.6149472,11.110094003600427,Central government,23.536679
+JOR,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,0.14716312,0.625250137770709,Central government,23.536679
+JOR,2013,G14X,Other non-tax revenue,Other revenue,5.75003128,24.43008717133672,Central government,23.536679
+JOR,2014,G1111,Personal income tax,Taxes,0.53820048,2.1718361526622707,Central government,24.780548
+JOR,2014,G1112,Corporate income tax,Taxes,2.1398711,8.63516401363518,Central government,24.780548
+JOR,2014,G11412,VAT / sales tax,Taxes,9.8256535,39.65011234258389,Central government,24.780548
+JOR,2014,G1142,Excise taxes,Taxes,0.54169528,2.185938951281707,Central government,24.780548
+JOR,2014,G115,Trade taxes (customs),Taxes,1.1442002,4.617267082785583,Central government,24.780548
+JOR,2014,G113,Property taxes,Taxes,0.46166417,1.8629840961769866,Central government,24.780548
+JOR,2014,G121,Social contributions,Social contributions,0.07339097,0.29615945702046215,Central government,24.780548
+JOR,2014,G13,Grants (e.g. foreign aid),Grants,4.3222894,17.442021570082794,Central government,24.780548
+JOR,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.08771969,0.3539810927748096,Central government,24.780548
+JOR,2014,G14X,Other non-tax revenue,Other revenue,5.64621221,22.78453524099632,Central government,24.780548
+JOR,2015,G1111,Personal income tax,Taxes,0.69014815,3.106193811620801,Central government,22.218451
+JOR,2015,G1112,Corporate income tax,Taxes,2.1745674,9.787214239192462,Central government,22.218451
+JOR,2015,G11412,VAT / sales tax,Taxes,9.220386,41.498779550383595,Central government,22.218451
+JOR,2015,G1142,Excise taxes,Taxes,0.54531048,2.4543136693012486,Central government,22.218451
+JOR,2015,G115,Trade taxes (customs),Taxes,1.1103109,4.997247107820432,Central government,22.218451
+JOR,2015,G113,Property taxes,Taxes,0.41649173,1.8745309022667689,Central government,22.218451
+JOR,2015,G121,Social contributions,Social contributions,0.06207329,0.27937721671056187,Central government,22.218451
+JOR,2015,G13,Grants (e.g. foreign aid),Grants,2.9572767,13.310003924215957,Central government,22.218451
+JOR,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,0.09344366,0.42056784246570555,Central government,22.218451
+JOR,2015,G14X,Other non-tax revenue,Other revenue,4.94844244,22.27177061083151,Central government,22.218451
+JOR,2016,G1111,Personal income tax,Taxes,0.62559765,2.7633408259875667,Central government,22.639178
+JOR,2016,G1112,Corporate income tax,Taxes,2.423626,10.705450496377253,Central government,22.639178
+JOR,2016,G11412,VAT / sales tax,Taxes,9.3097194,41.12216165854919,Central government,22.639178
+JOR,2016,G1142,Excise taxes,Taxes,1.0045555,4.437243690286166,Central government,22.639178
+JOR,2016,G115,Trade taxes (customs),Taxes,1.0036032,4.433037265488074,Central government,22.639178
+JOR,2016,G113,Property taxes,Taxes,0.37413193,1.6525861893415401,Central government,22.639178
+JOR,2016,G121,Social contributions,Social contributions,0.04906648,0.2167326034097194,Central government,22.639178
+JOR,2016,G13,Grants (e.g. foreign aid),Grants,2.7033372,11.940968849820512,Central government,22.639178
+JOR,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.17431513,0.7699711073344507,Central government,22.639178
+JOR,2016,G14X,Other non-tax revenue,Other revenue,4.97122557,21.95850731340553,Central government,22.639178
+JOR,2017,G1111,Personal income tax,Taxes,0.60413138,2.629244362684564,Central government,22.977339
+JOR,2017,G1112,Corporate income tax,Taxes,2.2990232,10.005594790128312,Central government,22.977339
+JOR,2017,G11412,VAT / sales tax,Taxes,9.2632746,40.31476153754687,Central government,22.977339
+JOR,2017,G1142,Excise taxes,Taxes,0.74280305,3.2327582980334517,Central government,22.977339
+JOR,2017,G115,Trade taxes (customs),Taxes,0.94185382,4.099048532635272,Central government,22.977339
+JOR,2017,G113,Property taxes,Taxes,0.33332454,1.450664038903964,Central government,22.977339
+JOR,2017,G121,Social contributions,Social contributions,0.03590125,0.1562460787516603,Central government,22.977339
+JOR,2017,G13,Grants (e.g. foreign aid),Grants,2.1908375,9.534759055940686,Central government,22.977339
+JOR,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.11451261,0.49837112301432857,Central government,22.977339
+JOR,2017,G14X,Other non-tax revenue,Other revenue,6.45171469,28.07855218236088,Central government,22.977339
+JOR,2018,G1111,Personal income tax,Taxes,0.60185062,2.5855852984076404,Central government,23.277152
+JOR,2018,G1112,Corporate income tax,Taxes,2.2635284,9.724249770762334,Central government,23.277152
+JOR,2018,G11412,VAT / sales tax,Taxes,9.4555839,40.62173886221132,Central government,23.277152
+JOR,2018,G1142,Excise taxes,Taxes,0.55847402,2.399236899771931,Central government,23.277152
+JOR,2018,G115,Trade taxes (customs),Taxes,0.86958061,3.7357689205277347,Central government,23.277152
+JOR,2018,G113,Property taxes,Taxes,0.27648014,1.187774775883235,Central government,23.277152
+JOR,2018,G121,Social contributions,Social contributions,0.03226596,0.13861644242388416,Central government,23.277152
+JOR,2018,G13,Grants (e.g. foreign aid),Grants,2.6565158,11.412546517718319,Central government,23.277152
+JOR,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,0.12767428,0.5484961390465638,Central government,23.277152
+JOR,2018,G14X,Other non-tax revenue,Other revenue,6.43519252,27.645961670912317,Central government,23.277152
+JOR,2019,G1111,Personal income tax,Taxes,0.67902926,3.0544783612821385,Central government,22.230538
+JOR,2019,G1112,Corporate income tax,Taxes,2.2751389,10.234260801900124,Central government,22.230538
+JOR,2019,G11412,VAT / sales tax,Taxes,9.5625967,43.015443396088685,Central government,22.230538
+JOR,2019,G1142,Excise taxes,Taxes,0.41110371,1.8492684489587496,Central government,22.230538
+JOR,2019,G115,Trade taxes (customs),Taxes,0.80085782,3.6024999595062903,Central government,22.230538
+JOR,2019,G113,Property taxes,Taxes,0.23607922,1.061955517260575,Central government,22.230538
+JOR,2019,G121,Social contributions,Social contributions,0.02616217,0.11768532942039157,Central government,22.230538
+JOR,2019,G13,Grants (e.g. foreign aid),Grants,2.2832178,10.270602130155938,Central government,22.230538
+JOR,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,0.12451283,0.5600962540804229,Central government,22.230538
+JOR,2019,G14X,Other non-tax revenue,Other revenue,5.83191447,26.233709801346695,Central government,22.230538
+JOR,2020,G1111,Personal income tax,Taxes,0.77545672,3.754584668501804,Central government,20.653595
+JOR,2020,G1112,Corporate income tax,Taxes,2.2736544,11.00851631244058,Central government,20.653595
+JOR,2020,G1113,Other income taxes,Taxes,0.19342638,0.9365264393244334,Central government,20.653595
+JOR,2020,G11412,VAT / sales tax,Taxes,10.384027,50.277091636408514,Central government,20.653595
+JOR,2020,G115,Trade taxes (customs),Taxes,0.80639565,3.904383914858004,Central government,20.653595
+JOR,2020,G113,Property taxes,Taxes,0.13729022,0.6647279491590965,Central government,20.653595
+JOR,2020,G121,Social contributions,Social contributions,0.02163286,0.10474137678740593,Central government,20.653595
+JOR,2020,G13,Grants (e.g. foreign aid),Grants,2.3240194,11.25237216145443,Central government,20.653595
+JOR,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,0.13223021,0.640228534196949,Central government,20.653595
+JOR,2020,G14X,Other non-tax revenue,Other revenue,3.60546239,17.45682700686877,Central government,20.653595
+JOR,2021,G1111,Personal income tax,Taxes,0.76890837,3.4054271674967613,Central government,22.578889
+JOR,2021,G1112,Corporate income tax,Taxes,2.2299287,9.876156994572362,Central government,22.578889
+JOR,2021,G1113,Other income taxes,Taxes,0.2777876300000002,1.230296845379039,Central government,22.578889
+JOR,2021,G11412,VAT / sales tax,Taxes,11.219001,49.68796320629639,Central government,22.578889
+JOR,2021,G115,Trade taxes (customs),Taxes,0.938846,4.158065901266836,Central government,22.578889
+JOR,2021,G113,Property taxes,Taxes,0.19622442,0.869060601842967,Central government,22.578889
+JOR,2021,G121,Social contributions,Social contributions,0.0209422,0.09275115164522225,Central government,22.578889
+JOR,2021,G13,Grants (e.g. foreign aid),Grants,2.2314454,9.882874324733487,Central government,22.578889
+JOR,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.51112406,2.263723257278685,Central government,22.578889
+JOR,2021,G14X,Other non-tax revenue,Other revenue,4.18470324,18.533680549488256,Central government,22.578889
+JOR,2022,G1111,Personal income tax,Taxes,0.86375194,3.699323989943343,Central government,23.348913
+JOR,2022,G1112,Corporate income tax,Taxes,2.8807522,12.337842879452246,Central government,23.348913
+JOR,2022,G1113,Other income taxes,Taxes,0.3297626600000001,1.4123255330986932,Central government,23.348913
+JOR,2022,G11412,VAT / sales tax,Taxes,10.967965,46.97419961263293,Central government,23.348913
+JOR,2022,G115,Trade taxes (customs),Taxes,0.61241644,2.6228905816729027,Central government,23.348913
+JOR,2022,G113,Property taxes,Taxes,0.26186264,1.121519618493589,Central government,23.348913
+JOR,2022,G121,Social contributions,Social contributions,0.01289575,0.055230622513347837,Central government,23.348913
+JOR,2022,G13,Grants (e.g. foreign aid),Grants,2.0975329,8.983428479090225,Central government,23.348913
+JOR,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,0.32897316,1.4089442193732957,Central government,23.348913
+JOR,2022,G14X,Other non-tax revenue,Other revenue,4.9929998399999995,21.38429245078775,Central government,23.348913
+JOR,2023,G1111,Personal income tax,Taxes,0.90745593,3.951783074503286,Central government,22.963202
+JOR,2023,G1112,Corporate income tax,Taxes,3.2034499,13.950362410259684,Central government,22.963202
+JOR,2023,G1113,Other income taxes,Taxes,0.31394566999999984,1.3671685246682925,Central government,22.963202
+JOR,2023,G11412,VAT / sales tax,Taxes,10.233668,44.565509635807764,Central government,22.963202
+JOR,2023,G115,Trade taxes (customs),Taxes,0.60254471,2.6239577128660017,Central government,22.963202
+JOR,2023,G113,Property taxes,Taxes,0.2584844,1.1256461533543973,Central government,22.963202
+JOR,2023,G121,Social contributions,Social contributions,0.01229683,0.05355015385049525,Central government,22.963202
+JOR,2023,G13,Grants (e.g. foreign aid),Grants,1.7860519,7.7778869863183715,Central government,22.963202
+JOR,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,0.23589839,1.0272887465781124,Central government,22.963202
+JOR,2023,G14X,Other non-tax revenue,Other revenue,5.40935081,23.556605084952878,Central government,22.963202
+JOR,2024,G1111,Personal income tax,Taxes,0.9519679,4.196900583338505,Central government,22.681921
+JOR,2024,G1112,Corporate income tax,Taxes,2.9546566,13.026069479974023,Central government,22.681921
+JOR,2024,G1113,Other income taxes,Taxes,0.41783749999999964,1.8421024989295343,Central government,22.681921
+JOR,2024,G11412,VAT / sales tax,Taxes,10.183317,44.89475859177701,Central government,22.681921
+JOR,2024,G115,Trade taxes (customs),Taxes,0.61942788,2.7308454737897505,Central government,22.681921
+JOR,2024,G113,Property taxes,Taxes,0.26237985,1.1567429379932554,Central government,22.681921
+JOR,2024,G121,Social contributions,Social contributions,0.01177345,0.05190511063756111,Central government,22.681921
+JOR,2024,G13,Grants (e.g. foreign aid),Grants,1.6929747,7.463745895221185,Central government,22.681921
+JOR,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,0.22585811,0.9957310888431555,Central government,22.681921
+JOR,2024,G14X,Other non-tax revenue,Other revenue,5.36244819,23.641198339496018,Central government,22.681921

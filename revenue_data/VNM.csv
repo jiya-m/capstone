@@ -1,0 +1,263 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+VNM,1998,G1111,Personal income tax,Taxes,0.38875185,2.4422668148877364,General government,15.917665
+VNM,1998,G1112,Corporate income tax,Taxes,2.8576097,17.952442773484677,General government,15.917665
+VNM,1998,G11412,VAT / sales tax,Taxes,2.5633189,16.103611302285856,General government,15.917665
+VNM,1998,G1142,Excise taxes,Taxes,1.2157767,7.637908575158479,General government,15.917665
+VNM,1998,G115,Trade taxes (customs),Taxes,3.2446163,20.383745354610745,General government,15.917665
+VNM,1998,G13,Grants (e.g. foreign aid),Grants,0.46750573,2.937024557307872,General government,15.917665
+VNM,1998,NONTAXRES,Resource (extractive) revenue,Other revenue,0.89530729,5.624614477060549,General government,15.917665
+VNM,1998,G14X,Other non-tax revenue,Other revenue,4.28477841,26.918385391324673,General government,15.917665
+VNM,1999,G1111,Personal income tax,Taxes,0.3654872,2.364632349549284,General government,15.456407
+VNM,1999,G1112,Corporate income tax,Taxes,2.8616703,18.51446005530263,General government,15.456407
+VNM,1999,G11412,VAT / sales tax,Taxes,3.3947381,21.963306866854634,General government,15.456407
+VNM,1999,G1142,Excise taxes,Taxes,0.88122588,5.701363065814714,General government,15.456407
+VNM,1999,G115,Trade taxes (customs),Taxes,2.8437504,18.398521726297705,General government,15.456407
+VNM,1999,G13,Grants (e.g. foreign aid),Grants,0.46493281,3.0080264449558034,General government,15.456407
+VNM,1999,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0482157,6.781755294099075,General government,15.456407
+VNM,1999,G14X,Other non-tax revenue,Other revenue,3.5963861999999995,23.267931544504485,General government,15.456407
+VNM,2000,G1111,Personal income tax,Taxes,0.3265166,2.0176530974262077,General government,16.18299
+VNM,2000,G1112,Corporate income tax,Taxes,3.9659908,24.50715713070589,General government,16.18299
+VNM,2000,G11412,VAT / sales tax,Taxes,3.0443972,18.81232819518418,General government,16.18299
+VNM,2000,G1142,Excise taxes,Taxes,0.93621635,5.785187700835297,General government,16.18299
+VNM,2000,G115,Trade taxes (customs),Taxes,2.3961789,14.806774845665803,General government,16.18299
+VNM,2000,G13,Grants (e.g. foreign aid),Grants,0.361647,2.234735354113376,General government,16.18299
+VNM,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4845716,9.173654531166196,General government,16.18299
+VNM,2000,G14X,Other non-tax revenue,Other revenue,3.6674716,22.662509144903044,General government,16.18299
+VNM,2001,G1111,Personal income tax,Taxes,0.33676368,1.9809794870627444,General government,16.999857
+VNM,2001,G1112,Corporate income tax,Taxes,4.2226368,24.839248941917575,General government,16.999857
+VNM,2001,G11412,VAT / sales tax,Taxes,3.1626004,18.603688254554143,General government,16.999857
+VNM,2001,G1142,Excise taxes,Taxes,1.019291,5.995879847695189,General government,16.999857
+VNM,2001,G115,Trade taxes (customs),Taxes,2.856764,16.804635474286638,General government,16.999857
+VNM,2001,G13,Grants (e.g. foreign aid),Grants,0.32907277,1.9357384594470415,General government,16.999857
+VNM,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,1.5340911,9.024141203070121,General government,16.999857
+VNM,2001,G14X,Other non-tax revenue,Other revenue,3.5386368000000004,20.815685684885473,General government,16.999857
+VNM,2002,G1111,Personal income tax,Taxes,0.34368757,1.9208649808774694,General government,17.892333
+VNM,2002,G1112,Corporate income tax,Taxes,4.3028566,24.048604843862968,General government,17.892333
+VNM,2002,G11412,VAT / sales tax,Taxes,3.8096694,21.2921885396684,General government,17.892333
+VNM,2002,G1142,Excise taxes,Taxes,1.0689889,5.97456388357812,General government,17.892333
+VNM,2002,G115,Trade taxes (customs),Taxes,3.2215197,18.005028162458395,General government,17.892333
+VNM,2002,G13,Grants (e.g. foreign aid),Grants,0.33075151,1.8485655240058412,General government,17.892333
+VNM,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4204675,7.938972821229952,General government,17.892333
+VNM,2002,G14X,Other non-tax revenue,Other revenue,3.3943924,18.971211244318866,General government,17.892333
+VNM,2003,G1111,Personal income tax,Taxes,0.37886655,1.9293003542709848,General government,19.63751
+VNM,2003,G1112,Corporate income tax,Taxes,6.0867717,30.9956389582997,General government,19.63751
+VNM,2003,G11412,VAT / sales tax,Taxes,4.2534222,21.6596819046814,General government,19.63751
+VNM,2003,G1142,Excise taxes,Taxes,1.1363429,5.786593615993067,General government,19.63751
+VNM,2003,G115,Trade taxes (customs),Taxes,2.8724401,14.62731323879657,General government,19.63751
+VNM,2003,G13,Grants (e.g. foreign aid),Grants,0.3811775,1.9410683941090292,General government,19.63751
+VNM,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,2.4372122,12.411004246465057,General government,19.63751
+VNM,2003,G14X,Other non-tax revenue,Other revenue,2.0912766,10.649398014310368,General government,19.63751
+VNM,2004,G1111,Personal income tax,Taxes,0.355821,1.8444873529292303,General government,19.291051
+VNM,2004,G1112,Corporate income tax,Taxes,5.758924,29.852826237014163,General government,19.291051
+VNM,2004,G1113,Other income taxes,Taxes,0.0663942999999998,0.34417149818754045,General government,19.291051
+VNM,2004,G11412,VAT / sales tax,Taxes,3.9224187,20.332840627852523,General government,19.291051
+VNM,2004,G1142,Excise taxes,Taxes,1.2907985,6.691177610174838,General government,19.291051
+VNM,2004,G115,Trade taxes (customs),Taxes,2.1842417,11.322564411292873,General government,19.291051
+VNM,2004,G113,Property taxes,Taxes,0.3855317,1.9985002144429533,General government,19.291051
+VNM,2004,G13,Grants (e.g. foreign aid),Grants,0.29074042,1.5071258516932184,General government,19.291051
+VNM,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,1.7581862,9.113998920790797,General government,19.291051
+VNM,2004,G14X,Other non-tax revenue,Other revenue,3.2779947,16.99230727562186,General government,19.291051
+VNM,2005,G1111,Personal income tax,Taxes,0.36483415,1.8546306945030775,General government,19.671525
+VNM,2005,G1112,Corporate income tax,Taxes,6.5355634,33.223470137077065,General government,19.671525
+VNM,2005,G1113,Other income taxes,Taxes,0.06255774999999986,0.3180116864856254,General government,19.671525
+VNM,2005,G11412,VAT / sales tax,Taxes,3.9532305,20.096207078602013,General government,19.671525
+VNM,2005,G1142,Excise taxes,Taxes,1.354212,6.884122942066694,General government,19.671525
+VNM,2005,G115,Trade taxes (customs),Taxes,2.0387284,10.363855106204142,General government,19.671525
+VNM,2005,G113,Property taxes,Taxes,0.38155069,1.9396090557389665,General government,19.671525
+VNM,2005,G13,Grants (e.g. foreign aid),Grants,0.32648951,1.6597061066768815,General government,19.671525
+VNM,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,1.8298578,9.302063533405175,General government,19.671525
+VNM,2005,G14X,Other non-tax revenue,Other revenue,2.8245012999999997,14.358323659240353,General government,19.671525
+VNM,2006,G1111,Personal income tax,Taxes,0.38422953,1.853100216388045,General government,20.734417
+VNM,2006,G1112,Corporate income tax,Taxes,7.4038559,35.70804922358754,General government,20.734417
+VNM,2006,G1113,Other income taxes,Taxes,0.05890687000000039,0.2841018844744785,General government,20.734417
+VNM,2006,G11412,VAT / sales tax,Taxes,4.091425,19.73252954512751,General government,20.734417
+VNM,2006,G1142,Excise taxes,Taxes,1.2756954,6.152550070228162,General government,20.734417
+VNM,2006,G115,Trade taxes (customs),Taxes,1.9497108,9.403258269540366,General government,20.734417
+VNM,2006,G113,Property taxes,Taxes,0.39461611,1.903193642693753,General government,20.734417
+VNM,2006,G13,Grants (e.g. foreign aid),Grants,0.58587769,2.825628925803615,General government,20.734417
+VNM,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,1.9749353,9.52491348539085,General government,20.734417
+VNM,2006,G14X,Other non-tax revenue,Other revenue,2.6151646,12.61267473676569,General government,20.734417
+VNM,2007,G1111,Personal income tax,Taxes,0.46839935,2.278435339582813,General government,20.557939
+VNM,2007,G1112,Corporate income tax,Taxes,6.6044371,32.125968762962266,General government,20.557939
+VNM,2007,G1113,Other income taxes,Taxes,0.05578464999999966,0.2713533184157015,General government,20.557939
+VNM,2007,G11412,VAT / sales tax,Taxes,4.410572,21.454348970754225,General government,20.557939
+VNM,2007,G1142,Excise taxes,Taxes,1.0969325,5.335809652888981,General government,20.557939
+VNM,2007,G115,Trade taxes (customs),Taxes,2.420895,11.77596151962921,General government,20.557939
+VNM,2007,G113,Property taxes,Taxes,0.55513061,2.7003222782187124,General government,20.557939
+VNM,2007,G13,Grants (e.g. foreign aid),Grants,0.37977301,1.8473301617599112,General government,20.557939
+VNM,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,1.3556734,6.5944032234297225,General government,20.557939
+VNM,2007,G14X,Other non-tax revenue,Other revenue,3.2103415,15.616066772358455,General government,20.557939
+VNM,2008,G1111,Personal income tax,Taxes,0.63062542,3.0126159793678995,General government,20.932818
+VNM,2008,G1112,Corporate income tax,Taxes,6.6882846,31.95119070924899,General government,20.932818
+VNM,2008,G1113,Other income taxes,Taxes,0.049270579999999065,0.23537480715687234,General government,20.932818
+VNM,2008,G11412,VAT / sales tax,Taxes,4.4595062,21.303898022712467,General government,20.932818
+VNM,2008,G1142,Excise taxes,Taxes,1.078155,5.150548769878952,General government,20.932818
+VNM,2008,G115,Trade taxes (customs),Taxes,2.9599432,14.140204152159543,General government,20.932818
+VNM,2008,G113,Property taxes,Taxes,0.40181658,1.9195532106570647,General government,20.932818
+VNM,2008,G13,Grants (e.g. foreign aid),Grants,0.45873857,2.1914802393065282,General government,20.932818
+VNM,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,1.2840099,6.133956259496452,General government,20.932818
+VNM,2008,G14X,Other non-tax revenue,Other revenue,2.9224677999999997,13.961177133437072,General government,20.932818
+VNM,2009,G1111,Personal income tax,Taxes,0.62330305,3.0932395503554404,General government,20.150494
+VNM,2009,G1112,Corporate income tax,Taxes,4.8828293,24.231809403779383,General government,20.150494
+VNM,2009,G1113,Other income taxes,Taxes,0.05019335000000069,0.2490924043847297,General government,20.150494
+VNM,2009,G11412,VAT / sales tax,Taxes,4.7254277,23.450679174416273,General government,20.150494
+VNM,2009,G1142,Excise taxes,Taxes,1.294144,6.422393416260664,General government,20.150494
+VNM,2009,G115,Trade taxes (customs),Taxes,3.3512007,16.630861258289748,General government,20.150494
+VNM,2009,G113,Property taxes,Taxes,0.48756769,2.4196314492339495,General government,20.150494
+VNM,2009,G13,Grants (e.g. foreign aid),Grants,0.34425762,1.7084326567874715,General government,20.150494
+VNM,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,0.83117231,4.124823490679683,General government,20.150494
+VNM,2009,G14X,Other non-tax revenue,Other revenue,3.56039779,17.6690347641105,General government,20.150494
+VNM,2010,G1111,Personal income tax,Taxes,0.95903299,4.466916702927095,General government,21.469686
+VNM,2010,G1112,Corporate income tax,Taxes,5.4256755,25.27133140186587,General government,21.469686
+VNM,2010,G1113,Other income taxes,Taxes,0.048396910000000126,0.2254197383231414,General government,21.469686
+VNM,2010,G11412,VAT / sales tax,Taxes,5.6580611,26.35372077635416,General government,21.469686
+VNM,2010,G1142,Excise taxes,Taxes,1.3617933,6.342865470878335,General government,21.469686
+VNM,2010,G115,Trade taxes (customs),Taxes,2.7033664,12.591550710150116,General government,21.469686
+VNM,2010,G113,Property taxes,Taxes,0.51327755,2.390708229268001,General government,21.469686
+VNM,2010,G13,Grants (e.g. foreign aid),Grants,0.43316348,2.017558524144228,General government,21.469686
+VNM,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,0.96049293,4.4737167092243455,General government,21.469686
+VNM,2010,G14X,Other non-tax revenue,Other revenue,3.40642567,15.866210945050616,General government,21.469686
+VNM,2011,G1111,Personal income tax,Taxes,1.0867314,5.347334182196671,General government,20.322863
+VNM,2011,G1112,Corporate income tax,Taxes,5.5385473,27.25279061321232,General government,20.322863
+VNM,2011,G1113,Other income taxes,Taxes,0.041752699999999976,0.20544693924276305,General government,20.322863
+VNM,2011,G11412,VAT / sales tax,Taxes,5.4257186,26.697609485435194,General government,20.322863
+VNM,2011,G1142,Excise taxes,Taxes,1.2058596,5.933512418993327,General government,20.322863
+VNM,2011,G115,Trade taxes (customs),Taxes,2.2996816,11.315736370411983,General government,20.322863
+VNM,2011,G113,Property taxes,Taxes,0.49044017,2.4132434982216826,General government,20.322863
+VNM,2011,G13,Grants (e.g. foreign aid),Grants,0.34190412,1.6823619782311179,General government,20.322863
+VNM,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,1.076957,5.29923859645169,General government,20.322863
+VNM,2011,G14X,Other non-tax revenue,Other revenue,2.8152704,13.85272537634092,General government,20.322863
+VNM,2012,G1111,Personal income tax,Taxes,1.1036235,6.12981171781094,General government,18.004199
+VNM,2012,G1112,Corporate income tax,Taxes,5.2972654,29.42238863278505,General government,18.004199
+VNM,2012,G1113,Other income taxes,Taxes,0.03866209999999981,0.21473935052595125,General government,18.004199
+VNM,2012,G11412,VAT / sales tax,Taxes,4.2726106,23.731189596382492,General government,18.004199
+VNM,2012,G1142,Excise taxes,Taxes,1.0644706,5.912346336540715,General government,18.004199
+VNM,2012,G114X,Other goods & services taxes,Taxes,0.3111619999999995,1.7282746097174304,General government,18.004199
+VNM,2012,G115,Trade taxes (customs),Taxes,1.7496357,9.717931355902031,General government,18.004199
+VNM,2012,G113,Property taxes,Taxes,0.32103002,1.7830841572013287,General government,18.004199
+VNM,2012,G13,Grants (e.g. foreign aid),Grants,0.25202747,1.3998260627979062,General government,18.004199
+VNM,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,0.99809456,5.543676561228856,General government,18.004199
+VNM,2012,G14X,Other non-tax revenue,Other revenue,2.5956166400000003,14.416729341860751,General government,18.004199
+VNM,2013,G1111,Personal income tax,Taxes,1.0404914,5.626407356989927,General government,18.492998
+VNM,2013,G1112,Corporate income tax,Taxes,5.166826,27.939363860851554,General government,18.492998
+VNM,2013,G1113,Other income taxes,Taxes,0.037843699999999814,0.2046379932556085,General government,18.492998
+VNM,2013,G11412,VAT / sales tax,Taxes,4.6614228,25.206420289452257,General government,18.492998
+VNM,2013,G1142,Excise taxes,Taxes,1.211023,6.548548807500006,General government,18.492998
+VNM,2013,G114X,Other goods & services taxes,Taxes,0.2648617,1.4322269434085266,General government,18.492998
+VNM,2013,G115,Trade taxes (customs),Taxes,1.7491959,9.458692960438324,General government,18.492998
+VNM,2013,G113,Property taxes,Taxes,0.33777745,1.8265153654372317,General government,18.492998
+VNM,2013,G13,Grants (e.g. foreign aid),Grants,0.24865571,1.3445938295132027,General government,18.492998
+VNM,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,0.84704777,4.580370202819466,General government,18.492998
+VNM,2013,G14X,Other non-tax revenue,Other revenue,2.92785233,15.832221092545407,General government,18.492998
+VNM,2014,G1111,Personal income tax,Taxes,0.96908432,5.463249875029872,General government,17.738239
+VNM,2014,G1112,Corporate income tax,Taxes,4.2091486,23.729236030701806,General government,17.738239
+VNM,2014,G1113,Other income taxes,Taxes,0.03570968000000008,0.20131468518380025,General government,17.738239
+VNM,2014,G11412,VAT / sales tax,Taxes,4.8840886,27.534236064808916,General government,17.738239
+VNM,2014,G1142,Excise taxes,Taxes,1.1236306,6.334510432518132,General government,17.738239
+VNM,2014,G114X,Other goods & services taxes,Taxes,0.24482320000000013,1.380200142753743,General government,17.738239
+VNM,2014,G115,Trade taxes (customs),Taxes,1.936447,10.916793938789526,General government,17.738239
+VNM,2014,G113,Property taxes,Taxes,0.35677308,2.0113218679712235,General government,17.738239
+VNM,2014,G13,Grants (e.g. foreign aid),Grants,0.2238187,1.2617864715883014,General government,17.738239
+VNM,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.7706655,4.344656197269639,General government,17.738239
+VNM,2014,G14X,Other non-tax revenue,Other revenue,2.9840497,16.82269418063428,General government,17.738239
+VNM,2015,G1111,Personal income tax,Taxes,1.09265,5.69374118372913,General government,19.19037
+VNM,2015,G1112,Corporate income tax,Taxes,3.8531598,20.0786113034819,General government,19.19037
+VNM,2015,G1113,Other income taxes,Taxes,0.03503930000000066,0.1825879334270296,General government,19.19037
+VNM,2015,G11412,VAT / sales tax,Taxes,4.849596,25.270987479657766,General government,19.19037
+VNM,2015,G1142,Excise taxes,Taxes,1.2839307,6.690494763779958,General government,19.19037
+VNM,2015,G114X,Other goods & services taxes,Taxes,0.5204838,2.7122134695683306,General government,19.19037
+VNM,2015,G115,Trade taxes (customs),Taxes,1.9130959,9.969041243081817,General government,19.19037
+VNM,2015,G113,Property taxes,Taxes,0.46119258,2.4032500676120367,General government,19.19037
+VNM,2015,G13,Grants (e.g. foreign aid),Grants,0.2281499,1.1888770252996683,General government,19.19037
+VNM,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,0.5607433,2.9220035882580686,General government,19.19037
+VNM,2015,G14X,Other non-tax revenue,Other revenue,4.3923287,22.88819183788536,General government,19.19037
+VNM,2016,G1111,Personal income tax,Taxes,1.1567718,6.06697244925264,General government,19.066706
+VNM,2016,G1112,Corporate income tax,Taxes,3.3422876,17.52944425744017,General government,19.066706
+VNM,2016,G11412,VAT / sales tax,Taxes,4.8161853,25.25966100279723,General government,19.066706
+VNM,2016,G1142,Excise taxes,Taxes,1.5365639,8.058884948454127,General government,19.066706
+VNM,2016,G114X,Other goods & services taxes,Taxes,0.7650103000000001,4.0122835061284325,General government,19.066706
+VNM,2016,G115,Trade taxes (customs),Taxes,1.704525,8.939797991325824,General government,19.066706
+VNM,2016,G113,Property taxes,Taxes,0.51037335,2.676777782171708,General government,19.066706
+VNM,2016,G13,Grants (e.g. foreign aid),Grants,0.14856188,0.7791690919239014,General government,19.066706
+VNM,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.48021058,2.5185817623662943,General government,19.066706
+VNM,2016,G14X,Other non-tax revenue,Other revenue,4.60621612,24.158426316533124,General government,19.066706
+VNM,2017,G1111,Personal income tax,Taxes,1.2516078,6.397079523442011,General government,19.5653
+VNM,2017,G1112,Corporate income tax,Taxes,3.3581348,17.16372761981672,General government,19.5653
+VNM,2017,G11412,VAT / sales tax,Taxes,4.9144025,25.117951168650617,General government,19.5653
+VNM,2017,G1142,Excise taxes,Taxes,1.3518858,6.909609359427149,General government,19.5653
+VNM,2017,G114X,Other goods & services taxes,Taxes,1.1529091000000002,5.892621631153114,General government,19.5653
+VNM,2017,G115,Trade taxes (customs),Taxes,1.5311163,7.825672491605037,General government,19.5653
+VNM,2017,G113,Property taxes,Taxes,0.46613354,2.38245025632114,General government,19.5653
+VNM,2017,G13,Grants (e.g. foreign aid),Grants,0.12043398,0.6155488543492816,General government,19.5653
+VNM,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.52163168,2.6661062186626325,General government,19.5653
+VNM,2017,G14X,Other non-tax revenue,Other revenue,4.89704442,25.029232467685137,General government,19.5653
+VNM,2018,G1111,Personal income tax,Taxes,1.3463222,6.918867626936348,General government,19.458707
+VNM,2018,G1112,Corporate income tax,Taxes,3.6687013,18.853777095459986,General government,19.458707
+VNM,2018,G11412,VAT / sales tax,Taxes,5.0287611,25.843243451223504,General government,19.458707
+VNM,2018,G1142,Excise taxes,Taxes,1.8998989,9.763746741799235,General government,19.458707
+VNM,2018,G114X,Other goods & services taxes,Taxes,1.0913046000000002,5.608309859309103,General government,19.458707
+VNM,2018,G115,Trade taxes (customs),Taxes,0.91926451,4.724180778442563,General government,19.458707
+VNM,2018,G113,Property taxes,Taxes,0.48951054,2.515637511028289,General government,19.458707
+VNM,2018,G13,Grants (e.g. foreign aid),Grants,0.11099755,0.570426124863906,General government,19.458707
+VNM,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,1.5108769,7.764528633410299,General government,19.458707
+VNM,2018,G14X,Other non-tax revenue,Other revenue,3.3930697000000003,17.437282177526768,General government,19.458707
+VNM,2019,G1111,Personal income tax,Taxes,1.4195297,7.3116935768618045,General government,19.414513
+VNM,2019,G1112,Corporate income tax,Taxes,3.5111323,18.08509077719333,General government,19.414513
+VNM,2019,G11412,VAT / sales tax,Taxes,4.7058723,24.238940734696772,General government,19.414513
+VNM,2019,G1142,Excise taxes,Taxes,1.3851074,7.134391679049585,General government,19.414513
+VNM,2019,G114X,Other goods & services taxes,Taxes,1.2583426999999998,6.4814538484689255,General government,19.414513
+VNM,2019,G115,Trade taxes (customs),Taxes,1.2578238,6.478781105660492,General government,19.414513
+VNM,2019,G113,Property taxes,Taxes,0.54818869,2.8236025801934876,General government,19.414513
+VNM,2019,G13,Grants (e.g. foreign aid),Grants,0.06660006,0.3430426506191528,General government,19.414513
+VNM,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,1.524756,7.853691720209515,General government,19.414513
+VNM,2019,G14X,Other non-tax revenue,Other revenue,3.7371599,19.249310554429048,General government,19.414513
+VNM,2020,G1111,Personal income tax,Taxes,1.4314355,7.7837801713580035,General government,18.389978
+VNM,2020,G1112,Corporate income tax,Taxes,3.1944391,17.370542874751045,General government,18.389978
+VNM,2020,G11412,VAT / sales tax,Taxes,4.2273955,22.987495608001932,General government,18.389978
+VNM,2020,G1142,Excise taxes,Taxes,1.2442218,6.765759949094012,General government,18.389978
+VNM,2020,G114X,Other goods & services taxes,Taxes,1.2127340000000002,6.594537345435179,General government,18.389978
+VNM,2020,G115,Trade taxes (customs),Taxes,0.97755133,5.315674131973563,General government,18.389978
+VNM,2020,G113,Property taxes,Taxes,0.45865528,2.4940501153930112,General government,18.389978
+VNM,2020,G13,Grants (e.g. foreign aid),Grants,0.05976839,0.32500521955476996,General government,18.389978
+VNM,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,1.3579284,7.384067360383265,General government,18.389978
+VNM,2020,G14X,Other non-tax revenue,Other revenue,4.225849200000001,22.979087224055213,General government,18.389978
+VNM,2021,G1111,Personal income tax,Taxes,1.5041139,8.046451217359255,General government,18.692885
+VNM,2021,G1112,Corporate income tax,Taxes,3.7554665,20.09035219385773,General government,18.692885
+VNM,2021,G11412,VAT / sales tax,Taxes,4.4281871,23.689157770225748,General government,18.692885
+VNM,2021,G1142,Excise taxes,Taxes,1.2036795,6.439238662767083,General government,18.692885
+VNM,2021,G114X,Other goods & services taxes,Taxes,1.0745715,5.748558772254257,General government,18.692885
+VNM,2021,G115,Trade taxes (customs),Taxes,1.0602328,5.671852048069108,General government,18.692885
+VNM,2021,G113,Property taxes,Taxes,0.47353303,2.5332259915311717,General government,18.692885
+VNM,2021,G13,Grants (e.g. foreign aid),Grants,0.20247481,1.0831650990055235,General government,18.692885
+VNM,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.40957997,2.191100852277522,General government,18.692885
+VNM,2021,G14X,Other non-tax revenue,Other revenue,4.58104623,24.5068973926526,General government,18.692885
+VNM,2022,G1111,Personal income tax,Taxes,1.6919625,8.967506466201742,General government,18.867703
+VNM,2022,G1112,Corporate income tax,Taxes,3.5165983,18.63818967281134,General government,18.867703
+VNM,2022,G11412,VAT / sales tax,Taxes,4.6253072,24.51441578886617,General government,18.867703
+VNM,2022,G1142,Excise taxes,Taxes,1.4097054,7.471526283791464,General government,18.867703
+VNM,2022,G114X,Other goods & services taxes,Taxes,0.8695537,4.608688683974764,General government,18.867703
+VNM,2022,G115,Trade taxes (customs),Taxes,1.1878867,6.295873379797158,General government,18.867703
+VNM,2022,G113,Property taxes,Taxes,0.52860445,2.8016364567406287,General government,18.867703
+VNM,2022,G13,Grants (e.g. foreign aid),Grants,0.0868899,0.46052187332616584,General government,18.867703
+VNM,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,0.45383341,2.405345295036614,General government,18.867703
+VNM,2022,G14X,Other non-tax revenue,Other revenue,4.497361590000001,23.83629609945395,General government,18.867703
+VNM,2023,G1111,Personal income tax,Taxes,1.5213786,8.802630073083728,General government,16.893937
+VNM,2023,G1112,Corporate income tax,Taxes,3.5096132,20.306468553725953,General government,16.893937
+VNM,2023,G11412,VAT / sales tax,Taxes,4.0710304,23.55480393077573,General government,16.893937
+VNM,2023,G1142,Excise taxes,Taxes,1.118445,6.4712738775805905,General government,16.893937
+VNM,2023,G114X,Other goods & services taxes,Taxes,0.8053148000000001,4.659516228754242,General government,16.893937
+VNM,2023,G115,Trade taxes (customs),Taxes,0.8469609,4.900478742810014,General government,16.893937
+VNM,2023,G113,Property taxes,Taxes,0.36875826,2.1336191722257882,General government,16.893937
+VNM,2023,G13,Grants (e.g. foreign aid),Grants,0.02574535,0.14896146965131898,General government,16.893937
+VNM,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,0.38929059,2.2524183360423944,General government,16.893937
+VNM,2023,G14X,Other non-tax revenue,Other revenue,4.62669061,26.769829615350247,General government,16.893937
+VNM,2024,G1111,Personal income tax,Taxes,1.5974475,8.492261976146334,General government,18.431269
+VNM,2024,G1112,Corporate income tax,Taxes,3.784479,20.118837777907764,General government,18.431269
+VNM,2024,G11412,VAT / sales tax,Taxes,4.3465731,23.10701131878857,General government,18.431269
+VNM,2024,G1142,Excise taxes,Taxes,1.118445,5.945815399824401,General government,18.431269
+VNM,2024,G114X,Other goods & services taxes,Taxes,0.8053148000000001,4.28116996324943,General government,18.431269
+VNM,2024,G115,Trade taxes (customs),Taxes,0.93654734,4.978821128295605,General government,18.431269
+VNM,2024,G113,Property taxes,Taxes,0.36875826,1.9603722499724623,General government,18.431269
+VNM,2024,G13,Grants (e.g. foreign aid),Grants,0.05268476,0.2800798048576842,General government,18.431269
+VNM,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,0.37935557,2.0167090828026084,General government,18.431269
+VNM,2024,G14X,Other non-tax revenue,Other revenue,5.42101903,28.818921298155146,General government,18.431269

@@ -1,0 +1,385 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+KGZ,1993,G1111,Personal income tax,Taxes,1.3411836,5.430925652909557,General government,24.695304
+KGZ,1993,G1112,Corporate income tax,Taxes,4.2839617,17.347272582674016,General government,24.695304
+KGZ,1993,G11412,VAT / sales tax,Taxes,4.3750755,17.716224509728654,General government,24.695304
+KGZ,1993,G1142,Excise taxes,Taxes,1.3455313,5.448531024359935,General government,24.695304
+KGZ,1993,G114X,Other goods & services taxes,Taxes,1.0162696999999998,4.115234621124729,General government,24.695304
+KGZ,1993,G115,Trade taxes (customs),Taxes,0.57944049,2.346359008174186,General government,24.695304
+KGZ,1993,G113,Property taxes,Taxes,0.07585948,0.30718180266175305,General government,24.695304
+KGZ,1993,G11NEC,Other taxes,Taxes,1.5233058,6.168402705226872,General government,24.695304
+KGZ,1993,G13,Grants (e.g. foreign aid),Grants,8.649255,35.02388551280843,General government,24.695304
+KGZ,1993,G14X,Other non-tax revenue,Other revenue,1.5054214,6.095982458851285,General government,24.695304
+KGZ,1994,G1111,Personal income tax,Taxes,1.8730448,8.993588075592193,General government,20.826446
+KGZ,1994,G1112,Corporate income tax,Taxes,3.5460014,17.02643519635688,General government,20.826446
+KGZ,1994,G1113,Other income taxes,Taxes,0.013752999999999904,0.06603622978137981,General government,20.826446
+KGZ,1994,G11412,VAT / sales tax,Taxes,4.3138112,20.71314096100427,General government,20.826446
+KGZ,1994,G1142,Excise taxes,Taxes,1.4361946,6.896013714562461,General government,20.826446
+KGZ,1994,G114X,Other goods & services taxes,Taxes,0.5120141000000002,2.4584803867451925,General government,20.826446
+KGZ,1994,G115,Trade taxes (customs),Taxes,0.37885716,1.8191157181764817,General government,20.826446
+KGZ,1994,G113,Property taxes,Taxes,0.48413455,2.324614294256172,General government,20.826446
+KGZ,1994,G11NEC,Other taxes,Taxes,1.0744371899999996,5.159003938377118,General government,20.826446
+KGZ,1994,G13,Grants (e.g. foreign aid),Grants,2.5176384,12.08866050235051,General government,20.826446
+KGZ,1994,G14X,Other non-tax revenue,Other revenue,4.67656,22.454910982797333,General government,20.826446
+KGZ,1995,G1111,Personal income tax,Taxes,1.7566804,7.2113885298274925,General government,24.359808
+KGZ,1995,G1112,Corporate income tax,Taxes,2.5675276,10.540015750534652,General government,24.359808
+KGZ,1995,G1113,Other income taxes,Taxes,0.09498980000000001,0.3899447811739732,General government,24.359808
+KGZ,1995,G11412,VAT / sales tax,Taxes,4.3648835,17.91838219742947,General government,24.359808
+KGZ,1995,G1142,Excise taxes,Taxes,1.8470304,7.582286362848179,General government,24.359808
+KGZ,1995,G114X,Other goods & services taxes,Taxes,2.3855998999999994,9.79318022539422,General government,24.359808
+KGZ,1995,G115,Trade taxes (customs),Taxes,0.8303572,3.408718163952688,General government,24.359808
+KGZ,1995,G113,Property taxes,Taxes,0.44940384,1.8448578905055408,General government,24.359808
+KGZ,1995,G11NEC,Other taxes,Taxes,1.7513363600000014,7.189450590086758,General government,24.359808
+KGZ,1995,G121,Social contributions,Social contributions,6.8844417,28.26147767667134,General government,24.359808
+KGZ,1995,G13,Grants (e.g. foreign aid),Grants,0.33836582,1.3890331976343984,General government,24.359808
+KGZ,1995,G14X,Other non-tax revenue,Other revenue,1.0891911,4.471263073994672,General government,24.359808
+KGZ,1996,G1111,Personal income tax,Taxes,1.2321518,6.138049530280562,General government,19.517492
+KGZ,1996,G1112,Corporate income tax,Taxes,1.5584013,7.763284010503915,General government,19.517492
+KGZ,1996,G1113,Other income taxes,Taxes,0.06737769999999998,0.3356466791156613,General government,19.517492
+KGZ,1996,G11412,VAT / sales tax,Taxes,5.3314715,26.55909453387091,General government,19.517492
+KGZ,1996,G1142,Excise taxes,Taxes,1.0401157,5.181408397749724,General government,19.517492
+KGZ,1996,G114X,Other goods & services taxes,Taxes,1.3332641999999997,6.641747953904613,General government,19.517492
+KGZ,1996,G115,Trade taxes (customs),Taxes,0.87936519,4.380618598637422,General government,19.517492
+KGZ,1996,G113,Property taxes,Taxes,0.52291094,2.604917064314289,General government,19.517492
+KGZ,1996,G121,Social contributions,Social contributions,6.289077,31.32947265568113,General government,19.517492
+KGZ,1996,G13,Grants (e.g. foreign aid),Grants,0.68549059,3.414818851022451,General government,19.517492
+KGZ,1996,G14X,Other non-tax revenue,Other revenue,1.1343698,5.650941724919329,General government,19.517492
+KGZ,1997,G1111,Personal income tax,Taxes,1.0373249,4.749478017057479,General government,21.840819
+KGZ,1997,G1112,Corporate income tax,Taxes,1.1392616,5.2162036454323335,General government,21.840819
+KGZ,1997,G1113,Other income taxes,Taxes,0.05600130000000014,0.25640659283956424,General government,21.840819
+KGZ,1997,G11412,VAT / sales tax,Taxes,5.6323304,25.788091483781557,General government,21.840819
+KGZ,1997,G1142,Excise taxes,Taxes,1.4712162,6.7360852903837936,General government,21.840819
+KGZ,1997,G114X,Other goods & services taxes,Taxes,1.3167088000000005,6.028660355560861,General government,21.840819
+KGZ,1997,G115,Trade taxes (customs),Taxes,0.79820242,3.654635926460534,General government,21.840819
+KGZ,1997,G113,Property taxes,Taxes,0.90566094,4.146643665294849,General government,21.840819
+KGZ,1997,G11NEC,Other taxes,Taxes,0.45843145,2.0989663837268195,General government,21.840819
+KGZ,1997,G121,Social contributions,Social contributions,5.768485,26.41148660292047,General government,21.840819
+KGZ,1997,G13,Grants (e.g. foreign aid),Grants,0.63502315,2.9075061162106435,General government,21.840819
+KGZ,1997,G14X,Other non-tax revenue,Other revenue,2.6221729,12.005835920331092,General government,21.840819
+KGZ,1998,G1111,Personal income tax,Taxes,1.1861316,4.94951305700255,General government,23.964612
+KGZ,1998,G1112,Corporate income tax,Taxes,1.3234566,5.522545493329916,General government,23.964612
+KGZ,1998,G1113,Other income taxes,Taxes,0.09872829999999988,0.41197537435615433,General government,23.964612
+KGZ,1998,G11412,VAT / sales tax,Taxes,5.749823,23.99297347271886,General government,23.964612
+KGZ,1998,G1142,Excise taxes,Taxes,2.1116168,8.811395736346578,General government,23.964612
+KGZ,1998,G114X,Other goods & services taxes,Taxes,1.6745159999999997,6.987452999447684,General government,23.964612
+KGZ,1998,G115,Trade taxes (customs),Taxes,1.1131817,4.6451062925617155,General government,23.964612
+KGZ,1998,G113,Property taxes,Taxes,0.85117988,3.551819991911407,General government,23.964612
+KGZ,1998,G11NEC,Other taxes,Taxes,0.56951529,2.3764845013973104,General government,23.964612
+KGZ,1998,G121,Social contributions,Social contributions,5.794672,24.180120253981165,General government,23.964612
+KGZ,1998,G13,Grants (e.g. foreign aid),Grants,0.57524092,2.400376521848132,General government,23.964612
+KGZ,1998,G14X,Other non-tax revenue,Other revenue,2.9165496,12.170235011524493,General government,23.964612
+KGZ,1999,G1111,Personal income tax,Taxes,1.1205787,5.013402583969156,General government,22.35166
+KGZ,1999,G1112,Corporate income tax,Taxes,1.1644085,5.209494507343079,General government,22.35166
+KGZ,1999,G1113,Other income taxes,Taxes,0.07544589999999984,0.3375404779779213,General government,22.35166
+KGZ,1999,G11412,VAT / sales tax,Taxes,4.6222222,20.679547738288793,General government,22.35166
+KGZ,1999,G1142,Excise taxes,Taxes,2.5697095,11.496727759817393,General government,22.35166
+KGZ,1999,G114X,Other goods & services taxes,Taxes,1.5636944000000002,6.995875921519924,General government,22.35166
+KGZ,1999,G115,Trade taxes (customs),Taxes,0.62909384,2.8145284958701056,General government,22.35166
+KGZ,1999,G113,Property taxes,Taxes,0.40805002,1.8255915668008553,General government,22.35166
+KGZ,1999,G11NEC,Other taxes,Taxes,0.07917916,0.3542428616040151,General government,22.35166
+KGZ,1999,G121,Social contributions,Social contributions,5.005334,22.39356718919311,General government,22.35166
+KGZ,1999,G13,Grants (e.g. foreign aid),Grants,2.0429181,9.139894307626369,General government,22.35166
+KGZ,1999,G14X,Other non-tax revenue,Other revenue,3.0710254,13.739585337285911,General government,22.35166
+KGZ,2000,G1111,Personal income tax,Taxes,1.1533322,5.908928196051462,General government,19.518467
+KGZ,2000,G1112,Corporate income tax,Taxes,0.87636154,4.489909683993113,General government,19.518467
+KGZ,2000,G1113,Other income taxes,Taxes,0.08098925999999995,0.414936582878153,General government,19.518467
+KGZ,2000,G11412,VAT / sales tax,Taxes,4.5537288,23.330360934595937,General government,19.518467
+KGZ,2000,G1142,Excise taxes,Taxes,2.3231674,11.902407089655146,General government,19.518467
+KGZ,2000,G114X,Other goods & services taxes,Taxes,1.9495727,9.988349494865554,General government,19.518467
+KGZ,2000,G115,Trade taxes (customs),Taxes,0.42069972,2.1553932488652925,General government,19.518467
+KGZ,2000,G113,Property taxes,Taxes,0.27338195,1.4006322832628197,General government,19.518467
+KGZ,2000,G11NEC,Other taxes,Taxes,0.07512879,0.3849113252593044,General government,19.518467
+KGZ,2000,G121,Social contributions,Social contributions,4.4016102,22.551003621339728,General government,19.518467
+KGZ,2000,G13,Grants (e.g. foreign aid),Grants,0.93056585,4.767617508075813,General government,19.518467
+KGZ,2000,G14X,Other non-tax revenue,Other revenue,2.4799284,12.705549057720567,General government,19.518467
+KGZ,2001,G1111,Personal income tax,Taxes,1.3006116,6.094490373991538,General government,21.340777
+KGZ,2001,G1112,Corporate income tax,Taxes,1.3449184,6.302106057338025,General government,21.340777
+KGZ,2001,G1113,Other income taxes,Taxes,0.07290679999999994,0.3416314223235637,General government,21.340777
+KGZ,2001,G11412,VAT / sales tax,Taxes,5.7136228,26.77326509714243,General government,21.340777
+KGZ,2001,G1142,Excise taxes,Taxes,1.4923739,6.9930626237273374,General government,21.340777
+KGZ,2001,G114X,Other goods & services taxes,Taxes,1.734041,8.125482029075137,General government,21.340777
+KGZ,2001,G115,Trade taxes (customs),Taxes,0.40797785,1.9117291277632487,General government,21.340777
+KGZ,2001,G113,Property taxes,Taxes,0.28248454,1.323684418800684,General government,21.340777
+KGZ,2001,G11NEC,Other taxes,Taxes,0.053126109999999956,0.24894177939256834,General government,21.340777
+KGZ,2001,G121,Social contributions,Social contributions,4.3555174,20.409366538059977,General government,21.340777
+KGZ,2001,G13,Grants (e.g. foreign aid),Grants,0.84186681,3.944874218965879,General government,21.340777
+KGZ,2001,G14X,Other non-tax revenue,Other revenue,3.7413297,17.53136589169176,General government,21.340777
+KGZ,2002,G1111,Personal income tax,Taxes,1.437308,6.129313944970898,General government,23.449737
+KGZ,2002,G1112,Corporate income tax,Taxes,1.2838754,5.475009805014018,General government,23.449737
+KGZ,2002,G1113,Other income taxes,Taxes,0.1966193999999999,0.8384716638826264,General government,23.449737
+KGZ,2002,G11412,VAT / sales tax,Taxes,6.3604746,27.123863265502724,General government,23.449737
+KGZ,2002,G1142,Excise taxes,Taxes,1.4356281,6.122150111960743,General government,23.449737
+KGZ,2002,G114X,Other goods & services taxes,Taxes,1.8928947999999994,8.072136587288801,General government,23.449737
+KGZ,2002,G115,Trade taxes (customs),Taxes,0.55576095,2.3700093096992947,General government,23.449737
+KGZ,2002,G113,Property taxes,Taxes,0.42225607,1.800685739034088,General government,23.449737
+KGZ,2002,G11NEC,Other taxes,Taxes,0.05943913,0.25347461252976955,General government,23.449737
+KGZ,2002,G121,Social contributions,Social contributions,4.6651913,19.89442909317064,General government,23.449737
+KGZ,2002,G13,Grants (e.g. foreign aid),Grants,1.1052098,4.713101046719628,General government,23.449737
+KGZ,2002,G14X,Other non-tax revenue,Other revenue,4.0350792,17.20735375411673,General government,23.449737
+KGZ,2003,G1111,Personal income tax,Taxes,1.4402903,6.287258906027916,General government,22.90808
+KGZ,2003,G1112,Corporate income tax,Taxes,1.0887332,4.752616544031626,General government,22.90808
+KGZ,2003,G1113,Other income taxes,Taxes,0.3098404000000001,1.3525376199140222,General government,22.90808
+KGZ,2003,G11412,VAT / sales tax,Taxes,6.5890462,28.762978826684733,General government,22.90808
+KGZ,2003,G1142,Excise taxes,Taxes,1.3878479,6.058333566147838,General government,22.90808
+KGZ,2003,G114X,Other goods & services taxes,Taxes,1.951562699999999,8.51910199370702,General government,22.90808
+KGZ,2003,G115,Trade taxes (customs),Taxes,0.50409337,2.2005046690949217,General government,22.90808
+KGZ,2003,G113,Property taxes,Taxes,0.37218901,1.6247062608477005,General government,22.90808
+KGZ,2003,G11NEC,Other taxes,Taxes,0.05507597,0.24042158923838228,General government,22.90808
+KGZ,2003,G121,Social contributions,Social contributions,4.5633698,19.920350374191116,General government,22.90808
+KGZ,2003,G13,Grants (e.g. foreign aid),Grants,0.74559348,3.2547183351900286,General government,22.90808
+KGZ,2003,G14X,Other non-tax revenue,Other revenue,3.9004372,17.026469263246852,General government,22.90808
+KGZ,2004,G1111,Personal income tax,Taxes,1.5292786,6.489517076633172,General government,23.565368
+KGZ,2004,G1112,Corporate income tax,Taxes,0.97356956,4.1313572850036895,General government,23.565368
+KGZ,2004,G1113,Other income taxes,Taxes,0.29062873999999994,1.2332874933255338,General government,23.565368
+KGZ,2004,G11412,VAT / sales tax,Taxes,7.2388685,30.718248948394326,General government,23.565368
+KGZ,2004,G1142,Excise taxes,Taxes,1.3197886,5.600543064714164,General government,23.565368
+KGZ,2004,G114X,Other goods & services taxes,Taxes,1.9805548999999993,8.404514942378386,General government,23.565368
+KGZ,2004,G115,Trade taxes (customs),Taxes,0.47628089,2.0211052249923886,General government,23.565368
+KGZ,2004,G113,Property taxes,Taxes,0.35522724,1.5074122138799757,General government,23.565368
+KGZ,2004,G11NEC,Other taxes,Taxes,0.057026969999999906,0.2419948174542212,General government,23.565368
+KGZ,2004,G121,Social contributions,Social contributions,4.6045528,19.53949007450904,General government,23.565368
+KGZ,2004,G13,Grants (e.g. foreign aid),Grants,1.0065894,4.271477479942463,General government,23.565368
+KGZ,2004,G14X,Other non-tax revenue,Other revenue,3.7330021,15.841051378772637,General government,23.565368
+KGZ,2005,G1111,Personal income tax,Taxes,1.7286192,6.838697385752009,General government,25.277024
+KGZ,2005,G1112,Corporate income tax,Taxes,1.2717158,5.031113571386644,General government,25.277024
+KGZ,2005,G1113,Other income taxes,Taxes,0.4841564999999999,1.9154014897236138,General government,25.277024
+KGZ,2005,G11412,VAT / sales tax,Taxes,7.025391,27.79358407310626,General government,25.277024
+KGZ,2005,G1142,Excise taxes,Taxes,1.1394757,4.507950328631049,General government,25.277024
+KGZ,2005,G114X,Other goods & services taxes,Taxes,2.0347912999999993,8.049963776788392,General government,25.277024
+KGZ,2005,G115,Trade taxes (customs),Taxes,1.6491676,6.524373994449971,General government,25.277024
+KGZ,2005,G113,Property taxes,Taxes,0.316137,1.2506891485640579,General government,25.277024
+KGZ,2005,G11NEC,Other taxes,Taxes,0.052284900000000925,0.20684752833030634,General government,25.277024
+KGZ,2005,G121,Social contributions,Social contributions,4.9317564,19.510826675907417,General government,25.277024
+KGZ,2005,G13,Grants (e.g. foreign aid),Grants,1.0214274,4.040932144057796,General government,25.277024
+KGZ,2005,G14X,Other non-tax revenue,Other revenue,3.6221015,14.329619883302481,General government,25.277024
+KGZ,2006,G1111,Personal income tax,Taxes,1.5995477,5.916757229069089,General government,27.034195
+KGZ,2006,G1112,Corporate income tax,Taxes,1.0470783,3.873162457691241,General government,27.034195
+KGZ,2006,G1113,Other income taxes,Taxes,0.4342144000000001,1.6061672872687058,General government,27.034195
+KGZ,2006,G11412,VAT / sales tax,Taxes,8.0409526,29.743635919486422,General government,27.034195
+KGZ,2006,G1142,Excise taxes,Taxes,1.0591965,3.9179879089443084,General government,27.034195
+KGZ,2006,G114X,Other goods & services taxes,Taxes,2.0704938999999993,7.658796140039117,General government,27.034195
+KGZ,2006,G115,Trade taxes (customs),Taxes,2.4633138,9.111844388020218,General government,27.034195
+KGZ,2006,G113,Property taxes,Taxes,0.36195873,1.3388921958077065,General government,27.034195
+KGZ,2006,G11NEC,Other taxes,Taxes,0.12306106999999795,0.45520522804006724,General government,27.034195
+KGZ,2006,G121,Social contributions,Social contributions,4.9076447,18.153470669507136,General government,27.034195
+KGZ,2006,G13,Grants (e.g. foreign aid),Grants,0.78000722,2.8852614758916433,General government,27.034195
+KGZ,2006,G14X,Other non-tax revenue,Other revenue,4.1467263,15.338819100234346,General government,27.034195
+KGZ,2007,G1111,Personal income tax,Taxes,1.6370302,5.30258535114149,General government,30.872302
+KGZ,2007,G1112,Corporate income tax,Taxes,1.2234926,3.963075292068536,General government,30.872302
+KGZ,2007,G1113,Other income taxes,Taxes,0.19654539999999976,0.6366399098038895,General government,30.872302
+KGZ,2007,G11412,VAT / sales tax,Taxes,8.9512103,28.994307259430414,General government,30.872302
+KGZ,2007,G1142,Excise taxes,Taxes,1.0205966,3.305864840236185,General government,30.872302
+KGZ,2007,G114X,Other goods & services taxes,Taxes,2.1822671,7.068689115654689,General government,30.872302
+KGZ,2007,G115,Trade taxes (customs),Taxes,2.6705613,8.650346968984062,General government,30.872302
+KGZ,2007,G113,Property taxes,Taxes,0.41357245,1.339622943428714,General government,30.872302
+KGZ,2007,G11NEC,Other taxes,Taxes,0.08921054,0.2889662649909708,General government,30.872302
+KGZ,2007,G121,Social contributions,Social contributions,5.0405216,16.327002396334695,General government,30.872302
+KGZ,2007,G13,Grants (e.g. foreign aid),Grants,2.2676288,7.345188412960588,General government,30.872302
+KGZ,2007,G14X,Other non-tax revenue,Other revenue,5.1796658,16.777711244965772,General government,30.872302
+KGZ,2008,G1111,Personal income tax,Taxes,2.0904447,7.012980741728029,General government,29.808219
+KGZ,2008,G1112,Corporate income tax,Taxes,0.76720686,2.573809742061884,General government,29.808219
+KGZ,2008,G1113,Other income taxes,Taxes,0.20006453999999996,0.6711723903161259,General government,29.808219
+KGZ,2008,G11412,VAT / sales tax,Taxes,8.7982396,29.516152652069163,General government,29.808219
+KGZ,2008,G1142,Excise taxes,Taxes,0.83781227,2.810675314536397,General government,29.808219
+KGZ,2008,G114X,Other goods & services taxes,Taxes,2.389343129999999,8.01571902670765,General government,29.808219
+KGZ,2008,G115,Trade taxes (customs),Taxes,2.4647808,8.268795765313001,General government,29.808219
+KGZ,2008,G113,Property taxes,Taxes,0.35401487,1.187641780524188,General government,29.808219
+KGZ,2008,G11NEC,Other taxes,Taxes,0.12162823000000025,0.4080358761178754,General government,29.808219
+KGZ,2008,G121,Social contributions,Social contributions,4.818767,16.16590009287237,General government,29.808219
+KGZ,2008,G13,Grants (e.g. foreign aid),Grants,1.8721958,6.28080383573127,General government,29.808219
+KGZ,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,0.61747959,2.0715077863959372,General government,29.808219
+KGZ,2008,G14X,Other non-tax revenue,Other revenue,4.47624221,15.016804995626105,General government,29.808219
+KGZ,2009,G1111,Personal income tax,Taxes,1.948813,5.920031042044366,General government,32.918965
+KGZ,2009,G1112,Corporate income tax,Taxes,1.8277973,5.552414087223802,General government,32.918965
+KGZ,2009,G1113,Other income taxes,Taxes,1.3227174,4.018101309798434,General government,32.918965
+KGZ,2009,G11412,VAT / sales tax,Taxes,6.692774,20.331057847719325,General government,32.918965
+KGZ,2009,G1142,Excise taxes,Taxes,0.82920968,2.5189420667676554,General government,32.918965
+KGZ,2009,G114X,Other goods & services taxes,Taxes,2.15452142,6.5449243653185345,General government,32.918965
+KGZ,2009,G115,Trade taxes (customs),Taxes,2.0568839,6.248324768913837,General government,32.918965
+KGZ,2009,G113,Property taxes,Taxes,0.6885162,2.091548689869386,General government,32.918965
+KGZ,2009,G11NEC,Other taxes,Taxes,0.07866010000000254,0.2389507016683125,General government,32.918965
+KGZ,2009,G121,Social contributions,Social contributions,5.3712574,16.316604283125432,General government,32.918965
+KGZ,2009,G13,Grants (e.g. foreign aid),Grants,5.260855,15.98122801299782,General government,32.918965
+KGZ,2009,G14X,Other non-tax revenue,Other revenue,4.6869605,14.237872824553092,General government,32.918965
+KGZ,2010,G1111,Personal income tax,Taxes,1.9998366,6.417939838579477,General government,31.160102
+KGZ,2010,G1112,Corporate income tax,Taxes,0.8307727,2.6661424279034773,General government,31.160102
+KGZ,2010,G1113,Other income taxes,Taxes,1.1384074,3.6534135863868484,General government,31.160102
+KGZ,2010,G11412,VAT / sales tax,Taxes,6.6261646,21.26490022401082,General government,31.160102
+KGZ,2010,G1142,Excise taxes,Taxes,0.76659267,2.460173814578656,General government,31.160102
+KGZ,2010,G114X,Other goods & services taxes,Taxes,1.6977909300000005,5.44860517465572,General government,31.160102
+KGZ,2010,G115,Trade taxes (customs),Taxes,1.972914,6.3315389660791235,General government,31.160102
+KGZ,2010,G113,Property taxes,Taxes,0.755159,2.4234805136388835,General government,31.160102
+KGZ,2010,G121,Social contributions,Social contributions,5.4806886,17.58880185950611,General government,31.160102
+KGZ,2010,G13,Grants (e.g. foreign aid),Grants,2.8030929,8.995775751953573,General government,31.160102
+KGZ,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,1.9803121,6.355281186178402,General government,31.160102
+KGZ,2010,G14X,Other non-tax revenue,Other revenue,5.107498,16.39114660150984,General government,31.160102
+KGZ,2011,G1111,Personal income tax,Taxes,1.943456,5.950056844459269,General government,32.662814
+KGZ,2011,G1112,Corporate income tax,Taxes,0.96746002,2.961961636250937,General government,32.662814
+KGZ,2011,G1113,Other income taxes,Taxes,0.9548987799999998,2.9235043251325497,General government,32.662814
+KGZ,2011,G11412,VAT / sales tax,Taxes,7.1166856,21.788341935266207,General government,32.662814
+KGZ,2011,G1142,Excise taxes,Taxes,0.76471612,2.3412438377171054,General government,32.662814
+KGZ,2011,G114X,Other goods & services taxes,Taxes,1.4469055800000001,4.429825244083379,General government,32.662814
+KGZ,2011,G115,Trade taxes (customs),Taxes,2.4989703,7.650811408961886,General government,32.662814
+KGZ,2011,G113,Property taxes,Taxes,0.58823731,1.8009388597075564,General government,32.662814
+KGZ,2011,G121,Social contributions,Social contributions,5.6662992,17.347859862900975,General government,32.662814
+KGZ,2011,G13,Grants (e.g. foreign aid),Grants,3.0161527,9.234209581574937,General government,32.662814
+KGZ,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,2.1210599,6.49380638177715,General government,32.662814
+KGZ,2011,G14X,Other non-tax revenue,Other revenue,5.577024999999999,17.07453926045686,General government,32.662814
+KGZ,2012,G1111,Personal income tax,Taxes,2.2978388,6.617770625127951,General government,34.721863
+KGZ,2012,G1112,Corporate income tax,Taxes,1.2987575,3.740418706771169,General government,34.721863
+KGZ,2012,G1113,Other income taxes,Taxes,0.9105429,2.6223615235928723,General government,34.721863
+KGZ,2012,G11412,VAT / sales tax,Taxes,8.3000691,23.904180518020752,General government,34.721863
+KGZ,2012,G1142,Excise taxes,Taxes,0.91046401,2.6221343205686147,General government,34.721863
+KGZ,2012,G114X,Other goods & services taxes,Taxes,1.6081458899999994,4.631456580749808,General government,34.721863
+KGZ,2012,G115,Trade taxes (customs),Taxes,3.0371669,8.747033906134286,General government,34.721863
+KGZ,2012,G113,Property taxes,Taxes,0.55535198,1.5994124652480604,General government,34.721863
+KGZ,2012,G121,Social contributions,Social contributions,6.0539251,17.435290801732826,General government,34.721863
+KGZ,2012,G13,Grants (e.g. foreign aid),Grants,2.5406911,7.3171847081283605,General government,34.721863
+KGZ,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,1.6673691,4.802019293618868,General government,34.721863
+KGZ,2012,G14X,Other non-tax revenue,Other revenue,5.541926699999999,15.960736550306434,General government,34.721863
+KGZ,2013,G1111,Personal income tax,Taxes,2.1235202,6.164485462155718,General government,34.447647
+KGZ,2013,G1112,Corporate income tax,Taxes,1.1598105,3.366878716814446,General government,34.447647
+KGZ,2013,G1113,Other income taxes,Taxes,0.5594791999999995,1.624143436346171,General government,34.447647
+KGZ,2013,G11412,VAT / sales tax,Taxes,8.4671029,24.579626195044682,General government,34.447647
+KGZ,2013,G1142,Excise taxes,Taxes,1.1510782,3.3415292351371892,General government,34.447647
+KGZ,2013,G114X,Other goods & services taxes,Taxes,1.8361849,5.330363761964614,General government,34.447647
+KGZ,2013,G115,Trade taxes (customs),Taxes,3.3454531,9.711702765659483,General government,34.447647
+KGZ,2013,G113,Property taxes,Taxes,0.58108038,1.686850708956722,General government,34.447647
+KGZ,2013,G11NEC,Other taxes,Taxes,0.02464876,0.07155426290748983,General government,34.447647
+KGZ,2013,G121,Social contributions,Social contributions,5.7568813,16.71197245084182,General government,34.447647
+KGZ,2013,G13,Grants (e.g. foreign aid),Grants,2.4284596,7.049711088047332,General government,34.447647
+KGZ,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,1.253599,3.639142594863447,General government,34.447647
+KGZ,2013,G14X,Other non-tax revenue,Other revenue,5.760349100000001,16.722039321260883,General government,34.447647
+KGZ,2014,G1111,Personal income tax,Taxes,2.1317245,6.01506013566052,General government,35.439787
+KGZ,2014,G1112,Corporate income tax,Taxes,1.040649,2.9363861583028132,General government,35.439787
+KGZ,2014,G1113,Other income taxes,Taxes,0.5737574000000001,1.6189640191686254,General government,35.439787
+KGZ,2014,G11412,VAT / sales tax,Taxes,8.1517076,23.00157052298311,General government,35.439787
+KGZ,2014,G1142,Excise taxes,Taxes,1.5808512,4.460667892840326,General government,35.439787
+KGZ,2014,G114X,Other goods & services taxes,Taxes,1.8140631999999994,5.118719251896179,General government,35.439787
+KGZ,2014,G115,Trade taxes (customs),Taxes,3.4368089,9.697600326999707,General government,35.439787
+KGZ,2014,G113,Property taxes,Taxes,0.55147123,1.5560794143599113,General government,35.439787
+KGZ,2014,G121,Social contributions,Social contributions,5.5413607,15.635987597780991,General government,35.439787
+KGZ,2014,G13,Grants (e.g. foreign aid),Grants,2.4854627,7.01319875314149,General government,35.439787
+KGZ,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,1.3795899,3.8927714210020503,General government,35.439787
+KGZ,2014,G14X,Other non-tax revenue,Other revenue,6.750521699999999,19.047861941156697,General government,35.439787
+KGZ,2015,G1111,Personal income tax,Taxes,2.2100893,6.213894933524132,General government,35.566892
+KGZ,2015,G1112,Corporate income tax,Taxes,0.91515617,2.573056341273789,General government,35.566892
+KGZ,2015,G1113,Other income taxes,Taxes,0.5680926300000001,1.5972512582769391,General government,35.566892
+KGZ,2015,G11412,VAT / sales tax,Taxes,7.7169935,21.697126361223802,General government,35.566892
+KGZ,2015,G1142,Excise taxes,Taxes,1.8018794,5.066170527354484,General government,35.566892
+KGZ,2015,G114X,Other goods & services taxes,Taxes,1.7447420999999996,4.905523091531303,General government,35.566892
+KGZ,2015,G115,Trade taxes (customs),Taxes,2.2495792,6.324924876764604,General government,35.566892
+KGZ,2015,G113,Property taxes,Taxes,0.53103933,1.4930720682594363,General government,35.566892
+KGZ,2015,G121,Social contributions,Social contributions,5.6371191,15.8493441034994,General government,35.566892
+KGZ,2015,G13,Grants (e.g. foreign aid),Grants,2.1623529,6.079679101564455,General government,35.566892
+KGZ,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,1.9240844,5.409762539836204,General government,35.566892
+KGZ,2015,G14X,Other non-tax revenue,Other revenue,8.1053126,22.788925723394666,General government,35.566892
+KGZ,2016,G1111,Personal income tax,Taxes,2.2241877,6.712938065997945,General government,33.13285
+KGZ,2016,G1112,Corporate income tax,Taxes,0.72512252,2.1885304765512177,General government,33.13285
+KGZ,2016,G1113,Other income taxes,Taxes,0.55088468,1.662654072921587,General government,33.13285
+KGZ,2016,G11412,VAT / sales tax,Taxes,8.2499309,24.899551049788958,General government,33.13285
+KGZ,2016,G1142,Excise taxes,Taxes,1.901807,5.739943892541692,General government,33.13285
+KGZ,2016,G114X,Other goods & services taxes,Taxes,1.2624950999999986,3.810402968654971,General government,33.13285
+KGZ,2016,G115,Trade taxes (customs),Taxes,2.8990963,8.74991526536353,General government,33.13285
+KGZ,2016,G113,Property taxes,Taxes,0.52376306,1.5807968828519128,General government,33.13285
+KGZ,2016,G121,Social contributions,Social contributions,5.5924953,16.879004673609426,General government,33.13285
+KGZ,2016,G13,Grants (e.g. foreign aid),Grants,2.0735782,6.25837560004648,General government,33.13285
+KGZ,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,1.3563768,4.0937522730462375,General government,33.13285
+KGZ,2016,G14X,Other non-tax revenue,Other revenue,5.7724926,17.422264006869316,General government,33.13285
+KGZ,2017,G1111,Personal income tax,Taxes,2.0943266,6.291684093275682,General government,33.287218
+KGZ,2017,G1112,Corporate income tax,Taxes,0.76409022,2.2954463181633264,General government,33.287218
+KGZ,2017,G1113,Other income taxes,Taxes,0.5234912799999999,1.5726495377294667,General government,33.287218
+KGZ,2017,G11412,VAT / sales tax,Taxes,8.5076476,25.55830168805335,General government,33.287218
+KGZ,2017,G1142,Excise taxes,Taxes,1.7920698,5.383657474770044,General government,33.287218
+KGZ,2017,G114X,Other goods & services taxes,Taxes,0.7604156000000002,2.284407185965496,General government,33.287218
+KGZ,2017,G115,Trade taxes (customs),Taxes,3.1090756,9.34014852187407,General government,33.287218
+KGZ,2017,G113,Property taxes,Taxes,0.49486412,1.4866490795355742,General government,33.287218
+KGZ,2017,G121,Social contributions,Social contributions,5.4674104,16.424954467507618,General government,33.287218
+KGZ,2017,G13,Grants (e.g. foreign aid),Grants,2.5388519,7.627107498139375,General government,33.287218
+KGZ,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4394622,4.32436919180209,General government,33.287218
+KGZ,2017,G14X,Other non-tax revenue,Other revenue,5.7950634,17.40927523591788,General government,33.287218
+KGZ,2018,G1111,Personal income tax,Taxes,2.0151195,6.206173806602761,General government,32.469595
+KGZ,2018,G1112,Corporate income tax,Taxes,0.79127398,2.4369690475042884,General government,32.469595
+KGZ,2018,G1113,Other income taxes,Taxes,0.6601137200000001,2.0330211079011,General government,32.469595
+KGZ,2018,G11412,VAT / sales tax,Taxes,9.2707283,28.55202936778238,General government,32.469595
+KGZ,2018,G1142,Excise taxes,Taxes,1.8083176,5.569264414908779,General government,32.469595
+KGZ,2018,G114X,Other goods & services taxes,Taxes,0.7523010999999991,2.3169402020567214,General government,32.469595
+KGZ,2018,G115,Trade taxes (customs),Taxes,3.2173803,9.908901851101007,General government,32.469595
+KGZ,2018,G113,Property taxes,Taxes,0.49349566,1.5198700815332007,General government,32.469595
+KGZ,2018,G121,Social contributions,Social contributions,5.3839085,16.58138483094723,General government,32.469595
+KGZ,2018,G13,Grants (e.g. foreign aid),Grants,1.661598,5.117396752253916,General government,32.469595
+KGZ,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4717433,4.532681420880057,General government,32.469595
+KGZ,2018,G14X,Other non-tax revenue,Other revenue,4.9434643,15.224902866820482,General government,32.469595
+KGZ,2019,G1111,Personal income tax,Taxes,1.96658,6.391974972898023,General government,30.76639
+KGZ,2019,G1112,Corporate income tax,Taxes,0.88234973,2.8679013269245743,General government,30.76639
+KGZ,2019,G1113,Other income taxes,Taxes,0.5559241699999999,1.8069203294394869,General government,30.76639
+KGZ,2019,G11412,VAT / sales tax,Taxes,7.7845506,25.302124810817915,General government,30.76639
+KGZ,2019,G1142,Excise taxes,Taxes,1.5206069,4.942428606217925,General government,30.76639
+KGZ,2019,G114X,Other goods & services taxes,Taxes,0.6446310999999996,2.0952444639687786,General government,30.76639
+KGZ,2019,G115,Trade taxes (customs),Taxes,3.3588985,10.917427792667837,General government,30.76639
+KGZ,2019,G113,Property taxes,Taxes,0.41789289,1.3582772601328332,General government,30.76639
+KGZ,2019,G11NEC,Other taxes,Taxes,0.038400110000000875,0.12481187751148527,General government,30.76639
+KGZ,2019,G121,Social contributions,Social contributions,4.9664364,16.14240822813705,General government,30.76639
+KGZ,2019,G13,Grants (e.g. foreign aid),Grants,2.08019,6.761241555834362,General government,30.76639
+KGZ,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4116172,4.588179384368998,General government,30.76639
+KGZ,2019,G14X,Other non-tax revenue,Other revenue,5.1383132,16.701059391080737,General government,30.76639
+KGZ,2020,G1111,Personal income tax,Taxes,1.8995234,6.547530765087556,General government,29.011294
+KGZ,2020,G1112,Corporate income tax,Taxes,0.77010713,2.6545080340091,General government,29.011294
+KGZ,2020,G1113,Other income taxes,Taxes,0.8840517700000001,3.0472676261872365,General government,29.011294
+KGZ,2020,G11412,VAT / sales tax,Taxes,6.1688173,21.263502758615317,General government,29.011294
+KGZ,2020,G1142,Excise taxes,Taxes,1.4059803,4.846320539855961,General government,29.011294
+KGZ,2020,G114X,Other goods & services taxes,Taxes,0.5912390000000003,2.0379614918245297,General government,29.011294
+KGZ,2020,G115,Trade taxes (customs),Taxes,2.70547,9.325575067420296,General government,29.011294
+KGZ,2020,G113,Property taxes,Taxes,0.43830306,1.5108014830362273,General government,29.011294
+KGZ,2020,G121,Social contributions,Social contributions,5.1878054,17.882020016066846,General government,29.011294
+KGZ,2020,G13,Grants (e.g. foreign aid),Grants,1.862776,6.420864922467781,General government,29.011294
+KGZ,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,1.8517866,6.382985191904918,General government,29.011294
+KGZ,2020,G14X,Other non-tax revenue,Other revenue,5.2448882999999995,18.078780974057896,General government,29.011294
+KGZ,2021,G1111,Personal income tax,Taxes,1.95763,6.240354948602144,General government,31.370491
+KGZ,2021,G1112,Corporate income tax,Taxes,0.99117225,3.1595687924708047,General government,31.370491
+KGZ,2021,G1113,Other income taxes,Taxes,1.1313901499999997,3.6065426670781613,General government,31.370491
+KGZ,2021,G11412,VAT / sales tax,Taxes,8.1285136,25.91133670230832,General government,31.370491
+KGZ,2021,G1142,Excise taxes,Taxes,1.452465,4.630035885443834,General government,31.370491
+KGZ,2021,G114X,Other goods & services taxes,Taxes,0.6296953999999995,2.00728575139429,General government,31.370491
+KGZ,2021,G115,Trade taxes (customs),Taxes,2.927439,9.331823914826046,General government,31.370491
+KGZ,2021,G113,Property taxes,Taxes,0.39351412,1.254408537919228,General government,31.370491
+KGZ,2021,G11NEC,Other taxes,Taxes,0.2556864799999988,0.8150541168446824,General government,31.370491
+KGZ,2021,G121,Social contributions,Social contributions,4.863643,15.503879008435801,General government,31.370491
+KGZ,2021,G13,Grants (e.g. foreign aid),Grants,1.7548663,5.594003258705748,General government,31.370491
+KGZ,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4445564,4.604825569323569,General government,31.370491
+KGZ,2021,G14X,Other non-tax revenue,Other revenue,5.4399195,17.340880846647377,General government,31.370491
+KGZ,2022,G1111,Personal income tax,Taxes,1.9867099,5.692859402888836,General government,34.702803
+KGZ,2022,G1112,Corporate income tax,Taxes,3.6102651,10.345109581150425,General government,34.702803
+KGZ,2022,G1113,Other income taxes,Taxes,1.1929377000000003,3.41832826348003,General government,34.702803
+KGZ,2022,G11412,VAT / sales tax,Taxes,10.542908,30.21039606315544,General government,34.702803
+KGZ,2022,G1142,Excise taxes,Taxes,1.1504798,3.296666386604138,General government,34.702803
+KGZ,2022,G114X,Other goods & services taxes,Taxes,0.6304511999999989,1.8065395667392325,General government,34.702803
+KGZ,2022,G115,Trade taxes (customs),Taxes,1.7543351,5.026996175864895,General government,34.702803
+KGZ,2022,G113,Property taxes,Taxes,0.31235119,0.895033245163281,General government,34.702803
+KGZ,2022,G121,Social contributions,Social contributions,5.053076,14.47944222763067,General government,34.702803
+KGZ,2022,G13,Grants (e.g. foreign aid),Grants,1.9096945,5.472174015426256,General government,34.702803
+KGZ,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1078943,3.1746388756415547,General government,34.702803
+KGZ,2022,G14X,Other non-tax revenue,Other revenue,5.6471752,16.181816196255248,General government,34.702803
+KGZ,2023,G1111,Personal income tax,Taxes,1.8867376,5.471577220665846,General government,34.482518
+KGZ,2023,G1112,Corporate income tax,Taxes,1.5210603,4.411105650695231,General government,34.482518
+KGZ,2023,G1113,Other income taxes,Taxes,1.5153330000000003,4.394496364795635,General government,34.482518
+KGZ,2023,G11412,VAT / sales tax,Taxes,10.856399,31.483776793794465,General government,34.482518
+KGZ,2023,G1142,Excise taxes,Taxes,1.3064876,3.7888404785288596,General government,34.482518
+KGZ,2023,G114X,Other goods & services taxes,Taxes,1.4414573999999996,4.180255629823784,General government,34.482518
+KGZ,2023,G115,Trade taxes (customs),Taxes,2.1260832,6.165684304145074,General government,34.482518
+KGZ,2023,G113,Property taxes,Taxes,0.29456216,0.8542362248603771,General government,34.482518
+KGZ,2023,G121,Social contributions,Social contributions,4.7957154,13.907671707733176,General government,34.482518
+KGZ,2023,G13,Grants (e.g. foreign aid),Grants,1.2137828,3.5199946825228943,General government,34.482518
+KGZ,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1281514,3.2716618896566656,General government,34.482518
+KGZ,2023,G14X,Other non-tax revenue,Other revenue,6.3966286,18.550352384358938,General government,34.482518
+KGZ,2024,G1111,Personal income tax,Taxes,1.9763097,5.555119029850433,General government,35.57637
+KGZ,2024,G1112,Corporate income tax,Taxes,1.2864177,3.6159329914772087,General government,35.57637
+KGZ,2024,G1113,Other income taxes,Taxes,2.5252323,7.098060594714975,General government,35.57637
+KGZ,2024,G11412,VAT / sales tax,Taxes,9.9785873,28.048357097702773,General government,35.57637
+KGZ,2024,G1142,Excise taxes,Taxes,1.2747803,3.5832219532234464,General government,35.57637
+KGZ,2024,G114X,Other goods & services taxes,Taxes,1.6480304000000012,4.632373679495692,General government,35.57637
+KGZ,2024,G115,Trade taxes (customs),Taxes,2.7562314,7.747365456340824,General government,35.57637
+KGZ,2024,G113,Property taxes,Taxes,0.30615886,0.8605680118573086,General government,35.57637
+KGZ,2024,G121,Social contributions,Social contributions,4.8717202,13.693696686873901,General government,35.57637
+KGZ,2024,G13,Grants (e.g. foreign aid),Grants,0.92538361,2.6011186919857203,General government,35.57637
+KGZ,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1554115,3.247693623604657,General government,35.57637
+KGZ,2024,G14X,Other non-tax revenue,Other revenue,6.871560500000001,19.314956809815058,General government,35.57637

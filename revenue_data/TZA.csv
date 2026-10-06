@@ -1,0 +1,232 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+TZA,2001,G11412,VAT / sales tax,Taxes,2.9130084,31.50967915167561,General government,9.244805
+TZA,2001,G1142,Excise taxes,Taxes,1.5068036,16.298922440659545,General government,9.244805
+TZA,2001,G115,Trade taxes (customs),Taxes,0.86535052,9.360397738274854,General government,9.244805
+TZA,2001,G13,Grants (e.g. foreign aid),Grants,3.0381552,32.86337779355351,General government,9.244805
+TZA,2001,G14X,Other non-tax revenue,Other revenue,0.9214873,9.967622875836488,General government,9.244805
+TZA,2002,G1111,Personal income tax,Taxes,0.56846078,5.1416761103055615,General government,11.055943
+TZA,2002,G1112,Corporate income tax,Taxes,0.28583679,2.5853677972109663,General government,11.055943
+TZA,2002,G11412,VAT / sales tax,Taxes,3.0512252,27.59805472947898,General government,11.055943
+TZA,2002,G1142,Excise taxes,Taxes,1.6557324,14.975949134325313,General government,11.055943
+TZA,2002,G115,Trade taxes (customs),Taxes,0.69939043,6.325922899566324,General government,11.055943
+TZA,2002,G13,Grants (e.g. foreign aid),Grants,3.971662,35.92332196358104,General government,11.055943
+TZA,2002,G14X,Other non-tax revenue,Other revenue,0.82363523,7.449705827897268,General government,11.055943
+TZA,2003,G1111,Personal income tax,Taxes,1.1482542,8.67239649372905,General government,13.240333
+TZA,2003,G1112,Corporate income tax,Taxes,0.63234541,4.7759025105326485,General government,13.240333
+TZA,2003,G1113,Other income taxes,Taxes,0.28151389000000016,2.126184317524836,General government,13.240333
+TZA,2003,G11412,VAT / sales tax,Taxes,3.1696926,23.939673802576912,General government,13.240333
+TZA,2003,G1142,Excise taxes,Taxes,1.7859003,13.488333419437664,General government,13.240333
+TZA,2003,G115,Trade taxes (customs),Taxes,0.72388696,5.467286541394911,General government,13.240333
+TZA,2003,G113,Property taxes,Taxes,0.05879227,0.44403919986216606,General government,13.240333
+TZA,2003,G11NEC,Other taxes,Taxes,0.19422526999999956,1.466921305875976,General government,13.240333
+TZA,2003,G13,Grants (e.g. foreign aid),Grants,4.4855101,33.877622275473705,General government,13.240333
+TZA,2003,G14X,Other non-tax revenue,Other revenue,0.76021229,5.741640133592137,General government,13.240333
+TZA,2004,G1111,Personal income tax,Taxes,1.3828378,9.599067110578389,General government,14.40596
+TZA,2004,G1112,Corporate income tax,Taxes,0.75262142,5.224375208313516,General government,14.40596
+TZA,2004,G1113,Other income taxes,Taxes,0.26581698,1.845187505108172,General government,14.40596
+TZA,2004,G11412,VAT / sales tax,Taxes,3.4559912,23.99000914089009,General government,14.40596
+TZA,2004,G1142,Excise taxes,Taxes,1.7799449,12.355614337583006,General government,14.40596
+TZA,2004,G115,Trade taxes (customs),Taxes,0.80733349,5.604162940243222,General government,14.40596
+TZA,2004,G113,Property taxes,Taxes,0.06456701,0.4481965000663028,General government,14.40596
+TZA,2004,G11NEC,Other taxes,Taxes,0.14843851,1.0303964928383222,General government,14.40596
+TZA,2004,G13,Grants (e.g. foreign aid),Grants,5.0617465,35.136473959733586,General government,14.40596
+TZA,2004,G14X,Other non-tax revenue,Other revenue,0.68666252,4.766516804645401,General government,14.40596
+TZA,2005,G1111,Personal income tax,Taxes,1.4349577,9.776236803649974,General government,14.678017
+TZA,2005,G1112,Corporate income tax,Taxes,0.89515267,6.098594040325747,General government,14.678017
+TZA,2005,G1113,Other income taxes,Taxes,0.22969023,1.5648587271700256,General government,14.678017
+TZA,2005,G11412,VAT / sales tax,Taxes,3.8872167,26.483255197210905,General government,14.678017
+TZA,2005,G1142,Excise taxes,Taxes,1.7246654,11.74998911637723,General government,14.678017
+TZA,2005,G115,Trade taxes (customs),Taxes,0.57693007,3.9305722973341695,General government,14.678017
+TZA,2005,G113,Property taxes,Taxes,0.0448354,0.3054595181351813,General government,14.678017
+TZA,2005,G11NEC,Other taxes,Taxes,0.08370736,0.5702906598350443,General government,14.678017
+TZA,2005,G13,Grants (e.g. foreign aid),Grants,4.9835389,33.952399019567835,General government,14.678017
+TZA,2005,G14X,Other non-tax revenue,Other revenue,0.81732251,5.568344211619322,General government,14.678017
+TZA,2006,G1111,Personal income tax,Taxes,1.5682732,11.375961384178503,General government,13.785852
+TZA,2006,G1112,Corporate income tax,Taxes,0.97034703,7.038716431889736,General government,13.785852
+TZA,2006,G1113,Other income taxes,Taxes,0.20732927000000012,1.5039278674977803,General government,13.785852
+TZA,2006,G11412,VAT / sales tax,Taxes,3.3792766,24.512642381479214,General government,13.785852
+TZA,2006,G1142,Excise taxes,Taxes,2.0485559,14.859842540018564,General government,13.785852
+TZA,2006,G115,Trade taxes (customs),Taxes,0.80755259,5.857835917576947,General government,13.785852
+TZA,2006,G113,Property taxes,Taxes,0.04497616,0.32624867871786234,General government,13.785852
+TZA,2006,G11NEC,Other taxes,Taxes,0.0604113,0.4382123063558204,General government,13.785852
+TZA,2006,G13,Grants (e.g. foreign aid),Grants,3.9442332,28.610732220250156,General government,13.785852
+TZA,2006,G14X,Other non-tax revenue,Other revenue,0.75489635,5.4758773705099975,General government,13.785852
+TZA,2007,G1111,Personal income tax,Taxes,1.8528979,11.577976387471155,General government,15.993514
+TZA,2007,G1112,Corporate income tax,Taxes,1.160576,7.25194924332621,General government,15.993514
+TZA,2007,G11412,VAT / sales tax,Taxes,3.4889919,21.80123677309911,General government,15.993514
+TZA,2007,G1142,Excise taxes,Taxes,2.9750541,18.589856527577286,General government,15.993514
+TZA,2007,G115,Trade taxes (customs),Taxes,0.89421591,5.587577540716643,General government,15.993514
+TZA,2007,G113,Property taxes,Taxes,0.04438972,0.27737261184572337,General government,15.993514
+TZA,2007,G11NEC,Other taxes,Taxes,0.16462797,1.028690652289751,General government,15.993514
+TZA,2007,G13,Grants (e.g. foreign aid),Grants,4.6511097,29.062820073430945,General government,15.993514
+TZA,2007,G14X,Other non-tax revenue,Other revenue,0.77177887,4.82252019024317,General government,15.993514
+TZA,2008,G1111,Personal income tax,Taxes,1.9582741,12.32634187252595,General government,15.886904
+TZA,2008,G1112,Corporate income tax,Taxes,1.2492089,7.863136203252692,General government,15.886904
+TZA,2008,G1113,Other income taxes,Taxes,0.13103370000000014,0.8247906577644086,General government,15.886904
+TZA,2008,G11412,VAT / sales tax,Taxes,3.532527,22.23546513530893,General government,15.886904
+TZA,2008,G1142,Excise taxes,Taxes,2.8665449,18.04344572107945,General government,15.886904
+TZA,2008,G115,Trade taxes (customs),Taxes,0.87035142,5.47842059094711,General government,15.886904
+TZA,2008,G113,Property taxes,Taxes,0.051538,0.3244055607058493,General government,15.886904
+TZA,2008,G11NEC,Other taxes,Taxes,0.15861108,0.998376272683463,General government,15.886904
+TZA,2008,G13,Grants (e.g. foreign aid),Grants,4.2404194,26.691288623636176,General government,15.886904
+TZA,2008,G14X,Other non-tax revenue,Other revenue,0.82839532,5.214328229087304,General government,15.886904
+TZA,2009,G1111,Personal income tax,Taxes,1.9023889,12.92487461120352,General government,14.718819
+TZA,2009,G1112,Corporate income tax,Taxes,1.0675839,7.253189946829294,General government,14.718819
+TZA,2009,G1113,Other income taxes,Taxes,0.22320190000000006,1.5164389208128728,General government,14.718819
+TZA,2009,G11412,VAT / sales tax,Taxes,3.3596781,22.825731466634654,General government,14.718819
+TZA,2009,G1142,Excise taxes,Taxes,2.9158221,19.81016343770516,General government,14.718819
+TZA,2009,G115,Trade taxes (customs),Taxes,0.93873963,6.377818967676687,General government,14.718819
+TZA,2009,G113,Property taxes,Taxes,0.06300398,0.42805051138953476,General government,14.718819
+TZA,2009,G11NEC,Other taxes,Taxes,0.1594094900000001,1.0830317975919135,General government,14.718819
+TZA,2009,G13,Grants (e.g. foreign aid),Grants,3.4373015,23.35310665889702,General government,14.718819
+TZA,2009,G14X,Other non-tax revenue,Other revenue,0.65168943,4.427593205677711,General government,14.718819
+TZA,2010,G1111,Personal income tax,Taxes,1.9461843,13.625191032152044,General government,14.283721
+TZA,2010,G1112,Corporate income tax,Taxes,1.0768967,7.539328756990861,General government,14.283721
+TZA,2010,G1113,Other income taxes,Taxes,0.21073529999999985,1.475352935340126,General government,14.283721
+TZA,2010,G11412,VAT / sales tax,Taxes,3.3021514,23.118285170673875,General government,14.283721
+TZA,2010,G1142,Excise taxes,Taxes,2.8351235,19.848633701979566,General government,14.283721
+TZA,2010,G115,Trade taxes (customs),Taxes,0.82548682,5.779214032825004,General government,14.283721
+TZA,2010,G113,Property taxes,Taxes,0.06529051,0.4570973423928213,General government,14.283721
+TZA,2010,G11NEC,Other taxes,Taxes,0.14534546999999876,1.0175602559366586,General government,14.283721
+TZA,2010,G13,Grants (e.g. foreign aid),Grants,3.3876523,23.716874983530207,General government,14.283721
+TZA,2010,G14X,Other non-tax revenue,Other revenue,0.4888549,3.4224617881788397,General government,14.283721
+TZA,2011,G1111,Personal income tax,Taxes,2.0394038,14.031724060370523,General government,14.534235
+TZA,2011,G1112,Corporate income tax,Taxes,1.1830937,8.140047760998966,General government,14.534235
+TZA,2011,G1113,Other income taxes,Taxes,0.19224889999999983,1.322731435388011,General government,14.534235
+TZA,2011,G11412,VAT / sales tax,Taxes,3.1982572,22.00499111774395,General government,14.534235
+TZA,2011,G1142,Excise taxes,Taxes,2.9347214,20.19178393159033,General government,14.534235
+TZA,2011,G115,Trade taxes (customs),Taxes,0.83825093,5.767423667205565,General government,14.534235
+TZA,2011,G113,Property taxes,Taxes,0.06172637,0.42469637012951195,General government,14.534235
+TZA,2011,G11NEC,Other taxes,Taxes,0.14113269999999947,0.9710362912411202,General government,14.534235
+TZA,2011,G13,Grants (e.g. foreign aid),Grants,3.4134549,23.485617340381367,General government,14.534235
+TZA,2011,G14X,Other non-tax revenue,Other revenue,0.53194546,3.659948024950657,General government,14.534235
+TZA,2012,G1111,Personal income tax,Taxes,2.1224314,14.221517577506189,General government,14.924085
+TZA,2012,G1112,Corporate income tax,Taxes,1.5415134,10.329031088619086,General government,14.924085
+TZA,2012,G1113,Other income taxes,Taxes,0.37154,2.489532825770788,General government,14.924085
+TZA,2012,G11412,VAT / sales tax,Taxes,3.3314966,22.32295350337453,General government,14.924085
+TZA,2012,G1142,Excise taxes,Taxes,2.6523683,17.772401218937024,General government,14.924085
+TZA,2012,G115,Trade taxes (customs),Taxes,0.79861606,5.351189364692182,General government,14.924085
+TZA,2012,G113,Property taxes,Taxes,0.06433865,0.43110615583995726,General government,14.924085
+TZA,2012,G11NEC,Other taxes,Taxes,0.15430259,1.0339165713152052,General government,14.924085
+TZA,2012,G13,Grants (e.g. foreign aid),Grants,3.0122887,20.1840760062131,General government,14.924085
+TZA,2012,G14X,Other non-tax revenue,Other revenue,0.8751895,5.864275687731935,General government,14.924085
+TZA,2013,G1111,Personal income tax,Taxes,2.1542493,15.318371635795446,General government,14.063174
+TZA,2013,G1112,Corporate income tax,Taxes,1.3925707,9.902250176764504,General government,14.063174
+TZA,2013,G1113,Other income taxes,Taxes,0.6413149999999999,4.56024356401562,General government,14.063174
+TZA,2013,G11412,VAT / sales tax,Taxes,3.0823859,21.918137673822528,General government,14.063174
+TZA,2013,G1142,Excise taxes,Taxes,2.9310241,20.841838703288833,General government,14.063174
+TZA,2013,G115,Trade taxes (customs),Taxes,0.80043754,5.6917273729469855,General government,14.063174
+TZA,2013,G113,Property taxes,Taxes,0.09511615,0.6763490809842968,General government,14.063174
+TZA,2013,G11NEC,Other taxes,Taxes,0.02051330999999852,0.1458654325942018,General government,14.063174
+TZA,2013,G13,Grants (e.g. foreign aid),Grants,2.271667,16.15330191300168,General government,14.063174
+TZA,2013,G14X,Other non-tax revenue,Other revenue,0.67389528,4.791914446785908,General government,14.063174
+TZA,2014,G1111,Personal income tax,Taxes,2.1666778,15.692374895588545,General government,13.807201
+TZA,2014,G1112,Corporate income tax,Taxes,1.9077461,13.817036850978468,General government,13.807201
+TZA,2014,G1113,Other income taxes,Taxes,0.6290486999999996,4.555946448513297,General government,13.807201
+TZA,2014,G11412,VAT / sales tax,Taxes,2.7418899,19.858404527534173,General government,13.807201
+TZA,2014,G1142,Excise taxes,Taxes,3.0308266,21.951056705672617,General government,13.807201
+TZA,2014,G115,Trade taxes (customs),Taxes,0.83981091,6.082412272431725,General government,13.807201
+TZA,2014,G113,Property taxes,Taxes,0.07428871,0.5380432142839409,General government,13.807201
+TZA,2014,G11NEC,Other taxes,Taxes,0.1425502799999999,1.0324342803674438,General government,13.807201
+TZA,2014,G13,Grants (e.g. foreign aid),Grants,1.5809165,11.449941655663666,General government,13.807201
+TZA,2014,G14X,Other non-tax revenue,Other revenue,0.69344586,5.02234914896613,General government,13.807201
+TZA,2015,G1111,Personal income tax,Taxes,2.2552359,17.75917953140672,General government,12.698987
+TZA,2015,G1112,Corporate income tax,Taxes,1.3156584,10.360341340612445,General government,12.698987
+TZA,2015,G1113,Other income taxes,Taxes,0.6490397000000001,5.110956488104131,General government,12.698987
+TZA,2015,G11412,VAT / sales tax,Taxes,2.7769253,21.867297761624606,General government,12.698987
+TZA,2015,G1142,Excise taxes,Taxes,3.16726,24.941044510085725,General government,12.698987
+TZA,2015,G115,Trade taxes (customs),Taxes,0.83055556,6.540329240434689,General government,12.698987
+TZA,2015,G113,Property taxes,Taxes,0.06827924,0.53767469798969,General government,12.698987
+TZA,2015,G11NEC,Other taxes,Taxes,0.08250215,0.6496750488838203,General government,12.698987
+TZA,2015,G13,Grants (e.g. foreign aid),Grants,0.80524659,6.341030115236751,General government,12.698987
+TZA,2015,G14X,Other non-tax revenue,Other revenue,0.74828385,5.892468824481826,General government,12.698987
+TZA,2016,G1111,Personal income tax,Taxes,2.2460896,16.40250461950154,General government,13.693577
+TZA,2016,G1112,Corporate income tax,Taxes,1.2991139,9.487031036521723,General government,13.693577
+TZA,2016,G1113,Other income taxes,Taxes,0.6901961000000001,5.040290787425376,General government,13.693577
+TZA,2016,G11412,VAT / sales tax,Taxes,3.158401,23.06483543342985,General government,13.693577
+TZA,2016,G1142,Excise taxes,Taxes,3.281369,23.9628330859059,General government,13.693577
+TZA,2016,G115,Trade taxes (customs),Taxes,1.0114375,7.38621837084642,General government,13.693577
+TZA,2016,G113,Property taxes,Taxes,0.07715043,0.5634059676299334,General government,13.693577
+TZA,2016,G11NEC,Other taxes,Taxes,0.20955697,1.5303303877431005,General government,13.693577
+TZA,2016,G13,Grants (e.g. foreign aid),Grants,0.73265868,5.350382007564568,General government,13.693577
+TZA,2016,G14X,Other non-tax revenue,Other revenue,0.98760373,7.212167646189159,General government,13.693577
+TZA,2017,G1111,Personal income tax,Taxes,2.1003504,14.63380620046586,General government,14.352728
+TZA,2017,G1112,Corporate income tax,Taxes,1.2788586,8.910212748405737,General government,14.352728
+TZA,2017,G1113,Other income taxes,Taxes,0.6907748000000002,4.812846728510428,General government,14.352728
+TZA,2017,G11412,VAT / sales tax,Taxes,3.5520253,24.74808482401394,General government,14.352728
+TZA,2017,G1142,Excise taxes,Taxes,2.7611506,19.237810400921692,General government,14.352728
+TZA,2017,G115,Trade taxes (customs),Taxes,1.1331625,7.895101892824835,General government,14.352728
+TZA,2017,G113,Property taxes,Taxes,0.07567936,0.5272820609433969,General government,14.352728
+TZA,2017,G11NEC,Other taxes,Taxes,0.19794843999999925,1.3791694512708612,General government,14.352728
+TZA,2017,G13,Grants (e.g. foreign aid),Grants,0.84046797,5.855806436239856,General government,14.352728
+TZA,2017,G14X,Other non-tax revenue,Other revenue,1.72231,11.999879047383883,General government,14.352728
+TZA,2018,G1111,Personal income tax,Taxes,1.9868832,13.645226459419256,General government,14.561013
+TZA,2018,G1112,Corporate income tax,Taxes,1.4810126,10.171082183519044,General government,14.561013
+TZA,2018,G1113,Other income taxes,Taxes,0.6735874999999998,4.625965923781561,General government,14.561013
+TZA,2018,G11412,VAT / sales tax,Taxes,3.7319709,25.629885073497373,General government,14.561013
+TZA,2018,G1142,Excise taxes,Taxes,2.7253905,18.717039110728745,General government,14.561013
+TZA,2018,G115,Trade taxes (customs),Taxes,1.2599963,8.65321869525615,General government,14.561013
+TZA,2018,G113,Property taxes,Taxes,0.07503675,0.5153264401897545,General government,14.561013
+TZA,2018,G11NEC,Other taxes,Taxes,0.2016712499999986,1.3850083772433812,General government,14.561013
+TZA,2018,G13,Grants (e.g. foreign aid),Grants,0.56123981,3.8544008553152174,General government,14.561013
+TZA,2018,G14X,Other non-tax revenue,Other revenue,1.8642242,12.802846881049522,General government,14.561013
+TZA,2019,G1111,Personal income tax,Taxes,2.0228361,14.171385940734007,General government,14.274088
+TZA,2019,G1112,Corporate income tax,Taxes,1.3831323,9.689812056644179,General government,14.274088
+TZA,2019,G1113,Other income taxes,Taxes,0.5708434,3.9991584751334024,General government,14.274088
+TZA,2019,G11412,VAT / sales tax,Taxes,3.6933188,25.874289131466753,General government,14.274088
+TZA,2019,G1142,Excise taxes,Taxes,2.8657807,20.076804206335286,General government,14.274088
+TZA,2019,G115,Trade taxes (customs),Taxes,1.1162958,7.820435182969308,General government,14.274088
+TZA,2019,G113,Property taxes,Taxes,0.08998627,0.630416948529391,General government,14.274088
+TZA,2019,G11NEC,Other taxes,Taxes,0.18083466,1.2668736524533126,General government,14.274088
+TZA,2019,G13,Grants (e.g. foreign aid),Grants,0.51622111,3.6164910150476866,General government,14.274088
+TZA,2019,G14X,Other non-tax revenue,Other revenue,1.8348388,12.854332970344585,General government,14.274088
+TZA,2020,G1111,Personal income tax,Taxes,1.7946374,12.63167118368189,General government,14.207442
+TZA,2020,G1112,Corporate income tax,Taxes,1.7885295,12.588680335267158,General government,14.207442
+TZA,2020,G1113,Other income taxes,Taxes,0.7134982999999995,5.0220038408405,General government,14.207442
+TZA,2020,G11412,VAT / sales tax,Taxes,3.3519556,23.592955859217657,General government,14.207442
+TZA,2020,G1142,Excise taxes,Taxes,2.5895438,18.226671191262426,General government,14.207442
+TZA,2020,G115,Trade taxes (customs),Taxes,1.1995904,8.44339446391869,General government,14.207442
+TZA,2020,G113,Property taxes,Taxes,0.07881405,0.5547377783691924,General government,14.207442
+TZA,2020,G11NEC,Other taxes,Taxes,0.15755195000000116,1.108939570047913,General government,14.207442
+TZA,2020,G13,Grants (e.g. foreign aid),Grants,0.56082374,3.9473940951429545,General government,14.207442
+TZA,2020,G14X,Other non-tax revenue,Other revenue,1.9724976,13.883551682251628,General government,14.207442
+TZA,2021,G1111,Personal income tax,Taxes,1.624473,12.02903980653517,General government,13.504594
+TZA,2021,G1112,Corporate income tax,Taxes,1.7746299,13.140934757898426,General government,13.504594
+TZA,2021,G1113,Other income taxes,Taxes,0.8507484999999997,6.299696930543064,General government,13.504594
+TZA,2021,G11412,VAT / sales tax,Taxes,3.1314983,23.18839260781633,General government,13.504594
+TZA,2021,G1142,Excise taxes,Taxes,2.8785093,21.315037524896805,General government,13.504594
+TZA,2021,G115,Trade taxes (customs),Taxes,1.0911433,8.079793379350809,General government,13.504594
+TZA,2021,G113,Property taxes,Taxes,0.06170731,0.4569356882781097,General government,13.504594
+TZA,2021,G11NEC,Other taxes,Taxes,0.13398345,0.9921323736786728,General government,13.504594
+TZA,2021,G13,Grants (e.g. foreign aid),Grants,0.45186964,3.346043847404492,General government,13.504594
+TZA,2021,G14X,Other non-tax revenue,Other revenue,1.5060314,11.151993083598121,General government,13.504594
+TZA,2022,G1111,Personal income tax,Taxes,1.6986775,11.643505041664364,General government,14.589056
+TZA,2022,G1112,Corporate income tax,Taxes,1.7808063,12.206453039071668,General government,14.589056
+TZA,2022,G1113,Other income taxes,Taxes,0.8406727000000003,5.762351488637246,General government,14.589056
+TZA,2022,G11412,VAT / sales tax,Taxes,3.5515414,24.343873511352044,General government,14.589056
+TZA,2022,G1142,Excise taxes,Taxes,2.9864502,20.470482454956606,General government,14.589056
+TZA,2022,G115,Trade taxes (customs),Taxes,1.1627492,7.970009711903057,General government,14.589056
+TZA,2022,G113,Property taxes,Taxes,0.09025425,0.6186435123245206,General government,14.589056
+TZA,2022,G11NEC,Other taxes,Taxes,0.14256867,0.9772302440742183,General government,14.589056
+TZA,2022,G13,Grants (e.g. foreign aid),Grants,0.52979213,3.631435241056117,General government,14.589056
+TZA,2022,G14X,Other non-tax revenue,Other revenue,1.8055439,12.37601575496016,General government,14.589056
+TZA,2023,G1111,Personal income tax,Taxes,1.6671349,12.339328957654583,General government,13.510742
+TZA,2023,G1112,Corporate income tax,Taxes,1.5581794,11.532892864063276,General government,13.510742
+TZA,2023,G1113,Other income taxes,Taxes,0.7732719999999997,5.723386620808833,General government,13.510742
+TZA,2023,G11412,VAT / sales tax,Taxes,3.3016066,24.43690065282869,General government,13.510742
+TZA,2023,G1142,Excise taxes,Taxes,2.5359166,18.76963234143617,General government,13.510742
+TZA,2023,G115,Trade taxes (customs),Taxes,1.199448,8.877735952621995,General government,13.510742
+TZA,2023,G113,Property taxes,Taxes,0.09479741,0.7016447357221387,General government,13.510742
+TZA,2023,G11NEC,Other taxes,Taxes,0.15755209000000023,1.166124628832378,General government,13.510742
+TZA,2023,G13,Grants (e.g. foreign aid),Grants,0.31935113,2.363683134501421,General government,13.510742
+TZA,2023,G14X,Other non-tax revenue,Other revenue,1.9034838,14.088669593424255,General government,13.510742
+TZA,2024,G1111,Personal income tax,Taxes,1.75152,12.53366483180393,General government,13.974524
+TZA,2024,G1112,Corporate income tax,Taxes,1.7363867,12.425372771194208,General government,13.974524
+TZA,2024,G1113,Other income taxes,Taxes,0.8525164999999999,6.100504747066876,General government,13.974524
+TZA,2024,G11412,VAT / sales tax,Taxes,3.2185554,23.03159234618653,General government,13.974524
+TZA,2024,G1142,Excise taxes,Taxes,2.823622,20.205496802610234,General government,13.974524
+TZA,2024,G115,Trade taxes (customs),Taxes,1.2426286,8.892099652195666,General government,13.974524
+TZA,2024,G113,Property taxes,Taxes,0.08853979,0.6335800060166628,General government,13.974524
+TZA,2024,G11NEC,Other taxes,Taxes,0.1598089099999994,1.1435731907576916,General government,13.974524
+TZA,2024,G13,Grants (e.g. foreign aid),Grants,0.30833656,2.206419052269687,General government,13.974524
+TZA,2024,G14X,Other non-tax revenue,Other revenue,1.7926095,12.827696313663349,General government,13.974524

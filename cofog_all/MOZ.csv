@@ -1,0 +1,167 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+MOZ,2010,GF01,General public services,Government spending,25.50422637291689,6.657775612890241,Central government (budgetary),26.10459739316061
+MOZ,2010,GF02,Defence,Government spending,2.769054504008048,0.7228505298684811,Central government (budgetary),26.10459739316061
+MOZ,2010,GF03,Public order and safety,Government spending,6.69509419290273,1.747727384150133,Central government (budgetary),26.10459739316061
+MOZ,2010,GF04,Economic affairs,Government spending,21.92746394485362,5.724076181334489,Central government (budgetary),26.10459739316061
+MOZ,2010,GF05,Environmental protection,Government spending,0.3735366948899269,0.0975102503167341,Central government (budgetary),26.10459739316061
+MOZ,2010,GF06,Housing and community amenities,Government spending,5.989437017771958,1.563518419606295,Central government (budgetary),26.10459739316061
+MOZ,2010,GF08,"Recreation, culture and religion",Government spending,1.32917383863055,0.3469754792297232,Central government (budgetary),26.10459739316061
+MOZ,2010,GF09,Education,Government spending,20.29097981661926,5.296878588255937,Central government (budgetary),26.10459739316061
+MOZ,2010,GF10,Social protection,Government spending,6.324127477919429,1.650888016741109,Central government (budgetary),26.10459739316061
+MOZ,2010,GF0170,Interest on public debt,Government spending,2.641995873684513,0.6896823859692581,Central government (budgetary),26.10459739316061
+MOZ,2010,GF07,Health (no breakdown),Health,8.002225511564914,2.088948752286808,Central government (budgetary),26.10459739316061
+MOZ,2011,GF01,General public services,Government spending,25.30332775286915,7.1657065328146805,Central government (budgetary),28.31922584570782
+MOZ,2011,GF02,Defence,Government spending,3.013585465615223,0.8534240740610005,Central government (budgetary),28.31922584570782
+MOZ,2011,GF03,Public order and safety,Government spending,6.462265330887461,1.830063513802898,Central government (budgetary),28.31922584570782
+MOZ,2011,GF04,Economic affairs,Government spending,18.59629694301815,5.26632733023177,Central government (budgetary),28.31922584570782
+MOZ,2011,GF05,Environmental protection,Government spending,1.030814749378394,0.2919187569273345,Central government (budgetary),28.31922584570782
+MOZ,2011,GF06,Housing and community amenities,Government spending,5.510475557458995,1.56052401828934,Central government (budgetary),28.31922584570782
+MOZ,2011,GF08,"Recreation, culture and religion",Government spending,3.778490727044334,1.070039322550812,Central government (budgetary),28.31922584570782
+MOZ,2011,GF09,Education,Government spending,19.85637552903782,5.623171830840081,Central government (budgetary),28.31922584570782
+MOZ,2011,GF10,Social protection,Government spending,7.100863585540662,2.010909595784886,Central government (budgetary),28.31922584570782
+MOZ,2011,GF0170,Interest on public debt,Government spending,2.909253434974901,0.8238780506745547,Central government (budgetary),28.31922584570782
+MOZ,2011,GF07,Health (no breakdown),Health,7.816741785129124,2.21364075990653,Central government (budgetary),28.31922584570782
+MOZ,2016,GF01,General public services,Government spending,21.39335685453603,5.653500326531578,Central government (budgetary),26.42642931154989
+MOZ,2016,GF02,Defence,Government spending,3.891315898791215,1.028335845283163,Central government (budgetary),26.42642931154989
+MOZ,2016,GF03,Public order and safety,Government spending,9.297481742735773,2.456992440498325,Central government (budgetary),26.42642931154989
+MOZ,2016,GF04,Economic affairs,Government spending,15.61087632077238,4.125397195822393,Central government (budgetary),26.42642931154989
+MOZ,2016,GF05,Environmental protection,Government spending,0.6447819630580351,0.1703928496811554,Central government (budgetary),26.42642931154989
+MOZ,2016,GF06,Housing and community amenities,Government spending,4.602840011622945,1.216366261995272,Central government (budgetary),26.42642931154989
+MOZ,2016,GF08,"Recreation, culture and religion",Government spending,0.7011841439391524,0.1852979321418763,Central government (budgetary),26.42642931154989
+MOZ,2016,GF09,Education,Government spending,21.9509961752152,5.800864487424264,Central government (budgetary),26.42642931154989
+MOZ,2016,GF10,Social protection,Government spending,4.118377041124783,1.088339997555941,Central government (budgetary),26.42642931154989
+MOZ,2016,GF0170,Interest on public debt,Government spending,8.10934483141287,2.143010279503146,Central government (budgetary),26.42642931154989
+MOZ,2016,GF0712,Medical products,Health,1.393602062748411,0.36827926399651,Central government (budgetary),26.42642931154989
+MOZ,2016,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),26.42642931154989
+MOZ,2016,GF073,Hospital services,Health,1.907435616682339,0.504067124905884,Central government (budgetary),26.42642931154989
+MOZ,2016,GF0740,Public health services,Health,1.392746821272324,0.3680532542123888,Central government (budgetary),26.42642931154989
+MOZ,2016,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),26.42642931154989
+MOZ,2016,GF0760,Other health,Health,4.985660516088643,1.317532051998018,Central government (budgetary),26.42642931154989
+MOZ,2017,GF01,General public services,Government spending,23.060596939294655,5.628207577929461,Central government (budgetary),24.40616603614082
+MOZ,2017,GF02,Defence,Government spending,4.034100907499005,0.9845693655496708,Central government (budgetary),24.40616603614082
+MOZ,2017,GF03,Public order and safety,Government spending,10.23317085288143,2.497524669116209,Central government (budgetary),24.40616603614082
+MOZ,2017,GF04,Economic affairs,Government spending,12.31120275283157,3.004692584902012,Central government (budgetary),24.40616603614082
+MOZ,2017,GF05,Environmental protection,Government spending,1.086894995847097,0.2652693973249485,Central government (budgetary),24.40616603614082
+MOZ,2017,GF06,Housing and community amenities,Government spending,4.4141919033781,1.077335005092344,Central government (budgetary),24.40616603614082
+MOZ,2017,GF08,"Recreation, culture and religion",Government spending,0.5973722955011602,0.1457956742939189,Central government (budgetary),24.40616603614082
+MOZ,2017,GF09,Education,Government spending,23.84867115532715,5.820546279582369,Central government (budgetary),24.40616603614082
+MOZ,2017,GF10,Social protection,Government spending,2.144132817474283,0.5233006154681576,Central government (budgetary),24.40616603614082
+MOZ,2017,GF0170,Interest on public debt,Government spending,8.797327773697566,2.147090423192159,Central government (budgetary),24.40616603614082
+MOZ,2017,GF0712,Medical products,Health,1.72968916394594,0.422150809261782,Central government (budgetary),24.40616603614082
+MOZ,2017,GF072,Outpatient services,Health,0.0127152362241915,0.0031033016647637,Central government (budgetary),24.40616603614082
+MOZ,2017,GF073,Hospital services,Health,2.166515471220981,0.5287633631048715,Central government (budgetary),24.40616603614082
+MOZ,2017,GF0740,Public health services,Health,1.599100573574866,0.390279141071562,Central government (budgetary),24.40616603614082
+MOZ,2017,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),24.40616603614082
+MOZ,2017,GF0760,Other health,Health,3.964317161302058,0.9675378285866048,Central government (budgetary),24.40616603614082
+MOZ,2018,GF01,General public services,Government spending,20.62562092787359,5.959669735302559,Central government (budgetary),28.89449852755039
+MOZ,2018,GF02,Defence,Government spending,4.528900187498694,1.308602997991037,Central government (budgetary),28.89449852755039
+MOZ,2018,GF03,Public order and safety,Government spending,9.485594088566211,2.740814844250171,Central government (budgetary),28.89449852755039
+MOZ,2018,GF04,Economic affairs,Government spending,18.1752865270209,5.251657897928119,Central government (budgetary),28.89449852755039
+MOZ,2018,GF05,Environmental protection,Government spending,1.422667319166767,0.411072587588582,Central government (budgetary),28.89449852755039
+MOZ,2018,GF06,Housing and community amenities,Government spending,3.637107637032463,1.050924012627768,Central government (budgetary),28.89449852755039
+MOZ,2018,GF08,"Recreation, culture and religion",Government spending,0.4907218570305756,0.1417916197540676,Central government (budgetary),28.89449852755039
+MOZ,2018,GF09,Education,Government spending,19.8811247383664,5.744551294787734,Central government (budgetary),28.89449852755039
+MOZ,2018,GF10,Social protection,Government spending,2.528372389212261,0.7305605227719275,Central government (budgetary),28.89449852755039
+MOZ,2018,GF0170,Interest on public debt,Government spending,10.41018277416254,3.007970108395699,Central government (budgetary),28.89449852755039
+MOZ,2018,GF0712,Medical products,Health,0.0690496221130246,0.019951542044727,Central government (budgetary),28.89449852755039
+MOZ,2018,GF072,Outpatient services,Health,1.776473428031056,0.5133030885047575,Central government (budgetary),28.89449852755039
+MOZ,2018,GF073,Hospital services,Health,1.07260041605876,0.3099225114245977,Central government (budgetary),28.89449852755039
+MOZ,2018,GF0740,Public health services,Health,0.8369972177263328,0.241846148751573,Central government (budgetary),28.89449852755039
+MOZ,2018,GF075,Health R&D,Health,1.842861521077467,0.5324855950725214,Central government (budgetary),28.89449852755039
+MOZ,2018,GF0760,Other health,Health,3.216439349062962,0.9293740203545487,Central government (budgetary),28.89449852755039
+MOZ,2019,GF01,General public services,Government spending,25.468442530468806,7.00022817755801,Central government (budgetary),27.48589030987419
+MOZ,2019,GF02,Defence,Government spending,4.735623440467397,1.301628264335559,Central government (budgetary),27.48589030987419
+MOZ,2019,GF03,Public order and safety,Government spending,10.60530586912063,2.914962738213145,Central government (budgetary),27.48589030987419
+MOZ,2019,GF04,Economic affairs,Government spending,9.487031255012344,2.607595004416174,Central government (budgetary),27.48589030987419
+MOZ,2019,GF05,Environmental protection,Government spending,1.287364582209948,0.3538436169543964,Central government (budgetary),27.48589030987419
+MOZ,2019,GF06,Housing and community amenities,Government spending,3.940447364402394,1.083067040297971,Central government (budgetary),27.48589030987419
+MOZ,2019,GF08,"Recreation, culture and religion",Government spending,0.5018486131230236,0.1379375593246192,Central government (budgetary),27.48589030987419
+MOZ,2019,GF09,Education,Government spending,21.93555059119455,6.029181374362695,Central government (budgetary),27.48589030987419
+MOZ,2019,GF10,Social protection,Government spending,2.396275720579928,0.6586377160807464,Central government (budgetary),27.48589030987419
+MOZ,2019,GF0170,Interest on public debt,Government spending,11.13756077790279,3.061257738609931,Central government (budgetary),27.48589030987419
+MOZ,2019,GF0712,Medical products,Health,1.806751972024336,0.4966018652020979,Central government (budgetary),27.48589030987419
+MOZ,2019,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),27.48589030987419
+MOZ,2019,GF073,Hospital services,Health,1.986151441168255,0.545911406507492,Central government (budgetary),27.48589030987419
+MOZ,2019,GF0740,Public health services,Health,2.121155213913793,0.5830183953985223,Central government (budgetary),27.48589030987419
+MOZ,2019,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),27.48589030987419
+MOZ,2019,GF0760,Other health,Health,2.590490628411804,0.7120194126128392,Central government (budgetary),27.48589030987419
+MOZ,2020,GF01,General public services,Government spending,19.591840878102225,6.052252839877718,Central government (budgetary),30.89170067036586
+MOZ,2020,GF02,Defence,Government spending,6.928299627063413,2.140269582338504,Central government (budgetary),30.89170067036586
+MOZ,2020,GF03,Public order and safety,Government spending,13.31610056754659,4.113569928291381,Central government (budgetary),30.89170067036586
+MOZ,2020,GF04,Economic affairs,Government spending,9.366302422943704,2.893410108376995,Central government (budgetary),30.89170067036586
+MOZ,2020,GF05,Environmental protection,Government spending,1.807784634291364,0.5584554179901564,Central government (budgetary),30.89170067036586
+MOZ,2020,GF06,Housing and community amenities,Government spending,3.697488473405089,1.14221707152558,Central government (budgetary),30.89170067036586
+MOZ,2020,GF08,"Recreation, culture and religion",Government spending,0.4753126784527043,0.146832169875908,Central government (budgetary),30.89170067036586
+MOZ,2020,GF09,Education,Government spending,20.66485695247922,6.38372575371917,Central government (budgetary),30.89170067036586
+MOZ,2020,GF10,Social protection,Government spending,4.652943005473696,1.437373225613659,Central government (budgetary),30.89170067036586
+MOZ,2020,GF0170,Interest on public debt,Government spending,8.961653749987095,2.768407251560631,Central government (budgetary),30.89170067036586
+MOZ,2020,GF0712,Medical products,Health,2.614302389212806,0.8076024686938433,Central government (budgetary),30.89170067036586
+MOZ,2020,GF072,Outpatient services,Health,0.0006304901955206,0.0001947691439562,Central government (budgetary),30.89170067036586
+MOZ,2020,GF073,Hospital services,Health,2.290784317298178,0.7076622343034374,Central government (budgetary),30.89170067036586
+MOZ,2020,GF0740,Public health services,Health,2.207928870544774,0.6820667777032814,Central government (budgetary),30.89170067036586
+MOZ,2020,GF075,Health R&D,Health,0.6700156455192682,0.206979227658432,Central government (budgetary),30.89170067036586
+MOZ,2020,GF0760,Other health,Health,2.753755297484359,0.8506818436932113,Central government (budgetary),30.89170067036586
+MOZ,2021,GF01,General public services,Government spending,20.94057239368165,6.245220711196267,Central government (budgetary),29.82354347238677
+MOZ,2021,GF02,Defence,Government spending,6.910272985362865,2.060888267850293,Central government (budgetary),29.82354347238677
+MOZ,2021,GF03,Public order and safety,Government spending,14.79052359668358,4.411058234650552,Central government (budgetary),29.82354347238677
+MOZ,2021,GF04,Economic affairs,Government spending,9.621531895958913,2.869481747700866,Central government (budgetary),29.82354347238677
+MOZ,2021,GF05,Environmental protection,Government spending,1.728561150493414,0.5155181861641923,Central government (budgetary),29.82354347238677
+MOZ,2021,GF06,Housing and community amenities,Government spending,2.767522370478239,0.8253732372676065,Central government (budgetary),29.82354347238677
+MOZ,2021,GF08,"Recreation, culture and religion",Government spending,0.6022389374859562,0.1796089913287644,Central government (budgetary),29.82354347238677
+MOZ,2021,GF09,Education,Government spending,21.07766333609903,6.286106088004822,Central government (budgetary),29.82354347238677
+MOZ,2021,GF10,Social protection,Government spending,3.387580203323835,1.010296454600252,Central government (budgetary),29.82354347238677
+MOZ,2021,GF0170,Interest on public debt,Government spending,8.403153521245043,2.506118143459916,Central government (budgetary),29.82354347238677
+MOZ,2021,GF0712,Medical products,Health,2.004293730335754,0.597751411981006,Central government (budgetary),29.82354347238677
+MOZ,2021,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),29.82354347238677
+MOZ,2021,GF073,Hospital services,Health,2.04434347802548,0.6096956658938326,Central government (budgetary),29.82354347238677
+MOZ,2021,GF0740,Public health services,Health,2.220397889648235,0.6622013298791998,Central government (budgetary),29.82354347238677
+MOZ,2021,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),29.82354347238677
+MOZ,2021,GF0760,Other health,Health,3.501344511178008,1.044225002409201,Central government (budgetary),29.82354347238677
+MOZ,2022,GF01,General public services,Government spending,26.43956657275598,8.505754776570853,Central government (budgetary),32.17055299739825
+MOZ,2022,GF02,Defence,Government spending,6.8649097658099,2.208479434433442,Central government (budgetary),32.17055299739825
+MOZ,2022,GF03,Public order and safety,Government spending,13.06130162891664,4.201892962680669,Central government (budgetary),32.17055299739825
+MOZ,2022,GF04,Economic affairs,Government spending,7.862241757391998,2.529326651345369,Central government (budgetary),32.17055299739825
+MOZ,2022,GF05,Environmental protection,Government spending,2.403379959210333,0.7731806235066089,Central government (budgetary),32.17055299739825
+MOZ,2022,GF06,Housing and community amenities,Government spending,2.266536929385614,0.7291574640736019,Central government (budgetary),32.17055299739825
+MOZ,2022,GF08,"Recreation, culture and religion",Government spending,0.5528203177715344,0.1778453533090769,Central government (budgetary),32.17055299739825
+MOZ,2022,GF09,Education,Government spending,18.98069566605682,6.106194758523682,Central government (budgetary),32.17055299739825
+MOZ,2022,GF10,Social protection,Government spending,2.218172921186504,0.7135984951842412,Central government (budgetary),32.17055299739825
+MOZ,2022,GF0170,Interest on public debt,Government spending,9.272513090722171,2.983018738041467,Central government (budgetary),32.17055299739825
+MOZ,2022,GF0712,Medical products,Health,1.780388917865247,0.5727609603816446,Central government (budgetary),32.17055299739825
+MOZ,2022,GF072,Outpatient services,Health,0.0063293768372771,0.0020361955298412,Central government (budgetary),32.17055299739825
+MOZ,2022,GF073,Hospital services,Health,2.074613806640677,0.6674147341566803,Central government (budgetary),32.17055299739825
+MOZ,2022,GF0740,Public health services,Health,3.787104554263015,1.218332477696066,Central government (budgetary),32.17055299739825
+MOZ,2022,GF075,Health R&D,Health,0.0078295456212824,0.0025188081235501,Central government (budgetary),32.17055299739825
+MOZ,2022,GF0760,Other health,Health,2.421595189565016,0.7790405638414603,Central government (budgetary),32.17055299739825
+MOZ,2023,GF01,General public services,Government spending,23.162492859626163,7.139783067888409,Central government (budgetary),30.82476100978556
+MOZ,2023,GF02,Defence,Government spending,7.028448536785449,2.166502464159885,Central government (budgetary),30.82476100978556
+MOZ,2023,GF03,Public order and safety,Government spending,14.50467571759583,4.471031625193313,Central government (budgetary),30.82476100978556
+MOZ,2023,GF04,Economic affairs,Government spending,7.582220326779663,2.337201294965213,Central government (budgetary),30.82476100978556
+MOZ,2023,GF05,Environmental protection,Government spending,1.310413761845037,0.4039319103280733,Central government (budgetary),30.82476100978556
+MOZ,2023,GF06,Housing and community amenities,Government spending,1.345026851922228,0.4146013126224692,Central government (budgetary),30.82476100978556
+MOZ,2023,GF08,"Recreation, culture and religion",Government spending,0.5988805518122361,0.1846034988302068,Central government (budgetary),30.82476100978556
+MOZ,2023,GF09,Education,Government spending,18.92574437670635,5.833815473442664,Central government (budgetary),30.82476100978556
+MOZ,2023,GF10,Social protection,Government spending,1.343819087399457,0.4142290220947641,Central government (budgetary),30.82476100978556
+MOZ,2023,GF0170,Interest on public debt,Government spending,12.41058928624039,3.825534487389652,Central government (budgetary),30.82476100978556
+MOZ,2023,GF0712,Medical products,Health,2.321494576393613,0.7155951550284648,Central government (budgetary),30.82476100978556
+MOZ,2023,GF072,Outpatient services,Health,0.0001152935752832,3.55389690406e-05,Central government (budgetary),30.82476100978556
+MOZ,2023,GF073,Hospital services,Health,2.195758162953823,0.6768372060833737,Central government (budgetary),30.82476100978556
+MOZ,2023,GF0740,Public health services,Health,5.102164071573339,1.572729881389626,Central government (budgetary),30.82476100978556
+MOZ,2023,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),30.82476100978556
+MOZ,2023,GF0760,Other health,Health,2.16815653879114,0.6683290714004075,Central government (budgetary),30.82476100978556
+MOZ,2024,GF01,General public services,Government spending,26.896769132354812,8.521461924981825,Central government (budgetary),31.68210234860936
+MOZ,2024,GF02,Defence,Government spending,7.032033166957459,2.227895945143618,Central government (budgetary),31.68210234860936
+MOZ,2024,GF03,Public order and safety,Government spending,12.37251060350097,3.919871472493724,Central government (budgetary),31.68210234860936
+MOZ,2024,GF04,Economic affairs,Government spending,7.209631753574503,2.284162911125314,Central government (budgetary),31.68210234860936
+MOZ,2024,GF05,Environmental protection,Government spending,1.501032717264346,0.4755587217698022,Central government (budgetary),31.68210234860936
+MOZ,2024,GF06,Housing and community amenities,Government spending,2.555249836191646,0.8095568683649103,Central government (budgetary),31.68210234860936
+MOZ,2024,GF08,"Recreation, culture and religion",Government spending,0.8200663939088698,0.2598142742447581,Central government (budgetary),31.68210234860936
+MOZ,2024,GF09,Education,Government spending,17.65870719362069,5.59464968652415,Central government (budgetary),31.68210234860936
+MOZ,2024,GF10,Social protection,Government spending,0.646989167060379,0.2049797700924845,Central government (budgetary),31.68210234860936
+MOZ,2024,GF0170,Interest on public debt,Government spending,13.07635231784604,4.142863324804735,Central government (budgetary),31.68210234860936
+MOZ,2024,GF0712,Medical products,Health,1.869006998505443,0.5921407101691663,Central government (budgetary),31.68210234860936
+MOZ,2024,GF072,Outpatient services,Health,0.1569163138053322,0.0497143871414703,Central government (budgetary),31.68210234860936
+MOZ,2024,GF073,Hospital services,Health,1.884925355620068,0.597183980362439,Central government (budgetary),31.68210234860936
+MOZ,2024,GF0740,Public health services,Health,3.997569252588849,1.266513982061738,Central government (budgetary),31.68210234860936
+MOZ,2024,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),31.68210234860936
+MOZ,2024,GF0760,Other health,Health,2.322239797200596,0.7357343893292312,Central government (budgetary),31.68210234860936

@@ -1,0 +1,43 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+BOL,2005,GF01,General public services,Government spending,10.91566659063611,3.8670045778982303,General government,35.4261880920353
+BOL,2005,GF02,Defence,Government spending,4.31624266309206,1.52908024433567,General government,35.4261880920353
+BOL,2005,GF03,Public order and safety,Government spending,5.6933574625006,2.01693952341739,General government,35.4261880920353
+BOL,2005,GF04,Economic affairs,Government spending,21.1420549421356,7.4898241503224,General government,35.4261880920353
+BOL,2005,GF05,Environmental protection,Government spending,1.80180006945113,0.638309081646181,General government,35.4261880920353
+BOL,2005,GF06,Housing and community amenities,Government spending,3.61883680210594,1.28201593225785,General government,35.4261880920353
+BOL,2005,GF08,"Recreation, culture and religion",Government spending,1.20668414784065,0.427482195890801,General government,35.4261880920353
+BOL,2005,GF09,Education,Government spending,18.9507411565544,6.71352520695572,General government,35.4261880920353
+BOL,2005,GF10,Social protection,Government spending,13.6925395922689,4.8507448305336,General government,35.4261880920353
+BOL,2005,GF0170,Interest on public debt,Government spending,7.80051904448709,2.76342654885503,General government,35.4261880920353
+BOL,2005,GF072,Outpatient services,Health,3.45869311586669,1.22528312875321,General government,35.4261880920353
+BOL,2005,GF073,Hospital services,Health,1.72002283731719,0.60933852557395,General government,35.4261880920353
+BOL,2005,GF0740,Public health services,Health,1.39397001336929,0.493830438882773,General government,35.4261880920353
+BOL,2005,GF07_rest,Health (not broken down),Health,4.2888715623743305,1.519383706712547,General government,35.4261880920353
+BOL,2006,GF01,General public services,Government spending,9.096523357244209,3.12341348342786,General government,34.3363432463508
+BOL,2006,GF02,Defence,Government spending,3.94845722108521,1.35575582436714,General government,34.3363432463508
+BOL,2006,GF03,Public order and safety,Government spending,5.07579922493026,1.74284384436767,General government,34.3363432463508
+BOL,2006,GF04,Economic affairs,Government spending,23.4433390404204,8.0495853613245,General government,34.3363432463508
+BOL,2006,GF05,Environmental protection,Government spending,1.79383918553342,0.6159387800323,General government,34.3363432463508
+BOL,2006,GF06,Housing and community amenities,Government spending,3.65955808197313,1.25655842432586,General government,34.3363432463508
+BOL,2006,GF08,"Recreation, culture and religion",Government spending,1.52495294163151,0.52361307638392,General government,34.3363432463508
+BOL,2006,GF09,Education,Government spending,19.5990409859771,6.72959398593809,General government,34.3363432463508
+BOL,2006,GF10,Social protection,Government spending,12.8397996546106,4.40871768155087,General government,34.3363432463508
+BOL,2006,GF0170,Interest on public debt,Government spending,9.44911096205789,3.24447917366076,General government,34.3363432463508
+BOL,2006,GF072,Outpatient services,Health,3.26441383249619,1.12088033850725,General government,34.3363432463508
+BOL,2006,GF073,Hospital services,Health,1.75836245845112,0.603757369248751,General government,34.3363432463508
+BOL,2006,GF0740,Public health services,Health,0.968366336775304,0.332501589277282,General government,34.3363432463508
+BOL,2006,GF07_rest,Health (not broken down),Health,3.5784367168135764,1.228704313938557,General government,34.3363432463508
+BOL,2007,GF01,General public services,Government spending,8.81395414030899,3.06023681202887,General government,34.7203623176736
+BOL,2007,GF02,Defence,Government spending,4.30530771823103,1.49481843866058,General government,34.7203623176736
+BOL,2007,GF03,Public order and safety,Government spending,4.99993025665327,1.735993900741,General government,34.7203623176736
+BOL,2007,GF04,Economic affairs,Government spending,24.5165321707515,8.51222879741392,General government,34.7203623176736
+BOL,2007,GF05,Environmental protection,Government spending,1.74137617926527,0.604612118754562,General government,34.7203623176736
+BOL,2007,GF06,Housing and community amenities,Government spending,4.73897443502172,1.64538909398146,General government,34.7203623176736
+BOL,2007,GF08,"Recreation, culture and religion",Government spending,2.17128273852096,0.753877233755582,General government,34.7203623176736
+BOL,2007,GF09,Education,Government spending,20.3742843064759,7.07402533084133,General government,34.7203623176736
+BOL,2007,GF10,Social protection,Government spending,12.5493575102687,4.35718239610547,General government,34.7203623176736
+BOL,2007,GF0170,Interest on public debt,Government spending,6.39250932424311,2.21950239856827,General government,34.7203623176736
+BOL,2007,GF072,Outpatient services,Health,3.63824620468207,1.26321226427462,General government,34.7203623176736
+BOL,2007,GF073,Hospital services,Health,1.35841990478042,0.471648312735158,General government,34.7203623176736
+BOL,2007,GF0740,Public health services,Health,0.6769580054557,0.235042272232715,General government,34.7203623176736
+BOL,2007,GF07_rest,Health (not broken down),Health,3.7228671053413693,1.2925929475800069,General government,34.7203623176736

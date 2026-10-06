@@ -1,0 +1,116 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+NGA,2005,GF01,General public services,Government spending,1.2449213459734985,0.10731937042077,Central government (budgetary),8.62057436543034
+NGA,2005,GF02,Defence,Government spending,4.6098551932493,0.397395995072708,Central government (budgetary),8.62057436543034
+NGA,2005,GF03,Public order and safety,Government spending,5.19845817272633,0.448136952635664,Central government (budgetary),8.62057436543034
+NGA,2005,GF04,Economic affairs,Government spending,16.7986248567559,1.44813794814631,Central government (budgetary),8.62057436543034
+NGA,2005,GF06,Housing and community amenities,Government spending,0.348994686946557,0.0300853465196288,Central government (budgetary),8.62057436543034
+NGA,2005,GF09,Education,Government spending,5.97458068548807,0.515043171015137,Central government (budgetary),8.62057436543034
+NGA,2005,GF10,Social protection,Government spending,1.60433378476925,0.138302786985756,Central government (budgetary),8.62057436543034
+NGA,2005,GF0170,Interest on public debt,Government spending,20.5229711428274,1.76919798936324,Central government (budgetary),8.62057436543034
+NGA,2005,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),8.62057436543034
+NGA,2005,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),8.62057436543034
+NGA,2005,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),8.62057436543034
+NGA,2005,GF07_rest,Health (not broken down),Health,4.03687884154599,0.348002142577795,Central government (budgetary),8.62057436543034
+NGA,2005,UNCL,Unclassified,Unclassified,39.660381289717705,,Central government (budgetary),8.62057436543034
+NGA,2006,GF01,General public services,Government spending,11.172718351324802,0.7944186588641841,Central government (budgetary),7.11034355188937
+NGA,2006,GF02,Defence,Government spending,4.90186457311089,0.34853941159654,Central government (budgetary),7.11034355188937
+NGA,2006,GF03,Public order and safety,Government spending,6.40824337585869,0.455648119664746,Central government (budgetary),7.11034355188937
+NGA,2006,GF04,Economic affairs,Government spending,16.6339548577036,1.18273133664892,Central government (budgetary),7.11034355188937
+NGA,2006,GF06,Housing and community amenities,Government spending,0.13738959764475,0.0097688723971002,Central government (budgetary),7.11034355188937
+NGA,2006,GF09,Education,Government spending,7.44357212953876,0.529263550942894,Central government (budgetary),7.11034355188937
+NGA,2006,GF10,Social protection,Government spending,1.31010794896958,0.0931531760723485,Central government (budgetary),7.11034355188937
+NGA,2006,GF0170,Interest on public debt,Government spending,12.2325809617272,0.869778531641816,Central government (budgetary),7.11034355188937
+NGA,2006,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),7.11034355188937
+NGA,2006,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),7.11034355188937
+NGA,2006,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),7.11034355188937
+NGA,2006,GF07_rest,Health (not broken down),Health,4.6368989205103,0.329699443402132,Central government (budgetary),7.11034355188937
+NGA,2006,UNCL,Unclassified,Unclassified,35.12266928361143,,Central government (budgetary),7.11034355188937
+NGA,2007,GF01,General public services,Government spending,14.14582398302669,1.050753027521564,Central government (budgetary),7.42800863903257
+NGA,2007,GF02,Defence,Government spending,3.93324901056755,0.29216207629962,Central government (budgetary),7.42800863903257
+NGA,2007,GF03,Public order and safety,Government spending,8.01746297278551,0.595537842249745,Central government (budgetary),7.42800863903257
+NGA,2007,GF04,Economic affairs,Government spending,21.6940715655474,1.61143751004677,Central government (budgetary),7.42800863903257
+NGA,2007,GF06,Housing and community amenities,Government spending,0.236647762046595,0.0175782162088983,Central government (budgetary),7.42800863903257
+NGA,2007,GF09,Education,Government spending,8.06234444489779,0.59887164187557,Central government (budgetary),7.42800863903257
+NGA,2007,GF10,Social protection,Government spending,1.27300175445755,0.0945586802961427,Central government (budgetary),7.42800863903257
+NGA,2007,GF0170,Interest on public debt,Government spending,8.71924599126851,0.647666345489926,Central government (budgetary),7.42800863903257
+NGA,2007,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),7.42800863903257
+NGA,2007,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),7.42800863903257
+NGA,2007,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),7.42800863903257
+NGA,2007,GF07_rest,Health (not broken down),Health,7.29527928516055,0.541893975543279,Central government (budgetary),7.42800863903257
+NGA,2007,UNCL,Unclassified,Unclassified,26.62287323024185,,Central government (budgetary),7.42800863903257
+NGA,2008,GF01,General public services,Government spending,8.7321423061495,0.722715244729285,Central government (budgetary),8.27649412241395
+NGA,2008,GF02,Defence,Government spending,3.95260575765991,0.327137183214918,Central government (budgetary),8.27649412241395
+NGA,2008,GF03,Public order and safety,Government spending,6.96720046900552,0.576639937314039,Central government (budgetary),8.27649412241395
+NGA,2008,GF04,Economic affairs,Government spending,24.9714585454658,2.06676129879651,Central government (budgetary),8.27649412241395
+NGA,2008,GF06,Housing and community amenities,Government spending,0.274615076059119,0.0227285006292956,Central government (budgetary),8.27649412241395
+NGA,2008,GF09,Education,Government spending,6.56607732420007,0.543441003810574,Central government (budgetary),8.27649412241395
+NGA,2008,GF10,Social protection,Government spending,2.36971211700454,0.196129084082012,Central government (budgetary),8.27649412241395
+NGA,2008,GF0170,Interest on public debt,Government spending,11.7621648307569,0.973494880886235,Central government (budgetary),8.27649412241395
+NGA,2008,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),8.27649412241395
+NGA,2008,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),8.27649412241395
+NGA,2008,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),8.27649412241395
+NGA,2008,GF07_rest,Health (not broken down),Health,6.02918942269123,0.499005508198243,Central government (budgetary),8.27649412241395
+NGA,2008,UNCL,Unclassified,Unclassified,28.374834151007406,,Central government (budgetary),8.27649412241395
+NGA,2009,GF01,General public services,Government spending,15.31755915317562,1.1942944698645102,Central government (budgetary),7.79689804309917
+NGA,2009,GF02,Defence,Government spending,3.07277940282082,0.239581477127291,Central government (budgetary),7.79689804309917
+NGA,2009,GF03,Public order and safety,Government spending,7.3503431897825,0.573098764325225,Central government (budgetary),7.79689804309917
+NGA,2009,GF04,Economic affairs,Government spending,23.8408294477106,1.85884516466716,Central government (budgetary),7.79689804309917
+NGA,2009,GF09,Education,Government spending,5.22748993599583,0.407582060522865,Central government (budgetary),7.79689804309917
+NGA,2009,GF10,Social protection,Government spending,4.39340843928292,0.342549576627804,Central government (budgetary),7.79689804309917
+NGA,2009,GF0170,Interest on public debt,Government spending,7.29242086362188,0.56858261961029,Central government (budgetary),7.79689804309917
+NGA,2009,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),7.79689804309917
+NGA,2009,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),7.79689804309917
+NGA,2009,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),7.79689804309917
+NGA,2009,GF07_rest,Health (not broken down),Health,4.13275797156014,0.322226925410597,Central government (budgetary),7.79689804309917
+NGA,2009,UNCL,Unclassified,Unclassified,29.372411596049687,,Central government (budgetary),7.79689804309917
+NGA,2010,GF01,General public services,Government spending,14.39912270245784,1.088889616297601,Central government (budgetary),7.56219416139659
+NGA,2010,GF02,Defence,Government spending,5.42351062054497,0.410136403489576,Central government (budgetary),7.56219416139659
+NGA,2010,GF03,Public order and safety,Government spending,6.78236822657163,0.512895854034217,Central government (budgetary),7.56219416139659
+NGA,2010,GF04,Economic affairs,Government spending,19.1884997735237,1.45107160953301,Central government (budgetary),7.56219416139659
+NGA,2010,GF06,Housing and community amenities,Government spending,0.486327985314802,0.0367770665107136,Central government (budgetary),7.56219416139659
+NGA,2010,GF09,Education,Government spending,6.16730636279114,0.466383681682432,Central government (budgetary),7.56219416139659
+NGA,2010,GF10,Social protection,Government spending,7.28538393687272,0.550934878709514,Central government (budgetary),7.56219416139659
+NGA,2010,GF0170,Interest on public debt,Government spending,9.91012468114526,0.749422870024689,Central government (budgetary),7.56219416139659
+NGA,2010,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),7.56219416139659
+NGA,2010,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),7.56219416139659
+NGA,2010,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),7.56219416139659
+NGA,2010,GF07_rest,Health (not broken down),Health,3.19689131523112,0.241755128386603,Central government (budgetary),7.56219416139659
+NGA,2010,UNCL,Unclassified,Unclassified,27.160464395546825,,Central government (budgetary),7.56219416139659
+NGA,2011,GF01,General public services,Government spending,10.090828063324999,0.746311284669545,Central government (budgetary),7.39593698342762
+NGA,2011,GF02,Defence,Government spending,6.60625610118416,0.488594538207423,Central government (budgetary),7.39593698342762
+NGA,2011,GF03,Public order and safety,Government spending,7.33627604940368,0.542586353544189,Central government (budgetary),7.39593698342762
+NGA,2011,GF04,Economic affairs,Government spending,14.3223971817835,1.05927547008092,Central government (budgetary),7.39593698342762
+NGA,2011,GF06,Housing and community amenities,Government spending,0.466873222698527,0.0345296493432808,Central government (budgetary),7.39593698342762
+NGA,2011,GF09,Education,Government spending,7.87742455753151,0.582609356192083,Central government (budgetary),7.39593698342762
+NGA,2011,GF10,Social protection,Government spending,1.48762785959849,0.110024019043817,Central government (budgetary),7.39593698342762
+NGA,2011,GF0170,Interest on public debt,Government spending,11.1879801366665,0.827455960626255,Central government (budgetary),7.39593698342762
+NGA,2011,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),7.39593698342762
+NGA,2011,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),7.39593698342762
+NGA,2011,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),7.39593698342762
+NGA,2011,GF07_rest,Health (not broken down),Health,5.75739569627775,0.425813357583276,Central government (budgetary),7.39593698342762
+NGA,2011,UNCL,Unclassified,Unclassified,34.86694113153088,,Central government (budgetary),7.39593698342762
+NGA,2012,GF01,General public services,Government spending,1.4266481368886978,0.09049632772926908,Central government (budgetary),6.34328292935814
+NGA,2012,GF02,Defence,Government spending,7.25918526882654,0.460470659967955,Central government (budgetary),6.34328292935814
+NGA,2012,GF03,Public order and safety,Government spending,9.13315382610961,0.579341787563631,Central government (budgetary),6.34328292935814
+NGA,2012,GF04,Economic affairs,Government spending,11.378441761487,0.721766753883363,Central government (budgetary),6.34328292935814
+NGA,2012,GF06,Housing and community amenities,Government spending,0.58846521323721,0.0373280134164869,Central government (budgetary),6.34328292935814
+NGA,2012,GF09,Education,Government spending,8.59897507165813,0.545457317820252,Central government (budgetary),6.34328292935814
+NGA,2012,GF10,Social protection,Government spending,2.14105793450882,0.135813362467366,Central government (budgetary),6.34328292935814
+NGA,2012,GF0170,Interest on public debt,Government spending,14.750716581256,0.935679686856811,Central government (budgetary),6.34328292935814
+NGA,2012,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),6.34328292935814
+NGA,2012,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),6.34328292935814
+NGA,2012,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),6.34328292935814
+NGA,2012,GF07_rest,Health (not broken down),Health,5.2744723356206,0.334574703279139,Central government (budgetary),6.34328292935814
+NGA,2012,UNCL,Unclassified,Unclassified,39.44888387040739,,Central government (budgetary),6.34328292935814
+NGA,2013,GF01,General public services,Government spending,15.1315281956337,0.968522819500578,Central government (budgetary),6.40069401436961
+NGA,2013,GF02,Defence,Government spending,5.90141171025226,0.377731306101424,Central government (budgetary),6.40069401436961
+NGA,2013,GF03,Public order and safety,Government spending,5.87826891923166,0.37625000686181,Central government (budgetary),6.40069401436961
+NGA,2013,GF04,Economic affairs,Government spending,15.1508138548176,0.969757235533589,Central government (budgetary),6.40069401436961
+NGA,2013,GF06,Housing and community amenities,Government spending,0.219856514695672,0.0140723427763275,Central government (budgetary),6.40069401436961
+NGA,2013,GF09,Education,Government spending,8.2118336804752,0.525614346856164,Central government (budgetary),6.40069401436961
+NGA,2013,GF10,Social protection,Government spending,6.95440870168942,0.445130421503834,Central government (budgetary),6.40069401436961
+NGA,2013,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),6.40069401436961
+NGA,2013,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),6.40069401436961
+NGA,2013,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),6.40069401436961
+NGA,2013,GF07_rest,Health (not broken down),Health,4.09627401064568,0.262189965411576,Central government (budgetary),6.40069401436961
+NGA,2013,UNCL,Unclassified,Unclassified,38.455604412558806,,Central government (budgetary),6.40069401436961

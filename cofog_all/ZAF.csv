@@ -1,0 +1,301 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+ZAF,2005,GF01,General public services,Government spending,12.187353842502425,3.801578660860098,General government,31.19281437125749
+ZAF,2005,GF02,Defence,Government spending,4.834279212302709,1.507947740881873,General government,31.19281437125749
+ZAF,2005,GF03,Public order and safety,Government spending,9.286367475724768,2.896679368535656,General government,31.19281437125749
+ZAF,2005,GF04,Economic affairs,Government spending,14.45816143466454,4.509907457811649,General government,31.19281437125749
+ZAF,2005,GF05,Environmental protection,Government spending,0.5793944978464673,0.180729450190528,General government,31.19281437125749
+ZAF,2005,GF06,Housing and community amenities,Government spending,5.084884784262808,1.586118671747414,General government,31.19281437125749
+ZAF,2005,GF08,"Recreation, culture and religion",Government spending,1.736263812974248,0.5415895481763745,General government,31.19281437125749
+ZAF,2005,GF09,Education,Government spending,18.08443802224037,5.641045182362548,General government,31.19281437125749
+ZAF,2005,GF10,Social protection,Government spending,13.90285020209001,4.336690255851932,General government,31.19281437125749
+ZAF,2005,GF0170,Interest on public debt,Government spending,9.285843926479725,2.896516058791508,General government,31.19281437125749
+ZAF,2005,GF07,Health (no breakdown),Health,10.56016278891193,3.294011976047904,General government,31.19281437125749
+ZAF,2006,GF01,General public services,Government spending,5.285259310022434,1.6154790498028282,General government,30.56574815050977
+ZAF,2006,GF03,Public order and safety,Government spending,9.993496777804456,3.054587056533019,General government,30.56574815050977
+ZAF,2006,GF04,Economic affairs,Government spending,17.65171667575634,5.395379263353217,General government,30.56574815050977
+ZAF,2006,GF05,Environmental protection,Government spending,0.6422130671835324,0.1962972287049826,General government,30.56574815050977
+ZAF,2006,GF06,Housing and community amenities,Government spending,5.866097223966838,1.793016503741749,General government,30.56574815050977
+ZAF,2006,GF08,"Recreation, culture and religion",Government spending,2.458822201269162,0.7515574015087525,General government,30.56574815050977
+ZAF,2006,GF09,Education,Government spending,19.01977838163579,5.813537558915899,General government,30.56574815050977
+ZAF,2006,GF10,Social protection,Government spending,13.86172146174627,4.236938871322525,General government,30.56574815050977
+ZAF,2006,GF0170,Interest on public debt,Government spending,8.645469448370935,2.642552418018326,General government,30.56574815050977
+ZAF,2006,GF07,Health (no breakdown),Health,11.10460965561543,3.394207020432602,General government,30.56574815050977
+ZAF,2006,UNCL,Unclassified,Unclassified,5.470815796628813,,General government,30.56574815050977
+ZAF,2007,GF01,General public services,Government spending,44.21889381052691,10.707557280567068,Central government (budgetary),24.21489177555589
+ZAF,2007,GF02,Defence,Government spending,4.896883177676999,1.185774961849887,Central government (budgetary),24.21489177555589
+ZAF,2007,GF03,Public order and safety,Government spending,9.956022025943309,2.410839958732679,Central government (budgetary),24.21489177555589
+ZAF,2007,GF04,Economic affairs,Government spending,8.610989390027788,2.085141761599829,Central government (budgetary),24.21489177555589
+ZAF,2007,GF05,Environmental protection,Government spending,0.3686828957533714,0.0892761642016644,Central government (budgetary),24.21489177555589
+ZAF,2007,GF06,Housing and community amenities,Government spending,3.997789662448371,0.968060440176234,Central government (budgetary),24.21489177555589
+ZAF,2007,GF08,"Recreation, culture and religion",Government spending,1.226596555322672,0.2970190283940816,Central government (budgetary),24.21489177555589
+ZAF,2007,GF09,Education,Government spending,2.923417787233893,0.7079024533260379,Central government (budgetary),24.21489177555589
+ZAF,2007,GF10,Social protection,Government spending,12.21581060082113,2.958045316495721,Central government (budgetary),24.21489177555589
+ZAF,2007,GF0170,Interest on public debt,Government spending,9.298024246839798,2.251506508637203,Central government (budgetary),24.21489177555589
+ZAF,2007,GF07,Health (no breakdown),Health,2.286889847405757,0.5537679015754793,Central government (budgetary),24.21489177555589
+ZAF,2008,GF01,General public services,Government spending,3.3665014081884443,1.107622018577663,General government,32.9012789325904
+ZAF,2008,GF02,Defence,Government spending,4.708237320485069,1.549070293621113,General government,32.9012789325904
+ZAF,2008,GF03,Public order and safety,Government spending,10.20866792356213,3.358782308833063,General government,32.9012789325904
+ZAF,2008,GF04,Economic affairs,Government spending,21.72241230826525,7.146951464429699,General government,32.9012789325904
+ZAF,2008,GF05,Environmental protection,Government spending,0.7593743453669436,0.2498438715117105,General government,32.9012789325904
+ZAF,2008,GF06,Housing and community amenities,Government spending,6.567860717361451,2.160910174523124,General government,32.9012789325904
+ZAF,2008,GF08,"Recreation, culture and religion",Government spending,3.309708353699695,1.088936377305982,General government,32.9012789325904
+ZAF,2008,GF09,Education,Government spending,18.54537625398599,6.101665970422315,General government,32.9012789325904
+ZAF,2008,GF10,Social protection,Government spending,12.62132532644368,4.152577450642912,General government,32.9012789325904
+ZAF,2008,GF0170,Interest on public debt,Government spending,6.831925144892116,2.247790748386736,General government,32.9012789325904
+ZAF,2008,GF07,Health (no breakdown),Health,11.35849451853921,3.737089964087576,General government,32.9012789325904
+ZAF,2009,GF01,General public services,Government spending,11.893062304144868,4.421015134180307,General government,37.17305956296495
+ZAF,2009,GF02,Defence,Government spending,3.085922146185052,1.147131677468096,General government,37.17305956296495
+ZAF,2009,GF03,Public order and safety,Government spending,9.368946908720652,3.482724214801292,General government,37.17305956296495
+ZAF,2009,GF04,Economic affairs,Government spending,19.35910662238388,7.196372235596653,General government,37.17305956296495
+ZAF,2009,GF05,Environmental protection,Government spending,0.7075118990752385,0.2630038196583029,General government,37.17305956296495
+ZAF,2009,GF06,Housing and community amenities,Government spending,6.208771301941322,2.307990254198922,General government,37.17305956296495
+ZAF,2009,GF08,"Recreation, culture and religion",Government spending,2.974929314339547,1.105872245975545,General government,37.17305956296495
+ZAF,2009,GF09,Education,Government spending,17.235180538205,6.406843927251489,General government,37.17305956296495
+ZAF,2009,GF10,Social protection,Government spending,12.42449282738025,4.618564119118369,General government,37.17305956296495
+ZAF,2009,GF0170,Interest on public debt,Government spending,6.213547613426202,2.309765755312109,General government,37.17305956296495
+ZAF,2009,GF0712,Medical products,Health,0.0,0.0,General government,37.17305956296495
+ZAF,2009,GF072,Outpatient services,Health,0.0056801748996947,0.0021114947987441,General government,37.17305956296495
+ZAF,2009,GF073,Hospital services,Health,5.116200924060679,1.90184841686204,General government,37.17305956296495
+ZAF,2009,GF0740,Public health services,Health,5.313659207438204,1.975249702153975,General government,37.17305956296495
+ZAF,2009,GF075,Health R&D,Health,0.0861570854268721,0.0320272246834457,General government,37.17305956296495
+ZAF,2009,GF0760,Other health,Health,0.0068311323730142,0.0025393409058455,General government,37.17305956296495
+ZAF,2010,GF01,General public services,Government spending,12.619883761656752,4.453636468582573,General government,35.29062987183881
+ZAF,2010,GF02,Defence,Government spending,2.902162095448951,1.024191283385691,General government,35.29062987183881
+ZAF,2010,GF03,Public order and safety,Government spending,9.988319192288351,3.524940756568322,General government,35.29062987183881
+ZAF,2010,GF04,Economic affairs,Government spending,16.55948722441588,5.84394734504304,General government,35.29062987183881
+ZAF,2010,GF05,Environmental protection,Government spending,0.7190199302520986,0.2537466622900217,General government,35.29062987183881
+ZAF,2010,GF06,Housing and community amenities,Government spending,6.590079159613458,2.325680444480371,General government,35.29062987183881
+ZAF,2010,GF08,"Recreation, culture and religion",Government spending,2.729766630901332,0.9633518380763532,General government,35.29062987183881
+ZAF,2010,GF09,Education,Government spending,17.2349560874308,6.082324561389155,General government,35.29062987183881
+ZAF,2010,GF10,Social protection,Government spending,12.39568754054774,4.374516210004343,General government,35.29062987183881
+ZAF,2010,GF0170,Interest on public debt,Government spending,6.949738469396298,2.452606480295443,General government,35.29062987183881
+ZAF,2010,GF0712,Medical products,Health,0.0,0.0,General government,35.29062987183881
+ZAF,2010,GF072,Outpatient services,Health,0.0054713469198843,0.0019308727905006,General government,35.29062987183881
+ZAF,2010,GF073,Hospital services,Health,5.430365789576841,1.91641029148652,General government,35.29062987183881
+ZAF,2010,GF0740,Public health services,Health,5.779125763556334,2.039489883044744,General government,35.29062987183881
+ZAF,2010,GF075,Health R&D,Health,0.0881774325118719,0.0311183713382552,General government,35.29062987183881
+ZAF,2010,GF0760,Other health,Health,0.0077595754834122,0.0027384030634769,General government,35.29062987183881
+ZAF,2011,GF01,General public services,Government spending,14.83205056573785,5.541064096573117,General government,37.35871902549348
+ZAF,2011,GF02,Defence,Government spending,3.125119563650475,1.167504636994909,General government,37.35871902549348
+ZAF,2011,GF03,Public order and safety,Government spending,9.23368266738497,3.449585563414043,General government,37.35871902549348
+ZAF,2011,GF04,Economic affairs,Government spending,14.77274075524487,5.518906711116495,General government,37.35871902549348
+ZAF,2011,GF05,Environmental protection,Government spending,0.7596944130982094,0.2838121012417318,General government,37.35871902549348
+ZAF,2011,GF06,Housing and community amenities,Government spending,6.439228616297695,2.405613326171827,General government,37.35871902549348
+ZAF,2011,GF08,"Recreation, culture and religion",Government spending,2.49451820706866,0.9319200480185582,General government,37.35871902549348
+ZAF,2011,GF09,Education,Government spending,18.4566616185102,6.895172355545323,General government,37.35871902549348
+ZAF,2011,GF10,Social protection,Government spending,11.79532564018193,4.406582564057556,General government,37.35871902549348
+ZAF,2011,GF0170,Interest on public debt,Government spending,7.038293397748321,2.629416254654653,General government,37.35871902549348
+ZAF,2011,GF0712,Medical products,Health,0.0,0.0,General government,37.35871902549348
+ZAF,2011,GF072,Outpatient services,Health,0.0062398721121524,0.0023311362899291,General government,37.35871902549348
+ZAF,2011,GF073,Hospital services,Health,4.986685218611319,1.862961719506818,General government,37.35871902549348
+ZAF,2011,GF0740,Public health services,Health,5.277382338134941,1.971562439604851,General government,37.35871902549348
+ZAF,2011,GF075,Health R&D,Health,0.1086304789194909,0.0405829553955805,General government,37.35871902549348
+ZAF,2011,GF0760,Other health,Health,0.6737466472991638,0.2517031169081771,General government,37.35871902549348
+ZAF,2012,GF01,General public services,Government spending,13.692238667151603,5.005336557540479,General government,36.55601307584963
+ZAF,2012,GF02,Defence,Government spending,2.974397116168864,1.087320998714384,General government,36.55601307584963
+ZAF,2012,GF03,Public order and safety,Government spending,9.91968849641598,3.626242623833377,General government,36.55601307584963
+ZAF,2012,GF04,Economic affairs,Government spending,12.46283602899893,4.55591596838255,General government,36.55601307584963
+ZAF,2012,GF05,Environmental protection,Government spending,0.7711714953306046,0.281909552670281,General government,36.55601307584963
+ZAF,2012,GF06,Housing and community amenities,Government spending,7.016565210449345,2.564976495807379,General government,36.55601307584963
+ZAF,2012,GF08,"Recreation, culture and religion",Government spending,3.129440633005036,1.143998727002273,General government,36.55601307584963
+ZAF,2012,GF09,Education,Government spending,19.20282665891462,7.019787824365569,General government,36.55601307584963
+ZAF,2012,GF10,Social protection,Government spending,11.49549843295332,4.202295910284504,General government,36.55601307584963
+ZAF,2012,GF0170,Interest on public debt,Government spending,7.664385151193187,2.801793638053659,General government,36.55601307584963
+ZAF,2012,GF0712,Medical products,Health,0.0,0.0,General government,36.55601307584963
+ZAF,2012,GF072,Outpatient services,Health,0.0054851158250351,0.0020051396582253,General government,36.55601307584963
+ZAF,2012,GF073,Hospital services,Health,6.704461728819004,2.45088390625241,General government,36.55601307584963
+ZAF,2012,GF0740,Public health services,Health,4.085895307856006,1.493640423005368,General government,36.55601307584963
+ZAF,2012,GF075,Health R&D,Health,0.1222079909300037,0.0446743691441053,General government,36.55601307584963
+ZAF,2012,GF0760,Other health,Health,0.7529019659884615,0.2752309411350709,General government,36.55601307584963
+ZAF,2013,GF01,General public services,Government spending,22.986010879614547,9.674456200982135,General government,42.08845219664476
+ZAF,2013,GF02,Defence,Government spending,2.556793614490684,1.076114858201777,General government,42.08845219664476
+ZAF,2013,GF03,Public order and safety,Government spending,8.739642569239914,3.678380284912156,General government,42.08845219664476
+ZAF,2013,GF04,Economic affairs,Government spending,11.03677740627509,4.645208782690182,General government,42.08845219664476
+ZAF,2013,GF05,Environmental protection,Government spending,0.7180054164183898,0.3021973664585741,General government,42.08845219664476
+ZAF,2013,GF06,Housing and community amenities,Government spending,6.261529896370574,2.635381017212549,General government,42.08845219664476
+ZAF,2013,GF08,"Recreation, culture and religion",Government spending,3.005127461108387,1.264811634916848,General government,42.08845219664476
+ZAF,2013,GF09,Education,Government spending,16.75069993842805,7.050110336188693,General government,42.08845219664476
+ZAF,2013,GF10,Social protection,Government spending,10.53611673028566,4.434488453408971,General government,42.08845219664476
+ZAF,2013,GF0170,Interest on public debt,Government spending,6.955825729632224,2.927599387098175,General government,42.08845219664476
+ZAF,2013,GF0712,Medical products,Health,0.0,0.0,General government,42.08845219664476
+ZAF,2013,GF072,Outpatient services,Health,0.0069646685257772,0.0029313211831265,General government,42.08845219664476
+ZAF,2013,GF073,Hospital services,Health,5.79056146049369,2.437157692217221,General government,42.08845219664476
+ZAF,2013,GF0740,Public health services,Health,3.765885914311902,1.585003092825343,General government,42.08845219664476
+ZAF,2013,GF075,Health R&D,Health,0.2073896766595048,0.0872871049216118,General government,42.08845219664476
+ZAF,2013,GF0760,Other health,Health,0.6826686381457272,0.2873246634274502,General government,42.08845219664476
+ZAF,2014,GF01,General public services,Government spending,23.70838094478095,10.220409718647625,General government,43.10884721504991
+ZAF,2014,GF02,Defence,Government spending,2.447332959619636,1.055017026405988,General government,43.10884721504991
+ZAF,2014,GF03,Public order and safety,Government spending,8.127363892721336,3.503612883124373,General government,43.10884721504991
+ZAF,2014,GF04,Economic affairs,Government spending,12.40134677305912,5.346077633006578,General government,43.10884721504991
+ZAF,2014,GF05,Environmental protection,Government spending,0.7411563569430635,0.3195039615392152,General government,43.10884721504991
+ZAF,2014,GF06,Housing and community amenities,Government spending,5.916996588694814,2.550749019140162,General government,43.10884721504991
+ZAF,2014,GF08,"Recreation, culture and religion",Government spending,2.367589459608051,1.020640522822061,General government,43.10884721504991
+ZAF,2014,GF09,Education,Government spending,16.35125052755443,7.048835607673482,General government,43.10884721504991
+ZAF,2014,GF10,Social protection,Government spending,10.41353555872733,4.489155133696657,General government,43.10884721504991
+ZAF,2014,GF0170,Interest on public debt,Government spending,7.198656742039654,3.103257936461764,General government,43.10884721504991
+ZAF,2014,GF0712,Medical products,Health,0.0,0.0,General government,43.10884721504991
+ZAF,2014,GF072,Outpatient services,Health,0.0064350065952105,0.0027740571614077,General government,43.10884721504991
+ZAF,2014,GF073,Hospital services,Health,5.765211720767627,2.485316312329866,General government,43.10884721504991
+ZAF,2014,GF0740,Public health services,Health,3.729369869382813,1.607688359076343,General government,43.10884721504991
+ZAF,2014,GF075,Health R&D,Health,0.1849256905934119,0.0797193334192898,General government,43.10884721504991
+ZAF,2014,GF0760,Other health,Health,0.6404479089124513,0.2760897105450506,General government,43.10884721504991
+ZAF,2015,GF01,General public services,Government spending,14.548768871941036,5.94286668236753,General government,40.84790084079915
+ZAF,2015,GF02,Defence,Government spending,2.546188168543604,1.040064418306851,General government,40.84790084079915
+ZAF,2015,GF03,Public order and safety,Government spending,8.451442383852392,3.452236804573297,General government,40.84790084079915
+ZAF,2015,GF04,Economic affairs,Government spending,15.96889016565041,6.522956420241007,General government,40.84790084079915
+ZAF,2015,GF05,Environmental protection,Government spending,0.7278932160048032,0.297329099100546,General government,40.84790084079915
+ZAF,2015,GF06,Housing and community amenities,Government spending,6.293034178503203,2.570572361112588,General government,40.84790084079915
+ZAF,2015,GF08,"Recreation, culture and religion",Government spending,2.284675873931782,0.9332421355173156,General government,40.84790084079915
+ZAF,2015,GF09,Education,Government spending,18.88514234524833,7.714184218830807,General government,40.84790084079915
+ZAF,2015,GF10,Social protection,Government spending,11.02590420824896,4.503850417787035,General government,40.84790084079915
+ZAF,2015,GF0170,Interest on public debt,Government spending,7.988856174388512,3.26328004842828,General government,40.84790084079915
+ZAF,2015,GF0712,Medical products,Health,0.0,0.0,General government,40.84790084079915
+ZAF,2015,GF072,Outpatient services,Health,0.0059968397150869,0.0024495831404003,General government,40.84790084079915
+ZAF,2015,GF073,Hospital services,Health,6.346512215373649,2.592417016585033,General government,40.84790084079915
+ZAF,2015,GF0740,Public health services,Health,3.949655273771308,1.613351269783498,General government,40.84790084079915
+ZAF,2015,GF075,Health R&D,Health,0.2549527129774188,0.1041428313879433,General government,40.84790084079915
+ZAF,2015,GF0760,Other health,Health,0.7220873718496181,0.2949575336370647,General government,40.84790084079915
+ZAF,2016,GF01,General public services,Government spending,25.363190487143207,9.920581915180604,General government,39.11409300107342
+ZAF,2016,GF02,Defence,Government spending,1.965752474177059,0.7688862509205167,General government,39.11409300107342
+ZAF,2016,GF03,Public order and safety,Government spending,8.348221948131991,3.265331296728371,General government,39.11409300107342
+ZAF,2016,GF04,Economic affairs,Government spending,9.558450313881838,3.738701145233136,General government,39.11409300107342
+ZAF,2016,GF05,Environmental protection,Government spending,0.6876088660495895,0.2689519713502628,General government,39.11409300107342
+ZAF,2016,GF06,Housing and community amenities,Government spending,5.984396578732984,2.340742443358675,General government,39.11409300107342
+ZAF,2016,GF08,"Recreation, culture and religion",Government spending,2.045440149402365,0.8000553623185361,General government,39.11409300107342
+ZAF,2016,GF09,Education,Government spending,16.1201608235399,6.305254696441999,General government,39.11409300107342
+ZAF,2016,GF10,Social protection,Government spending,11.21792004961171,4.387787680991185,General government,39.11409300107342
+ZAF,2016,GF0170,Interest on public debt,Government spending,8.907461186885486,3.484072652672907,General government,39.11409300107342
+ZAF,2016,GF0712,Medical products,Health,0.0,0.0,General government,39.11409300107342
+ZAF,2016,GF072,Outpatient services,Health,0.0062041511579777,0.0024266974538586,General government,39.11409300107342
+ZAF,2016,GF073,Hospital services,Health,5.655355044248685,2.212040831548328,General government,39.11409300107342
+ZAF,2016,GF0740,Public health services,Health,3.353120781170064,1.311542780785178,General government,39.11409300107342
+ZAF,2016,GF075,Health R&D,Health,0.2220213236146377,0.0868416270008435,General government,39.11409300107342
+ZAF,2016,GF0760,Other health,Health,0.5646958222525611,0.220875649089043,General government,39.11409300107342
+ZAF,2017,GF01,General public services,Government spending,12.435850266008954,4.930846973160678,General government,39.6502600762106
+ZAF,2017,GF02,Defence,Government spending,2.384046735273723,0.9452807308744392,General government,39.6502600762106
+ZAF,2017,GF03,Public order and safety,Government spending,8.36208145993073,3.315587046647123,General government,39.6502600762106
+ZAF,2017,GF04,Economic affairs,Government spending,15.18159191138378,6.019540676572622,General government,39.6502600762106
+ZAF,2017,GF05,Environmental protection,Government spending,0.7739489268865141,0.3068727623675439,General government,39.6502600762106
+ZAF,2017,GF06,Housing and community amenities,Government spending,5.211477196921698,2.066364262391864,General government,39.6502600762106
+ZAF,2017,GF08,"Recreation, culture and religion",Government spending,2.221835404472799,0.8809635163387907,General government,39.6502600762106
+ZAF,2017,GF09,Education,Government spending,18.88005081302674,7.485989249885816,General government,39.6502600762106
+ZAF,2017,GF10,Social protection,Government spending,13.49366616784312,5.350273729365437,General government,39.6502600762106
+ZAF,2017,GF0170,Interest on public debt,Government spending,9.447051030057287,3.745780302950047,General government,39.6502600762106
+ZAF,2017,GF0712,Medical products,Health,0.0,0.0,General government,39.6502600762106
+ZAF,2017,GF072,Outpatient services,Health,0.0061087174746402,0.0024221223660157,General government,39.6502600762106
+ZAF,2017,GF073,Hospital services,Health,6.434826738237506,2.551425537164711,General government,39.6502600762106
+ZAF,2017,GF0740,Public health services,Health,4.160278267053012,1.649561152780587,General government,39.6502600762106
+ZAF,2017,GF075,Health R&D,Health,0.2826949561556049,0.1120892853380269,General government,39.6502600762106
+ZAF,2017,GF0760,Other health,Health,0.7244914092738446,0.2872627280068828,General government,39.6502600762106
+ZAF,2018,GF01,General public services,Government spending,11.810139723507685,4.745390910650043,General government,40.1806500324844
+ZAF,2018,GF02,Defence,Government spending,2.251929702194486,0.9048399926163349,General government,40.1806500324844
+ZAF,2018,GF03,Public order and safety,Government spending,8.210516248498873,3.2990387996696,General government,40.1806500324844
+ZAF,2018,GF04,Economic affairs,Government spending,13.93339497231621,5.598528671470151,General government,40.1806500324844
+ZAF,2018,GF05,Environmental protection,Government spending,0.6640285863753916,0.2668110024071495,General government,40.1806500324844
+ZAF,2018,GF06,Housing and community amenities,Government spending,4.640138301680303,1.864437732021428,General government,40.1806500324844
+ZAF,2018,GF08,"Recreation, culture and religion",Government spending,2.124651184751486,0.853698656956028,General government,40.1806500324844
+ZAF,2018,GF09,Education,Government spending,20.29368991408309,8.154136523055309,General government,40.1806500324844
+ZAF,2018,GF10,Social protection,Government spending,15.17657808952009,6.098047729056774,General government,40.1806500324844
+ZAF,2018,GF0170,Interest on public debt,Government spending,9.397231900204215,3.775868862562039,General government,40.1806500324844
+ZAF,2018,GF0712,Medical products,Health,0.0066531023155613,0.0026732597577188,General government,40.1806500324844
+ZAF,2018,GF072,Outpatient services,Health,0.349228798670954,0.1403224014066255,General government,40.1806500324844
+ZAF,2018,GF073,Hospital services,Health,3.876703859842162,1.557684810718994,General government,40.1806500324844
+ZAF,2018,GF0740,Public health services,Health,1.345384881949542,0.540584391006099,General government,40.1806500324844
+ZAF,2018,GF075,Health R&D,Health,0.4160485504668,0.1671710120282891,General government,40.1806500324844
+ZAF,2018,GF0760,Other health,Health,5.503682183623301,2.211415277101874,General government,40.1806500324844
+ZAF,2019,GF01,General public services,Government spending,11.31106180082314,4.643157344861976,General government,41.04970361424495
+ZAF,2019,GF02,Defence,Government spending,2.300660836219138,0.9444144544369656,General government,41.04970361424495
+ZAF,2019,GF03,Public order and safety,Government spending,8.205794444495517,3.368454298659587,General government,41.04970361424495
+ZAF,2019,GF04,Economic affairs,Government spending,17.28683594666023,7.096194920384779,General government,41.04970361424495
+ZAF,2019,GF05,Environmental protection,Government spending,0.7499468194306027,0.3078509466407192,General government,41.04970361424495
+ZAF,2019,GF06,Housing and community amenities,Government spending,4.778262233704808,1.961462484847224,General government,41.04970361424495
+ZAF,2019,GF08,"Recreation, culture and religion",Government spending,2.298170721758302,0.9433922698311368,General government,41.04970361424495
+ZAF,2019,GF09,Education,Government spending,18.69450357916707,7.674038311402496,General government,41.04970361424495
+ZAF,2019,GF10,Social protection,Government spending,12.63543740570787,5.186809605406521,General government,41.04970361424495
+ZAF,2019,GF0170,Interest on public debt,Government spending,9.84922194168303,4.043076415370065,General government,41.04970361424495
+ZAF,2019,GF0712,Medical products,Health,0.0,0.0,General government,41.04970361424495
+ZAF,2019,GF072,Outpatient services,Health,0.0063227254136015,0.0025954600426259,General government,41.04970361424495
+ZAF,2019,GF073,Hospital services,Health,6.42301470855224,2.636628500960054,General government,41.04970361424495
+ZAF,2019,GF0740,Public health services,Health,4.142678229868785,1.700557135052986,General government,41.04970361424495
+ZAF,2019,GF075,Health R&D,Health,0.5024547762314739,0.2062561964386377,General government,41.04970361424495
+ZAF,2019,GF0760,Other health,Health,0.8156338302842016,0.3348152699091785,General government,41.04970361424495
+ZAF,2020,GF01,General public services,Government spending,9.14660584065719,3.9856051761732854,General government,43.57469038905166
+ZAF,2020,GF02,Defence,Government spending,2.160584967143651,0.9414682100252392,General government,43.57469038905166
+ZAF,2020,GF03,Public order and safety,Government spending,7.763431140049443,3.382891082843768,General government,43.57469038905166
+ZAF,2020,GF04,Economic affairs,Government spending,16.44463558433778,7.165699041483005,General government,43.57469038905166
+ZAF,2020,GF05,Environmental protection,Government spending,0.7410178690203727,0.3228962421531758,General government,43.57469038905166
+ZAF,2020,GF06,Housing and community amenities,Government spending,4.225157319748623,1.841099220530816,General government,43.57469038905166
+ZAF,2020,GF08,"Recreation, culture and religion",Government spending,1.974523874089246,0.8603926647922973,General government,43.57469038905166
+ZAF,2020,GF09,Education,Government spending,18.64886231895995,8.126184016567317,General government,43.57469038905166
+ZAF,2020,GF10,Social protection,Government spending,15.83595405853924,6.900467951160935,General government,43.57469038905166
+ZAF,2020,GF0170,Interest on public debt,Government spending,10.40629360127672,4.534510217732025,General government,43.57469038905166
+ZAF,2020,GF0712,Medical products,Health,0.0078796827816952,0.0034335473757631,General government,43.57469038905166
+ZAF,2020,GF072,Outpatient services,Health,0.3679523074865957,0.1603340787666554,General government,43.57469038905166
+ZAF,2020,GF073,Hospital services,Health,4.119536195273014,1.795075142555135,General government,43.57469038905166
+ZAF,2020,GF0740,Public health services,Health,1.616232800280915,0.7042684386887085,General government,43.57469038905166
+ZAF,2020,GF075,Health R&D,Health,0.834435138827133,0.3636025282413766,General government,43.57469038905166
+ZAF,2020,GF0760,Other health,Health,5.706897301528311,2.486762829962105,General government,43.57469038905166
+ZAF,2021,GF01,General public services,Government spending,6.8066189052617485,2.779234483151944,General government,40.83135139244392
+ZAF,2021,GF02,Defence,Government spending,2.126119838990728,0.868123462482767,General government,40.83135139244392
+ZAF,2021,GF03,Public order and safety,Government spending,7.773124387467663,3.173871732818675,General government,40.83135139244392
+ZAF,2021,GF04,Economic affairs,Government spending,16.77855541666718,6.850910920755309,General government,40.83135139244392
+ZAF,2021,GF05,Environmental protection,Government spending,0.6135752126689563,0.2505310511417966,General government,40.83135139244392
+ZAF,2021,GF06,Housing and community amenities,Government spending,4.310975366985396,1.760229500535506,General government,40.83135139244392
+ZAF,2021,GF08,"Recreation, culture and religion",Government spending,2.035653853348233,0.8311849779944419,General government,40.83135139244392
+ZAF,2021,GF09,Education,Government spending,21.45880311058656,8.761919302696283,General government,40.83135139244392
+ZAF,2021,GF10,Social protection,Government spending,14.13794123067551,5.772712463554327,General government,40.83135139244392
+ZAF,2021,GF0170,Interest on public debt,Government spending,11.4283086676742,4.666332870311178,General government,40.83135139244392
+ZAF,2021,GF0712,Medical products,Health,0.0062343720001213,0.0025455783384816,General government,40.83135139244392
+ZAF,2021,GF072,Outpatient services,Health,0.3578450611968391,0.1461129743777873,General government,40.83135139244392
+ZAF,2021,GF073,Hospital services,Health,4.083819223223595,1.6674785772666,General government,40.83135139244392
+ZAF,2021,GF0740,Public health services,Health,1.819119948343841,0.7427712583583179,General government,40.83135139244392
+ZAF,2021,GF075,Health R&D,Health,0.7476683076589842,0.3052830739501785,General government,40.83135139244392
+ZAF,2021,GF0760,Other health,Health,5.51563709725053,2.252109164710357,General government,40.83135139244392
+ZAF,2022,GF01,General public services,Government spending,6.5488401883632505,2.676108131483935,General government,40.86384847563016
+ZAF,2022,GF02,Defence,Government spending,2.1266526146718,0.8690321020625115,General government,40.86384847563016
+ZAF,2022,GF03,Public order and safety,Government spending,7.481040937206297,3.057041232979844,General government,40.86384847563016
+ZAF,2022,GF04,Economic affairs,Government spending,18.43346458687946,7.532623037591368,General government,40.86384847563016
+ZAF,2022,GF05,Environmental protection,Government spending,0.713641612853119,0.2916214273353418,General government,40.86384847563016
+ZAF,2022,GF06,Housing and community amenities,Government spending,4.354907407623306,1.779582764305181,General government,40.86384847563016
+ZAF,2022,GF08,"Recreation, culture and religion",Government spending,1.782948448198359,0.7285813522703767,General government,40.86384847563016
+ZAF,2022,GF09,Education,Government spending,21.50122638745173,8.786228571370483,General government,40.86384847563016
+ZAF,2022,GF10,Social protection,Government spending,13.17140993546674,5.382344998133226,General government,40.86384847563016
+ZAF,2022,GF0170,Interest on public debt,Government spending,12.20360914483705,4.986864349504356,General government,40.86384847563016
+ZAF,2022,GF0712,Medical products,Health,0.0066073920988035,0.0027000346954458,General government,40.86384847563016
+ZAF,2022,GF072,Outpatient services,Health,0.3715923900899344,0.1518469512333233,General government,40.86384847563016
+ZAF,2022,GF073,Hospital services,Health,3.853318379279204,1.574614183792262,General government,40.86384847563016
+ZAF,2022,GF0740,Public health services,Health,1.481695711435447,0.6054778903908915,General government,40.86384847563016
+ZAF,2022,GF075,Health R&D,Health,0.5925816477939605,0.2421516666489164,General government,40.86384847563016
+ZAF,2022,GF0760,Other health,Health,5.376463215751527,2.197029781832697,General government,40.86384847563016
+ZAF,2023,GF01,General public services,Government spending,8.31566901604326,3.4433713721055144,General government,41.40823023935039
+ZAF,2023,GF02,Defence,Government spending,1.904140009890463,0.7884706793750321,General government,41.40823023935039
+ZAF,2023,GF03,Public order and safety,Government spending,7.437255956842869,3.079636070099297,General government,41.40823023935039
+ZAF,2023,GF04,Economic affairs,Government spending,17.51305596595277,7.251846536328011,General government,41.40823023935039
+ZAF,2023,GF05,Environmental protection,Government spending,0.741363265070374,0.306985407710306,General government,41.40823023935039
+ZAF,2023,GF06,Housing and community amenities,Government spending,4.180532610195831,1.731084568461014,General government,41.40823023935039
+ZAF,2023,GF08,"Recreation, culture and religion",Government spending,1.863871043135568,0.7717960129061576,General government,41.40823023935039
+ZAF,2023,GF09,Education,Government spending,20.87705863230281,8.644820505668124,General government,41.40823023935039
+ZAF,2023,GF10,Social protection,Government spending,12.89415842846421,5.339242809485066,General government,41.40823023935039
+ZAF,2023,GF0170,Interest on public debt,Government spending,13.08914091110748,5.419981604824392,General government,41.40823023935039
+ZAF,2023,GF0712,Medical products,Health,0.0061423875714532,0.0025434539877806,General government,41.40823023935039
+ZAF,2023,GF072,Outpatient services,Health,0.3691609245457794,0.1528630055896309,General government,41.40823023935039
+ZAF,2023,GF073,Hospital services,Health,3.622631605630948,1.500067635983139,General government,41.40823023935039
+ZAF,2023,GF0740,Public health services,Health,1.265858437929834,0.5241695764822298,General government,41.40823023935039
+ZAF,2023,GF075,Health R&D,Health,0.6355444691547669,0.2631677170610631,General government,41.40823023935039
+ZAF,2023,GF0760,Other health,Health,5.284416336161633,2.188183283283653,General government,41.40823023935039
+ZAF,2024,GF01,General public services,Government spending,9.039683470566219,3.6586569811405054,General government,40.47328640492026
+ZAF,2024,GF02,Defence,Government spending,1.921528327150407,0.7777056631992574,General government,40.47328640492026
+ZAF,2024,GF03,Public order and safety,Government spending,7.304292386716492,2.956287177528552,General government,40.47328640492026
+ZAF,2024,GF04,Economic affairs,Government spending,17.23843353518685,6.976960576417997,General government,40.47328640492026
+ZAF,2024,GF05,Environmental protection,Government spending,0.6810176186863816,0.275630211278907,General government,40.47328640492026
+ZAF,2024,GF06,Housing and community amenities,Government spending,4.140045566754407,1.675612499526716,General government,40.47328640492026
+ZAF,2024,GF08,"Recreation, culture and religion",Government spending,1.761167110588946,0.7128022087379227,General government,40.47328640492026
+ZAF,2024,GF09,Education,Government spending,20.50659807857453,8.299694172247346,General government,40.47328640492026
+ZAF,2024,GF10,Social protection,Government spending,12.98616799757352,5.255928966682031,General government,40.47328640492026
+ZAF,2024,GF0170,Interest on public debt,Government spending,13.68985634758293,5.540734767979395,General government,40.47328640492026
+ZAF,2024,GF0712,Medical products,Health,0.005791202329678,0.0023438899051789,General government,40.47328640492026
+ZAF,2024,GF072,Outpatient services,Health,0.3354864792531076,0.1357824035978936,General government,40.47328640492026
+ZAF,2024,GF073,Hospital services,Health,3.571408388590252,1.44546634580348,General government,40.47328640492026
+ZAF,2024,GF0740,Public health services,Health,1.260913541370947,0.510333148917486,General government,40.47328640492026
+ZAF,2024,GF075,Health R&D,Health,0.586465856474488,0.2373620057579882,General government,40.47328640492026
+ZAF,2024,GF0760,Other health,Health,4.971144092600994,2.011985386199675,General government,40.47328640492026

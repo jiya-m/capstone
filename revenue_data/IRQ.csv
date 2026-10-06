@@ -1,0 +1,163 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+IRQ,2004,G111,Income taxes,Taxes,0.1470867,0.26241106942625053,Central government,56.052018
+IRQ,2004,G114,Goods & services taxes,Taxes,0.15265935,0.27235299514787054,Central government,56.052018
+IRQ,2004,G13,Grants (e.g. foreign aid),Grants,6.402412,11.42226849761032,Central government,56.052018
+IRQ,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,48.76935,87.00730445868399,Central government,56.052018
+IRQ,2004,G14X,Other non-tax revenue,Other revenue,0.5805099999999968,1.0356629791315726,Central government,56.052018
+IRQ,2005,G1111,Personal income tax,Taxes,0.25535942,0.37958128405531516,Central government,67.273975
+IRQ,2005,G1112,Corporate income tax,Taxes,0.01102637,0.016390245885853773,Central government,67.273975
+IRQ,2005,G1113,Other income taxes,Taxes,0.006353749999999998,0.00944458827313462,Central government,67.273975
+IRQ,2005,G114,Goods & services taxes,Taxes,0.39575795,0.5882779293440564,Central government,67.273975
+IRQ,2005,G13,Grants (e.g. foreign aid),Grants,17.475077,25.97598383731254,Central government,67.273975
+IRQ,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,48.075372,71.4620648621341,Central government,67.273975
+IRQ,2005,G14X,Other non-tax revenue,Other revenue,1.0550289999999976,1.568257252994991,Central government,67.273975
+IRQ,2006,G1111,Personal income tax,Taxes,0.35411704,0.5801420367074459,Central government,61.039714
+IRQ,2006,G1112,Corporate income tax,Taxes,0.01311699,0.021489271722341295,Central government,61.039714
+IRQ,2006,G114,Goods & services taxes,Taxes,0.25139773,0.4118592855792214,Central government,61.039714
+IRQ,2006,G13,Grants (e.g. foreign aid),Grants,9.4829503,15.5357056555016,Central government,61.039714
+IRQ,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,49.532586,81.14812923271562,Central government,61.039714
+IRQ,2006,G14X,Other non-tax revenue,Other revenue,1.4035249999999948,2.299363656913587,Central government,61.039714
+IRQ,2007,G1111,Personal income tax,Taxes,0.33568617,0.6221043043737625,Central government,53.959789
+IRQ,2007,G1112,Corporate income tax,Taxes,0.13423219,0.24876337081303262,Central government,53.959789
+IRQ,2007,G1113,Other income taxes,Taxes,0.20391393,0.37789979126864265,Central government,53.959789
+IRQ,2007,G114,Goods & services taxes,Taxes,0.10195895,0.1889535742995585,Central government,53.959789
+IRQ,2007,G115,Trade taxes (customs),Taxes,0.20553115,0.3808968748932654,Central government,53.959789
+IRQ,2007,G13,Grants (e.g. foreign aid),Grants,3.4529946,6.399199596573663,Central government,53.959789
+IRQ,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,47.443188,87.92322742403607,Central government,53.959789
+IRQ,2007,G14X,Other non-tax revenue,Other revenue,2.0822840000000014,3.858955045209686,Central government,53.959789
+IRQ,2008,G1111,Personal income tax,Taxes,0.19293734,0.3420954099060416,Central government,56.398693
+IRQ,2008,G1112,Corporate income tax,Taxes,0.1258413,0.22312804305589135,Central government,56.398693
+IRQ,2008,G1113,Other income taxes,Taxes,0.27087061,0.4802781688575656,Central government,56.398693
+IRQ,2008,G114,Goods & services taxes,Taxes,0.02827851,0.05014036406836591,Central government,56.398693
+IRQ,2008,G115,Trade taxes (customs),Taxes,0.23979405,0.4251766082593439,Central government,56.398693
+IRQ,2008,G13,Grants (e.g. foreign aid),Grants,5.9944556,10.628713683134466,Central government,56.398693
+IRQ,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,47.850777,84.84376934054127,Central government,56.398693
+IRQ,2008,G14X,Other non-tax revenue,Other revenue,1.6956720000000018,3.0065803120650365,Central government,56.398693
+IRQ,2009,G1111,Personal income tax,Taxes,0.23882376,0.517154929572585,Central government,46.180312
+IRQ,2009,G1112,Corporate income tax,Taxes,0.2045913,0.4430271064431094,Central government,46.180312
+IRQ,2009,G1113,Other income taxes,Taxes,0.45113177000000004,0.9768919924144299,Central government,46.180312
+IRQ,2009,G114,Goods & services taxes,Taxes,0.05079497,0.10999269558854431,Central government,46.180312
+IRQ,2009,G115,Trade taxes (customs),Taxes,0.4521418,0.9790791365809741,Central government,46.180312
+IRQ,2009,G13,Grants (e.g. foreign aid),Grants,6.0986483,13.206165216034053,Central government,46.180312
+IRQ,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,35.902162,77.74343750644213,Central government,46.180312
+IRQ,2009,G14X,Other non-tax revenue,Other revenue,2.7820180000000008,6.02425120038167,Central government,46.180312
+IRQ,2010,G1111,Personal income tax,Taxes,0.24681521,0.5436884219389518,Central government,45.396444
+IRQ,2010,G1112,Corporate income tax,Taxes,0.12340761,0.27184422198355446,Central government,45.396444
+IRQ,2010,G1113,Other income taxes,Taxes,0.18559761999999996,0.40883735298738366,Central government,45.396444
+IRQ,2010,G114,Goods & services taxes,Taxes,0.04068222,0.08961543331455651,Central government,45.396444
+IRQ,2010,G115,Trade taxes (customs),Taxes,0.34906987,0.7689365933596032,Central government,45.396444
+IRQ,2010,G13,Grants (e.g. foreign aid),Grants,2.8735122,6.32981781568618,Central government,45.396444
+IRQ,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,39.089262,86.106440407535,Central government,45.396444
+IRQ,2010,G14X,Other non-tax revenue,Other revenue,2.4880970000000033,5.480819158434531,Central government,45.396444
+IRQ,2011,G1111,Personal income tax,Taxes,0.25823516,0.5367191892594957,Central government,48.113644
+IRQ,2011,G1112,Corporate income tax,Taxes,0.16620799,0.3454487670898509,Central government,48.113644
+IRQ,2011,G114,Goods & services taxes,Taxes,0.1979336,0.4113876720707332,Central government,48.113644
+IRQ,2011,G115,Trade taxes (customs),Taxes,0.19831856,0.41218777775385296,Central government,48.113644
+IRQ,2011,G13,Grants (e.g. foreign aid),Grants,0.98879317,2.055120102730111,Central government,48.113644
+IRQ,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,44.709103,92.92395936587134,Central government,48.113644
+IRQ,2011,G14X,Other non-tax revenue,Other revenue,1.5950520000000026,3.3151760444500993,Central government,48.113644
+IRQ,2012,G1111,Personal income tax,Taxes,0.29894721,0.6362531051396692,Central government,46.985579
+IRQ,2012,G1112,Corporate income tax,Taxes,0.22027689,0.4688180741108416,Central government,46.985579
+IRQ,2012,G114,Goods & services taxes,Taxes,0.28045968,0.5969058626319943,Central government,46.985579
+IRQ,2012,G115,Trade taxes (customs),Taxes,0.23601095,0.5023050718033568,Central government,46.985579
+IRQ,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,43.430623,92.43394090180782,Central government,46.985579
+IRQ,2012,G14X,Other non-tax revenue,Other revenue,2.5192620000000048,5.3617769845063155,Central government,46.985579
+IRQ,2013,G1111,Personal income tax,Taxes,0.27390529,0.649269289617161,Central government,42.1867
+IRQ,2013,G1112,Corporate income tax,Taxes,0.20080254,0.47598541269181605,Central government,42.1867
+IRQ,2013,G114,Goods & services taxes,Taxes,0.12383971,0.29355154308299497,Central government,42.1867
+IRQ,2013,G115,Trade taxes (customs),Taxes,0.45297606,1.0737413822485156,Central government,42.1867
+IRQ,2013,G13,Grants (e.g. foreign aid),Grants,0.0182998,0.04337812587020909,Central government,42.1867
+IRQ,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,38.633276,91.57690844197903,Central government,42.1867
+IRQ,2013,G14X,Other non-tax revenue,Other revenue,2.483601,5.887165804510277,Central government,42.1867
+IRQ,2014,G1111,Personal income tax,Taxes,0.16666483,0.43684145158433985,Central government,38.152247
+IRQ,2014,G1112,Corporate income tax,Taxes,0.09356622,0.2452443227767951,Central government,38.152247
+IRQ,2014,G114,Goods & services taxes,Taxes,0.50748709,1.3301630407321838,Central government,38.152247
+IRQ,2014,G115,Trade taxes (customs),Taxes,0.15736595,0.4124683655690804,Central government,38.152247
+IRQ,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,36.005276,94.37262218150519,Central government,38.152247
+IRQ,2014,G14X,Other non-tax revenue,Other revenue,1.2218869999999953,3.2026606378324214,Central government,38.152247
+IRQ,2015,G1111,Personal income tax,Taxes,0.26412307,0.8621825166159659,Central government,30.634241
+IRQ,2015,G1112,Corporate income tax,Taxes,0.20613492,0.6728905736557991,Central government,30.634241
+IRQ,2015,G11412,VAT / sales tax,Taxes,0.03196286,0.10433703906684028,Central government,30.634241
+IRQ,2015,G115,Trade taxes (customs),Taxes,0.15664709,0.5113464048285055,Central government,30.634241
+IRQ,2015,G113,Property taxes,Taxes,0.03857347,0.12591619292934333,Central government,30.634241
+IRQ,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,27.836107,90.86599207729677,Central government,30.634241
+IRQ,2015,G14X,Other non-tax revenue,Other revenue,2.1006920000000022,6.857333269657317,Central government,30.634241
+IRQ,2016,G1111,Personal income tax,Taxes,0.14715529,0.5270606943711805,Central government,27.919989
+IRQ,2016,G1112,Corporate income tax,Taxes,0.72824781,2.6083384186385117,Central government,27.919989
+IRQ,2016,G11412,VAT / sales tax,Taxes,0.38440268,1.3768009525103904,Central government,27.919989
+IRQ,2016,G1142,Excise taxes,Taxes,0.03675826,0.13165570900968895,Central government,27.919989
+IRQ,2016,G115,Trade taxes (customs),Taxes,0.32552855,1.1659336446596216,Central government,27.919989
+IRQ,2016,G113,Property taxes,Taxes,0.04324451,0.1548872722709558,Central government,27.919989
+IRQ,2016,G11NEC,Other taxes,Taxes,1.0901903,3.904694534017266,Central government,27.919989
+IRQ,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,23.63113,84.6387498986658,Central government,27.919989
+IRQ,2016,G14X,Other non-tax revenue,Other revenue,1.5333320000000015,5.491878875856599,Central government,27.919989
+IRQ,2017,G1111,Personal income tax,Taxes,0.08004627,0.23561104310962092,Central government,33.973904
+IRQ,2017,G1112,Corporate income tax,Taxes,1.0574897,3.11265286058526,Central government,33.973904
+IRQ,2017,G11412,VAT / sales tax,Taxes,0.73615432,2.166822854142406,Central government,33.973904
+IRQ,2017,G1142,Excise taxes,Taxes,0.03983149,0.1172414268336355,Central government,33.973904
+IRQ,2017,G115,Trade taxes (customs),Taxes,0.50265825,1.479542202405641,Central government,33.973904
+IRQ,2017,G113,Property taxes,Taxes,0.10249812,0.30169661834305456,Central government,33.973904
+IRQ,2017,G11NEC,Other taxes,Taxes,1.00818602,2.9675306522182368,Central government,33.973904
+IRQ,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,29.156806,85.82118161664314,Central government,33.973904
+IRQ,2017,G14X,Other non-tax revenue,Other revenue,1.2902340000000017,3.797720725718999,Central government,33.973904
+IRQ,2018,G1111,Personal income tax,Taxes,0.20030587,0.5161011762613711,Central government,38.811357
+IRQ,2018,G1112,Corporate income tax,Taxes,0.77365845,1.9933816021944295,Central government,38.811357
+IRQ,2018,G11412,VAT / sales tax,Taxes,0.22619862,0.5828155403069261,Central government,38.811357
+IRQ,2018,G1142,Excise taxes,Taxes,0.01727408,0.04450779703477,Central government,38.811357
+IRQ,2018,G115,Trade taxes (customs),Taxes,0.588789,1.5170533717746586,Central government,38.811357
+IRQ,2018,G113,Property taxes,Taxes,0.03528324,0.09090957577185461,Central government,38.811357
+IRQ,2018,G11NEC,Other taxes,Taxes,0.24477745,0.6306851110616927,Central government,38.811357
+IRQ,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,35.464797,91.37736925817873,Central government,38.811357
+IRQ,2018,G14X,Other non-tax revenue,Other revenue,1.260273000000005,3.2471758202116074,Central government,38.811357
+IRQ,2019,G1111,Personal income tax,Taxes,0.11920424,0.3359396948823522,Central government,35.483821
+IRQ,2019,G1112,Corporate income tax,Taxes,0.45380018,1.2788932172778125,Central government,35.483821
+IRQ,2019,G11412,VAT / sales tax,Taxes,0.21570372,0.607893157842274,Central government,35.483821
+IRQ,2019,G1142,Excise taxes,Taxes,0.02584869,0.07284641076280933,Central government,35.483821
+IRQ,2019,G115,Trade taxes (customs),Taxes,0.34053764,0.9596983368842944,Central government,35.483821
+IRQ,2019,G113,Property taxes,Taxes,0.02985554,0.08413845848224745,Central government,35.483821
+IRQ,2019,G11NEC,Other taxes,Taxes,0.24342889000000015,0.6860278378701102,Central government,35.483821
+IRQ,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,32.852451,92.58431046645174,Central government,35.483821
+IRQ,2019,G14X,Other non-tax revenue,Other revenue,1.2029909999999973,3.3902521377277752,Central government,35.483821
+IRQ,2020,G1111,Personal income tax,Taxes,0.17315968,0.5959898336227012,Central government,29.054133
+IRQ,2020,G1112,Corporate income tax,Taxes,1.0138611,3.489558933728272,Central government,29.054133
+IRQ,2020,G11412,VAT / sales tax,Taxes,0.26455351,0.9105537871703252,Central government,29.054133
+IRQ,2020,G1142,Excise taxes,Taxes,0.03084384,0.10615990437199477,Central government,29.054133
+IRQ,2020,G115,Trade taxes (customs),Taxes,0.34951931,1.2029934186458495,Central government,29.054133
+IRQ,2020,G113,Property taxes,Taxes,0.04427874,0.15240082960203463,Central government,29.054133
+IRQ,2020,G11NEC,Other taxes,Taxes,0.2938839999999998,1.0115049661929025,Central government,29.054133
+IRQ,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,25.953831,89.32922155759184,Central government,29.054133
+IRQ,2020,G14X,Other non-tax revenue,Other revenue,0.9302019999999978,3.2016167690740853,Central government,29.054133
+IRQ,2021,G1111,Personal income tax,Taxes,0.14108875,0.3924581552979219,Central government,35.950011
+IRQ,2021,G1112,Corporate income tax,Taxes,0.60751899,1.6898993160252438,Central government,35.950011
+IRQ,2021,G11412,VAT / sales tax,Taxes,0.11832518,0.3291380912233935,Central government,35.950011
+IRQ,2021,G1142,Excise taxes,Taxes,0.01637465,0.045548386619408826,Central government,35.950011
+IRQ,2021,G115,Trade taxes (customs),Taxes,0.2853617,0.7937736096937493,Central government,35.950011
+IRQ,2021,G113,Property taxes,Taxes,0.04036749,0.11228783768661431,Central government,35.950011
+IRQ,2021,G11NEC,Other taxes,Taxes,0.27873318,0.775335451218638,Central government,35.950011
+IRQ,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,31.618061,87.95007322807217,Central government,35.950011
+IRQ,2021,G14X,Other non-tax revenue,Other revenue,2.844179999999998,7.911485757264434,Central government,35.950011
+IRQ,2022,G1111,Personal income tax,Taxes,0.11510653,0.27365810094285886,Central government,42.035603
+IRQ,2022,G1112,Corporate income tax,Taxes,0.33200872,0.7893285968369419,Central government,42.035603
+IRQ,2022,G11412,VAT / sales tax,Taxes,0.09906516,0.23552081324317972,Central government,42.035603
+IRQ,2022,G1142,Excise taxes,Taxes,0.01205487,0.028659649728934065,Central government,42.035603
+IRQ,2022,G115,Trade taxes (customs),Taxes,0.16135455,0.3836096851454871,Central government,42.035603
+IRQ,2022,G113,Property taxes,Taxes,0.02656522,0.06315703945144774,Central government,42.035603
+IRQ,2022,G11NEC,Other taxes,Taxes,0.21470289,0.5104418067710279,Central government,42.035603
+IRQ,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,40.165557,95.49093393686832,Central government,42.035603
+IRQ,2022,G14X,Other non-tax revenue,Other revenue,0.9357529999999983,2.2246903710118144,Central government,42.035603
+IRQ,2023,G1111,Personal income tax,Taxes,0.14883397,0.3711494452357547,Central government,40.0254
+IRQ,2023,G1112,Corporate income tax,Taxes,1.054785,2.6303327633670968,Central government,40.0254
+IRQ,2023,G1142,Excise taxes,Taxes,0.01336554,0.03332984234900331,Central government,40.0254
+IRQ,2023,G115,Trade taxes (customs),Taxes,0.26374518,0.65770520829757,Central government,40.0254
+IRQ,2023,G113,Property taxes,Taxes,0.07611955,0.18982043383036337,Central government,40.0254
+IRQ,2023,G11NEC,Other taxes,Taxes,0.3298445,0.8225380481960192,Central government,40.0254
+IRQ,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,36.223297,90.33056489832246,Central government,40.0254
+IRQ,2023,G14X,Other non-tax revenue,Other revenue,1.990828999999998,4.964559360401738,Central government,40.0254
+IRQ,2024,G1111,Personal income tax,Taxes,0.19509259,0.5025489027479687,Central government,38.735073
+IRQ,2024,G1112,Corporate income tax,Taxes,0.73742519,1.899570968293631,Central government,38.735073
+IRQ,2024,G1142,Excise taxes,Taxes,0.02354088,0.060640147397303,Central government,38.735073
+IRQ,2024,G115,Trade taxes (customs),Taxes,0.54887844,1.413883826976805,Central government,38.735073
+IRQ,2024,G113,Property taxes,Taxes,0.0856168,0.22054465982942917,Central government,38.735073
+IRQ,2024,G11NEC,Other taxes,Taxes,0.15119314,0.38946608177183983,Central government,38.735073
+IRQ,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,35.191983,90.65281486178009,Central government,38.735073
+IRQ,2024,G14X,Other non-tax revenue,Other revenue,1.886887999999999,4.860530551202937,Central government,38.735073

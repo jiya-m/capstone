@@ -1,0 +1,202 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+CMR,2000,G1111,Personal income tax,Taxes,1.0593688,6.5721491285946785,General government,16.119062
+CMR,2000,G1112,Corporate income tax,Taxes,1.591052,9.87062391808105,General government,16.119062
+CMR,2000,G1113,Other income taxes,Taxes,0.5196903000000002,3.2240728179686884,General government,16.119062
+CMR,2000,G114,Goods & services taxes,Taxes,5.4607462,33.877567830774986,General government,16.119062
+CMR,2000,G115,Trade taxes (customs),Taxes,1.9268519,11.953871055590838,General government,16.119062
+CMR,2000,G11NEC,Other taxes,Taxes,0.12792379999999987,0.793618134399011,General government,16.119062
+CMR,2000,G121,Social contributions,Social contributions,0.23822074,1.4778821396327504,General government,16.119062
+CMR,2000,G13,Grants (e.g. foreign aid),Grants,0.16989877,1.0540239180206248,General government,16.119062
+CMR,2000,G14X,Other non-tax revenue,Other revenue,5.0253096,31.176191056937366,General government,16.119062
+CMR,2001,G1111,Personal income tax,Taxes,1.2041423,7.787182325608296,General government,15.463132
+CMR,2001,G1112,Corporate income tax,Taxes,2.2138269,14.31680766271246,General government,15.463132
+CMR,2001,G1113,Other income taxes,Taxes,0.5335124000000002,3.4502220640972956,General government,15.463132
+CMR,2001,G114,Goods & services taxes,Taxes,5.1493913,33.30108818451202,General government,15.463132
+CMR,2001,G115,Trade taxes (customs),Taxes,2.0318344,13.139863061236982,General government,15.463132
+CMR,2001,G121,Social contributions,Social contributions,0.23822074,1.5405723527205457,General government,15.463132
+CMR,2001,G13,Grants (e.g. foreign aid),Grants,0.38642249,2.4989923403118954,General government,15.463132
+CMR,2001,G14X,Other non-tax revenue,Other revenue,3.7057817,23.96527200880051,General government,15.463132
+CMR,2002,G1111,Personal income tax,Taxes,1.3728795,8.932867221867392,General government,15.368856
+CMR,2002,G1112,Corporate income tax,Taxes,2.0431828,13.294306355658483,General government,15.368856
+CMR,2002,G1113,Other income taxes,Taxes,2.1625813000000007,14.07119241666394,General government,15.368856
+CMR,2002,G114,Goods & services taxes,Taxes,4.4970917,29.261069919582827,General government,15.368856
+CMR,2002,G115,Trade taxes (customs),Taxes,1.9120012,12.440751608317496,General government,15.368856
+CMR,2002,G121,Social contributions,Social contributions,0.23822074,1.5500225911414616,General government,15.368856
+CMR,2002,G13,Grants (e.g. foreign aid),Grants,1.1128381,7.240864902371394,General government,15.368856
+CMR,2002,G14X,Other non-tax revenue,Other revenue,2.0300604,13.208923292664073,General government,15.368856
+CMR,2003,G1111,Personal income tax,Taxes,1.252545,9.126671906147521,General government,13.724006
+CMR,2003,G1112,Corporate income tax,Taxes,1.5095326,10.999212620571575,General government,13.724006
+CMR,2003,G1113,Other income taxes,Taxes,0.3088171000000002,2.2501964805319976,General government,13.724006
+CMR,2003,G114,Goods & services taxes,Taxes,4.8784467,35.54681264348034,General government,13.724006
+CMR,2003,G115,Trade taxes (customs),Taxes,1.8982535,13.831628316105371,General government,13.724006
+CMR,2003,G121,Social contributions,Social contributions,0.23822074,1.7357959476263707,General government,13.724006
+CMR,2003,G13,Grants (e.g. foreign aid),Grants,0.42867272,3.1235247201145206,General government,13.724006
+CMR,2003,G14X,Other non-tax revenue,Other revenue,3.2095173,23.386154888011564,General government,13.724006
+CMR,2004,G1111,Personal income tax,Taxes,0.94885274,7.325488365413651,General government,12.952757
+CMR,2004,G1112,Corporate income tax,Taxes,1.4917738,11.517036474731487,General government,12.952757
+CMR,2004,G1113,Other income taxes,Taxes,0.3583882600000001,2.766887756398157,General government,12.952757
+CMR,2004,G114,Goods & services taxes,Taxes,4.4467147,34.33025529247442,General government,12.952757
+CMR,2004,G115,Trade taxes (customs),Taxes,1.7983882,13.884211195508799,General government,12.952757
+CMR,2004,G121,Social contributions,Social contributions,0.23822074,1.839150782523145,General government,12.952757
+CMR,2004,G13,Grants (e.g. foreign aid),Grants,0.19280301,1.4885093829962825,General government,12.952757
+CMR,2004,G14X,Other non-tax revenue,Other revenue,3.477616,26.848460749954057,General government,12.952757
+CMR,2005,G1111,Personal income tax,Taxes,0.94782282,6.132353155255241,General government,15.456103
+CMR,2005,G1112,Corporate income tax,Taxes,2.1163182,13.692443690366192,General government,15.456103
+CMR,2005,G1113,Other income taxes,Taxes,0.17401058000000047,1.1258373472278262,General government,15.456103
+CMR,2005,G114,Goods & services taxes,Taxes,5.1668495,33.42918651616128,General government,15.456103
+CMR,2005,G115,Trade taxes (customs),Taxes,1.8402345,11.906199771054837,General government,15.456103
+CMR,2005,G121,Social contributions,Social contributions,0.23822074,1.541272984529153,General government,15.456103
+CMR,2005,G13,Grants (e.g. foreign aid),Grants,0.45425502,2.9390009888003465,General government,15.456103
+CMR,2005,G14X,Other non-tax revenue,Other revenue,4.5183916,29.23370528780767,General government,15.456103
+CMR,2006,G1111,Personal income tax,Taxes,0.95906443,2.3553843982058233,General government,40.717958
+CMR,2006,G1112,Corporate income tax,Taxes,2.2344911,5.487728780505152,General government,40.717958
+CMR,2006,G114,Goods & services taxes,Taxes,5.4523047,13.390417810244804,General government,40.717958
+CMR,2006,G115,Trade taxes (customs),Taxes,1.889843,4.641301020056064,General government,40.717958
+CMR,2006,G11NEC,Other taxes,Taxes,0.13456380000000165,0.33047777101199827,General government,40.717958
+CMR,2006,G121,Social contributions,Social contributions,0.23822074,0.5850508024002578,General government,40.717958
+CMR,2006,G13,Grants (e.g. foreign aid),Grants,24.393266,59.90788143157866,General government,40.717958
+CMR,2006,G14X,Other non-tax revenue,Other revenue,5.4162042,13.301757912319667,General government,40.717958
+CMR,2007,G1111,Personal income tax,Taxes,1.1127344,6.418589397193522,General government,17.33612
+CMR,2007,G1112,Corporate income tax,Taxes,2.4964665,14.400375693740415,General government,17.33612
+CMR,2007,G114,Goods & services taxes,Taxes,5.5141649,31.807375022751774,General government,17.33612
+CMR,2007,G115,Trade taxes (customs),Taxes,1.8327288,10.571735396704918,General government,17.33612
+CMR,2007,G11NEC,Other taxes,Taxes,0.1178834000000002,0.6799871931209498,General government,17.33612
+CMR,2007,G121,Social contributions,Social contributions,0.23574882,1.359870672150411,General government,17.33612
+CMR,2007,G13,Grants (e.g. foreign aid),Grants,1.0311909,5.948221765429778,General government,17.33612
+CMR,2007,G14X,Other non-tax revenue,Other revenue,4.9952029,28.813844858908233,General government,17.33612
+CMR,2008,G1111,Personal income tax,Taxes,1.1446355,6.390344809363737,General government,17.911952
+CMR,2008,G1112,Corporate income tax,Taxes,2.3660611,13.20939833599644,General government,17.911952
+CMR,2008,G114,Goods & services taxes,Taxes,5.5192062,30.812979932894052,General government,17.911952
+CMR,2008,G115,Trade taxes (customs),Taxes,1.792582,10.007742271717822,General government,17.911952
+CMR,2008,G11NEC,Other taxes,Taxes,0.14385320000000065,0.8031129123029712,General government,17.911952
+CMR,2008,G121,Social contributions,Social contributions,0.23443982,1.308845730230426,General government,17.911952
+CMR,2008,G13,Grants (e.g. foreign aid),Grants,0.74618966,4.165875705044874,General government,17.911952
+CMR,2008,G14X,Other non-tax revenue,Other revenue,5.9649846,33.30170030244967,General government,17.911952
+CMR,2009,G1111,Personal income tax,Taxes,1.1538439,7.870330294035826,General government,14.660679
+CMR,2009,G1112,Corporate income tax,Taxes,2.7497552,18.755987401538928,General government,14.660679
+CMR,2009,G114,Goods & services taxes,Taxes,5.169214,35.25903420779372,General government,14.660679
+CMR,2009,G115,Trade taxes (customs),Taxes,1.795862,12.249514082890908,General government,14.660679
+CMR,2009,G11NEC,Other taxes,Taxes,0.08244289999999864,0.5623402380496665,General government,14.660679
+CMR,2009,G121,Social contributions,Social contributions,0.23976134,1.6354040070243674,General government,14.660679
+CMR,2009,G13,Grants (e.g. foreign aid),Grants,0.66381246,4.52784238274904,General government,14.660679
+CMR,2009,G14X,Other non-tax revenue,Other revenue,2.8059877,19.139547385917552,General government,14.660679
+CMR,2010,G1111,Personal income tax,Taxes,1.1081326,7.774215801419775,General government,14.253947
+CMR,2010,G1112,Corporate income tax,Taxes,1.8841922,13.218740044424186,General government,14.253947
+CMR,2010,G114,Goods & services taxes,Taxes,5.1085417,35.839488529036906,General government,14.253947
+CMR,2010,G115,Trade taxes (customs),Taxes,1.856712,13.025949935130248,General government,14.253947
+CMR,2010,G11NEC,Other taxes,Taxes,0.14409703,1.010927218966087,General government,14.253947
+CMR,2010,G121,Social contributions,Social contributions,0.24293298,1.7043207751509108,General government,14.253947
+CMR,2010,G13,Grants (e.g. foreign aid),Grants,0.52422641,3.6777631486913767,General government,14.253947
+CMR,2010,G14X,Other non-tax revenue,Other revenue,3.3851117,23.74859188125226,General government,14.253947
+CMR,2011,G1111,Personal income tax,Taxes,1.1698139,7.504371711273276,General government,15.588432
+CMR,2011,G1112,Corporate income tax,Taxes,2.1548587,13.823447191105444,General government,15.588432
+CMR,2011,G114,Goods & services taxes,Taxes,5.4392224,34.89268396441855,General government,15.588432
+CMR,2011,G115,Trade taxes (customs),Taxes,1.8955585,12.160032962904273,General government,15.588432
+CMR,2011,G11NEC,Other taxes,Taxes,0.15261039999999865,0.9789977436634056,General government,15.588432
+CMR,2011,G121,Social contributions,Social contributions,0.24075887,1.5444713499011424,General government,15.588432
+CMR,2011,G13,Grants (e.g. foreign aid),Grants,0.41693758,2.674660115355731,General government,15.588432
+CMR,2011,G14X,Other non-tax revenue,Other revenue,4.1186719,26.421334961378175,General government,15.588432
+CMR,2012,G1111,Personal income tax,Taxes,1.1745497,7.454486992654042,General government,15.756278
+CMR,2012,G1112,Corporate income tax,Taxes,2.740263,17.39156281760673,General government,15.756278
+CMR,2012,G114,Goods & services taxes,Taxes,5.3108335,33.70614223127496,General government,15.756278
+CMR,2012,G115,Trade taxes (customs),Taxes,1.9102917,12.124003462624847,General government,15.756278
+CMR,2012,G11NEC,Other taxes,Taxes,0.1876532000000001,1.190974156759742,General government,15.756278
+CMR,2012,G121,Social contributions,Social contributions,0.22307948,1.4158132959278158,General government,15.756278
+CMR,2012,G13,Grants (e.g. foreign aid),Grants,0.3636631,2.3080520548923946,General government,15.756278
+CMR,2012,G14X,Other non-tax revenue,Other revenue,3.8459444,24.40896498825946,General government,15.756278
+CMR,2013,G1111,Personal income tax,Taxes,1.3919516,8.892399123659372,General government,15.653274
+CMR,2013,G1112,Corporate income tax,Taxes,2.569845,16.41730030407696,General government,15.653274
+CMR,2013,G114,Goods & services taxes,Taxes,5.7754655,36.89621417219171,General government,15.653274
+CMR,2013,G115,Trade taxes (customs),Taxes,1.7391006,11.110139642352136,General government,15.653274
+CMR,2013,G11NEC,Other taxes,Taxes,0.13651846,0.8721399753176238,General government,15.653274
+CMR,2013,G121,Social contributions,Social contributions,0.1148359,0.7336222441388301,General government,15.653274
+CMR,2013,G13,Grants (e.g. foreign aid),Grants,0.27781524,1.7748059607210607,General government,15.653274
+CMR,2013,G14X,Other non-tax revenue,Other revenue,3.6477417,23.30337857754231,General government,15.653274
+CMR,2014,G1111,Personal income tax,Taxes,1.5765226,9.868810242933261,General government,15.974799
+CMR,2014,G1112,Corporate income tax,Taxes,2.5586488,16.016782433381476,General government,15.974799
+CMR,2014,G114,Goods & services taxes,Taxes,5.8814191,36.81685822776236,General government,15.974799
+CMR,2014,G115,Trade taxes (customs),Taxes,1.9850693,12.426255253665476,General government,15.974799
+CMR,2014,G11NEC,Other taxes,Taxes,0.17909818,1.1211294739921298,General government,15.974799
+CMR,2014,G121,Social contributions,Social contributions,0.10803666,0.6762943308394678,General government,15.974799
+CMR,2014,G13,Grants (e.g. foreign aid),Grants,0.2518963,1.576835489448099,General government,15.974799
+CMR,2014,G14X,Other non-tax revenue,Other revenue,3.4341076,21.497031668442272,General government,15.974799
+CMR,2015,G1111,Personal income tax,Taxes,1.4594446,9.22347695917636,General government,15.82315
+CMR,2015,G1112,Corporate income tax,Taxes,2.8297753,17.88376707084076,General government,15.82315
+CMR,2015,G114,Goods & services taxes,Taxes,5.9198239,37.41242342739939,General government,15.82315
+CMR,2015,G115,Trade taxes (customs),Taxes,1.7756594,11.221908363801488,General government,15.82315
+CMR,2015,G11NEC,Other taxes,Taxes,0.20492498,1.295095977873827,General government,15.82315
+CMR,2015,G121,Social contributions,Social contributions,0.22223311,1.4044808344565496,General government,15.82315
+CMR,2015,G13,Grants (e.g. foreign aid),Grants,0.05804737,0.3668509100898965,General government,15.82315
+CMR,2015,G14X,Other non-tax revenue,Other revenue,3.3532414,21.191996456361736,General government,15.82315
+CMR,2016,G1111,Personal income tax,Taxes,1.2557286,8.77932410817253,General government,14.303249
+CMR,2016,G1112,Corporate income tax,Taxes,2.2994959,16.076738071836452,General government,14.303249
+CMR,2016,G114,Goods & services taxes,Taxes,6.275474,43.87446473577961,General government,14.303249
+CMR,2016,G115,Trade taxes (customs),Taxes,1.7387921,12.156623176879096,General government,14.303249
+CMR,2016,G11NEC,Other taxes,Taxes,0.16039072,1.1213586397754656,General government,14.303249
+CMR,2016,G121,Social contributions,Social contributions,0.22295508,1.5587722608878505,General government,14.303249
+CMR,2016,G13,Grants (e.g. foreign aid),Grants,0.27006424,1.8881321114986886,General government,14.303249
+CMR,2016,G14X,Other non-tax revenue,Other revenue,2.0803485,14.54458689517031,General government,14.303249
+CMR,2017,G1111,Personal income tax,Taxes,1.2169822,8.391416356030899,General government,14.502703
+CMR,2017,G1112,Corporate income tax,Taxes,1.8415986,12.698312771775631,General government,14.502703
+CMR,2017,G114,Goods & services taxes,Taxes,6.7494877,46.5395151059805,General government,14.502703
+CMR,2017,G115,Trade taxes (customs),Taxes,1.9029081,13.121058101230801,General government,14.502703
+CMR,2017,G11NEC,Other taxes,Taxes,0.2522463999999983,1.739306102184484,General government,14.502703
+CMR,2017,G121,Social contributions,Social contributions,0.21855014,1.5069614160411244,General government,14.502703
+CMR,2017,G13,Grants (e.g. foreign aid),Grants,0.30908076,2.1311941495927065,General government,14.502703
+CMR,2017,G14X,Other non-tax revenue,Other revenue,2.0118492,13.872235997163868,General government,14.502703
+CMR,2018,G1111,Personal income tax,Taxes,1.2972798,8.345545571537377,General government,15.544577
+CMR,2018,G1112,Corporate income tax,Taxes,1.990176,12.803024068809188,General government,15.544577
+CMR,2018,G114,Goods & services taxes,Taxes,6.975986,44.87729560685886,General government,15.544577
+CMR,2018,G115,Trade taxes (customs),Taxes,1.8283156,11.761758071738033,General government,15.544577
+CMR,2018,G11NEC,Other taxes,Taxes,0.3386716000000006,2.1787121572273636,General government,15.544577
+CMR,2018,G121,Social contributions,Social contributions,0.21677673,1.3945488699229367,General government,15.544577
+CMR,2018,G13,Grants (e.g. foreign aid),Grants,0.39029908,2.5108374913947724,General government,15.544577
+CMR,2018,G14X,Other non-tax revenue,Other revenue,2.5070727,16.128278162511478,General government,15.544577
+CMR,2019,G1111,Personal income tax,Taxes,1.3627065,8.836500007837843,General government,15.421337
+CMR,2019,G1112,Corporate income tax,Taxes,2.2617606,14.66643591971369,General government,15.421337
+CMR,2019,G114,Goods & services taxes,Taxes,6.2422379,40.477927750601964,General government,15.421337
+CMR,2019,G115,Trade taxes (customs),Taxes,1.6917505,10.970192999380037,General government,15.421337
+CMR,2019,G11NEC,Other taxes,Taxes,0.5537224999999992,3.590625623045008,General government,15.421337
+CMR,2019,G121,Social contributions,Social contributions,0.20875141,1.3536530691687172,General government,15.421337
+CMR,2019,G13,Grants (e.g. foreign aid),Grants,0.57341481,3.7183208365552924,General government,15.421337
+CMR,2019,G14X,Other non-tax revenue,Other revenue,2.5269934,16.38634379369745,General government,15.421337
+CMR,2020,G1111,Personal income tax,Taxes,1.1974424,8.934592142397868,General government,13.402317
+CMR,2020,G1112,Corporate income tax,Taxes,2.3758449,17.727120047775202,General government,13.402317
+CMR,2020,G114,Goods & services taxes,Taxes,5.4401636,40.5912158730298,General government,13.402317
+CMR,2020,G115,Trade taxes (customs),Taxes,1.4890371,11.110295721446734,General government,13.402317
+CMR,2020,G11NEC,Other taxes,Taxes,0.5780099999999998,4.312761602752158,General government,13.402317
+CMR,2020,G121,Social contributions,Social contributions,0.23581421,1.7595032443579424,General government,13.402317
+CMR,2020,G13,Grants (e.g. foreign aid),Grants,0.14858202,1.1086293156093379,General government,13.402317
+CMR,2020,G14X,Other non-tax revenue,Other revenue,1.9374232,14.455882052630953,General government,13.402317
+CMR,2021,G1111,Personal income tax,Taxes,1.0734739,7.631319186983747,General government,14.066688
+CMR,2021,G1112,Corporate income tax,Taxes,2.014732,14.322717085371277,General government,14.066688
+CMR,2021,G114,Goods & services taxes,Taxes,6.1783351,43.92174527228389,General government,14.066688
+CMR,2021,G115,Trade taxes (customs),Taxes,1.6243652,11.547601965384246,General government,14.066688
+CMR,2021,G11NEC,Other taxes,Taxes,0.5882298000000007,4.181721939486016,General government,14.066688
+CMR,2021,G121,Social contributions,Social contributions,0.22177645,1.5766073847777218,General government,14.066688
+CMR,2021,G13,Grants (e.g. foreign aid),Grants,0.26028917,1.850394068439926,General government,14.066688
+CMR,2021,G14X,Other non-tax revenue,Other revenue,2.1054869,14.967893097273189,General government,14.066688
+CMR,2022,G1111,Personal income tax,Taxes,1.16359,7.286576464053055,General government,15.968953
+CMR,2022,G1112,Corporate income tax,Taxes,2.5868826,16.199449865011193,General government,15.968953
+CMR,2022,G114,Goods & services taxes,Taxes,6.1408624,38.45500857933495,General government,15.968953
+CMR,2022,G115,Trade taxes (customs),Taxes,1.5181135,9.506656209542198,General government,15.968953
+CMR,2022,G11NEC,Other taxes,Taxes,0.54317175,3.401423602375845,General government,15.968953
+CMR,2022,G121,Social contributions,Social contributions,0.20337503,1.273565179293466,General government,15.968953
+CMR,2022,G13,Grants (e.g. foreign aid),Grants,0.37666852,2.3587552080902183,General government,15.968953
+CMR,2022,G14X,Other non-tax revenue,Other revenue,3.4362896,21.518564892299082,General government,15.968953
+CMR,2023,G1111,Personal income tax,Taxes,1.2176318,7.323962282819903,General government,16.625315
+CMR,2023,G1112,Corporate income tax,Taxes,2.8114356,16.91057041625978,General government,16.625315
+CMR,2023,G114,Goods & services taxes,Taxes,6.670421,40.12207287501019,General government,16.625315
+CMR,2023,G115,Trade taxes (customs),Taxes,1.6678227,10.031826163895241,General government,16.625315
+CMR,2023,G11NEC,Other taxes,Taxes,0.59985039,3.6080542834827485,General government,16.625315
+CMR,2023,G121,Social contributions,Social contributions,0.24992078,1.5032544045030123,General government,16.625315
+CMR,2023,G13,Grants (e.g. foreign aid),Grants,0.47091829,2.8325375489126072,General government,16.625315
+CMR,2023,G14X,Other non-tax revenue,Other revenue,2.937314,17.66771937855012,General government,16.625315
+CMR,2024,G1111,Personal income tax,Taxes,1.2550939,7.925151127007937,General government,15.836845
+CMR,2024,G1112,Corporate income tax,Taxes,2.5519819,16.1142064596831,General government,15.836845
+CMR,2024,G114,Goods & services taxes,Taxes,6.6646495,42.08318954943362,General government,15.836845
+CMR,2024,G115,Trade taxes (customs),Taxes,1.6116727,10.176728382452438,General government,15.836845
+CMR,2024,G11NEC,Other taxes,Taxes,0.58897437,3.719013288315949,General government,15.836845
+CMR,2024,G121,Social contributions,Social contributions,0.2348247,1.4827745046440752,General government,15.836845
+CMR,2024,G13,Grants (e.g. foreign aid),Grants,0.32104614,2.027210217691718,General government,15.836845
+CMR,2024,G14X,Other non-tax revenue,Other revenue,2.6086017,16.471725902476155,General government,15.836845

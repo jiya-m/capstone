@@ -1,0 +1,75 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+LBR,2005,GF01,General public services,Government spending,50.89976138776178,5.686737082767012,Central government (budgetary),11.1724238537085
+LBR,2005,GF02,Defence,Government spending,14.8921787207143,1.66381732772999,Central government (budgetary),11.1724238537085
+LBR,2005,GF03,Public order and safety,Government spending,9.00510209695438,1.00608817473094,Central government (budgetary),11.1724238537085
+LBR,2005,GF04,Economic affairs,Government spending,7.02958479998468,0.785375009010156,Central government (budgetary),11.1724238537085
+LBR,2005,GF05,Environmental protection,Government spending,0.0917728209631206,0.0102532485405049,Central government (budgetary),11.1724238537085
+LBR,2005,GF06,Housing and community amenities,Government spending,1.36695560473418,0.152722074052927,Central government (budgetary),11.1724238537085
+LBR,2005,GF08,"Recreation, culture and religion",Government spending,0.853759205498609,0.0953855971283589,Central government (budgetary),11.1724238537085
+LBR,2005,GF09,Education,Government spending,8.92352215167199,0.996973717464365,Central government (budgetary),11.1724238537085
+LBR,2005,GF10,Social protection,Government spending,0.456378024640701,0.0509884872880414,Central government (budgetary),11.1724238537085
+LBR,2005,GF0170,Interest on public debt,Government spending,1.12202767537572,0.125357687648888,Central government (budgetary),11.1724238537085
+LBR,2005,GF073,Hospital services,Health,1.05560290135771,0.117936430351728,Central government (budgetary),11.1724238537085
+LBR,2005,GF07_rest,Health (not broken down),Health,4.30333888505709,0.480787260100033,Central government (budgetary),11.1724238537085
+LBR,2006,GF01,General public services,Government spending,40.372827643556754,3.5434907637797077,Central government (budgetary),8.77691994988425
+LBR,2006,GF02,Defence,Government spending,11.1744677653714,0.980774090592263,Central government (budgetary),8.77691994988425
+LBR,2006,GF03,Public order and safety,Government spending,14.2854874361645,1.25382579672293,Central government (budgetary),8.77691994988425
+LBR,2006,GF04,Economic affairs,Government spending,9.68404794654239,0.849961136176435,Central government (budgetary),8.77691994988425
+LBR,2006,GF05,Environmental protection,Government spending,0.298383491180769,0.026188880164606,Central government (budgetary),8.77691994988425
+LBR,2006,GF06,Housing and community amenities,Government spending,2.65316868697657,0.232866491791329,Central government (budgetary),8.77691994988425
+LBR,2006,GF08,"Recreation, culture and religion",Government spending,0.813558603637509,0.0714053873866603,Central government (budgetary),8.77691994988425
+LBR,2006,GF09,Education,Government spending,11.2045273734342,0.983412398329185,Central government (budgetary),8.77691994988425
+LBR,2006,GF10,Social protection,Government spending,0.913210923051377,0.0801517916898184,Central government (budgetary),8.77691994988425
+LBR,2006,GF0170,Interest on public debt,Government spending,1.80505154340005,0.158427929018372,Central government (budgetary),8.77691994988425
+LBR,2006,GF073,Hospital services,Health,2.71499626298158,0.238293048644242,Central government (budgetary),8.77691994988425
+LBR,2006,GF07_rest,Health (not broken down),Health,4.08027232370298,0.358122235588692,Central government (budgetary),8.77691994988425
+LBR,2007,GF01,General public services,Government spending,49.57833633038056,6.490842936077791,Central government (budgetary),13.092095089323
+LBR,2007,GF02,Defence,Government spending,4.17646751354463,0.546787098247946,Central government (budgetary),13.092095089323
+LBR,2007,GF03,Public order and safety,Government spending,12.9051606587233,1.68955590486996,Central government (budgetary),13.092095089323
+LBR,2007,GF04,Economic affairs,Government spending,14.2959551364041,1.87164004038497,Central government (budgetary),13.092095089323
+LBR,2007,GF05,Environmental protection,Government spending,0.0476957333907057,0.0062443707690611,Central government (budgetary),13.092095089323
+LBR,2007,GF06,Housing and community amenities,Government spending,2.6845395222351,0.351462466961476,Central government (budgetary),13.092095089323
+LBR,2007,GF08,"Recreation, culture and religion",Government spending,1.09742933778261,0.143676492440627,Central government (budgetary),13.092095089323
+LBR,2007,GF09,Education,Government spending,6.67204267391232,0.873510171268808,Central government (budgetary),13.092095089323
+LBR,2007,GF10,Social protection,Government spending,0.676455135576708,0.0885621495863112,Central government (budgetary),13.092095089323
+LBR,2007,GF0170,Interest on public debt,Government spending,1.09565781209894,0.143444562613589,Central government (budgetary),13.092095089323
+LBR,2007,GF073,Hospital services,Health,1.94950155723921,0.25523059764159,Central government (budgetary),13.092095089323
+LBR,2007,GF07_rest,Health (not broken down),Health,4.82075858871179,0.631138298460852,Central government (budgetary),13.092095089323
+LBR,2008,GF01,General public services,Government spending,52.0930538724198,9.674592643103702,Central government (budgetary),18.5717517479346
+LBR,2008,GF02,Defence,Government spending,3.72089323749274,0.69103505487284,Central government (budgetary),18.5717517479346
+LBR,2008,GF03,Public order and safety,Government spending,11.3580043674221,2.1093803746372,Central government (budgetary),18.5717517479346
+LBR,2008,GF04,Economic affairs,Government spending,11.1421722832641,2.06929657577499,Central government (budgetary),18.5717517479346
+LBR,2008,GF05,Environmental protection,Government spending,0.396720101207415,0.0736778723303962,Central government (budgetary),18.5717517479346
+LBR,2008,GF06,Housing and community amenities,Government spending,3.97350930857071,0.737950284468826,Central government (budgetary),18.5717517479346
+LBR,2008,GF08,"Recreation, culture and religion",Government spending,1.32077274783716,0.245290635882692,Central government (budgetary),18.5717517479346
+LBR,2008,GF09,Education,Government spending,6.77832470715028,1.25885363728087,Central government (budgetary),18.5717517479346
+LBR,2008,GF10,Social protection,Government spending,0.583686859540646,0.108400874539205,Central government (budgetary),18.5717517479346
+LBR,2008,GF0170,Interest on public debt,Government spending,2.2010469297758,0.408772971653498,Central government (budgetary),18.5717517479346
+LBR,2008,GF073,Hospital services,Health,1.68431069272504,0.312806000516812,Central government (budgetary),18.5717517479346
+LBR,2008,GF07_rest,Health (not broken down),Health,4.74750489259422,0.8816948228736479,Central government (budgetary),18.5717517479346
+LBR,2011,GF01,General public services,Government spending,37.05304146430526,9.25482485801927,Central government (budgetary),24.9772339658942
+LBR,2011,GF04,Economic affairs,Government spending,13.7763080475306,3.44094069289402,Central government (budgetary),24.9772339658942
+LBR,2011,GF09,Education,Government spending,8.96759674792085,2.23985762084611,Central government (budgetary),24.9772339658942
+LBR,2011,GF0170,Interest on public debt,Government spending,4.58779908690984,1.14590531182263,Central government (budgetary),24.9772339658942
+LBR,2011,GF07,Health (no breakdown),Health,8.81163854360918,2.20090357526617,Central government (budgetary),24.9772339658942
+LBR,2011,UNCL,Unclassified,Unclassified,26.803616109724274,,Central government (budgetary),24.9772339658942
+LBR,2012,GF01,General public services,Government spending,35.41326436013938,9.903214738459745,Central government (budgetary),27.9647045179112
+LBR,2012,GF04,Economic affairs,Government spending,14.2149310104132,3.97516345448697,Central government (budgetary),27.9647045179112
+LBR,2012,GF09,Education,Government spending,14.4607223247142,4.04389826926196,Central government (budgetary),27.9647045179112
+LBR,2012,GF0170,Interest on public debt,Government spending,0.697576232596024,0.195075132232655,Central government (budgetary),27.9647045179112
+LBR,2012,GF07,Health (no breakdown),Health,10.118409105395,2.82958320823712,Central government (budgetary),27.9647045179112
+LBR,2012,UNCL,Unclassified,Unclassified,25.095096966742204,,Central government (budgetary),27.9647045179112
+LBR,2013,GF01,General public services,Government spending,31.4193725595993,8.49687786708339,Central government (budgetary),27.0434358641812
+LBR,2013,GF02,Defence,Government spending,2.76317150528914,0.747256513850199,Central government (budgetary),27.0434358641812
+LBR,2013,GF03,Public order and safety,Government spending,11.6976372698955,3.16344303270874,Central government (budgetary),27.0434358641812
+LBR,2013,GF05,Environmental protection,Government spending,1.05486248372875,0.285271059242494,Central government (budgetary),27.0434358641812
+LBR,2013,GF06,Housing and community amenities,Government spending,2.60774079855585,0.705222710361538,Central government (budgetary),27.0434358641812
+LBR,2013,GF09,Education,Government spending,13.243213980941,3.58142007929205,Central government (budgetary),27.0434358641812
+LBR,2013,GF10,Social protection,Government spending,1.56993890665083,0.424565421326944,Central government (budgetary),27.0434358641812
+LBR,2013,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),27.0434358641812
+LBR,2013,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),27.0434358641812
+LBR,2013,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),27.0434358641812
+LBR,2013,GF0740,Public health services,Health,10.2098902198518,2.76110511340893,Central government (budgetary),27.0434358641812
+LBR,2013,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),27.0434358641812
+LBR,2013,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),27.0434358641812
+LBR,2013,UNCL,Unclassified,Unclassified,25.434172275487825,,Central government (budgetary),27.0434358641812

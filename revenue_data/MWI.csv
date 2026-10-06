@@ -1,0 +1,176 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+MWI,2002,G11NEC,Other taxes,Taxes,6.2724297,66.91416190949916,Central government,9.3738448
+MWI,2002,G13,Grants (e.g. foreign aid),Grants,2.2945274,24.477975089841525,Central government,9.3738448
+MWI,2002,G14X,Other non-tax revenue,Other revenue,0.80688772,8.607863000659318,Central government,9.3738448
+MWI,2003,G111,Income taxes,Taxes,2.7588978,21.567280237347685,Central government,12.792052
+MWI,2003,G114,Goods & services taxes,Taxes,2.8117551,21.98048445306367,Central government,12.792052
+MWI,2003,G115,Trade taxes (customs),Taxes,0.71230034,5.568303779117167,Central government,12.792052
+MWI,2003,G11NEC,Other taxes,Taxes,0.95288071,7.449005651942898,Central government,12.792052
+MWI,2003,G13,Grants (e.g. foreign aid),Grants,4.2211354,32.99810891566505,Central government,12.792052
+MWI,2003,G14X,Other non-tax revenue,Other revenue,1.3350831,10.436816962863531,Central government,12.792052
+MWI,2004,G111,Income taxes,Taxes,2.9714773,20.411012727728863,Central government,14.558206
+MWI,2004,G114,Goods & services taxes,Taxes,3.1207223,21.436173375784257,Central government,14.558206
+MWI,2004,G115,Trade taxes (customs),Taxes,0.95344603,6.549199973202742,Central government,14.558206
+MWI,2004,G11NEC,Other taxes,Taxes,1.0121134,6.952184857446138,Central government,14.558206
+MWI,2004,G13,Grants (e.g. foreign aid),Grants,5.5032151,37.8014644263073,Central government,14.558206
+MWI,2004,G14X,Other non-tax revenue,Other revenue,0.99723197,6.84996463953069,Central government,14.558206
+MWI,2005,G111,Income taxes,Taxes,3.580096,22.649659463909593,Central government,15.806401
+MWI,2005,G114,Goods & services taxes,Taxes,3.5851085,22.68137130014606,Central government,15.806401
+MWI,2005,G115,Trade taxes (customs),Taxes,1.1401563,7.213256831836671,Central government,15.806401
+MWI,2005,G11NEC,Other taxes,Taxes,0.8795682999999999,5.564633593694098,Central government,15.806401
+MWI,2005,G13,Grants (e.g. foreign aid),Grants,5.3362323,33.75994510072217,Central government,15.806401
+MWI,2005,G14X,Other non-tax revenue,Other revenue,1.2852395,8.131133077036324,Central government,15.806401
+MWI,2006,G1111,Personal income tax,Taxes,2.1584748,12.138534434109088,Central government,17.782005
+MWI,2006,G1112,Corporate income tax,Taxes,1.6078684,9.042109705851505,Central government,17.782005
+MWI,2006,G11412,VAT / sales tax,Taxes,2.8443458,15.995641661331218,Central government,17.782005
+MWI,2006,G1142,Excise taxes,Taxes,1.3023069,7.323734865668973,Central government,17.782005
+MWI,2006,G115,Trade taxes (customs),Taxes,1.0951509,6.158759374997363,Central government,17.782005
+MWI,2006,G11NEC,Other taxes,Taxes,0.009317799999999756,0.05240016522321164,Central government,17.782005
+MWI,2006,G13,Grants (e.g. foreign aid),Grants,7.9682226,44.810597005230846,Central government,17.782005
+MWI,2006,G14X,Other non-tax revenue,Other revenue,0.7963175,4.478221100488949,Central government,17.782005
+MWI,2007,G1111,Personal income tax,Taxes,2.2995173,12.657076502133167,Central government,18.167839
+MWI,2007,G1112,Corporate income tax,Taxes,1.9950013,10.980949817579157,Central government,18.167839
+MWI,2007,G11412,VAT / sales tax,Taxes,2.98261,16.416977139518544,Central government,18.167839
+MWI,2007,G1142,Excise taxes,Taxes,1.5199798,8.366321318955535,Central government,18.167839
+MWI,2007,G115,Trade taxes (customs),Taxes,1.2339799,6.792111542885384,Central government,18.167839
+MWI,2007,G11NEC,Other taxes,Taxes,0.010000700000000196,0.05504617207049741,Central government,18.167839
+MWI,2007,G13,Grants (e.g. foreign aid),Grants,7.412307,40.7990567221639,Central government,18.167839
+MWI,2007,G14X,Other non-tax revenue,Other revenue,0.71444315,3.9324607846938138,Central government,18.167839
+MWI,2008,G1111,Personal income tax,Taxes,2.4917442,14.064058070411098,Central government,17.717106
+MWI,2008,G1112,Corporate income tax,Taxes,1.7971455,10.143560752736171,Central government,17.717106
+MWI,2008,G11412,VAT / sales tax,Taxes,3.2330808,18.248356359184534,Central government,17.717106
+MWI,2008,G1142,Excise taxes,Taxes,1.9925948,11.246727885630953,Central government,17.717106
+MWI,2008,G115,Trade taxes (customs),Taxes,1.215422,6.860160681042299,Central government,17.717106
+MWI,2008,G11NEC,Other taxes,Taxes,0.009369799999998738,0.05288560972997155,Central government,17.717106
+MWI,2008,G13,Grants (e.g. foreign aid),Grants,6.3494146,35.8377620172713,Central government,17.717106
+MWI,2008,G14X,Other non-tax revenue,Other revenue,0.62833518,3.546488623993671,Central government,17.717106
+MWI,2009,G1111,Personal income tax,Taxes,2.5335636,14.722879409259198,Central government,17.208343
+MWI,2009,G1112,Corporate income tax,Taxes,2.2390409,13.011368320534437,Central government,17.208343
+MWI,2009,G11412,VAT / sales tax,Taxes,2.9201903,16.969619250524612,Central government,17.208343
+MWI,2009,G1142,Excise taxes,Taxes,2.7946384,16.240020244877638,Central government,17.208343
+MWI,2009,G115,Trade taxes (customs),Taxes,1.1087571,6.4431368833448435,Central government,17.208343
+MWI,2009,G11NEC,Other taxes,Taxes,0.00902869999999971,0.05246699207486808,Central government,17.208343
+MWI,2009,G13,Grants (e.g. foreign aid),Grants,4.9626145,28.83842143853864,Central government,17.208343
+MWI,2009,G14X,Other non-tax revenue,Other revenue,0.64050958,3.722087460845766,Central government,17.208343
+MWI,2010,G1111,Personal income tax,Taxes,2.7765006,13.726118992873959,Central government,20.227863
+MWI,2010,G1112,Corporate income tax,Taxes,2.3363067,11.549943035506162,Central government,20.227863
+MWI,2010,G11412,VAT / sales tax,Taxes,3.005364,14.857545458805106,Central government,20.227863
+MWI,2010,G1142,Excise taxes,Taxes,2.7846366,13.766340739674957,Central government,20.227863
+MWI,2010,G115,Trade taxes (customs),Taxes,1.1506109,5.688247331154114,Central government,20.227863
+MWI,2010,G11NEC,Other taxes,Taxes,0.0270625,0.13378822797468565,Central government,20.227863
+MWI,2010,G13,Grants (e.g. foreign aid),Grants,6.532031,32.292243974714594,Central government,20.227863
+MWI,2010,G14X,Other non-tax revenue,Other revenue,1.6153511,7.985772239296415,Central government,20.227863
+MWI,2011,G1111,Personal income tax,Taxes,2.7949061,19.755890936842977,Central government,14.147203
+MWI,2011,G1112,Corporate income tax,Taxes,2.1333851,15.079906749599154,Central government,14.147203
+MWI,2011,G11412,VAT / sales tax,Taxes,3.0706443,21.704955989984263,Central government,14.147203
+MWI,2011,G1142,Excise taxes,Taxes,2.1627899,15.287755600699978,Central government,14.147203
+MWI,2011,G115,Trade taxes (customs),Taxes,0.98535213,6.964995788111065,Central government,14.147203
+MWI,2011,G11NEC,Other taxes,Taxes,0.019993470000000294,0.14132453779719034,Central government,14.147203
+MWI,2011,G13,Grants (e.g. foreign aid),Grants,2.326495,16.444910791496895,Central government,14.147203
+MWI,2011,G14X,Other non-tax revenue,Other revenue,0.65363753,4.6202596054684735,Central government,14.147203
+MWI,2012,G1111,Personal income tax,Taxes,2.6977133,15.581553176950228,Central government,17.313507
+MWI,2012,G1112,Corporate income tax,Taxes,2.2243746,12.847625844954461,Central government,17.313507
+MWI,2012,G11412,VAT / sales tax,Taxes,2.9804035,17.21432578621997,Central government,17.313507
+MWI,2012,G1142,Excise taxes,Taxes,1.914768,11.059388487843623,Central government,17.313507
+MWI,2012,G115,Trade taxes (customs),Taxes,1.1703695,6.759863845031512,Central government,17.313507
+MWI,2012,G11NEC,Other taxes,Taxes,0.02423187,0.13995933926038207,Central government,17.313507
+MWI,2012,G13,Grants (e.g. foreign aid),Grants,5.7846042,33.410932862995345,Central government,17.313507
+MWI,2012,G14X,Other non-tax revenue,Other revenue,0.51690108,2.9855365524731643,Central government,17.313507
+MWI,2013,G1111,Personal income tax,Taxes,3.0872464,18.17705999069729,Central government,16.9843
+MWI,2013,G1112,Corporate income tax,Taxes,2.5348838,14.924864728013516,Central government,16.9843
+MWI,2013,G11412,VAT / sales tax,Taxes,3.5269622,20.76601449574018,Central government,16.9843
+MWI,2013,G1142,Excise taxes,Taxes,1.937053,11.404962229824013,Central government,16.9843
+MWI,2013,G115,Trade taxes (customs),Taxes,1.3468672,7.930071889921868,Central government,16.9843
+MWI,2013,G11NEC,Other taxes,Taxes,0.0180677000000001,0.10637883221563502,Central government,16.9843
+MWI,2013,G13,Grants (e.g. foreign aid),Grants,4.0543875,23.871384160666025,Central government,16.9843
+MWI,2013,G14X,Other non-tax revenue,Other revenue,0.47856775,2.8177066467266827,Central government,16.9843
+MWI,2014,G1111,Personal income tax,Taxes,3.2568212,21.438007810656387,Central government,15.191809
+MWI,2014,G1112,Corporate income tax,Taxes,2.5158256,16.560408309504155,Central government,15.191809
+MWI,2014,G11412,VAT / sales tax,Taxes,3.4550843,22.743073586562343,Central government,15.191809
+MWI,2014,G1142,Excise taxes,Taxes,1.8692217,12.304141659495588,Central government,15.191809
+MWI,2014,G115,Trade taxes (customs),Taxes,1.2377276,8.147335185691183,Central government,15.191809
+MWI,2014,G11NEC,Other taxes,Taxes,0.01103188,0.07261729001463882,Central government,15.191809
+MWI,2014,G13,Grants (e.g. foreign aid),Grants,1.960349,12.903986615418875,Central government,15.191809
+MWI,2014,G14X,Other non-tax revenue,Other revenue,0.88543907,5.828397855712905,Central government,15.191809
+MWI,2015,G1111,Personal income tax,Taxes,3.6769329,23.95134667715412,Central government,15.351675
+MWI,2015,G1112,Corporate income tax,Taxes,2.2777933,14.83742523210008,Central government,15.351675
+MWI,2015,G11412,VAT / sales tax,Taxes,3.372486,21.968195652917352,Central government,15.351675
+MWI,2015,G1142,Excise taxes,Taxes,1.6732202,10.899267995186193,Central government,15.351675
+MWI,2015,G115,Trade taxes (customs),Taxes,1.0541356,6.866583613840183,Central government,15.351675
+MWI,2015,G11NEC,Other taxes,Taxes,0.013686700000000827,0.0891544408020677,Central government,15.351675
+MWI,2015,G13,Grants (e.g. foreign aid),Grants,2.1993529,14.326468610102808,Central government,15.351675
+MWI,2015,G14X,Other non-tax revenue,Other revenue,1.0835849,7.058414798385192,Central government,15.351675
+MWI,2016,G1111,Personal income tax,Taxes,3.6579116,24.6427479820652,Central government,14.843765
+MWI,2016,G1112,Corporate income tax,Taxes,2.2798771,15.359156521273412,Central government,14.843765
+MWI,2016,G11412,VAT / sales tax,Taxes,3.5802065,24.119261521588356,Central government,14.843765
+MWI,2016,G1142,Excise taxes,Taxes,1.8938777,12.75874213853426,Central government,14.843765
+MWI,2016,G115,Trade taxes (customs),Taxes,1.0972784,7.3921838563194715,Central government,14.843765
+MWI,2016,G11NEC,Other taxes,Taxes,0.01108575,0.07468287189941367,Central government,14.843765
+MWI,2016,G13,Grants (e.g. foreign aid),Grants,1.7225185,11.604323431420534,Central government,14.843765
+MWI,2016,G14X,Other non-tax revenue,Other revenue,0.6007685,4.047278436434423,Central government,14.843765
+MWI,2017,G1111,Personal income tax,Taxes,3.8109933,24.055768704671273,Central government,15.842326
+MWI,2017,G1112,Corporate income tax,Taxes,2.3954527,15.120587090557283,Central government,15.842326
+MWI,2017,G11412,VAT / sales tax,Taxes,3.5986488,22.71540681589307,Central government,15.842326
+MWI,2017,G1142,Excise taxes,Taxes,1.8897403,11.928427050421762,Central government,15.842326
+MWI,2017,G115,Trade taxes (customs),Taxes,1.1046615,6.972849188938543,Central government,15.842326
+MWI,2017,G11NEC,Other taxes,Taxes,0.03155530000000042,0.1991835037355021,Central government,15.842326
+MWI,2017,G13,Grants (e.g. foreign aid),Grants,2.2920648,14.467981532509809,Central government,15.842326
+MWI,2017,G14X,Other non-tax revenue,Other revenue,0.71885346,4.537549978456446,Central government,15.842326
+MWI,2018,G1111,Personal income tax,Taxes,3.8957475,25.90986188869197,Central government,15.035771
+MWI,2018,G1112,Corporate income tax,Taxes,2.435816,16.200140318710627,Central government,15.035771
+MWI,2018,G11412,VAT / sales tax,Taxes,3.7690737,25.067378985753376,Central government,15.035771
+MWI,2018,G1142,Excise taxes,Taxes,1.9815115,13.178649102862765,Central government,15.035771
+MWI,2018,G115,Trade taxes (customs),Taxes,1.2191734,8.108486089605915,Central government,15.035771
+MWI,2018,G13,Grants (e.g. foreign aid),Grants,0.93540704,6.221211004078207,Central government,15.035771
+MWI,2018,G14X,Other non-tax revenue,Other revenue,0.79705474,5.301056660147324,Central government,15.035771
+MWI,2019,G1111,Personal income tax,Taxes,3.9832338,26.977527338795028,Central government,14.765007
+MWI,2019,G1112,Corporate income tax,Taxes,1.8248085,12.359008702129298,Central government,14.765007
+MWI,2019,G11412,VAT / sales tax,Taxes,3.565404,24.147662104054536,Central government,14.765007
+MWI,2019,G1142,Excise taxes,Taxes,2.1377285,14.478343965566694,Central government,14.765007
+MWI,2019,G115,Trade taxes (customs),Taxes,1.0478213,7.0966529172658035,Central government,14.765007
+MWI,2019,G11NEC,Other taxes,Taxes,0.007447400000000393,0.050439529083869665,Central government,14.765007
+MWI,2019,G13,Grants (e.g. foreign aid),Grants,1.6784324,11.367637008231691,Central government,14.765007
+MWI,2019,G14X,Other non-tax revenue,Other revenue,0.51968592,3.519713333017722,Central government,14.765007
+MWI,2020,G1111,Personal income tax,Taxes,3.7463088,25.491697441078614,Central government,14.696192
+MWI,2020,G1112,Corporate income tax,Taxes,2.1573404,14.679587746267876,Central government,14.696192
+MWI,2020,G11412,VAT / sales tax,Taxes,3.4544853,23.505989170527986,Central government,14.696192
+MWI,2020,G1142,Excise taxes,Taxes,1.8202143,12.385618669108297,Central government,14.696192
+MWI,2020,G115,Trade taxes (customs),Taxes,0.92485988,6.2931940464577485,Central government,14.696192
+MWI,2020,G11NEC,Other taxes,Taxes,0.16098562,1.0954240390980194,Central government,14.696192
+MWI,2020,G13,Grants (e.g. foreign aid),Grants,1.7580624,11.962707074050202,Central government,14.696192
+MWI,2020,G14X,Other non-tax revenue,Other revenue,0.67381443,4.584959355457522,Central government,14.696192
+MWI,2021,G1111,Personal income tax,Taxes,3.2604598,21.297245210967475,Central government,15.309303
+MWI,2021,G1112,Corporate income tax,Taxes,2.4725865,16.150875712630416,Central government,15.309303
+MWI,2021,G11412,VAT / sales tax,Taxes,3.7501129,24.495647515762148,Central government,15.309303
+MWI,2021,G1142,Excise taxes,Taxes,1.7478766,11.417088028109443,Central government,15.309303
+MWI,2021,G115,Trade taxes (customs),Taxes,1.0955583,7.156160538464749,Central government,15.309303
+MWI,2021,G11NEC,Other taxes,Taxes,0.27665476,1.8071022567127972,Central government,15.309303
+MWI,2021,G13,Grants (e.g. foreign aid),Grants,1.8714172,12.224052264169048,Central government,15.309303
+MWI,2021,G14X,Other non-tax revenue,Other revenue,0.83410197,5.448334061975258,Central government,15.309303
+MWI,2022,G1111,Personal income tax,Taxes,3.3115929,19.077893734627445,Central government,17.358273
+MWI,2022,G1112,Corporate income tax,Taxes,2.6475244,15.25223380054755,Central government,17.358273
+MWI,2022,G11412,VAT / sales tax,Taxes,3.519949,20.278221086084628,Central government,17.358273
+MWI,2022,G1142,Excise taxes,Taxes,2.1262891,12.249427608960218,Central government,17.358273
+MWI,2022,G114X,Other goods & services taxes,Taxes,0.02739239999999965,0.15780602027996926,Central government,17.358273
+MWI,2022,G115,Trade taxes (customs),Taxes,1.2331839,7.104300591855187,Central government,17.358273
+MWI,2022,G11NEC,Other taxes,Taxes,0.011600200000000196,0.06682807627121952,Central government,17.358273
+MWI,2022,G13,Grants (e.g. foreign aid),Grants,3.5663184,20.54535249759914,Central government,17.358273
+MWI,2022,G14X,Other non-tax revenue,Other revenue,0.91442282,5.267936583774642,Central government,17.358273
+MWI,2023,G1111,Personal income tax,Taxes,3.2416076,18.375466104741513,Central government,17.640954
+MWI,2023,G1112,Corporate income tax,Taxes,2.9498139,16.721396301867436,Central government,17.640954
+MWI,2023,G11412,VAT / sales tax,Taxes,3.4317012,19.453035920264,Central government,17.640954
+MWI,2023,G1142,Excise taxes,Taxes,1.8055712,10.235110623906936,Central government,17.640954
+MWI,2023,G114X,Other goods & services taxes,Taxes,0.09119850000000018,0.5169703284115178,Central government,17.640954
+MWI,2023,G115,Trade taxes (customs),Taxes,1.2804694,7.2585041008229085,Central government,17.640954
+MWI,2023,G11NEC,Other taxes,Taxes,0.01142419999999893,0.06475953470548636,Central government,17.640954
+MWI,2023,G13,Grants (e.g. foreign aid),Grants,4.3013052,24.3824971007436,Central government,17.640954
+MWI,2023,G14X,Other non-tax revenue,Other revenue,0.52786322,2.992259984536596,Central government,17.640954
+MWI,2024,G1111,Personal income tax,Taxes,3.4432902,18.629973908926733,Central government,18.482528
+MWI,2024,G1112,Corporate income tax,Taxes,3.7715516,20.40603719784376,Central government,18.482528
+MWI,2024,G11412,VAT / sales tax,Taxes,3.7894596,20.50292870375315,Central government,18.482528
+MWI,2024,G1142,Excise taxes,Taxes,1.757902,9.511155462426641,Central government,18.482528
+MWI,2024,G114X,Other goods & services taxes,Taxes,0.05430840000000048,0.2938364228015302,Central government,18.482528
+MWI,2024,G115,Trade taxes (customs),Taxes,1.2925074,6.9931309127225845,Central government,18.482528
+MWI,2024,G11NEC,Other taxes,Taxes,0.00588489,0.03184028669930401,Central government,18.482528
+MWI,2024,G13,Grants (e.g. foreign aid),Grants,4.0981021,22.172843636333024,Central government,18.482528
+MWI,2024,G14X,Other non-tax revenue,Other revenue,0.26952211,1.4582534684932686,Central government,18.482528

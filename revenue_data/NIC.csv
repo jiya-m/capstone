@@ -1,0 +1,198 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+NIC,2000,G11NEC,Other taxes,Taxes,11.734098,51.65207341241631,General government,22.717574
+NIC,2000,G121,Social contributions,Social contributions,2.3222526,10.222273733982336,General government,22.717574
+NIC,2000,G13,Grants (e.g. foreign aid),Grants,3.4689485,15.269889733824574,General government,22.717574
+NIC,2000,G14X,Other non-tax revenue,Other revenue,5.1922747,22.855762239401088,General government,22.717574
+NIC,2001,G11NEC,Other taxes,Taxes,10.77114,55.04765513375957,General government,19.566937
+NIC,2001,G121,Social contributions,Social contributions,2.5934923,13.254462361686961,General government,19.566937
+NIC,2001,G13,Grants (e.g. foreign aid),Grants,3.5338595,18.060361210341714,General government,19.566937
+NIC,2001,G14X,Other non-tax revenue,Other revenue,2.668445,13.637520272079378,General government,19.566937
+NIC,2002,G11NEC,Other taxes,Taxes,11.435086,54.985523216425136,General government,20.796539
+NIC,2002,G121,Social contributions,Social contributions,2.663469,12.807270232661882,General government,20.796539
+NIC,2002,G13,Grants (e.g. foreign aid),Grants,3.8361381,18.446040594619316,General government,20.796539
+NIC,2002,G14X,Other non-tax revenue,Other revenue,2.8618463,13.761165956293668,General government,20.796539
+NIC,2003,G11NEC,Other taxes,Taxes,12.80761,57.74395331434145,General government,22.180002
+NIC,2003,G121,Social contributions,Social contributions,2.74236,12.364110697555391,General government,22.180002
+NIC,2003,G13,Grants (e.g. foreign aid),Grants,4.0879836,18.430943333548843,General government,22.180002
+NIC,2003,G14X,Other non-tax revenue,Other revenue,2.5420483,11.460992203697726,General government,22.180002
+NIC,2004,G11NEC,Other taxes,Taxes,12.780651,56.7657425516091,General government,22.514725
+NIC,2004,G121,Social contributions,Social contributions,2.7805873,12.350083169791105,General government,22.514725
+NIC,2004,G13,Grants (e.g. foreign aid),Grants,2.8568781,12.688931630003054,General government,22.514725
+NIC,2004,G14X,Other non-tax revenue,Other revenue,4.0966089,18.195242648596736,General government,22.514725
+NIC,2005,G11NEC,Other taxes,Taxes,13.50598,58.76576482302911,General government,22.982735
+NIC,2005,G121,Social contributions,Social contributions,2.831705,12.32100966225299,General government,22.982735
+NIC,2005,G13,Grants (e.g. foreign aid),Grants,2.7101265,11.792010393889152,General government,22.982735
+NIC,2005,G14X,Other non-tax revenue,Other revenue,3.9349232,17.12121381550107,General government,22.982735
+NIC,2006,G1111,Personal income tax,Taxes,0.97767283,4.366508330003762,General government,22.390266
+NIC,2006,G1112,Corporate income tax,Taxes,3.0451024,13.600117122324496,General government,22.390266
+NIC,2006,G11412,VAT / sales tax,Taxes,5.7273588,25.579681813516643,General government,22.390266
+NIC,2006,G1142,Excise taxes,Taxes,3.1161809,13.917569804664224,General government,22.390266
+NIC,2006,G115,Trade taxes (customs),Taxes,0.81805851,3.6536346196155054,General government,22.390266
+NIC,2006,G11NEC,Other taxes,Taxes,0.6687285899999993,2.986693369341835,General government,22.390266
+NIC,2006,G121,Social contributions,Social contributions,3.4910753,15.59193311950827,General government,22.390266
+NIC,2006,G13,Grants (e.g. foreign aid),Grants,3.1145448,13.910262611440167,General government,22.390266
+NIC,2006,G14X,Other non-tax revenue,Other revenue,1.4315438,6.3935988969492366,General government,22.390266
+NIC,2007,G1111,Personal income tax,Taxes,1.0235906,4.488495600801988,General government,22.804758
+NIC,2007,G1112,Corporate income tax,Taxes,3.1723945,13.911107387326949,General government,22.804758
+NIC,2007,G11412,VAT / sales tax,Taxes,5.8600004,25.696392694596742,General government,22.804758
+NIC,2007,G1142,Excise taxes,Taxes,3.0077741,13.189238760160713,General government,22.804758
+NIC,2007,G115,Trade taxes (customs),Taxes,0.79832755,3.500705942565348,General government,22.804758
+NIC,2007,G11NEC,Other taxes,Taxes,0.7240369499999996,3.1749379731438405,General government,22.804758
+NIC,2007,G121,Social contributions,Social contributions,3.593232,15.756500718803915,General government,22.804758
+NIC,2007,G13,Grants (e.g. foreign aid),Grants,2.8567724,12.527088808643358,General government,22.804758
+NIC,2007,G14X,Other non-tax revenue,Other revenue,1.7686304,7.755532113957144,General government,22.804758
+NIC,2008,G1111,Personal income tax,Taxes,1.0653688,4.961256592426665,General government,21.473769
+NIC,2008,G1112,Corporate income tax,Taxes,3.1886233,14.848922145918173,General government,21.473769
+NIC,2008,G11412,VAT / sales tax,Taxes,5.4711532,25.478308433357768,General government,21.473769
+NIC,2008,G1142,Excise taxes,Taxes,2.7577057,12.842205989228884,General government,21.473769
+NIC,2008,G115,Trade taxes (customs),Taxes,0.718825,3.347456082861726,General government,21.473769
+NIC,2008,G11NEC,Other taxes,Taxes,0.6610090000000014,3.0782159745088875,General government,21.473769
+NIC,2008,G121,Social contributions,Social contributions,3.6592696,17.04064867158348,General government,21.473769
+NIC,2008,G13,Grants (e.g. foreign aid),Grants,2.1801722,10.15272241863601,General government,21.473769
+NIC,2008,G14X,Other non-tax revenue,Other revenue,1.7716426,8.250263691478404,General government,21.473769
+NIC,2009,G1111,Personal income tax,Taxes,1.2859981,6.047803489550146,General government,21.263887
+NIC,2009,G1112,Corporate income tax,Taxes,3.3737211,15.865966086068836,General government,21.263887
+NIC,2009,G11412,VAT / sales tax,Taxes,5.287162,24.864513247272246,General government,21.263887
+NIC,2009,G1142,Excise taxes,Taxes,2.6160002,12.302549388077543,General government,21.263887
+NIC,2009,G115,Trade taxes (customs),Taxes,0.57477959,2.703078651612473,General government,21.263887
+NIC,2009,G11NEC,Other taxes,Taxes,0.6308600100000007,2.966814157731372,General government,21.263887
+NIC,2009,G121,Social contributions,Social contributions,4.0310881,18.957437555984,General government,21.263887
+NIC,2009,G13,Grants (e.g. foreign aid),Grants,1.8425678,8.665244505861041,General government,21.263887
+NIC,2009,G14X,Other non-tax revenue,Other revenue,1.6217098,7.626591506999638,General government,21.263887
+NIC,2010,G1111,Personal income tax,Taxes,1.1307726,5.034831006107971,General government,22.458998
+NIC,2010,G1112,Corporate income tax,Taxes,3.4031709,15.152817079582906,General government,22.458998
+NIC,2010,G11412,VAT / sales tax,Taxes,5.5345468,24.642892685404345,General government,22.458998
+NIC,2010,G1142,Excise taxes,Taxes,2.973263,13.238627060572217,General government,22.458998
+NIC,2010,G115,Trade taxes (customs),Taxes,0.6366133,2.8345578781628737,General government,22.458998
+NIC,2010,G11NEC,Other taxes,Taxes,0.6434994999999992,2.8652190856189583,General government,22.458998
+NIC,2010,G121,Social contributions,Social contributions,4.3250964,19.257744182274987,General government,22.458998
+NIC,2010,G13,Grants (e.g. foreign aid),Grants,1.8868341,8.401238967111361,General government,22.458998
+NIC,2010,G14X,Other non-tax revenue,Other revenue,1.9252015,8.572072055164385,General government,22.458998
+NIC,2011,G1111,Personal income tax,Taxes,1.1692173,4.980819315614369,General government,23.474397
+NIC,2011,G1112,Corporate income tax,Taxes,4.0022498,17.049425380340974,General government,23.474397
+NIC,2011,G11412,VAT / sales tax,Taxes,5.8745479,25.025341013019418,General government,23.474397
+NIC,2011,G1142,Excise taxes,Taxes,2.7793661,11.839989329651363,General government,23.474397
+NIC,2011,G115,Trade taxes (customs),Taxes,0.69432186,2.9577835801277454,General government,23.474397
+NIC,2011,G11NEC,Other taxes,Taxes,0.6545361,2.788297820813033,General government,23.474397
+NIC,2011,G121,Social contributions,Social contributions,4.303666,18.333446435280102,General government,23.474397
+NIC,2011,G13,Grants (e.g. foreign aid),Grants,2.0607573,8.778744348576879,General government,23.474397
+NIC,2011,G14X,Other non-tax revenue,Other revenue,1.9357344,8.246151754185634,General government,23.474397
+NIC,2012,G1111,Personal income tax,Taxes,1.363625,5.697096354858524,General government,23.935438
+NIC,2012,G1112,Corporate income tax,Taxes,4.0181561,16.787476374048982,General government,23.935438
+NIC,2012,G11412,VAT / sales tax,Taxes,6.109609,25.525368897982094,General government,23.935438
+NIC,2012,G1142,Excise taxes,Taxes,2.7853329,11.636857575695313,General government,23.935438
+NIC,2012,G115,Trade taxes (customs),Taxes,0.7324181,3.059973590791021,General government,23.935438
+NIC,2012,G11NEC,Other taxes,Taxes,0.7061509999999998,2.9502321298595287,General government,23.935438
+NIC,2012,G121,Social contributions,Social contributions,4.4383374,18.54295412827739,General government,23.935438
+NIC,2012,G13,Grants (e.g. foreign aid),Grants,1.9632959,8.202464691831468,General government,23.935438
+NIC,2012,G14X,Other non-tax revenue,Other revenue,1.8185132,7.597576256655685,General government,23.935438
+NIC,2013,G1111,Personal income tax,Taxes,1.2046371,5.130428153539284,General government,23.480245
+NIC,2013,G1112,Corporate income tax,Taxes,4.2578305,18.133671518333816,General government,23.480245
+NIC,2013,G11412,VAT / sales tax,Taxes,6.1635991,26.250148156460888,General government,23.480245
+NIC,2013,G1142,Excise taxes,Taxes,2.699903,11.498615112406195,General government,23.480245
+NIC,2013,G115,Trade taxes (customs),Taxes,0.69446514,2.9576571283647173,General government,23.480245
+NIC,2013,G11NEC,Other taxes,Taxes,0.74259031,3.1626173832513245,General government,23.480245
+NIC,2013,G121,Social contributions,Social contributions,4.7160418,20.085147322781346,General government,23.480245
+NIC,2013,G13,Grants (e.g. foreign aid),Grants,1.6234808,6.914241312217995,General government,23.480245
+NIC,2013,G14X,Other non-tax revenue,Other revenue,1.3776967,5.867471570249799,General government,23.480245
+NIC,2014,G1111,Personal income tax,Taxes,1.2894669,5.523225379825406,General government,23.346266
+NIC,2014,G1112,Corporate income tax,Taxes,4.5576642,19.522026181642698,General government,23.346266
+NIC,2014,G11412,VAT / sales tax,Taxes,6.2854584,26.922756496282904,General government,23.346266
+NIC,2014,G1142,Excise taxes,Taxes,2.5426753,10.891143269839013,General government,23.346266
+NIC,2014,G115,Trade taxes (customs),Taxes,0.64099545,2.7456015643306597,General government,23.346266
+NIC,2014,G11NEC,Other taxes,Taxes,0.7345487499999989,3.146322172922019,General government,23.346266
+NIC,2014,G121,Social contributions,Social contributions,4.9160281,21.057020672539064,General government,23.346266
+NIC,2014,G13,Grants (e.g. foreign aid),Grants,1.0258111,4.393897898756934,General government,23.346266
+NIC,2014,G14X,Other non-tax revenue,Other revenue,1.353618,5.798006363861301,General government,23.346266
+NIC,2015,G1111,Personal income tax,Taxes,1.2862988,5.407351836193449,General government,23.787962
+NIC,2015,G1112,Corporate income tax,Taxes,4.5464664,19.112467053713974,General government,23.787962
+NIC,2015,G1113,Other income taxes,Taxes,0.29687900000000056,1.2480220037344962,General government,23.787962
+NIC,2015,G11412,VAT / sales tax,Taxes,5.9572118,25.042968371985797,General government,23.787962
+NIC,2015,G1142,Excise taxes,Taxes,2.8364605,11.923932365454426,General government,23.787962
+NIC,2015,G115,Trade taxes (customs),Taxes,0.66625867,2.8008228279497,General government,23.787962
+NIC,2015,G11NEC,Other taxes,Taxes,0.74706209,3.1405048065908296,General government,23.787962
+NIC,2015,G121,Social contributions,Social contributions,5.2324321,21.9961344313565,General government,23.787962
+NIC,2015,G13,Grants (e.g. foreign aid),Grants,0.92082048,3.8709515342255885,General government,23.787962
+NIC,2015,G14X,Other non-tax revenue,Other revenue,1.298072,5.4568440961861295,General government,23.787962
+NIC,2016,G1111,Personal income tax,Taxes,1.303405,5.231176613391032,General government,24.916096
+NIC,2016,G1112,Corporate income tax,Taxes,4.9077562,19.69713132730413,General government,24.916096
+NIC,2016,G1113,Other income taxes,Taxes,0.33976690000000076,1.363644194463251,General government,24.916096
+NIC,2016,G11412,VAT / sales tax,Taxes,6.0015919,24.087207882735644,General government,24.916096
+NIC,2016,G1142,Excise taxes,Taxes,2.9032024,11.651915175114963,General government,24.916096
+NIC,2016,G115,Trade taxes (customs),Taxes,0.71073331,2.8525066802950723,General government,24.916096
+NIC,2016,G11NEC,Other taxes,Taxes,0.76663735,3.0768758569071593,General government,24.916096
+NIC,2016,G121,Social contributions,Social contributions,5.600446,22.47722092500746,General government,24.916096
+NIC,2016,G13,Grants (e.g. foreign aid),Grants,0.95426879,3.8299289761332496,General government,24.916096
+NIC,2016,G14X,Other non-tax revenue,Other revenue,1.4282884,5.732392368648039,General government,24.916096
+NIC,2017,G1111,Personal income tax,Taxes,1.3714993,5.352091927562257,General government,25.625481
+NIC,2017,G1112,Corporate income tax,Taxes,5.5216713,21.547581097111895,General government,25.625481
+NIC,2017,G11412,VAT / sales tax,Taxes,6.1675867,24.068179247054914,General government,25.625481
+NIC,2017,G1142,Excise taxes,Taxes,2.8396762,11.081455212489475,General government,25.625481
+NIC,2017,G115,Trade taxes (customs),Taxes,0.65216987,2.545005379606338,General government,25.625481
+NIC,2017,G11NEC,Other taxes,Taxes,0.82426774,3.216594217294887,General government,25.625481
+NIC,2017,G121,Social contributions,Social contributions,5.9080673,23.05543962277235,General government,25.625481
+NIC,2017,G13,Grants (e.g. foreign aid),Grants,0.91267397,3.561587663466687,General government,25.625481
+NIC,2017,G14X,Other non-tax revenue,Other revenue,1.4278685,5.572065164357305,General government,25.625481
+NIC,2018,G1111,Personal income tax,Taxes,1.415503,5.753589350106328,General government,24.602086
+NIC,2018,G1112,Corporate income tax,Taxes,5.6988307,23.164014222208635,General government,24.602086
+NIC,2018,G11412,VAT / sales tax,Taxes,5.329737,21.66376054453269,General government,24.602086
+NIC,2018,G1142,Excise taxes,Taxes,2.6379413,10.722429390743534,General government,24.602086
+NIC,2018,G115,Trade taxes (customs),Taxes,0.50083221,2.035730669342429,General government,24.602086
+NIC,2018,G11NEC,Other taxes,Taxes,0.8331127900000024,3.386350206238619,General government,24.602086
+NIC,2018,G121,Social contributions,Social contributions,6.1722262,25.088223006780808,General government,24.602086
+NIC,2018,G13,Grants (e.g. foreign aid),Grants,0.6724694,2.7333836651087227,General government,24.602086
+NIC,2018,G14X,Other non-tax revenue,Other revenue,1.3368839,5.434026610589037,General government,24.602086
+NIC,2019,G1111,Personal income tax,Taxes,1.7,6.209370391085695,General government,27.377977
+NIC,2019,G1112,Corporate income tax,Taxes,6.1541879,22.478607133786976,General government,27.377977
+NIC,2019,G11412,VAT / sales tax,Taxes,5.7334065,20.94167327126957,General government,27.377977
+NIC,2019,G1142,Excise taxes,Taxes,3.2086915,11.71997293778138,General government,27.377977
+NIC,2019,G115,Trade taxes (customs),Taxes,0.53761904,1.9636916168587744,General government,27.377977
+NIC,2019,G11NEC,Other taxes,Taxes,0.8006462,2.9244169458913385,General government,27.377977
+NIC,2019,G121,Social contributions,Social contributions,6.7245038,24.56172634733132,General government,27.377977
+NIC,2019,G13,Grants (e.g. foreign aid),Grants,1.0186096,3.720543700185673,General government,27.377977
+NIC,2019,G14X,Other non-tax revenue,Other revenue,1.5003125,5.479997655809269,General government,27.377977
+NIC,2020,G1111,Personal income tax,Taxes,1.4445025,5.421945422180017,General government,26.641775
+NIC,2020,G1112,Corporate income tax,Taxes,5.9847677,22.46384747262523,General government,26.641775
+NIC,2020,G11412,VAT / sales tax,Taxes,5.7178962,21.462144320339018,General government,26.641775
+NIC,2020,G1142,Excise taxes,Taxes,3.2136882,12.062590424249137,General government,26.641775
+NIC,2020,G115,Trade taxes (customs),Taxes,0.54895026,2.060486810657323,General government,26.641775
+NIC,2020,G11NEC,Other taxes,Taxes,0.92929915,3.4881277617576156,General government,26.641775
+NIC,2020,G121,Social contributions,Social contributions,6.3886576,23.979849690945894,General government,26.641775
+NIC,2020,G13,Grants (e.g. foreign aid),Grants,0.88198038,3.3105165853251144,General government,26.641775
+NIC,2020,G14X,Other non-tax revenue,Other revenue,1.532033,5.750491474385622,General government,26.641775
+NIC,2021,G1111,Personal income tax,Taxes,1.4933308,5.155444510774874,General government,28.966092
+NIC,2021,G1112,Corporate income tax,Taxes,6.6614367,22.997360845225515,General government,28.966092
+NIC,2021,G11412,VAT / sales tax,Taxes,6.6029583,22.79547513692907,General government,28.966092
+NIC,2021,G1142,Excise taxes,Taxes,3.2841303,11.337843917639978,General government,28.966092
+NIC,2021,G115,Trade taxes (customs),Taxes,0.6647581,2.2949526639630915,General government,28.966092
+NIC,2021,G11NEC,Other taxes,Taxes,0.92058705,3.1781541327701373,General government,28.966092
+NIC,2021,G121,Social contributions,Social contributions,6.6211644,22.858328282600223,General government,28.966092
+NIC,2021,G13,Grants (e.g. foreign aid),Grants,0.85827352,2.963028357432546,General government,28.966092
+NIC,2021,G14X,Other non-tax revenue,Other revenue,1.8594523,6.419410322938973,General government,28.966092
+NIC,2022,G1111,Personal income tax,Taxes,1.5536677,5.294094189353774,General government,29.347186
+NIC,2022,G1112,Corporate income tax,Taxes,7.488193,25.515880294132142,General government,29.347186
+NIC,2022,G11412,VAT / sales tax,Taxes,6.7894587,23.13495598352687,General government,29.347186
+NIC,2022,G1142,Excise taxes,Taxes,3.2170625,10.962081459270813,General government,29.347186
+NIC,2022,G115,Trade taxes (customs),Taxes,0.70542563,2.403724894843489,General government,29.347186
+NIC,2022,G11NEC,Other taxes,Taxes,0.9535026699999981,3.2490428582510273,General government,29.347186
+NIC,2022,G121,Social contributions,Social contributions,6.7070838,22.85426502275154,General government,29.347186
+NIC,2022,G13,Grants (e.g. foreign aid),Grants,0.21428779,0.7301817138172223,General government,29.347186
+NIC,2022,G14X,Other non-tax revenue,Other revenue,1.7185048,5.8557735840531215,General government,29.347186
+NIC,2023,G1111,Personal income tax,Taxes,1.5145527,5.70656281247007,General government,26.540542
+NIC,2023,G1112,Corporate income tax,Taxes,6.845778,25.79366314372932,General government,26.540542
+NIC,2023,G11412,VAT / sales tax,Taxes,6.2243229,23.452131836644483,General government,26.540542
+NIC,2023,G1142,Excise taxes,Taxes,2.9216209,11.008143315234484,General government,26.540542
+NIC,2023,G115,Trade taxes (customs),Taxes,0.63513499,2.3930746779775633,General government,26.540542
+NIC,2023,G11NEC,Other taxes,Taxes,0.8917465100000007,3.35994084069572,General government,26.540542
+NIC,2023,G121,Social contributions,Social contributions,6.019685,22.681092948290203,General government,26.540542
+NIC,2023,G13,Grants (e.g. foreign aid),Grants,0.16521127,0.6224864209630685,General government,26.540542
+NIC,2023,G14X,Other non-tax revenue,Other revenue,1.3224896,4.982903514178421,General government,26.540542
+NIC,2024,G1111,Personal income tax,Taxes,1.55,5.427037603790549,General government,28.5607
+NIC,2024,G1112,Corporate income tax,Taxes,7.55,26.43492510233461,General government,28.5607
+NIC,2024,G11412,VAT / sales tax,Taxes,6.9774414,24.430217326480626,General government,28.5607
+NIC,2024,G1142,Excise taxes,Taxes,3.09,10.819062061750191,General government,28.5607
+NIC,2024,G115,Trade taxes (customs),Taxes,0.65,2.27585447900894,General government,28.5607
+NIC,2024,G11NEC,Other taxes,Taxes,1.1098540000000023,3.885947995301528,General government,28.5607
+NIC,2024,G121,Social contributions,Social contributions,5.7816792,20.243477697712034,General government,28.5607
+NIC,2024,G13,Grants (e.g. foreign aid),Grants,0.11521211,0.4033938408916472,General government,28.5607
+NIC,2024,G14X,Other non-tax revenue,Other revenue,1.7365146,6.080083892729873,General government,28.5607

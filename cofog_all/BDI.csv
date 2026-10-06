@@ -1,0 +1,63 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+BDI,2010,GF01,General public services,Government spending,14.89946220228543,7.20462734134944,Central government (budgetary),48.3549489473808
+BDI,2010,GF02,Defence,Government spending,5.6307287759017,2.72273602495275,Central government (budgetary),48.3549489473808
+BDI,2010,GF03,Public order and safety,Government spending,3.55260708611024,1.71786134278964,Central government (budgetary),48.3549489473808
+BDI,2010,GF04,Economic affairs,Government spending,5.09732351841439,2.46480818501212,Central government (budgetary),48.3549489473808
+BDI,2010,GF05,Environmental protection,Government spending,0.495469667019465,0.23958410453702,Central government (budgetary),48.3549489473808
+BDI,2010,GF06,Housing and community amenities,Government spending,0.392277663430849,0.189685663883965,Central government (budgetary),48.3549489473808
+BDI,2010,GF08,"Recreation, culture and religion",Government spending,0.170079251434619,0.0822417352012977,Central government (budgetary),48.3549489473808
+BDI,2010,GF09,Education,Government spending,14.9610544245812,7.2344102289961,Central government (budgetary),48.3549489473808
+BDI,2010,GF10,Social protection,Government spending,0.681148321371281,0.329368923055025,Central government (budgetary),48.3549489473808
+BDI,2010,GF0170,Interest on public debt,Government spending,2.32060097057997,1.12212541459637,Central government (budgetary),48.3549489473808
+BDI,2010,GF072,Outpatient services,Health,0.004550096661099,0.0022001969175309,Central government (budgetary),48.3549489473808
+BDI,2010,GF073,Hospital services,Health,1.4835207242554,0.717355688837515,Central government (budgetary),48.3549489473808
+BDI,2010,GF0740,Public health services,Health,0.189547450759893,0.0916555730460083,Central government (budgetary),48.3549489473808
+BDI,2010,GF07_rest,Health (not broken down),Health,4.500689574740778,2.176306146145996,Central government (budgetary),48.3549489473808
+BDI,2010,UNCL,Unclassified,Unclassified,45.62094027245369,,Central government (budgetary),48.3549489473808
+BDI,2011,GF01,General public services,Government spending,14.397710923656891,5.905517970735589,Central government (budgetary),41.0170616846614
+BDI,2011,GF02,Defence,Government spending,6.57242760464855,2.69581668477841,Central government (budgetary),41.0170616846614
+BDI,2011,GF03,Public order and safety,Government spending,4.375906310301,1.79486819055915,Central government (budgetary),41.0170616846614
+BDI,2011,GF04,Economic affairs,Government spending,6.80245081107489,2.79016544524734,Central government (budgetary),41.0170616846614
+BDI,2011,GF05,Environmental protection,Government spending,0.43232151864694,0.17732558397948,Central government (budgetary),41.0170616846614
+BDI,2011,GF06,Housing and community amenities,Government spending,0.349734499044523,0.143450815205633,Central government (budgetary),41.0170616846614
+BDI,2011,GF08,"Recreation, culture and religion",Government spending,0.164230092002525,0.0673623581414518,Central government (budgetary),41.0170616846614
+BDI,2011,GF09,Education,Government spending,14.9510155729838,6.13246728005408,Central government (budgetary),41.0170616846614
+BDI,2011,GF10,Social protection,Government spending,0.660280069001894,0.270827483194031,Central government (budgetary),41.0170616846614
+BDI,2011,GF0170,Interest on public debt,Government spending,2.82474668514211,1.15862809028017,Central government (budgetary),41.0170616846614
+BDI,2011,GF072,Outpatient services,Health,0.002865903034181,0.0011755092153526,Central government (budgetary),41.0170616846614
+BDI,2011,GF073,Hospital services,Health,1.31495088638899,0.539354216193172,Central government (budgetary),41.0170616846614
+BDI,2011,GF0740,Public health services,Health,0.182589190481543,0.0748927208893384,Central government (budgetary),41.0170616846614
+BDI,2011,GF07_rest,Health (not broken down),Health,4.411325634981706,1.809396156811727,Central government (budgetary),41.0170616846614
+BDI,2011,UNCL,Unclassified,Unclassified,42.557444298610456,,Central government (budgetary),41.0170616846614
+BDI,2012,GF01,General public services,Government spending,18.190925582879547,5.538330767868651,Central government (budgetary),30.4455688229579
+BDI,2012,GF02,Defence,Government spending,8.54389487333372,2.60123739382199,Central government (budgetary),30.4455688229579
+BDI,2012,GF03,Public order and safety,Government spending,4.99083431699748,1.51948789682127,Central government (budgetary),30.4455688229579
+BDI,2012,GF04,Economic affairs,Government spending,7.44489054833421,2.26663927568698,Central government (budgetary),30.4455688229579
+BDI,2012,GF05,Environmental protection,Government spending,0.346999150808986,0.105645865274629,Central government (budgetary),30.4455688229579
+BDI,2012,GF06,Housing and community amenities,Government spending,0.290516733610477,0.088449472073587,Central government (budgetary),30.4455688229579
+BDI,2012,GF08,"Recreation, culture and religion",Government spending,0.214762607978609,0.0653856976181068,Central government (budgetary),30.4455688229579
+BDI,2012,GF09,Education,Government spending,18.1366980892714,5.52182089898123,Central government (budgetary),30.4455688229579
+BDI,2012,GF10,Social protection,Government spending,0.820519410582196,0.249811801854531,Central government (budgetary),30.4455688229579
+BDI,2012,GF0170,Interest on public debt,Government spending,3.26446798036575,0.993885845665679,Central government (budgetary),30.4455688229579
+BDI,2012,GF072,Outpatient services,Health,0.0076443560317739,0.0023273676767256,Central government (budgetary),30.4455688229579
+BDI,2012,GF073,Hospital services,Health,2.97446871508871,0.905593919769684,Central government (budgetary),30.4455688229579
+BDI,2012,GF0740,Public health services,Health,0.259485614204579,0.0790018712583301,Central government (budgetary),30.4455688229579
+BDI,2012,GF07_rest,Health (not broken down),Health,5.426195801861928,1.6520361773243306,Central government (budgetary),30.4455688229579
+BDI,2012,UNCL,Unclassified,Unclassified,29.087696218650635,,Central government (budgetary),30.4455688229579
+BDI,2013,GF01,General public services,Government spending,13.19058949132568,3.7572334594098367,Central government (budgetary),28.4841967213115
+BDI,2013,GF02,Defence,Government spending,8.88848020074404,2.53181218591475,Central government (budgetary),28.4841967213115
+BDI,2013,GF03,Public order and safety,Government spending,6.8415313271207,1.94875524196721,Central government (budgetary),28.4841967213115
+BDI,2013,GF04,Economic affairs,Government spending,8.08846683708424,2.30393480561311,Central government (budgetary),28.4841967213115
+BDI,2013,GF05,Environmental protection,Government spending,0.467582517680209,0.133187124170492,Central government (budgetary),28.4841967213115
+BDI,2013,GF06,Housing and community amenities,Government spending,0.433645395226344,0.12352040744918,Central government (budgetary),28.4841967213115
+BDI,2013,GF08,"Recreation, culture and religion",Government spending,0.233784097848908,0.0665915223344262,Central government (budgetary),28.4841967213115
+BDI,2013,GF09,Education,Government spending,18.5447898633467,5.28233442622951,Central government (budgetary),28.4841967213115
+BDI,2013,GF10,Social protection,Government spending,0.904617435080482,0.257673009783607,Central government (budgetary),28.4841967213115
+BDI,2013,GF0170,Interest on public debt,Government spending,2.76635183248002,0.787973097967213,Central government (budgetary),28.4841967213115
+BDI,2013,GF0712,Medical products,Health,5.12058555895245,1.45855766389508,Central government (budgetary),28.4841967213115
+BDI,2013,GF072,Outpatient services,Health,0.0072260888983019,0.0020582933770491,Central government (budgetary),28.4841967213115
+BDI,2013,GF073,Hospital services,Health,2.99903779927437,0.854251826491803,Central government (budgetary),28.4841967213115
+BDI,2013,GF0740,Public health services,Health,0.260514366735423,0.0742054247081967,Central government (budgetary),28.4841967213115
+BDI,2013,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),28.4841967213115
+BDI,2013,GF0760,Other health,Health,0.07163729492799,0.0204053080131148,Central government (budgetary),28.4841967213115
+BDI,2013,UNCL,Unclassified,Unclassified,31.181159893274142,,Central government (budgetary),28.4841967213115

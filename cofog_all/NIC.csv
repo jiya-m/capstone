@@ -1,0 +1,111 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+NIC,2014,GF01,General public services,Government spending,13.21379010708145,2.342984195188614,Central government (budgetary),17.73135622861889
+NIC,2014,GF02,Defence,Government spending,3.04150196095522,0.5392995473973989,Central government (budgetary),17.73135622861889
+NIC,2014,GF03,Public order and safety,Government spending,9.530818000048361,1.689943291089905,Central government (budgetary),17.73135622861889
+NIC,2014,GF04,Economic affairs,Government spending,16.74800203188791,2.969647901450375,Central government (budgetary),17.73135622861889
+NIC,2014,GF05,Environmental protection,Government spending,0.424752791710524,0.0753144305891966,Central government (budgetary),17.73135622861889
+NIC,2014,GF06,Housing and community amenities,Government spending,10.96447011618254,1.944149254880789,Central government (budgetary),17.73135622861889
+NIC,2014,GF08,"Recreation, culture and religion",Government spending,0.8622634532955784,0.1528910045330298,Central government (budgetary),17.73135622861889
+NIC,2014,GF09,Education,Government spending,23.06007385857419,4.088863842446409,Central government (budgetary),17.73135622861889
+NIC,2014,GF10,Social protection,Government spending,3.341820740946844,0.592550140099156,Central government (budgetary),17.73135622861889
+NIC,2014,GF07,Health (no breakdown),Health,18.81250693931745,3.335712620944025,Central government (budgetary),17.73135622861889
+NIC,2015,GF01,General public services,Government spending,12.803712912304,2.343444290598662,Central government (budgetary),18.30284938946639
+NIC,2015,GF02,Defence,Government spending,3.016970751250638,0.5521916127256569,Central government (budgetary),18.30284938946639
+NIC,2015,GF03,Public order and safety,Government spending,9.903745942780326,1.812667703822471,Central government (budgetary),18.30284938946639
+NIC,2015,GF04,Economic affairs,Government spending,16.62059461789464,3.042042400547012,Central government (budgetary),18.30284938946639
+NIC,2015,GF05,Environmental protection,Government spending,0.3769719145437331,0.0689966017595274,Central government (budgetary),18.30284938946639
+NIC,2015,GF06,Housing and community amenities,Government spending,12.06848743717737,2.208877079213246,Central government (budgetary),18.30284938946639
+NIC,2015,GF08,"Recreation, culture and religion",Government spending,1.165509673686666,0.2133214801945316,Central government (budgetary),18.30284938946639
+NIC,2015,GF09,Education,Government spending,22.3573025486926,4.092023413034538,Central government (budgetary),18.30284938946639
+NIC,2015,GF10,Social protection,Government spending,3.278336887012881,0.6000290629092886,Central government (budgetary),18.30284938946639
+NIC,2015,GF07,Health (no breakdown),Health,18.40836731465713,3.369255744661453,Central government (budgetary),18.30284938946639
+NIC,2016,GF01,General public services,Government spending,13.8911337733985,2.653460780822514,Central government (budgetary),19.10183016093249
+NIC,2016,GF02,Defence,Government spending,3.151389838436329,0.6019731346469925,Central government (budgetary),19.10183016093249
+NIC,2016,GF03,Public order and safety,Government spending,9.955916340784803,1.901762230381238,Central government (budgetary),19.10183016093249
+NIC,2016,GF04,Economic affairs,Government spending,17.63563925407414,3.368729858107984,Central government (budgetary),19.10183016093249
+NIC,2016,GF05,Environmental protection,Government spending,0.3355067785429311,0.0640879350156865,Central government (budgetary),19.10183016093249
+NIC,2016,GF06,Housing and community amenities,Government spending,10.51477522000893,2.008514504329921,Central government (budgetary),19.10183016093249
+NIC,2016,GF08,"Recreation, culture and religion",Government spending,1.076674873772216,0.205664605773403,Central government (budgetary),19.10183016093249
+NIC,2016,GF09,Education,Government spending,22.99869675744909,4.393171993835813,Central government (budgetary),19.10183016093249
+NIC,2016,GF10,Social protection,Government spending,2.884709409498746,0.5510322920388891,Central government (budgetary),19.10183016093249
+NIC,2016,GF07,Health (no breakdown),Health,17.55555775403432,3.353432825980051,Central government (budgetary),19.10183016093249
+NIC,2017,GF01,General public services,Government spending,14.15841593851073,2.736239670422614,Central government (budgetary),19.3258884490042
+NIC,2017,GF02,Defence,Government spending,3.241793087013393,0.6265053157437379,Central government (budgetary),19.3258884490042
+NIC,2017,GF03,Public order and safety,Government spending,9.895585018376991,1.912409722027909,Central government (budgetary),19.3258884490042
+NIC,2017,GF04,Economic affairs,Government spending,17.30253956515844,3.343869495207336,Central government (budgetary),19.3258884490042
+NIC,2017,GF05,Environmental protection,Government spending,0.3863389572540378,0.0746634359139613,Central government (budgetary),19.3258884490042
+NIC,2017,GF06,Housing and community amenities,Government spending,10.46654417741687,2.022752652193329,Central government (budgetary),19.3258884490042
+NIC,2017,GF08,"Recreation, culture and religion",Government spending,1.607726614792457,0.3107074521397416,Central government (budgetary),19.3258884490042
+NIC,2017,GF09,Education,Government spending,22.68286472006358,4.383665132838015,Central government (budgetary),19.3258884490042
+NIC,2017,GF10,Social protection,Government spending,2.548875139153695,0.4925927660972436,Central government (budgetary),19.3258884490042
+NIC,2017,GF07,Health (no breakdown),Health,17.70931678225981,3.422482806420311,Central government (budgetary),19.3258884490042
+NIC,2018,GF01,General public services,Government spending,13.06488697405491,2.557130579914669,Central government (budgetary),19.57254268630707
+NIC,2018,GF02,Defence,Government spending,3.344619865492123,0.6546271508681519,Central government (budgetary),19.57254268630707
+NIC,2018,GF03,Public order and safety,Government spending,10.43237518276264,2.041881085841922,Central government (budgetary),19.57254268630707
+NIC,2018,GF04,Economic affairs,Government spending,16.61615524998516,3.252204079126398,Central government (budgetary),19.57254268630707
+NIC,2018,GF05,Environmental protection,Government spending,0.6594674706794121,0.1290745522010375,Central government (budgetary),19.57254268630707
+NIC,2018,GF06,Housing and community amenities,Government spending,12.60938256385018,2.467976784789337,Central government (budgetary),19.57254268630707
+NIC,2018,GF08,"Recreation, culture and religion",Government spending,1.284697286392972,0.251447924769093,Central government (budgetary),19.57254268630707
+NIC,2018,GF09,Education,Government spending,22.8575663587808,4.473806932623337,Central government (budgetary),19.57254268630707
+NIC,2018,GF10,Social protection,Government spending,1.32315413783222,0.2589749084328496,Central government (budgetary),19.57254268630707
+NIC,2018,GF07,Health (no breakdown),Health,17.80769491016959,3.485418687740275,Central government (budgetary),19.57254268630707
+NIC,2019,GF01,General public services,Government spending,14.03387102274316,2.695306608284555,Central government (budgetary),19.20572452117143
+NIC,2019,GF02,Defence,Government spending,3.338693493012988,0.6412202748743504,Central government (budgetary),19.20572452117143
+NIC,2019,GF03,Public order and safety,Government spending,10.49356227480704,2.01536466295701,Central government (budgetary),19.20572452117143
+NIC,2019,GF04,Economic affairs,Government spending,17.36065977765701,3.334240491954619,Central government (budgetary),19.20572452117143
+NIC,2019,GF05,Environmental protection,Government spending,0.89555322634608,0.171997485592491,Central government (budgetary),19.20572452117143
+NIC,2019,GF06,Housing and community amenities,Government spending,7.711792560542322,1.481105634821951,Central government (budgetary),19.20572452117143
+NIC,2019,GF08,"Recreation, culture and religion",Government spending,0.7855879961871362,0.1508778664190921,Central government (budgetary),19.20572452117143
+NIC,2019,GF09,Education,Government spending,23.95077408328051,4.599919691122977,Central government (budgetary),19.20572452117143
+NIC,2019,GF10,Social protection,Government spending,3.040762080115208,0.584000388451169,Central government (budgetary),19.20572452117143
+NIC,2019,GF07,Health (no breakdown),Health,18.38874348530853,3.531691416693215,Central government (budgetary),19.20572452117143
+NIC,2020,GF01,General public services,Government spending,12.66168603103227,2.532075349317701,Central government (budgetary),19.99793189557764
+NIC,2020,GF02,Defence,Government spending,3.070945969163457,0.614125683463295,Central government (budgetary),19.99793189557764
+NIC,2020,GF03,Public order and safety,Government spending,9.971477386046567,1.994089256644518,Central government (budgetary),19.99793189557764
+NIC,2020,GF04,Economic affairs,Government spending,19.13329896598486,3.826264096594913,Central government (budgetary),19.99793189557764
+NIC,2020,GF05,Environmental protection,Government spending,0.8728558285829607,0.1745531141466004,Central government (budgetary),19.99793189557764
+NIC,2020,GF06,Housing and community amenities,Government spending,7.158716561647753,1.431595262595755,Central government (budgetary),19.99793189557764
+NIC,2020,GF08,"Recreation, culture and religion",Government spending,0.829765327924545,0.165935905171467,Central government (budgetary),19.99793189557764
+NIC,2020,GF09,Education,Government spending,22.82331397979587,4.564190785993429,Central government (budgetary),19.99793189557764
+NIC,2020,GF10,Social protection,Government spending,3.376524444832759,0.6752350589151863,Central government (budgetary),19.99793189557764
+NIC,2020,GF07,Health (no breakdown),Health,20.10141550498896,4.019867382734778,Central government (budgetary),19.99793189557764
+NIC,2021,GF01,General public services,Government spending,11.79193181691214,2.559990665237941,Central government (budgetary),21.70968001669048
+NIC,2021,GF02,Defence,Government spending,2.65239012982952,0.57582540998027,Central government (budgetary),21.70968001669048
+NIC,2021,GF03,Public order and safety,Government spending,8.990299066161539,1.951765159807182,Central government (budgetary),21.70968001669048
+NIC,2021,GF04,Economic affairs,Government spending,22.46244320278735,4.876524543255974,Central government (budgetary),21.70968001669048
+NIC,2021,GF05,Environmental protection,Government spending,0.755896108667074,0.1641026264502367,Central government (budgetary),21.70968001669048
+NIC,2021,GF06,Housing and community amenities,Government spending,5.647732044614891,1.226104555085984,Central government (budgetary),21.70968001669048
+NIC,2021,GF08,"Recreation, culture and religion",Government spending,1.035950108106269,0.22490145360243,Central government (budgetary),21.70968001669048
+NIC,2021,GF09,Education,Government spending,18.74042384958371,4.06848605151617,Central government (budgetary),21.70968001669048
+NIC,2021,GF10,Social protection,Government spending,3.535094279664319,0.767457656403453,Central government (budgetary),21.70968001669048
+NIC,2021,GF07,Health (no breakdown),Health,24.3878393936732,5.294521895350838,Central government (budgetary),21.70968001669048
+NIC,2022,GF01,General public services,Government spending,12.89859007074062,2.634302922489797,Central government (budgetary),20.42318507714649
+NIC,2022,GF02,Defence,Government spending,2.969525198231358,0.6064716271472915,Central government (budgetary),20.42318507714649
+NIC,2022,GF03,Public order and safety,Government spending,8.957937830611158,1.829496222241438,Central government (budgetary),20.42318507714649
+NIC,2022,GF04,Economic affairs,Government spending,23.80353365261287,4.861439732773975,Central government (budgetary),20.42318507714649
+NIC,2022,GF05,Environmental protection,Government spending,0.5513350606132449,0.1126001798242408,Central government (budgetary),20.42318507714649
+NIC,2022,GF06,Housing and community amenities,Government spending,6.629612054151959,1.353977939716268,Central government (budgetary),20.42318507714649
+NIC,2022,GF08,"Recreation, culture and religion",Government spending,1.102009702576106,0.2250654811252298,Central government (budgetary),20.42318507714649
+NIC,2022,GF09,Education,Government spending,18.62469533686222,3.803755998702042,Central government (budgetary),20.42318507714649
+NIC,2022,GF10,Social protection,Government spending,3.778245435498026,0.7716380579606013,Central government (budgetary),20.42318507714649
+NIC,2022,GF07,Health (no breakdown),Health,20.68451565810244,4.224436915165606,Central government (budgetary),20.42318507714649
+NIC,2023,GF01,General public services,Government spending,14.43289650278935,2.741525954021323,Central government (budgetary),18.99498103857037
+NIC,2023,GF02,Defence,Government spending,2.892050496998334,0.5493444435307137,Central government (budgetary),18.99498103857037
+NIC,2023,GF03,Public order and safety,Government spending,8.971297636172835,1.704096284904742,Central government (budgetary),18.99498103857037
+NIC,2023,GF04,Economic affairs,Government spending,17.33619298883577,3.293006571039321,Central government (budgetary),18.99498103857037
+NIC,2023,GF05,Environmental protection,Government spending,0.9274889659214036,0.176176353211603,Central government (budgetary),18.99498103857037
+NIC,2023,GF06,Housing and community amenities,Government spending,9.371681167554136,1.780149060772178,Central government (budgetary),18.99498103857037
+NIC,2023,GF08,"Recreation, culture and religion",Government spending,1.713171321813164,0.3254165677366359,Central government (budgetary),18.99498103857037
+NIC,2023,GF09,Education,Government spending,19.24233555540567,3.655077990127391,Central government (budgetary),18.99498103857037
+NIC,2023,GF10,Social protection,Government spending,6.259235612212383,1.188940617699186,Central government (budgetary),18.99498103857037
+NIC,2023,GF07,Health (no breakdown),Health,18.85364975229694,3.581247195527274,Central government (budgetary),18.99498103857037
+NIC,2024,GF01,General public services,Government spending,13.48429785468962,2.600839206063404,Central government (budgetary),19.28790979026672
+NIC,2024,GF02,Defence,Government spending,2.831523777379883,0.5461417518709846,Central government (budgetary),19.28790979026672
+NIC,2024,GF03,Public order and safety,Government spending,7.824631670910527,1.509207898105862,Central government (budgetary),19.28790979026672
+NIC,2024,GF04,Economic affairs,Government spending,21.82341252712734,4.209280121390088,Central government (budgetary),19.28790979026672
+NIC,2024,GF05,Environmental protection,Government spending,0.6299632880051205,0.1215067507022258,Central government (budgetary),19.28790979026672
+NIC,2024,GF06,Housing and community amenities,Government spending,11.48827396986382,2.215847919766026,Central government (budgetary),19.28790979026672
+NIC,2024,GF08,"Recreation, culture and religion",Government spending,1.692016921119575,0.3263546973815921,Central government (budgetary),19.28790979026672
+NIC,2024,GF09,Education,Government spending,18.03213827433919,3.478022563610702,Central government (budgetary),19.28790979026672
+NIC,2024,GF10,Social protection,Government spending,5.390629563959381,1.039739767423934,Central government (budgetary),19.28790979026672
+NIC,2024,GF07,Health (no breakdown),Health,16.80311215260554,3.240969113951902,Central government (budgetary),19.28790979026672

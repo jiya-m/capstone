@@ -1,0 +1,270 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+MDG,2005,GF01,General public services,Government spending,23.307956549995346,4.278190965118472,Central government (budgetary),18.35506667408527
+MDG,2005,GF02,Defence,Government spending,4.233590195896388,0.7770783031643191,Central government (budgetary),18.35506667408527
+MDG,2005,GF03,Public order and safety,Government spending,1.411196731965463,0.259026101054773,Central government (budgetary),18.35506667408527
+MDG,2005,GF04,Economic affairs,Government spending,32.72212422244917,6.00616771820755,Central government (budgetary),18.35506667408527
+MDG,2005,GF05,Environmental protection,Government spending,0.1253365518521957,0.0230056076594699,Central government (budgetary),18.35506667408527
+MDG,2005,GF06,Housing and community amenities,Government spending,0.0,0.0,Central government (budgetary),18.35506667408527
+MDG,2005,GF09,Education,Government spending,19.85888032680345,3.645110724711576,Central government (budgetary),18.35506667408527
+MDG,2005,GF10,Social protection,Government spending,0.7891560672175285,0.1448501223003665,Central government (budgetary),18.35506667408527
+MDG,2005,GF0170,Interest on public debt,Government spending,12.37582397177607,2.271590741486924,Central government (budgetary),18.35506667408527
+MDG,2005,GF07,Health (no breakdown),Health,5.175935382044378,0.9500463903818156,Central government (budgetary),18.35506667408527
+MDG,2006,GF01,General public services,Government spending,26.24308323337074,4.949806394110562,Central government (budgetary),18.86137520539653
+MDG,2006,GF02,Defence,Government spending,4.469295360445769,0.8429705669710557,Central government (budgetary),18.86137520539653
+MDG,2006,GF03,Public order and safety,Government spending,3.006616878845335,0.5670892905078011,Central government (budgetary),18.86137520539653
+MDG,2006,GF04,Economic affairs,Government spending,34.01307897689897,6.415334444740761,Central government (budgetary),18.86137520539653
+MDG,2006,GF05,Environmental protection,Government spending,0.0,0.0,Central government (budgetary),18.86137520539653
+MDG,2006,GF06,Housing and community amenities,Government spending,0.0,0.0,Central government (budgetary),18.86137520539653
+MDG,2006,GF08,"Recreation, culture and religion",Government spending,0.0,0.0,Central government (budgetary),18.86137520539653
+MDG,2006,GF09,Education,Government spending,14.80865224625624,2.793115463028771,Central government (budgetary),18.86137520539653
+MDG,2006,GF10,Social protection,Government spending,0.7429478001779979,0.1401301721718119,Central government (budgetary),18.86137520539653
+MDG,2006,GF0170,Interest on public debt,Government spending,11.02039236930697,2.078597553881876,Central government (budgetary),18.86137520539653
+MDG,2006,GF07,Health (no breakdown),Health,5.695933134697984,1.074331319983891,Central government (budgetary),18.86137520539653
+MDG,2007,GF01,General public services,Government spending,34.08173972128898,5.538932801672308,Central government (budgetary),16.25190746413817
+MDG,2007,GF02,Defence,Government spending,5.616129462184343,0.9127281632604002,Central government (budgetary),16.25190746413817
+MDG,2007,GF03,Public order and safety,Government spending,4.279506057947054,0.6955013644597426,Central government (budgetary),16.25190746413817
+MDG,2007,GF04,Economic affairs,Government spending,23.78188154974358,3.865009382695275,Central government (budgetary),16.25190746413817
+MDG,2007,GF05,Environmental protection,Government spending,0.1386698632638109,0.0225364978582814,Central government (budgetary),16.25190746413817
+MDG,2007,GF06,Housing and community amenities,Government spending,0.0,0.0,Central government (budgetary),16.25190746413817
+MDG,2007,GF08,"Recreation, culture and religion",Government spending,0.1502256852024619,0.0244145393464716,Central government (budgetary),16.25190746413817
+MDG,2007,GF09,Education,Government spending,17.58025710933425,2.857127117366575,Central government (budgetary),16.25190746413817
+MDG,2007,GF10,Social protection,Government spending,1.440625801685147,0.2341291721943688,Central government (budgetary),16.25190746413817
+MDG,2007,GF0170,Interest on public debt,Government spending,5.997471586159823,0.9747035323706744,Central government (budgetary),16.25190746413817
+MDG,2007,GF07,Health (no breakdown),Health,6.933493163190547,1.126824892914074,Central government (budgetary),16.25190746413817
+MDG,2008,GF01,General public services,Government spending,41.732915774523846,8.126145585277827,Central government (budgetary),19.47178967600076
+MDG,2008,GF02,Defence,Government spending,4.655016465693366,0.906415015583016,Central government (budgetary),19.47178967600076
+MDG,2008,GF03,Public order and safety,Government spending,3.760243584069494,0.7321867219953248,Central government (budgetary),19.47178967600076
+MDG,2008,GF04,Economic affairs,Government spending,22.96300635615846,4.47130830095786,Central government (budgetary),19.47178967600076
+MDG,2008,GF05,Environmental protection,Government spending,1.364232236769635,0.2656404318359841,Central government (budgetary),19.47178967600076
+MDG,2008,GF06,Housing and community amenities,Government spending,0.0,0.0,Central government (budgetary),19.47178967600076
+MDG,2008,GF08,"Recreation, culture and religion",Government spending,0.3387036149968005,0.0659516555371883,Central government (budgetary),19.47178967600076
+MDG,2008,GF09,Education,Government spending,14.7268802689448,2.867587151805386,Central government (budgetary),19.47178967600076
+MDG,2008,GF10,Social protection,Government spending,1.352516073986727,0.2633590852607983,Central government (budgetary),19.47178967600076
+MDG,2008,GF0170,Interest on public debt,Government spending,3.568104120249313,0.6947737297156634,Central government (budgetary),19.47178967600076
+MDG,2008,GF07,Health (no breakdown),Health,5.538381504607563,1.078421998031711,Central government (budgetary),19.47178967600076
+MDG,2009,GF01,General public services,Government spending,25.18698614304739,2.060926041254487,Central government (budgetary),8.182503573669472
+MDG,2009,GF02,Defence,Government spending,6.808951158292156,0.5571426718566646,Central government (budgetary),8.182503573669472
+MDG,2009,GF03,Public order and safety,Government spending,13.6507735184972,1.116975030984559,Central government (budgetary),8.182503573669472
+MDG,2009,GF04,Economic affairs,Government spending,8.880391661540123,0.7266383650613663,Central government (budgetary),8.182503573669472
+MDG,2009,GF05,Environmental protection,Government spending,0.4455483538173541,0.0364570099735305,Central government (budgetary),8.182503573669472
+MDG,2009,GF06,Housing and community amenities,Government spending,0.1378251817754729,0.0112775504241945,Central government (budgetary),8.182503573669472
+MDG,2009,GF08,"Recreation, culture and religion",Government spending,0.600061842034334,0.0491000816686862,Central government (budgetary),8.182503573669472
+MDG,2009,GF09,Education,Government spending,28.34420077355942,2.31926524122455,Central government (budgetary),8.182503573669472
+MDG,2009,GF10,Social protection,Government spending,0.3889325807361219,0.031824422317898,Central government (budgetary),8.182503573669472
+MDG,2009,GF0170,Interest on public debt,Government spending,8.347206474686114,0.6830104680927608,Central government (budgetary),8.182503573669472
+MDG,2009,GF07,Health (no breakdown),Health,7.209122312014306,0.5898866908107738,Central government (budgetary),8.182503573669472
+MDG,2010,GF01,General public services,Government spending,30.78484652483089,3.987514059868812,Central government (budgetary),12.95284696856457
+MDG,2010,GF02,Defence,Government spending,7.395227575488455,0.9578925108301072,Central government (budgetary),12.95284696856457
+MDG,2010,GF03,Public order and safety,Government spending,3.08286116044997,0.3993182883663984,Central government (budgetary),12.95284696856457
+MDG,2010,GF04,Economic affairs,Government spending,10.94854411230758,1.418148164152986,Central government (budgetary),12.95284696856457
+MDG,2010,GF05,Environmental protection,Government spending,0.8918508804766134,0.1155200797359314,Central government (budgetary),12.95284696856457
+MDG,2010,GF06,Housing and community amenities,Government spending,4.92139325259029,0.6374605367292825,Central government (budgetary),12.95284696856457
+MDG,2010,GF08,"Recreation, culture and religion",Government spending,0.6372394908229722,0.0825406560695596,Central government (budgetary),12.95284696856457
+MDG,2010,GF09,Education,Government spending,18.08377682034488,2.342363937676023,Central government (budgetary),12.95284696856457
+MDG,2010,GF10,Social protection,Government spending,11.77296144168147,1.524933679209113,Central government (budgetary),12.95284696856457
+MDG,2010,GF0170,Interest on public debt,Government spending,5.472986974541149,0.7089076274217867,Central government (budgetary),12.95284696856457
+MDG,2010,GF07,Health (no breakdown),Health,6.008619071010953,0.7782872331920346,Central government (budgetary),12.95284696856457
+MDG,2011,GF01,General public services,Government spending,21.962187851710382,2.752667149558248,Central government (budgetary),12.5336654441915
+MDG,2011,GF02,Defence,Government spending,8.873558200607073,1.11218209785971,Central government (budgetary),12.5336654441915
+MDG,2011,GF03,Public order and safety,Government spending,4.645872582790491,0.5822981264903792,Central government (budgetary),12.5336654441915
+MDG,2011,GF04,Economic affairs,Government spending,11.55067187340132,1.447722569168448,Central government (budgetary),12.5336654441915
+MDG,2011,GF05,Environmental protection,Government spending,1.405752532314723,0.1761923193735775,Central government (budgetary),12.5336654441915
+MDG,2011,GF06,Housing and community amenities,Government spending,6.622924184031923,0.8300951598490112,Central government (budgetary),12.5336654441915
+MDG,2011,GF08,"Recreation, culture and religion",Government spending,0.8363067426076873,0.1048198892056633,Central government (budgetary),12.5336654441915
+MDG,2011,GF09,Education,Government spending,20.44169400770779,2.562093538051436,Central government (budgetary),12.5336654441915
+MDG,2011,GF10,Social protection,Government spending,12.02780055250503,1.507524281545598,Central government (budgetary),12.5336654441915
+MDG,2011,GF0170,Interest on public debt,Government spending,4.885508679785819,0.6123333131712918,Central government (budgetary),12.5336654441915
+MDG,2011,GF07,Health (no breakdown),Health,6.746280140513625,0.8455561827399103,Central government (budgetary),12.5336654441915
+MDG,2012,GF01,General public services,Government spending,23.750850498103304,2.635954454670543,Central government (budgetary),11.09835816145213
+MDG,2012,GF02,Defence,Government spending,8.937077675754246,0.991868889622388,Central government (budgetary),11.09835816145213
+MDG,2012,GF03,Public order and safety,Government spending,5.352242705711348,0.5940110651500419,Central government (budgetary),11.09835816145213
+MDG,2012,GF04,Economic affairs,Government spending,9.194552416066934,1.020444358477559,Central government (budgetary),11.09835816145213
+MDG,2012,GF05,Environmental protection,Government spending,0.952938986776332,0.1057605818125503,Central government (budgetary),11.09835816145213
+MDG,2012,GF06,Housing and community amenities,Government spending,5.84896869571383,0.6491394946015362,Central government (budgetary),11.09835816145213
+MDG,2012,GF08,"Recreation, culture and religion",Government spending,0.6695387669727373,0.0743078103884047,Central government (budgetary),11.09835816145213
+MDG,2012,GF09,Education,Government spending,20.29280958627291,2.25216868890606,Central government (budgetary),11.09835816145213
+MDG,2012,GF10,Social protection,Government spending,13.41400928847449,1.488734794645356,Central government (budgetary),11.09835816145213
+MDG,2012,GF0170,Interest on public debt,Government spending,5.105647534299996,0.5666430498179632,Central government (budgetary),11.09835816145213
+MDG,2012,GF07,Health (no breakdown),Health,6.480931329102705,0.7192769711015782,Central government (budgetary),11.09835816145213
+MDG,2013,GF01,General public services,Government spending,24.86724492263056,3.001005262070239,Central government (budgetary),12.06810513753037
+MDG,2013,GF02,Defence,Government spending,8.561291102514508,1.033185611381484,Central government (budgetary),12.06810513753037
+MDG,2013,GF03,Public order and safety,Government spending,4.835741054158607,0.5835823145945802,Central government (budgetary),12.06810513753037
+MDG,2013,GF04,Economic affairs,Government spending,8.754633099613153,1.056518326866349,Central government (budgetary),12.06810513753037
+MDG,2013,GF05,Environmental protection,Government spending,2.028227756286267,0.2447686580571999,Central government (budgetary),12.06810513753037
+MDG,2013,GF06,Housing and community amenities,Government spending,4.525870406189555,0.5461867990073282,Central government (budgetary),12.06810513753037
+MDG,2013,GF08,"Recreation, culture and religion",Government spending,0.5378989361702128,0.0649142091506786,Central government (budgetary),12.06810513753037
+MDG,2013,GF09,Education,Government spending,18.02789530947776,2.175625360031682,Central government (budgetary),12.06810513753037
+MDG,2013,GF10,Social protection,Government spending,12.04414289168279,1.453499827082669,Central government (budgetary),12.06810513753037
+MDG,2013,GF0170,Interest on public debt,Government spending,3.746403529980658,0.4521199168742149,Central government (budgetary),12.06810513753037
+MDG,2013,GF07,Health (no breakdown),Health,12.0697836073501,1.456594175607415,Central government (budgetary),12.06810513753037
+MDG,2014,GF01,General public services,Government spending,25.954259394244062,3.414583770659486,Central government (budgetary),13.15615952970227
+MDG,2014,GF02,Defence,Government spending,7.666540153324117,1.008622252980002,Central government (budgetary),13.15615952970227
+MDG,2014,GF03,Public order and safety,Government spending,4.274719366595451,0.5623888993163757,Central government (budgetary),13.15615952970227
+MDG,2014,GF04,Economic affairs,Government spending,10.58033907251477,1.391966287163464,Central government (budgetary),13.15615952970227
+MDG,2014,GF05,Environmental protection,Government spending,2.047494784466507,0.2693716802067473,Central government (budgetary),13.15615952970227
+MDG,2014,GF06,Housing and community amenities,Government spending,3.24841849943446,0.4273671199779581,Central government (budgetary),13.15615952970227
+MDG,2014,GF08,"Recreation, culture and religion",Government spending,0.5036083951237904,0.0662555238674591,Central government (budgetary),13.15615952970227
+MDG,2014,GF09,Education,Government spending,18.03046424531859,2.372116640060041,Central government (budgetary),13.15615952970227
+MDG,2014,GF10,Social protection,Government spending,13.57527233882116,1.785984485486856,Central government (budgetary),13.15615952970227
+MDG,2014,GF0170,Interest on public debt,Government spending,3.578811109714717,0.4708340988607761,Central government (budgetary),13.15615952970227
+MDG,2014,GF07,Health (no breakdown),Health,10.54102274726656,1.386793768692593,Central government (budgetary),13.15615952970227
+MDG,2015,GF01,General public services,Government spending,27.201849345772963,3.419457272493283,Central government (budgetary),12.57067940134243
+MDG,2015,GF02,Defence,Government spending,7.681442440813316,0.9656095026332948,Central government (budgetary),12.57067940134243
+MDG,2015,GF03,Public order and safety,Government spending,4.284461707714046,0.5385859453500137,Central government (budgetary),12.57067940134243
+MDG,2015,GF04,Economic affairs,Government spending,8.652999180808765,1.087740785620257,Central government (budgetary),12.57067940134243
+MDG,2015,GF05,Environmental protection,Government spending,2.833114729365824,0.356141769700788,Central government (budgetary),12.57067940134243
+MDG,2015,GF06,Housing and community amenities,Government spending,1.702379933451563,0.2140007236269826,Central government (budgetary),12.57067940134243
+MDG,2015,GF08,"Recreation, culture and religion",Government spending,0.4655568771404622,0.0585236624562291,Central government (budgetary),12.57067940134243
+MDG,2015,GF09,Education,Government spending,18.77635129395521,2.360314924432921,Central government (budgetary),12.57067940134243
+MDG,2015,GF10,Social protection,Government spending,12.78654301302096,1.607355328681615,Central government (budgetary),12.57067940134243
+MDG,2015,GF0170,Interest on public debt,Government spending,5.530355646030416,0.6952032780165235,Central government (budgetary),12.57067940134243
+MDG,2015,GF0712,Medical products,Health,3.830276674846126,0.4814918009793058,Central government (budgetary),12.57067940134243
+MDG,2015,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),12.57067940134243
+MDG,2015,GF073,Hospital services,Health,0.3478977556987187,0.0437331115133514,Central government (budgetary),12.57067940134243
+MDG,2015,GF0740,Public health services,Health,0.7310698617890073,0.0919004485253333,Central government (budgetary),12.57067940134243
+MDG,2015,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),12.57067940134243
+MDG,2015,GF0760,Other health,Health,5.175986016050293,0.6506566079359989,Central government (budgetary),12.57067940134243
+MDG,2016,GF01,General public services,Government spending,23.64786032941067,3.251474847478285,Central government (budgetary),13.74955197715901
+MDG,2016,GF02,Defence,Government spending,6.554602519975459,0.9012284803801996,Central government (budgetary),13.74955197715901
+MDG,2016,GF03,Public order and safety,Government spending,3.958508815219517,0.5442772270690286,Central government (budgetary),13.74955197715901
+MDG,2016,GF04,Economic affairs,Government spending,10.54520587419884,1.449918562771394,Central government (budgetary),13.74955197715901
+MDG,2016,GF05,Environmental protection,Government spending,1.511825238398841,0.2078691969574566,Central government (budgetary),13.74955197715901
+MDG,2016,GF06,Housing and community amenities,Government spending,3.099262491251401,0.4261347071432044,Central government (budgetary),13.74955197715901
+MDG,2016,GF08,"Recreation, culture and religion",Government spending,0.4923387753657971,0.0676943758226283,Central government (budgetary),13.74955197715901
+MDG,2016,GF09,Education,Government spending,19.65604293040831,2.702617839369179,Central government (budgetary),13.74955197715901
+MDG,2016,GF10,Social protection,Government spending,15.80178797375614,2.172675050772061,Central government (budgetary),13.74955197715901
+MDG,2016,GF0170,Interest on public debt,Government spending,5.373734156640541,0.7388643709816383,Central government (budgetary),13.74955197715901
+MDG,2016,GF0712,Medical products,Health,3.265818434137005,0.4490354030813078,Central government (budgetary),13.74955197715901
+MDG,2016,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),13.74955197715901
+MDG,2016,GF073,Hospital services,Health,0.3241831501198068,0.0445737307269142,Central government (budgetary),13.74955197715901
+MDG,2016,GF0740,Public health services,Health,3.985982163031884,0.5480546893063557,Central government (budgetary),13.74955197715901
+MDG,2016,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),13.74955197715901
+MDG,2016,GF0760,Other health,Health,1.782385053437681,0.2450699593555273,Central government (budgetary),13.74955197715901
+MDG,2017,GF01,General public services,Government spending,30.722812289211436,4.691609123924266,Central government (budgetary),15.27076714123518
+MDG,2017,GF02,Defence,Government spending,6.120000277623285,0.9345709914387988,Central government (budgetary),15.27076714123518
+MDG,2017,GF03,Public order and safety,Government spending,3.708722560116427,0.5663503860698357,Central government (budgetary),15.27076714123518
+MDG,2017,GF04,Economic affairs,Government spending,11.75443889472402,1.794992992372084,Central government (budgetary),15.27076714123518
+MDG,2017,GF05,Environmental protection,Government spending,1.237360160054354,0.1889543887403154,Central government (budgetary),15.27076714123518
+MDG,2017,GF06,Housing and community amenities,Government spending,2.816387713998437,0.4300840095990581,Central government (budgetary),15.27076714123518
+MDG,2017,GF08,"Recreation, culture and religion",Government spending,0.5112245320433813,0.0780679078572139,Central government (budgetary),15.27076714123518
+MDG,2017,GF09,Education,Government spending,17.47273311956587,2.668220387898382,Central government (budgetary),15.27076714123518
+MDG,2017,GF10,Social protection,Government spending,16.44547250644721,2.511349811735407,Central government (budgetary),15.27076714123518
+MDG,2017,GF0170,Interest on public debt,Government spending,4.552910064395742,0.6952642940837346,Central government (budgetary),15.27076714123518
+MDG,2017,GF0712,Medical products,Health,2.915807719622488,0.4452662071497099,Central government (budgetary),15.27076714123518
+MDG,2017,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),15.27076714123518
+MDG,2017,GF073,Hospital services,Health,0.3895424454539075,0.0594861197615393,Central government (budgetary),15.27076714123518
+MDG,2017,GF0740,Public health services,Health,0.8945848655125997,0.136609971693161,Central government (budgetary),15.27076714123518
+MDG,2017,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),15.27076714123518
+MDG,2017,GF0760,Other health,Health,0.4581222552695375,0.0699587828243861,Central government (budgetary),15.27076714123518
+MDG,2018,GF01,General public services,Government spending,24.665626830328346,3.7418013847774354,Central government (budgetary),15.17010457717861
+MDG,2018,GF02,Defence,Government spending,6.512327669135613,0.9879269178164108,Central government (budgetary),15.17010457717861
+MDG,2018,GF03,Public order and safety,Government spending,4.24309073888812,0.6436813023939083,Central government (budgetary),15.17010457717861
+MDG,2018,GF04,Economic affairs,Government spending,14.85677675709826,2.253788570849771,Central government (budgetary),15.17010457717861
+MDG,2018,GF05,Environmental protection,Government spending,1.772712813590662,0.2689223876747488,Central government (budgetary),15.17010457717861
+MDG,2018,GF06,Housing and community amenities,Government spending,3.684470713658153,0.5589380603774609,Central government (budgetary),15.17010457717861
+MDG,2018,GF08,"Recreation, culture and religion",Government spending,0.4610389368363741,0.0699400888595903,Central government (budgetary),15.17010457717861
+MDG,2018,GF09,Education,Government spending,17.57107443706781,2.665550367437084,Central government (budgetary),15.17010457717861
+MDG,2018,GF10,Social protection,Government spending,14.96198275387502,2.269748430582268,Central government (budgetary),15.17010457717861
+MDG,2018,GF0170,Interest on public debt,Government spending,5.072798988249303,0.7695489115074778,Central government (budgetary),15.17010457717861
+MDG,2018,GF0712,Medical products,Health,4.074921486637121,0.6181698509607726,Central government (budgetary),15.17010457717861
+MDG,2018,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),15.17010457717861
+MDG,2018,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),15.17010457717861
+MDG,2018,GF0740,Public health services,Health,1.542825224832969,0.2340482000502525,Central government (budgetary),15.17010457717861
+MDG,2018,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),15.17010457717861
+MDG,2018,GF0760,Other health,Health,0.5801739000988364,0.0880129873744892,Central government (budgetary),15.17010457717861
+MDG,2019,GF01,General public services,Government spending,27.10558251380547,4.262701414308193,Central government (budgetary),15.72628594916602
+MDG,2019,GF02,Defence,Government spending,6.818285437906802,1.07226306479557,Central government (budgetary),15.72628594916602
+MDG,2019,GF03,Public order and safety,Government spending,3.951567581586252,0.6214348173547984,Central government (budgetary),15.72628594916602
+MDG,2019,GF04,Economic affairs,Government spending,16.04451394645873,2.523206142373922,Central government (budgetary),15.72628594916602
+MDG,2019,GF05,Environmental protection,Government spending,1.409870401805188,0.2217202509005399,Central government (budgetary),15.72628594916602
+MDG,2019,GF06,Housing and community amenities,Government spending,2.507729303624497,0.3943726811190183,Central government (budgetary),15.72628594916602
+MDG,2019,GF08,"Recreation, culture and religion",Government spending,0.6205619878965751,0.0975913527084444,Central government (budgetary),15.72628594916602
+MDG,2019,GF09,Education,Government spending,15.83768303989793,2.490679322576918,Central government (budgetary),15.72628594916602
+MDG,2019,GF10,Social protection,Government spending,13.82709739854179,2.174488875364378,Central government (budgetary),15.72628594916602
+MDG,2019,GF0170,Interest on public debt,Government spending,4.43557921352794,0.6975518706211732,Central government (budgetary),15.72628594916602
+MDG,2019,GF0712,Medical products,Health,3.250208052197493,0.511137012231397,Central government (budgetary),15.72628594916602
+MDG,2019,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),15.72628594916602
+MDG,2019,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),15.72628594916602
+MDG,2019,GF0740,Public health services,Health,3.1923071396211,0.5020313491524568,Central government (budgetary),15.72628594916602
+MDG,2019,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),15.72628594916602
+MDG,2019,GF0760,Other health,Health,0.9990139831302682,0.1571077956592192,Central government (budgetary),15.72628594916602
+MDG,2020,GF01,General public services,Government spending,33.2506771629885,6.171128306709861,Central government (budgetary),18.55940640384604
+MDG,2020,GF02,Defence,Government spending,6.66288015033163,1.236591005301235,Central government (budgetary),18.55940640384604
+MDG,2020,GF03,Public order and safety,Government spending,3.72116000661051,0.6906252085642286,Central government (budgetary),18.55940640384604
+MDG,2020,GF04,Economic affairs,Government spending,14.60773329923556,2.711108589395074,Central government (budgetary),18.55940640384604
+MDG,2020,GF05,Environmental protection,Government spending,1.290511945465694,0.2395113566491582,Central government (budgetary),18.55940640384604
+MDG,2020,GF06,Housing and community amenities,Government spending,2.912957239094975,0.5406275723738895,Central government (budgetary),18.55940640384604
+MDG,2020,GF08,"Recreation, culture and religion",Government spending,0.9976363419340236,0.1851553831319985,Central government (budgetary),18.55940640384604
+MDG,2020,GF09,Education,Government spending,14.51611965374959,2.694105640607955,Central government (budgetary),18.55940640384604
+MDG,2020,GF10,Social protection,Government spending,12.28708005108897,2.280409121847495,Central government (budgetary),18.55940640384604
+MDG,2020,GF0170,Interest on public debt,Government spending,3.940641918145053,0.7313597485088544,Central government (budgetary),18.55940640384604
+MDG,2020,GF0712,Medical products,Health,3.308366761588377,0.614013232612947,Central government (budgetary),18.55940640384604
+MDG,2020,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),18.55940640384604
+MDG,2020,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),18.55940640384604
+MDG,2020,GF0740,Public health services,Health,0.5199444114257624,0.0964985963905925,Central government (budgetary),18.55940640384604
+MDG,2020,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.55940640384604
+MDG,2020,GF0760,Other health,Health,1.984291058341335,0.3682726417527461,Central government (budgetary),18.55940640384604
+MDG,2021,GF01,General public services,Government spending,35.45427576411497,5.695453884288137,Central government (budgetary),16.06422289424619
+MDG,2021,GF02,Defence,Government spending,7.113222476122553,1.142683913527945,Central government (budgetary),16.06422289424619
+MDG,2021,GF03,Public order and safety,Government spending,4.155660713058798,0.6675745996743861,Central government (budgetary),16.06422289424619
+MDG,2021,GF04,Economic affairs,Government spending,16.04754257981315,2.577913009070251,Central government (budgetary),16.06422289424619
+MDG,2021,GF05,Environmental protection,Government spending,0.608992673835078,0.0978299405344966,Central government (budgetary),16.06422289424619
+MDG,2021,GF06,Housing and community amenities,Government spending,1.500135181928884,0.2409850593400615,Central government (budgetary),16.06422289424619
+MDG,2021,GF08,"Recreation, culture and religion",Government spending,0.6457303426353289,0.1037315615367189,Central government (budgetary),16.06422289424619
+MDG,2021,GF09,Education,Government spending,15.19377751185307,2.440762285559931,Central government (budgetary),16.06422289424619
+MDG,2021,GF10,Social protection,Government spending,11.54227748776064,1.854177182706269,Central government (budgetary),16.06422289424619
+MDG,2021,GF0170,Interest on public debt,Government spending,4.00703593404519,0.6436991838975592,Central government (budgetary),16.06422289424619
+MDG,2021,GF0712,Medical products,Health,3.093911199645833,0.4970127912611529,Central government (budgetary),16.06422289424619
+MDG,2021,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),16.06422289424619
+MDG,2021,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),16.06422289424619
+MDG,2021,GF0740,Public health services,Health,0.323501068852382,0.0519679327657154,Central government (budgetary),16.06422289424619
+MDG,2021,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),16.06422289424619
+MDG,2021,GF0760,Other health,Health,0.313937066334084,0.0504315500835647,Central government (budgetary),16.06422289424619
+MDG,2022,GF01,General public services,Government spending,25.591641446447046,3.923755119308626,Central government (budgetary),15.33217448173248
+MDG,2022,GF02,Defence,Government spending,7.460238534604702,1.143816788879035,Central government (budgetary),15.33217448173248
+MDG,2022,GF03,Public order and safety,Government spending,3.862585520875718,0.5922183515668002,Central government (budgetary),15.33217448173248
+MDG,2022,GF04,Economic affairs,Government spending,22.14267169710963,3.394953059518042,Central government (budgetary),15.33217448173248
+MDG,2022,GF05,Environmental protection,Government spending,0.4052140028707922,0.0621281179445623,Central government (budgetary),15.33217448173248
+MDG,2022,GF06,Housing and community amenities,Government spending,2.861299914795844,0.4386994953821615,Central government (budgetary),15.33217448173248
+MDG,2022,GF08,"Recreation, culture and religion",Government spending,0.3032839241582074,0.0465000204269815,Central government (budgetary),15.33217448173248
+MDG,2022,GF09,Education,Government spending,15.95609313523005,2.44641603996121,Central government (budgetary),15.33217448173248
+MDG,2022,GF10,Social protection,Government spending,12.73798869565073,1.953010652280528,Central government (budgetary),15.33217448173248
+MDG,2022,GF0170,Interest on public debt,Government spending,3.598182048161196,0.5516795497944499,Central government (budgetary),15.33217448173248
+MDG,2022,GF0712,Medical products,Health,3.122002657707707,0.4786708948040709,Central government (budgetary),15.33217448173248
+MDG,2022,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),15.33217448173248
+MDG,2022,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),15.33217448173248
+MDG,2022,GF0740,Public health services,Health,0.1516003896447229,0.0232436362553152,Central government (budgetary),15.33217448173248
+MDG,2022,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),15.33217448173248
+MDG,2022,GF0760,Other health,Health,1.807198032743618,0.2770827556106884,Central government (budgetary),15.33217448173248
+MDG,2023,GF01,General public services,Government spending,24.59940696199543,4.330677844413496,Central government (budgetary),17.60480588456513
+MDG,2023,GF02,Defence,Government spending,6.641093516841372,1.169151622252363,Central government (budgetary),17.60480588456513
+MDG,2023,GF03,Public order and safety,Government spending,3.576980072757657,0.6297203983385621,Central government (budgetary),17.60480588456513
+MDG,2023,GF04,Economic affairs,Government spending,19.90265471801416,3.503823728981636,Central government (budgetary),17.60480588456513
+MDG,2023,GF05,Environmental protection,Government spending,0.3243044072025542,0.0570931613630993,Central government (budgetary),17.60480588456513
+MDG,2023,GF06,Housing and community amenities,Government spending,3.037768103058358,0.5347931777666604,Central government (budgetary),17.60480588456513
+MDG,2023,GF08,"Recreation, culture and religion",Government spending,1.029970700945289,0.181324342569313,Central government (budgetary),17.60480588456513
+MDG,2023,GF09,Education,Government spending,14.81033470309179,2.607330675333695,Central government (budgetary),17.60480588456513
+MDG,2023,GF10,Social protection,Government spending,17.80862402904886,3.135173691026074,Central government (budgetary),17.60480588456513
+MDG,2023,GF0170,Interest on public debt,Government spending,4.005047824798329,0.7050808951397439,Central government (budgetary),17.60480588456513
+MDG,2023,GF0712,Medical products,Health,3.098179920348155,0.5454285609318672,Central government (budgetary),17.60480588456513
+MDG,2023,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),17.60480588456513
+MDG,2023,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),17.60480588456513
+MDG,2023,GF0740,Public health services,Health,0.05278893926554,0.0092933902862193,Central government (budgetary),17.60480588456513
+MDG,2023,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),17.60480588456513
+MDG,2023,GF0760,Other health,Health,1.11284674777743,0.1959145097389126,Central government (budgetary),17.60480588456513
+MDG,2024,GF01,General public services,Government spending,22.387066423253362,3.701473671083532,Central government (budgetary),16.53398261792275
+MDG,2024,GF02,Defence,Government spending,6.942956805930687,1.147947271462465,Central government (budgetary),16.53398261792275
+MDG,2024,GF03,Public order and safety,Government spending,3.477359153314818,0.5749459579718179,Central government (budgetary),16.53398261792275
+MDG,2024,GF04,Economic affairs,Government spending,21.0066304675779,3.473232630120595,Central government (budgetary),16.53398261792275
+MDG,2024,GF05,Environmental protection,Government spending,0.3902226051191023,0.0645193377015977,Central government (budgetary),16.53398261792275
+MDG,2024,GF06,Housing and community amenities,Government spending,2.291229985305472,0.3788315675070408,Central government (budgetary),16.53398261792275
+MDG,2024,GF08,"Recreation, culture and religion",Government spending,1.087588361186821,0.1798216705931799,Central government (budgetary),16.53398261792275
+MDG,2024,GF09,Education,Government spending,13.61303615999373,2.250777032464902,Central government (budgetary),16.53398261792275
+MDG,2024,GF10,Social protection,Government spending,20.88394330052586,3.452947555245788,Central government (budgetary),16.53398261792275
+MDG,2024,GF0170,Interest on public debt,Government spending,4.258528127963948,0.7041043004569103,Central government (budgetary),16.53398261792275
+MDG,2024,GF0712,Medical products,Health,1.956093038007474,0.3234200828945528,Central government (budgetary),16.53398261792275
+MDG,2024,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),16.53398261792275
+MDG,2024,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),16.53398261792275
+MDG,2024,GF0740,Public health services,Health,0.0030342756347745,0.0005016866060334,Central government (budgetary),16.53398261792275
+MDG,2024,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),16.53398261792275
+MDG,2024,GF0760,Other health,Health,1.702311296185682,0.2814598538142761,Central government (budgetary),16.53398261792275

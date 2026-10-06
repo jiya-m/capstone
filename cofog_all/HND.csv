@@ -1,0 +1,17 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+HND,2020,GF01,General public services,Government spending,11.9238948148354,2.79720088192448,Central government (budgetary),23.4587852825091
+HND,2020,GF02,Defence,Government spending,6.18564572550693,1.45107734908338,Central government (budgetary),23.4587852825091
+HND,2020,GF03,Public order and safety,Government spending,11.3189617270929,2.6552909277681,Central government (budgetary),23.4587852825091
+HND,2020,GF04,Economic affairs,Government spending,13.2193744500134,3.10110466791953,Central government (budgetary),23.4587852825091
+HND,2020,GF05,Environmental protection,Government spending,0.446822308397479,0.104819085921315,Central government (budgetary),23.4587852825091
+HND,2020,GF06,Housing and community amenities,Government spending,5.06980014954619,1.18931353133437,Central government (budgetary),23.4587852825091
+HND,2020,GF08,"Recreation, culture and religion",Government spending,0.179963644627277,0.0422172849796908,Central government (budgetary),23.4587852825091
+HND,2020,GF09,Education,Government spending,21.7991284545755,5.11381073761722,Central government (budgetary),23.4587852825091
+HND,2020,GF10,Social protection,Government spending,2.39836152561676,0.562626480592746,Central government (budgetary),23.4587852825091
+HND,2020,GF0170,Interest on public debt,Government spending,13.7596407971057,3.22784459023756,Central government (budgetary),23.4587852825091
+HND,2020,GF0712,Medical products,Health,0.166659404062834,0.0390962717522095,Central government (budgetary),23.4587852825091
+HND,2020,GF072,Outpatient services,Health,3.12447106832854,0.732962959133311,Central government (budgetary),23.4587852825091
+HND,2020,GF073,Hospital services,Health,6.48213560590703,1.5206302735108,Central government (budgetary),23.4587852825091
+HND,2020,GF0740,Public health services,Health,0.291765726606799,0.0684446953326417,Central government (budgetary),23.4587852825091
+HND,2020,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),23.4587852825091
+HND,2020,GF0760,Other health,Health,3.63337459777702,0.852345545401741,Central government (budgetary),23.4587852825091

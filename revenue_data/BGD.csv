@@ -1,0 +1,282 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+BGD,1990,G11NEC,Other taxes,Taxes,4.1750696,46.46864084051298,Central government,8.9847035
+BGD,1990,G13,Grants (e.g. foreign aid),Grants,3.9637037,44.116132491183485,Central government,8.9847035
+BGD,1990,G14X,Other non-tax revenue,Other revenue,0.84593014,9.415226000501852,Central government,8.9847035
+BGD,1991,G11NEC,Other taxes,Taxes,4.3126288,46.35077216736723,Central government,9.30433
+BGD,1991,G13,Grants (e.g. foreign aid),Grants,4.0107764,43.10655791443339,Central government,9.30433
+BGD,1991,G14X,Other non-tax revenue,Other revenue,0.98092476,10.54266948829201,Central government,9.30433
+BGD,1992,G111,Income taxes,Taxes,0.79129825,8.645791174696651,Central government,9.1524099
+BGD,1992,G11412,VAT / sales tax,Taxes,1.0811556,11.81279693839063,Central government,9.1524099
+BGD,1992,G114X,Other goods & services taxes,Taxes,0.8903634,9.728185328342256,Central government,9.1524099
+BGD,1992,G115,Trade taxes (customs),Taxes,1.6792156,18.347250755189894,Central government,9.1524099
+BGD,1992,G11NEC,Other taxes,Taxes,0.41999958,4.588950704921058,Central government,9.1524099
+BGD,1992,G13,Grants (e.g. foreign aid),Grants,3.1052647,33.928383057029436,Central government,9.1524099
+BGD,1992,G14X,Other non-tax revenue,Other revenue,1.1851128,12.948642041430064,Central government,9.1524099
+BGD,1993,G111,Income taxes,Taxes,0.94061252,9.252992795727113,Central government,10.165495
+BGD,1993,G11412,VAT / sales tax,Taxes,1.4948867,14.70549835497435,Central government,10.165495
+BGD,1993,G1142,Excise taxes,Taxes,0.59029172,5.806817277466567,Central government,10.165495
+BGD,1993,G114X,Other goods & services taxes,Taxes,0.1929446800000003,1.8980352653756685,Central government,10.165495
+BGD,1993,G115,Trade taxes (customs),Taxes,1.6768052,16.495066890495742,Central government,10.165495
+BGD,1993,G11NEC,Other taxes,Taxes,0.42195931,4.150897816584435,Central government,10.165495
+BGD,1993,G13,Grants (e.g. foreign aid),Grants,3.5424197,34.847488489247205,Central government,10.165495
+BGD,1993,G14X,Other non-tax revenue,Other revenue,1.3055747,12.843198486645264,Central government,10.165495
+BGD,1994,G111,Income taxes,Taxes,0.92367628,9.16296246769271,Central government,10.080542
+BGD,1994,G11412,VAT / sales tax,Taxes,1.4743191,14.625395142443729,Central government,10.080542
+BGD,1994,G1142,Excise taxes,Taxes,0.68182533,6.763776491383103,Central government,10.080542
+BGD,1994,G114X,Other goods & services taxes,Taxes,0.08637526999999989,0.8568514470749679,Central government,10.080542
+BGD,1994,G115,Trade taxes (customs),Taxes,1.6103602,15.974936665111855,Central government,10.080542
+BGD,1994,G11NEC,Other taxes,Taxes,0.42161972000000025,4.182510424538683,Central government,10.080542
+BGD,1994,G13,Grants (e.g. foreign aid),Grants,3.3146536,32.881700210167274,Central government,10.080542
+BGD,1994,G14X,Other non-tax revenue,Other revenue,1.5677124,15.551866159577532,Central government,10.080542
+BGD,1995,G111,Income taxes,Taxes,0.70717829,7.011887358186372,Central government,10.08542
+BGD,1995,G11412,VAT / sales tax,Taxes,1.6579943,16.43951664878607,Central government,10.08542
+BGD,1995,G1142,Excise taxes,Taxes,0.73394719,7.277309125450403,Central government,10.08542
+BGD,1995,G114X,Other goods & services taxes,Taxes,0.08514281000000012,0.8442168000936018,Central government,10.08542
+BGD,1995,G115,Trade taxes (customs),Taxes,1.7622373,17.473117629211277,Central government,10.08542
+BGD,1995,G11NEC,Other taxes,Taxes,0.41685674,4.133261083821993,Central government,10.08542
+BGD,1995,G13,Grants (e.g. foreign aid),Grants,3.2879975,32.60149304639768,Central government,10.08542
+BGD,1995,G14X,Other non-tax revenue,Other revenue,1.4340654,14.219193647859981,Central government,10.08542
+BGD,1996,G111,Income taxes,Taxes,0.65993507,8.48614607722286,Central government,7.7766169
+BGD,1996,G11412,VAT / sales tax,Taxes,1.679384,21.59530322240768,Central government,7.7766169
+BGD,1996,G1142,Excise taxes,Taxes,0.81617799,10.495283495320441,Central government,7.7766169
+BGD,1996,G114X,Other goods & services taxes,Taxes,0.08049260999999996,1.0350594742554435,Central government,7.7766169
+BGD,1996,G115,Trade taxes (customs),Taxes,1.6575358,21.31435586083712,Central government,7.7766169
+BGD,1996,G11NEC,Other taxes,Taxes,0.38236423,4.916845395843018,Central government,7.7766169
+BGD,1996,G13,Grants (e.g. foreign aid),Grants,1.17179,15.068120431649401,Central government,7.7766169
+BGD,1996,G14X,Other non-tax revenue,Other revenue,1.3289371,17.088884756557828,Central government,7.7766169
+BGD,1997,G111,Income taxes,Taxes,0.66485934,8.36509603182807,Central government,7.948018
+BGD,1997,G11412,VAT / sales tax,Taxes,1.7353616,21.83389111138427,Central government,7.948018
+BGD,1997,G1142,Excise taxes,Taxes,0.84931099,10.685821142614873,Central government,7.948018
+BGD,1997,G114X,Other goods & services taxes,Taxes,0.08112690999999983,1.0207187476910105,Central government,7.948018
+BGD,1997,G115,Trade taxes (customs),Taxes,1.623915,20.43169751142562,Central government,7.948018
+BGD,1997,G11NEC,Other taxes,Taxes,0.43902518,5.523706399447746,Central government,7.948018
+BGD,1997,G13,Grants (e.g. foreign aid),Grants,1.2270508,15.4384501508717,Central government,7.948018
+BGD,1997,G14X,Other non-tax revenue,Other revenue,1.3273682,16.700618904736704,Central government,7.948018
+BGD,1998,G111,Income taxes,Taxes,0.7357204,9.650136619821206,Central government,7.6239376
+BGD,1998,G11412,VAT / sales tax,Taxes,1.7076071,22.397967771420625,Central government,7.6239376
+BGD,1998,G1142,Excise taxes,Taxes,0.86042501,11.28583480573738,Central government,7.6239376
+BGD,1998,G114X,Other goods & services taxes,Taxes,0.07945779000000008,1.0422145818018151,Central government,7.6239376
+BGD,1998,G115,Trade taxes (customs),Taxes,1.6001919,20.98904754160857,Central government,7.6239376
+BGD,1998,G11NEC,Other taxes,Taxes,0.42343284,5.5539913740585325,Central government,7.6239376
+BGD,1998,G13,Grants (e.g. foreign aid),Grants,0.80084082,10.504293918898597,Central government,7.6239376
+BGD,1998,G14X,Other non-tax revenue,Other revenue,1.4162618,18.576513386653268,Central government,7.6239376
+BGD,1999,G111,Income taxes,Taxes,0.76750809,10.502340752085836,Central government,7.3079717
+BGD,1999,G11412,VAT / sales tax,Taxes,1.5982303,21.869683759174926,Central government,7.3079717
+BGD,1999,G1142,Excise taxes,Taxes,0.8012542,10.964111971041158,Central government,7.3079717
+BGD,1999,G114X,Other goods & services taxes,Taxes,0.07559189999999982,1.0343759267704857,Central government,7.3079717
+BGD,1999,G115,Trade taxes (customs),Taxes,1.5569924,21.30539722807082,Central government,7.3079717
+BGD,1999,G11NEC,Other taxes,Taxes,0.38482771,5.265862072235446,Central government,7.3079717
+BGD,1999,G13,Grants (e.g. foreign aid),Grants,1.047163,14.329051110036454,Central government,7.3079717
+BGD,1999,G14X,Other non-tax revenue,Other revenue,1.0764041,14.729177180584866,Central government,7.3079717
+BGD,2000,G111,Income taxes,Taxes,0.74139024,10.211932271022658,Central government,7.2600387
+BGD,2000,G11412,VAT / sales tax,Taxes,1.6448182,22.65577714719498,Central government,7.2600387
+BGD,2000,G1142,Excise taxes,Taxes,0.89320077,12.302975242384209,Central government,7.2600387
+BGD,2000,G114X,Other goods & services taxes,Taxes,0.08116742999999982,1.11800271038498,Central government,7.2600387
+BGD,2000,G115,Trade taxes (customs),Taxes,1.2941059,17.825054997123807,Central government,7.2600387
+BGD,2000,G11NEC,Other taxes,Taxes,0.26867151,3.7006897518281154,Central government,7.2600387
+BGD,2000,G13,Grants (e.g. foreign aid),Grants,1.1029731,15.192385853312425,Central government,7.2600387
+BGD,2000,G14X,Other non-tax revenue,Other revenue,1.2337116,16.993182026748823,Central government,7.2600387
+BGD,2001,G111,Income taxes,Taxes,0.90719795,12.44354817714638,Central government,7.2905086
+BGD,2001,G11412,VAT / sales tax,Taxes,1.8078245,24.796959981639688,Central government,7.2905086
+BGD,2001,G1142,Excise taxes,Taxes,0.96521657,13.239358499625116,Central government,7.2905086
+BGD,2001,G114X,Other goods & services taxes,Taxes,0.07881452999999994,1.0810566768963132,Central government,7.2905086
+BGD,2001,G115,Trade taxes (customs),Taxes,1.4209488,19.49039330397333,Central government,7.2905086
+BGD,2001,G11NEC,Other taxes,Taxes,0.3388921499999999,4.648402033295727,Central government,7.2905086
+BGD,2001,G13,Grants (e.g. foreign aid),Grants,0.74589956,10.23110458987731,Central government,7.2905086
+BGD,2001,G14X,Other non-tax revenue,Other revenue,1.0257145,14.069176188887564,Central government,7.2905086
+BGD,2002,G111,Income taxes,Taxes,0.9339334,11.600402570127013,Central government,8.0508706
+BGD,2002,G11412,VAT / sales tax,Taxes,1.8703588,23.231758314436206,Central government,8.0508706
+BGD,2002,G1142,Excise taxes,Taxes,1.0015751,12.440581270800699,Central government,8.0508706
+BGD,2002,G114X,Other goods & services taxes,Taxes,0.07745420000000025,0.9620599292702612,Central government,8.0508706
+BGD,2002,G115,Trade taxes (customs),Taxes,1.3729041,17.052865065301138,Central government,8.0508706
+BGD,2002,G11NEC,Other taxes,Taxes,0.3296184999999999,4.0941969679651775,Central government,8.0508706
+BGD,2002,G13,Grants (e.g. foreign aid),Grants,0.69939867,8.68724271881851,Central government,8.0508706
+BGD,2002,G14X,Other non-tax revenue,Other revenue,1.7656278,21.930892790650493,Central government,8.0508706
+BGD,2003,G111,Income taxes,Taxes,1.0477945,12.786803947106716,Central government,8.1943424
+BGD,2003,G11412,VAT / sales tax,Taxes,1.8541313,22.626968766579807,Central government,8.1943424
+BGD,2003,G1142,Excise taxes,Taxes,1.0593461,12.927774380216832,Central government,8.1943424
+BGD,2003,G114X,Other goods & services taxes,Taxes,0.07637970000000016,0.9321028593286459,Central government,8.1943424
+BGD,2003,G115,Trade taxes (customs),Taxes,1.6026079,19.557492448552082,Central government,8.1943424
+BGD,2003,G11NEC,Other taxes,Taxes,0.30846667,3.7643858919920508,Central government,8.1943424
+BGD,2003,G13,Grants (e.g. foreign aid),Grants,0.77146625,9.414620606005869,Central government,8.1943424
+BGD,2003,G14X,Other non-tax revenue,Other revenue,1.47415,17.989851100218,Central government,8.1943424
+BGD,2004,G111,Income taxes,Taxes,1.0252271,13.35454294444752,Central government,7.6769913
+BGD,2004,G11412,VAT / sales tax,Taxes,1.8978493,24.721264175458945,Central government,7.6769913
+BGD,2004,G1142,Excise taxes,Taxes,1.1393743,14.841417105683057,Central government,7.6769913
+BGD,2004,G114X,Other goods & services taxes,Taxes,0.03456360000000003,0.4502232534769191,Central government,7.6769913
+BGD,2004,G115,Trade taxes (customs),Taxes,1.54361,20.106965602527122,Central government,7.6769913
+BGD,2004,G11NEC,Other taxes,Taxes,0.33404780000000067,4.351285379208397,Central government,7.6769913
+BGD,2004,G13,Grants (e.g. foreign aid),Grants,0.29320259,3.819238273723197,Central government,7.6769913
+BGD,2004,G14X,Other non-tax revenue,Other revenue,1.4091166,18.35506313521548,Central government,7.6769913
+BGD,2005,G111,Income taxes,Taxes,1.1082925,14.092538679381793,Central government,7.8643921
+BGD,2005,G11412,VAT / sales tax,Taxes,2.04375,25.987386836946516,Central government,7.8643921
+BGD,2005,G1142,Excise taxes,Taxes,1.0861071,13.81043931696839,Central government,7.8643921
+BGD,2005,G114X,Other goods & services taxes,Taxes,0.02814709999999998,0.3579056029544791,Central government,7.8643921
+BGD,2005,G115,Trade taxes (customs),Taxes,1.5461364,19.65996072390648,Central government,7.8643921
+BGD,2005,G11NEC,Other taxes,Taxes,0.3274056999999996,4.163140588878898,Central government,7.8643921
+BGD,2005,G13,Grants (e.g. foreign aid),Grants,0.25660341,3.2628511703239576,Central government,7.8643921
+BGD,2005,G14X,Other non-tax revenue,Other revenue,1.4679499,18.665777080639486,Central government,7.8643921
+BGD,2006,G111,Income taxes,Taxes,1.2370586,15.503216244265957,Central government,7.9793675
+BGD,2006,G11412,VAT / sales tax,Taxes,2.1067916,26.402989928207987,Central government,7.9793675
+BGD,2006,G1142,Excise taxes,Taxes,1.0321773,12.935577897702322,Central government,7.9793675
+BGD,2006,G114X,Other goods & services taxes,Taxes,0.025891499999999512,0.3244806053556432,Central government,7.9793675
+BGD,2006,G115,Trade taxes (customs),Taxes,1.3564602,16.999595498014603,Central government,7.9793675
+BGD,2006,G11NEC,Other taxes,Taxes,0.37149661,4.65571499914534,Central government,7.9793675
+BGD,2006,G13,Grants (e.g. foreign aid),Grants,0.3010266,3.7725621689030335,Central government,7.9793675
+BGD,2006,G14X,Other non-tax revenue,Other revenue,1.5484651,19.405862658405116,Central government,7.9793675
+BGD,2007,G111,Income taxes,Taxes,1.3162377,16.95551617542246,Central government,7.7628878
+BGD,2007,G11412,VAT / sales tax,Taxes,2.0895737,26.917479016204563,Central government,7.7628878
+BGD,2007,G1142,Excise taxes,Taxes,0.91234182,11.752608580140476,Central government,7.7628878
+BGD,2007,G114X,Other goods & services taxes,Taxes,0.027330180000000315,0.352062024258394,Central government,7.7628878
+BGD,2007,G115,Trade taxes (customs),Taxes,1.2404861,15.979698905400387,Central government,7.7628878
+BGD,2007,G11NEC,Other taxes,Taxes,0.32935892,4.242737079768854,Central government,7.7628878
+BGD,2007,G13,Grants (e.g. foreign aid),Grants,0.4233539,5.45356199672611,Central government,7.7628878
+BGD,2007,G14X,Other non-tax revenue,Other revenue,1.4242055,18.346336222078754,Central government,7.7628878
+BGD,2008,G111,Income taxes,Taxes,1.5494484,18.95364268648388,Central government,8.1749372
+BGD,2008,G11412,VAT / sales tax,Taxes,2.2789004,27.876671401051624,Central government,8.1749372
+BGD,2008,G1142,Excise taxes,Taxes,0.99500491,12.171407279801672,Central government,8.1749372
+BGD,2008,G115,Trade taxes (customs),Taxes,1.1642441,14.241627324438173,Central government,8.1749372
+BGD,2008,G11NEC,Other taxes,Taxes,0.40313013,4.931293252602536,Central government,8.1749372
+BGD,2008,G13,Grants (e.g. foreign aid),Grants,0.32040613,3.9193711146360886,Central government,8.1749372
+BGD,2008,G14X,Other non-tax revenue,Other revenue,1.4638032,17.905986940986036,Central government,8.1749372
+BGD,2009,G111,Income taxes,Taxes,1.5905466,20.143949575486204,Central government,7.8959024
+BGD,2009,G11412,VAT / sales tax,Taxes,2.2636341,28.668466027811505,Central government,7.8959024
+BGD,2009,G1142,Excise taxes,Taxes,1.0108744,12.802518920696743,Central government,7.8959024
+BGD,2009,G114X,Other goods & services taxes,Taxes,0.03255920000000012,0.4123556537219173,Central government,7.8959024
+BGD,2009,G115,Trade taxes (customs),Taxes,0.9992715,12.655570549281903,Central government,7.8959024
+BGD,2009,G11NEC,Other taxes,Taxes,0.36158479999999965,4.579398037418241,Central government,7.8959024
+BGD,2009,G13,Grants (e.g. foreign aid),Grants,0.25230421,3.195381565005943,Central government,7.8959024
+BGD,2009,G14X,Other non-tax revenue,Other revenue,1.3851276,17.54235967057754,Central government,7.8959024
+BGD,2010,G111,Income taxes,Taxes,1.699319,20.307965217865007,Central government,8.3677462
+BGD,2010,G11412,VAT / sales tax,Taxes,2.4266715,29.000299777254476,Central government,8.3677462
+BGD,2010,G1142,Excise taxes,Taxes,1.1198654,13.383118526827793,Central government,8.3677462
+BGD,2010,G115,Trade taxes (customs),Taxes,0.92800508,11.090263150498544,Central government,8.3677462
+BGD,2010,G11NEC,Other taxes,Taxes,0.3672874199999997,4.389323105502481,Central government,8.3677462
+BGD,2010,G13,Grants (e.g. foreign aid),Grants,0.44327786,5.297458195153255,Central government,8.3677462
+BGD,2010,G14X,Other non-tax revenue,Other revenue,1.38332,16.531572026898438,Central government,8.3677462
+BGD,2011,G1111,Personal income tax,Taxes,0.85531201,9.980733813458196,Central government,8.5696305
+BGD,2011,G1112,Corporate income tax,Taxes,1.1459546,13.372275486822595,Central government,8.5696305
+BGD,2011,G11412,VAT / sales tax,Taxes,2.6597504,31.036932069548474,Central government,8.5696305
+BGD,2011,G1142,Excise taxes,Taxes,1.2191506,14.226407994806303,Central government,8.5696305
+BGD,2011,G114X,Other goods & services taxes,Taxes,0.046170799999999845,0.538772353675256,Central government,8.5696305
+BGD,2011,G115,Trade taxes (customs),Taxes,0.98367562,11.478623481515774,Central government,8.5696305
+BGD,2011,G11NEC,Other taxes,Taxes,0.32211163,3.7587575056371945,Central government,8.5696305
+BGD,2011,G13,Grants (e.g. foreign aid),Grants,0.11867825,1.3848700928413773,Central government,8.5696305
+BGD,2011,G14X,Other non-tax revenue,Other revenue,1.2188266,14.22262720169484,Central government,8.5696305
+BGD,2012,G1111,Personal income tax,Taxes,0.75063102,8.213739896057984,Central government,9.138724
+BGD,2012,G1112,Corporate income tax,Taxes,1.4770647,16.162701689904736,Central government,9.138724
+BGD,2012,G11412,VAT / sales tax,Taxes,2.6810249,29.33697195654779,Central government,9.138724
+BGD,2012,G1142,Excise taxes,Taxes,1.2925598,14.143766663547593,Central government,9.138724
+BGD,2012,G114X,Other goods & services taxes,Taxes,0.0525593000000002,0.5751273366225685,Central government,9.138724
+BGD,2012,G115,Trade taxes (customs),Taxes,0.95016121,10.397088356758461,Central government,9.138724
+BGD,2012,G11NEC,Other taxes,Taxes,0.31027718999999987,3.3951916007145053,Central government,9.138724
+BGD,2012,G13,Grants (e.g. foreign aid),Grants,0.08939569,0.978207569264366,Central government,9.138724
+BGD,2012,G14X,Other non-tax revenue,Other revenue,1.5350502,16.797204930581987,Central government,9.138724
+BGD,2013,G1111,Personal income tax,Taxes,0.72323436,7.835058423006826,Central government,9.2307462
+BGD,2013,G1112,Corporate income tax,Taxes,1.6721627,18.11514105506939,Central government,9.2307462
+BGD,2013,G11412,VAT / sales tax,Taxes,2.6914368,29.157304652713872,Central government,9.2307462
+BGD,2013,G1142,Excise taxes,Taxes,1.1353815,12.299996898517273,Central government,9.2307462
+BGD,2013,G114X,Other goods & services taxes,Taxes,0.05229260000000013,0.566504578254451,Central government,9.2307462
+BGD,2013,G115,Trade taxes (customs),Taxes,0.88655117,9.604328273251642,Central government,9.2307462
+BGD,2013,G11NEC,Other taxes,Taxes,0.3094059299999999,3.3519059271115927,Central government,9.2307462
+BGD,2013,G13,Grants (e.g. foreign aid),Grants,0.26730147,2.895773140542723,Central government,9.2307462
+BGD,2013,G14X,Other non-tax revenue,Other revenue,1.4929797,16.173987051532237,Central government,9.2307462
+BGD,2014,G1111,Personal income tax,Taxes,0.6736387,7.379037855558164,Central government,9.1290858
+BGD,2014,G1112,Corporate income tax,Taxes,1.6765585,18.365020653590438,Central government,9.1290858
+BGD,2014,G11412,VAT / sales tax,Taxes,2.5498784,27.931366236337194,Central government,9.1290858
+BGD,2014,G1142,Excise taxes,Taxes,1.1139419,12.202118804920778,Central government,9.1290858
+BGD,2014,G114X,Other goods & services taxes,Taxes,0.050675000000000026,0.5550939150770438,Central government,9.1290858
+BGD,2014,G115,Trade taxes (customs),Taxes,0.81763999,8.956427886978878,Central government,9.1290858
+BGD,2014,G11NEC,Other taxes,Taxes,0.30407562,3.3308441319246045,Central government,9.1290858
+BGD,2014,G13,Grants (e.g. foreign aid),Grants,0.36474783,3.9954474784520158,Central government,9.1290858
+BGD,2014,G14X,Other non-tax revenue,Other revenue,1.5779299,17.284643037160883,Central government,9.1290858
+BGD,2015,G1111,Personal income tax,Taxes,0.71712039,8.73110689855129,Central government,8.213396
+BGD,2015,G1112,Corporate income tax,Taxes,1.5255477,18.57389670308922,Central government,8.213396
+BGD,2015,G11412,VAT / sales tax,Taxes,2.4974602,30.407156573915415,Central government,8.213396
+BGD,2015,G1142,Excise taxes,Taxes,1.1609346,14.134647733035292,Central government,8.213396
+BGD,2015,G114X,Other goods & services taxes,Taxes,0.055011900000000225,0.6697826282591347,Central government,8.213396
+BGD,2015,G115,Trade taxes (customs),Taxes,0.82162867,10.00351942117351,Central government,8.213396
+BGD,2015,G11NEC,Other taxes,Taxes,0.30042435,3.6577360668517422,Central government,8.213396
+BGD,2015,G13,Grants (e.g. foreign aid),Grants,0.13679923,1.6655623203929601,Central government,8.213396
+BGD,2015,G14X,Other non-tax revenue,Other revenue,0.99846902,12.156591654731427,Central government,8.213396
+BGD,2016,G1111,Personal income tax,Taxes,0.71086547,8.424535243431748,Central government,8.4380378
+BGD,2016,G1112,Corporate income tax,Taxes,1.4607213,17.311149003596192,Central government,8.4380378
+BGD,2016,G11412,VAT / sales tax,Taxes,2.628097,31.14583101027153,Central government,8.4380378
+BGD,2016,G1142,Excise taxes,Taxes,1.2589439,14.91986557604692,Central government,8.4380378
+BGD,2016,G114X,Other goods & services taxes,Taxes,0.0751541,0.8906584872358394,Central government,8.4380378
+BGD,2016,G115,Trade taxes (customs),Taxes,0.85827238,10.171468750302424,Central government,8.4380378
+BGD,2016,G11NEC,Other taxes,Taxes,0.32327162000000054,3.831123146115509,Central government,8.4380378
+BGD,2016,G13,Grants (e.g. foreign aid),Grants,0.10472965,1.2411611826598803,Central government,8.4380378
+BGD,2016,G14X,Other non-tax revenue,Other revenue,1.0179824,12.064207600339955,Central government,8.4380378
+BGD,2017,G1111,Personal income tax,Taxes,0.76798043,9.518656740822856,Central government,8.0681597
+BGD,2017,G1112,Corporate income tax,Taxes,1.2126504,15.03007427444672,Central government,8.0681597
+BGD,2017,G11412,VAT / sales tax,Taxes,2.5465815,31.563350072644134,Central government,8.0681597
+BGD,2017,G1142,Excise taxes,Taxes,1.2667955,15.701170308882816,Central government,8.0681597
+BGD,2017,G114X,Other goods & services taxes,Taxes,0.07383630000000019,0.9151566462604006,Central government,8.0681597
+BGD,2017,G115,Trade taxes (customs),Taxes,0.82173197,10.184874835144099,Central government,8.0681597
+BGD,2017,G11NEC,Other taxes,Taxes,0.3132657299999997,3.882740804389103,Central government,8.0681597
+BGD,2017,G13,Grants (e.g. foreign aid),Grants,0.06655747,0.8249399147678995,Central government,8.0681597
+BGD,2017,G14X,Other non-tax revenue,Other revenue,0.99876043,12.37903640264197,Central government,8.0681597
+BGD,2018,G1111,Personal income tax,Taxes,0.80322328,9.043379073243313,Central government,8.8818933
+BGD,2018,G1112,Corporate income tax,Taxes,1.49635,16.847196306670337,Central government,8.8818933
+BGD,2018,G11412,VAT / sales tax,Taxes,2.8613667,32.21572927474821,Central government,8.8818933
+BGD,2018,G1142,Excise taxes,Taxes,1.4379971,16.19020913029883,Central government,8.8818933
+BGD,2018,G114X,Other goods & services taxes,Taxes,0.08019450000000017,0.9028987096703827,Central government,8.8818933
+BGD,2018,G115,Trade taxes (customs),Taxes,0.92553623,10.420483547128404,Central government,8.8818933
+BGD,2018,G11NEC,Other taxes,Taxes,0.32096016999999977,3.6136458653471975,Central government,8.8818933
+BGD,2018,G13,Grants (e.g. foreign aid),Grants,0.0614569,0.691934680188063,Central government,8.8818933
+BGD,2018,G14X,Other non-tax revenue,Other revenue,0.89480835,10.074522624585008,Central government,8.8818933
+BGD,2019,G1111,Personal income tax,Taxes,0.80778843,9.918862700616582,Central government,8.1439621
+BGD,2019,G1112,Corporate income tax,Taxes,1.4599578,17.926873459792244,Central government,8.1439621
+BGD,2019,G11412,VAT / sales tax,Taxes,2.8731788,35.27986409946762,Central government,8.1439621
+BGD,2019,G1142,Excise taxes,Taxes,1.301951,15.986702374445326,Central government,8.1439621
+BGD,2019,G114X,Other goods & services taxes,Taxes,0.07923410000000053,0.9729183161325171,Central government,8.1439621
+BGD,2019,G115,Trade taxes (customs),Taxes,0.82272566,10.102277476064074,Central government,8.1439621
+BGD,2019,G11NEC,Other taxes,Taxes,0.15279313999999916,1.876152369818022,Central government,8.1439621
+BGD,2019,G13,Grants (e.g. foreign aid),Grants,0.05783639,0.7101750782804774,Central government,8.1439621
+BGD,2019,G14X,Other non-tax revenue,Other revenue,0.58849689,7.226174125383129,Central government,8.1439621
+BGD,2020,G1111,Personal income tax,Taxes,0.70764388,8.356907114675932,Central government,8.4677724
+BGD,2020,G1112,Corporate income tax,Taxes,1.6711846,19.73582315680714,Central government,8.4677724
+BGD,2020,G11412,VAT / sales tax,Taxes,2.5563618,30.189306680792285,Central government,8.4677724
+BGD,2020,G1142,Excise taxes,Taxes,1.0260325,12.116911544743004,Central government,8.4677724
+BGD,2020,G114X,Other goods & services taxes,Taxes,0.07245049999999997,0.8556028194744346,Central government,8.4677724
+BGD,2020,G115,Trade taxes (customs),Taxes,0.74818363,8.835660531157377,Central government,8.4677724
+BGD,2020,G11NEC,Other taxes,Taxes,0.21967627,2.594262786090189,Central government,8.4677724
+BGD,2020,G13,Grants (e.g. foreign aid),Grants,0.08077669,0.953930803953215,Central government,8.4677724
+BGD,2020,G14X,Other non-tax revenue,Other revenue,1.3854626,16.361594562306422,Central government,8.4677724
+BGD,2021,G1111,Personal income tax,Taxes,0.8157161,8.71316633705905,Central government,9.3618791
+BGD,2021,G1112,Corporate income tax,Taxes,1.6583267,17.71360940195519,Central government,9.3618791
+BGD,2021,G11412,VAT / sales tax,Taxes,2.9276068,31.27157232510816,Central government,9.3618791
+BGD,2021,G1142,Excise taxes,Taxes,1.0927083,11.671890717597726,Central government,9.3618791
+BGD,2021,G114X,Other goods & services taxes,Taxes,0.0705433000000002,0.753516458563291,Central government,9.3618791
+BGD,2021,G115,Trade taxes (customs),Taxes,0.89490239,9.55900389792685,Central government,9.3618791
+BGD,2021,G11NEC,Other taxes,Taxes,0.18256096,1.9500461142463457,Central government,9.3618791
+BGD,2021,G13,Grants (e.g. foreign aid),Grants,0.05353827,0.5718752540355381,Central government,9.3618791
+BGD,2021,G14X,Other non-tax revenue,Other revenue,1.6659763,17.795319493507836,Central government,9.3618791
+BGD,2022,G1111,Personal income tax,Taxes,0.7888278,8.845826294534941,Central government,8.917514
+BGD,2022,G1112,Corporate income tax,Taxes,1.6316877,18.297562485918018,Central government,8.917514
+BGD,2022,G11412,VAT / sales tax,Taxes,2.9517972,33.10112205464186,Central government,8.917514
+BGD,2022,G1142,Excise taxes,Taxes,1.0370077,11.628887800728121,Central government,8.917514
+BGD,2022,G114X,Other goods & services taxes,Taxes,0.036709499999999506,0.411656207298001,Central government,8.917514
+BGD,2022,G115,Trade taxes (customs),Taxes,0.86448779,9.694268919130895,Central government,8.917514
+BGD,2022,G11NEC,Other taxes,Taxes,0.64187193,7.197879684410072,Central government,8.917514
+BGD,2022,G13,Grants (e.g. foreign aid),Grants,0.05843822,0.6553196313337559,Central government,8.917514
+BGD,2022,G14X,Other non-tax revenue,Other revenue,0.90668618,10.167476922004322,Central government,8.917514
+BGD,2023,G1111,Personal income tax,Taxes,0.74498279,9.076111729886785,Central government,8.2081712
+BGD,2023,G1112,Corporate income tax,Taxes,1.6407168,19.988822820863167,Central government,8.2081712
+BGD,2023,G11412,VAT / sales tax,Taxes,2.8205846,34.36313068815728,Central government,8.2081712
+BGD,2023,G1142,Excise taxes,Taxes,0.99164032,12.081135914805072,Central government,8.2081712
+BGD,2023,G114X,Other goods & services taxes,Taxes,0.057294379999999756,0.6980163855524616,Central government,8.2081712
+BGD,2023,G115,Trade taxes (customs),Taxes,0.80563957,9.815092173254023,Central government,8.2081712
+BGD,2023,G11NEC,Other taxes,Taxes,0.23579102999999962,2.872637813801153,Central government,8.2081712
+BGD,2023,G13,Grants (e.g. foreign aid),Grants,0.06110213,0.7444061342867627,Central government,8.2081712
+BGD,2023,G14X,Other non-tax revenue,Other revenue,0.85041959,10.360646339393304,Central government,8.2081712
+BGD,2024,G1111,Personal income tax,Taxes,0.64024016,7.736585455793095,Central government,8.2754874
+BGD,2024,G1112,Corporate income tax,Taxes,1.8267704,22.074474846615896,Central government,8.2754874
+BGD,2024,G11412,VAT / sales tax,Taxes,2.7924378,33.74348411647103,Central government,8.2754874
+BGD,2024,G1142,Excise taxes,Taxes,1.0741898,12.980380961171344,Central government,8.2754874
+BGD,2024,G114X,Other goods & services taxes,Taxes,0.08129679999999961,0.982380799858786,Central government,8.2754874
+BGD,2024,G115,Trade taxes (customs),Taxes,0.76953153,9.298926894514409,Central government,8.2754874
+BGD,2024,G11NEC,Other taxes,Taxes,0.20653047000000027,2.4956894774924994,Central government,8.2754874
+BGD,2024,G13,Grants (e.g. foreign aid),Grants,0.09960713,1.2036406358065574,Central government,8.2754874
+BGD,2024,G14X,Other non-tax revenue,Other revenue,0.78488338,9.484436812276389,Central government,8.2754874

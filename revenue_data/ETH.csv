@@ -1,0 +1,299 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+ETH,1987,G111,Income taxes,Taxes,4.0203946,27.904183662024383,General government,14.407856
+ETH,1987,G114,Goods & services taxes,Taxes,1.9042613,13.216826292544845,General government,14.407856
+ETH,1987,G115,Trade taxes (customs),Taxes,3.166745,21.979293796384418,General government,14.407856
+ETH,1987,G11NEC,Other taxes,Taxes,0.18970869999999987,1.3167031930357984,General government,14.407856
+ETH,1987,G13,Grants (e.g. foreign aid),Grants,1.428409,9.91409825306416,General government,14.407856
+ETH,1987,G14X,Other non-tax revenue,Other revenue,3.6983372,25.668893414814807,General government,14.407856
+ETH,1988,G111,Income taxes,Taxes,4.3339483,24.674627507744077,General government,17.564392
+ETH,1988,G114,Goods & services taxes,Taxes,2.113818,12.034677886943085,General government,17.564392
+ETH,1988,G115,Trade taxes (customs),Taxes,3.0448237,17.33520693457536,General government,17.564392
+ETH,1988,G11NEC,Other taxes,Taxes,0.42788797,2.436110341878045,General government,17.564392
+ETH,1988,G13,Grants (e.g. foreign aid),Grants,2.7222024,15.498415202757942,General government,17.564392
+ETH,1988,G14X,Other non-tax revenue,Other revenue,4.9217112,28.020959677966644,General government,17.564392
+ETH,1989,G111,Income taxes,Taxes,4.3218095,22.60653012285532,General government,19.117527
+ETH,1989,G114,Goods & services taxes,Taxes,2.0582773,10.766441182481394,General government,19.117527
+ETH,1989,G115,Trade taxes (customs),Taxes,2.7543063,14.407231123565303,General government,19.117527
+ETH,1989,G11NEC,Other taxes,Taxes,0.51389098,2.6880620071832513,General government,19.117527
+ETH,1989,G13,Grants (e.g. foreign aid),Grants,3.2512247,17.006512923978086,General government,19.117527
+ETH,1989,G14X,Other non-tax revenue,Other revenue,6.2180181,32.52522201224039,General government,19.117527
+ETH,1990,G111,Income taxes,Taxes,3.5460388,26.08634322847073,General government,13.593468
+ETH,1990,G114,Goods & services taxes,Taxes,1.9163511,14.097587578809751,General government,13.593468
+ETH,1990,G115,Trade taxes (customs),Taxes,2.1492947,15.811231180925892,General government,13.593468
+ETH,1990,G11NEC,Other taxes,Taxes,0.67020501,4.930345918465601,General government,13.593468
+ETH,1990,G13,Grants (e.g. foreign aid),Grants,1.5396214,11.326185230206345,General government,13.593468
+ETH,1990,G14X,Other non-tax revenue,Other revenue,3.7719573,27.748306863121673,General government,13.593468
+ETH,1991,G111,Income taxes,Taxes,2.8837172,26.23043826046396,General government,10.993782
+ETH,1991,G114,Goods & services taxes,Taxes,1.7481578,15.901332225798182,General government,10.993782
+ETH,1991,G115,Trade taxes (customs),Taxes,1.8088494,16.453386104981888,General government,10.993782
+ETH,1991,G11NEC,Other taxes,Taxes,0.68150913,6.199041694659764,General government,10.993782
+ETH,1991,G13,Grants (e.g. foreign aid),Grants,1.6069596,14.616986220028739,General government,10.993782
+ETH,1991,G14X,Other non-tax revenue,Other revenue,2.2645886,20.59881303813374,General government,10.993782
+ETH,1992,G111,Income taxes,Taxes,2.1817755,24.124894937545477,General government,9.0436684
+ETH,1992,G114,Goods & services taxes,Taxes,1.2817766,14.17319325861174,General government,9.0436684
+ETH,1992,G115,Trade taxes (customs),Taxes,1.3832057,15.294741456907023,General government,9.0436684
+ETH,1992,G11NEC,Other taxes,Taxes,0.47339520000000046,5.2345484051582485,General government,9.0436684
+ETH,1992,G13,Grants (e.g. foreign aid),Grants,1.7849994,19.737559152434205,General government,9.0436684
+ETH,1992,G14X,Other non-tax revenue,Other revenue,1.9385159,21.435061683597336,General government,9.0436684
+ETH,1993,G111,Income taxes,Taxes,1.8902081,20.167332189689105,General government,9.3726234
+ETH,1993,G114,Goods & services taxes,Taxes,1.506176,16.069951095933394,General government,9.3726234
+ETH,1993,G115,Trade taxes (customs),Taxes,1.7646111,18.827291153451675,General government,9.3726234
+ETH,1993,G11NEC,Other taxes,Taxes,0.49194682,5.248763317965462,General government,9.3726234
+ETH,1993,G13,Grants (e.g. foreign aid),Grants,1.1944495,12.744025300869284,General government,9.3726234
+ETH,1993,G14X,Other non-tax revenue,Other revenue,2.5252319,26.942636942091074,General government,9.3726234
+ETH,1994,G111,Income taxes,Taxes,2.2804918,19.18759231669332,General government,11.885242
+ETH,1994,G114,Goods & services taxes,Taxes,1.8763533,15.78725350491598,General government,11.885242
+ETH,1994,G115,Trade taxes (customs),Taxes,3.0433699,25.606292866343882,General government,11.885242
+ETH,1994,G11NEC,Other taxes,Taxes,0.22248190000000034,1.871917274617404,General government,11.885242
+ETH,1994,G13,Grants (e.g. foreign aid),Grants,2.3818256,20.040194216994536,General government,11.885242
+ETH,1994,G14X,Other non-tax revenue,Other revenue,2.0807196,17.506749820434873,General government,11.885242
+ETH,1995,G111,Income taxes,Taxes,2.645815,18.61993547734198,General government,14.209582
+ETH,1995,G114,Goods & services taxes,Taxes,1.7477311,12.299665817052185,General government,14.209582
+ETH,1995,G115,Trade taxes (customs),Taxes,3.5561509,25.0264286451213,General government,14.209582
+ETH,1995,G13,Grants (e.g. foreign aid),Grants,2.2827391,16.064787127446817,General government,14.209582
+ETH,1995,G14X,Other non-tax revenue,Other revenue,3.9771458,27.989182229287255,General government,14.209582
+ETH,1996,G111,Income taxes,Taxes,3.1390914,21.751208892694066,General government,14.431802
+ETH,1996,G114,Goods & services taxes,Taxes,1.8790707,13.020347008641057,General government,14.431802
+ETH,1996,G115,Trade taxes (customs),Taxes,3.3551732,23.248470288048576,General government,14.431802
+ETH,1996,G11NEC,Other taxes,Taxes,0.08080450000000083,0.5599058246503164,General government,14.431802
+ETH,1996,G13,Grants (e.g. foreign aid),Grants,1.9631403,13.602877173619762,General government,14.431802
+ETH,1996,G14X,Other non-tax revenue,Other revenue,4.0145216,27.817188733603746,General government,14.431802
+ETH,1997,G111,Income taxes,Taxes,3.2872438,21.063417550245994,General government,15.606412
+ETH,1997,G114,Goods & services taxes,Taxes,2.079632,13.32549693054503,General government,15.606412
+ETH,1997,G115,Trade taxes (customs),Taxes,3.8707321,24.802190347865448,General government,15.606412
+ETH,1997,G11NEC,Other taxes,Taxes,0.01669756,0.10699166224004605,General government,15.606412
+ETH,1997,G13,Grants (e.g. foreign aid),Grants,2.598762,16.651886032825548,General government,15.606412
+ETH,1997,G14X,Other non-tax revenue,Other revenue,3.7533449,24.050017476277937,General government,15.606412
+ETH,1998,G111,Income taxes,Taxes,3.3587497,19.942135828201476,General government,16.842477
+ETH,1998,G114,Goods & services taxes,Taxes,2.1217525,12.597627191102108,General government,16.842477
+ETH,1998,G115,Trade taxes (customs),Taxes,3.9860076,23.666397341678476,General government,16.842477
+ETH,1998,G13,Grants (e.g. foreign aid),Grants,2.2878474,13.583793875738222,General government,16.842477
+ETH,1998,G14X,Other non-tax revenue,Other revenue,5.0881201,30.210045763279734,General government,16.842477
+ETH,1999,G111,Income taxes,Taxes,3.3734571,19.15494746759119,General government,17.611414
+ETH,1999,G114,Goods & services taxes,Taxes,2.02289,11.486244091473859,General government,17.611414
+ETH,1999,G115,Trade taxes (customs),Taxes,3.8622278,21.930253868315173,General government,17.611414
+ETH,1999,G13,Grants (e.g. foreign aid),Grants,2.9409352,16.699029390825746,General government,17.611414
+ETH,1999,G14X,Other non-tax revenue,Other revenue,5.4119039,30.72952518179404,General government,17.611414
+ETH,2000,G111,Income taxes,Taxes,3.5258746,21.090376554371467,General government,16.717931
+ETH,2000,G114,Goods & services taxes,Taxes,2.1446812,12.828628135862028,General government,16.717931
+ETH,2000,G115,Trade taxes (customs),Taxes,3.9861606,23.843623950834587,General government,16.717931
+ETH,2000,G13,Grants (e.g. foreign aid),Grants,2.5683269,15.362707861397443,General government,16.717931
+ETH,2000,G14X,Other non-tax revenue,Other revenue,4.4928877,26.874663497534474,General government,16.717931
+ETH,2001,G111,Income taxes,Taxes,3.9871426,21.34711257032262,General government,18.677667
+ETH,2001,G114,Goods & services taxes,Taxes,2.0151535,10.78910711921355,General government,18.677667
+ETH,2001,G115,Trade taxes (customs),Taxes,4.8488725,25.960803884125358,General government,18.677667
+ETH,2001,G13,Grants (e.g. foreign aid),Grants,3.8333589,20.523756526979522,General government,18.677667
+ETH,2001,G14X,Other non-tax revenue,Other revenue,3.9931393,21.379218828561406,General government,18.677667
+ETH,2002,G111,Income taxes,Taxes,4.6214923,24.189564366392023,General government,19.105314
+ETH,2002,G114,Goods & services taxes,Taxes,2.2337578,11.691813936816523,General government,19.105314
+ETH,2002,G115,Trade taxes (customs),Taxes,4.9328661,25.819340224096706,General government,19.105314
+ETH,2002,G13,Grants (e.g. foreign aid),Grants,3.6154961,18.92403361299322,General government,19.105314
+ETH,2002,G14X,Other non-tax revenue,Other revenue,3.701702,19.37524785970153,General government,19.105314
+ETH,2003,G1111,Personal income tax,Taxes,1.1260266,5.249669012924231,General government,21.449478
+ETH,2003,G1112,Corporate income tax,Taxes,2.2153833,10.328378620682518,General government,21.449478
+ETH,2003,G1113,Other income taxes,Taxes,0.5484450000000001,2.556915371087353,General government,21.449478
+ETH,2003,G11412,VAT / sales tax,Taxes,1.8775192,8.753216278736481,General government,21.449478
+ETH,2003,G1142,Excise taxes,Taxes,0.37725456,1.758805319178397,General government,21.449478
+ETH,2003,G115,Trade taxes (customs),Taxes,2.2666763,10.567512645296075,General government,21.449478
+ETH,2003,G11NEC,Other taxes,Taxes,2.7296923,12.726147927702483,General government,21.449478
+ETH,2003,G13,Grants (e.g. foreign aid),Grants,6.3814595,29.751117952614045,General government,21.449478
+ETH,2003,G14X,Other non-tax revenue,Other revenue,3.9270208,18.308234820446447,General government,21.449478
+ETH,2004,G1111,Personal income tax,Taxes,1.0844626,5.290630528795902,General government,20.497795
+ETH,2004,G1112,Corporate income tax,Taxes,1.4906141,7.272070483678854,General government,20.497795
+ETH,2004,G1113,Other income taxes,Taxes,1.0064714,4.910144725322894,General government,20.497795
+ETH,2004,G11412,VAT / sales tax,Taxes,2.1427332,10.45348145983507,General government,20.497795
+ETH,2004,G1142,Excise taxes,Taxes,0.32210665,1.5714209747926544,General government,20.497795
+ETH,2004,G115,Trade taxes (customs),Taxes,2.7951281,13.636237946569375,General government,20.497795
+ETH,2004,G11NEC,Other taxes,Taxes,3.6349603,17.73342108260913,General government,20.497795
+ETH,2004,G13,Grants (e.g. foreign aid),Grants,4.5776314,22.332311353489484,General government,20.497795
+ETH,2004,G14X,Other non-tax revenue,Other revenue,3.4436872,16.80028120097796,General government,20.497795
+ETH,2005,G1111,Personal income tax,Taxes,1.0546686,5.619582505498771,General government,18.767739
+ETH,2005,G1112,Corporate income tax,Taxes,1.5966397,8.507362905944868,General government,18.767739
+ETH,2005,G1113,Other income taxes,Taxes,0.6734747999999999,3.588470543234418,General government,18.767739
+ETH,2005,G11412,VAT / sales tax,Taxes,2.4032279,12.80510054396855,General government,18.767739
+ETH,2005,G1142,Excise taxes,Taxes,0.3030189,1.6145732500953203,General government,18.767739
+ETH,2005,G115,Trade taxes (customs),Taxes,2.3326609,12.429098946248155,General government,18.767739
+ETH,2005,G11NEC,Other taxes,Taxes,3.1853652000000006,16.972556641531373,General government,18.767739
+ETH,2005,G13,Grants (e.g. foreign aid),Grants,4.2523638,22.657836990213113,General government,18.767739
+ETH,2005,G14X,Other non-tax revenue,Other revenue,2.9663196,15.805417673265433,General government,18.767739
+ETH,2006,G1111,Personal income tax,Taxes,1.0655032,5.829080387782853,General government,18.279096
+ETH,2006,G1112,Corporate income tax,Taxes,1.3126101,7.180935534229921,General government,18.279096
+ETH,2006,G1113,Other income taxes,Taxes,0.5010600000000003,2.7411640050470787,General government,18.279096
+ETH,2006,G11412,VAT / sales tax,Taxes,2.1391651,11.7027948209255,General government,18.279096
+ETH,2006,G1142,Excise taxes,Taxes,0.33635354,1.8400994228598615,General government,18.279096
+ETH,2006,G115,Trade taxes (customs),Taxes,2.2267392,12.18188908247979,General government,18.279096
+ETH,2006,G11NEC,Other taxes,Taxes,3.0907438999999988,16.9086255687918,General government,18.279096
+ETH,2006,G13,Grants (e.g. foreign aid),Grants,3.558208,19.46599547373678,General government,18.279096
+ETH,2006,G14X,Other non-tax revenue,Other revenue,4.0487128,22.14941482882961,General government,18.279096
+ETH,2007,G1111,Personal income tax,Taxes,1.054868,6.22194558172986,General government,16.953989
+ETH,2007,G1112,Corporate income tax,Taxes,1.3302194,7.846055353429382,General government,16.953989
+ETH,2007,G1113,Other income taxes,Taxes,0.42415380000000025,2.5017934584080024,General government,16.953989
+ETH,2007,G11412,VAT / sales tax,Taxes,2.1561383,12.717586626273174,General government,16.953989
+ETH,2007,G1142,Excise taxes,Taxes,0.31232139,1.842170482553484,General government,16.953989
+ETH,2007,G115,Trade taxes (customs),Taxes,2.187261,12.901158168642937,General government,16.953989
+ETH,2007,G11NEC,Other taxes,Taxes,2.5488281,15.03379544680843,General government,16.953989
+ETH,2007,G13,Grants (e.g. foreign aid),Grants,4.3759558,25.810773343826106,General government,16.953989
+ETH,2007,G14X,Other non-tax revenue,Other revenue,2.5642437,15.124721538328616,General government,16.953989
+ETH,2008,G1111,Personal income tax,Taxes,1.0664299,6.718226856140047,General government,15.873681
+ETH,2008,G1112,Corporate income tax,Taxes,1.2154828,7.657220779477678,General government,15.873681
+ETH,2008,G1113,Other income taxes,Taxes,0.3676889000000001,2.316343008278925,General government,15.873681
+ETH,2008,G11412,VAT / sales tax,Taxes,1.8314079,11.53738631890108,General government,15.873681
+ETH,2008,G1142,Excise taxes,Taxes,0.28618409,1.8028842207424982,General government,15.873681
+ETH,2008,G115,Trade taxes (customs),Taxes,2.6365885,16.60981154906666,General government,15.873681
+ETH,2008,G11NEC,Other taxes,Taxes,2.1115952,13.30249234566324,General government,15.873681
+ETH,2008,G13,Grants (e.g. foreign aid),Grants,3.9622472,24.9611114145484,General government,15.873681
+ETH,2008,G14X,Other non-tax revenue,Other revenue,2.3960563,15.094522184236915,General government,15.873681
+ETH,2009,G1111,Personal income tax,Taxes,1.0454757,6.4612680070106885,General government,16.180658
+ETH,2009,G1112,Corporate income tax,Taxes,1.2815269,7.9201159425260546,General government,16.180658
+ETH,2009,G1113,Other income taxes,Taxes,0.42405570000000004,2.6207567785655113,General government,16.180658
+ETH,2009,G11412,VAT / sales tax,Taxes,1.9815705,12.246538179018579,General government,16.180658
+ETH,2009,G1142,Excise taxes,Taxes,0.30822343,1.9048880689145609,General government,16.180658
+ETH,2009,G115,Trade taxes (customs),Taxes,1.8410736,11.378236672772015,General government,16.180658
+ETH,2009,G11NEC,Other taxes,Taxes,1.7071643999999995,10.550648590328398,General government,16.180658
+ETH,2009,G13,Grants (e.g. foreign aid),Grants,4.2811941,26.458713932933033,General government,16.180658
+ETH,2009,G14X,Other non-tax revenue,Other revenue,3.310374,20.45883382793115,General government,16.180658
+ETH,2010,G1111,Personal income tax,Taxes,1.1377089,6.629045516578114,General government,17.162484
+ETH,2010,G1112,Corporate income tax,Taxes,1.9150745,11.158492324476034,General government,17.162484
+ETH,2010,G1113,Other income taxes,Taxes,0.5816970000000004,3.389351959764876,General government,17.162484
+ETH,2010,G11412,VAT / sales tax,Taxes,2.5676576,14.96087364824844,General government,17.162484
+ETH,2010,G1142,Excise taxes,Taxes,0.26864056,1.5652778138933725,General government,17.162484
+ETH,2010,G115,Trade taxes (customs),Taxes,2.4180967,14.08943279584728,General government,17.162484
+ETH,2010,G11NEC,Other taxes,Taxes,2.334372,13.60159724567988,General government,17.162484
+ETH,2010,G13,Grants (e.g. foreign aid),Grants,3.2067159,18.684450530214495,General government,17.162484
+ETH,2010,G14X,Other non-tax revenue,Other revenue,2.7325212,15.921478165297508,General government,17.162484
+ETH,2011,G1111,Personal income tax,Taxes,1.1131097,6.697007046994363,General government,16.621002
+ETH,2011,G1112,Corporate income tax,Taxes,1.9521691,11.745194763485255,General government,16.621002
+ETH,2011,G1113,Other income taxes,Taxes,0.5864454999999997,3.5283401502818013,General government,16.621002
+ETH,2011,G11412,VAT / sales tax,Taxes,3.0161792,18.146794837380195,General government,16.621002
+ETH,2011,G1142,Excise taxes,Taxes,0.16114347,0.9695171591507331,General government,16.621002
+ETH,2011,G115,Trade taxes (customs),Taxes,2.366076,14.235459133744172,General government,16.621002
+ETH,2011,G11NEC,Other taxes,Taxes,2.2557094,13.571440216333958,General government,16.621002
+ETH,2011,G13,Grants (e.g. foreign aid),Grants,3.2017158,19.263072880483563,General government,16.621002
+ETH,2011,G14X,Other non-tax revenue,Other revenue,1.9684542,11.843173812145963,General government,16.621002
+ETH,2012,G1111,Personal income tax,Taxes,1.1909445,7.69527866159415,General government,15.476301
+ETH,2012,G1112,Corporate income tax,Taxes,2.079409,13.436085146223716,General government,15.476301
+ETH,2012,G1113,Other income taxes,Taxes,0.4598806,2.9715149346263527,General government,15.476301
+ETH,2012,G11412,VAT / sales tax,Taxes,2.8890225,18.66739650513973,General government,15.476301
+ETH,2012,G1142,Excise taxes,Taxes,0.33096445,2.138524229996649,General government,15.476301
+ETH,2012,G115,Trade taxes (customs),Taxes,2.3571203,15.230514559998724,General government,15.476301
+ETH,2012,G11NEC,Other taxes,Taxes,2.165537,13.992600551069014,General government,15.476301
+ETH,2012,G13,Grants (e.g. foreign aid),Grants,1.7120831,11.062611688710906,General government,15.476301
+ETH,2012,G14X,Other non-tax revenue,Other revenue,2.2913397,14.805473722640762,General government,15.476301
+ETH,2013,G1111,Personal income tax,Taxes,1.3342675,8.431252620115222,General government,15.825258
+ETH,2013,G1112,Corporate income tax,Taxes,2.2420881,14.167782073425427,General government,15.825258
+ETH,2013,G1113,Other income taxes,Taxes,0.5018459999999996,3.1711710001138003,General government,15.825258
+ETH,2013,G11412,VAT / sales tax,Taxes,3.6338878,22.962581367645345,General government,15.825258
+ETH,2013,G1142,Excise taxes,Taxes,0.33622724,2.124624033939303,General government,15.825258
+ETH,2013,G115,Trade taxes (customs),Taxes,2.3305901,14.727027291783394,General government,15.825258
+ETH,2013,G11NEC,Other taxes,Taxes,1.9648143,12.415685546500123,General government,15.825258
+ETH,2013,G13,Grants (e.g. foreign aid),Grants,1.5128311,9.55959818826944,General government,15.825258
+ETH,2013,G14X,Other non-tax revenue,Other revenue,1.9687061,12.440277878207946,General government,15.825258
+ETH,2014,G1111,Personal income tax,Taxes,1.3005204,8.727495427280198,General government,14.901416
+ETH,2014,G1112,Corporate income tax,Taxes,2.5366984,17.023203700910038,General government,14.901416
+ETH,2014,G1113,Other income taxes,Taxes,0.4715685999999999,3.164589190718519,General government,14.901416
+ETH,2014,G11412,VAT / sales tax,Taxes,3.6652224,24.596470563602818,General government,14.901416
+ETH,2014,G1142,Excise taxes,Taxes,0.319291,2.1426889900932906,General government,14.901416
+ETH,2014,G115,Trade taxes (customs),Taxes,2.2879543,15.353938847153856,General government,14.901416
+ETH,2014,G11NEC,Other taxes,Taxes,1.96737,13.202570816088887,General government,14.901416
+ETH,2014,G13,Grants (e.g. foreign aid),Grants,1.1221451,7.530459521430716,General government,14.901416
+ETH,2014,G14X,Other non-tax revenue,Other revenue,1.2306455,8.258580929490192,General government,14.901416
+ETH,2015,G1111,Personal income tax,Taxes,1.5741384,10.235856564123944,General government,15.378668
+ETH,2015,G1112,Corporate income tax,Taxes,2.3451691,15.249494279674295,General government,15.378668
+ETH,2015,G1113,Other income taxes,Taxes,0.5709874000000004,3.7128534100445476,General government,15.378668
+ETH,2015,G11412,VAT / sales tax,Taxes,3.6506426,23.73835364189102,General government,15.378668
+ETH,2015,G1142,Excise taxes,Taxes,0.29405778,1.9121147528354017,General government,15.378668
+ETH,2015,G115,Trade taxes (customs),Taxes,2.1231756,13.805978497219684,General government,15.378668
+ETH,2015,G113,Property taxes,Taxes,0.14378624,0.9349720002603971,General government,15.378668
+ETH,2015,G11NEC,Other taxes,Taxes,2.0316462,13.210807316718446,General government,15.378668
+ETH,2015,G13,Grants (e.g. foreign aid),Grants,1.0031438,6.522956335980519,General government,15.378668
+ETH,2015,G14X,Other non-tax revenue,Other revenue,1.6419209,10.67661320125174,General government,15.378668
+ETH,2016,G1111,Personal income tax,Taxes,1.6417771,10.515776167691937,General government,15.612514
+ETH,2016,G1112,Corporate income tax,Taxes,2.3299856,14.923832865950802,General government,15.612514
+ETH,2016,G1113,Other income taxes,Taxes,0.5058023999999994,3.239724091340644,General government,15.612514
+ETH,2016,G11412,VAT / sales tax,Taxes,3.2038974,20.52134112642341,General government,15.612514
+ETH,2016,G1142,Excise taxes,Taxes,0.27589579,1.767145109557527,General government,15.612514
+ETH,2016,G115,Trade taxes (customs),Taxes,2.1363273,13.683428589501986,General government,15.612514
+ETH,2016,G113,Property taxes,Taxes,0.10403226,0.6663389082349431,General government,15.612514
+ETH,2016,G11NEC,Other taxes,Taxes,1.9520171399999997,12.502900253474222,General government,15.612514
+ETH,2016,G13,Grants (e.g. foreign aid),Grants,0.82994051,5.315866956397486,General government,15.612514
+ETH,2016,G14X,Other non-tax revenue,Other revenue,2.6328392,16.863645931427047,General government,15.612514
+ETH,2017,G1111,Personal income tax,Taxes,1.4502221,9.836448915254646,General government,14.74335
+ETH,2017,G1112,Corporate income tax,Taxes,2.3060478,15.641274106107861,General government,14.74335
+ETH,2017,G1113,Other income taxes,Taxes,0.5174626000000004,3.5098033814647103,General government,14.74335
+ETH,2017,G11412,VAT / sales tax,Taxes,4.5644069,30.95908916316047,General government,14.74335
+ETH,2017,G1142,Excise taxes,Taxes,0.44865208,3.0430809636970375,General government,14.74335
+ETH,2017,G115,Trade taxes (customs),Taxes,1.9266963,13.068239499425736,General government,14.74335
+ETH,2017,G113,Property taxes,Taxes,0.16852547,1.143060898447403,General government,14.74335
+ETH,2017,G11NEC,Other taxes,Taxes,0.08536782,0.5790259301914197,General government,14.74335
+ETH,2017,G13,Grants (e.g. foreign aid),Grants,0.68076122,4.617412025383167,General government,14.74335
+ETH,2017,G14X,Other non-tax revenue,Other revenue,2.5952078,17.602565116867545,General government,14.74335
+ETH,2018,G1111,Personal income tax,Taxes,1.5822132,12.105417688352105,General government,13.07029
+ETH,2018,G1112,Corporate income tax,Taxes,2.0331913,15.55582390971306,General government,13.07029
+ETH,2018,G1113,Other income taxes,Taxes,0.6951465000000003,5.318523911376837,General government,13.07029
+ETH,2018,G11412,VAT / sales tax,Taxes,4.0399193,30.909178708492043,General government,13.07029
+ETH,2018,G1142,Excise taxes,Taxes,0.39736133,3.0401875504825258,General government,13.07029
+ETH,2018,G115,Trade taxes (customs),Taxes,1.7372935,13.291927702764166,General government,13.07029
+ETH,2018,G113,Property taxes,Taxes,0.12766132,0.9767290534843082,General government,13.07029
+ETH,2018,G11NEC,Other taxes,Taxes,0.07887664,0.6034804115234162,General government,13.07029
+ETH,2018,G13,Grants (e.g. foreign aid),Grants,0.81422573,6.229591912299433,General government,13.07029
+ETH,2018,G14X,Other non-tax revenue,Other revenue,1.5644012,11.969139151512111,General government,13.07029
+ETH,2019,G1111,Personal income tax,Taxes,1.3237007,10.32579699206939,General government,12.819356
+ETH,2019,G1112,Corporate income tax,Taxes,2.1668347,16.902835533418983,General government,12.819356
+ETH,2019,G1113,Other income taxes,Taxes,0.4658199999999999,3.633723812978087,General government,12.819356
+ETH,2019,G11412,VAT / sales tax,Taxes,3.1264112,24.38820751921643,General government,12.819356
+ETH,2019,G1142,Excise taxes,Taxes,0.43102576,3.3623042551178095,General government,12.819356
+ETH,2019,G115,Trade taxes (customs),Taxes,1.4598712,11.388022719764923,General government,12.819356
+ETH,2019,G113,Property taxes,Taxes,0.12145769,0.9474554558033371,General government,12.819356
+ETH,2019,G11NEC,Other taxes,Taxes,0.88194338,6.879779016797008,General government,12.819356
+ETH,2019,G13,Grants (e.g. foreign aid),Grants,1.249428,9.746417663907916,General government,12.819356
+ETH,2019,G14X,Other non-tax revenue,Other revenue,1.5928636,12.425457030926115,General government,12.819356
+ETH,2020,G1111,Personal income tax,Taxes,1.4779013,12.626294843060663,General government,11.704948
+ETH,2020,G1112,Corporate income tax,Taxes,1.9163435,16.37207982128632,General government,11.704948
+ETH,2020,G1113,Other income taxes,Taxes,0.44291849999999977,3.7840277780702682,General government,11.704948
+ETH,2020,G11412,VAT / sales tax,Taxes,3.2255756,27.557367034038272,General government,11.704948
+ETH,2020,G1142,Excise taxes,Taxes,0.39821603,3.402116911334397,General government,11.704948
+ETH,2020,G115,Trade taxes (customs),Taxes,1.5948397,13.62534580598746,General government,11.704948
+ETH,2020,G113,Property taxes,Taxes,0.08106034,0.6925305180520133,General government,11.704948
+ETH,2020,G11NEC,Other taxes,Taxes,0.09385725999999964,0.8018596626999376,General government,11.704948
+ETH,2020,G13,Grants (e.g. foreign aid),Grants,1.2047666,10.292797163566828,General government,11.704948
+ETH,2020,G14X,Other non-tax revenue,Other revenue,1.2694696,10.845580461903838,General government,11.704948
+ETH,2021,G1111,Personal income tax,Taxes,1.5211167,13.78861579181253,General government,11.031685
+ETH,2021,G1112,Corporate income tax,Taxes,1.9328409,17.520812543048894,General government,11.031685
+ETH,2021,G1113,Other income taxes,Taxes,0.3857067999999999,3.4963542728112023,General government,11.031685
+ETH,2021,G11412,VAT / sales tax,Taxes,2.8093997,25.466641099222294,General government,11.031685
+ETH,2021,G1142,Excise taxes,Taxes,0.20089985,1.821116581181949,General government,11.031685
+ETH,2021,G115,Trade taxes (customs),Taxes,1.3332931,12.086032776955694,General government,11.031685
+ETH,2021,G113,Property taxes,Taxes,0.09622526,0.8722625552709182,General government,11.031685
+ETH,2021,G11NEC,Other taxes,Taxes,0.67608762,6.128597781998547,General government,11.031685
+ETH,2021,G13,Grants (e.g. foreign aid),Grants,0.79026246,7.163569656182605,General government,11.031685
+ETH,2021,G14X,Other non-tax revenue,Other revenue,1.2858529,11.655996941515362,General government,11.031685
+ETH,2022,G1111,Personal income tax,Taxes,1.373399,16.08419565152129,General government,8.5388104
+ETH,2022,G1112,Corporate income tax,Taxes,1.6104794,18.860699448845253,General government,8.5388104
+ETH,2022,G1113,Other income taxes,Taxes,0.34239320000000006,4.009846532981647,General government,8.5388104
+ETH,2022,G11412,VAT / sales tax,Taxes,2.4258128,28.409258845510077,General government,8.5388104
+ETH,2022,G1142,Excise taxes,Taxes,0.16847032,1.9729951662658856,General government,8.5388104
+ETH,2022,G115,Trade taxes (customs),Taxes,1.095997,12.83547620282262,General government,8.5388104
+ETH,2022,G113,Property taxes,Taxes,0.07190965,0.8421506640331164,General government,8.5388104
+ETH,2022,G11NEC,Other taxes,Taxes,0.00511477,0.059900263064507527,General government,8.5388104
+ETH,2022,G13,Grants (e.g. foreign aid),Grants,0.43353964,5.077283726324328,General government,8.5388104
+ETH,2022,G14X,Other non-tax revenue,Other revenue,1.0116948,11.84819349863128,General government,8.5388104
+ETH,2023,G1111,Personal income tax,Taxes,1.2632773,15.366008434500431,General government,8.2212456
+ETH,2023,G1112,Corporate income tax,Taxes,1.4113115,17.1666382453856,General government,8.2212456
+ETH,2023,G1113,Other income taxes,Taxes,0.26703620000000017,3.2481233546403048,General government,8.2212456
+ETH,2023,G11412,VAT / sales tax,Taxes,2.5258367,30.72328461563486,General government,8.2212456
+ETH,2023,G1142,Excise taxes,Taxes,0.2059444,2.505026716967154,General government,8.2212456
+ETH,2023,G115,Trade taxes (customs),Taxes,1.0186029,12.389885223779928,General government,8.2212456
+ETH,2023,G113,Property taxes,Taxes,0.10301746,1.2530638833301375,General government,8.2212456
+ETH,2023,G11NEC,Other taxes,Taxes,0.02747341,0.3341757583900926,General government,8.2212456
+ETH,2023,G13,Grants (e.g. foreign aid),Grants,0.36830368,4.479901169234616,General government,8.2212456
+ETH,2023,G14X,Other non-tax revenue,Other revenue,1.0304421,12.533892598136877,General government,8.2212456
+ETH,2024,G1111,Personal income tax,Taxes,1.2151719,16.09695788596678,General government,7.5490779
+ETH,2024,G1112,Corporate income tax,Taxes,1.3360959,17.698795893743824,General government,7.5490779
+ETH,2024,G1113,Other income taxes,Taxes,0.2686116999999999,3.5582054049949154,General government,7.5490779
+ETH,2024,G11412,VAT / sales tax,Taxes,2.1991808,29.13178022074632,General government,7.5490779
+ETH,2024,G1142,Excise taxes,Taxes,0.16756322,2.219651471184436,General government,7.5490779
+ETH,2024,G115,Trade taxes (customs),Taxes,0.72202302,9.564386853941034,General government,7.5490779
+ETH,2024,G113,Property taxes,Taxes,0.08695865,1.1519108752189915,General government,7.5490779
+ETH,2024,G11NEC,Other taxes,Taxes,0.16300545,2.15927628332507,General government,7.5490779
+ETH,2024,G13,Grants (e.g. foreign aid),Grants,0.28106982,3.723233770922668,General government,7.5490779
+ETH,2024,G14X,Other non-tax revenue,Other revenue,1.1093975,14.69580133995596,General government,7.5490779

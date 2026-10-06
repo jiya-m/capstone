@@ -1,0 +1,302 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+UGA,2005,GF01,General public services,Government spending,15.966796224084248,2.3137412393026775,Central government (budgetary),14.49095489684174
+UGA,2005,GF02,Defence,Government spending,11.54053498739016,1.672333719876948,Central government (budgetary),14.49095489684174
+UGA,2005,GF03,Public order and safety,Government spending,7.54424315403058,1.093232872758642,Central government (budgetary),14.49095489684174
+UGA,2005,GF04,Economic affairs,Government spending,17.46182633952703,2.530385379025693,Central government (budgetary),14.49095489684174
+UGA,2005,GF05,Environmental protection,Government spending,0.4829780761879763,0.0699881351820335,Central government (budgetary),14.49095489684174
+UGA,2005,GF06,Housing and community amenities,Government spending,3.051073658833954,0.4421297077710472,Central government (budgetary),14.49095489684174
+UGA,2005,GF08,"Recreation, culture and religion",Government spending,0.0300667159785221,0.0043569542514091,Central government (budgetary),14.49095489684174
+UGA,2005,GF09,Education,Government spending,20.00414569912936,2.898791730759342,Central government (budgetary),14.49095489684174
+UGA,2005,GF10,Social protection,Government spending,5.493228408219268,0.7960212510155515,Central government (budgetary),14.49095489684174
+UGA,2005,GF0170,Interest on public debt,Government spending,7.395686893848613,1.071705652099238,Central government (budgetary),14.49095489684174
+UGA,2005,GF073,Hospital services,Health,3.168471628584139,0.4591417946173544,Central government (budgetary),14.49095489684174
+UGA,2005,GF0740,Public health services,Health,5.525853116295505,0.8007488827481053,Central government (budgetary),14.49095489684174
+UGA,2005,GF07_rest,Health (not broken down),Health,2.3629441736295664,0.3424131744382093,Central government (budgetary),14.49095489684174
+UGA,2006,GF01,General public services,Government spending,20.32149422682742,2.7486594907072024,Central government (budgetary),13.52587295022115
+UGA,2006,GF02,Defence,Government spending,10.79380824558853,1.459956789788799,Central government (budgetary),13.52587295022115
+UGA,2006,GF03,Public order and safety,Government spending,7.655568364103859,1.035482450546012,Central government (budgetary),13.52587295022115
+UGA,2006,GF04,Economic affairs,Government spending,16.57704776441743,2.242190419512577,Central government (budgetary),13.52587295022115
+UGA,2006,GF05,Environmental protection,Government spending,0.3222011668639584,0.043580520474149,Central government (budgetary),13.52587295022115
+UGA,2006,GF06,Housing and community amenities,Government spending,2.799331692129338,0.37863404813269,Central government (budgetary),13.52587295022115
+UGA,2006,GF08,"Recreation, culture and religion",Government spending,0.0197834300980901,0.0026758816202634,Central government (budgetary),13.52587295022115
+UGA,2006,GF09,Education,Government spending,18.58844710157809,2.514249738378518,Central government (budgetary),13.52587295022115
+UGA,2006,GF10,Social protection,Government spending,5.485543040625821,0.7419675823047466,Central government (budgetary),13.52587295022115
+UGA,2006,GF0170,Interest on public debt,Government spending,7.16526212363928,0.9691642513937668,Central government (budgetary),13.52587295022115
+UGA,2006,GF072,Outpatient services,Health,0.0391472645511313,0.0052950092666729,Central government (budgetary),13.52587295022115
+UGA,2006,GF073,Hospital services,Health,2.480800245086277,0.3355498892991446,Central government (budgetary),13.52587295022115
+UGA,2006,GF0740,Public health services,Health,5.631977933481239,0.7617741798671629,Central government (budgetary),13.52587295022115
+UGA,2006,GF07_rest,Health (not broken down),Health,2.1195874010094222,0.2866926989294296,Central government (budgetary),13.52587295022115
+UGA,2007,GF01,General public services,Government spending,20.16254046794257,2.6431301017346502,Central government (budgetary),13.1091124451162
+UGA,2007,GF02,Defence,Government spending,10.3028749812024,1.350615466365568,Central government (budgetary),13.1091124451162
+UGA,2007,GF03,Public order and safety,Government spending,6.157856676471865,0.8072403559277922,Central government (budgetary),13.1091124451162
+UGA,2007,GF04,Economic affairs,Government spending,23.03464048138399,3.019636922032884,Central government (budgetary),13.1091124451162
+UGA,2007,GF05,Environmental protection,Government spending,0.5184145234215771,0.0679595428071478,Central government (budgetary),13.1091124451162
+UGA,2007,GF06,Housing and community amenities,Government spending,2.922812121600163,0.3831547275800518,Central government (budgetary),13.1091124451162
+UGA,2007,GF08,"Recreation, culture and religion",Government spending,0.0255330347141391,0.003347154231327,Central government (budgetary),13.1091124451162
+UGA,2007,GF09,Education,Government spending,17.85776201799606,2.340994103120356,Central government (budgetary),13.1091124451162
+UGA,2007,GF10,Social protection,Government spending,4.648843494410669,0.6094221210797639,Central government (budgetary),13.1091124451162
+UGA,2007,GF0170,Interest on public debt,Government spending,5.973418988070001,0.7830622119640188,Central government (budgetary),13.1091124451162
+UGA,2007,GF072,Outpatient services,Health,0.0364997262176281,0.0047847901520284,Central government (budgetary),13.1091124451162
+UGA,2007,GF073,Hospital services,Health,2.154946122967764,0.2824943103915163,Central government (budgetary),13.1091124451162
+UGA,2007,GF0740,Public health services,Health,3.116998441949959,0.4086108306677401,Central government (budgetary),13.1091124451162
+UGA,2007,GF07_rest,Health (not broken down),Health,3.077682347090506,0.40345683958358614,Central government (budgetary),13.1091124451162
+UGA,2008,GF01,General public services,Government spending,22.285967456347176,2.4949066941354463,Central government (budgetary),11.19496696305586
+UGA,2008,GF02,Defence,Government spending,10.40572483941472,1.164917458038974,Central government (budgetary),11.19496696305586
+UGA,2008,GF03,Public order and safety,Government spending,6.238363083361284,0.6983826862177684,Central government (budgetary),11.19496696305586
+UGA,2008,GF04,Economic affairs,Government spending,20.9732851726208,2.347952346142391,Central government (budgetary),11.19496696305586
+UGA,2008,GF05,Environmental protection,Government spending,0.302702082646096,0.0338873981487124,Central government (budgetary),11.19496696305586
+UGA,2008,GF06,Housing and community amenities,Government spending,3.046042541805882,0.3410034562357953,Central government (budgetary),11.19496696305586
+UGA,2008,GF08,"Recreation, culture and religion",Government spending,0.0517728452997024,0.0057959529271357,Central government (budgetary),11.19496696305586
+UGA,2008,GF09,Education,Government spending,17.51208995120568,1.960472684578101,Central government (budgetary),11.19496696305586
+UGA,2008,GF10,Social protection,Government spending,3.761435462870072,0.4210914574049717,Central government (budgetary),11.19496696305586
+UGA,2008,GF0170,Interest on public debt,Government spending,7.165546551972144,0.8021805692156695,Central government (budgetary),11.19496696305586
+UGA,2008,GF072,Outpatient services,Health,0.0359101917070088,0.0040201340979696,Central government (budgetary),11.19496696305586
+UGA,2008,GF073,Hospital services,Health,2.197792268308122,0.2460421183536902,Central government (budgetary),11.19496696305586
+UGA,2008,GF0740,Public health services,Health,3.410681601057342,0.381824678453394,Central government (budgetary),11.19496696305586
+UGA,2008,GF07_rest,Health (not broken down),Health,2.614515005784269,0.292694091141687,Central government (budgetary),11.19496696305586
+UGA,2009,GF01,General public services,Government spending,19.1025569165244,1.9313960634084153,Central government (budgetary),10.1106677595484
+UGA,2009,GF02,Defence,Government spending,11.70401619883409,1.18335419238784,Central government (budgetary),10.1106677595484
+UGA,2009,GF03,Public order and safety,Government spending,5.98285329537876,0.6049064192369392,Central government (budgetary),10.1106677595484
+UGA,2009,GF04,Economic affairs,Government spending,24.44102935633575,2.471151275232798,Central government (budgetary),10.1106677595484
+UGA,2009,GF05,Environmental protection,Government spending,0.2180500997562078,0.022046321135714,Central government (budgetary),10.1106677595484
+UGA,2009,GF06,Housing and community amenities,Government spending,2.444761266249574,0.2471816891446229,Central government (budgetary),10.1106677595484
+UGA,2009,GF08,"Recreation, culture and religion",Government spending,0.0854099707557823,0.0086355183766446,Central government (budgetary),10.1106677595484
+UGA,2009,GF09,Education,Government spending,16.29057890986837,1.647086309683852,Central government (budgetary),10.1106677595484
+UGA,2009,GF10,Social protection,Government spending,3.051236603284029,0.308500395515778,Central government (budgetary),10.1106677595484
+UGA,2009,GF0170,Interest on public debt,Government spending,7.23115498423533,0.7311180556340586,Central government (budgetary),10.1106677595484
+UGA,2009,GF072,Outpatient services,Health,0.0541268322452554,0.0054725841770858,Central government (budgetary),10.1106677595484
+UGA,2009,GF073,Hospital services,Health,2.555251591775265,0.2583529988649689,Central government (budgetary),10.1106677595484
+UGA,2009,GF0740,Public health services,Health,4.311210955703628,0.4358922161444451,Central government (budgetary),10.1106677595484
+UGA,2009,GF07_rest,Health (not broken down),Health,2.527763019053568,0.2555737206052362,Central government (budgetary),10.1106677595484
+UGA,2010,GF01,General public services,Government spending,16.826949082360226,2.124340390105241,Central government (budgetary),12.62463195025768
+UGA,2010,GF02,Defence,Government spending,15.2606150035377,1.926596477542439,Central government (budgetary),12.62463195025768
+UGA,2010,GF03,Public order and safety,Government spending,6.581136643931421,0.8308442794398824,Central government (budgetary),12.62463195025768
+UGA,2010,GF04,Economic affairs,Government spending,24.96459563302065,3.15168831653896,Central government (budgetary),12.62463195025768
+UGA,2010,GF05,Environmental protection,Government spending,0.3451852520389143,0.0435783676164822,Central government (budgetary),12.62463195025768
+UGA,2010,GF06,Housing and community amenities,Government spending,2.041135236101457,0.2576858111648322,Central government (budgetary),12.62463195025768
+UGA,2010,GF08,"Recreation, culture and religion",Government spending,0.0888180104769622,0.0112129469282578,Central government (budgetary),12.62463195025768
+UGA,2010,GF09,Education,Government spending,13.68316742814747,1.727449526941159,Central government (budgetary),12.62463195025768
+UGA,2010,GF10,Social protection,Government spending,5.898067625823863,0.7446093299375642,Central government (budgetary),12.62463195025768
+UGA,2010,GF0170,Interest on public debt,Government spending,5.675692427695373,0.7165352796251862,Central government (budgetary),12.62463195025768
+UGA,2010,GF072,Outpatient services,Health,0.1584275714011535,0.0200008977971273,Central government (budgetary),12.62463195025768
+UGA,2010,GF073,Hospital services,Health,1.843054296643578,0.2326788215946621,Central government (budgetary),12.62463195025768
+UGA,2010,GF0740,Public health services,Health,2.990142529064708,0.3774944890825463,Central government (budgetary),12.62463195025768
+UGA,2010,GF07_rest,Health (not broken down),Health,3.6430132597565583,0.4599170159433502,Central government (budgetary),12.62463195025768
+UGA,2011,GF01,General public services,Government spending,17.52124712410344,2.2247230868428427,Central government (budgetary),12.69728730543592
+UGA,2011,GF02,Defence,Government spending,20.52586089850009,2.606227530196688,Central government (budgetary),12.69728730543592
+UGA,2011,GF03,Public order and safety,Government spending,9.076829224387028,1.152511084844192,Central government (budgetary),12.69728730543592
+UGA,2011,GF04,Economic affairs,Government spending,21.67726327967511,2.752424398576111,Central government (budgetary),12.69728730543592
+UGA,2011,GF05,Environmental protection,Government spending,0.1508103514625759,0.0191488236115409,Central government (budgetary),12.69728730543592
+UGA,2011,GF06,Housing and community amenities,Government spending,1.449973730217197,0.1841073303790239,Central government (budgetary),12.69728730543592
+UGA,2011,GF08,"Recreation, culture and religion",Government spending,0.0624705764226054,0.0079320685697401,Central government (budgetary),12.69728730543592
+UGA,2011,GF09,Education,Government spending,13.12076561806165,1.665981307198144,Central government (budgetary),12.69728730543592
+UGA,2011,GF10,Social protection,Government spending,4.061217500254423,0.515664454105947,Central government (budgetary),12.69728730543592
+UGA,2011,GF0170,Interest on public debt,Government spending,4.807958230381259,0.6104802700368613,Central government (budgetary),12.69728730543592
+UGA,2011,GF072,Outpatient services,Health,0.051403054422528,0.0065267935037979,Central government (budgetary),12.69728730543592
+UGA,2011,GF073,Hospital services,Health,1.486069861306049,0.1886905598495222,Central government (budgetary),12.69728730543592
+UGA,2011,GF0740,Public health services,Health,3.37231247189268,0.4281922033932616,Central government (budgetary),12.69728730543592
+UGA,2011,GF07_rest,Health (not broken down),Health,2.63581807891339,0.33467739432825505,Central government (budgetary),12.69728730543592
+UGA,2012,GF01,General public services,Government spending,15.328578949751748,1.7850805628735498,Central government (budgetary),11.6454406421181
+UGA,2012,GF02,Defence,Government spending,12.98334674488998,1.511967938536535,Central government (budgetary),11.6454406421181
+UGA,2012,GF03,Public order and safety,Government spending,6.950490329872051,0.809415225701408,Central government (budgetary),11.6454406421181
+UGA,2012,GF04,Economic affairs,Government spending,27.99880578966702,3.260584308737598,Central government (budgetary),11.6454406421181
+UGA,2012,GF05,Environmental protection,Government spending,0.5569889521974338,0.0648638178113076,Central government (budgetary),11.6454406421181
+UGA,2012,GF06,Housing and community amenities,Government spending,2.593984199286596,0.3020808901938429,Central government (budgetary),11.6454406421181
+UGA,2012,GF08,"Recreation, culture and religion",Government spending,0.0609005152556606,0.007092133354842,Central government (budgetary),11.6454406421181
+UGA,2012,GF09,Education,Government spending,13.62633543504755,1.586846804784367,Central government (budgetary),11.6454406421181
+UGA,2012,GF10,Social protection,Government spending,5.256974350040247,0.6121978275053105,Central government (budgetary),11.6454406421181
+UGA,2012,GF0170,Interest on public debt,Government spending,6.685664108582983,0.7785750452964253,Central government (budgetary),11.6454406421181
+UGA,2012,GF072,Outpatient services,Health,0.2516687896370905,0.0293079395119244,Central government (budgetary),11.6454406421181
+UGA,2012,GF073,Hospital services,Health,1.759694387058097,0.2049241653275346,Central government (budgetary),11.6454406421181
+UGA,2012,GF0740,Public health services,Health,2.561398452244316,0.2982861363642435,Central government (budgetary),11.6454406421181
+UGA,2012,GF07_rest,Health (not broken down),Health,3.385168996469279,0.39421784611921473,Central government (budgetary),11.6454406421181
+UGA,2013,GF01,General public services,Government spending,16.145354854117734,1.9399057833255613,Central government (budgetary),12.01525640565778
+UGA,2013,GF02,Defence,Government spending,9.747472435616766,1.17118380621017,Central government (budgetary),12.01525640565778
+UGA,2013,GF03,Public order and safety,Government spending,6.147335111252637,0.7386180757320325,Central government (budgetary),12.01525640565778
+UGA,2013,GF04,Economic affairs,Government spending,26.00545317040162,3.124621877877016,Central government (budgetary),12.01525640565778
+UGA,2013,GF05,Environmental protection,Government spending,0.622135973221749,0.0747512323744275,Central government (budgetary),12.01525640565778
+UGA,2013,GF06,Housing and community amenities,Government spending,2.555795486207857,0.3070853808721021,Central government (budgetary),12.01525640565778
+UGA,2013,GF08,"Recreation, culture and religion",Government spending,0.0712456003462962,0.0085603415593577,Central government (budgetary),12.01525640565778
+UGA,2013,GF09,Education,Government spending,14.4688134378856,1.738465033418224,Central government (budgetary),12.01525640565778
+UGA,2013,GF10,Social protection,Government spending,4.684144011463599,0.5628119133876155,Central government (budgetary),12.01525640565778
+UGA,2013,GF0170,Interest on public debt,Government spending,8.853451020976793,1.063764840919689,Central government (budgetary),12.01525640565778
+UGA,2013,GF072,Outpatient services,Health,0.0783469364924571,0.0094135853055465,Central government (budgetary),12.01525640565778
+UGA,2013,GF073,Hospital services,Health,1.302989292680014,0.1565575044537705,Central government (budgetary),12.01525640565778
+UGA,2013,GF0740,Public health services,Health,2.163993153683875,0.2600093260159977,Central government (budgetary),12.01525640565778
+UGA,2013,GF07_rest,Health (not broken down),Health,7.153930259702264,0.8595630637851674,Central government (budgetary),12.01525640565778
+UGA,2014,GF01,General public services,Government spending,15.74304849441799,2.0286643206632116,Central government (budgetary),12.88609586245329
+UGA,2014,GF02,Defence,Government spending,10.81481277832392,1.393607141959669,Central government (budgetary),12.88609586245329
+UGA,2014,GF03,Public order and safety,Government spending,7.312444286464906,0.9422885806423567,Central government (budgetary),12.88609586245329
+UGA,2014,GF04,Economic affairs,Government spending,27.89993179433092,3.595211956576567,Central government (budgetary),12.88609586245329
+UGA,2014,GF05,Environmental protection,Government spending,0.7945160336935175,0.1023820977443084,Central government (budgetary),12.88609586245329
+UGA,2014,GF06,Housing and community amenities,Government spending,3.588087092208192,0.4623643423302605,Central government (budgetary),12.88609586245329
+UGA,2014,GF08,"Recreation, culture and religion",Government spending,0.0652986246500334,0.0084144433692668,Central government (budgetary),12.88609586245329
+UGA,2014,GF09,Education,Government spending,14.01645519145463,1.806173852488655,Central government (budgetary),12.88609586245329
+UGA,2014,GF10,Social protection,Government spending,4.326056852487434,0.5574598330757604,Central government (budgetary),12.88609586245329
+UGA,2014,GF0170,Interest on public debt,Government spending,8.332477853828761,1.073731083962065,Central government (budgetary),12.88609586245329
+UGA,2014,GF0712,Medical products,Health,2.111637198971836,0.2721075937267343,Central government (budgetary),12.88609586245329
+UGA,2014,GF072,Outpatient services,Health,0.067340172125659,0.0086775191340534,Central government (budgetary),12.88609586245329
+UGA,2014,GF073,Hospital services,Health,1.725286722326844,0.2223221009412155,Central government (budgetary),12.88609586245329
+UGA,2014,GF0740,Public health services,Health,2.342076155771541,0.3018021786043818,Central government (budgetary),12.88609586245329
+UGA,2014,GF075,Health R&D,Health,0.0229512867810612,0.0029575248162741,Central government (budgetary),12.88609586245329
+UGA,2014,GF0760,Other health,Health,0.8375794621624238,0.1079312924184706,Central government (budgetary),12.88609586245329
+UGA,2015,GF01,General public services,Government spending,16.49729746162228,2.183430920712591,Central government (budgetary),13.23508244784889
+UGA,2015,GF02,Defence,Government spending,10.2959877796905,1.362682471462483,Central government (budgetary),13.23508244784889
+UGA,2015,GF03,Public order and safety,Government spending,7.053805845409828,0.9335770193511752,Central government (budgetary),13.23508244784889
+UGA,2015,GF04,Economic affairs,Government spending,26.9003433608881,3.560282622567985,Central government (budgetary),13.23508244784889
+UGA,2015,GF05,Environmental protection,Government spending,1.104604476238871,0.146195313152844,Central government (budgetary),13.23508244784889
+UGA,2015,GF06,Housing and community amenities,Government spending,3.82548632416812,0.5063062690348346,Central government (budgetary),13.23508244784889
+UGA,2015,GF08,"Recreation, culture and religion",Government spending,0.0693066367781098,0.0091727905194139,Central government (budgetary),13.23508244784889
+UGA,2015,GF09,Education,Government spending,14.15563828216807,1.873510397664204,Central government (budgetary),13.23508244784889
+UGA,2015,GF10,Social protection,Government spending,3.919676914161974,0.5187724712786363,Central government (budgetary),13.23508244784889
+UGA,2015,GF0170,Interest on public debt,Government spending,9.389066185498589,1.242650650733839,Central government (budgetary),13.23508244784889
+UGA,2015,GF0712,Medical products,Health,2.037796082362249,0.2697039916196783,Central government (budgetary),13.23508244784889
+UGA,2015,GF072,Outpatient services,Health,0.0643518374093583,0.0085170187378342,Central government (budgetary),13.23508244784889
+UGA,2015,GF073,Hospital services,Health,1.657114635164435,0.2193204882193833,Central government (budgetary),13.23508244784889
+UGA,2015,GF0740,Public health services,Health,2.309931207944336,0.3057212998600246,Central government (budgetary),13.23508244784889
+UGA,2015,GF075,Health R&D,Health,0.0180859198689387,0.0023936864061059,Central government (budgetary),13.23508244784889
+UGA,2015,GF0760,Other health,Health,0.7015070506267188,0.0928450365279192,Central government (budgetary),13.23508244784889
+UGA,2016,GF01,General public services,Government spending,18.2588853405994,2.6621771048040945,Central government (budgetary),14.58017318770622
+UGA,2016,GF02,Defence,Government spending,11.47034162649332,1.672395674364285,Central government (budgetary),14.58017318770622
+UGA,2016,GF03,Public order and safety,Government spending,7.877711047896376,1.148583914010358,Central government (budgetary),14.58017318770622
+UGA,2016,GF04,Economic affairs,Government spending,23.46862398338783,3.421766021549503,Central government (budgetary),14.58017318770622
+UGA,2016,GF05,Environmental protection,Government spending,1.370126782517031,0.19976685778213,Central government (budgetary),14.58017318770622
+UGA,2016,GF06,Housing and community amenities,Government spending,3.464043157335121,0.5050634916363473,Central government (budgetary),14.58017318770622
+UGA,2016,GF08,"Recreation, culture and religion",Government spending,0.1401378826281022,0.0204323459887617,Central government (budgetary),14.58017318770622
+UGA,2016,GF09,Education,Government spending,12.74365649467901,1.858047187370572,Central government (budgetary),14.58017318770622
+UGA,2016,GF10,Social protection,Government spending,2.811753101696502,0.4099584718380514,Central government (budgetary),14.58017318770622
+UGA,2016,GF0170,Interest on public debt,Government spending,11.1557851492659,1.626532795211379,Central government (budgetary),14.58017318770622
+UGA,2016,GF0712,Medical products,Health,1.85571691426165,0.2705667399729064,Central government (budgetary),14.58017318770622
+UGA,2016,GF072,Outpatient services,Health,0.1318423359357271,0.0192228409141464,Central government (budgetary),14.58017318770622
+UGA,2016,GF073,Hospital services,Health,1.691623974187602,0.2466417051213111,Central government (budgetary),14.58017318770622
+UGA,2016,GF0740,Public health services,Health,2.048968980365123,0.2987432258996131,Central government (budgetary),14.58017318770622
+UGA,2016,GF075,Health R&D,Health,0.0224827045764318,0.0032780172645241,Central government (budgetary),14.58017318770622
+UGA,2016,GF0760,Other health,Health,1.48830052417471,0.2169967939782121,Central government (budgetary),14.58017318770622
+UGA,2017,GF01,General public services,Government spending,16.22456308463223,2.3769381841917494,Central government (budgetary),14.65024464321733
+UGA,2017,GF02,Defence,Government spending,9.216137037084309,1.350186622587012,Central government (budgetary),14.65024464321733
+UGA,2017,GF03,Public order and safety,Government spending,6.647001602839882,0.9738019962546196,Central government (budgetary),14.65024464321733
+UGA,2017,GF04,Economic affairs,Government spending,26.11987886690015,3.826626154512895,Central government (budgetary),14.65024464321733
+UGA,2017,GF05,Environmental protection,Government spending,0.675767780654343,0.0990016330859015,Central government (budgetary),14.65024464321733
+UGA,2017,GF06,Housing and community amenities,Government spending,3.771895204282178,0.5525918751131211,Central government (budgetary),14.65024464321733
+UGA,2017,GF08,"Recreation, culture and religion",Government spending,0.1589465580172039,0.0232860596014937,Central government (budgetary),14.65024464321733
+UGA,2017,GF09,Education,Government spending,13.1434649248089,1.925549766079964,Central government (budgetary),14.65024464321733
+UGA,2017,GF10,Social protection,Government spending,2.938015141068408,0.4304264058212884,Central government (budgetary),14.65024464321733
+UGA,2017,GF0170,Interest on public debt,Government spending,14.12259841068954,2.06899521714514,Central government (budgetary),14.65024464321733
+UGA,2017,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),14.65024464321733
+UGA,2017,GF072,Outpatient services,Health,0.0451908788827224,0.0066205743127388,Central government (budgetary),14.65024464321733
+UGA,2017,GF073,Hospital services,Health,1.334285738313486,0.1954761249024843,Central government (budgetary),14.65024464321733
+UGA,2017,GF0740,Public health services,Health,2.419966117270002,0.3545309564630229,Central government (budgetary),14.65024464321733
+UGA,2017,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),14.65024464321733
+UGA,2017,GF0760,Other health,Health,3.182288654556608,0.4662130731458922,Central government (budgetary),14.65024464321733
+UGA,2018,GF01,General public services,Government spending,24.665583708044057,3.594782358577746,Central government (budgetary),14.5740818507587
+UGA,2018,GF02,Defence,Government spending,8.798947426597774,1.282365799957586,Central government (budgetary),14.5740818507587
+UGA,2018,GF03,Public order and safety,Government spending,3.353839197727259,0.4887912698195998,Central government (budgetary),14.5740818507587
+UGA,2018,GF04,Economic affairs,Government spending,27.5119070317664,4.009607849514274,Central government (budgetary),14.5740818507587
+UGA,2018,GF05,Environmental protection,Government spending,0.9288567162310976,0.1353723380997897,Central government (budgetary),14.5740818507587
+UGA,2018,GF06,Housing and community amenities,Government spending,4.04611834200508,0.5896845989423815,Central government (budgetary),14.5740818507587
+UGA,2018,GF08,"Recreation, culture and religion",Government spending,0.1555386547522299,0.0226683308531589,Central government (budgetary),14.5740818507587
+UGA,2018,GF09,Education,Government spending,10.92781339444077,1.59262846860397,Central government (budgetary),14.5740818507587
+UGA,2018,GF10,Social protection,Government spending,1.857340693785837,0.2706903529597975,Central government (budgetary),14.5740818507587
+UGA,2018,GF0170,Interest on public debt,Government spending,12.21863263665615,1.780753521509784,Central government (budgetary),14.5740818507587
+UGA,2018,GF0712,Medical products,Health,4.851841037576196,0.7071112840850551,Central government (budgetary),14.5740818507587
+UGA,2018,GF072,Outpatient services,Health,0.0317480760964976,0.0046269905963447,Central government (budgetary),14.5740818507587
+UGA,2018,GF073,Hospital services,Health,0.6223620752315211,0.0907035582523223,Central government (budgetary),14.5740818507587
+UGA,2018,GF0740,Public health services,Health,0.0294710090893263,0.0042951289869229,Central government (budgetary),14.5740818507587
+UGA,2018,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),14.5740818507587
+UGA,2018,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),14.5740818507587
+UGA,2019,GF01,General public services,Government spending,22.293518754335608,2.970407637981932,Central government (budgetary),13.32408611989192
+UGA,2019,GF02,Defence,Government spending,10.81856420576172,1.441474811711492,Central government (budgetary),13.32408611989192
+UGA,2019,GF03,Public order and safety,Government spending,0.8589227203858294,0.1144436029675264,Central government (budgetary),13.32408611989192
+UGA,2019,GF04,Economic affairs,Government spending,26.25574629680553,3.498338248006703,Central government (budgetary),13.32408611989192
+UGA,2019,GF05,Environmental protection,Government spending,0.8953360913809896,0.1192953518780773,Central government (budgetary),13.32408611989192
+UGA,2019,GF06,Housing and community amenities,Government spending,4.440258770487663,0.5916239025258304,Central government (budgetary),13.32408611989192
+UGA,2019,GF08,"Recreation, culture and religion",Government spending,0.186495960723004,0.0248488824168528,Central government (budgetary),13.32408611989192
+UGA,2019,GF09,Education,Government spending,11.46850553023738,1.528073553513396,Central government (budgetary),13.32408611989192
+UGA,2019,GF10,Social protection,Government spending,1.631791751559017,0.2174213382750162,Central government (budgetary),13.32408611989192
+UGA,2019,GF0170,Interest on public debt,Government spending,13.53396760792036,1.803277499517586,Central government (budgetary),13.32408611989192
+UGA,2019,GF0712,Medical products,Health,6.792954793366255,0.9050991467534462,Central government (budgetary),13.32408611989192
+UGA,2019,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),13.32408611989192
+UGA,2019,GF073,Hospital services,Health,0.7903154839714289,0.1053023157031938,Central government (budgetary),13.32408611989192
+UGA,2019,GF0740,Public health services,Health,0.0336220330652856,0.0044798286408771,Central government (budgetary),13.32408611989192
+UGA,2019,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),13.32408611989192
+UGA,2019,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),13.32408611989192
+UGA,2020,GF01,General public services,Government spending,21.02378868333807,4.045460042645448,Central government (budgetary),19.24229787303554
+UGA,2020,GF02,Defence,Government spending,15.48287195614924,2.979260341102922,Central government (budgetary),19.24229787303554
+UGA,2020,GF03,Public order and safety,Government spending,5.350589651825378,1.029576398768054,Central government (budgetary),19.24229787303554
+UGA,2020,GF04,Economic affairs,Government spending,23.13286147229743,4.451294111056147,Central government (budgetary),19.24229787303554
+UGA,2020,GF05,Environmental protection,Government spending,0.9847724022615264,0.1894928390146107,Central government (budgetary),19.24229787303554
+UGA,2020,GF06,Housing and community amenities,Government spending,3.536695252468833,0.6805414353415592,Central government (budgetary),19.24229787303554
+UGA,2020,GF08,"Recreation, culture and religion",Government spending,0.1196884323440525,0.0230308046712092,Central government (budgetary),19.24229787303554
+UGA,2020,GF09,Education,Government spending,11.24966027303969,2.164693139442841,Central government (budgetary),19.24229787303554
+UGA,2020,GF10,Social protection,Government spending,1.301166007782806,0.2503742390402524,Central government (budgetary),19.24229787303554
+UGA,2020,GF0170,Interest on public debt,Government spending,10.79382893780008,2.0769807161174,Central government (budgetary),19.24229787303554
+UGA,2020,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),19.24229787303554
+UGA,2020,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),19.24229787303554
+UGA,2020,GF073,Hospital services,Health,1.820042376968218,0.3502179755917009,Central government (budgetary),19.24229787303554
+UGA,2020,GF0740,Public health services,Health,0.198280222468528,0.0381536710307117,Central government (budgetary),19.24229787303554
+UGA,2020,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),19.24229787303554
+UGA,2020,GF0760,Other health,Health,5.005754331256115,0.96322215921268,Central government (budgetary),19.24229787303554
+UGA,2021,GF01,General public services,Government spending,21.538474252190788,4.741308708901215,Central government (budgetary),22.01320601165123
+UGA,2021,GF02,Defence,Government spending,16.04051848520145,3.531032379484392,Central government (budgetary),22.01320601165123
+UGA,2021,GF03,Public order and safety,Government spending,4.985393418788839,1.097444923769289,Central government (budgetary),22.01320601165123
+UGA,2021,GF04,Economic affairs,Government spending,23.55429102203815,5.185054607265127,Central government (budgetary),22.01320601165123
+UGA,2021,GF05,Environmental protection,Government spending,0.9053663233978386,0.1993001539296787,Central government (budgetary),22.01320601165123
+UGA,2021,GF06,Housing and community amenities,Government spending,2.679983190069034,0.5899502207075189,Central government (budgetary),22.01320601165123
+UGA,2021,GF08,"Recreation, culture and religion",Government spending,0.107445239612436,0.0236521419455978,Central government (budgetary),22.01320601165123
+UGA,2021,GF09,Education,Government spending,8.891654507264192,1.957338224528339,Central government (budgetary),22.01320601165123
+UGA,2021,GF10,Social protection,Government spending,1.043784748970974,0.2297704871091772,Central government (budgetary),22.01320601165123
+UGA,2021,GF0170,Interest on public debt,Government spending,12.00895441564136,2.643555875360419,Central government (budgetary),22.01320601165123
+UGA,2021,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),22.01320601165123
+UGA,2021,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),22.01320601165123
+UGA,2021,GF073,Hospital services,Health,1.709203371490907,0.3762504593243819,Central government (budgetary),22.01320601165123
+UGA,2021,GF0740,Public health services,Health,0.1644095407249654,0.0361918109025962,Central government (budgetary),22.01320601165123
+UGA,2021,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),22.01320601165123
+UGA,2021,GF0760,Other health,Health,6.370521484608954,1.402356018423471,Central government (budgetary),22.01320601165123
+UGA,2022,GF01,General public services,Government spending,22.697455638164797,4.4215456507950135,Central government (budgetary),19.48035815679875
+UGA,2022,GF02,Defence,Government spending,11.92849101824312,2.32371277305533,Central government (budgetary),19.48035815679875
+UGA,2022,GF03,Public order and safety,Government spending,5.309027876296833,1.03421764494691,Central government (budgetary),19.48035815679875
+UGA,2022,GF04,Economic affairs,Government spending,21.96676864394404,4.279205207315663,Central government (budgetary),19.48035815679875
+UGA,2022,GF05,Environmental protection,Government spending,1.048788373771882,0.2043077315176279,Central government (budgetary),19.48035815679875
+UGA,2022,GF06,Housing and community amenities,Government spending,2.412778601696579,0.4700179131410944,Central government (budgetary),19.48035815679875
+UGA,2022,GF08,"Recreation, culture and religion",Government spending,0.0628267933357152,0.012238884360229,Central government (budgetary),19.48035815679875
+UGA,2022,GF09,Education,Government spending,10.34456107865654,2.015157547871099,Central government (budgetary),19.48035815679875
+UGA,2022,GF10,Social protection,Government spending,1.542616311602565,0.3005071824853783,Central government (budgetary),19.48035815679875
+UGA,2022,GF0170,Interest on public debt,Government spending,14.56490309828375,2.837295288736353,Central government (budgetary),19.48035815679875
+UGA,2022,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),19.48035815679875
+UGA,2022,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),19.48035815679875
+UGA,2022,GF073,Hospital services,Health,1.887918541705138,0.3677732936327729,Central government (budgetary),19.48035815679875
+UGA,2022,GF0740,Public health services,Health,0.4707427049477509,0.0917023649208242,Central government (budgetary),19.48035815679875
+UGA,2022,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),19.48035815679875
+UGA,2022,GF0760,Other health,Health,5.763121319351209,1.122676674020441,Central government (budgetary),19.48035815679875
+UGA,2023,GF01,General public services,Government spending,21.9828444587333,4.127863336232306,Central government (budgetary),18.77765793221721
+UGA,2023,GF02,Defence,Government spending,10.17781504063035,1.911155293303321,Central government (budgetary),18.77765793221721
+UGA,2023,GF03,Public order and safety,Government spending,2.259912893712367,0.4243587127473797,Central government (budgetary),18.77765793221721
+UGA,2023,GF04,Economic affairs,Government spending,22.55289869628103,4.234906170987126,Central government (budgetary),18.77765793221721
+UGA,2023,GF05,Environmental protection,Government spending,0.576793187035865,0.1083082516379286,Central government (budgetary),18.77765793221721
+UGA,2023,GF06,Housing and community amenities,Government spending,1.11700152105272,0.209746724720943,Central government (budgetary),18.77765793221721
+UGA,2023,GF08,"Recreation, culture and religion",Government spending,0.0,0.0,Central government (budgetary),18.77765793221721
+UGA,2023,GF09,Education,Government spending,13.45267876279185,2.526098000797084,Central government (budgetary),18.77765793221721
+UGA,2023,GF10,Social protection,Government spending,0.1626885128399918,0.0305490924361049,Central government (budgetary),18.77765793221721
+UGA,2023,GF0170,Interest on public debt,Government spending,16.53690875154285,3.105244157927608,Central government (budgetary),18.77765793221721
+UGA,2023,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),18.77765793221721
+UGA,2023,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),18.77765793221721
+UGA,2023,GF073,Hospital services,Health,1.033012819302504,0.1939756136045772,Central government (budgetary),18.77765793221721
+UGA,2023,GF0740,Public health services,Health,4.375346327930011,0.821587566808524,Central government (budgetary),18.77765793221721
+UGA,2023,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.77765793221721
+UGA,2023,GF0760,Other health,Health,5.772099028147164,1.083865011014308,Central government (budgetary),18.77765793221721
+UGA,2024,GF01,General public services,Government spending,21.6455218282175,,Central government (budgetary),
+UGA,2024,GF02,Defence,Government spending,8.15060378006763,,Central government (budgetary),
+UGA,2024,GF03,Public order and safety,Government spending,2.092307135009425,,Central government (budgetary),
+UGA,2024,GF04,Economic affairs,Government spending,30.25636542285172,,Central government (budgetary),
+UGA,2024,GF05,Environmental protection,Government spending,0.1350247640182143,,Central government (budgetary),
+UGA,2024,GF06,Housing and community amenities,Government spending,1.214389854211395,,Central government (budgetary),
+UGA,2024,GF08,"Recreation, culture and religion",Government spending,0.0,,Central government (budgetary),
+UGA,2024,GF09,Education,Government spending,11.1534901748479,,Central government (budgetary),
+UGA,2024,GF10,Social protection,Government spending,0.073223105253944,,Central government (budgetary),
+UGA,2024,GF0170,Interest on public debt,Government spending,16.43286420913771,,Central government (budgetary),
+UGA,2024,GF0712,Medical products,Health,0.0,,Central government (budgetary),
+UGA,2024,GF072,Outpatient services,Health,0.0,,Central government (budgetary),
+UGA,2024,GF073,Hospital services,Health,0.5044528344284653,,Central government (budgetary),
+UGA,2024,GF0740,Public health services,Health,2.589398381349508,,Central government (budgetary),
+UGA,2024,GF075,Health R&D,Health,0.0,,Central government (budgetary),
+UGA,2024,GF0760,Other health,Health,5.752358510606396,,Central government (budgetary),

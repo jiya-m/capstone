@@ -1,0 +1,123 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+TLS,2001,G11NEC,Other taxes,Taxes,2.6703369,2.7000282395209014,Central government,98.900332
+TLS,2001,G13,Grants (e.g. foreign aid),Grants,95.6586,96.72222308467298,Central government,98.900332
+TLS,2001,G14X,Other non-tax revenue,Other revenue,0.57139536,0.577748675806117,Central government,98.900332
+TLS,2002,G11NEC,Other taxes,Taxes,3.9920049,4.646931355792372,Central government,85.906259
+TLS,2002,G13,Grants (e.g. foreign aid),Grants,80.595013,93.81739311747684,Central government,85.906259
+TLS,2002,G14X,Other non-tax revenue,Other revenue,1.3192414,1.535675526730798,Central government,85.906259
+TLS,2003,G11NEC,Other taxes,Taxes,4.2276934,5.881530444306099,Central government,71.880838
+TLS,2003,G13,Grants (e.g. foreign aid),Grants,65.764737,91.49133256145865,Central government,71.880838
+TLS,2003,G14X,Other non-tax revenue,Other revenue,1.8884081,2.6271369942352583,Central government,71.880838
+TLS,2004,G11NEC,Other taxes,Taxes,5.7053678,8.557090242454539,Central government,66.674157
+TLS,2004,G13,Grants (e.g. foreign aid),Grants,58.214745,87.31230726378047,Central government,66.674157
+TLS,2004,G14X,Other non-tax revenue,Other revenue,2.7540444,4.130602493765006,Central government,66.674157
+TLS,2005,G11NEC,Other taxes,Taxes,6.0837639,12.717340392386149,Central government,47.838335
+TLS,2005,G13,Grants (e.g. foreign aid),Grants,38.058232,79.55592936083582,Central government,47.838335
+TLS,2005,G14X,Other non-tax revenue,Other revenue,3.6963385,7.726728992553775,Central government,47.838335
+TLS,2006,G11NEC,Other taxes,Taxes,5.8855156,5.83456294525538,Central government,100.87329
+TLS,2006,G13,Grants (e.g. foreign aid),Grants,34.558378,34.259195868400845,Central government,100.87329
+TLS,2006,G14X,Other non-tax revenue,Other revenue,60.429392,59.90623682443589,Central government,100.87329
+TLS,2007,G11NEC,Other taxes,Taxes,5.7911742,12.618262584834891,Central government,45.895179
+TLS,2007,G13,Grants (e.g. foreign aid),Grants,29.504875,64.28752571157855,Central government,45.895179
+TLS,2007,G14X,Other non-tax revenue,Other revenue,10.599129,23.094209960484086,Central government,45.895179
+TLS,2008,G11NEC,Other taxes,Taxes,5.9542717,5.736772099766562,Central government,103.79132
+TLS,2008,G13,Grants (e.g. foreign aid),Grants,34.389591,33.13339667909063,Central government,103.79132
+TLS,2008,G14X,Other non-tax revenue,Other revenue,63.447461,61.12983122114281,Central government,103.79132
+TLS,2009,G11NEC,Other taxes,Taxes,5.9819856,5.716855014970704,Central government,104.6377
+TLS,2009,G13,Grants (e.g. foreign aid),Grants,38.772435,37.05398245565413,Central government,104.6377
+TLS,2009,G14X,Other non-tax revenue,Other revenue,59.883278,57.22916119142527,Central government,104.6377
+TLS,2010,G11NEC,Other taxes,Taxes,5.6888658,5.6051346175427605,Central government,101.49383
+TLS,2010,G13,Grants (e.g. foreign aid),Grants,35.073832,34.55760020091862,Central government,101.49383
+TLS,2010,G14X,Other non-tax revenue,Other revenue,60.731132,59.8372649844823,Central government,101.49383
+TLS,2011,G11NEC,Other taxes,Taxes,7.5210223,6.970523789610735,Central government,107.89752
+TLS,2011,G13,Grants (e.g. foreign aid),Grants,27.234926,25.24147542964843,Central government,107.89752
+TLS,2011,G14X,Other non-tax revenue,Other revenue,73.141568,67.787997351561,Central government,107.89752
+TLS,2012,G11NEC,Other taxes,Taxes,8.4885291,9.365332290730548,Central government,90.637778
+TLS,2012,G13,Grants (e.g. foreign aid),Grants,21.854731,24.112165432704934,Central government,90.637778
+TLS,2012,G14X,Other non-tax revenue,Other revenue,60.294518,66.52250227656452,Central government,90.637778
+TLS,2013,G11NEC,Other taxes,Taxes,7.5025817,9.172945547273919,Central government,81.790322
+TLS,2013,G13,Grants (e.g. foreign aid),Grants,18.65255,22.80532652750774,Central government,81.790322
+TLS,2013,G14X,Other non-tax revenue,Other revenue,55.63519,68.02172755842678,Central government,81.790322
+TLS,2014,G111,Income taxes,Taxes,3.6613963,4.984951052834054,Central government,73.448992
+TLS,2014,G114,Goods & services taxes,Taxes,3.958453,5.389390503820665,Central government,73.448992
+TLS,2014,G115,Trade taxes (customs),Taxes,0.92571152,1.2603461188412224,Central government,73.448992
+TLS,2014,G11NEC,Other taxes,Taxes,0.006908380000000341,0.009405683879229194,Central government,73.448992
+TLS,2014,G13,Grants (e.g. foreign aid),Grants,61.843056,84.19864495893965,Central government,73.448992
+TLS,2014,G14X,Other non-tax revenue,Other revenue,3.0534664,4.157261137089533,Central government,73.448992
+TLS,2015,G111,Income taxes,Taxes,3.351606,5.167637897976172,Central government,64.857601
+TLS,2015,G114,Goods & services taxes,Taxes,3.4019116,5.24520104980262,Central government,64.857601
+TLS,2015,G115,Trade taxes (customs),Taxes,0.76087116,1.1731410678621208,Central government,64.857601
+TLS,2015,G11NEC,Other taxes,Taxes,0.012576440000000523,0.0193908496301851,Central government,64.857601
+TLS,2015,G13,Grants (e.g. foreign aid),Grants,54.153905,83.49661977016432,Central government,64.857601
+TLS,2015,G14X,Other non-tax revenue,Other revenue,3.1767314,4.898009364564601,Central government,64.857601
+TLS,2016,G111,Income taxes,Taxes,4.0842088,7.236934788894042,Central government,56.435617
+TLS,2016,G114,Goods & services taxes,Taxes,3.9440046,6.988502668447835,Central government,56.435617
+TLS,2016,G115,Trade taxes (customs),Taxes,0.86560843,1.5337981154702358,Central government,56.435617
+TLS,2016,G11NEC,Other taxes,Taxes,0.04305609,0.0762924059109693,Central government,56.435617
+TLS,2016,G13,Grants (e.g. foreign aid),Grants,44.261851,78.4289307938283,Central government,56.435617
+TLS,2016,G14X,Other non-tax revenue,Other revenue,3.2368878,5.735540731308032,Central government,56.435617
+TLS,2017,G111,Income taxes,Taxes,3.2608179,6.095309939902215,Central government,53.497163
+TLS,2017,G114,Goods & services taxes,Taxes,3.7378261,6.9869613329085105,Central government,53.497163
+TLS,2017,G115,Trade taxes (customs),Taxes,0.96537372,1.8045325472595013,Central government,53.497163
+TLS,2017,G11NEC,Other taxes,Taxes,0.0798168800000007,0.14919834132288914,Central government,53.497163
+TLS,2017,G13,Grants (e.g. foreign aid),Grants,41.533154,77.63618030055878,Central government,53.497163
+TLS,2017,G14X,Other non-tax revenue,Other revenue,3.9201745,7.327817538048106,Central government,53.497163
+TLS,2018,G111,Income taxes,Taxes,3.4704624,5.919080532263064,Central government,58.631782
+TLS,2018,G114,Goods & services taxes,Taxes,3.4511821,5.886196831121051,Central government,58.631782
+TLS,2018,G115,Trade taxes (customs),Taxes,1.2853564,2.1922519731836703,Central government,58.631782
+TLS,2018,G13,Grants (e.g. foreign aid),Grants,46.375661,79.0964547536753,Central government,58.631782
+TLS,2018,G14X,Other non-tax revenue,Other revenue,4.0491202,6.906015909756903,Central government,58.631782
+TLS,2019,G1111,Personal income tax,Taxes,1.0036652,2.3148285697805018,Central government,43.358079
+TLS,2019,G1112,Corporate income tax,Taxes,0.42803367,0.9872062597607242,Central government,43.358079
+TLS,2019,G1113,Other income taxes,Taxes,1.0823839300000002,2.496383499831716,Central government,43.358079
+TLS,2019,G11412,VAT / sales tax,Taxes,0.75274887,1.7361213581441193,Central government,43.358079
+TLS,2019,G1142,Excise taxes,Taxes,1.8843321,4.345976905480522,Central government,43.358079
+TLS,2019,G114X,Other goods & services taxes,Taxes,0.18203733,0.41984639125732487,Central government,43.358079
+TLS,2019,G115,Trade taxes (customs),Taxes,0.68386988,1.5772605608288137,Central government,43.358079
+TLS,2019,G13,Grants (e.g. foreign aid),Grants,33.986857,78.3864455803035,Central government,43.358079
+TLS,2019,G14X,Other non-tax revenue,Other revenue,3.3541505,7.735929675297654,Central government,43.358079
+TLS,2020,G1111,Personal income tax,Taxes,0.7814598,1.8253296472001694,Central government,42.811982
+TLS,2020,G1112,Corporate income tax,Taxes,0.42078605,0.9828698190146862,Central government,42.811982
+TLS,2020,G1113,Other income taxes,Taxes,0.9433005500000002,2.2033564108291,Central government,42.811982
+TLS,2020,G11412,VAT / sales tax,Taxes,0.67973131,1.5877127809686549,Central government,42.811982
+TLS,2020,G1142,Excise taxes,Taxes,1.6785202,3.920678561436375,Central government,42.811982
+TLS,2020,G114X,Other goods & services taxes,Taxes,0.18496088999999993,0.43203066375203075,Central government,42.811982
+TLS,2020,G115,Trade taxes (customs),Taxes,0.61961901,1.447302790139452,Central government,42.811982
+TLS,2020,G11NEC,Other taxes,Taxes,0.17802488999999988,0.41582959181847706,Central government,42.811982
+TLS,2020,G13,Grants (e.g. foreign aid),Grants,33.637739,78.57085196382639,Central government,42.811982
+TLS,2020,G14X,Other non-tax revenue,Other revenue,3.6878403,8.614037771014665,Central government,42.811982
+TLS,2021,G1111,Personal income tax,Taxes,0.46171993,1.8085570472493238,Central government,25.529741
+TLS,2021,G1112,Corporate income tax,Taxes,0.24861842,0.9738383949919428,Central government,25.529741
+TLS,2021,G1113,Other income taxes,Taxes,0.5573423500000001,2.1831100832554475,Central government,25.529741
+TLS,2021,G11412,VAT / sales tax,Taxes,0.40161437,1.5731235581277536,Central government,25.529741
+TLS,2021,G1142,Excise taxes,Taxes,0.99174162,3.8846521004658836,Central government,25.529741
+TLS,2021,G114X,Other goods & services taxes,Taxes,0.10928280999999984,0.42806078604557657,Central government,25.529741
+TLS,2021,G115,Trade taxes (customs),Taxes,0.36609746,1.4340038153931918,Central government,25.529741
+TLS,2021,G11NEC,Other taxes,Taxes,0.11946104000000007,0.4679289147508393,Central government,25.529741
+TLS,2021,G13,Grants (e.g. foreign aid),Grants,20.872188,81.75636407748907,Central government,25.529741
+TLS,2021,G14X,Other non-tax revenue,Other revenue,1.4016748,5.490360438830931,Central government,25.529741
+TLS,2022,G1111,Personal income tax,Taxes,0.89251906,3.024385291330889,Central government,29.496515
+TLS,2022,G1112,Corporate income tax,Taxes,0.31109047,1.0541594951946607,Central government,29.496515
+TLS,2022,G1113,Other income taxes,Taxes,1.0090525700000001,3.419270117197982,Central government,29.496515
+TLS,2022,G11412,VAT / sales tax,Taxes,0.50253076,1.7028730333056783,Central government,29.496515
+TLS,2022,G1142,Excise taxes,Taxes,1.1387444,3.858743155519186,Central government,29.496515
+TLS,2022,G114X,Other goods & services taxes,Taxes,0.15098743999999997,0.511635227948751,Central government,29.496515
+TLS,2022,G115,Trade taxes (customs),Taxes,0.45808926,1.552278805183893,Central government,29.496515
+TLS,2022,G13,Grants (e.g. foreign aid),Grants,24.153882,81.84771476963405,Central government,29.496515
+TLS,2022,G14X,Other non-tax revenue,Other revenue,0.89386322,3.028940104684897,Central government,29.496515
+TLS,2023,G1111,Personal income tax,Taxes,1.6556225,3.760984334086633,Central government,44.020989
+TLS,2023,G1112,Corporate income tax,Taxes,0.50682037,1.1513152737209063,Central government,44.020989
+TLS,2023,G11412,VAT / sales tax,Taxes,1.1827396,2.6867628984891727,Central government,44.020989
+TLS,2023,G1142,Excise taxes,Taxes,2.6924152,6.1162078843798815,Central government,44.020989
+TLS,2023,G115,Trade taxes (customs),Taxes,1.7308384,3.931848055480989,Central government,44.020989
+TLS,2023,G11NEC,Other taxes,Taxes,1.2896181000000018,2.9295527640235477,Central government,44.020989
+TLS,2023,G13,Grants (e.g. foreign aid),Grants,32.539761,73.91874135313043,Central government,44.020989
+TLS,2023,G14X,Other non-tax revenue,Other revenue,2.4231737,5.504587141374766,Central government,44.020989
+TLS,2024,G1111,Personal income tax,Taxes,1.6557564,3.5633233031376315,Central government,46.466634
+TLS,2024,G1112,Corporate income tax,Taxes,0.56881107,1.2241279821196225,Central government,46.466634
+TLS,2024,G11412,VAT / sales tax,Taxes,1.3142613,2.8283978951867303,Central government,46.466634
+TLS,2024,G1142,Excise taxes,Taxes,2.2438608,4.828972110654109,Central government,46.466634
+TLS,2024,G115,Trade taxes (customs),Taxes,1.1539855,2.483471254366241,Central government,46.466634
+TLS,2024,G11NEC,Other taxes,Taxes,2.1555403,4.638899165265061,Central government,46.466634
+TLS,2024,G13,Grants (e.g. foreign aid),Grants,35.458011,76.30854205317307,Central government,46.466634
+TLS,2024,G14X,Other non-tax revenue,Other revenue,1.9164077,4.124266236097527,Central government,46.466634

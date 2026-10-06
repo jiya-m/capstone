@@ -1,0 +1,65 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+TJK,2021,GF01,General public services,Government spending,8.952711699660675,2.700724349994064,General government,30.16655110313032
+TJK,2021,GF02,Defence,Government spending,7.324519031194332,2.209554776603744,General government,30.16655110313032
+TJK,2021,GF03,Public order and safety,Government spending,0.0,0.0,General government,30.16655110313032
+TJK,2021,GF04,Economic affairs,Government spending,25.61175324443992,7.726182630891606,General government,30.16655110313032
+TJK,2021,GF05,Environmental protection,Government spending,0.0685296050323133,0.0206730183228461,General government,30.16655110313032
+TJK,2021,GF06,Housing and community amenities,Government spending,5.497802691060945,1.658497458348174,General government,30.16655110313032
+TJK,2021,GF08,"Recreation, culture and religion",Government spending,3.972726549912011,1.198434584866833,General government,30.16655110313032
+TJK,2021,GF09,Education,Government spending,20.40312940915977,6.154920459851993,General government,30.16655110313032
+TJK,2021,GF10,Social protection,Government spending,13.77326155473281,4.154917985476275,General government,30.16655110313032
+TJK,2021,GF0170,Interest on public debt,Government spending,3.926181266548355,1.184393478174839,General government,30.16655110313032
+TJK,2021,GF0712,Medical products,Health,0.8268078550032081,0.2494194141042384,General government,30.16655110313032
+TJK,2021,GF072,Outpatient services,Health,2.110979978434422,0.6368098539712691,General government,30.16655110313032
+TJK,2021,GF073,Hospital services,Health,3.487873987762293,1.052171288931101,General government,30.16655110313032
+TJK,2021,GF0740,Public health services,Health,1.518145053040419,0.4579720032450829,General government,30.16655110313032
+TJK,2021,GF075,Health R&D,Health,0.0298056584578514,0.0089913391903122,General government,30.16655110313032
+TJK,2021,GF0760,Other health,Health,2.495772415560674,0.7528884611579406,General government,30.16655110313032
+TJK,2022,GF01,General public services,Government spending,5.722870281130525,1.6470529776108032,General government,28.78019065086054
+TJK,2022,GF02,Defence,Government spending,9.640387993340577,2.774522043966086,General government,28.78019065086054
+TJK,2022,GF03,Public order and safety,Government spending,0.0003407696564583,9.80741568089e-05,General government,28.78019065086054
+TJK,2022,GF04,Economic affairs,Government spending,29.03114797906411,8.355219736508097,General government,28.78019065086054
+TJK,2022,GF05,Environmental protection,Government spending,0.1253052004858419,0.0360630755952683,General government,28.78019065086054
+TJK,2022,GF06,Housing and community amenities,Government spending,5.220786794456029,1.502552392919396,General government,28.78019065086054
+TJK,2022,GF08,"Recreation, culture and religion",Government spending,3.890649356935831,1.119736302482612,General government,28.78019065086054
+TJK,2022,GF09,Education,Government spending,21.35477073005327,6.145943729163494,General government,28.78019065086054
+TJK,2022,GF10,Social protection,Government spending,13.92655558318817,4.008089247939619,General government,28.78019065086054
+TJK,2022,GF0170,Interest on public debt,Government spending,2.867193914319287,0.8251838748709617,General government,28.78019065086054
+TJK,2022,GF0712,Medical products,Health,0.1699026744164983,0.048898313617979,General government,28.78019065086054
+TJK,2022,GF072,Outpatient services,Health,0.365753438459467,0.1052645369007125,General government,28.78019065086054
+TJK,2022,GF073,Hospital services,Health,5.7459915520081,1.653707323450272,General government,28.78019065086054
+TJK,2022,GF0740,Public health services,Health,0.5603665288506898,0.1612745553468379,General government,28.78019065086054
+TJK,2022,GF075,Health R&D,Health,0.0283072872392815,0.0081468912355519,General government,28.78019065086054
+TJK,2022,GF0760,Other health,Health,1.349669916395859,0.3884375750960383,General government,28.78019065086054
+TJK,2023,GF01,General public services,Government spending,5.731362319912088,1.8279397478573904,General government,31.89363445941468
+TJK,2023,GF02,Defence,Government spending,11.28713511237955,3.599877613682577,General government,31.89363445941468
+TJK,2023,GF03,Public order and safety,Government spending,0.0,0.0,General government,31.89363445941468
+TJK,2023,GF04,Economic affairs,Government spending,32.37743219657736,10.32633987212122,General government,31.89363445941468
+TJK,2023,GF05,Environmental protection,Government spending,2.039225291277385,0.6503830602039433,General government,31.89363445941468
+TJK,2023,GF06,Housing and community amenities,Government spending,3.325184363743658,1.060522146074016,General government,31.89363445941468
+TJK,2023,GF08,"Recreation, culture and religion",Government spending,3.621323266425392,1.15497160518745,General government,31.89363445941468
+TJK,2023,GF09,Education,Government spending,19.66579229449631,6.272135907954391,General government,31.89363445941468
+TJK,2023,GF10,Social protection,Government spending,10.96092092932913,3.495836054585712,General government,31.89363445941468
+TJK,2023,GF0170,Interest on public debt,Government spending,2.210911376427754,0.7051399926194816,General government,31.89363445941468
+TJK,2023,GF0712,Medical products,Health,0.1866130282847646,0.0595176770947869,General government,31.89363445941468
+TJK,2023,GF072,Outpatient services,Health,0.221281908355451,0.0705748429757045,General government,31.89363445941468
+TJK,2023,GF073,Hospital services,Health,4.485997527553773,1.430747653296381,General government,31.89363445941468
+TJK,2023,GF0740,Public health services,Health,3.630737773645467,1.157974233706376,General government,31.89363445941468
+TJK,2023,GF075,Health R&D,Health,0.0277726827428346,0.0088577179135726,General government,31.89363445941468
+TJK,2023,GF0760,Other health,Health,0.2283099288490816,0.0728163341416758,General government,31.89363445941468
+TJK,2024,GF01,General public services,Government spending,5.8578824477744345,1.7897908723484697,General government,30.55354709325824
+TJK,2024,GF02,Defence,Government spending,11.63426290947966,3.554679997001343,General government,30.55354709325824
+TJK,2024,GF03,Public order and safety,Government spending,0.0,0.0,General government,30.55354709325824
+TJK,2024,GF04,Economic affairs,Government spending,25.57015531940753,7.812589447334455,General government,30.55354709325824
+TJK,2024,GF05,Environmental protection,Government spending,1.50497088891038,0.4598219892830602,General government,30.55354709325824
+TJK,2024,GF06,Housing and community amenities,Government spending,3.950290805197972,1.206953961486812,General government,30.55354709325824
+TJK,2024,GF08,"Recreation, culture and religion",Government spending,5.418667214398229,1.655595039178107,General government,30.55354709325824
+TJK,2024,GF09,Education,Government spending,20.69526017426076,6.323136063415079,General government,30.55354709325824
+TJK,2024,GF10,Social protection,Government spending,13.98095064676134,4.271676339943417,General government,30.55354709325824
+TJK,2024,GF0170,Interest on public debt,Government spending,2.221386315569314,0.6787123140506643,General government,30.55354709325824
+TJK,2024,GF0712,Medical products,Health,0.4797167147444771,0.1465704723536851,General government,30.55354709325824
+TJK,2024,GF072,Outpatient services,Health,0.2391546711274201,0.0730702350686431,General government,30.55354709325824
+TJK,2024,GF073,Hospital services,Health,3.871025229496417,1.182735516486095,General government,30.55354709325824
+TJK,2024,GF0740,Public health services,Health,2.675612509432713,0.8174945281026323,General government,30.55354709325824
+TJK,2024,GF075,Health R&D,Health,0.0313187466882383,0.0095689880184091,General government,30.55354709325824
+TJK,2024,GF0760,Other health,Health,1.869345406751122,0.5711513291873639,General government,30.55354709325824

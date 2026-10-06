@@ -1,0 +1,80 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+SSD,2011,G1111,Personal income tax,Taxes,0.15487947,0.9757798736900041,Central government,15.872378
+SSD,2011,G115,Trade taxes (customs),Taxes,0.04574933,0.2882323619056955,Central government,15.872378
+SSD,2011,G14X,Other non-tax revenue,Other revenue,15.671749,98.73598650435366,Central government,15.872378
+SSD,2012,G1111,Personal income tax,Taxes,0.39439304,1.1246800728838284,Central government,35.067131
+SSD,2012,G1112,Corporate income tax,Taxes,0.05883459,0.16777702509478912,Central government,35.067131
+SSD,2012,G11412,VAT / sales tax,Taxes,0.16170315,0.4611245434948463,Central government,35.067131
+SSD,2012,G1142,Excise taxes,Taxes,0.15015106,0.42818175773178985,Central government,35.067131
+SSD,2012,G115,Trade taxes (customs),Taxes,0.67770565,1.9325950575491455,Central government,35.067131
+SSD,2012,G14X,Other non-tax revenue,Other revenue,33.624344,95.8856415432456,Central government,35.067131
+SSD,2014,G1111,Personal income tax,Taxes,0.60460029,2.0934365583944974,Central government,28.880755
+SSD,2014,G1112,Corporate income tax,Taxes,0.28203281,0.976542361765538,Central government,28.880755
+SSD,2014,G11412,VAT / sales tax,Taxes,0.35084469,1.2148044129528688,Central government,28.880755
+SSD,2014,G1142,Excise taxes,Taxes,0.23864411,0.8263084100067465,Central government,28.880755
+SSD,2014,G115,Trade taxes (customs),Taxes,0.22286361,0.7716682185345518,Central government,28.880755
+SSD,2014,G13,Grants (e.g. foreign aid),Grants,4.6401858,16.0667051474008,Central government,28.880755
+SSD,2014,G14X,Other non-tax revenue,Other revenue,22.541584,78.050534890945,Central government,28.880755
+SSD,2015,G1111,Personal income tax,Taxes,0.59504973,2.848415663458292,Central government,20.890551
+SSD,2015,G1112,Corporate income tax,Taxes,0.28068383,1.343592270601424,Central government,20.890551
+SSD,2015,G11412,VAT / sales tax,Taxes,0.64744404,3.0992195303554153,Central government,20.890551
+SSD,2015,G1142,Excise taxes,Taxes,0.34804795,1.6660544193752482,Central government,20.890551
+SSD,2015,G115,Trade taxes (customs),Taxes,0.35553286,1.7018835842478643,Central government,20.890551
+SSD,2015,G13,Grants (e.g. foreign aid),Grants,6.0435517,28.929594380624266,Central government,20.890551
+SSD,2015,G14X,Other non-tax revenue,Other revenue,12.620241,60.411240151337495,Central government,20.890551
+SSD,2016,G1111,Personal income tax,Taxes,1.0974414,6.540457407101474,Central government,16.779276
+SSD,2016,G1112,Corporate income tax,Taxes,0.46595753,2.7769823322531915,Central government,16.779276
+SSD,2016,G11412,VAT / sales tax,Taxes,1.5891646,9.470996245606784,Central government,16.779276
+SSD,2016,G1142,Excise taxes,Taxes,0.36436768,2.171533980369594,Central government,16.779276
+SSD,2016,G115,Trade taxes (customs),Taxes,0.86442139,5.151720431799322,Central government,16.779276
+SSD,2016,G13,Grants (e.g. foreign aid),Grants,0.2254942,1.3438851592881602,Central government,16.779276
+SSD,2016,G14X,Other non-tax revenue,Other revenue,12.172429,72.54442325163494,Central government,16.779276
+SSD,2017,G1111,Personal income tax,Taxes,3.2316522,4.335217412140781,Central government,74.544178
+SSD,2017,G1112,Corporate income tax,Taxes,0.59678337,0.8005767628397803,Central government,74.544178
+SSD,2017,G11412,VAT / sales tax,Taxes,1.045665,1.4027453558480674,Central government,74.544178
+SSD,2017,G1142,Excise taxes,Taxes,0.68996144,0.9255738746866777,Central government,74.544178
+SSD,2017,G115,Trade taxes (customs),Taxes,0.70549112,0.9464067288969714,Central government,74.544178
+SSD,2017,G13,Grants (e.g. foreign aid),Grants,0.10648923,0.1428538516927856,Central government,74.544178
+SSD,2017,G14X,Other non-tax revenue,Other revenue,68.168136,91.44662601389494,Central government,74.544178
+SSD,2018,G1111,Personal income tax,Taxes,2.3321341,6.039440614218264,Central government,38.615068
+SSD,2018,G1112,Corporate income tax,Taxes,0.47881567,1.2399710651810842,Central government,38.615068
+SSD,2018,G11412,VAT / sales tax,Taxes,0.5817063,1.5064230885207817,Central government,38.615068
+SSD,2018,G1142,Excise taxes,Taxes,0.69300249,1.7946426767913501,Central government,38.615068
+SSD,2018,G115,Trade taxes (customs),Taxes,0.92468139,2.3946128749533733,Central government,38.615068
+SSD,2018,G14X,Other non-tax revenue,Other revenue,33.604728,87.02490955085202,Central government,38.615068
+SSD,2019,G1111,Personal income tax,Taxes,1.7945847,5.0702556788492,Central government,35.394363
+SSD,2019,G1112,Corporate income tax,Taxes,0.40085106,1.1325279678009743,Central government,35.394363
+SSD,2019,G11412,VAT / sales tax,Taxes,0.44132341,1.2468748484045329,Central government,35.394363
+SSD,2019,G1142,Excise taxes,Taxes,0.55385223,1.5648034970992415,Central government,35.394363
+SSD,2019,G115,Trade taxes (customs),Taxes,1.1889594,3.3591772791616568,Central government,35.394363
+SSD,2019,G14X,Other non-tax revenue,Other revenue,31.014792,87.62636016362266,Central government,35.394363
+SSD,2020,G1111,Personal income tax,Taxes,1.8327648,7.082092386589898,Central government,25.87886
+SSD,2020,G1112,Corporate income tax,Taxes,0.45601461,1.762112409434512,Central government,25.87886
+SSD,2020,G11412,VAT / sales tax,Taxes,0.40655653,1.5709985841235097,Central government,25.87886
+SSD,2020,G1142,Excise taxes,Taxes,0.64528901,2.493498557409621,Central government,25.87886
+SSD,2020,G115,Trade taxes (customs),Taxes,0.20183342,0.7799161829938032,Central government,25.87886
+SSD,2020,G14X,Other non-tax revenue,Other revenue,22.336402,86.31138187944866,Central government,25.87886
+SSD,2021,G1111,Personal income tax,Taxes,1.3389844,7.204720838186906,Central government,18.58482
+SSD,2021,G1112,Corporate income tax,Taxes,0.33044567,1.778040733363013,Central government,18.58482
+SSD,2021,G11412,VAT / sales tax,Taxes,0.30110261,1.6201534899879826,Central government,18.58482
+SSD,2021,G1142,Excise taxes,Taxes,0.46889512,2.52300059805637,Central government,18.58482
+SSD,2021,G115,Trade taxes (customs),Taxes,0.14803021,0.7965113997356382,Central government,18.58482
+SSD,2021,G14X,Other non-tax revenue,Other revenue,15.997362,86.07757294067008,Central government,18.58482
+SSD,2022,G1111,Personal income tax,Taxes,1.0350209,4.451708156895845,Central government,23.249972
+SSD,2022,G1112,Corporate income tax,Taxes,0.25543105,1.098629495123693,Central government,23.249972
+SSD,2022,G11412,VAT / sales tax,Taxes,0.23274916,1.001072861507102,Central government,23.249972
+SSD,2022,G1142,Excise taxes,Taxes,0.36245102,1.5589309957018445,Central government,23.249972
+SSD,2022,G115,Trade taxes (customs),Taxes,0.11442581,0.49215461420770745,Central government,23.249972
+SSD,2022,G14X,Other non-tax revenue,Other revenue,21.249894,91.39750361849897,Central government,23.249972
+SSD,2023,G1111,Personal income tax,Taxes,1.6373512,6.287220656919328,Central government,26.042528
+SSD,2023,G1112,Corporate income tax,Taxes,0.40407909,1.55161238571002,Central government,26.042528
+SSD,2023,G11412,VAT / sales tax,Taxes,0.36819749,1.4138315988371022,Central government,26.042528
+SSD,2023,G1142,Excise taxes,Taxes,0.57337932,2.2017037670075656,Central government,26.042528
+SSD,2023,G115,Trade taxes (customs),Taxes,0.24364731,0.93557472607882,Central government,26.042528
+SSD,2023,G14X,Other non-tax revenue,Other revenue,22.815873,87.6100545999221,Central government,26.042528
+SSD,2024,G1111,Personal income tax,Taxes,2.4635618,10.75871182041911,Central government,22.898297
+SSD,2024,G1112,Corporate income tax,Taxes,0.60797819,2.655124031924028,Central government,22.898297
+SSD,2024,G11412,VAT / sales tax,Taxes,0.55399066,2.4193530936158307,Central government,22.898297
+SSD,2024,G1142,Excise taxes,Taxes,0.86270764,3.767562430962306,Central government,22.898297
+SSD,2024,G115,Trade taxes (customs),Taxes,0.27235684,1.1894196256330962,Central government,22.898297
+SSD,2024,G14X,Other non-tax revenue,Other revenue,18.137702,79.20982899744564,Central government,22.898297

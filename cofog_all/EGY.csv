@@ -1,0 +1,136 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+EGY,2005,GF01,General public services,Government spending,11.5232685879906,3.3956785334394697,General government,29.468015151347
+EGY,2005,GF02,Defence,Government spending,8.87244334407927,2.61453294892796,General government,29.468015151347
+EGY,2005,GF03,Public order and safety,Government spending,5.33461349673397,1.57200471348337,General government,29.468015151347
+EGY,2005,GF04,Economic affairs,Government spending,7.0492892875615,2.0772856353209,General government,29.468015151347
+EGY,2005,GF05,Environmental protection,Government spending,0.295468425333091,0.0870686803446018,General government,29.468015151347
+EGY,2005,GF06,Housing and community amenities,Government spending,3.59776259082058,1.0601892253725,General government,29.468015151347
+EGY,2005,GF08,"Recreation, culture and religion",Government spending,4.37868623830338,1.29031192413319,General government,29.468015151347
+EGY,2005,GF09,Education,Government spending,15.4734357104457,4.55971437958809,General government,29.468015151347
+EGY,2005,GF10,Social protection,Government spending,24.0971581691026,7.10095422031522,General government,29.468015151347
+EGY,2005,GF0170,Interest on public debt,Government spending,17.3852902273069,5.12309995828845,General government,29.468015151347
+EGY,2005,GF072,Outpatient services,Health,0.0,0.0,General government,29.468015151347
+EGY,2005,GF073,Hospital services,Health,2.59029317300126,0.763307984684318,General government,29.468015151347
+EGY,2005,GF0740,Public health services,Health,1.75962534843399,0.51852666428347,General government,29.468015151347
+EGY,2006,GF01,General public services,Government spending,8.027793612259002,2.7146718340017006,General government,33.8159146226208
+EGY,2006,GF02,Defence,Government spending,7.25441326721097,2.45314619681214,General government,33.8159146226208
+EGY,2006,GF03,Public order and safety,Government spending,4.7913521270919,1.62023954456652,General government,33.8159146226208
+EGY,2006,GF04,Economic affairs,Government spending,5.16133262184406,1.74535183279226,General government,33.8159146226208
+EGY,2006,GF05,Environmental protection,Government spending,0.187676544347576,0.0634645400032613,General government,33.8159146226208
+EGY,2006,GF06,Housing and community amenities,Government spending,2.55603433360712,0.864346387977459,General government,33.8159146226208
+EGY,2006,GF08,"Recreation, culture and religion",Government spending,3.47625040294455,1.17552586832824,General government,33.8159146226208
+EGY,2006,GF09,Education,Government spending,11.6723701152649,3.94711871261428,General government,33.8159146226208
+EGY,2006,GF10,Social protection,Government spending,38.4395437483951,12.9986832952822,General government,33.8159146226208
+EGY,2006,GF0170,Interest on public debt,Government spending,15.5872154118776,5.27095945572453,General government,33.8159146226208
+EGY,2006,GF072,Outpatient services,Health,0.0,0.0,General government,33.8159146226208
+EGY,2006,GF073,Hospital services,Health,3.0135698974472,1.01906622361375,General government,33.8159146226208
+EGY,2006,GF0740,Public health services,Health,1.38703984643487,0.469040210252148,General government,33.8159146226208
+EGY,2007,GF01,General public services,Government spending,8.356269595818699,2.5520753014696407,General government,30.5408444785776
+EGY,2007,GF02,Defence,Government spending,7.49318601723491,2.28848228801424,General government,30.5408444785776
+EGY,2007,GF03,Public order and safety,Government spending,4.65303354457133,1.42107573838357,General government,30.5408444785776
+EGY,2007,GF04,Economic affairs,Government spending,5.81744170537923,1.77669582387178,General government,30.5408444785776
+EGY,2007,GF05,Environmental protection,Government spending,0.346186699155815,0.105728341394698,General government,30.5408444785776
+EGY,2007,GF06,Housing and community amenities,Government spending,3.86658767366301,1.18088852804127,General government,30.5408444785776
+EGY,2007,GF08,"Recreation, culture and religion",Government spending,3.64959383687332,1.11461677781923,General government,30.5408444785776
+EGY,2007,GF09,Education,Government spending,11.6068707189186,3.54483633509447,General government,30.5408444785776
+EGY,2007,GF10,Social protection,Government spending,35.8314271463053,10.9432204392079,General government,30.5408444785776
+EGY,2007,GF0170,Interest on public debt,Government spending,15.8636710089126,4.8448990914252,General government,30.5408444785776
+EGY,2007,GF072,Outpatient services,Health,0.0108705968333951,0.0033199720727803,General government,30.5408444785776
+EGY,2007,GF073,Hospital services,Health,2.82593707680453,0.863065047689332,General government,30.5408444785776
+EGY,2007,GF0740,Public health services,Health,1.52564645557919,0.465945311291371,General government,30.5408444785776
+EGY,2008,GF01,General public services,Government spending,6.9766653982851015,2.2657688080899794,General government,32.4763863356111
+EGY,2008,GF02,Defence,Government spending,6.55664753804262,2.12936218511906,General government,32.4763863356111
+EGY,2008,GF03,Public order and safety,Government spending,4.29664798016668,1.39539599752016,General government,32.4763863356111
+EGY,2008,GF04,Economic affairs,Government spending,6.07969639419049,1.97446568900952,General government,32.4763863356111
+EGY,2008,GF05,Environmental protection,Government spending,0.298172130932033,0.0968355331866112,General government,32.4763863356111
+EGY,2008,GF06,Housing and community amenities,Government spending,4.53406075386339,1.472499087116,General government,32.4763863356111
+EGY,2008,GF08,"Recreation, culture and religion",Government spending,3.588660851994,1.16546736256841,General government,32.4763863356111
+EGY,2008,GF09,Education,Government spending,11.0132057748728,3.57669125538352,General government,32.4763863356111
+EGY,2008,GF10,Social protection,Government spending,38.958258910206,12.6522346733062,General government,32.4763863356111
+EGY,2008,GF0170,Interest on public debt,Government spending,13.3934159878602,4.34969751975297,General government,32.4763863356111
+EGY,2008,GF072,Outpatient services,Health,0.0412038698151307,0.0133815279463841,General government,32.4763863356111
+EGY,2008,GF073,Hospital services,Health,2.55594798789731,0.83007954308681,General government,32.4763863356111
+EGY,2008,GF0740,Public health services,Health,1.7070174637697,0.554377586350198,General government,32.4763863356111
+EGY,2009,GF01,General public services,Government spending,8.464322564793802,2.7570338285964597,General government,32.5724097527188
+EGY,2009,GF02,Defence,Government spending,6.31219286157132,2.05603332325288,General government,32.5724097527188
+EGY,2009,GF03,Public order and safety,Government spending,4.53012110299624,1.47556960796232,General government,32.5724097527188
+EGY,2009,GF04,Economic affairs,Government spending,6.44414629629682,2.09901373669445,General government,32.5724097527188
+EGY,2009,GF05,Environmental protection,Government spending,0.352716293671754,0.114888196439367,General government,32.5724097527188
+EGY,2009,GF06,Housing and community amenities,Government spending,5.09883760510399,1.66081427736019,General government,32.5724097527188
+EGY,2009,GF08,"Recreation, culture and religion",Government spending,3.86814069766106,1.25994663785384,General government,32.5724097527188
+EGY,2009,GF09,Education,Government spending,11.1726177852498,3.63919084511672,General government,32.5724097527188
+EGY,2009,GF10,Social protection,Government spending,37.0769540664771,12.0768574023603,General government,32.5724097527188
+EGY,2009,GF0170,Interest on public debt,Government spending,12.2582499612684,3.99280740589686,General government,32.5724097527188
+EGY,2009,GF072,Outpatient services,Health,0.0381292196733326,0.0124196056675122,General government,32.5724097527188
+EGY,2009,GF073,Hospital services,Health,2.74620031539953,0.894503619362391,General government,32.5724097527188
+EGY,2009,GF0740,Public health services,Health,1.63737122983683,0.533331266155584,General government,32.5724097527188
+EGY,2010,GF01,General public services,Government spending,8.284517098664502,2.59034643838541,General government,31.2673195979398
+EGY,2010,GF02,Defence,Government spending,5.99936777115131,1.87584149486168,General government,31.2673195979398
+EGY,2010,GF03,Public order and safety,Government spending,4.61088431875829,1.44169993623744,General government,31.2673195979398
+EGY,2010,GF04,Economic affairs,Government spending,6.64899047572952,2.07896110208293,General government,31.2673195979398
+EGY,2010,GF05,Environmental protection,Government spending,0.344852099287154,0.107826008024319,General government,31.2673195979398
+EGY,2010,GF06,Housing and community amenities,Government spending,5.12791038282112,1.60336012809262,General government,31.2673195979398
+EGY,2010,GF08,"Recreation, culture and religion",Government spending,3.74093943963551,1.16969149055621,General government,31.2673195979398
+EGY,2010,GF09,Education,Government spending,11.3302064726319,3.54265186890428,General government,31.2673195979398
+EGY,2010,GF10,Social protection,Government spending,33.8607957109272,10.5873632133411,General government,31.2673195979398
+EGY,2010,GF0170,Interest on public debt,Government spending,15.67942669851,4.90253645694783,General government,31.2673195979398
+EGY,2010,GF072,Outpatient services,Health,0.0426023426750944,0.0133206106404313,General government,31.2673195979398
+EGY,2010,GF073,Hospital services,Health,2.58185321703146,0.807276296918917,General government,31.2673195979398
+EGY,2010,GF0740,Public health services,Health,1.74720021941467,0.54630267662029,General government,31.2673195979398
+EGY,2011,GF01,General public services,Government spending,7.524421969289701,2.2977524573711507,General government,30.537262088028
+EGY,2011,GF02,Defence,Government spending,6.07019980279346,1.853672823046,General government,30.537262088028
+EGY,2011,GF03,Public order and safety,Government spending,4.7071078623443,1.43742186469025,General government,30.537262088028
+EGY,2011,GF04,Economic affairs,Government spending,5.73607078356321,1.7516389687315,General government,30.537262088028
+EGY,2011,GF05,Environmental protection,Government spending,0.263032905689075,0.0803230477880283,General government,30.537262088028
+EGY,2011,GF06,Housing and community amenities,Government spending,2.90789918707386,0.887992796012383,General government,30.537262088028
+EGY,2011,GF08,"Recreation, culture and religion",Government spending,3.4021648198713,1.03892798771078,General government,30.537262088028
+EGY,2011,GF09,Education,Government spending,10.9515272149335,3.34429656826597,General government,30.537262088028
+EGY,2011,GF10,Social protection,Government spending,36.5229593882191,11.1531118306845,General government,30.537262088028
+EGY,2011,GF0170,Interest on public debt,Government spending,17.3451348338929,5.29672928374772,General government,30.537262088028
+EGY,2011,GF072,Outpatient services,Health,0.0999434183965396,0.0305199836154857,General government,30.537262088028
+EGY,2011,GF073,Hospital services,Health,2.70687662961719,0.82660601078578,General government,30.537262088028
+EGY,2011,GF0740,Public health services,Health,1.79920867527043,0.549429068677869,General government,30.537262088028
+EGY,2012,GF01,General public services,Government spending,11.001080511674601,3.39236878246851,General government,30.836687167851
+EGY,2012,GF02,Defence,Government spending,5.08169675188121,1.56702693019645,General government,30.836687167851
+EGY,2012,GF03,Public order and safety,Government spending,5.34136810592887,1.64710097330865,General government,30.836687167851
+EGY,2012,GF04,Economic affairs,Government spending,5.22111761311486,1.61001970502179,General government,30.836687167851
+EGY,2012,GF05,Environmental protection,Government spending,0.279616282807471,0.0862243983997134,General government,30.836687167851
+EGY,2012,GF06,Housing and community amenities,Government spending,2.22608641769715,0.686451304711292,General government,30.836687167851
+EGY,2012,GF08,"Recreation, culture and religion",Government spending,3.38792692797751,1.04472442825581,General government,30.836687167851
+EGY,2012,GF09,Education,Government spending,10.9230435574007,3.36830477100376,General government,30.836687167851
+EGY,2012,GF10,Social protection,Government spending,34.1654693254741,10.5354988953245,General government,30.836687167851
+EGY,2012,GF0170,Interest on public debt,Government spending,18.0861775834492,5.57717800203021,General government,30.836687167851
+EGY,2012,GF07,Health (no breakdown),Health,4.35535279287095,1.34304651579387,General government,30.836687167851
+EGY,2013,GF01,General public services,Government spending,7.825714370651301,2.6884761341646994,General government,34.3543861535154
+EGY,2013,GF02,Defence,Government spending,6.0,2.06126316921092,General government,34.3543861535154
+EGY,2013,GF03,Public order and safety,Government spending,6.0,2.06126316921092,General government,34.3543861535154
+EGY,2013,GF04,Economic affairs,Government spending,6.0,2.06126316921092,General government,34.3543861535154
+EGY,2013,GF05,Environmental protection,Government spending,0.3,0.103063158460546,General government,34.3543861535154
+EGY,2013,GF06,Housing and community amenities,Government spending,3.0,1.03063158460546,General government,34.3543861535154
+EGY,2013,GF08,"Recreation, culture and religion",Government spending,4.0,1.37417544614062,General government,34.3543861535154
+EGY,2013,GF09,Education,Government spending,12.0,4.12252633842184,General government,34.3543861535154
+EGY,2013,GF10,Social protection,Government spending,29.0,9.96277198451946,General government,34.3543861535154
+EGY,2013,GF0170,Interest on public debt,Government spending,21.1742856293487,7.27429585035476,General government,34.3543861535154
+EGY,2013,GF07,Health (no breakdown),Health,5.0,1.71771930767577,General government,34.3543861535154
+EGY,2014,GF01,General public services,Government spending,7.8860898384752005,2.793900938967149,General government,35.4282159624413
+EGY,2014,GF02,Defence,Government spending,6.0,2.12569295774648,General government,35.4282159624413
+EGY,2014,GF03,Public order and safety,Government spending,6.0,2.12569295774648,General government,35.4282159624413
+EGY,2014,GF04,Economic affairs,Government spending,6.0,2.12569295774648,General government,35.4282159624413
+EGY,2014,GF05,Environmental protection,Government spending,0.3,0.106284647887324,General government,35.4282159624413
+EGY,2014,GF06,Housing and community amenities,Government spending,3.0,1.06284647887324,General government,35.4282159624413
+EGY,2014,GF08,"Recreation, culture and religion",Government spending,4.0,1.41712863849765,General government,35.4282159624413
+EGY,2014,GF09,Education,Government spending,12.0,4.25138591549296,General government,35.4282159624413
+EGY,2014,GF10,Social protection,Government spending,29.0,10.274182629108,General government,35.4282159624413
+EGY,2014,GF0170,Interest on public debt,Government spending,21.1139101615248,7.48028169014085,General government,35.4282159624413
+EGY,2014,GF07,Health (no breakdown),Health,5.0,1.77141079812207,General government,35.4282159624413
+EGY,2015,GF01,General public services,Government spending,6.6360002498282,2.17375915544826,General government,32.757068619829
+EGY,2015,GF02,Defence,Government spending,6.0,1.96542411718974,General government,32.757068619829
+EGY,2015,GF03,Public order and safety,Government spending,6.0,1.96542411718974,General government,32.757068619829
+EGY,2015,GF04,Economic affairs,Government spending,6.0,1.96542411718974,General government,32.757068619829
+EGY,2015,GF05,Environmental protection,Government spending,0.3,0.0982712058594869,General government,32.757068619829
+EGY,2015,GF06,Housing and community amenities,Government spending,3.0,0.982712058594869,General government,32.757068619829
+EGY,2015,GF08,"Recreation, culture and religion",Government spending,4.0,1.31028274479316,General government,32.757068619829
+EGY,2015,GF09,Education,Government spending,12.0,3.93084823437948,General government,32.757068619829
+EGY,2015,GF10,Social protection,Government spending,29.0,9.4995498997504,General government,32.757068619829
+EGY,2015,GF0170,Interest on public debt,Government spending,22.3639997501718,7.32579074430214,General government,32.757068619829
+EGY,2015,GF07,Health (no breakdown),Health,5.0,1.63785343099145,General government,32.757068619829

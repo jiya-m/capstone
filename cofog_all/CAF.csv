@@ -1,0 +1,37 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+CAF,2008,GF01,General public services,Government spending,38.72879966060447,5.71471331878387,Central government (budgetary),14.7557202104484
+CAF,2008,GF02,Defence,Government spending,14.0280411759227,2.06993850692564,Central government (budgetary),14.7557202104484
+CAF,2008,GF03,Public order and safety,Government spending,5.7168467867156,0.843561916707763,Central government (budgetary),14.7557202104484
+CAF,2008,GF04,Economic affairs,Government spending,4.01750987864868,0.592812517120523,Central government (budgetary),14.7557202104484
+CAF,2008,GF05,Environmental protection,Government spending,0.0,0.0,Central government (budgetary),14.7557202104484
+CAF,2008,GF06,Housing and community amenities,Government spending,3.36844197354862,0.497037873068141,Central government (budgetary),14.7557202104484
+CAF,2008,GF08,"Recreation, culture and religion",Government spending,0.450147868364102,0.0664225599891044,Central government (budgetary),14.7557202104484
+CAF,2008,GF09,Education,Government spending,8.32174487494549,1.22793339037428,Central government (budgetary),14.7557202104484
+CAF,2008,GF10,Social protection,Government spending,0.480719455443732,0.0709336178424681,Central government (budgetary),14.7557202104484
+CAF,2008,GF0170,Interest on public debt,Government spending,7.90680675912723,1.16670628295764,Central government (budgetary),14.7557202104484
+CAF,2008,GF07,Health (no breakdown),Health,4.76218259890427,0.702694340204974,Central government (budgetary),14.7557202104484
+CAF,2008,UNCL,Unclassified,Unclassified,12.218758967775102,,Central government (budgetary),14.7557202104484
+CAF,2009,GF01,General public services,Government spending,38.15531132917198,7.67201021390652,Central government (budgetary),20.1073191297507
+CAF,2009,GF02,Defence,Government spending,10.123261342845,2.03551646454453,Central government (budgetary),20.1073191297507
+CAF,2009,GF03,Public order and safety,Government spending,1.92140003139271,0.386342036071262,Central government (budgetary),20.1073191297507
+CAF,2009,GF04,Economic affairs,Government spending,5.46162094909326,1.0981855538915,Central government (budgetary),20.1073191297507
+CAF,2009,GF05,Environmental protection,Government spending,0.0,0.0,Central government (budgetary),20.1073191297507
+CAF,2009,GF06,Housing and community amenities,Government spending,2.56268521476668,0.515287294424073,Central government (budgetary),20.1073191297507
+CAF,2009,GF08,"Recreation, culture and religion",Government spending,0.581811687173931,0.116986732674249,Central government (budgetary),20.1073191297507
+CAF,2009,GF09,Education,Government spending,6.77688494495252,1.36264988293763,Central government (budgetary),20.1073191297507
+CAF,2009,GF10,Social protection,Government spending,0.441679954773077,0.0888099980383611,Central government (budgetary),20.1073191297507
+CAF,2009,GF0170,Interest on public debt,Government spending,5.54096344406582,1.11413920256114,Central government (budgetary),20.1073191297507
+CAF,2009,GF07,Health (no breakdown),Health,3.45089151631252,0.69388177000645,Central government (budgetary),20.1073191297507
+CAF,2009,UNCL,Unclassified,Unclassified,24.983489585452503,,Central government (budgetary),20.1073191297507
+CAF,2010,GF01,General public services,Government spending,23.248200466759393,5.451590346248297,Central government (budgetary),23.4495153895591
+CAF,2010,GF02,Defence,Government spending,9.69549638765227,2.27354691751666,Central government (budgetary),23.4495153895591
+CAF,2010,GF03,Public order and safety,Government spending,1.27939174757995,0.300011164741508,Central government (budgetary),23.4495153895591
+CAF,2010,GF04,Economic affairs,Government spending,5.80584627707971,1.36144281623795,Central government (budgetary),23.4495153895591
+CAF,2010,GF05,Environmental protection,Government spending,0.0,0.0,Central government (budgetary),23.4495153895591
+CAF,2010,GF06,Housing and community amenities,Government spending,2.162769362398,0.507158934476187,Central government (budgetary),23.4495153895591
+CAF,2010,GF08,"Recreation, culture and religion",Government spending,0.737336617762152,0.17290186365499,Central government (budgetary),23.4495153895591
+CAF,2010,GF09,Education,Government spending,4.62924480936415,1.08553547399221,Central government (budgetary),23.4495153895591
+CAF,2010,GF10,Social protection,Government spending,0.261898016505513,0.0614138156854103,Central government (budgetary),23.4495153895591
+CAF,2010,GF0170,Interest on public debt,Government spending,3.82607549815601,0.897196162756243,Central government (budgetary),23.4495153895591
+CAF,2010,GF07,Health (no breakdown),Health,2.61531870386526,0.613279561948901,Central government (budgetary),23.4495153895591
+CAF,2010,UNCL,Unclassified,Unclassified,45.73842211287759,,Central government (budgetary),23.4495153895591

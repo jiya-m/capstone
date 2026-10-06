@@ -1,0 +1,253 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+FJI,1990,G1111,Personal income tax,Taxes,5.5327435,22.01424719666172,Central government,25.132558
+FJI,1990,G1112,Corporate income tax,Taxes,3.2719974,13.018958784269406,Central government,25.132558
+FJI,1990,G1113,Other income taxes,Taxes,0.3865041000000007,1.5378621473999794,Central government,25.132558
+FJI,1990,G1142,Excise taxes,Taxes,2.4444404,9.72619013028648,Central government,25.132558
+FJI,1990,G114X,Other goods & services taxes,Taxes,1.1721005,4.66367366322527,Central government,25.132558
+FJI,1990,G115,Trade taxes (customs),Taxes,7.9506088,31.6346975939069,Central government,25.132558
+FJI,1990,G113,Property taxes,Taxes,0.00652721,0.025971132485090333,Central government,25.132558
+FJI,1990,G11NEC,Other taxes,Taxes,0.24290548,0.9664972327279895,Central government,25.132558
+FJI,1990,G13,Grants (e.g. foreign aid),Grants,0.40468706,1.6102103732317024,Central government,25.132558
+FJI,1990,G14X,Other non-tax revenue,Other revenue,3.7200438,14.801691745805465,Central government,25.132558
+FJI,1991,G1111,Personal income tax,Taxes,5.4967616,23.829028388076,Central government,23.067502
+FJI,1991,G1112,Corporate income tax,Taxes,3.524817,15.280445190814332,Central government,23.067502
+FJI,1991,G1113,Other income taxes,Taxes,0.41138689999999967,1.783404635664493,Central government,23.067502
+FJI,1991,G1142,Excise taxes,Taxes,2.5515028,11.061027761046688,Central government,23.067502
+FJI,1991,G114X,Other goods & services taxes,Taxes,1.1554997999999999,5.009210793609121,Central government,23.067502
+FJI,1991,G115,Trade taxes (customs),Taxes,6.7187163,29.126328026328988,Central government,23.067502
+FJI,1991,G11NEC,Other taxes,Taxes,0.32820536,1.4228040816903362,Central government,23.067502
+FJI,1991,G13,Grants (e.g. foreign aid),Grants,0.50677439,2.1969192416239953,Central government,23.067502
+FJI,1991,G14X,Other non-tax revenue,Other revenue,2.3697693,10.273194297327903,Central government,23.067502
+FJI,1992,G1111,Personal income tax,Taxes,4.4939785,19.15406277985087,Central government,23.462273
+FJI,1992,G1112,Corporate income tax,Taxes,2.9081751,12.395112357613431,Central government,23.462273
+FJI,1992,G1113,Other income taxes,Taxes,0.44787420000000067,1.9089122354002133,Central government,23.462273
+FJI,1992,G11412,VAT / sales tax,Taxes,3.0841972,13.145347000267197,Central government,23.462273
+FJI,1992,G1142,Excise taxes,Taxes,1.9326353,8.237204042421636,Central government,23.462273
+FJI,1992,G114X,Other goods & services taxes,Taxes,0.6820357999999997,2.906946824802523,Central government,23.462273
+FJI,1992,G115,Trade taxes (customs),Taxes,6.0978252,25.989916663232073,Central government,23.462273
+FJI,1992,G11NEC,Other taxes,Taxes,0.29390491,1.2526702336129156,Central government,23.462273
+FJI,1992,G13,Grants (e.g. foreign aid),Grants,0.43223669,1.842262640111638,Central government,23.462273
+FJI,1992,G14X,Other non-tax revenue,Other revenue,3.0890088,13.165854817220822,Central government,23.462273
+FJI,1993,G1111,Personal income tax,Taxes,3.56623,15.115214287576167,Central government,23.593645
+FJI,1993,G1112,Corporate income tax,Taxes,3.0240283,12.81713062987936,Central government,23.593645
+FJI,1993,G1113,Other income taxes,Taxes,0.40637679999999987,1.7223994003469998,Central government,23.593645
+FJI,1993,G11412,VAT / sales tax,Taxes,5.7262503,24.27030795792681,Central government,23.593645
+FJI,1993,G1142,Excise taxes,Taxes,1.4970039,6.344945429161116,Central government,23.593645
+FJI,1993,G114X,Other goods & services taxes,Taxes,0.25004970000000015,1.0598180145543437,Central government,23.593645
+FJI,1993,G115,Trade taxes (customs),Taxes,5.0592067,21.443090713622247,Central government,23.593645
+FJI,1993,G11NEC,Other taxes,Taxes,0.2357717,0.9993017187467218,Central government,23.593645
+FJI,1993,G13,Grants (e.g. foreign aid),Grants,0.30423336,1.2894716352644962,Central government,23.593645
+FJI,1993,G14X,Other non-tax revenue,Other revenue,3.5237618,14.935215817649201,Central government,23.593645
+FJI,1994,G1111,Personal income tax,Taxes,3.1430912,13.127596691086914,Central government,23.942624
+FJI,1994,G1112,Corporate income tax,Taxes,2.982465,12.456717025991015,Central government,23.942624
+FJI,1994,G1113,Other income taxes,Taxes,0.4055378999999997,1.693790493304913,Central government,23.942624
+FJI,1994,G11412,VAT / sales tax,Taxes,5.8537008,24.448868442854227,Central government,23.942624
+FJI,1994,G1142,Excise taxes,Taxes,1.4787969,6.176419345143274,Central government,23.942624
+FJI,1994,G114X,Other goods & services taxes,Taxes,0.23731219999999964,0.9911703648543674,Central government,23.942624
+FJI,1994,G115,Trade taxes (customs),Taxes,5.035371,21.030990025995745,Central government,23.942624
+FJI,1994,G11NEC,Other taxes,Taxes,0.7071009999999998,2.9533144783912877,Central government,23.942624
+FJI,1994,G13,Grants (e.g. foreign aid),Grants,0.15406294,0.6434672151298447,Central government,23.942624
+FJI,1994,G14X,Other non-tax revenue,Other revenue,3.9451857,16.477665917248412,Central government,23.942624
+FJI,1995,G1113,Other income taxes,Taxes,7.5116042,31.76215340375519,Central government,23.649543
+FJI,1995,G11412,VAT / sales tax,Taxes,5.6502775,23.89169822456651,Central government,23.649543
+FJI,1995,G1142,Excise taxes,Taxes,1.4282276,6.0391339744281405,Central government,23.649543
+FJI,1995,G114X,Other goods & services taxes,Taxes,0.3374841000000006,1.4270216414661834,Central government,23.649543
+FJI,1995,G115,Trade taxes (customs),Taxes,5.3770919,22.736557098401097,Central government,23.649543
+FJI,1995,G11NEC,Other taxes,Taxes,0.1945617000000002,0.8226869251038816,Central government,23.649543
+FJI,1995,G13,Grants (e.g. foreign aid),Grants,0.20888703,0.8832603148758573,Central government,23.649543
+FJI,1995,G14X,Other non-tax revenue,Other revenue,2.9414092,12.437488417403147,Central government,23.649543
+FJI,1996,G1111,Personal income tax,Taxes,3.2170666,14.124492608688149,Central government,22.77651
+FJI,1996,G1112,Corporate income tax,Taxes,3.5009891,15.37105096489074,Central government,22.77651
+FJI,1996,G1113,Other income taxes,Taxes,0.5820563999999999,2.555511694920966,Central government,22.77651
+FJI,1996,G11412,VAT / sales tax,Taxes,5.6283991,24.711419243448994,Central government,22.77651
+FJI,1996,G1142,Excise taxes,Taxes,1.368018,6.006266742986403,Central government,22.77651
+FJI,1996,G114X,Other goods & services taxes,Taxes,0.3642486999999994,1.599229581033311,Central government,22.77651
+FJI,1996,G115,Trade taxes (customs),Taxes,4.8594297,21.335268247194403,Central government,22.77651
+FJI,1996,G11NEC,Other taxes,Taxes,0.052212400000002435,0.2292379206205751,Central government,22.77651
+FJI,1996,G13,Grants (e.g. foreign aid),Grants,0.22676721,0.9956187358812632,Central government,22.77651
+FJI,1996,G14X,Other non-tax revenue,Other revenue,2.9773237,13.071904260335192,Central government,22.77651
+FJI,2004,G1111,Personal income tax,Taxes,3.4314057,14.940209220053932,Central government,22.967588
+FJI,2004,G1112,Corporate income tax,Taxes,2.4847127,10.818344094294972,Central government,22.967588
+FJI,2004,G1113,Other income taxes,Taxes,0.6187857999999995,2.6941697142947683,Central government,22.967588
+FJI,2004,G11412,VAT / sales tax,Taxes,7.8971157,34.38373981630113,Central government,22.967588
+FJI,2004,G1142,Excise taxes,Taxes,1.528411,6.65464305611891,Central government,22.967588
+FJI,2004,G114X,Other goods & services taxes,Taxes,0.3036901000000001,1.3222550839905352,Central government,22.967588
+FJI,2004,G115,Trade taxes (customs),Taxes,4.2102977,18.331475207583836,Central government,22.967588
+FJI,2004,G11NEC,Other taxes,Taxes,0.00994073,0.04328155834212979,Central government,22.967588
+FJI,2004,G13,Grants (e.g. foreign aid),Grants,0.44332903,1.9302376461995052,Central government,22.967588
+FJI,2004,G14X,Other non-tax revenue,Other revenue,2.0398994,8.88164399326564,Central government,22.967588
+FJI,2005,G1111,Personal income tax,Taxes,3.2753974,14.7477192577106,Central government,22.209518
+FJI,2005,G1112,Corporate income tax,Taxes,2.6920353,12.121088218561427,Central government,22.209518
+FJI,2005,G1113,Other income taxes,Taxes,0.4326646999999997,1.9481048401398788,Central government,22.209518
+FJI,2005,G11412,VAT / sales tax,Taxes,7.5370452,33.93610394948571,Central government,22.209518
+FJI,2005,G1142,Excise taxes,Taxes,1.3860523,6.240803084506347,Central government,22.209518
+FJI,2005,G114X,Other goods & services taxes,Taxes,0.3558636000000004,1.6023022021200322,Central government,22.209518
+FJI,2005,G115,Trade taxes (customs),Taxes,3.9903927,17.967038524124675,Central government,22.209518
+FJI,2005,G11NEC,Other taxes,Taxes,0.03767433,0.16963145970084245,Central government,22.209518
+FJI,2005,G13,Grants (e.g. foreign aid),Grants,0.12963602,0.5836957764718738,Central government,22.209518
+FJI,2005,G14X,Other non-tax revenue,Other revenue,2.3727567,10.683512687178617,Central government,22.209518
+FJI,2006,G1111,Personal income tax,Taxes,3.6977465,15.669564039707483,Central government,23.598273
+FJI,2006,G1112,Corporate income tax,Taxes,2.9645217,12.562451921799534,Central government,23.598273
+FJI,2006,G1113,Other income taxes,Taxes,1.0041913,4.255359279893066,Central government,23.598273
+FJI,2006,G11412,VAT / sales tax,Taxes,8.1227464,34.420935803225944,Central government,23.598273
+FJI,2006,G1142,Excise taxes,Taxes,1.4087633,5.969772872786073,Central government,23.598273
+FJI,2006,G114X,Other goods & services taxes,Taxes,0.43225440000000015,1.8317204822573252,Central government,23.598273
+FJI,2006,G115,Trade taxes (customs),Taxes,3.7587168,15.927931675339126,Central government,23.598273
+FJI,2006,G11NEC,Other taxes,Taxes,0.01579087,0.0669153628318479,Central government,23.598273
+FJI,2006,G13,Grants (e.g. foreign aid),Grants,0.10998283,0.466063046223764,Central government,23.598273
+FJI,2006,G14X,Other non-tax revenue,Other revenue,2.0835587,8.829284668416202,Central government,23.598273
+FJI,2007,G1111,Personal income tax,Taxes,3.5883076,17.765328089830348,Central government,20.198375
+FJI,2007,G1112,Corporate income tax,Taxes,3.1657667,15.673373174964018,Central government,20.198375
+FJI,2007,G1113,Other income taxes,Taxes,1.206510800000001,5.973306247748577,Central government,20.198375
+FJI,2007,G11412,VAT / sales tax,Taxes,3.7626366,18.628412369609492,Central government,20.198375
+FJI,2007,G1142,Excise taxes,Taxes,1.683401,8.334338748369426,Central government,20.198375
+FJI,2007,G114X,Other goods & services taxes,Taxes,0.49456670000000047,2.448546966209002,Central government,20.198375
+FJI,2007,G115,Trade taxes (customs),Taxes,3.6926734,18.282032030807315,Central government,20.198375
+FJI,2007,G13,Grants (e.g. foreign aid),Grants,0.26886917,1.3311425749259542,Central government,20.198375
+FJI,2007,G14X,Other non-tax revenue,Other revenue,2.3356431,11.563519797535871,Central government,20.198375
+FJI,2008,G1111,Personal income tax,Taxes,3.293734,13.990867736628298,Central government,23.542028
+FJI,2008,G1112,Corporate income tax,Taxes,3.2600825,13.847925505823035,Central government,23.542028
+FJI,2008,G1113,Other income taxes,Taxes,1.170966899999999,4.973942346853037,Central government,23.542028
+FJI,2008,G11412,VAT / sales tax,Taxes,6.5947074,28.012486434898474,Central government,23.542028
+FJI,2008,G1142,Excise taxes,Taxes,1.5700603,6.669180327200359,Central government,23.542028
+FJI,2008,G114X,Other goods & services taxes,Taxes,0.9427270999999997,4.004443032690301,Central government,23.542028
+FJI,2008,G115,Trade taxes (customs),Taxes,4.1354469,17.56623048787471,Central government,23.542028
+FJI,2008,G13,Grants (e.g. foreign aid),Grants,0.32496935,1.3803795917666908,Central government,23.542028
+FJI,2008,G14X,Other non-tax revenue,Other revenue,2.2493332,9.554543049562255,Central government,23.542028
+FJI,2009,G1111,Personal income tax,Taxes,2.9220512,12.60009150593591,Central government,23.190714
+FJI,2009,G1112,Corporate income tax,Taxes,3.3374938,14.391509389189952,Central government,23.190714
+FJI,2009,G1113,Other income taxes,Taxes,1.5278152999999994,6.5880476646572514,Central government,23.190714
+FJI,2009,G11412,VAT / sales tax,Taxes,5.8285955,25.13331616197768,Central government,23.190714
+FJI,2009,G1142,Excise taxes,Taxes,1.5273352,6.585977439490768,Central government,23.190714
+FJI,2009,G114X,Other goods & services taxes,Taxes,0.6781392000000008,2.9241842079160643,Central government,23.190714
+FJI,2009,G115,Trade taxes (customs),Taxes,4.2561411,18.35278153995889,Central government,23.190714
+FJI,2009,G13,Grants (e.g. foreign aid),Grants,0.27542122,1.1876357863532667,Central government,23.190714
+FJI,2009,G14X,Other non-tax revenue,Other revenue,2.8377216,12.236456304520216,Central government,23.190714
+FJI,2010,G1111,Personal income tax,Taxes,2.8188438,12.390818324743872,Central government,22.749456
+FJI,2010,G1112,Corporate income tax,Taxes,2.4635538,10.829066714882325,Central government,22.749456
+FJI,2010,G1113,Other income taxes,Taxes,1.2491324000000001,5.490823092769914,Central government,22.749456
+FJI,2010,G11412,VAT / sales tax,Taxes,6.7864195,29.83112831580067,Central government,22.749456
+FJI,2010,G1142,Excise taxes,Taxes,1.5497409,6.812210716438088,Central government,22.749456
+FJI,2010,G114X,Other goods & services taxes,Taxes,0.8447625000000005,3.713330502760193,Central government,22.749456
+FJI,2010,G115,Trade taxes (customs),Taxes,4.4326999,19.484860831597103,Central government,22.749456
+FJI,2010,G13,Grants (e.g. foreign aid),Grants,0.2572885,1.130965490370862,Central government,22.749456
+FJI,2010,G14X,Other non-tax revenue,Other revenue,2.347015,10.316796010636965,Central government,22.749456
+FJI,2011,G1111,Personal income tax,Taxes,2.8025704,11.825527865222835,Central government,23.699326
+FJI,2011,G1112,Corporate income tax,Taxes,2.4079229,10.16030118324884,Central government,23.699326
+FJI,2011,G1113,Other income taxes,Taxes,1.3198066000000002,5.568962594126096,Central government,23.699326
+FJI,2011,G11412,VAT / sales tax,Taxes,7.5720755,31.950594291162545,Central government,23.699326
+FJI,2011,G1142,Excise taxes,Taxes,1.3500063,5.696391112557379,Central government,23.699326
+FJI,2011,G114X,Other goods & services taxes,Taxes,1.5435731999999995,6.513152314964567,Central government,23.699326
+FJI,2011,G115,Trade taxes (customs),Taxes,4.159558,17.55137677755055,Central government,23.699326
+FJI,2011,G13,Grants (e.g. foreign aid),Grants,0.29090576,1.2274853723688177,Central government,23.699326
+FJI,2011,G14X,Other non-tax revenue,Other revenue,2.2529071,9.506207476111346,Central government,23.699326
+FJI,2012,G1111,Personal income tax,Taxes,1.6988408,7.260862000220282,Central government,23.397233
+FJI,2012,G1112,Corporate income tax,Taxes,3.1898369,13.633393743610624,Central government,23.397233
+FJI,2012,G1113,Other income taxes,Taxes,1.5089710999999997,6.449357067136955,Central government,23.397233
+FJI,2012,G11412,VAT / sales tax,Taxes,7.2067737,30.801820454581105,Central government,23.397233
+FJI,2012,G1142,Excise taxes,Taxes,1.4320499,6.1205951148155,Central government,23.397233
+FJI,2012,G114X,Other goods & services taxes,Taxes,1.5913293999999993,6.801357237413498,Central government,23.397233
+FJI,2012,G115,Trade taxes (customs),Taxes,4.5051152,19.25490591131011,Central government,23.397233
+FJI,2012,G13,Grants (e.g. foreign aid),Grants,0.25700103,1.0984248863957546,Central government,23.397233
+FJI,2012,G14X,Other non-tax revenue,Other revenue,2.0073146,8.579282003132592,Central government,23.397233
+FJI,2013,G1111,Personal income tax,Taxes,1.617354,6.79998874904944,Central government,23.784657
+FJI,2013,G1112,Corporate income tax,Taxes,2.4343157,10.234815242448104,Central government,23.784657
+FJI,2013,G1113,Other income taxes,Taxes,1.2432304000000007,5.227026818171062,Central government,23.784657
+FJI,2013,G11412,VAT / sales tax,Taxes,8.0955863,34.037010918425274,Central government,23.784657
+FJI,2013,G1142,Excise taxes,Taxes,1.5532568,6.530499052393314,Central government,23.784657
+FJI,2013,G114X,Other goods & services taxes,Taxes,1.8521638999999988,7.787221400754271,Central government,23.784657
+FJI,2013,G115,Trade taxes (customs),Taxes,4.8752766,20.497569504576,Central government,23.784657
+FJI,2013,G13,Grants (e.g. foreign aid),Grants,0.34538902,1.4521505187146488,Central government,23.784657
+FJI,2013,G14X,Other non-tax revenue,Other revenue,1.7680838,7.433715777360169,Central government,23.784657
+FJI,2014,G1111,Personal income tax,Taxes,1.9964126,7.316561852009046,Central government,27.286212
+FJI,2014,G1112,Corporate income tax,Taxes,2.263768,8.29638051302562,Central government,27.286212
+FJI,2014,G1113,Other income taxes,Taxes,1.3945414999999999,5.110791797218407,Central government,27.286212
+FJI,2014,G11412,VAT / sales tax,Taxes,9.3700582,34.33990066844126,Central government,27.286212
+FJI,2014,G1142,Excise taxes,Taxes,1.5481801,5.673854923425924,Central government,27.286212
+FJI,2014,G114X,Other goods & services taxes,Taxes,2.0324606999999997,7.448672896237782,Central government,27.286212
+FJI,2014,G115,Trade taxes (customs),Taxes,5.3712581,19.684879824819074,Central government,27.286212
+FJI,2014,G13,Grants (e.g. foreign aid),Grants,1.2934593,4.740340234030944,Central government,27.286212
+FJI,2014,G14X,Other non-tax revenue,Other revenue,2.0160738,7.388617290791951,Central government,27.286212
+FJI,2015,G1111,Personal income tax,Taxes,1.8598419,6.499383135141209,Central government,28.615668
+FJI,2015,G1112,Corporate income tax,Taxes,2.9582555,10.337887272105618,Central government,28.615668
+FJI,2015,G1113,Other income taxes,Taxes,1.3426269,4.691929260571516,Central government,28.615668
+FJI,2015,G11412,VAT / sales tax,Taxes,9.7811178,34.180987143127325,Central government,28.615668
+FJI,2015,G1142,Excise taxes,Taxes,1.5193014,5.309334033369411,Central government,28.615668
+FJI,2015,G114X,Other goods & services taxes,Taxes,1.9978927999999987,6.981814298376675,Central government,28.615668
+FJI,2015,G115,Trade taxes (customs),Taxes,5.4110167,18.909279699498892,Central government,28.615668
+FJI,2015,G13,Grants (e.g. foreign aid),Grants,1.7046847,5.957172483270353,Central government,28.615668
+FJI,2015,G14X,Other non-tax revenue,Other revenue,2.04093,7.132211626162283,Central government,28.615668
+FJI,2016,G1111,Personal income tax,Taxes,1.83894,7.0276102376246685,Central government,26.167359
+FJI,2016,G1112,Corporate income tax,Taxes,3.3687563,12.873887273071768,Central government,26.167359
+FJI,2016,G1113,Other income taxes,Taxes,1.8786397000000004,7.179324822195469,Central government,26.167359
+FJI,2016,G11412,VAT / sales tax,Taxes,6.0998794,23.311024242071962,Central government,26.167359
+FJI,2016,G1142,Excise taxes,Taxes,1.7512278,6.692413246594735,Central government,26.167359
+FJI,2016,G114X,Other goods & services taxes,Taxes,3.2975768,12.60187090336476,Central government,26.167359
+FJI,2016,G115,Trade taxes (customs),Taxes,5.2996035,20.252725924691138,Central government,26.167359
+FJI,2016,G13,Grants (e.g. foreign aid),Grants,0.46939467,1.7938175189937968,Central government,26.167359
+FJI,2016,G14X,Other non-tax revenue,Other revenue,2.1633405,8.267324570278566,Central government,26.167359
+FJI,2017,G1111,Personal income tax,Taxes,1.7837283,6.480535624959893,Central government,27.524396
+FJI,2017,G1112,Corporate income tax,Taxes,4.0246417,14.622088977648193,Central government,27.524396
+FJI,2017,G1113,Other income taxes,Taxes,1.8584597,6.752045304995315,Central government,27.524396
+FJI,2017,G11412,VAT / sales tax,Taxes,6.4039533,23.26646244342789,Central government,27.524396
+FJI,2017,G1142,Excise taxes,Taxes,1.8805052,6.8321397050898,Central government,27.524396
+FJI,2017,G114X,Other goods & services taxes,Taxes,3.570578499999999,12.972413551416913,Central government,27.524396
+FJI,2017,G115,Trade taxes (customs),Taxes,5.1480756,18.703682240051236,Central government,27.524396
+FJI,2017,G13,Grants (e.g. foreign aid),Grants,0.29576238,1.0745462972768474,Central government,27.524396
+FJI,2017,G14X,Other non-tax revenue,Other revenue,2.5586915,9.296085855133917,Central government,27.524396
+FJI,2018,G1111,Personal income tax,Taxes,1.6611349,6.1970656050312645,Central government,26.805185
+FJI,2018,G1112,Corporate income tax,Taxes,3.3087399,12.343656273963413,Central government,26.805185
+FJI,2018,G1113,Other income taxes,Taxes,1.6208192000000006,6.0466629870303095,Central government,26.805185
+FJI,2018,G11412,VAT / sales tax,Taxes,6.4461747,24.048238055435917,Central government,26.805185
+FJI,2018,G1142,Excise taxes,Taxes,2.014942,7.516985986106792,Central government,26.805185
+FJI,2018,G114X,Other goods & services taxes,Taxes,3.8243553,14.267222181081758,Central government,26.805185
+FJI,2018,G115,Trade taxes (customs),Taxes,5.1171871,19.090288315488216,Central government,26.805185
+FJI,2018,G13,Grants (e.g. foreign aid),Grants,0.56737965,2.1166787321184315,Central government,26.805185
+FJI,2018,G14X,Other non-tax revenue,Other revenue,2.2444514,8.373198692715606,Central government,26.805185
+FJI,2019,G1111,Personal income tax,Taxes,1.4857244,5.689656433722428,Central government,26.112726
+FJI,2019,G1112,Corporate income tax,Taxes,3.1001131,11.872039285807102,Central government,26.112726
+FJI,2019,G1113,Other income taxes,Taxes,1.596883099999999,6.115344275033518,Central government,26.112726
+FJI,2019,G11412,VAT / sales tax,Taxes,6.5962807,25.26078923075779,Central government,26.112726
+FJI,2019,G1142,Excise taxes,Taxes,1.8024042,6.902397680685817,Central government,26.112726
+FJI,2019,G114X,Other goods & services taxes,Taxes,3.7320961000000006,14.292250020687138,Central government,26.112726
+FJI,2019,G115,Trade taxes (customs),Taxes,4.9352149,18.899654072846747,Central government,26.112726
+FJI,2019,G13,Grants (e.g. foreign aid),Grants,0.43351039,1.6601498767530634,Central government,26.112726
+FJI,2019,G14X,Other non-tax revenue,Other revenue,2.4304992,9.307719123706399,Central government,26.112726
+FJI,2020,G1111,Personal income tax,Taxes,1.2116593,5.612332687393917,Central government,21.589228
+FJI,2020,G1112,Corporate income tax,Taxes,2.5272558,11.70609620686761,Central government,21.589228
+FJI,2020,G1113,Other income taxes,Taxes,1.8113526000000002,8.390075828556725,Central government,21.589228
+FJI,2020,G11412,VAT / sales tax,Taxes,5.0857155,23.556726993665546,Central government,21.589228
+FJI,2020,G1142,Excise taxes,Taxes,1.5124243,7.005457999702444,Central government,21.589228
+FJI,2020,G114X,Other goods & services taxes,Taxes,2.1833691999999996,10.113234248116699,Central government,21.589228
+FJI,2020,G115,Trade taxes (customs),Taxes,3.6851377,17.069335225882092,Central government,21.589228
+FJI,2020,G13,Grants (e.g. foreign aid),Grants,1.3166531,6.098657626849834,Central government,21.589228
+FJI,2020,G14X,Other non-tax revenue,Other revenue,2.2556605,10.448083182965135,Central government,21.589228
+FJI,2021,G1111,Personal income tax,Taxes,1.3572799,5.733267006735158,Central government,23.67376
+FJI,2021,G1112,Corporate income tax,Taxes,2.2623657,9.556427252020228,Central government,23.67376
+FJI,2021,G1113,Other income taxes,Taxes,1.5230356999999994,6.433433758865641,Central government,23.67376
+FJI,2021,G11412,VAT / sales tax,Taxes,5.2146636,22.027187442400628,Central government,23.67376
+FJI,2021,G1142,Excise taxes,Taxes,1.3499773,5.702420196402679,Central government,23.67376
+FJI,2021,G114X,Other goods & services taxes,Taxes,1.4249285,6.019020510070633,Central government,23.67376
+FJI,2021,G115,Trade taxes (customs),Taxes,3.2873168,13.88590883142541,Central government,23.67376
+FJI,2021,G13,Grants (e.g. foreign aid),Grants,4.8111099,20.322541913018004,Central government,23.67376
+FJI,2021,G14X,Other non-tax revenue,Other revenue,2.4430831,10.319793089061621,Central government,23.67376
+FJI,2022,G1111,Personal income tax,Taxes,1.3696149,6.4459442669088896,Central government,21.2477
+FJI,2022,G1112,Corporate income tax,Taxes,2.4981134,11.757100297914597,Central government,21.2477
+FJI,2022,G1113,Other income taxes,Taxes,1.1141682999999998,5.243712495940737,Central government,21.2477
+FJI,2022,G11412,VAT / sales tax,Taxes,7.6351686,35.934094513759135,Central government,21.2477
+FJI,2022,G1142,Excise taxes,Taxes,1.2146133,5.716446015333425,Central government,21.2477
+FJI,2022,G114X,Other goods & services taxes,Taxes,1.2109781000000002,5.699337340041511,Central government,21.2477
+FJI,2022,G115,Trade taxes (customs),Taxes,3.4532079,16.252149173792933,Central government,21.2477
+FJI,2022,G13,Grants (e.g. foreign aid),Grants,0.47699004,2.2449019893917934,Central government,21.2477
+FJI,2022,G14X,Other non-tax revenue,Other revenue,2.274845,10.70631174197678,Central government,21.2477
+FJI,2023,G1111,Personal income tax,Taxes,1.5769866,6.423474123749423,Central government,24.550369
+FJI,2023,G1112,Corporate income tax,Taxes,3.1584577,12.86521477538688,Central government,24.550369
+FJI,2023,G1113,Other income taxes,Taxes,1.7356927,7.06992509970013,Central government,24.550369
+FJI,2023,G11412,VAT / sales tax,Taxes,8.6040535,35.04653433111331,Central government,24.550369
+FJI,2023,G1142,Excise taxes,Taxes,1.2576324,5.12266190377831,Central government,24.550369
+FJI,2023,G114X,Other goods & services taxes,Taxes,0.8209001000000014,3.343738336478777,Central government,24.550369
+FJI,2023,G115,Trade taxes (customs),Taxes,3.3842654,13.784987916067575,Central government,24.550369
+FJI,2023,G13,Grants (e.g. foreign aid),Grants,1.380157,5.621736276143141,Central government,24.550369
+FJI,2023,G14X,Other non-tax revenue,Other revenue,2.6322236,10.72172723758246,Central government,24.550369
+FJI,2024,G11NEC,Other taxes,Taxes,22.297639,84.78977988638107,Central government,26.297555
+FJI,2024,UNCL,Unclassified,Unclassified,3.999915999999999,15.210220113618924,Central government,26.297555

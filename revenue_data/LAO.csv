@@ -1,0 +1,216 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+LAO,2000,G1111,Personal income tax,Taxes,0.87860497,5.38517686550152,General government,16.315248
+LAO,2000,G1112,Corporate income tax,Taxes,1.3527861,8.291544731066141,General government,16.315248
+LAO,2000,G114,Goods & services taxes,Taxes,3.9588887,24.26496157919,General government,16.315248
+LAO,2000,G115,Trade taxes (customs),Taxes,1.0308583,6.31837339682955,General government,16.315248
+LAO,2000,G11NEC,Other taxes,Taxes,2.8241789000000006,17.310057870851256,General government,16.315248
+LAO,2000,G13,Grants (e.g. foreign aid),Grants,3.3623275,20.60849743114879,General government,16.315248
+LAO,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,0.16699447,1.0235484514851851,General government,16.315248
+LAO,2000,G14X,Other non-tax revenue,Other revenue,2.74060923,16.79783967392756,General government,16.315248
+LAO,2001,G1111,Personal income tax,Taxes,0.842138,5.554019253987934,General government,15.162677
+LAO,2001,G1112,Corporate income tax,Taxes,1.2821344,8.455857761792327,General government,15.162677
+LAO,2001,G114,Goods & services taxes,Taxes,4.0915884,26.984604367685204,General government,15.162677
+LAO,2001,G115,Trade taxes (customs),Taxes,1.1652476,7.684972778883306,General government,15.162677
+LAO,2001,G11NEC,Other taxes,Taxes,2.3795808,15.693672034298428,General government,15.162677
+LAO,2001,G13,Grants (e.g. foreign aid),Grants,2.678646,17.666049339440523,General government,15.162677
+LAO,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,0.10133165,0.6682965679477311,General government,15.162677
+LAO,2001,G14X,Other non-tax revenue,Other revenue,2.62200985,17.2925259174221,General government,15.162677
+LAO,2002,G1111,Personal income tax,Taxes,0.65544382,4.759957872381587,General government,13.76995
+LAO,2002,G1112,Corporate income tax,Taxes,1.1978218,8.698810077452992,General government,13.76995
+LAO,2002,G114,Goods & services taxes,Taxes,3.4804754,25.27587532957509,General government,13.76995
+LAO,2002,G115,Trade taxes (customs),Taxes,1.3158589,9.556017981828521,General government,13.76995
+LAO,2002,G11NEC,Other taxes,Taxes,2.5937254,18.83612791791382,General government,13.76995
+LAO,2002,G13,Grants (e.g. foreign aid),Grants,1.9434219,14.1135000285208,General government,13.76995
+LAO,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,0.11689869,0.8489405541066736,General government,13.76995
+LAO,2002,G14X,Other non-tax revenue,Other revenue,2.46630411,17.910770238220515,General government,13.76995
+LAO,2003,G1111,Personal income tax,Taxes,0.63302628,5.208423079081771,General government,12.153895
+LAO,2003,G1112,Corporate income tax,Taxes,0.94924027,7.810173267785677,General government,12.153895
+LAO,2003,G114,Goods & services taxes,Taxes,3.5493499,29.20339410695015,General government,12.153895
+LAO,2003,G115,Trade taxes (customs),Taxes,1.3726157,11.293627952681492,General government,12.153895
+LAO,2003,G11NEC,Other taxes,Taxes,1.8082843999999993,14.878229388049308,General government,12.153895
+LAO,2003,G13,Grants (e.g. foreign aid),Grants,1.735759,14.281503818962928,General government,12.153895
+LAO,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,0.13691603,1.1265197560964642,General government,12.153895
+LAO,2003,G14X,Other non-tax revenue,Other revenue,1.9687035699999997,16.198128630392205,General government,12.153895
+LAO,2004,G1111,Personal income tax,Taxes,0.67090017,5.705516501776984,General government,11.758798
+LAO,2004,G1112,Corporate income tax,Taxes,0.8659778,7.364509429282942,General government,11.758798
+LAO,2004,G114,Goods & services taxes,Taxes,3.9472159,33.568191603717274,General government,11.758798
+LAO,2004,G115,Trade taxes (customs),Taxes,1.3207354,11.231891056430982,General government,11.758798
+LAO,2004,G11NEC,Other taxes,Taxes,1.3990735,11.898099446671598,General government,11.758798
+LAO,2004,G13,Grants (e.g. foreign aid),Grants,1.1985473,10.192770406229364,General government,11.758798
+LAO,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,0.33785354,2.873197882262826,General government,11.758798
+LAO,2004,G14X,Other non-tax revenue,Other revenue,2.0184945599999997,17.16582367362803,General government,11.758798
+LAO,2005,G1111,Personal income tax,Taxes,0.67643477,5.288997514601536,General government,12.78947
+LAO,2005,G1112,Corporate income tax,Taxes,1.0624485,8.307212646523375,General government,12.78947
+LAO,2005,G114,Goods & services taxes,Taxes,4.0608088,31.751188145565095,General government,12.78947
+LAO,2005,G115,Trade taxes (customs),Taxes,1.385674,10.83449087344811,General government,12.78947
+LAO,2005,G11NEC,Other taxes,Taxes,1.2432551999999994,9.720927951139226,General government,12.78947
+LAO,2005,G13,Grants (e.g. foreign aid),Grants,1.68507,13.175447858674698,General government,12.78947
+LAO,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,0.66973359,5.23660144341067,General government,12.78947
+LAO,2005,G14X,Other non-tax revenue,Other revenue,2.0060455100000003,15.68513356663729,General government,12.78947
+LAO,2006,G1111,Personal income tax,Taxes,0.6010483,4.540967034926372,General government,13.23613
+LAO,2006,G1112,Corporate income tax,Taxes,1.4452208,10.918756464313965,General government,13.23613
+LAO,2006,G114,Goods & services taxes,Taxes,4.4750072,33.809030283020796,General government,13.23613
+LAO,2006,G115,Trade taxes (customs),Taxes,1.3325099,10.067216777109321,General government,13.23613
+LAO,2006,G11NEC,Other taxes,Taxes,1.1793523,8.910099099963508,General government,13.23613
+LAO,2006,G13,Grants (e.g. foreign aid),Grants,1.7398164,13.144449321667286,General government,13.23613
+LAO,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,0.6896123,5.21007499926338,General government,13.23613
+LAO,2006,G14X,Other non-tax revenue,Other revenue,1.7735627000000003,13.399405264227537,General government,13.23613
+LAO,2007,G1111,Personal income tax,Taxes,0.59618678,4.262934116855784,General government,13.985362
+LAO,2007,G1112,Corporate income tax,Taxes,2.2331386,15.967685035900265,General government,13.985362
+LAO,2007,G114,Goods & services taxes,Taxes,4.6840348,33.492409465133996,General government,13.985362
+LAO,2007,G115,Trade taxes (customs),Taxes,1.3100423,9.36723893004508,General government,13.985362
+LAO,2007,G11NEC,Other taxes,Taxes,1.1814638,8.44785981475483,General government,13.985362
+LAO,2007,G13,Grants (e.g. foreign aid),Grants,1.4877361,10.637808804764118,General government,13.985362
+LAO,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,0.69340263,4.958059835114976,General government,13.985362
+LAO,2007,G14X,Other non-tax revenue,Other revenue,1.7993572699999998,12.866003997430948,General government,13.985362
+LAO,2008,G1111,Personal income tax,Taxes,0.68521877,4.8267780082464355,General government,14.196194
+LAO,2008,G1112,Corporate income tax,Taxes,2.5350151,17.85700519449086,General government,14.196194
+LAO,2008,G114,Goods & services taxes,Taxes,4.8552091,34.200780152764885,General government,14.196194
+LAO,2008,G115,Trade taxes (customs),Taxes,1.3227898,9.317918591419643,General government,14.196194
+LAO,2008,G11NEC,Other taxes,Taxes,1.1408881999999994,8.036577972941194,General government,14.196194
+LAO,2008,G13,Grants (e.g. foreign aid),Grants,1.5167852,10.684449648969293,General government,14.196194
+LAO,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,0.42247727,2.975989691321491,General government,14.196194
+LAO,2008,G14X,Other non-tax revenue,Other revenue,1.71781023,12.100498415279477,General government,14.196194
+LAO,2009,G1111,Personal income tax,Taxes,0.80127304,4.711267287027093,General government,17.00759
+LAO,2009,G1112,Corporate income tax,Taxes,2.28305,13.423712321142371,General government,17.00759
+LAO,2009,G114,Goods & services taxes,Taxes,5.6208046,33.04880049221599,General government,17.00759
+LAO,2009,G115,Trade taxes (customs),Taxes,1.384433,8.140089056260747,General government,17.00759
+LAO,2009,G11NEC,Other taxes,Taxes,0.9617324000000005,5.654724630438156,General government,17.00759
+LAO,2009,G13,Grants (e.g. foreign aid),Grants,3.2557072,19.142671800736704,General government,17.00759
+LAO,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,0.82233044,4.83507906505702,General government,17.00759
+LAO,2009,G14X,Other non-tax revenue,Other revenue,1.8782596599999999,11.043655347121913,General government,17.00759
+LAO,2010,G1111,Personal income tax,Taxes,0.77746505,3.714076931808106,General government,20.932928
+LAO,2010,G1112,Corporate income tax,Taxes,1.7655631,8.434381945994367,General government,20.932928
+LAO,2010,G11412,VAT / sales tax,Taxes,3.3377314,15.944885493324202,General government,20.932928
+LAO,2010,G1142,Excise taxes,Taxes,2.8204546,13.47377012905218,General government,20.932928
+LAO,2010,G115,Trade taxes (customs),Taxes,1.3798345,6.59169371814588,General government,20.932928
+LAO,2010,G11NEC,Other taxes,Taxes,1.5061612,7.195176900240615,General government,20.932928
+LAO,2010,G13,Grants (e.g. foreign aid),Grants,6.340074,30.287564166847567,General government,20.932928
+LAO,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,0.8275262,3.9532271835072472,General government,20.932928
+LAO,2010,G14X,Other non-tax revenue,Other revenue,2.1781179,10.405223292221711,General government,20.932928
+LAO,2011,G1111,Personal income tax,Taxes,0.817955,4.360033392017389,General government,18.760292
+LAO,2011,G1112,Corporate income tax,Taxes,2.5726454,13.713248100225478,General government,18.760292
+LAO,2011,G11412,VAT / sales tax,Taxes,3.5118262,18.719464394693514,General government,18.760292
+LAO,2011,G1142,Excise taxes,Taxes,2.7790211,14.81331466048975,General government,18.760292
+LAO,2011,G115,Trade taxes (customs),Taxes,1.352535,7.209562584582573,General government,18.760292
+LAO,2011,G11NEC,Other taxes,Taxes,1.2279592999999986,6.545523350353371,General government,18.760292
+LAO,2011,G13,Grants (e.g. foreign aid),Grants,4.1273407,22.000407445681514,General government,18.760292
+LAO,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,0.8103471,4.319480185492422,General government,18.760292
+LAO,2011,G14X,Other non-tax revenue,Other revenue,1.5606623000000002,8.318965886463998,General government,18.760292
+LAO,2012,G1111,Personal income tax,Taxes,0.90081149,4.025821282987136,General government,22.375844
+LAO,2012,G1112,Corporate income tax,Taxes,2.4473528,10.937477039972212,General government,22.375844
+LAO,2012,G11412,VAT / sales tax,Taxes,3.6561384,16.339667008761772,General government,22.375844
+LAO,2012,G1142,Excise taxes,Taxes,3.0063214,13.435566497514015,General government,22.375844
+LAO,2012,G115,Trade taxes (customs),Taxes,1.3265506,5.9284941385898104,General government,22.375844
+LAO,2012,G11NEC,Other taxes,Taxes,1.0368436,4.633763088444843,General government,22.375844
+LAO,2012,G13,Grants (e.g. foreign aid),Grants,7.1073224,31.76337124981744,General government,22.375844
+LAO,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,0.80492625,3.5973000616200212,General government,22.375844
+LAO,2012,G14X,Other non-tax revenue,Other revenue,2.08957695,9.338539140691184,General government,22.375844
+LAO,2013,G1111,Personal income tax,Taxes,0.95114012,4.7065256387880074,General government,20.208965
+LAO,2013,G1112,Corporate income tax,Taxes,2.2920508,11.341752522861261,General government,20.208965
+LAO,2013,G11412,VAT / sales tax,Taxes,3.8089639,18.847891993629666,General government,20.208965
+LAO,2013,G1142,Excise taxes,Taxes,3.0297706,14.992210620393264,General government,20.208965
+LAO,2013,G115,Trade taxes (customs),Taxes,1.3269217,6.566005229296993,General government,20.208965
+LAO,2013,G11NEC,Other taxes,Taxes,1.6538329000000005,8.183659570706705,General government,20.208965
+LAO,2013,G13,Grants (e.g. foreign aid),Grants,3.9302101,19.447854435446985,General government,20.208965
+LAO,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,0.76742511,3.797448851242556,General government,20.208965
+LAO,2013,G14X,Other non-tax revenue,Other revenue,2.44864979,12.116651137634559,General government,20.208965
+LAO,2014,G1111,Personal income tax,Taxes,0.96041825,4.394543886676,General government,21.854788
+LAO,2014,G1112,Corporate income tax,Taxes,1.7610851,8.058120261793434,General government,21.854788
+LAO,2014,G11412,VAT / sales tax,Taxes,3.6285283,16.602898641707256,General government,21.854788
+LAO,2014,G1142,Excise taxes,Taxes,3.1277772,14.311633679539696,General government,21.854788
+LAO,2014,G115,Trade taxes (customs),Taxes,1.3192165,6.036281386028545,General government,21.854788
+LAO,2014,G11NEC,Other taxes,Taxes,1.794915,8.212914259337587,General government,21.854788
+LAO,2014,G13,Grants (e.g. foreign aid),Grants,5.5685488,25.479765806925236,General government,21.854788
+LAO,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.80584488,3.687269261088234,General government,21.854788
+LAO,2014,G14X,Other non-tax revenue,Other revenue,2.88845392,13.216572588121194,General government,21.854788
+LAO,2015,G1111,Personal income tax,Taxes,0.97240887,4.811067719761721,General government,20.211914
+LAO,2015,G1112,Corporate income tax,Taxes,1.8796303,9.299615563375147,General government,20.211914
+LAO,2015,G11412,VAT / sales tax,Taxes,4.2565345,21.059532016611588,General government,20.211914
+LAO,2015,G1142,Excise taxes,Taxes,2.7743201,13.726162203144145,General government,20.211914
+LAO,2015,G115,Trade taxes (customs),Taxes,1.178648,5.831451687356278,General government,20.211914
+LAO,2015,G11NEC,Other taxes,Taxes,2.0062584,9.92611783327398,General government,20.211914
+LAO,2015,G13,Grants (e.g. foreign aid),Grants,3.9388349,19.487688795826067,General government,20.211914
+LAO,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,0.52904088,2.6174704681605117,General government,20.211914
+LAO,2015,G14X,Other non-tax revenue,Other revenue,2.67623772,13.240892079790168,General government,20.211914
+LAO,2016,G1111,Personal income tax,Taxes,1.2560714,7.838447497502901,General government,16.024492
+LAO,2016,G1112,Corporate income tax,Taxes,1.3543178,8.451548988563575,General government,16.024492
+LAO,2016,G11412,VAT / sales tax,Taxes,3.5482818,22.14286591960066,General government,16.024492
+LAO,2016,G1142,Excise taxes,Taxes,3.1902349,19.908493074797676,General government,16.024492
+LAO,2016,G115,Trade taxes (customs),Taxes,1.2027835,7.505907160701836,General government,16.024492
+LAO,2016,G11NEC,Other taxes,Taxes,1.2969651,8.093642481186658,General government,16.024492
+LAO,2016,G13,Grants (e.g. foreign aid),Grants,1.3528486,8.44238052324916,General government,16.024492
+LAO,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.36673,2.2885592735884592,General government,16.024492
+LAO,2016,G14X,Other non-tax revenue,Other revenue,2.456259,15.328155080809085,General government,16.024492
+LAO,2017,G1111,Personal income tax,Taxes,1.1390255,6.990544711302429,General government,16.293801
+LAO,2017,G1112,Corporate income tax,Taxes,1.4070305,8.635372623717567,General government,16.293801
+LAO,2017,G11412,VAT / sales tax,Taxes,3.5070226,21.52366061062557,General government,16.293801
+LAO,2017,G1142,Excise taxes,Taxes,3.0092612,18.468748036446595,General government,16.293801
+LAO,2017,G115,Trade taxes (customs),Taxes,0.68982899,4.233689586183624,General government,16.293801
+LAO,2017,G11NEC,Other taxes,Taxes,1.5755522099999997,9.669641433836512,General government,16.293801
+LAO,2017,G13,Grants (e.g. foreign aid),Grants,1.6670714,10.231322440659614,General government,16.293801
+LAO,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.43334689,2.659581203448786,General government,16.293801
+LAO,2017,G14X,Other non-tax revenue,Other revenue,2.86566251,17.5874393537793,General government,16.293801
+LAO,2018,G1111,Personal income tax,Taxes,1.0622438,6.539251850555976,General government,16.244118
+LAO,2018,G1112,Corporate income tax,Taxes,1.3603315,8.374301905781504,General government,16.244118
+LAO,2018,G11412,VAT / sales tax,Taxes,3.4127219,21.008969880556524,General government,16.244118
+LAO,2018,G1142,Excise taxes,Taxes,3.1117955,19.156444576966944,General government,16.244118
+LAO,2018,G115,Trade taxes (customs),Taxes,0.69496728,4.278270272620892,General government,16.244118
+LAO,2018,G11NEC,Other taxes,Taxes,0.8378010199999992,5.1575654011185375,General government,16.244118
+LAO,2018,G13,Grants (e.g. foreign aid),Grants,1.9219401,11.831606224091622,General government,16.244118
+LAO,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,0.42071407,2.5899471108256282,General government,16.244118
+LAO,2018,G14X,Other non-tax revenue,Other revenue,3.42160303,21.063642777482375,General government,16.244118
+LAO,2019,G1111,Personal income tax,Taxes,1.0095939,6.5482058628005735,General government,15.41787
+LAO,2019,G1112,Corporate income tax,Taxes,1.3546989,8.786549997290482,General government,15.41787
+LAO,2019,G11412,VAT / sales tax,Taxes,3.3192057,21.528301849467475,General government,15.41787
+LAO,2019,G1142,Excise taxes,Taxes,3.048785,19.774358592517693,General government,15.41787
+LAO,2019,G115,Trade taxes (customs),Taxes,0.60022203,3.893028093600864,General government,15.41787
+LAO,2019,G11NEC,Other taxes,Taxes,0.8402464699999987,5.449821815535413,General government,15.41787
+LAO,2019,G13,Grants (e.g. foreign aid),Grants,1.6140419,10.468643513382734,General government,15.41787
+LAO,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,0.3804655,2.467691630955131,General government,15.41787
+LAO,2019,G14X,Other non-tax revenue,Other revenue,3.2506111,21.083398644449634,General government,15.41787
+LAO,2020,G1111,Personal income tax,Taxes,0.86532403,6.661256749406216,General government,12.990402
+LAO,2020,G1112,Corporate income tax,Taxes,1.0304552,7.932435039346743,General government,12.990402
+LAO,2020,G11412,VAT / sales tax,Taxes,2.815372,21.6727088199426,General government,12.990402
+LAO,2020,G1142,Excise taxes,Taxes,2.1479935,16.535235014282083,General government,12.990402
+LAO,2020,G115,Trade taxes (customs),Taxes,0.63817055,4.912631264221077,General government,12.990402
+LAO,2020,G11NEC,Other taxes,Taxes,1.3789489,10.615136467678214,General government,12.990402
+LAO,2020,G13,Grants (e.g. foreign aid),Grants,1.5299689,11.777687095441697,General government,12.990402
+LAO,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,0.33561145,2.583533981473398,General government,12.990402
+LAO,2020,G14X,Other non-tax revenue,Other revenue,2.24855725,17.309373874649914,General government,12.990402
+LAO,2021,G1111,Personal income tax,Taxes,0.82636975,5.49606990844482,General government,15.035648
+LAO,2021,G1112,Corporate income tax,Taxes,1.5121606,10.0571691671868,General government,15.035648
+LAO,2021,G11412,VAT / sales tax,Taxes,3.1585761,21.007248942429214,General government,15.035648
+LAO,2021,G1142,Excise taxes,Taxes,2.3720786,15.776363805579667,General government,15.035648
+LAO,2021,G115,Trade taxes (customs),Taxes,0.65385974,4.348729901303326,General government,15.035648
+LAO,2021,G11NEC,Other taxes,Taxes,0.8018882599999998,5.333246934221847,General government,15.035648
+LAO,2021,G13,Grants (e.g. foreign aid),Grants,2.0346912,13.532447281979382,General government,15.035648
+LAO,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.66366554,4.413946908954232,General government,15.035648
+LAO,2021,G14X,Other non-tax revenue,Other revenue,3.0123586600000003,20.034777149900712,General government,15.035648
+LAO,2022,G1111,Personal income tax,Taxes,1.0149065,6.863650706022416,General government,14.786686
+LAO,2022,G1112,Corporate income tax,Taxes,1.8419886,12.457074966881425,General government,14.786686
+LAO,2022,G11412,VAT / sales tax,Taxes,2.6803487,18.12677054205611,General government,14.786686
+LAO,2022,G1142,Excise taxes,Taxes,2.5540328,17.27251626718758,General government,14.786686
+LAO,2022,G115,Trade taxes (customs),Taxes,1.0030506,6.783471146225006,General government,14.786686
+LAO,2022,G11NEC,Other taxes,Taxes,0.8816891999999986,5.962723364243239,General government,14.786686
+LAO,2022,G13,Grants (e.g. foreign aid),Grants,0.87803772,5.938028987687352,General government,14.786686
+LAO,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,1.2220083,8.264247131199035,General government,14.786686
+LAO,2022,G14X,Other non-tax revenue,Other revenue,2.7106239,18.331516888497845,General government,14.786686
+LAO,2023,G1111,Personal income tax,Taxes,1.3274113,8.082625110043693,General government,16.423022
+LAO,2023,G1112,Corporate income tax,Taxes,1.599734,9.740801662446778,General government,16.423022
+LAO,2023,G11412,VAT / sales tax,Taxes,3.1555316,19.214073999291973,General government,16.423022
+LAO,2023,G1142,Excise taxes,Taxes,2.5611805,15.595062224236196,General government,16.423022
+LAO,2023,G115,Trade taxes (customs),Taxes,1.0455802,6.366551783222358,General government,16.423022
+LAO,2023,G11NEC,Other taxes,Taxes,1.049681,6.391521609116763,General government,16.423022
+LAO,2023,G13,Grants (e.g. foreign aid),Grants,1.7495574,10.653078343315865,General government,16.423022
+LAO,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,1.2613795,7.680556599144786,General government,16.423022
+LAO,2023,G14X,Other non-tax revenue,Other revenue,2.6729662999999997,16.275727451378923,General government,16.423022
+LAO,2024,G1111,Personal income tax,Taxes,1.345462,7.478958187864855,General government,17.989965
+LAO,2024,G1112,Corporate income tax,Taxes,2.0076713,11.159950788410434,General government,17.989965
+LAO,2024,G11412,VAT / sales tax,Taxes,4.0888344,22.72841708996871,General government,17.989965
+LAO,2024,G1142,Excise taxes,Taxes,2.5908038,14.401382791309887,General government,17.989965
+LAO,2024,G115,Trade taxes (customs),Taxes,1.0481462,5.826282425344925,General government,17.989965
+LAO,2024,G11NEC,Other taxes,Taxes,1.2904922999999993,7.173400626299029,General government,17.989965
+LAO,2024,G13,Grants (e.g. foreign aid),Grants,0.93765423,5.2120957565836985,General government,17.989965
+LAO,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4651888,8.144478084500255,General government,17.989965
+LAO,2024,G14X,Other non-tax revenue,Other revenue,3.2157125000000004,17.87503424971821,General government,17.989965

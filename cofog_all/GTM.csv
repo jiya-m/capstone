@@ -1,0 +1,277 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+GTM,2005,GF01,General public services,Government spending,8.52322116584218,1.1223144951041673,Central government (budgetary),13.16772700445667
+GTM,2005,GF02,Defence,Government spending,2.410788746382088,0.3174460807777566,Central government (budgetary),13.16772700445667
+GTM,2005,GF03,Public order and safety,Government spending,9.882578646472824,1.301310977168271,Central government (budgetary),13.16772700445667
+GTM,2005,GF04,Economic affairs,Government spending,22.04666996768275,2.903045314918,Central government (budgetary),13.16772700445667
+GTM,2005,GF05,Environmental protection,Government spending,2.382695993712306,0.3137469037981625,Central government (budgetary),13.16772700445667
+GTM,2005,GF06,Housing and community amenities,Government spending,15.37937039059161,2.025113508037345,Central government (budgetary),13.16772700445667
+GTM,2005,GF08,"Recreation, culture and religion",Government spending,1.631991292658368,0.2148961581537575,Central government (budgetary),13.16772700445667
+GTM,2005,GF09,Education,Government spending,19.03520452476838,2.506503766561485,Central government (budgetary),13.16772700445667
+GTM,2005,GF10,Social protection,Government spending,0.5340093475458192,0.0703168930631137,Central government (budgetary),13.16772700445667
+GTM,2005,GF0170,Interest on public debt,Government spending,10.12426102119979,1.333135052490206,Central government (budgetary),13.16772700445667
+GTM,2005,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),13.16772700445667
+GTM,2005,GF072,Outpatient services,Health,5.460017060347538,0.718960140903324,Central government (budgetary),13.16772700445667
+GTM,2005,GF073,Hospital services,Health,2.593074007110007,0.3414489062797712,Central government (budgetary),13.16772700445667
+GTM,2005,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),13.16772700445667
+GTM,2005,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),13.16772700445667
+GTM,2005,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),13.16772700445667
+GTM,2006,GF01,General public services,Government spending,8.053595397605356,1.1368649248181892,Central government (budgetary),14.11624086747919
+GTM,2006,GF02,Defence,Government spending,2.446138232554264,0.3453027648588582,Central government (budgetary),14.11624086747919
+GTM,2006,GF03,Public order and safety,Government spending,9.454492424084595,1.334618923381354,Central government (budgetary),14.11624086747919
+GTM,2006,GF04,Economic affairs,Government spending,17.97594635698321,2.5375278859606,Central government (budgetary),14.11624086747919
+GTM,2006,GF05,Environmental protection,Government spending,2.088101452682895,0.2947614306180495,Central government (budgetary),14.11624086747919
+GTM,2006,GF06,Housing and community amenities,Government spending,13.71581463040069,1.936157430164312,Central government (budgetary),14.11624086747919
+GTM,2006,GF08,"Recreation, culture and religion",Government spending,1.613397658921604,0.227751099683644,Central government (budgetary),14.11624086747919
+GTM,2006,GF09,Education,Government spending,19.06791389260087,2.691672653483067,Central government (budgetary),14.11624086747919
+GTM,2006,GF10,Social protection,Government spending,8.704192572001702,1.228704789032993,Central government (budgetary),14.11624086747919
+GTM,2006,GF0170,Interest on public debt,Government spending,9.310146756389155,1.314242741247695,Central government (budgetary),14.11624086747919
+GTM,2006,GF072,Outpatient services,Health,5.257158503447927,0.7421131571318738,Central government (budgetary),14.11624086747919
+GTM,2006,GF073,Hospital services,Health,1.583635665582338,0.2235498250169101,Central government (budgetary),14.11624086747919
+GTM,2006,GF0740,Public health services,Health,0.0443453700755061,0.0062598992534334,Central government (budgetary),14.11624086747919
+GTM,2006,GF07_rest,Health (not broken down),Health,0.7065497218741719,0.09973826058826274,Central government (budgetary),14.11624086747919
+GTM,2007,GF01,General public services,Government spending,8.993198473399541,1.2469124780525551,Central government (budgetary),13.86506126536321
+GTM,2007,GF02,Defence,Government spending,2.329055965023311,0.3229250364550784,Central government (budgetary),13.86506126536321
+GTM,2007,GF03,Public order and safety,Government spending,9.712761668675716,1.346680355920602,Central government (budgetary),13.86506126536321
+GTM,2007,GF04,Economic affairs,Government spending,18.38856891910295,2.549586346457162,Central government (budgetary),13.86506126536321
+GTM,2007,GF05,Environmental protection,Government spending,1.743371231508061,0.2417194893313097,Central government (budgetary),13.86506126536321
+GTM,2007,GF06,Housing and community amenities,Government spending,12.97950345304662,1.799616105704848,Central government (budgetary),13.86506126536321
+GTM,2007,GF08,"Recreation, culture and religion",Government spending,1.542419392111394,0.2138573936850876,Central government (budgetary),13.86506126536321
+GTM,2007,GF09,Education,Government spending,18.58174024669387,2.576369669374758,Central government (budgetary),13.86506126536321
+GTM,2007,GF10,Social protection,Government spending,8.353855037775697,1.158267119007231,Central government (budgetary),13.86506126536321
+GTM,2007,GF0170,Interest on public debt,Government spending,10.27912926943187,1.425207570752611,Central government (budgetary),13.86506126536321
+GTM,2007,GF072,Outpatient services,Health,5.312748095771409,0.7366157783531232,Central government (budgetary),13.86506126536321
+GTM,2007,GF073,Hospital services,Health,0.8867100523444352,0.1229428920036901,Central government (budgetary),13.86506126536321
+GTM,2007,GF0740,Public health services,Health,0.0429269616868713,0.0059518495372436,Central government (budgetary),13.86506126536321
+GTM,2007,GF07_rest,Health (not broken down),Health,0.8558562986319966,0.11866500014879633,Central government (budgetary),13.86506126536321
+GTM,2008,GF01,General public services,Government spending,8.67350817097195,1.1437950376073263,Central government (budgetary),13.18722499663193
+GTM,2008,GF02,Defence,Government spending,2.252037313604082,0.2969812275530758,Central government (budgetary),13.18722499663193
+GTM,2008,GF03,Public order and safety,Government spending,11.0022911686422,1.450896891193412,Central government (budgetary),13.18722499663193
+GTM,2008,GF04,Economic affairs,Government spending,17.5615554133107,2.315881825261477,Central government (budgetary),13.18722499663193
+GTM,2008,GF05,Environmental protection,Government spending,0.7699485836508755,0.1015348520844218,Central government (budgetary),13.18722499663193
+GTM,2008,GF06,Housing and community amenities,Government spending,12.10588413854179,1.596430179181084,Central government (budgetary),13.18722499663193
+GTM,2008,GF08,"Recreation, culture and religion",Government spending,1.496790013589259,0.1973850668191332,Central government (budgetary),13.18722499663193
+GTM,2008,GF09,Education,Government spending,19.55594650183549,2.578886665418018,Central government (budgetary),13.18722499663193
+GTM,2008,GF10,Social protection,Government spending,9.342291989262872,1.231989064466416,Central government (budgetary),13.18722499663193
+GTM,2008,GF0170,Interest on public debt,Government spending,9.871787374459672,1.301814812259101,Central government (budgetary),13.18722499663193
+GTM,2008,GF072,Outpatient services,Health,5.527433472856754,0.7289150886047666,Central government (budgetary),13.18722499663193
+GTM,2008,GF073,Hospital services,Health,0.7706961065476239,0.1016334296107173,Central government (budgetary),13.18722499663193
+GTM,2008,GF0740,Public health services,Health,0.0525757770713057,0.0069332860161207,Central government (budgetary),13.18722499663193
+GTM,2008,GF07_rest,Health (not broken down),Health,1.0176278367735208,0.1341968724636824,Central government (budgetary),13.18722499663193
+GTM,2010,GF01,General public services,Government spending,12.635853059405589,1.8241760233409279,Central government (budgetary),14.43650867705437
+GTM,2010,GF02,Defence,Government spending,2.02048055070851,0.2916868500212299,Central government (budgetary),14.43650867705437
+GTM,2010,GF03,Public order and safety,Government spending,9.431947034153167,1.361643852000694,Central government (budgetary),14.43650867705437
+GTM,2010,GF04,Economic affairs,Government spending,14.49050126172405,2.091922471997464,Central government (budgetary),14.43650867705437
+GTM,2010,GF05,Environmental protection,Government spending,0.6298596980732526,0.0909297499656135,Central government (budgetary),14.43650867705437
+GTM,2010,GF06,Housing and community amenities,Government spending,10.80744794007374,1.560218159636879,Central government (budgetary),14.43650867705437
+GTM,2010,GF08,"Recreation, culture and religion",Government spending,1.419825133275944,0.2049731785643804,Central government (budgetary),14.43650867705437
+GTM,2010,GF09,Education,Government spending,20.63189222113543,2.978524910744721,Central government (budgetary),14.43650867705437
+GTM,2010,GF10,Social protection,Government spending,13.14544737179057,1.897743650466161,Central government (budgetary),14.43650867705437
+GTM,2010,GF0170,Interest on public debt,Government spending,10.0086490552444,1.444899489316278,Central government (budgetary),14.43650867705437
+GTM,2010,GF072,Outpatient services,Health,0.7717386501219793,0.1114121171890418,Central government (budgetary),14.43650867705437
+GTM,2010,GF073,Hospital services,Health,1.25143449383709,0.180663449290443,Central government (budgetary),14.43650867705437
+GTM,2010,GF0740,Public health services,Health,1.84836170523042,0.2668388979589396,Central government (budgetary),14.43650867705437
+GTM,2010,GF07_rest,Health (not broken down),Health,5.015679858119659,0.7240890579307125,Central government (budgetary),14.43650867705437
+GTM,2011,GF01,General public services,Government spending,13.103406483163532,1.8820305480492758,Central government (budgetary),14.36291051847841
+GTM,2011,GF02,Defence,Government spending,2.269393759515893,0.3259509949912008,Central government (budgetary),14.36291051847841
+GTM,2011,GF03,Public order and safety,Government spending,9.816697301628801,1.409963449302829,Central government (budgetary),14.36291051847841
+GTM,2011,GF04,Economic affairs,Government spending,17.14081268764346,2.461919588466224,Central government (budgetary),14.36291051847841
+GTM,2011,GF05,Environmental protection,Government spending,1.055431153711229,0.1515906321916881,Central government (budgetary),14.36291051847841
+GTM,2011,GF06,Housing and community amenities,Government spending,10.53696921417222,1.513415459591174,Central government (budgetary),14.36291051847841
+GTM,2011,GF08,"Recreation, culture and religion",Government spending,1.752894141518256,0.2517666170299174,Central government (budgetary),14.36291051847841
+GTM,2011,GF09,Education,Government spending,20.37911448968047,2.927033978611074,Central government (budgetary),14.36291051847841
+GTM,2011,GF10,Social protection,Government spending,11.00181887037009,1.580181399756329,Central government (budgetary),14.36291051847841
+GTM,2011,GF0170,Interest on public debt,Government spending,10.08441030876686,1.448414828964397,Central government (budgetary),14.36291051847841
+GTM,2011,GF072,Outpatient services,Health,0.3787035520281941,0.0543928523081088,Central government (budgetary),14.36291051847841
+GTM,2011,GF073,Hospital services,Health,1.460902204190395,0.2098280763503452,Central government (budgetary),14.36291051847841
+GTM,2011,GF0740,Public health services,Health,2.295030236905557,0.3296331392987681,Central government (budgetary),14.36291051847841
+GTM,2011,GF07_rest,Health (not broken down),Health,3.564789881734783,0.5120075808853389,Central government (budgetary),14.36291051847841
+GTM,2013,GF01,General public services,Government spending,7.285846078479642,1.011304359688076,Central government (budgetary),13.88039698883
+GTM,2013,GF02,Defence,Government spending,2.638435532476425,0.3662253262020784,Central government (budgetary),13.88039698883
+GTM,2013,GF03,Public order and safety,Government spending,11.05897078456051,1.535029047775726,Central government (budgetary),13.88039698883
+GTM,2013,GF04,Economic affairs,Government spending,12.82432967615058,1.780067870206036,Central government (budgetary),13.88039698883
+GTM,2013,GF05,Environmental protection,Government spending,0.9819084298513812,0.136292788130159,Central government (budgetary),13.88039698883
+GTM,2013,GF06,Housing and community amenities,Government spending,12.06181505934793,1.674227814295973,Central government (budgetary),13.88039698883
+GTM,2013,GF08,"Recreation, culture and religion",Government spending,1.529181797890133,0.2122565042280785,Central government (budgetary),13.88039698883
+GTM,2013,GF09,Education,Government spending,21.38553304338341,2.968396884599035,Central government (budgetary),13.88039698883
+GTM,2013,GF10,Social protection,Government spending,11.16762955001367,1.550111315783786,Central government (budgetary),13.88039698883
+GTM,2013,GF0170,Interest on public debt,Government spending,11.14730027014271,1.547289531032727,Central government (budgetary),13.88039698883
+GTM,2013,GF072,Outpatient services,Health,0.8424514792857049,0.1169356097631267,Central government (budgetary),13.88039698883
+GTM,2013,GF073,Hospital services,Health,3.648373771250436,0.5064087630859089,Central government (budgetary),13.88039698883
+GTM,2013,GF0740,Public health services,Health,2.981195109487101,0.4138017162083947,Central government (budgetary),13.88039698883
+GTM,2013,GF07_rest,Health (not broken down),Health,1.0478303878731214,0.14544301760638678,Central government (budgetary),13.88039698883
+GTM,2014,GF01,General public services,Government spending,10.540834660415108,1.8219473187474011,General government,17.28465892354346
+GTM,2014,GF02,Defence,Government spending,1.938674887202601,0.3350933418893603,General government,17.28465892354346
+GTM,2014,GF03,Public order and safety,Government spending,10.29213476969896,1.778960390893889,General government,17.28465892354346
+GTM,2014,GF04,Economic affairs,Government spending,14.77799143820607,2.554325415844373,General government,17.28465892354346
+GTM,2014,GF05,Environmental protection,Government spending,1.592846615679791,0.275318104695457,General government,17.28465892354346
+GTM,2014,GF06,Housing and community amenities,Government spending,3.937876702997587,0.6806485569428113,General government,17.28465892354346
+GTM,2014,GF08,"Recreation, culture and religion",Government spending,2.114812398111034,0.3655381098863022,General government,17.28465892354346
+GTM,2014,GF09,Education,Government spending,18.51608799010352,3.200442655072587,General government,17.28465892354346
+GTM,2014,GF10,Social protection,Government spending,16.11324776907804,2.785119918390614,General government,17.28465892354346
+GTM,2014,GF0170,Interest on public debt,Government spending,7.438445625756241,1.285709955625204,General government,17.28465892354346
+GTM,2014,GF0712,Medical products,Health,0.0319251621851992,0.0055181553944997,General government,17.28465892354346
+GTM,2014,GF072,Outpatient services,Health,4.457138420246854,0.7704011736898817,General government,17.28465892354346
+GTM,2014,GF073,Hospital services,Health,3.14410777175393,0.543448304536289,General government,17.28465892354346
+GTM,2014,GF0740,Public health services,Health,2.358738934454324,0.4076999797172532,General government,17.28465892354346
+GTM,2014,GF075,Health R&D,Health,0.0046759020767222,0.0008082137255603,General government,17.28465892354346
+GTM,2014,GF0760,Other health,Health,2.740460952034021,0.4736793284919723,General government,17.28465892354346
+GTM,2015,GF01,General public services,Government spending,9.654591195772708,1.5531709495045412,General government,16.08738182704827
+GTM,2015,GF02,Defence,Government spending,1.92701002185813,0.3100054600618037,General government,16.08738182704827
+GTM,2015,GF03,Public order and safety,Government spending,10.50479662851057,1.689946743783389,General government,16.08738182704827
+GTM,2015,GF04,Economic affairs,Government spending,11.40342828389045,1.834513049403075,General government,16.08738182704827
+GTM,2015,GF05,Environmental protection,Government spending,1.803361189578054,0.2901136002882214,General government,16.08738182704827
+GTM,2015,GF06,Housing and community amenities,Government spending,3.192495664295691,0.513588967327209,General government,16.08738182704827
+GTM,2015,GF08,"Recreation, culture and religion",Government spending,2.245679194441553,0.3612709866203944,General government,16.08738182704827
+GTM,2015,GF09,Education,Government spending,20.39625769181952,3.28122385331171,General government,16.08738182704827
+GTM,2015,GF10,Social protection,Government spending,17.97979276734825,2.892477914195322,General government,16.08738182704827
+GTM,2015,GF0170,Interest on public debt,Government spending,8.759431797396802,1.409163239127101,General government,16.08738182704827
+GTM,2015,GF0712,Medical products,Health,0.0032274094493432,0.000519205681238,General government,16.08738182704827
+GTM,2015,GF072,Outpatient services,Health,3.654180488781031,0.5878619678797034,General government,16.08738182704827
+GTM,2015,GF073,Hospital services,Health,2.479123055271048,0.3988259918638385,General government,16.08738182704827
+GTM,2015,GF0740,Public health services,Health,4.801143952789745,0.7723783597515246,General government,16.08738182704827
+GTM,2015,GF075,Health R&D,Health,0.0115812297349248,0.001863116647725,General government,16.08738182704827
+GTM,2015,GF0760,Other health,Health,1.183899429062179,0.1904584216014772,General government,16.08738182704827
+GTM,2016,GF01,General public services,Government spending,11.186155423888398,1.726799811871267,General government,15.43693741447245
+GTM,2016,GF02,Defence,Government spending,2.116291530166123,0.3266905990195258,General government,15.43693741447245
+GTM,2016,GF03,Public order and safety,Government spending,11.2163706146043,1.731464111951745,General government,15.43693741447245
+GTM,2016,GF04,Economic affairs,Government spending,9.257511847994676,1.42907631011231,General government,15.43693741447245
+GTM,2016,GF05,Environmental protection,Government spending,1.825277249537878,0.2817669066517663,General government,15.43693741447245
+GTM,2016,GF06,Housing and community amenities,Government spending,2.664973648891583,0.4113903142915765,General government,15.43693741447245
+GTM,2016,GF08,"Recreation, culture and religion",Government spending,2.159205561292742,0.3333152111465691,General government,15.43693741447245
+GTM,2016,GF09,Education,Government spending,20.18209643104996,3.115497594989661,General government,15.43693741447245
+GTM,2016,GF10,Social protection,Government spending,16.63837970764824,2.568456262251943,General government,15.43693741447245
+GTM,2016,GF0170,Interest on public debt,Government spending,8.794329621017514,1.357575159618886,General government,15.43693741447245
+GTM,2016,GF0712,Medical products,Health,0.0048633770348377,0.0007507564690977,General government,15.43693741447245
+GTM,2016,GF072,Outpatient services,Health,3.447061611609962,0.5321207436225354,General government,15.43693741447245
+GTM,2016,GF073,Hospital services,Health,2.59928368065166,0.4012497950067928,General government,15.43693741447245
+GTM,2016,GF0740,Public health services,Health,5.059849871171777,0.7810858578790523,General government,15.43693741447245
+GTM,2016,GF075,Health R&D,Health,0.0013182050985257,0.0002034904960538,General government,15.43693741447245
+GTM,2016,GF0760,Other health,Health,2.84703161834182,0.4394944890936689,General government,15.43693741447245
+GTM,2017,GF01,General public services,Government spending,10.910567365437906,1.7140491004640017,General government,15.7099905353566
+GTM,2017,GF02,Defence,Government spending,1.752249127614296,0.2752781721040746,General government,15.7099905353566
+GTM,2017,GF03,Public order and safety,Government spending,11.21204687932788,1.761411503562156,General government,15.7099905353566
+GTM,2017,GF04,Economic affairs,Government spending,9.763991584382664,1.533922153779532,General government,15.7099905353566
+GTM,2017,GF05,Environmental protection,Government spending,1.905566676720005,0.2993643445576222,General government,15.7099905353566
+GTM,2017,GF06,Housing and community amenities,Government spending,2.918194730883342,0.4584481160250481,General government,15.7099905353566
+GTM,2017,GF08,"Recreation, culture and religion",Government spending,2.245949009414196,0.3528383768079057,General government,15.7099905353566
+GTM,2017,GF09,Education,Government spending,20.00774308098515,3.143214544361234,General government,15.7099905353566
+GTM,2017,GF10,Social protection,Government spending,17.75738591923941,2.789683647239258,General government,15.7099905353566
+GTM,2017,GF0170,Interest on public debt,Government spending,8.500846133314433,1.335482122968925,General government,15.7099905353566
+GTM,2017,GF0712,Medical products,Health,0.0048506970222808,0.0007620440430991,General government,15.7099905353566
+GTM,2017,GF072,Outpatient services,Health,3.204347386543132,0.5034026711458727,General government,15.7099905353566
+GTM,2017,GF073,Hospital services,Health,2.489865181476543,0.3911575843531045,General government,15.7099905353566
+GTM,2017,GF0740,Public health services,Health,4.631958140349115,0.7276801854505258,General government,15.7099905353566
+GTM,2017,GF075,Health R&D,Health,0.0078081267549072,0.0012266559741845,General government,15.7099905353566
+GTM,2017,GF0760,Other health,Health,2.686629960534733,0.4220693125200615,General government,15.7099905353566
+GTM,2018,GF01,General public services,Government spending,10.531837284057136,1.7192935428225788,General government,16.32472565280901
+GTM,2018,GF02,Defence,Government spending,1.661437529086176,0.2712251185161272,General government,16.32472565280901
+GTM,2018,GF03,Public order and safety,Government spending,11.22587284573114,1.832592944198793,General government,16.32472565280901
+GTM,2018,GF04,Economic affairs,Government spending,11.1911594826896,1.826926082917398,General government,16.32472565280901
+GTM,2018,GF05,Environmental protection,Government spending,2.084497080604674,0.3402884296495263,General government,16.32472565280901
+GTM,2018,GF06,Housing and community amenities,Government spending,2.896215205229651,0.4727991865686801,General government,16.32472565280901
+GTM,2018,GF08,"Recreation, culture and religion",Government spending,2.375953290582285,0.3878678563264462,General government,16.32472565280901
+GTM,2018,GF09,Education,Government spending,20.38945679996474,3.328522884692256,General government,16.32472565280901
+GTM,2018,GF10,Social protection,Government spending,16.51910983565426,2.696699360956748,General government,16.32472565280901
+GTM,2018,GF0170,Interest on public debt,Government spending,8.292102967805235,1.353663060342639,General government,16.32472565280901
+GTM,2018,GF0712,Medical products,Health,0.0236921688315378,0.0038676815629488,General government,16.32472565280901
+GTM,2018,GF072,Outpatient services,Health,2.79500487559572,0.4562768779236372,General government,16.32472565280901
+GTM,2018,GF073,Hospital services,Health,2.18596750510137,0.3568531980673525,General government,16.32472565280901
+GTM,2018,GF0740,Public health services,Health,4.747059142451595,0.7749443815818111,General government,16.32472565280901
+GTM,2018,GF075,Health R&D,Health,0.001079894384214,0.000176289795563,General government,16.32472565280901
+GTM,2018,GF0760,Other health,Health,3.079554092230657,0.5027287568865078,General government,16.32472565280901
+GTM,2019,GF01,General public services,Government spending,10.335447467775582,1.75853305161186,General government,17.01458071452358
+GTM,2019,GF02,Defence,Government spending,1.729431120681763,0.2942554539304883,General government,17.01458071452358
+GTM,2019,GF03,Public order and safety,Government spending,10.39818233480983,1.769207126199551,General government,17.01458071452358
+GTM,2019,GF04,Economic affairs,Government spending,11.11396944746468,1.890995302226368,General government,17.01458071452358
+GTM,2019,GF05,Environmental protection,Government spending,2.459707193168675,0.4185088657226267,General government,17.01458071452358
+GTM,2019,GF06,Housing and community amenities,Government spending,3.497641525800444,0.5951090405120107,General government,17.01458071452358
+GTM,2019,GF08,"Recreation, culture and religion",Government spending,2.366909119578808,0.4027196625901558,General government,17.01458071452358
+GTM,2019,GF09,Education,Government spending,20.36159301672973,3.464439678594277,General government,17.01458071452358
+GTM,2019,GF10,Social protection,Government spending,15.98439604740962,2.719677967215626,General government,17.01458071452358
+GTM,2019,GF0170,Interest on public debt,Government spending,8.551486132043047,1.454999510227755,General government,17.01458071452358
+GTM,2019,GF0712,Medical products,Health,0.0387708969490684,0.006596705555144,General government,17.01458071452358
+GTM,2019,GF072,Outpatient services,Health,2.225187621997366,0.3786063439943297,General government,17.01458071452358
+GTM,2019,GF073,Hospital services,Health,2.338326836080395,0.3978565068942644,General government,17.01458071452358
+GTM,2019,GF0740,Public health services,Health,5.078260572843742,0.864044744060326,General government,17.01458071452358
+GTM,2019,GF075,Health R&D,Health,0.011076189248218,0.0018845671597314,General government,17.01458071452358
+GTM,2019,GF0760,Other health,Health,3.509614477419027,0.5971461880290653,General government,17.01458071452358
+GTM,2020,GF01,General public services,Government spending,10.990528673313753,1.9930879499185998,General government,18.13459578844504
+GTM,2020,GF02,Defence,Government spending,1.547408838540712,0.2806163380640302,General government,18.13459578844504
+GTM,2020,GF03,Public order and safety,Government spending,10.18924821402403,1.847778977494614,General government,18.13459578844504
+GTM,2020,GF04,Economic affairs,Government spending,9.124303498325563,1.654655557932291,General government,18.13459578844504
+GTM,2020,GF05,Environmental protection,Government spending,1.952609682446169,0.3540978732376529,General government,18.13459578844504
+GTM,2020,GF06,Housing and community amenities,Government spending,2.513527744700628,0.4558180965318776,General government,18.13459578844504
+GTM,2020,GF08,"Recreation, culture and religion",Government spending,1.704321355742025,0.3090717887999627,General government,18.13459578844504
+GTM,2020,GF09,Education,Government spending,18.88810572254064,3.4252816248769,General government,18.13459578844504
+GTM,2020,GF10,Social protection,Government spending,22.31955402955172,4.0475609050428,General government,18.13459578844504
+GTM,2020,GF0170,Interest on public debt,Government spending,8.535606371864427,1.547897713630372,General government,18.13459578844504
+GTM,2020,GF0712,Medical products,Health,0.0278150342728919,0.0050441440338064,General government,18.13459578844504
+GTM,2020,GF072,Outpatient services,Health,1.942011189366921,0.3521758793580649,General government,18.13459578844504
+GTM,2020,GF073,Hospital services,Health,2.221749250345184,0.4029052459829068,General government,18.13459578844504
+GTM,2020,GF0740,Public health services,Health,4.203719911078533,0.7623276139524731,General government,18.13459578844504
+GTM,2020,GF075,Health R&D,Health,0.0048970207962348,0.0008880549270732,General government,18.13459578844504
+GTM,2020,GF0760,Other health,Health,3.834593463090569,0.695388024661611,General government,18.13459578844504
+GTM,2021,GF01,General public services,Government spending,11.19991801897901,1.890060550640739,General government,16.87566415609386
+GTM,2021,GF02,Defence,Government spending,1.585667768266557,0.2675919672040928,General government,16.87566415609386
+GTM,2021,GF03,Public order and safety,Government spending,11.07382442084324,1.868781418497011,General government,16.87566415609386
+GTM,2021,GF04,Economic affairs,Government spending,10.59749948147274,1.788398421437128,General government,16.87566415609386
+GTM,2021,GF05,Environmental protection,Government spending,2.123711357883698,0.3583903964012736,General government,16.87566415609386
+GTM,2021,GF06,Housing and community amenities,Government spending,3.467666051622337,0.5851916769266661,General government,16.87566415609386
+GTM,2021,GF08,"Recreation, culture and religion",Government spending,2.036914504790921,0.3437428509752782,General government,16.87566415609386
+GTM,2021,GF09,Education,Government spending,19.38323007922956,3.271048810773747,General government,16.87566415609386
+GTM,2021,GF10,Social protection,Government spending,14.77415450066555,2.493236695434744,General government,16.87566415609386
+GTM,2021,GF0170,Interest on public debt,Government spending,9.29248269230816,1.568168170917074,General government,16.87566415609386
+GTM,2021,GF0712,Medical products,Health,0.0220844221778603,0.0037268929175496,General government,16.87566415609386
+GTM,2021,GF072,Outpatient services,Health,1.711897334615738,0.2888940448868743,General government,16.87566415609386
+GTM,2021,GF073,Hospital services,Health,2.353733523438214,0.3972081645448278,General government,16.87566415609386
+GTM,2021,GF0740,Public health services,Health,6.521918182567016,1.10061700902523,General government,16.87566415609386
+GTM,2021,GF075,Health R&D,Health,0.0109912134093972,0.0018548402616494,General government,16.87566415609386
+GTM,2021,GF0760,Other health,Health,3.844306447730002,0.6487522452499772,General government,16.87566415609386
+GTM,2022,GF01,General public services,Government spending,10.70735352911317,1.8614478420099498,General government,17.38476120125011
+GTM,2022,GF02,Defence,Government spending,1.820461764853613,0.3164829305798641,General government,17.38476120125011
+GTM,2022,GF03,Public order and safety,Government spending,10.63224779596858,1.848390889654316,General government,17.38476120125011
+GTM,2022,GF04,Economic affairs,Government spending,13.23280972814535,2.300492371453864,General government,17.38476120125011
+GTM,2022,GF05,Environmental protection,Government spending,2.041651399226883,0.3549362203175751,General government,17.38476120125011
+GTM,2022,GF06,Housing and community amenities,Government spending,3.217989111864637,0.5594397225798964,General government,17.38476120125011
+GTM,2022,GF08,"Recreation, culture and religion",Government spending,2.03354712405106,0.3535273114311662,General government,17.38476120125011
+GTM,2022,GF09,Education,Government spending,18.93992173329369,3.292660165036779,General government,17.38476120125011
+GTM,2022,GF10,Social protection,Government spending,14.98985454667835,2.605950417354764,General government,17.38476120125011
+GTM,2022,GF0170,Interest on public debt,Government spending,8.669258057745068,1.507129811259114,General government,17.38476120125011
+GTM,2022,GF0712,Medical products,Health,0.0279137463052365,0.0048527381374881,General government,17.38476120125011
+GTM,2022,GF072,Outpatient services,Health,1.897674068903839,0.3299061052569789,General government,17.38476120125011
+GTM,2022,GF073,Hospital services,Health,2.197236468037818,0.3819843129951569,General government,17.38476120125011
+GTM,2022,GF0740,Public health services,Health,5.926863380524934,1.0303710454286,General government,17.38476120125011
+GTM,2022,GF075,Health R&D,Health,0.0039769300558376,0.0006913797933481,General government,17.38476120125011
+GTM,2022,GF0760,Other health,Health,3.661240615231935,0.6364979379612524,General government,17.38476120125011
+GTM,2023,GF01,General public services,Government spending,10.822931092350162,1.8658576591331442,General government,17.23985529624192
+GTM,2023,GF02,Defence,Government spending,1.507999086224535,0.2599768603337603,General government,17.23985529624192
+GTM,2023,GF03,Public order and safety,Government spending,11.38049652664399,1.961981133187263,General government,17.23985529624192
+GTM,2023,GF04,Economic affairs,Government spending,10.82663452269514,1.866496125165614,General government,17.23985529624192
+GTM,2023,GF05,Environmental protection,Government spending,2.129221404196668,0.3670746890201159,General government,17.23985529624192
+GTM,2023,GF06,Housing and community amenities,Government spending,3.59965775643252,0.6205757883689151,General government,17.23985529624192
+GTM,2023,GF08,"Recreation, culture and religion",Government spending,2.241697015252826,0.3864653216097615,General government,17.23985529624192
+GTM,2023,GF09,Education,Government spending,19.34872061511389,3.335691435719765,General government,17.23985529624192
+GTM,2023,GF10,Social protection,Government spending,15.82599602647869,2.728378814153922,General government,17.23985529624192
+GTM,2023,GF0170,Interest on public debt,Government spending,8.653739230260578,1.491892121011043,General government,17.23985529624192
+GTM,2023,GF0712,Medical products,Health,0.0341123778694453,0.0058809245827996,General government,17.23985529624192
+GTM,2023,GF072,Outpatient services,Health,2.713493270226138,0.4678023132602491,General government,17.23985529624192
+GTM,2023,GF073,Hospital services,Health,2.350064852768605,0.4051477799851483,General government,17.23985529624192
+GTM,2023,GF0740,Public health services,Health,4.781837045147955,0.8243817870855981,General government,17.23985529624192
+GTM,2023,GF075,Health R&D,Health,0.0055354924418412,0.0009543108869078,General government,17.23985529624192
+GTM,2023,GF0760,Other health,Health,3.777863685897023,0.6512982327379183,General government,17.23985529624192
+GTM,2024,GF01,General public services,Government spending,10.838544476222447,1.7731848509854111,General government,16.35999054001592
+GTM,2024,GF02,Defence,Government spending,1.574709505053635,0.2576223260595061,General government,16.35999054001592
+GTM,2024,GF03,Public order and safety,Government spending,11.56004998255569,1.891223083567223,General government,16.35999054001592
+GTM,2024,GF04,Economic affairs,Government spending,7.621823335582707,1.246929576678057,General government,16.35999054001592
+GTM,2024,GF05,Environmental protection,Government spending,1.974945698317661,0.3231009294152207,General government,16.35999054001592
+GTM,2024,GF06,Housing and community amenities,Government spending,3.476582748217852,0.568768608724266,General government,16.35999054001592
+GTM,2024,GF08,"Recreation, culture and religion",Government spending,2.189443015375453,0.3581926701944634,General government,16.35999054001592
+GTM,2024,GF09,Education,Government spending,19.31764197121926,3.160364399045616,General government,16.35999054001592
+GTM,2024,GF10,Social protection,Government spending,16.91646584004308,2.767532211136072,General government,16.35999054001592
+GTM,2024,GF0170,Interest on public debt,Government spending,8.992838884653713,1.47122759080822,General government,16.35999054001592
+GTM,2024,GF0712,Medical products,Health,0.0312078704313877,0.0051056046503154,General government,16.35999054001592
+GTM,2024,GF072,Outpatient services,Health,3.127394340961364,0.5116414183302724,General government,16.35999054001592
+GTM,2024,GF073,Hospital services,Health,2.656422526790519,0.4345904740857807,General government,16.35999054001592
+GTM,2024,GF0740,Public health services,Health,6.100294859289563,0.99800766189285,General government,16.35999054001592
+GTM,2024,GF075,Health R&D,Health,0.0066977476651713,0.0010957508844161,General government,16.35999054001592
+GTM,2024,GF0760,Other health,Health,3.614937197620486,0.591403383558228,General government,16.35999054001592

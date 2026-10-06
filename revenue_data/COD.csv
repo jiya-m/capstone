@@ -1,0 +1,232 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+COD,2000,G1111,Personal income tax,Taxes,0.07981798,12.532709991875043,General government,0.63687726
+COD,2000,G1112,Corporate income tax,Taxes,0.11168357,17.536121481241143,General government,0.63687726
+COD,2000,G1113,Other income taxes,Taxes,0.007445210000000008,1.169018030255941,General government,0.63687726
+COD,2000,G11412,VAT / sales tax,Taxes,0.10557093,16.57633842979415,General government,0.63687726
+COD,2000,G1142,Excise taxes,Taxes,0.10761661,16.89754317809997,General government,0.63687726
+COD,2000,G115,Trade taxes (customs),Taxes,0.17341583,27.229081785711738,General government,0.63687726
+COD,2000,NONTAXRES,Resource (extractive) revenue,Other revenue,0.01291009,2.0270923160296226,General government,0.63687726
+COD,2000,G14X,Other non-tax revenue,Other revenue,0.03841703,6.032093216831136,General government,0.63687726
+COD,2001,G1111,Personal income tax,Taxes,0.24466563,8.195302583163842,General government,2.9854374
+COD,2001,G1112,Corporate income tax,Taxes,0.61902068,20.734672777029772,General government,2.9854374
+COD,2001,G1113,Other income taxes,Taxes,0.02765850000000003,0.9264471535966755,General government,2.9854374
+COD,2001,G11412,VAT / sales tax,Taxes,0.44643797,14.9538545678174,General government,2.9854374
+COD,2001,G1142,Excise taxes,Taxes,0.35032457,11.73444694077694,General government,2.9854374
+COD,2001,G115,Trade taxes (customs),Taxes,0.84397285,28.269654702726942,General government,2.9854374
+COD,2001,NONTAXRES,Resource (extractive) revenue,Other revenue,0.17777861,5.954859706957113,General government,2.9854374
+COD,2001,G14X,Other non-tax revenue,Other revenue,0.27557861,9.230761567931307,General government,2.9854374
+COD,2002,G1111,Personal income tax,Taxes,0.40409834,8.260208216154819,General government,4.8921084
+COD,2002,G1112,Corporate income tax,Taxes,1.0240246,20.932173130096626,General government,4.8921084
+COD,2002,G1113,Other income taxes,Taxes,0.06342306000000009,1.2964361133126177,General government,4.8921084
+COD,2002,G11412,VAT / sales tax,Taxes,0.59746108,12.212752276707525,General government,4.8921084
+COD,2002,G1142,Excise taxes,Taxes,0.36745544,7.5111876098248365,General government,4.8921084
+COD,2002,G115,Trade taxes (customs),Taxes,1.2163857,24.8642425830139,General government,4.8921084
+COD,2002,G13,Grants (e.g. foreign aid),Grants,0.20222274,4.1336520670719406,General government,4.8921084
+COD,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,0.76672529,15.672696255054365,General government,4.8921084
+COD,2002,G14X,Other non-tax revenue,Other revenue,0.2503120099999999,5.1166488870115785,General government,4.8921084
+COD,2003,G1111,Personal income tax,Taxes,0.42304928,8.556693759909464,General government,4.9440741
+COD,2003,G1112,Corporate income tax,Taxes,0.21314485,4.311117626655313,General government,4.9440741
+COD,2003,G1113,Other income taxes,Taxes,0.07877163999999992,1.5932536286217862,General government,4.9440741
+COD,2003,G11412,VAT / sales tax,Taxes,1.099331,22.235326125067587,General government,4.9440741
+COD,2003,G1142,Excise taxes,Taxes,0.56577188,11.443434474414532,General government,4.9440741
+COD,2003,G115,Trade taxes (customs),Taxes,0.97360935,19.692450604654166,General government,4.9440741
+COD,2003,G13,Grants (e.g. foreign aid),Grants,0.66307864,13.411583778649275,General government,4.9440741
+COD,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,0.13695443,2.7700723579365447,General government,4.9440741
+COD,2003,G14X,Other non-tax revenue,Other revenue,0.79036291,15.986065216943251,General government,4.9440741
+COD,2004,G1111,Personal income tax,Taxes,0.44293502,6.311976339675289,General government,7.0173745
+COD,2004,G1112,Corporate income tax,Taxes,0.71620943,10.206230648487278,General government,7.0173745
+COD,2004,G1113,Other income taxes,Taxes,0.06475935,0.9228430052172233,General government,7.0173745
+COD,2004,G11412,VAT / sales tax,Taxes,1.7880094,25.47974876296078,General government,7.0173745
+COD,2004,G1142,Excise taxes,Taxes,0.53228384,7.585227747563304,General government,7.0173745
+COD,2004,G115,Trade taxes (customs),Taxes,1.008682,14.374065338650238,General government,7.0173745
+COD,2004,G13,Grants (e.g. foreign aid),Grants,1.5121913,21.549245996992557,General government,7.0173745
+COD,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,0.68745351,9.796448900668837,General government,7.0173745
+COD,2004,G14X,Other non-tax revenue,Other revenue,0.26485068,3.774213259784497,General government,7.0173745
+COD,2005,G1111,Personal income tax,Taxes,0.44969763,5.060469633682275,General government,8.8864801
+COD,2005,G1112,Corporate income tax,Taxes,1.165422,13.114551307342365,General government,8.8864801
+COD,2005,G1113,Other income taxes,Taxes,0.06782407000000013,0.7632276084437928,General government,8.8864801
+COD,2005,G11412,VAT / sales tax,Taxes,1.8340766,20.638954535177852,General government,8.8864801
+COD,2005,G1142,Excise taxes,Taxes,0.44083436,4.960730818758729,General government,8.8864801
+COD,2005,G115,Trade taxes (customs),Taxes,1.0465246,11.776592994722895,General government,8.8864801
+COD,2005,G13,Grants (e.g. foreign aid),Grants,1.8467996,20.782127082361033,General government,8.8864801
+COD,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,0.91960922,10.348407957285081,General government,8.8864801
+COD,2005,G14X,Other non-tax revenue,Other revenue,1.11569208,12.554938062225979,General government,8.8864801
+COD,2006,G1111,Personal income tax,Taxes,0.54733502,5.798523156299437,General government,9.4392141
+COD,2006,G1112,Corporate income tax,Taxes,1.3615798,14.424715596399357,General government,9.4392141
+COD,2006,G1113,Other income taxes,Taxes,0.11793937999999993,1.249461848740463,General government,9.4392141
+COD,2006,G11412,VAT / sales tax,Taxes,1.9965308,21.151451401858115,General government,9.4392141
+COD,2006,G1142,Excise taxes,Taxes,0.46698428,4.947279202430387,General government,9.4392141
+COD,2006,G115,Trade taxes (customs),Taxes,1.1613472,12.303430962088838,General government,9.4392141
+COD,2006,G13,Grants (e.g. foreign aid),Grants,1.0534903,11.160783937206942,General government,9.4392141
+COD,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0323336,10.936647694543574,General government,9.4392141
+COD,2006,G14X,Other non-tax revenue,Other revenue,1.7016737999999998,18.02770620043288,General government,9.4392141
+COD,2007,G1111,Personal income tax,Taxes,0.7001566,7.617680908641773,General government,9.1912041
+COD,2007,G1112,Corporate income tax,Taxes,1.407812,15.316948516027406,General government,9.1912041
+COD,2007,G1113,Other income taxes,Taxes,0.13313319999999984,1.448484861738625,General government,9.1912041
+COD,2007,G11412,VAT / sales tax,Taxes,2.3219036,25.26223522769993,General government,9.1912041
+COD,2007,G1142,Excise taxes,Taxes,0.44674007,4.860517350496003,General government,9.1912041
+COD,2007,G115,Trade taxes (customs),Taxes,1.2623449,13.734271225681953,General government,9.1912041
+COD,2007,G13,Grants (e.g. foreign aid),Grants,0.36502693,3.9714810598102157,General government,9.1912041
+COD,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,0.8864451,9.64449369588039,General government,9.1912041
+COD,2007,G14X,Other non-tax revenue,Other revenue,1.6676416,18.143886066026976,General government,9.1912041
+COD,2008,G1111,Personal income tax,Taxes,0.93725524,9.70795733607119,General government,9.654505
+COD,2008,G1112,Corporate income tax,Taxes,1.6371205,16.957062803946055,General government,9.654505
+COD,2008,G1113,Other income taxes,Taxes,0.16528266000000014,1.71197443683789,General government,9.654505
+COD,2008,G11412,VAT / sales tax,Taxes,2.7571942,28.558627915340253,General government,9.654505
+COD,2008,G1142,Excise taxes,Taxes,0.42526958,4.404882216469565,General government,9.654505
+COD,2008,G115,Trade taxes (customs),Taxes,1.4441157,14.957946358294654,General government,9.654505
+COD,2008,G13,Grants (e.g. foreign aid),Grants,0.27663716,2.8653686127717988,General government,9.654505
+COD,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0599164,10.97846429858548,General government,9.654505
+COD,2008,G14X,Other non-tax revenue,Other revenue,0.9517137,9.857716021683117,General government,9.654505
+COD,2009,G1111,Personal income tax,Taxes,1.1045191,8.304417618143242,General government,13.30038
+COD,2009,G1112,Corporate income tax,Taxes,1.3480682,10.135561540346966,General government,13.30038
+COD,2009,G1113,Other income taxes,Taxes,0.10192240000000008,0.7663119399596108,General government,13.30038
+COD,2009,G11412,VAT / sales tax,Taxes,2.9676142,22.312251228912256,General government,13.30038
+COD,2009,G1142,Excise taxes,Taxes,0.80600845,6.060040765752556,General government,13.30038
+COD,2009,G115,Trade taxes (customs),Taxes,1.4258035,10.720020781361134,General government,13.30038
+COD,2009,G13,Grants (e.g. foreign aid),Grants,2.8493456,21.423039040989803,General government,13.30038
+COD,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1256068,8.462967223492862,General government,13.30038
+COD,2009,G14X,Other non-tax revenue,Other revenue,1.5714914000000002,11.815387229537803,General government,13.30038
+COD,2010,G1111,Personal income tax,Taxes,1.1053728,7.683828334018273,General government,14.385704
+COD,2010,G1112,Corporate income tax,Taxes,1.6351439,11.366450331523575,General government,14.385704
+COD,2010,G1113,Other income taxes,Taxes,0.11527149999999997,0.8012920327013539,General government,14.385704
+COD,2010,G11412,VAT / sales tax,Taxes,2.9063289,20.202896570094868,General government,14.385704
+COD,2010,G1142,Excise taxes,Taxes,0.90604017,6.298198336348364,General government,14.385704
+COD,2010,G115,Trade taxes (customs),Taxes,1.371134,9.53122627853319,General government,14.385704
+COD,2010,G13,Grants (e.g. foreign aid),Grants,3.2397296,22.520480054365084,General government,14.385704
+COD,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,1.5825817,11.001072314570076,General government,14.385704
+COD,2010,G14X,Other non-tax revenue,Other revenue,1.5241011000000002,10.594553453901181,General government,14.385704
+COD,2011,G1111,Personal income tax,Taxes,1.2076031,9.488094420596811,General government,12.727562
+COD,2011,G1112,Corporate income tax,Taxes,1.4770972,11.605499937851413,General government,12.727562
+COD,2011,G1113,Other income taxes,Taxes,0.11147739999999984,0.875873949779226,General government,12.727562
+COD,2011,G11412,VAT / sales tax,Taxes,3.2912165,25.85897047682816,General government,12.727562
+COD,2011,G1142,Excise taxes,Taxes,0.8645984,6.793118744972524,General government,12.727562
+COD,2011,G115,Trade taxes (customs),Taxes,1.5713335,12.345911180790162,General government,12.727562
+COD,2011,G13,Grants (e.g. foreign aid),Grants,1.738803,13.661713060207445,General government,12.727562
+COD,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4168067,11.131799632954056,General government,12.727562
+COD,2011,G14X,Other non-tax revenue,Other revenue,1.0486261,8.239017810323768,General government,12.727562
+COD,2012,G1111,Personal income tax,Taxes,1.302421,8.617762666646374,General government,15.113215
+COD,2012,G1112,Corporate income tax,Taxes,1.1919287,7.886665411694334,General government,15.113215
+COD,2012,G1113,Other income taxes,Taxes,0.09588590000000008,0.6344507108513977,General government,15.113215
+COD,2012,G11412,VAT / sales tax,Taxes,4.0791961,26.990922183003416,General government,15.113215
+COD,2012,G1142,Excise taxes,Taxes,0.87099867,5.763159393947615,General government,15.113215
+COD,2012,G114X,Other goods & services taxes,Taxes,0.03859832999999979,0.25539456694025586,General government,15.113215
+COD,2012,G115,Trade taxes (customs),Taxes,1.7077486,11.29970426543922,General government,15.113215
+COD,2012,G13,Grants (e.g. foreign aid),Grants,1.9413504,12.845383328431442,General government,15.113215
+COD,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,2.4770449,16.389926961271975,General government,15.113215
+COD,2012,G14X,Other non-tax revenue,Other revenue,1.4080423999999998,9.316630511773967,General government,15.113215
+COD,2013,G1111,Personal income tax,Taxes,1.6492529,12.040933069956957,General government,13.697052
+COD,2013,G1112,Corporate income tax,Taxes,1.2878953,9.402718714887289,General government,13.697052
+COD,2013,G1113,Other income taxes,Taxes,0.1423466,1.0392498829839467,General government,13.697052
+COD,2013,G11412,VAT / sales tax,Taxes,2.9154848,21.285490747523834,General government,13.697052
+COD,2013,G1142,Excise taxes,Taxes,1.0332648,7.543701939431158,General government,13.697052
+COD,2013,G114X,Other goods & services taxes,Taxes,0.08648659999999975,0.6314249088469915,General government,13.697052
+COD,2013,G115,Trade taxes (customs),Taxes,1.6842323,12.296312105050514,General government,13.697052
+COD,2013,G13,Grants (e.g. foreign aid),Grants,1.6271659,11.879679396420206,General government,13.697052
+COD,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,1.2651376,9.236568367341345,General government,13.697052
+COD,2013,G14X,Other non-tax revenue,Other revenue,2.0057855,14.64392086755776,General government,13.697052
+COD,2014,G1111,Personal income tax,Taxes,1.6254741,9.39819868553791,General government,17.295592
+COD,2014,G1112,Corporate income tax,Taxes,1.5603184,9.0214801551748,General government,17.295592
+COD,2014,G1113,Other income taxes,Taxes,0.14275460000000018,0.8253814035391224,General government,17.295592
+COD,2014,G11412,VAT / sales tax,Taxes,3.9739682,22.976768878451804,General government,17.295592
+COD,2014,G1142,Excise taxes,Taxes,0.9316456,5.386607177135076,General government,17.295592
+COD,2014,G114X,Other goods & services taxes,Taxes,0.0052642999999998885,0.03043723510591536,General government,17.295592
+COD,2014,G115,Trade taxes (customs),Taxes,1.7899785,10.34933351804321,General government,17.295592
+COD,2014,G13,Grants (e.g. foreign aid),Grants,4.0703746,23.534173331563327,General government,17.295592
+COD,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.706711,4.0860758047484005,General government,17.295592
+COD,2014,G14X,Other non-tax revenue,Other revenue,2.4891024,14.391542076154435,General government,17.295592
+COD,2015,G1111,Personal income tax,Taxes,0.97677944,6.148159538530883,General government,15.887347
+COD,2015,G1112,Corporate income tax,Taxes,1.9261652,12.123894568426056,General government,15.887347
+COD,2015,G1113,Other income taxes,Taxes,0.14396725999999993,0.9061755874029813,General government,15.887347
+COD,2015,G11412,VAT / sales tax,Taxes,4.1304207,25.99817766931131,General government,15.887347
+COD,2015,G1142,Excise taxes,Taxes,0.93955941,5.913884866995099,General government,15.887347
+COD,2015,G115,Trade taxes (customs),Taxes,1.7579776,11.065268480634307,General government,15.887347
+COD,2015,G13,Grants (e.g. foreign aid),Grants,2.9798628,18.756201397250276,General government,15.887347
+COD,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,0.58827566,3.7027935501125517,General government,15.887347
+COD,2015,G14X,Other non-tax revenue,Other revenue,2.44433844,15.385441257121155,General government,15.887347
+COD,2016,G1111,Personal income tax,Taxes,0.73593682,5.471250977345218,General government,13.450979
+COD,2016,G1112,Corporate income tax,Taxes,2.399094,17.835831875137117,General government,13.450979
+COD,2016,G1113,Other income taxes,Taxes,0.11229058000000025,0.834813436256203,General government,13.450979
+COD,2016,G11412,VAT / sales tax,Taxes,2.8592812,21.25704902223102,General government,13.450979
+COD,2016,G1142,Excise taxes,Taxes,0.7371179,5.480031602160705,General government,13.450979
+COD,2016,G115,Trade taxes (customs),Taxes,1.4443209,10.737663778971031,General government,13.450979
+COD,2016,G13,Grants (e.g. foreign aid),Grants,2.6943314,20.03074571746785,General government,13.450979
+COD,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.70767977,5.261176677177178,General government,13.450979
+COD,2016,G14X,Other non-tax revenue,Other revenue,1.76092593,13.091433196052122,General government,13.450979
+COD,2017,G1111,Personal income tax,Taxes,0.60032068,5.047590615075311,General government,11.893212
+COD,2017,G1112,Corporate income tax,Taxes,2.1734468,18.27468224157373,General government,11.893212
+COD,2017,G1113,Other income taxes,Taxes,0.1073301200000003,0.9024485153949859,General government,11.893212
+COD,2017,G11412,VAT / sales tax,Taxes,2.2521121,18.93611244586402,General government,11.893212
+COD,2017,G1142,Excise taxes,Taxes,0.71474544,6.009691978480357,General government,11.893212
+COD,2017,G115,Trade taxes (customs),Taxes,1.9455848,16.358782738107866,General government,11.893212
+COD,2017,G13,Grants (e.g. foreign aid),Grants,1.9919732,16.74882369503169,General government,11.893212
+COD,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.48684938,4.09350609318212,General government,11.893212
+COD,2017,G14X,Other non-tax revenue,Other revenue,1.62085002,13.628361677289927,General government,11.893212
+COD,2018,G1111,Personal income tax,Taxes,1.3409615,11.96618656578968,General government,11.206256
+COD,2018,G1112,Corporate income tax,Taxes,2.089558,18.64635253736841,General government,11.206256
+COD,2018,G1113,Other income taxes,Taxes,0.2173977000000007,1.9399672825607475,General government,11.206256
+COD,2018,G11412,VAT / sales tax,Taxes,2.2526779,20.101967151205542,General government,11.206256
+COD,2018,G1142,Excise taxes,Taxes,0.82878738,7.395756263287221,General government,11.206256
+COD,2018,G115,Trade taxes (customs),Taxes,0.76337393,6.812033653345059,General government,11.206256
+COD,2018,G13,Grants (e.g. foreign aid),Grants,1.1240723,10.030756927202091,General government,11.206256
+COD,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0487455,9.358571676392188,General government,11.206256
+COD,2018,G14X,Other non-tax revenue,Other revenue,1.5405261999999997,13.747019521952735,General government,11.206256
+COD,2019,G1111,Personal income tax,Taxes,1.0976359,9.414667994992616,General government,11.658785
+COD,2019,G1112,Corporate income tax,Taxes,2.1753977,18.658871400407506,General government,11.658785
+COD,2019,G1113,Other income taxes,Taxes,0.15514800000000006,1.3307390092535376,General government,11.658785
+COD,2019,G11412,VAT / sales tax,Taxes,2.3663427,20.29664926491054,General government,11.658785
+COD,2019,G1142,Excise taxes,Taxes,0.68115365,5.84240682026472,General government,11.658785
+COD,2019,G115,Trade taxes (customs),Taxes,0.87893443,7.538816694878584,General government,11.658785
+COD,2019,G11NEC,Other taxes,Taxes,0.72564857,6.224049675845296,General government,11.658785
+COD,2019,G13,Grants (e.g. foreign aid),Grants,0.82756808,7.098236051183722,General government,11.658785
+COD,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0357455,8.883820226550194,General government,11.658785
+COD,2019,G14X,Other non-tax revenue,Other revenue,1.7151918,14.711582724958047,General government,11.658785
+COD,2020,G1111,Personal income tax,Taxes,1.2987071,13.904896360801125,General government,9.3399265
+COD,2020,G1112,Corporate income tax,Taxes,1.012934,10.845203118033101,General government,9.3399265
+COD,2020,G1113,Other income taxes,Taxes,0.4466268,4.781909150998136,General government,9.3399265
+COD,2020,G11412,VAT / sales tax,Taxes,2.3352861,25.003259929293872,General government,9.3399265
+COD,2020,G1142,Excise taxes,Taxes,0.62383479,6.679225901831239,General government,9.3399265
+COD,2020,G115,Trade taxes (customs),Taxes,0.80091079,8.57512947237861,General government,9.3399265
+COD,2020,G11NEC,Other taxes,Taxes,0.11203642,1.1995428443682077,General government,9.3399265
+COD,2020,G13,Grants (e.g. foreign aid),Grants,0.21207324,2.2706093029747074,General government,9.3399265
+COD,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0337117,11.067664183438703,General government,9.3399265
+COD,2020,G14X,Other non-tax revenue,Other revenue,1.4637085,15.671520541408972,General government,9.3399265
+COD,2021,G1111,Personal income tax,Taxes,1.3020537,9.841554484249365,General government,13.230163
+COD,2021,G1112,Corporate income tax,Taxes,2.1252468,16.063647893075846,General government,13.230163
+COD,2021,G1113,Other income taxes,Taxes,0.29235849999999974,2.209787589162732,General government,13.230163
+COD,2021,G11412,VAT / sales tax,Taxes,2.6951652,20.37136806250989,General government,13.230163
+COD,2021,G1142,Excise taxes,Taxes,0.66012712,4.989561504268693,General government,13.230163
+COD,2021,G115,Trade taxes (customs),Taxes,0.65784846,4.972338284872228,General government,13.230163
+COD,2021,G13,Grants (e.g. foreign aid),Grants,2.4799047,18.744324616408733,General government,13.230163
+COD,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,1.3336604,10.080453279373808,General government,13.230163
+COD,2021,G14X,Other non-tax revenue,Other revenue,1.6837889,12.726894596839056,General government,13.230163
+COD,2022,G1111,Personal income tax,Taxes,1.2310738,7.926641023620728,General government,15.530838
+COD,2022,G1112,Corporate income tax,Taxes,4.7026873,30.279674600694282,General government,15.530838
+COD,2022,G1113,Other income taxes,Taxes,0.4688433000000005,3.018789397865281,General government,15.530838
+COD,2022,G11412,VAT / sales tax,Taxes,2.6030818,16.760729522243494,General government,15.530838
+COD,2022,G1142,Excise taxes,Taxes,0.6712019,4.32173645127707,General government,15.530838
+COD,2022,G115,Trade taxes (customs),Taxes,1.0396522,6.694115152818247,General government,15.530838
+COD,2022,G11NEC,Other taxes,Taxes,0.3544456999999996,2.2822058484763152,General government,15.530838
+COD,2022,G13,Grants (e.g. foreign aid),Grants,1.1625109,7.485178053782197,General government,15.530838
+COD,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,1.9665197,12.66203190075065,General government,15.530838
+COD,2022,G14X,Other non-tax revenue,Other revenue,1.3308217,8.568898048471729,General government,15.530838
+COD,2023,G1111,Personal income tax,Taxes,1.2671556,8.858468695313515,General government,14.304454
+COD,2023,G1112,Corporate income tax,Taxes,3.4492226,24.11292695645893,General government,14.304454
+COD,2023,G1113,Other income taxes,Taxes,0.3213801000000003,2.246713470032196,General government,14.304454
+COD,2023,G11412,VAT / sales tax,Taxes,2.6550478,18.56098637046707,General government,14.304454
+COD,2023,G1142,Excise taxes,Taxes,0.71358532,4.98855327526886,General government,14.304454
+COD,2023,G115,Trade taxes (customs),Taxes,1.2936928,9.043985734784654,General government,14.304454
+COD,2023,G11NEC,Other taxes,Taxes,0.24195981,1.6914997672022332,General government,14.304454
+COD,2023,G13,Grants (e.g. foreign aid),Grants,1.0826306,7.568485889726952,General government,14.304454
+COD,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,1.270592,8.882491981660175,General government,14.304454
+COD,2023,G14X,Other non-tax revenue,Other revenue,2.0091875999999997,14.045887859085411,General government,14.304454
+COD,2024,G1111,Personal income tax,Taxes,1.3910125,9.50864170506955,General government,14.628929
+COD,2024,G1112,Corporate income tax,Taxes,3.2219778,22.024699621238657,General government,14.628929
+COD,2024,G1113,Other income taxes,Taxes,0.5036773999999999,3.44302292865161,General government,14.628929
+COD,2024,G11412,VAT / sales tax,Taxes,2.6849799,18.3539054138,General government,14.628929
+COD,2024,G1142,Excise taxes,Taxes,0.66543787,4.5487803185195315,General government,14.628929
+COD,2024,G115,Trade taxes (customs),Taxes,1.0565403,7.222266629283845,General government,14.628929
+COD,2024,G11NEC,Other taxes,Taxes,0.22842829,1.561483282797043,General government,14.628929
+COD,2024,G13,Grants (e.g. foreign aid),Grants,0.96944373,6.626894497207023,General government,14.628929
+COD,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,2.4196423,16.54011857199731,General government,14.628929
+COD,2024,G14X,Other non-tax revenue,Other revenue,1.4877894999999999,10.170187031435427,General government,14.628929

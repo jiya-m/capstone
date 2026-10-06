@@ -1,0 +1,17 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+CMR,2021,GF01,General public services,Government spending,32.703458705379134,4.870785133867612,Central government (budgetary),14.8937920534578
+CMR,2021,GF02,Defence,Government spending,6.6754521503755,0.994227961905005,Central government (budgetary),14.8937920534578
+CMR,2021,GF03,Public order and safety,Government spending,4.27196047829328,0.636256910242902,Central government (budgetary),14.8937920534578
+CMR,2021,GF04,Economic affairs,Government spending,19.0605222852576,2.83883455346925,Central government (budgetary),14.8937920534578
+CMR,2021,GF05,Environmental protection,Government spending,0.134863880731211,0.0200863459513299,Central government (budgetary),14.8937920534578
+CMR,2021,GF06,Housing and community amenities,Government spending,3.95750625538845,0.589422752180141,Central government (budgetary),14.8937920534578
+CMR,2021,GF08,"Recreation, culture and religion",Government spending,2.07378534237289,0.308865276528106,Central government (budgetary),14.8937920534578
+CMR,2021,GF09,Education,Government spending,18.2176073101873,2.71329254989483,Central government (budgetary),14.8937920534578
+CMR,2021,GF10,Social protection,Government spending,0.55474798406164,0.08262301116689,Central government (budgetary),14.8937920534578
+CMR,2021,GF0170,Interest on public debt,Government spending,6.44792228311366,0.960340136615518,Central government (budgetary),14.8937920534578
+CMR,2021,GF0712,Medical products,Health,0.0161015524030895,0.0023981317322946,Central government (budgetary),14.8937920534578
+CMR,2021,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),14.8937920534578
+CMR,2021,GF073,Hospital services,Health,0.278364609990459,0.0414590461623979,Central government (budgetary),14.8937920534578
+CMR,2021,GF0740,Public health services,Health,0.48792530249485,0.0726705799297879,Central government (budgetary),14.8937920534578
+CMR,2021,GF075,Health R&D,Health,0.0301579146519803,0.0044916570959252,Central government (budgetary),14.8937920534578
+CMR,2021,GF0760,Other health,Health,5.08962394529892,0.758038006715817,Central government (budgetary),14.8937920534578

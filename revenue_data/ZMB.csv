@@ -1,0 +1,199 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+ZMB,2000,G111,Income taxes,Taxes,7.3654106,32.63449313947325,Central government,22.569404
+ZMB,2000,G11412,VAT / sales tax,Taxes,5.133468,22.745252821031514,Central government,22.569404
+ZMB,2000,G1142,Excise taxes,Taxes,2.4819202,10.996835361713584,Central government,22.569404
+ZMB,2000,G115,Trade taxes (customs),Taxes,2.2497982,9.96835450329127,Central government,22.569404
+ZMB,2000,G13,Grants (e.g. foreign aid),Grants,5.1423958,22.784809913456293,Central government,22.569404
+ZMB,2000,G14X,Other non-tax revenue,Other revenue,0.19641095,0.8702531533398047,Central government,22.569404
+ZMB,2001,G111,Income taxes,Taxes,6.609684,29.948391606129285,Central government,22.070247
+ZMB,2001,G11412,VAT / sales tax,Taxes,5.5559977,25.174152785875034,Central government,22.070247
+ZMB,2001,G1142,Excise taxes,Taxes,2.4759547,11.218518306569022,Central government,22.070247
+ZMB,2001,G115,Trade taxes (customs),Taxes,1.9247656,8.721087715964394,Central government,22.070247
+ZMB,2001,G13,Grants (e.g. foreign aid),Grants,5.0992862,23.104798963056464,Central government,22.070247
+ZMB,2001,G14X,Other non-tax revenue,Other revenue,0.40455844,1.8330489912505286,Central government,22.070247
+ZMB,2002,G1111,Personal income tax,Taxes,5.2311888,22.673506528225868,Central government,23.071812
+ZMB,2002,G1112,Corporate income tax,Taxes,1.4961742,6.484857799638798,Central government,23.071812
+ZMB,2002,G11412,VAT / sales tax,Taxes,4.4028504,19.083244957093097,Central government,23.071812
+ZMB,2002,G1142,Excise taxes,Taxes,2.2930063,9.938561826006557,Central government,23.071812
+ZMB,2002,G115,Trade taxes (customs),Taxes,1.9900689,8.625542285105304,Central government,23.071812
+ZMB,2002,G13,Grants (e.g. foreign aid),Grants,7.3175041,31.716208939289206,Central government,23.071812
+ZMB,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,0.01443591,0.06256946788574734,Central government,23.071812
+ZMB,2002,G14X,Other non-tax revenue,Other revenue,0.32658339000000003,1.4155081967554175,Central government,23.071812
+ZMB,2003,G1111,Personal income tax,Taxes,5.8788345,26.723156892348012,Central government,21.999027
+ZMB,2003,G1112,Corporate income tax,Taxes,1.060259,4.819572247445308,Central government,21.999027
+ZMB,2003,G11412,VAT / sales tax,Taxes,4.4574452,20.262010678926845,Central government,21.999027
+ZMB,2003,G1142,Excise taxes,Taxes,2.0779697,9.445734577261076,Central government,21.999027
+ZMB,2003,G115,Trade taxes (customs),Taxes,1.7631073,8.014478549437664,Central government,21.999027
+ZMB,2003,G13,Grants (e.g. foreign aid),Grants,6.1384221,27.90315271670879,Central government,21.999027
+ZMB,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,0.05234964,0.2379634335645845,Central government,21.999027
+ZMB,2003,G14X,Other non-tax revenue,Other revenue,0.57063915,2.5939290405889315,Central government,21.999027
+ZMB,2004,G1111,Personal income tax,Taxes,5.7215111,27.55481418006563,Central government,20.764107
+ZMB,2004,G1112,Corporate income tax,Taxes,1.113357,5.3619305660484216,Central government,20.764107
+ZMB,2004,G11412,VAT / sales tax,Taxes,4.5825705,22.069672921643104,Central government,20.764107
+ZMB,2004,G1142,Excise taxes,Taxes,2.0422465,9.835465112947068,Central government,20.764107
+ZMB,2004,G115,Trade taxes (customs),Taxes,1.8312065,8.819095856132893,Central government,20.764107
+ZMB,2004,G13,Grants (e.g. foreign aid),Grants,4.8190458,23.208538657597938,Central government,20.764107
+ZMB,2004,G14X,Other non-tax revenue,Other revenue,0.65411908,3.150239401097288,Central government,20.764107
+ZMB,2005,G1111,Personal income tax,Taxes,5.2924144,26.357430365705113,Central government,20.079402
+ZMB,2005,G1112,Corporate income tax,Taxes,1.2046475,5.99941920581101,Central government,20.079402
+ZMB,2005,G11412,VAT / sales tax,Taxes,4.3912655,21.86950338461275,Central government,20.079402
+ZMB,2005,G1142,Excise taxes,Taxes,2.0657063,10.287688348487668,Central government,20.079402
+ZMB,2005,G115,Trade taxes (customs),Taxes,1.762962,8.779952709747032,Central government,20.079402
+ZMB,2005,G13,Grants (e.g. foreign aid),Grants,4.9080127,24.443022257336143,Central government,20.079402
+ZMB,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,0.10539011,0.5248667764109708,Central government,20.079402
+ZMB,2005,G14X,Other non-tax revenue,Other revenue,0.34880448000000003,1.737125836715655,Central government,20.079402
+ZMB,2006,G1111,Personal income tax,Taxes,4.8006952,13.115118699604578,Central government,36.604281
+ZMB,2006,G1112,Corporate income tax,Taxes,1.5110204,4.127987942980423,Central government,36.604281
+ZMB,2006,G11412,VAT / sales tax,Taxes,3.8976823,10.648159045349885,Central government,36.604281
+ZMB,2006,G1142,Excise taxes,Taxes,1.7864301,4.880385409606191,Central government,36.604281
+ZMB,2006,G115,Trade taxes (customs),Taxes,1.6196979,4.424886257307121,Central government,36.604281
+ZMB,2006,G13,Grants (e.g. foreign aid),Grants,22.206157,60.665460476860744,Central government,36.604281
+ZMB,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,0.12776036,0.3490311750065308,Central government,36.604281
+ZMB,2006,G14X,Other non-tax revenue,Other revenue,0.65484001,1.7889709932845244,Central government,36.604281
+ZMB,2007,G1111,Personal income tax,Taxes,4.5179613,23.92221274844593,Central government,18.886051
+ZMB,2007,G1112,Corporate income tax,Taxes,2.173493,11.50845669113146,Central government,18.886051
+ZMB,2007,G11412,VAT / sales tax,Taxes,3.9651939,20.995357367191268,Central government,18.886051
+ZMB,2007,G1142,Excise taxes,Taxes,2.1408549,11.335640785890075,Central government,18.886051
+ZMB,2007,G115,Trade taxes (customs),Taxes,1.6276299,8.618158978814577,Central government,18.886051
+ZMB,2007,G13,Grants (e.g. foreign aid),Grants,3.7392138,19.798812361567805,Central government,18.886051
+ZMB,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,0.1200784,0.6358047005167995,Central government,18.886051
+ZMB,2007,G14X,Other non-tax revenue,Other revenue,0.60162571,3.1855558898999057,Central government,18.886051
+ZMB,2008,G1111,Personal income tax,Taxes,4.4571648,23.721558267269433,Central government,18.789511
+ZMB,2008,G1112,Corporate income tax,Taxes,2.5075996,13.345741674703508,Central government,18.789511
+ZMB,2008,G11412,VAT / sales tax,Taxes,3.301027,17.568456145559082,Central government,18.789511
+ZMB,2008,G1142,Excise taxes,Taxes,2.1139149,11.250505135551425,Central government,18.789511
+ZMB,2008,G115,Trade taxes (customs),Taxes,1.9740904,10.506342607851796,Central government,18.789511
+ZMB,2008,G13,Grants (e.g. foreign aid),Grants,3.3506492,17.832551363364377,Central government,18.789511
+ZMB,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,0.42514003,2.2626455260065046,Central government,18.789511
+ZMB,2008,G14X,Other non-tax revenue,Other revenue,0.65992477,3.512197683058383,Central government,18.789511
+ZMB,2009,G1111,Personal income tax,Taxes,4.4763194,28.42113510460054,Central government,15.749967
+ZMB,2009,G1112,Corporate income tax,Taxes,1.7785236,11.292236993258463,Central government,15.749967
+ZMB,2009,G11412,VAT / sales tax,Taxes,3.2002674,20.319200668801404,Central government,15.749967
+ZMB,2009,G1142,Excise taxes,Taxes,1.3238207,8.405228404605547,Central government,15.749967
+ZMB,2009,G115,Trade taxes (customs),Taxes,1.4073881,8.93581618297994,Central government,15.749967
+ZMB,2009,G13,Grants (e.g. foreign aid),Grants,2.4140111,15.327086717070584,Central government,15.749967
+ZMB,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,0.30364166,1.9278875949390877,Central government,15.749967
+ZMB,2009,G14X,Other non-tax revenue,Other revenue,0.8459689399999999,5.371242619111519,Central government,15.749967
+ZMB,2010,G1111,Personal income tax,Taxes,4.611631,29.498036547742284,Central government,15.633688
+ZMB,2010,G1112,Corporate income tax,Taxes,2.500645,15.995234137971796,Central government,15.633688
+ZMB,2010,G11412,VAT / sales tax,Taxes,3.2499881,20.788364843919105,Central government,15.633688
+ZMB,2010,G1142,Excise taxes,Taxes,1.4160833,9.05789663961568,Central government,15.633688
+ZMB,2010,G115,Trade taxes (customs),Taxes,1.2854114,8.22206123084969,Central government,15.633688
+ZMB,2010,G13,Grants (e.g. foreign aid),Grants,1.4291714,9.141613930123205,Central government,15.633688
+ZMB,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,0.42381409,2.7109028272791424,Central government,15.633688
+ZMB,2010,G14X,Other non-tax revenue,Other revenue,0.71691981,4.585736967502486,Central government,15.633688
+ZMB,2011,G1111,Personal income tax,Taxes,4.6114665,25.989437148732154,Central government,17.743618
+ZMB,2011,G1112,Corporate income tax,Taxes,4.7323136,26.670510752987237,Central government,17.743618
+ZMB,2011,G11412,VAT / sales tax,Taxes,3.4841963,19.6363349387218,Central government,17.743618
+ZMB,2011,G1142,Excise taxes,Taxes,1.4599032,8.227764954951521,Central government,17.743618
+ZMB,2011,G115,Trade taxes (customs),Taxes,1.5131467,8.527836222264972,Central government,17.743618
+ZMB,2011,G13,Grants (e.g. foreign aid),Grants,0.6262009,3.529161262047444,Central government,17.743618
+ZMB,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,0.7612268,4.290144160112733,Central government,17.743618
+ZMB,2011,G14X,Other non-tax revenue,Other revenue,0.5551642000000001,3.12881056018214,Central government,17.743618
+ZMB,2012,G1111,Personal income tax,Taxes,4.4739283,23.93175305666047,Central government,18.694528
+ZMB,2012,G1112,Corporate income tax,Taxes,3.353511,17.938462966604654,Central government,18.694528
+ZMB,2012,G11412,VAT / sales tax,Taxes,3.613182,19.327484388332863,Central government,18.694528
+ZMB,2012,G1142,Excise taxes,Taxes,1.6770456,8.970783274277997,Central government,18.694528
+ZMB,2012,G115,Trade taxes (customs),Taxes,1.5545039,8.315288258065204,Central government,18.694528
+ZMB,2012,G13,Grants (e.g. foreign aid),Grants,1.7048114,9.119306948432682,Central government,18.694528
+ZMB,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1111617,5.943780415617979,Central government,18.694528
+ZMB,2012,G14X,Other non-tax revenue,Other revenue,1.2063841999999998,6.4531406920081595,Central government,18.694528
+ZMB,2013,G1111,Personal income tax,Taxes,4.5992057,26.08855468468706,Central government,17.629208
+ZMB,2013,G1112,Corporate income tax,Taxes,1.8857761,10.696884661611438,Central government,17.629208
+ZMB,2013,G11412,VAT / sales tax,Taxes,4.8555645,27.542725471764655,Central government,17.629208
+ZMB,2013,G1142,Excise taxes,Taxes,1.5441854,8.759244069295567,Central government,17.629208
+ZMB,2013,G115,Trade taxes (customs),Taxes,1.1950231,6.778654299766209,Central government,17.629208
+ZMB,2013,G13,Grants (e.g. foreign aid),Grants,1.4511139,8.231304882462533,Central government,17.629208
+ZMB,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,1.1634959,6.599819271523166,Central government,17.629208
+ZMB,2013,G14X,Other non-tax revenue,Other revenue,0.9348439000000002,5.3028126588893665,Central government,17.629208
+ZMB,2014,G1111,Personal income tax,Taxes,4.7958161,25.381716006341858,Central government,18.894767
+ZMB,2014,G1112,Corporate income tax,Taxes,2.0878213,11.049732976331487,Central government,18.894767
+ZMB,2014,G11412,VAT / sales tax,Taxes,5.6941943,30.13635627261241,Central government,18.894767
+ZMB,2014,G1142,Excise taxes,Taxes,1.7084245,9.041786543332341,Central government,18.894767
+ZMB,2014,G115,Trade taxes (customs),Taxes,1.180195,6.246147412137974,Central government,18.894767
+ZMB,2014,G13,Grants (e.g. foreign aid),Grants,0.75847581,4.014210971746833,Central government,18.894767
+ZMB,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,0.96788942,5.122526358753193,Central government,18.894767
+ZMB,2014,G14X,Other non-tax revenue,Other revenue,1.70195038,9.007522453174468,Central government,18.894767
+ZMB,2015,G1111,Personal income tax,Taxes,5.4559317,29.067348386920443,Central government,18.769967
+ZMB,2015,G1112,Corporate income tax,Taxes,1.5720526,8.375361554977692,Central government,18.769967
+ZMB,2015,G11412,VAT / sales tax,Taxes,4.5616944,24.303156206934194,Central government,18.769967
+ZMB,2015,G1142,Excise taxes,Taxes,1.7743827,9.453307509810752,Central government,18.769967
+ZMB,2015,G115,Trade taxes (customs),Taxes,1.0521315,5.605398773476799,Central government,18.769967
+ZMB,2015,G13,Grants (e.g. foreign aid),Grants,0.20139589,1.0729688017032741,Central government,18.769967
+ZMB,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,2.044428,10.892017018463589,Central government,18.769967
+ZMB,2015,G14X,Other non-tax revenue,Other revenue,2.1079499000000004,11.23044009613869,Central government,18.769967
+ZMB,2016,G1111,Personal income tax,Taxes,5.0363577,27.616534858412603,Central government,18.236747
+ZMB,2016,G1112,Corporate income tax,Taxes,1.8712638,10.260951473320814,Central government,18.236747
+ZMB,2016,G11412,VAT / sales tax,Taxes,3.7055874,20.319343799387905,Central government,18.236747
+ZMB,2016,G1142,Excise taxes,Taxes,1.4532124,7.968594228578609,Central government,18.236747
+ZMB,2016,G115,Trade taxes (customs),Taxes,0.9037651,4.955736243270955,Central government,18.236747
+ZMB,2016,G13,Grants (e.g. foreign aid),Grants,0.24278409,1.3312905246092792,Central government,18.236747
+ZMB,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4128279,7.7471484897285725,Central government,18.236747
+ZMB,2016,G14X,Other non-tax revenue,Other revenue,3.6109489999999997,19.800400382691272,Central government,18.236747
+ZMB,2017,G1111,Personal income tax,Taxes,4.8551215,27.783450050469618,Central government,17.474869
+ZMB,2017,G1112,Corporate income tax,Taxes,1.8095232,10.355002947375457,Central government,17.474869
+ZMB,2017,G11412,VAT / sales tax,Taxes,5.6669548,32.429168996917795,Central government,17.474869
+ZMB,2017,G1142,Excise taxes,Taxes,1.2908861,7.387100298148158,Central government,17.474869
+ZMB,2017,G115,Trade taxes (customs),Taxes,1.1956706,6.842229260774429,Central government,17.474869
+ZMB,2017,G13,Grants (e.g. foreign aid),Grants,0.18948505,1.0843288725082858,Central government,17.474869
+ZMB,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.98892403,5.659121278677397,Central government,17.474869
+ZMB,2017,G14X,Other non-tax revenue,Other revenue,1.47830347,8.45959686450296,Central government,17.474869
+ZMB,2018,G1111,Personal income tax,Taxes,5.2086409,26.815627207063407,Central government,19.423901
+ZMB,2018,G1112,Corporate income tax,Taxes,2.1707907,11.175873951256692,Central government,19.423901
+ZMB,2018,G11412,VAT / sales tax,Taxes,6.3056778,32.463498332675556,Central government,19.423901
+ZMB,2018,G1142,Excise taxes,Taxes,1.2494416,6.432495694336853,Central government,19.423901
+ZMB,2018,G115,Trade taxes (customs),Taxes,1.1425149,5.882005349402246,Central government,19.423901
+ZMB,2018,G13,Grants (e.g. foreign aid),Grants,0.23516957,1.2107226511939808,Central government,19.423901
+ZMB,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4306153,7.365231602263305,Central government,19.423901
+ZMB,2018,G14X,Other non-tax revenue,Other revenue,1.6810502999999999,8.65454521180796,Central government,19.423901
+ZMB,2019,G1111,Personal income tax,Taxes,5.4061598,26.483799947504256,Central government,20.413082
+ZMB,2019,G1112,Corporate income tax,Taxes,2.5084249,12.288320303617063,Central government,20.413082
+ZMB,2019,G11412,VAT / sales tax,Taxes,5.6031909,27.449019702169426,Central government,20.413082
+ZMB,2019,G1142,Excise taxes,Taxes,1.3279659,6.505464975842452,Central government,20.413082
+ZMB,2019,G115,Trade taxes (customs),Taxes,1.2675725,6.209608622549011,Central government,20.413082
+ZMB,2019,G13,Grants (e.g. foreign aid),Grants,0.2791651,1.3675793787532917,Central government,20.413082
+ZMB,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4210105,6.961273657745557,Central government,20.413082
+ZMB,2019,G14X,Other non-tax revenue,Other revenue,2.5995923,12.73493292193702,Central government,20.413082
+ZMB,2020,G1111,Personal income tax,Taxes,5.9601838,29.40629919769449,Central government,20.268391
+ZMB,2020,G1112,Corporate income tax,Taxes,2.85902,14.105806188760907,Central government,20.268391
+ZMB,2020,G11412,VAT / sales tax,Taxes,4.3997874,21.707630004740178,Central government,20.268391
+ZMB,2020,G1142,Excise taxes,Taxes,1.400883,6.911663468996351,Central government,20.268391
+ZMB,2020,G115,Trade taxes (customs),Taxes,1.0634738,5.246957107549117,Central government,20.268391
+ZMB,2020,G13,Grants (e.g. foreign aid),Grants,0.51557554,2.543741786663174,Central government,20.268391
+ZMB,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,1.5751405,7.771413495906971,Central government,20.268391
+ZMB,2020,G14X,Other non-tax revenue,Other revenue,2.4943273,12.306488749688805,Central government,20.268391
+ZMB,2021,G1111,Personal income tax,Taxes,5.1578585,23.058421396298588,Central government,22.368654
+ZMB,2021,G1112,Corporate income tax,Taxes,4.3501873,19.447693634136414,Central government,22.368654
+ZMB,2021,G11412,VAT / sales tax,Taxes,4.4120738,19.72435981172582,Central government,22.368654
+ZMB,2021,G1142,Excise taxes,Taxes,0.97824122,4.373268145682793,Central government,22.368654
+ZMB,2021,G115,Trade taxes (customs),Taxes,1.186945,5.3062870926431245,Central government,22.368654
+ZMB,2021,G13,Grants (e.g. foreign aid),Grants,0.5609812,2.5078898354813837,Central government,22.368654
+ZMB,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,2.7735294,12.399178779375818,Central government,22.368654
+ZMB,2021,G14X,Other non-tax revenue,Other revenue,2.948837,13.182898711741888,Central government,22.368654
+ZMB,2022,G1111,Personal income tax,Taxes,5.4436673,26.70721908264025,Central government,20.382756
+ZMB,2022,G1112,Corporate income tax,Taxes,4.2554564,20.87772821300515,Central government,20.382756
+ZMB,2022,G11412,VAT / sales tax,Taxes,4.1663327,20.440477725387087,Central government,20.382756
+ZMB,2022,G1142,Excise taxes,Taxes,1.0505974,5.1543441917275565,Central government,20.382756
+ZMB,2022,G114X,Other goods & services taxes,Taxes,0.047642399999999974,0.23373875446480336,Central government,20.382756
+ZMB,2022,G115,Trade taxes (customs),Taxes,1.1289785,5.538890324743131,Central government,20.382756
+ZMB,2022,G13,Grants (e.g. foreign aid),Grants,0.40107251,1.9677050051523943,Central government,20.382756
+ZMB,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,2.1145906,10.374409623507244,Central government,20.382756
+ZMB,2022,G14X,Other non-tax revenue,Other revenue,1.7744181,8.705486637822677,Central government,20.382756
+ZMB,2023,G1111,Personal income tax,Taxes,5.4237001,24.75926864873289,Central government,21.905736
+ZMB,2023,G1112,Corporate income tax,Taxes,2.6753597,12.21305535390746,Central government,21.905736
+ZMB,2023,G11412,VAT / sales tax,Taxes,5.9037113,26.950526652692336,Central government,21.905736
+ZMB,2023,G1142,Excise taxes,Taxes,1.3540544,6.181277732262302,Central government,21.905736
+ZMB,2023,G114X,Other goods & services taxes,Taxes,0.054094899999999724,0.2469439933867903,Central government,21.905736
+ZMB,2023,G115,Trade taxes (customs),Taxes,1.1624465,5.306584924059366,Central government,21.905736
+ZMB,2023,G13,Grants (e.g. foreign aid),Grants,1.0851316,4.953641298055797,Central government,21.905736
+ZMB,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,1.3830123,6.3134709605720944,Central government,21.905736
+ZMB,2023,G14X,Other non-tax revenue,Other revenue,2.8642255,13.075230436330962,Central government,21.905736
+ZMB,2024,G1111,Personal income tax,Taxes,5.7182393,25.808498394596235,Central government,22.15642
+ZMB,2024,G1112,Corporate income tax,Taxes,2.8994399,13.086229183234474,Central government,22.15642
+ZMB,2024,G11412,VAT / sales tax,Taxes,5.9680553,26.936009066446655,Central government,22.15642
+ZMB,2024,G1142,Excise taxes,Taxes,1.3596225,6.136471957112204,Central government,22.15642
+ZMB,2024,G114X,Other goods & services taxes,Taxes,0.058925200000000455,0.26595090723140496,Central government,22.15642
+ZMB,2024,G115,Trade taxes (customs),Taxes,1.2422747,5.606838559659007,Central government,22.15642
+ZMB,2024,G13,Grants (e.g. foreign aid),Grants,0.3416277,1.5418903414901863,Central government,22.15642
+ZMB,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,1.6749997,7.559884223173239,Central government,22.15642
+ZMB,2024,G14X,Other non-tax revenue,Other revenue,2.8932352000000003,13.05822511037433,Central government,22.15642

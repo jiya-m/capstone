@@ -1,0 +1,21 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+TZA,2017,GF01,General public services,Government spending,44.81514004107733,8.626799359251928,Central government (budgetary),19.24974317015331
+TZA,2017,GF02,Defence,Government spending,6.814715651861909,1.311815260759657,Central government (budgetary),19.24974317015331
+TZA,2017,GF03,Public order and safety,Government spending,1.751558780655598,0.3371705667504716,Central government (budgetary),19.24974317015331
+TZA,2017,GF04,Economic affairs,Government spending,21.93147669572797,4.221752937349659,Central government (budgetary),19.24974317015331
+TZA,2017,GF05,Environmental protection,Government spending,0.0489309984676621,0.0094190915356166,Central government (budgetary),19.24974317015331
+TZA,2017,GF06,Housing and community amenities,Government spending,2.021201620082418,0.3890761208168434,Central government (budgetary),19.24974317015331
+TZA,2017,GF08,"Recreation, culture and religion",Government spending,0.0846032334718143,0.0162859051569694,Central government (budgetary),19.24974317015331
+TZA,2017,GF09,Education,Government spending,17.48913964995182,3.366614465285175,Central government (budgetary),19.24974317015331
+TZA,2017,GF10,Social protection,Government spending,0.301460109177521,0.0580302967771365,Central government (budgetary),19.24974317015331
+TZA,2017,GF07,Health (no breakdown),Health,4.741773219525789,0.9127791664698244,Central government (budgetary),19.24974317015331
+TZA,2018,GF01,General public services,Government spending,39.11281815902131,8.141697709652252,Central government (budgetary),20.81593220041186
+TZA,2018,GF02,Defence,Government spending,6.278201830331176,1.306866236406754,Central government (budgetary),20.81593220041186
+TZA,2018,GF03,Public order and safety,Government spending,4.352350111993028,0.9059822484370184,Central government (budgetary),20.81593220041186
+TZA,2018,GF04,Economic affairs,Government spending,18.9307120740453,3.940604190388452,Central government (budgetary),20.81593220041186
+TZA,2018,GF05,Environmental protection,Government spending,0.0396795729258958,0.0082596729976674,Central government (budgetary),20.81593220041186
+TZA,2018,GF06,Housing and community amenities,Government spending,4.694590526458426,0.977222781074544,Central government (budgetary),20.81593220041186
+TZA,2018,GF08,"Recreation, culture and religion",Government spending,0.0947588003681381,0.0197249276385552,Central government (budgetary),20.81593220041186
+TZA,2018,GF09,Education,Government spending,19.56011967259293,4.071621249366366,Central government (budgetary),20.81593220041186
+TZA,2018,GF10,Social protection,Government spending,0.8172468375339489,0.1701175476110769,Central government (budgetary),20.81593220041186
+TZA,2018,GF07,Health (no breakdown),Health,6.119522414730001,1.273835636839204,Central government (budgetary),20.81593220041186

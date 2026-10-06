@@ -1,0 +1,305 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+NAM,2005,GF01,General public services,Government spending,11.136659277947393,3.129163447506224,Central government (budgetary),28.09786462357284
+NAM,2005,GF02,Defence,Government spending,9.620369126371084,2.703118293415744,Central government (budgetary),28.09786462357284
+NAM,2005,GF03,Public order and safety,Government spending,9.099444177157865,2.556749506395399,Central government (budgetary),28.09786462357284
+NAM,2005,GF04,Economic affairs,Government spending,9.025982164877687,2.536108249635162,Central government (budgetary),28.09786462357284
+NAM,2005,GF05,Environmental protection,Government spending,0.0,0.0,Central government (budgetary),28.09786462357284
+NAM,2005,GF06,Housing and community amenities,Government spending,7.917200720016321,2.22456434028672,Central government (budgetary),28.09786462357284
+NAM,2005,GF08,"Recreation, culture and religion",Government spending,2.661535273566561,0.7478345780753713,Central government (budgetary),28.09786462357284
+NAM,2005,GF09,Education,Government spending,22.23511342120718,6.247592067988669,Central government (budgetary),28.09786462357284
+NAM,2005,GF10,Social protection,Government spending,9.353376185919233,2.628098978453086,Central government (budgetary),28.09786462357284
+NAM,2005,GF0170,Interest on public debt,Government spending,8.861826876051987,2.489984118808481,Central government (budgetary),28.09786462357284
+NAM,2005,GF072,Outpatient services,Health,5.519923993015533,1.550980770881621,Central government (budgetary),28.09786462357284
+NAM,2005,GF073,Hospital services,Health,3.696732498599769,1.038702892952185,Central government (budgetary),28.09786462357284
+NAM,2005,GF07_rest,Health (not broken down),Health,0.8718362852693886,0.24496737917417777,Central government (budgetary),28.09786462357284
+NAM,2006,GF01,General public services,Government spending,12.155316587842885,3.441144455942662,Central government (budgetary),28.30978881606684
+NAM,2006,GF02,Defence,Government spending,9.309523690255496,2.635506496493044,Central government (budgetary),28.30978881606684
+NAM,2006,GF03,Public order and safety,Government spending,8.976001132907149,2.541086964853781,Central government (budgetary),28.30978881606684
+NAM,2006,GF04,Economic affairs,Government spending,10.73595370460502,3.039325821164386,Central government (budgetary),28.30978881606684
+NAM,2006,GF05,Environmental protection,Government spending,0.0,0.0,Central government (budgetary),28.30978881606684
+NAM,2006,GF06,Housing and community amenities,Government spending,7.248141730366745,2.051933616956038,Central government (budgetary),28.30978881606684
+NAM,2006,GF08,"Recreation, culture and religion",Government spending,2.147913700310588,0.6080698325092944,Central government (budgetary),28.30978881606684
+NAM,2006,GF09,Education,Government spending,21.83439572712047,6.181271319612127,Central government (budgetary),28.30978881606684
+NAM,2006,GF10,Social protection,Government spending,9.933360473644,2.812113372427274,Central government (budgetary),28.30978881606684
+NAM,2006,GF0170,Interest on public debt,Government spending,8.541020566840777,2.417944885209459,Central government (budgetary),28.30978881606684
+NAM,2006,GF072,Outpatient services,Health,5.041937736950278,1.427361925568204,Central government (budgetary),28.30978881606684
+NAM,2006,GF073,Hospital services,Health,3.160117769272249,0.8946226668199762,Central government (budgetary),28.30978881606684
+NAM,2006,GF07_rest,Health (not broken down),Health,0.9163239491670208,0.2594093748802271,Central government (budgetary),28.30978881606684
+NAM,2008,GF01,General public services,Government spending,14.013465094898734,4.157459127383721,Central government (budgetary),29.66760254676156
+NAM,2008,GF02,Defence,Government spending,11.01216882357207,3.26704647835575,Central government (budgetary),29.66760254676156
+NAM,2008,GF03,Public order and safety,Government spending,9.07774320542315,2.693148774400593,Central government (budgetary),29.66760254676156
+NAM,2008,GF04,Economic affairs,Government spending,11.06179154050992,3.281768348789776,Central government (budgetary),29.66760254676156
+NAM,2008,GF05,Environmental protection,Government spending,1.021059021455065,0.3029237322531414,Central government (budgetary),29.66760254676156
+NAM,2008,GF06,Housing and community amenities,Government spending,1.5503733190961,0.4599585943004664,Central government (budgetary),29.66760254676156
+NAM,2008,GF08,"Recreation, culture and religion",Government spending,2.410391652933755,0.7151054154127027,Central government (budgetary),29.66760254676156
+NAM,2008,GF09,Education,Government spending,23.50638001391033,6.973779395658313,Central government (budgetary),29.66760254676156
+NAM,2008,GF10,Social protection,Government spending,6.359709051559444,1.886773204547075,Central government (budgetary),29.66760254676156
+NAM,2008,GF0170,Interest on public debt,Government spending,5.310865322055016,1.575606415541071,Central government (budgetary),29.66760254676156
+NAM,2008,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),29.66760254676156
+NAM,2008,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),29.66760254676156
+NAM,2008,GF073,Hospital services,Health,5.346155965985994,1.586076303518706,Central government (budgetary),29.66760254676156
+NAM,2008,GF0740,Public health services,Health,7.331038399684393,2.174943334968835,Central government (budgetary),29.66760254676156
+NAM,2008,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),29.66760254676156
+NAM,2008,GF0760,Other health,Health,0.5544748581635278,0.1644993971416753,Central government (budgetary),29.66760254676156
+NAM,2008,UNCL,Unclassified,Unclassified,1.4443837307525058,,Central government (budgetary),29.66760254676156
+NAM,2009,GF01,General public services,Government spending,13.024858768066103,4.196206016167203,Central government (budgetary),32.21690223970271
+NAM,2009,GF02,Defence,Government spending,10.39156596902088,3.347840649413673,Central government (budgetary),32.21690223970271
+NAM,2009,GF03,Public order and safety,Government spending,9.26173648329104,2.983844588520754,Central government (budgetary),32.21690223970271
+NAM,2009,GF04,Economic affairs,Government spending,12.99837097177059,4.187672468729226,Central government (budgetary),32.21690223970271
+NAM,2009,GF05,Environmental protection,Government spending,1.215533517532202,0.3916072450341692,Central government (budgetary),32.21690223970271
+NAM,2009,GF06,Housing and community amenities,Government spending,1.59573223093289,0.5140954928470763,Central government (budgetary),32.21690223970271
+NAM,2009,GF08,"Recreation, culture and religion",Government spending,2.315966324253538,0.7461326065891988,Central government (budgetary),32.21690223970271
+NAM,2009,GF09,Education,Government spending,23.32297816911021,7.513941076129444,Central government (budgetary),32.21690223970271
+NAM,2009,GF10,Social protection,Government spending,5.982785796707851,1.927468251336187,Central government (budgetary),32.21690223970271
+NAM,2009,GF0170,Interest on public debt,Government spending,4.937165414470647,1.590601754992422,Central government (budgetary),32.21690223970271
+NAM,2009,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),32.21690223970271
+NAM,2009,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),32.21690223970271
+NAM,2009,GF073,Hospital services,Health,5.867514569280475,1.890331432685404,Central government (budgetary),32.21690223970271
+NAM,2009,GF0740,Public health services,Health,7.328712424980958,2.361084117385061,Central government (budgetary),32.21690223970271
+NAM,2009,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),32.21690223970271
+NAM,2009,GF0760,Other health,Health,0.4755025017539825,0.1531921761374212,Central government (budgetary),32.21690223970271
+NAM,2009,UNCL,Unclassified,Unclassified,1.281576858828629,,Central government (budgetary),32.21690223970271
+NAM,2010,GF01,General public services,Government spending,15.307973746430418,5.050814960834877,Central government (budgetary),32.9946669918522
+NAM,2010,GF02,Defence,Government spending,10.72279657785003,3.53795102307534,Central government (budgetary),32.9946669918522
+NAM,2010,GF03,Public order and safety,Government spending,10.08551178179843,3.327681026828412,Central government (budgetary),32.9946669918522
+NAM,2010,GF04,Economic affairs,Government spending,12.00147142196786,3.959845529800603,Central government (budgetary),32.9946669918522
+NAM,2010,GF05,Environmental protection,Government spending,1.170225430433402,0.38611198382547,Central government (budgetary),32.9946669918522
+NAM,2010,GF06,Housing and community amenities,Government spending,1.732362718072456,0.5715873099190063,Central government (budgetary),32.9946669918522
+NAM,2010,GF08,"Recreation, culture and religion",Government spending,2.194357009335053,0.7240207878424678,Central government (budgetary),32.9946669918522
+NAM,2010,GF09,Education,Government spending,24.66318692021526,8.137536393903074,Central government (budgetary),32.9946669918522
+NAM,2010,GF10,Social protection,Government spending,6.339808645286127,2.091798750432814,Central government (budgetary),32.9946669918522
+NAM,2010,GF0170,Interest on public debt,Government spending,3.542680117057041,1.16889550720953,Central government (budgetary),32.9946669918522
+NAM,2010,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),32.9946669918522
+NAM,2010,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),32.9946669918522
+NAM,2010,GF073,Hospital services,Health,4.79463716731404,1.581974566822843,Central government (budgetary),32.9946669918522
+NAM,2010,GF0740,Public health services,Health,6.884731112712034,2.271594103923776,Central government (budgetary),32.9946669918522
+NAM,2010,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),32.9946669918522
+NAM,2010,GF0760,Other health,Health,0.4152544741605786,0.1370118309180499,Central government (budgetary),32.9946669918522
+NAM,2011,GF01,General public services,Government spending,11.514958575188102,4.520583969425578,Central government (budgetary),39.25836067848582
+NAM,2011,GF02,Defence,Government spending,9.051349965075467,3.553411615561326,Central government (budgetary),39.25836067848582
+NAM,2011,GF03,Public order and safety,Government spending,9.188235250772628,3.607150534736094,Central government (budgetary),39.25836067848582
+NAM,2011,GF04,Economic affairs,Government spending,15.8344770014409,6.216356092777556,Central government (budgetary),39.25836067848582
+NAM,2011,GF05,Environmental protection,Government spending,2.120267358452439,0.8323822069294624,Central government (budgetary),39.25836067848582
+NAM,2011,GF06,Housing and community amenities,Government spending,2.360063143661355,0.9265221011785856,Central government (budgetary),39.25836067848582
+NAM,2011,GF08,"Recreation, culture and religion",Government spending,1.553329622218682,0.6098117456163715,Central government (budgetary),39.25836067848582
+NAM,2011,GF09,Education,Government spending,23.12163417998743,9.07717454113952,Central government (budgetary),39.25836067848582
+NAM,2011,GF10,Social protection,Government spending,7.920869608516092,3.109603559783815,Central government (budgetary),39.25836067848582
+NAM,2011,GF0170,Interest on public debt,Government spending,3.228232607980018,1.267351200781285,Central government (budgetary),39.25836067848582
+NAM,2011,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),39.25836067848582
+NAM,2011,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),39.25836067848582
+NAM,2011,GF073,Hospital services,Health,5.886527061009348,2.310954025047721,Central government (budgetary),39.25836067848582
+NAM,2011,GF0740,Public health services,Health,6.301741354541301,2.473960349991122,Central government (budgetary),39.25836067848582
+NAM,2011,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),39.25836067848582
+NAM,2011,GF0760,Other health,Health,0.3674418860155463,0.1442516608958139,Central government (budgetary),39.25836067848582
+NAM,2011,UNCL,Unclassified,Unclassified,1.5508723851406927,,Central government (budgetary),39.25836067848582
+NAM,2012,GF01,General public services,Government spending,11.025606494823695,3.8573956822858957,Central government (budgetary),34.98579134033912
+NAM,2012,GF02,Defence,Government spending,8.827929372663366,3.088520949992514,Central government (budgetary),34.98579134033912
+NAM,2012,GF03,Public order and safety,Government spending,9.324332290795555,3.262191439137595,Central government (budgetary),34.98579134033912
+NAM,2012,GF04,Economic affairs,Government spending,14.73870472350868,5.156452480835454,Central government (budgetary),34.98579134033912
+NAM,2012,GF05,Environmental protection,Government spending,1.385799646587934,0.4848329727504117,Central government (budgetary),34.98579134033912
+NAM,2012,GF06,Housing and community amenities,Government spending,2.712905345581609,0.9491314034660876,Central government (budgetary),34.98579134033912
+NAM,2012,GF08,"Recreation, culture and religion",Government spending,1.656691017860525,0.5796064626628238,Central government (budgetary),34.98579134033912
+NAM,2012,GF09,Education,Government spending,23.54735585810043,8.238228786682138,Central government (budgetary),34.98579134033912
+NAM,2012,GF10,Social protection,Government spending,7.350614854668649,2.571670775286345,Central government (budgetary),34.98579134033912
+NAM,2012,GF0170,Interest on public debt,Government spending,4.596732613406286,1.608203280599641,Central government (budgetary),34.98579134033912
+NAM,2012,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),34.98579134033912
+NAM,2012,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),34.98579134033912
+NAM,2012,GF073,Hospital services,Health,6.309013723687149,2.207258377002545,Central government (budgetary),34.98579134033912
+NAM,2012,GF0740,Public health services,Health,6.8784253426215,2.406471537870564,Central government (budgetary),34.98579134033912
+NAM,2012,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),34.98579134033912
+NAM,2012,GF0760,Other health,Health,0.3353472201185021,0.1173238786962869,Central government (budgetary),34.98579134033912
+NAM,2012,UNCL,Unclassified,Unclassified,1.3105414955761177,,Central government (budgetary),34.98579134033912
+NAM,2013,GF01,General public services,Government spending,11.952314362064486,4.757169432981621,Central government (budgetary),39.80124090511229
+NAM,2013,GF02,Defence,Government spending,8.068149692075721,3.211223695528133,Central government (budgetary),39.80124090511229
+NAM,2013,GF03,Public order and safety,Government spending,9.418699232365654,3.748759171601816,Central government (budgetary),39.80124090511229
+NAM,2013,GF04,Economic affairs,Government spending,14.57521190390237,5.801115202302786,Central government (budgetary),39.80124090511229
+NAM,2013,GF05,Environmental protection,Government spending,1.364906235447085,0.5432496188991935,Central government (budgetary),39.80124090511229
+NAM,2013,GF06,Housing and community amenities,Government spending,4.368791910086396,1.738833392776543,Central government (budgetary),39.80124090511229
+NAM,2013,GF08,"Recreation, culture and religion",Government spending,1.677345447559045,0.6676043023939092,Central government (budgetary),39.80124090511229
+NAM,2013,GF09,Education,Government spending,23.29995260772028,9.27367026817574,Central government (budgetary),39.80124090511229
+NAM,2013,GF10,Social protection,Government spending,5.894742807893263,2.346180785706378,Central government (budgetary),39.80124090511229
+NAM,2013,GF0170,Interest on public debt,Government spending,3.826809395105315,1.523117626325337,Central government (budgetary),39.80124090511229
+NAM,2013,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),39.80124090511229
+NAM,2013,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),39.80124090511229
+NAM,2013,GF073,Hospital services,Health,7.58290038405391,3.018088449451981,Central government (budgetary),39.80124090511229
+NAM,2013,GF0740,Public health services,Health,6.997140347992225,2.784948686373198,Central government (budgetary),39.80124090511229
+NAM,2013,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),39.80124090511229
+NAM,2013,GF0760,Other health,Health,0.4118875770768592,0.1639363668105908,Central government (budgetary),39.80124090511229
+NAM,2013,UNCL,Unclassified,Unclassified,0.5611480966573907,,Central government (budgetary),39.80124090511229
+NAM,2014,GF01,General public services,Government spending,16.82124177726103,7.32943810378534,Central government (budgetary),43.57251504281498
+NAM,2014,GF02,Defence,Government spending,9.755070774143116,4.250529680500756,Central government (budgetary),43.57251504281498
+NAM,2014,GF03,Public order and safety,Government spending,9.776958351352537,4.260066648372838,Central government (budgetary),43.57251504281498
+NAM,2014,GF04,Economic affairs,Government spending,14.12106555131344,6.152903411551811,Central government (budgetary),43.57251504281498
+NAM,2014,GF05,Environmental protection,Government spending,1.005019320973652,0.4379121948144412,Central government (budgetary),43.57251504281498
+NAM,2014,GF06,Housing and community amenities,Government spending,4.182567905191845,1.822450029665668,Central government (budgetary),43.57251504281498
+NAM,2014,GF08,"Recreation, culture and religion",Government spending,1.602722380878469,0.6983464505028331,Central government (budgetary),43.57251504281498
+NAM,2014,GF09,Education,Government spending,21.79016110944991,9.494521227268683,Central government (budgetary),43.57251504281498
+NAM,2014,GF10,Social protection,Government spending,5.912524962534266,2.576235828710433,Central government (budgetary),43.57251504281498
+NAM,2014,GF0170,Interest on public debt,Government spending,3.506895621945361,1.528042622407962,Central government (budgetary),43.57251504281498
+NAM,2014,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),43.57251504281498
+NAM,2014,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),43.57251504281498
+NAM,2014,GF073,Hospital services,Health,4.578174483189892,1.994825765374232,Central government (budgetary),43.57251504281498
+NAM,2014,GF0740,Public health services,Health,6.270927129294673,2.732400666735887,Central government (budgetary),43.57251504281498
+NAM,2014,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),43.57251504281498
+NAM,2014,GF0760,Other health,Health,0.215118565231012,0.0937325691951704,Central government (budgetary),43.57251504281498
+NAM,2015,GF01,General public services,Government spending,15.175693904216608,6.709118161670741,Central government (budgetary),44.20963024172882
+NAM,2015,GF02,Defence,Government spending,10.45554405042184,4.622357364452571,Central government (budgetary),44.20963024172882
+NAM,2015,GF03,Public order and safety,Government spending,9.43530831631949,4.171314918811935,Central government (budgetary),44.20963024172882
+NAM,2015,GF04,Economic affairs,Government spending,14.19281310378805,6.274590194084331,Central government (budgetary),44.20963024172882
+NAM,2015,GF05,Environmental protection,Government spending,0.8438891830963283,0.3730802874968326,Central government (budgetary),44.20963024172882
+NAM,2015,GF06,Housing and community amenities,Government spending,4.608986325342567,2.037615812325793,Central government (budgetary),44.20963024172882
+NAM,2015,GF08,"Recreation, culture and religion",Government spending,2.002641167855881,0.8853602553777248,Central government (budgetary),44.20963024172882
+NAM,2015,GF09,Education,Government spending,23.22823801690147,10.26911813894082,Central government (budgetary),44.20963024172882
+NAM,2015,GF10,Social protection,Government spending,6.822752422500913,3.016313618296249,Central government (budgetary),44.20963024172882
+NAM,2015,GF0170,Interest on public debt,Government spending,4.068516189609632,1.798675963751293,Central government (budgetary),44.20963024172882
+NAM,2015,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),44.20963024172882
+NAM,2015,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),44.20963024172882
+NAM,2015,GF073,Hospital services,Health,1.960117086162115,0.8665605160972202,Central government (budgetary),44.20963024172882
+NAM,2015,GF0740,Public health services,Health,6.257591660412682,2.766458135105705,Central government (budgetary),44.20963024172882
+NAM,2015,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),44.20963024172882
+NAM,2015,GF0760,Other health,Health,0.1590037311559191,0.0702949616145844,Central government (budgetary),44.20963024172882
+NAM,2015,UNCL,Unclassified,Unclassified,0.7889048422164961,,Central government (budgetary),44.20963024172882
+NAM,2016,GF01,General public services,Government spending,6.056778158974609,2.3908742739746875,General government,39.4743576736754
+NAM,2016,GF02,Defence,Government spending,9.685447829882056,3.823268318664874,General government,39.4743576736754
+NAM,2016,GF03,Public order and safety,Government spending,9.948723154831912,3.927194562102113,General government,39.4743576736754
+NAM,2016,GF04,Economic affairs,Government spending,10.90175091744785,4.303396149846552,General government,39.4743576736754
+NAM,2016,GF05,Environmental protection,Government spending,0.7297497262033,0.2880640170441576,General government,39.4743576736754
+NAM,2016,GF06,Housing and community amenities,Government spending,6.123761569898394,2.417315545184772,General government,39.4743576736754
+NAM,2016,GF08,"Recreation, culture and religion",Government spending,1.266098908636234,0.4997844116975677,General government,39.4743576736754
+NAM,2016,GF09,Education,Government spending,25.20937536443313,9.951238998655745,General government,39.4743576736754
+NAM,2016,GF10,Social protection,Government spending,11.41769987640998,4.507063687320871,General government,39.4743576736754
+NAM,2016,GF0170,Interest on public debt,Government spending,6.923418203617361,2.732974864940269,General government,39.4743576736754
+NAM,2016,GF0712,Medical products,Health,2.422004484194003,0.9560707129631978,General government,39.4743576736754
+NAM,2016,GF072,Outpatient services,Health,7.905166910773278,3.12051386105968,General government,39.4743576736754
+NAM,2016,GF073,Hospital services,Health,0.7405120488217506,0.2923123747685596,General government,39.4743576736754
+NAM,2016,GF0740,Public health services,Health,0.0,0.0,General government,39.4743576736754
+NAM,2016,GF075,Health R&D,Health,0.0,0.0,General government,39.4743576736754
+NAM,2016,GF0760,Other health,Health,0.669512845876151,0.264285895452355,General government,39.4743576736754
+NAM,2017,GF01,General public services,Government spending,10.476292694763801,4.318062598356356,General government,41.21746808882672
+NAM,2017,GF02,Defence,Government spending,8.356570382628968,3.444366730780439,General government,41.21746808882672
+NAM,2017,GF03,Public order and safety,Government spending,9.890434820235813,4.076586815876902,General government,41.21746808882672
+NAM,2017,GF04,Economic affairs,Government spending,10.20803964432219,4.20749548289328,General government,41.21746808882672
+NAM,2017,GF05,Environmental protection,Government spending,0.6449668756268842,0.2658390161450137,General government,41.21746808882672
+NAM,2017,GF06,Housing and community amenities,Government spending,4.967432778712728,2.047450020399837,General government,41.21746808882672
+NAM,2017,GF08,"Recreation, culture and religion",Government spending,1.220501886326603,0.5030599755201958,General government,41.21746808882672
+NAM,2017,GF09,Education,Government spending,24.81828577957631,10.22946902139069,General government,41.21746808882672
+NAM,2017,GF10,Social protection,Government spending,11.56231453313576,4.765693303025004,General government,41.21746808882672
+NAM,2017,GF0170,Interest on public debt,Government spending,7.667766688005299,3.160459287754269,General government,41.21746808882672
+NAM,2017,GF0712,Medical products,Health,1.892760717006324,0.7801480445299295,General government,41.21746808882672
+NAM,2017,GF072,Outpatient services,Health,6.668852851252764,2.748732295855919,General government,41.21746808882672
+NAM,2017,GF073,Hospital services,Health,0.6408660119142818,0.2641487439529055,General government,41.21746808882672
+NAM,2017,GF0740,Public health services,Health,0.0,0.0,General government,41.21746808882672
+NAM,2017,GF075,Health R&D,Health,0.0,0.0,General government,41.21746808882672
+NAM,2017,GF0760,Other health,Health,0.9849143364922712,0.4059567523459812,General government,41.21746808882672
+NAM,2018,GF01,General public services,Government spending,11.81689575344104,4.452771625972707,General government,37.68139889595012
+NAM,2018,GF02,Defence,Government spending,8.6994337667658,3.278068339344,General government,37.68139889595012
+NAM,2018,GF03,Public order and safety,Government spending,9.695350748404644,3.653343789867839,General government,37.68139889595012
+NAM,2018,GF04,Economic affairs,Government spending,8.05439614554541,3.035009140262997,General government,37.68139889595012
+NAM,2018,GF05,Environmental protection,Government spending,0.5313022896895969,0.2002021351212535,General government,37.68139889595012
+NAM,2018,GF06,Housing and community amenities,Government spending,4.307432549431052,1.623100841125108,General government,37.68139889595012
+NAM,2018,GF08,"Recreation, culture and religion",Government spending,1.021419491543945,0.3848851530096594,General government,37.68139889595012
+NAM,2018,GF09,Education,Government spending,25.13814645898525,9.472405242258391,General government,37.68139889595012
+NAM,2018,GF10,Social protection,Government spending,11.83213863292454,4.458515356194116,General government,37.68139889595012
+NAM,2018,GF0170,Interest on public debt,Government spending,8.778401466348251,3.307824473222619,General government,37.68139889595012
+NAM,2018,GF0712,Medical products,Health,1.920163116475423,0.7235443233720115,General government,37.68139889595012
+NAM,2018,GF072,Outpatient services,Health,7.18276725815671,2.706567182313729,General government,37.68139889595012
+NAM,2018,GF073,Hospital services,Health,0.4262143609427166,0.1606035334986497,General government,37.68139889595012
+NAM,2018,GF0740,Public health services,Health,0.0,0.0,General government,37.68139889595012
+NAM,2018,GF075,Health R&D,Health,0.0,0.0,General government,37.68139889595012
+NAM,2018,GF0760,Other health,Health,0.5959379613456278,0.2245577603870391,General government,37.68139889595012
+NAM,2019,GF01,General public services,Government spending,9.18285968211367,3.443941041106776,General government,37.50401465694687
+NAM,2019,GF02,Defence,Government spending,8.60665024558058,3.227839369574695,General government,37.50401465694687
+NAM,2019,GF03,Public order and safety,Government spending,10.30246581147534,3.863838287962651,General government,37.50401465694687
+NAM,2019,GF04,Economic affairs,Government spending,8.264250000735712,3.099425531562653,General government,37.50401465694687
+NAM,2019,GF05,Environmental protection,Government spending,0.5985750734976031,0.2244896832973716,General government,37.50401465694687
+NAM,2019,GF06,Housing and community amenities,Government spending,4.233285364927738,1.587651963732886,General government,37.50401465694687
+NAM,2019,GF08,"Recreation, culture and religion",Government spending,0.918462539029508,0.3444603252561931,General government,37.50401465694687
+NAM,2019,GF09,Education,Government spending,24.82394418007869,9.309975663729023,General government,37.50401465694687
+NAM,2019,GF10,Social protection,Government spending,12.8068285821069,4.803074868523434,General government,37.50401465694687
+NAM,2019,GF0170,Interest on public debt,Government spending,10.11765502182121,3.794526822323148,General government,37.50401465694687
+NAM,2019,GF0712,Medical products,Health,1.472159196249636,0.5521188007350547,General government,37.50401465694687
+NAM,2019,GF072,Outpatient services,Health,7.774560265091655,2.915772221333142,General government,37.50401465694687
+NAM,2019,GF073,Hospital services,Health,0.3562316255992372,0.133601161077418,General government,37.50401465694687
+NAM,2019,GF0740,Public health services,Health,0.0,0.0,General government,37.50401465694687
+NAM,2019,GF075,Health R&D,Health,0.0,0.0,General government,37.50401465694687
+NAM,2019,GF0760,Other health,Health,0.5420724116925196,0.2032989167324279,General government,37.50401465694687
+NAM,2020,GF01,General public services,Government spending,12.612826982232162,5.445326354573785,General government,43.17292516772553
+NAM,2020,GF02,Defence,Government spending,7.981171353445228,3.445705135930855,General government,43.17292516772553
+NAM,2020,GF03,Public order and safety,Government spending,9.003466895666115,3.887060025366873,General government,43.17292516772553
+NAM,2020,GF04,Economic affairs,Government spending,7.345551659138221,3.171289520956366,General government,43.17292516772553
+NAM,2020,GF05,Environmental protection,Government spending,0.553161282432357,0.2388159065213524,General government,43.17292516772553
+NAM,2020,GF06,Housing and community amenities,Government spending,3.602593790960016,1.555345121468294,General government,43.17292516772553
+NAM,2020,GF08,"Recreation, culture and religion",Government spending,0.961930614230756,0.4152935842472868,General government,43.17292516772553
+NAM,2020,GF09,Education,Government spending,24.47467491206474,10.56643308482981,General government,43.17292516772553
+NAM,2020,GF10,Social protection,Government spending,12.50121633801169,5.397140774665266,General government,43.17292516772553
+NAM,2020,GF0170,Interest on public debt,Government spending,9.665035134222569,4.17267838593229,General government,43.17292516772553
+NAM,2020,GF0712,Medical products,Health,2.291554227406023,0.9893309917758532,General government,43.17292516772553
+NAM,2020,GF072,Outpatient services,Health,8.196150788692178,3.53851804663602,General government,43.17292516772553
+NAM,2020,GF073,Hospital services,Health,0.3134828742266616,0.1353397267035118,General government,43.17292516772553
+NAM,2020,GF0740,Public health services,Health,0.0,0.0,General government,43.17292516772553
+NAM,2020,GF075,Health R&D,Health,0.0,0.0,General government,43.17292516772553
+NAM,2020,GF0760,Other health,Health,0.4971831472712819,0.2146485081179732,General government,43.17292516772553
+NAM,2021,GF01,General public services,Government spending,9.95687969807691,3.9581323789363427,General government,39.75273879929293
+NAM,2021,GF02,Defence,Government spending,7.905731792792532,3.142744909761473,General government,39.75273879929293
+NAM,2021,GF03,Public order and safety,Government spending,9.05677307417875,3.600315343822971,General government,39.75273879929293
+NAM,2021,GF04,Economic affairs,Government spending,7.67446402242876,3.050809637081815,General government,39.75273879929293
+NAM,2021,GF05,Environmental protection,Government spending,0.519093281020054,0.2063537961285817,General government,39.75273879929293
+NAM,2021,GF06,Housing and community amenities,Government spending,2.998918938800572,1.192152412543919,General government,39.75273879929293
+NAM,2021,GF08,"Recreation, culture and religion",Government spending,0.9896437987752182,0.3934105143705126,General government,39.75273879929293
+NAM,2021,GF09,Education,Government spending,24.50000061759241,9.739421251336664,General government,39.75273879929293
+NAM,2021,GF10,Social protection,Government spending,13.23768153614171,5.262340964144644,General government,39.75273879929293
+NAM,2021,GF0170,Interest on public debt,Government spending,10.8546120222734,4.315005564890994,General government,39.75273879929293
+NAM,2021,GF0712,Medical products,Health,3.099270842954622,1.232045042882395,General government,39.75273879929293
+NAM,2021,GF072,Outpatient services,Health,8.178707637106545,3.251260284136787,General government,39.75273879929293
+NAM,2021,GF073,Hospital services,Health,0.3599191310776754,0.1430777120659931,General government,39.75273879929293
+NAM,2021,GF0740,Public health services,Health,0.0,0.0,General government,39.75273879929293
+NAM,2021,GF075,Health R&D,Health,0.0,0.0,General government,39.75273879929293
+NAM,2021,GF0760,Other health,Health,0.6683036067808353,0.2656689871898392,General government,39.75273879929293
+NAM,2022,GF01,General public services,Government spending,10.813577459368329,4.111200287960153,General government,38.01887306405168
+NAM,2022,GF02,Defence,Government spending,7.593366591300592,2.88691240563468,General government,38.01887306405168
+NAM,2022,GF03,Public order and safety,Government spending,9.117482541102488,3.466364113938828,General government,38.01887306405168
+NAM,2022,GF04,Economic affairs,Government spending,8.126805894316224,3.089720017121955,General government,38.01887306405168
+NAM,2022,GF05,Environmental protection,Government spending,0.5209138298623656,0.1980455677484629,General government,38.01887306405168
+NAM,2022,GF06,Housing and community amenities,Government spending,2.775294291045425,1.055135613666433,General government,38.01887306405168
+NAM,2022,GF08,"Recreation, culture and religion",Government spending,1.045064579753104,0.3973217760136976,General government,38.01887306405168
+NAM,2022,GF09,Education,Government spending,23.95212070717875,9.106326367810723,General government,38.01887306405168
+NAM,2022,GF10,Social protection,Government spending,12.37654924366101,4.705424546657327,General government,38.01887306405168
+NAM,2022,GF0170,Interest on public debt,Government spending,12.06421844629886,4.58667989726827,General government,38.01887306405168
+NAM,2022,GF0712,Medical products,Health,2.725883282549086,1.036350105066542,General government,38.01887306405168
+NAM,2022,GF072,Outpatient services,Health,8.063526026884093,3.065661724647833,General government,38.01887306405168
+NAM,2022,GF073,Hospital services,Health,0.2959414908153354,0.1125136197369445,General government,38.01887306405168
+NAM,2022,GF0740,Public health services,Health,0.0,0.0,General government,38.01887306405168
+NAM,2022,GF075,Health R&D,Health,0.0,0.0,General government,38.01887306405168
+NAM,2022,GF0760,Other health,Health,0.529255615864337,0.2012170207798272,General government,38.01887306405168
+NAM,2023,GF01,General public services,Government spending,10.599323687911808,3.965226058848648,Central government (budgetary),37.41017989073075
+NAM,2023,GF02,Defence,Government spending,7.287677561742525,2.7263332857043,Central government (budgetary),37.41017989073075
+NAM,2023,GF03,Public order and safety,Government spending,8.824556541496424,3.30128247673306,Central government (budgetary),37.41017989073075
+NAM,2023,GF04,Economic affairs,Government spending,6.651780069199647,2.488442889823363,Central government (budgetary),37.41017989073075
+NAM,2023,GF05,Environmental protection,Government spending,0.4991940723806351,0.1867494004814603,Central government (budgetary),37.41017989073075
+NAM,2023,GF06,Housing and community amenities,Government spending,3.263214341759491,1.220774355472351,Central government (budgetary),37.41017989073075
+NAM,2023,GF08,"Recreation, culture and religion",Government spending,1.098515948800145,0.4109567925745018,Central government (budgetary),37.41017989073075
+NAM,2023,GF09,Education,Government spending,24.36559634145977,9.115213422789411,Central government (budgetary),37.41017989073075
+NAM,2023,GF10,Social protection,Government spending,11.93397869032344,4.464522896171473,Central government (budgetary),37.41017989073075
+NAM,2023,GF0170,Interest on public debt,Government spending,13.79387726698051,5.160314299484025,Central government (budgetary),37.41017989073075
+NAM,2023,GF0712,Medical products,Health,3.026141713156504,1.13208505864029,Central government (budgetary),37.41017989073075
+NAM,2023,GF072,Outpatient services,Health,7.850934528922769,2.937048730373503,Central government (budgetary),37.41017989073075
+NAM,2023,GF073,Hospital services,Health,0.2829649468507486,0.1058576956445757,Central government (budgetary),37.41017989073075
+NAM,2023,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),37.41017989073075
+NAM,2023,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),37.41017989073075
+NAM,2023,GF0760,Other health,Health,0.5222442890155741,0.1953725279897941,Central government (budgetary),37.41017989073075
+NAM,2024,GF01,General public services,Government spending,10.135669439779498,4.165583977168915,Central government (budgetary),41.0982619541659
+NAM,2024,GF02,Defence,Government spending,6.625581929785279,2.722999017491034,Central government (budgetary),41.0982619541659
+NAM,2024,GF03,Public order and safety,Government spending,8.391782242359563,3.44887664858811,Central government (budgetary),41.0982619541659
+NAM,2024,GF04,Economic affairs,Government spending,10.09510962967093,4.148914600162385,Central government (budgetary),41.0982619541659
+NAM,2024,GF05,Environmental protection,Government spending,0.5402821427056247,0.2220465703007381,Central government (budgetary),41.0982619541659
+NAM,2024,GF06,Housing and community amenities,Government spending,3.868328898218556,1.589815943838562,Central government (budgetary),41.0982619541659
+NAM,2024,GF08,"Recreation, culture and religion",Government spending,1.11051375698498,0.4564018528827362,Central government (budgetary),41.0982619541659
+NAM,2024,GF09,Education,Government spending,23.47407663043559,9.64743750489806,Central government (budgetary),41.0982619541659
+NAM,2024,GF10,Social protection,Government spending,11.78063613454357,4.841636698441841,Central government (budgetary),41.0982619541659
+NAM,2024,GF0170,Interest on public debt,Government spending,12.98955988266443,5.338483347270672,Central government (budgetary),41.0982619541659
+NAM,2024,GF0712,Medical products,Health,2.804285981633349,1.152512798675626,Central government (budgetary),41.0982619541659
+NAM,2024,GF072,Outpatient services,Health,7.514480874874613,3.088321034451666,Central government (budgetary),41.0982619541659
+NAM,2024,GF073,Hospital services,Health,0.2480701182386994,0.1019525070237498,Central government (budgetary),41.0982619541659
+NAM,2024,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),41.0982619541659
+NAM,2024,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),41.0982619541659
+NAM,2024,GF0760,Other health,Health,0.4216223381050211,0.1732794529716806,Central government (budgetary),41.0982619541659

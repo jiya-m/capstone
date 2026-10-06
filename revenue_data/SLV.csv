@@ -1,0 +1,252 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+SLV,2002,G1111,Personal income tax,Taxes,2.1414697,11.391129200523965,Central government,18.79945
+SLV,2002,G1112,Corporate income tax,Taxes,1.5808342,8.408938317832346,Central government,18.79945
+SLV,2002,G11412,VAT / sales tax,Taxes,6.5128472,34.64381677614712,Central government,18.79945
+SLV,2002,G1142,Excise taxes,Taxes,0.52510226,2.7931787627661167,Central government,18.79945
+SLV,2002,G114X,Other goods & services taxes,Taxes,0.10265163999999916,0.5460353204556965,Central government,18.79945
+SLV,2002,G115,Trade taxes (customs),Taxes,1.2223433,6.50201609562574,Central government,18.79945
+SLV,2002,G11NEC,Other taxes,Taxes,0.2100409,1.117271483829229,Central government,18.79945
+SLV,2002,G121,Social contributions,Social contributions,2.6894711,14.306115459478745,Central government,18.79945
+SLV,2002,G13,Grants (e.g. foreign aid),Grants,0.11607524,0.6174395350173889,Central government,18.79945
+SLV,2002,G14X,Other non-tax revenue,Other revenue,3.698615,19.674059048323656,Central government,18.79945
+SLV,2003,G1111,Personal income tax,Taxes,1.7827075,9.836680450210947,Central government,18.12306
+SLV,2003,G1112,Corporate income tax,Taxes,1.9782692,10.91575705206516,Central government,18.12306
+SLV,2003,G11412,VAT / sales tax,Taxes,6.9820823,38.52595698518903,Central government,18.12306
+SLV,2003,G1142,Excise taxes,Taxes,0.4628546,2.5539539128601905,Central government,18.12306
+SLV,2003,G114X,Other goods & services taxes,Taxes,0.10948439999999948,0.6041165233685674,Central government,18.12306
+SLV,2003,G115,Trade taxes (customs),Taxes,1.3598713,7.503541344563226,Central government,18.12306
+SLV,2003,G113,Property taxes,Taxes,0.20084718,1.1082409924151881,Central government,18.12306
+SLV,2003,G121,Social contributions,Social contributions,2.6019526,14.357137260484711,Central government,18.12306
+SLV,2003,G13,Grants (e.g. foreign aid),Grants,0.13817682,0.7624364759593579,Central government,18.12306
+SLV,2003,G14X,Other non-tax revenue,Other revenue,2.5037942,13.81551570209446,Central government,18.12306
+SLV,2004,G1111,Personal income tax,Taxes,1.7982034,9.436054294836207,Central government,19.05673
+SLV,2004,G1112,Corporate income tax,Taxes,2.0262576,10.632766420597642,Central government,19.05673
+SLV,2004,G11412,VAT / sales tax,Taxes,6.8867984,36.13840548849542,Central government,19.05673
+SLV,2004,G1142,Excise taxes,Taxes,0.55957059,2.9363410552073983,Central government,19.05673
+SLV,2004,G114X,Other goods & services taxes,Taxes,0.11293420999999959,0.5926211335738941,Central government,19.05673
+SLV,2004,G115,Trade taxes (customs),Taxes,1.2706915,6.66794089366468,Central government,19.05673
+SLV,2004,G11NEC,Other taxes,Taxes,0.29217162,1.5331676437327684,Central government,19.05673
+SLV,2004,G121,Social contributions,Social contributions,2.6098722,13.695278176975766,Central government,19.05673
+SLV,2004,G13,Grants (e.g. foreign aid),Grants,0.25064099,1.315236079606734,Central government,19.05673
+SLV,2004,G14X,Other non-tax revenue,Other revenue,3.2495896,17.052188813309485,Central government,19.05673
+SLV,2005,G1111,Personal income tax,Taxes,2.0866785,10.585352426834179,Central government,19.712886
+SLV,2005,G1112,Corporate income tax,Taxes,2.4220982,12.286877475088135,Central government,19.712886
+SLV,2005,G11412,VAT / sales tax,Taxes,7.554089,38.32056271661944,Central government,19.712886
+SLV,2005,G1142,Excise taxes,Taxes,0.64838754,3.289155766002306,Central government,19.712886
+SLV,2005,G114X,Other goods & services taxes,Taxes,0.11089945999999962,0.5625734237668122,Central government,19.712886
+SLV,2005,G115,Trade taxes (customs),Taxes,1.2307797,6.24352859546559,Central government,19.712886
+SLV,2005,G113,Property taxes,Taxes,0.26262076,1.3322288503969522,Central government,19.712886
+SLV,2005,G11NEC,Other taxes,Taxes,0.4694518399999996,2.38144648244843,Central government,19.712886
+SLV,2005,G121,Social contributions,Social contributions,2.4255001,12.304134714485985,Central government,19.712886
+SLV,2005,G13,Grants (e.g. foreign aid),Grants,0.17893591,0.9077103488468791,Central government,19.712886
+SLV,2005,G14X,Other non-tax revenue,Other revenue,2.3234454,11.786429200045292,Central government,19.712886
+SLV,2006,G1111,Personal income tax,Taxes,2.4175181,11.388193313900585,Central government,21.228284
+SLV,2006,G1112,Corporate income tax,Taxes,2.6818951,12.63359304172438,Central government,21.228284
+SLV,2006,G11412,VAT / sales tax,Taxes,8.1181859,38.242307425694975,Central government,21.228284
+SLV,2006,G1142,Excise taxes,Taxes,1.0831331,5.102310972349871,Central government,21.228284
+SLV,2006,G114X,Other goods & services taxes,Taxes,0.11625090000000027,0.5476226722418038,Central government,21.228284
+SLV,2006,G115,Trade taxes (customs),Taxes,1.2481344,5.879581968353957,Central government,21.228284
+SLV,2006,G113,Property taxes,Taxes,0.25562692,1.2041807592658766,Central government,21.228284
+SLV,2006,G11NEC,Other taxes,Taxes,0.015000579999999809,0.0706631751218858,Central government,21.228284
+SLV,2006,G121,Social contributions,Social contributions,2.2812671,10.74635624669837,Central government,21.228284
+SLV,2006,G13,Grants (e.g. foreign aid),Grants,0.12187591,0.5741203854430498,Central government,21.228284
+SLV,2006,G14X,Other non-tax revenue,Other revenue,2.8893967,13.611070039205252,Central government,21.228284
+SLV,2007,G1111,Personal income tax,Taxes,2.3025262,9.508204506371023,Central government,24.216204
+SLV,2007,G1112,Corporate income tax,Taxes,3.3706115,13.918826831818892,Central government,24.216204
+SLV,2007,G11412,VAT / sales tax,Taxes,8.7104501,35.96951074577997,Central government,24.216204
+SLV,2007,G1142,Excise taxes,Taxes,1.0351669,4.274686899730444,Central government,24.216204
+SLV,2007,G114X,Other goods & services taxes,Taxes,0.1228563000000007,0.5073309590553526,Central government,24.216204
+SLV,2007,G115,Trade taxes (customs),Taxes,1.1979955,4.9470821273226795,Central government,24.216204
+SLV,2007,G113,Property taxes,Taxes,0.28392141,1.1724439140007243,Central government,24.216204
+SLV,2007,G11NEC,Other taxes,Taxes,0.024101090000001168,0.09952464060841726,Central government,24.216204
+SLV,2007,G121,Social contributions,Social contributions,2.2978236,9.488785277824716,Central government,24.216204
+SLV,2007,G13,Grants (e.g. foreign aid),Grants,0.21573324,0.8908631592300758,Central government,24.216204
+SLV,2007,G14X,Other non-tax revenue,Other revenue,4.6550179,19.22273986459645,Central government,24.216204
+SLV,2008,G1111,Personal income tax,Taxes,2.9577114,11.518143215644303,Central government,25.678717
+SLV,2008,G1112,Corporate income tax,Taxes,2.8793209,11.212869007435225,Central government,25.678717
+SLV,2008,G11412,VAT / sales tax,Taxes,8.8831415,34.59340083073465,Central government,25.678717
+SLV,2008,G1142,Excise taxes,Taxes,1.1363839,4.425392047429784,Central government,25.678717
+SLV,2008,G114X,Other goods & services taxes,Taxes,0.5509565999999995,2.145576821458796,Central government,25.678717
+SLV,2008,G115,Trade taxes (customs),Taxes,0.99405789,3.8711353452744546,Central government,25.678717
+SLV,2008,G113,Property taxes,Taxes,0.42030636,1.6367887850471659,Central government,25.678717
+SLV,2008,G11NEC,Other taxes,Taxes,0.11063644999999937,0.43084882317134215,Central government,25.678717
+SLV,2008,G121,Social contributions,Social contributions,2.4406679,9.504633350645983,Central government,25.678717
+SLV,2008,G13,Grants (e.g. foreign aid),Grants,0.17179188,0.6690049195214854,Central government,25.678717
+SLV,2008,G14X,Other non-tax revenue,Other revenue,5.1337419,19.99220560746863,Central government,25.678717
+SLV,2009,G1111,Personal income tax,Taxes,2.4844304,11.090540225103426,Central government,22.401347
+SLV,2009,G1112,Corporate income tax,Taxes,3.1809572,14.199847893075356,Central government,22.401347
+SLV,2009,G11412,VAT / sales tax,Taxes,6.9891294,31.19959438153429,Central government,22.401347
+SLV,2009,G1142,Excise taxes,Taxes,1.1936401,5.32843002699793,Central government,22.401347
+SLV,2009,G114X,Other goods & services taxes,Taxes,0.6448270999999992,2.8785193140394605,Central government,22.401347
+SLV,2009,G115,Trade taxes (customs),Taxes,1.048199,4.6791784440462445,Central government,22.401347
+SLV,2009,G113,Property taxes,Taxes,0.07612936,0.3398427782043642,Central government,22.401347
+SLV,2009,G121,Social contributions,Social contributions,2.6412342,11.790515097150184,Central government,22.401347
+SLV,2009,G13,Grants (e.g. foreign aid),Grants,0.20907166,0.9332995020344089,Central government,22.401347
+SLV,2009,G14X,Other non-tax revenue,Other revenue,3.9291838,17.539944361381483,Central government,22.401347
+SLV,2010,G1111,Personal income tax,Taxes,3.0615901,13.100456728858095,Central government,23.370102
+SLV,2010,G1112,Corporate income tax,Taxes,2.2956505,9.82302302317722,Central government,23.370102
+SLV,2010,G1113,Other income taxes,Taxes,0.2986785000000003,1.2780367839216118,Central government,23.370102
+SLV,2010,G11412,VAT / sales tax,Taxes,7.7103502,32.9923686255199,Central government,23.370102
+SLV,2010,G1142,Excise taxes,Taxes,1.2527151,5.360332188537304,Central government,23.370102
+SLV,2010,G114X,Other goods & services taxes,Taxes,0.9681301999999996,4.14260151710078,Central government,23.370102
+SLV,2010,G115,Trade taxes (customs),Taxes,1.0613657,4.5415535627529575,Central government,23.370102
+SLV,2010,G113,Property taxes,Taxes,0.08727266,0.3734372233377501,Central government,23.370102
+SLV,2010,G121,Social contributions,Social contributions,2.5899925,11.082504047265179,Central government,23.370102
+SLV,2010,G13,Grants (e.g. foreign aid),Grants,0.16804053,0.7190406357661597,Central government,23.370102
+SLV,2010,G14X,Other non-tax revenue,Other revenue,3.8714371,16.56576894700759,Central government,23.370102
+SLV,2011,G1111,Personal income tax,Taxes,2.2224643,8.834030719548428,Central government,25.157987
+SLV,2011,G1112,Corporate income tax,Taxes,3.1083935,12.355493704643383,Central government,25.157987
+SLV,2011,G1113,Other income taxes,Taxes,0.5260358000000003,2.0909296121347083,Central government,25.157987
+SLV,2011,G11412,VAT / sales tax,Taxes,7.6864334,30.552656697056094,Central government,25.157987
+SLV,2011,G1142,Excise taxes,Taxes,0.61921367,2.4613005404605706,Central government,25.157987
+SLV,2011,G114X,Other goods & services taxes,Taxes,0.9926645299999995,3.9457232011448276,Central government,25.157987
+SLV,2011,G115,Trade taxes (customs),Taxes,1.0609457,4.217132714155548,Central government,25.157987
+SLV,2011,G113,Property taxes,Taxes,0.08035974,0.3194203892386144,Central government,25.157987
+SLV,2011,G121,Social contributions,Social contributions,2.4610785,9.782493726544974,Central government,25.157987
+SLV,2011,G13,Grants (e.g. foreign aid),Grants,0.82590507,3.282874222011483,Central government,25.157987
+SLV,2011,G14X,Other non-tax revenue,Other revenue,5.5744923,22.15794252536978,Central government,25.157987
+SLV,2012,G1111,Personal income tax,Taxes,2.3940717,9.938093426820567,Central government,24.089849
+SLV,2012,G1112,Corporate income tax,Taxes,2.5937335,10.766914728274138,Central government,24.089849
+SLV,2012,G1113,Other income taxes,Taxes,0.3081432000000004,1.2791412681748249,Central government,24.089849
+SLV,2012,G11412,VAT / sales tax,Taxes,8.5064359,35.31128775443963,Central government,24.089849
+SLV,2012,G1142,Excise taxes,Taxes,1.2349108,5.126270405430935,Central government,24.089849
+SLV,2012,G114X,Other goods & services taxes,Taxes,1.0652753000000013,4.422092060435918,Central government,24.089849
+SLV,2012,G115,Trade taxes (customs),Taxes,1.0053231,4.173222920575384,Central government,24.089849
+SLV,2012,G113,Property taxes,Taxes,0.09305083,0.38626572545141313,Central government,24.089849
+SLV,2012,G121,Social contributions,Social contributions,2.5672591,10.65701615647321,Central government,24.089849
+SLV,2012,G13,Grants (e.g. foreign aid),Grants,0.27902042,1.1582489371353053,Central government,24.089849
+SLV,2012,G14X,Other non-tax revenue,Other revenue,4.0379495,16.76203740421951,Central government,24.089849
+SLV,2013,G1111,Personal income tax,Taxes,1.7661803,6.846103747498675,Central government,25.798328
+SLV,2013,G1112,Corporate income tax,Taxes,3.6069367,13.981280879908185,Central government,25.798328
+SLV,2013,G1113,Other income taxes,Taxes,0.6157074999999996,2.386617845931719,Central government,25.798328
+SLV,2013,G11412,VAT / sales tax,Taxes,8.6271814,33.44085477167357,Central government,25.798328
+SLV,2013,G1142,Excise taxes,Taxes,1.2555159,4.86665608716968,Central government,25.798328
+SLV,2013,G114X,Other goods & services taxes,Taxes,0.05047519999999994,0.1956529896045974,Central government,25.798328
+SLV,2013,G115,Trade taxes (customs),Taxes,1.0558884,4.092855940121391,Central government,25.798328
+SLV,2013,G113,Property taxes,Taxes,0.443364,1.7185764906935053,Central government,25.798328
+SLV,2013,G121,Social contributions,Social contributions,2.5492293,9.881374095251443,Central government,25.798328
+SLV,2013,G13,Grants (e.g. foreign aid),Grants,3.4405046,13.336153412732793,Central government,25.798328
+SLV,2013,G14X,Other non-tax revenue,Other revenue,2.3827973,9.236247015698071,Central government,25.798328
+SLV,2014,G1111,Personal income tax,Taxes,1.9549693,8.64686319607236,Central government,22.609
+SLV,2014,G1112,Corporate income tax,Taxes,3.0677085,13.568528019815117,Central government,22.609
+SLV,2014,G1113,Other income taxes,Taxes,0.9021549999999996,3.9902472466716774,Central government,22.609
+SLV,2014,G11412,VAT / sales tax,Taxes,8.4409919,37.33465389888982,Central government,22.609
+SLV,2014,G1142,Excise taxes,Taxes,1.2199229,5.395740191958954,Central government,22.609
+SLV,2014,G114X,Other goods & services taxes,Taxes,0.14189859999999954,0.6276199743464971,Central government,22.609
+SLV,2014,G115,Trade taxes (customs),Taxes,0.89565486,3.9614970144632666,Central government,22.609
+SLV,2014,G113,Property taxes,Taxes,0.51008423,2.256111415807864,Central government,22.609
+SLV,2014,G121,Social contributions,Social contributions,2.5757399,11.392542350391436,Central government,22.609
+SLV,2014,G13,Grants (e.g. foreign aid),Grants,0.1964115,0.8687314786147109,Central government,22.609
+SLV,2014,G14X,Other non-tax revenue,Other revenue,2.7034629,11.957463399531159,Central government,22.609
+SLV,2015,G1111,Personal income tax,Taxes,0.85018626,3.7994913193493223,Central government,22.376318
+SLV,2015,G1112,Corporate income tax,Taxes,3.0047521,13.428268672263238,Central government,22.376318
+SLV,2015,G1113,Other income taxes,Taxes,2.05127504,9.167169683591375,Central government,22.376318
+SLV,2015,G11412,VAT / sales tax,Taxes,8.2457334,36.85026911040503,Central government,22.376318
+SLV,2015,G1142,Excise taxes,Taxes,1.2816423,5.727672890597997,Central government,22.376318
+SLV,2015,G114X,Other goods & services taxes,Taxes,0.4200570999999991,1.8772395887473492,Central government,22.376318
+SLV,2015,G115,Trade taxes (customs),Taxes,0.8286003,3.7030234375467845,Central government,22.376318
+SLV,2015,G113,Property taxes,Taxes,0.40770187,1.822023936198976,Central government,22.376318
+SLV,2015,G121,Social contributions,Social contributions,2.6668615,11.91823203442139,Central government,22.376318
+SLV,2015,G13,Grants (e.g. foreign aid),Grants,0.14923222,0.6669203574958131,Central government,22.376318
+SLV,2015,G14X,Other non-tax revenue,Other revenue,2.4658563,11.01993768590525,Central government,22.376318
+SLV,2016,G1111,Personal income tax,Taxes,2.0451898,8.058418545991943,Central government,25.379543
+SLV,2016,G1112,Corporate income tax,Taxes,3.5750213,14.086231970370783,Central government,25.379543
+SLV,2016,G1113,Other income taxes,Taxes,1.1972182999999998,4.717257123187757,Central government,25.379543
+SLV,2016,G11412,VAT / sales tax,Taxes,7.664105,30.197962981445333,Central government,25.379543
+SLV,2016,G1142,Excise taxes,Taxes,1.5344575,6.046040702939371,Central government,25.379543
+SLV,2016,G114X,Other goods & services taxes,Taxes,0.40598650000000025,1.5996604036565996,Central government,25.379543
+SLV,2016,G115,Trade taxes (customs),Taxes,0.85344741,3.3627375008289153,Central government,25.379543
+SLV,2016,G113,Property taxes,Taxes,0.42909621,1.690716850181266,Central government,25.379543
+SLV,2016,G11NEC,Other taxes,Taxes,0.00587144,0.02313453792292477,Central government,25.379543
+SLV,2016,G121,Social contributions,Social contributions,2.7079105,10.66965823616288,Central government,25.379543
+SLV,2016,G13,Grants (e.g. foreign aid),Grants,0.09530286,0.37551054406298806,Central government,25.379543
+SLV,2016,G14X,Other non-tax revenue,Other revenue,4.8659361,19.172670288034737,Central government,25.379543
+SLV,2017,G1111,Personal income tax,Taxes,1.6693064,6.321274331392586,Central government,26.407751
+SLV,2017,G1112,Corporate income tax,Taxes,3.7209986,14.090554578433146,Central government,26.407751
+SLV,2017,G1113,Other income taxes,Taxes,1.5067850999999997,5.705844041306503,Central government,26.407751
+SLV,2017,G11412,VAT / sales tax,Taxes,7.7793838,29.458713588464835,Central government,26.407751
+SLV,2017,G1142,Excise taxes,Taxes,1.7567398,6.652364242224044,Central government,26.407751
+SLV,2017,G114X,Other goods & services taxes,Taxes,0.394210300000001,1.4927825416356022,Central government,26.407751
+SLV,2017,G115,Trade taxes (customs),Taxes,0.84382845,3.1953816992996567,Central government,26.407751
+SLV,2017,G113,Property taxes,Taxes,0.40029592,1.5158273664182804,Central government,26.407751
+SLV,2017,G11NEC,Other taxes,Taxes,0.00690314,0.026140582512598896,Central government,26.407751
+SLV,2017,G121,Social contributions,Social contributions,2.6841085,10.16409340054208,Central government,26.407751
+SLV,2017,G13,Grants (e.g. foreign aid),Grants,0.13995822,0.5299891640943787,Central government,26.407751
+SLV,2017,G14X,Other non-tax revenue,Other revenue,5.505233,20.84703446367629,Central government,26.407751
+SLV,2018,G1111,Personal income tax,Taxes,1.5964121,6.094394079356451,Central government,26.194763
+SLV,2018,G1112,Corporate income tax,Taxes,3.6693651,14.008010175090249,Central government,26.194763
+SLV,2018,G1113,Other income taxes,Taxes,1.6809597000000003,6.417159355856046,Central government,26.194763
+SLV,2018,G11412,VAT / sales tax,Taxes,8.0815961,30.85195321658498,Central government,26.194763
+SLV,2018,G1142,Excise taxes,Taxes,1.7412959,6.64749623444201,Central government,26.194763
+SLV,2018,G114X,Other goods & services taxes,Taxes,0.40121699999999993,1.531668739755328,Central government,26.194763
+SLV,2018,G115,Trade taxes (customs),Taxes,0.87391457,3.336218625047591,Central government,26.194763
+SLV,2018,G113,Property taxes,Taxes,0.37738967,1.4407065509327353,Central government,26.194763
+SLV,2018,G11NEC,Other taxes,Taxes,0.00768614,0.029342277040561637,Central government,26.194763
+SLV,2018,G121,Social contributions,Social contributions,2.4595661,9.389533615803737,Central government,26.194763
+SLV,2018,G13,Grants (e.g. foreign aid),Grants,0.19522806,0.7452942338561865,Central government,26.194763
+SLV,2018,G14X,Other non-tax revenue,Other revenue,5.1101328,19.508222896234123,Central government,26.194763
+SLV,2019,G1111,Personal income tax,Taxes,1.5352777,6.056292424593567,Central government,25.350125
+SLV,2019,G1112,Corporate income tax,Taxes,3.6687446,14.472293923599983,Central government,25.350125
+SLV,2019,G1113,Other income taxes,Taxes,1.7945674,7.0791264342878,Central government,25.350125
+SLV,2019,G11412,VAT / sales tax,Taxes,8.2340289,32.481216167573145,Central government,25.350125
+SLV,2019,G1142,Excise taxes,Taxes,1.7945674,7.0791264342878,Central government,25.350125
+SLV,2019,G114X,Other goods & services taxes,Taxes,0.09188570000000063,0.3624664572659923,Central government,25.350125
+SLV,2019,G115,Trade taxes (customs),Taxes,0.86343096,3.406022494958112,Central government,25.350125
+SLV,2019,G113,Property taxes,Taxes,0.39544469,1.5599319135507221,Central government,25.350125
+SLV,2019,G121,Social contributions,Social contributions,2.7803891,10.96795025665554,Central government,25.350125
+SLV,2019,G13,Grants (e.g. foreign aid),Grants,0.18116798,0.7146630637915987,Central government,25.350125
+SLV,2019,G14X,Other non-tax revenue,Other revenue,4.008016,15.810636042228587,Central government,25.350125
+SLV,2020,G1111,Personal income tax,Taxes,1.527215,5.9751635641923135,Central government,25.559384
+SLV,2020,G1112,Corporate income tax,Taxes,4.0583953,15.878298553674062,Central government,25.559384
+SLV,2020,G1113,Other income taxes,Taxes,1.8883536000000003,7.38810293706609,Central government,25.559384
+SLV,2020,G11412,VAT / sales tax,Taxes,8.3222384,32.560402864169184,Central government,25.559384
+SLV,2020,G1142,Excise taxes,Taxes,1.7362741,6.793098378270774,Central government,25.559384
+SLV,2020,G114X,Other goods & services taxes,Taxes,0.0497565000000002,0.19467018453965948,Central government,25.559384
+SLV,2020,G115,Trade taxes (customs),Taxes,0.74956322,2.932634135470557,Central government,25.559384
+SLV,2020,G113,Property taxes,Taxes,0.40086384,1.5683626804151463,Central government,25.559384
+SLV,2020,G121,Social contributions,Social contributions,2.3903363,9.352088845333673,Central government,25.559384
+SLV,2020,G13,Grants (e.g. foreign aid),Grants,0.70221394,2.74738209653253,Central government,25.559384
+SLV,2020,G14X,Other non-tax revenue,Other revenue,3.7341731,14.609793021615856,Central government,25.559384
+SLV,2021,G1111,Personal income tax,Taxes,1.407217,4.638362100477602,Central government,30.338662
+SLV,2021,G1112,Corporate income tax,Taxes,4.0119629,13.223928266843147,Central government,30.338662
+SLV,2021,G1113,Other income taxes,Taxes,2.1085873999999993,6.950166094997859,Central government,30.338662
+SLV,2021,G11412,VAT / sales tax,Taxes,9.6005459,31.644592302719218,Central government,30.338662
+SLV,2021,G1142,Excise taxes,Taxes,1.37554,4.533950772120406,Central government,30.338662
+SLV,2021,G114X,Other goods & services taxes,Taxes,0.0788480999999992,0.2598931356959618,Central government,30.338662
+SLV,2021,G115,Trade taxes (customs),Taxes,1.0026464,3.3048471287230794,Central government,30.338662
+SLV,2021,G113,Property taxes,Taxes,0.40629216,1.3391894474449797,Central government,30.338662
+SLV,2021,G121,Social contributions,Social contributions,2.7927421,9.205225003001122,Central government,30.338662
+SLV,2021,G13,Grants (e.g. foreign aid),Grants,0.179044,0.5901512729862642,Central government,30.338662
+SLV,2021,G14X,Other non-tax revenue,Other revenue,7.3752356,24.309693024695683,Central government,30.338662
+SLV,2022,G1111,Personal income tax,Taxes,1.4882278,5.004800914070364,Central government,29.736004
+SLV,2022,G1112,Corporate income tax,Taxes,4.9830374,16.757589217434862,Central government,29.736004
+SLV,2022,G1113,Other income taxes,Taxes,2.1239331000000004,7.142631202228787,Central government,29.736004
+SLV,2022,G11412,VAT / sales tax,Taxes,9.4881977,31.908112804935055,Central government,29.736004
+SLV,2022,G1142,Excise taxes,Taxes,1.2124209,4.077282542738425,Central government,29.736004
+SLV,2022,G114X,Other goods & services taxes,Taxes,0.07624739999999952,0.2564144126426655,Central government,29.736004
+SLV,2022,G115,Trade taxes (customs),Taxes,1.6780608,5.643195366801806,Central government,29.736004
+SLV,2022,G113,Property taxes,Taxes,0.47724954,1.6049551916928717,Central government,29.736004
+SLV,2022,G121,Social contributions,Social contributions,2.7533627,9.259356771676515,Central government,29.736004
+SLV,2022,G13,Grants (e.g. foreign aid),Grants,0.01819886,0.06120143110015724,Central government,29.736004
+SLV,2022,G14X,Other non-tax revenue,Other revenue,5.4370677,18.28445980838582,Central government,29.736004
+SLV,2023,G1111,Personal income tax,Taxes,1.6864604,6.006258978659847,Central government,28.078383
+SLV,2023,G1112,Corporate income tax,Taxes,4.4384883,15.807492546846449,Central government,28.078383
+SLV,2023,G1113,Other income taxes,Taxes,2.2414426999999995,7.982805491327615,Central government,28.078383
+SLV,2023,G11412,VAT / sales tax,Taxes,9.3820266,33.413699784635035,Central government,28.078383
+SLV,2023,G1142,Excise taxes,Taxes,1.2503714,4.453146037647539,Central government,28.078383
+SLV,2023,G114X,Other goods & services taxes,Taxes,0.10545299999999957,0.3755664989682618,Central government,28.078383
+SLV,2023,G115,Trade taxes (customs),Taxes,1.4592098,5.196915363680309,Central government,28.078383
+SLV,2023,G113,Property taxes,Taxes,0.4649385,1.6558592423217533,Central government,28.078383
+SLV,2023,G121,Social contributions,Social contributions,2.7479815,9.786822481907166,Central government,28.078383
+SLV,2023,G13,Grants (e.g. foreign aid),Grants,0.66905063,2.3827961531830377,Central government,28.078383
+SLV,2023,G14X,Other non-tax revenue,Other revenue,3.6297105,12.927063855493389,Central government,28.078383
+SLV,2024,G1111,Personal income tax,Taxes,1.5150585,5.1038777357382425,Central government,29.684459
+SLV,2024,G1112,Corporate income tax,Taxes,7.1265436,24.007658590614064,Central government,29.684459
+SLV,2024,G11412,VAT / sales tax,Taxes,9.8928403,33.32666517522856,Central government,29.684459
+SLV,2024,G1142,Excise taxes,Taxes,1.2221133,4.117013872678573,Central government,29.684459
+SLV,2024,G114X,Other goods & services taxes,Taxes,0.14223140000000023,0.4791443206865486,Central government,29.684459
+SLV,2024,G115,Trade taxes (customs),Taxes,1.4353186,4.83525266267341,Central government,29.684459
+SLV,2024,G113,Property taxes,Taxes,0.29237972,0.9849588931974449,Central government,29.684459
+SLV,2024,G121,Social contributions,Social contributions,2.677791,9.020851581546353,Central government,29.684459
+SLV,2024,G13,Grants (e.g. foreign aid),Grants,2.3215063,7.820611757200176,Central government,29.684459
+SLV,2024,G14X,Other non-tax revenue,Other revenue,3.0586764,10.303965410436625,Central government,29.684459

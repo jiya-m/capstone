@@ -1,0 +1,17 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+STP,2022,GF01,General public services,Government spending,36.2710358674426,11.00867321395233,Central government (budgetary),30.3511409329058
+STP,2022,GF02,Defence,Government spending,7.22865990620067,2.19398075569142,Central government (budgetary),30.3511409329058
+STP,2022,GF03,Public order and safety,Government spending,0.666168921224469,0.202189868132057,Central government (budgetary),30.3511409329058
+STP,2022,GF04,Economic affairs,Government spending,15.979848592785,4.85006636726114,Central government (budgetary),30.3511409329058
+STP,2022,GF05,Environmental protection,Government spending,2.13393595740097,0.647673909848721,Central government (budgetary),30.3511409329058
+STP,2022,GF06,Housing and community amenities,Government spending,1.34392796741563,0.407897471427055,Central government (budgetary),30.3511409329058
+STP,2022,GF08,"Recreation, culture and religion",Government spending,0.641322309022705,0.194648637845647,Central government (budgetary),30.3511409329058
+STP,2022,GF09,Education,Government spending,17.3517270887818,5.26644714300936,Central government (budgetary),30.3511409329058
+STP,2022,GF10,Social protection,Government spending,5.15149699096721,1.56353811188286,Central government (budgetary),30.3511409329058
+STP,2022,GF0170,Interest on public debt,Government spending,1.9103220017952,0.57980452303717,Central government (budgetary),30.3511409329058
+STP,2022,GF0712,Medical products,Health,1.99236749373198,0.604706265923996,Central government (budgetary),30.3511409329058
+STP,2022,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),30.3511409329058
+STP,2022,GF073,Hospital services,Health,0.188173659932559,0.0571128527247379,Central government (budgetary),30.3511409329058
+STP,2022,GF0740,Public health services,Health,2.27519706425416,0.690548267473116,Central government (budgetary),30.3511409329058
+STP,2022,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),30.3511409329058
+STP,2022,GF0760,Other health,Health,6.86581617904495,2.08385354469618,Central government (budgetary),30.3511409329058

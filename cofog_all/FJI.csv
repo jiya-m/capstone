@@ -1,0 +1,29 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+FJI,2005,GF01,General public services,Government spending,19.116695194396094,4.825889615105301,Central government (budgetary),25.2443718228032
+FJI,2005,GF02,Defence,Government spending,5.964213281935475,1.505628177196805,Central government (budgetary),25.2443718228032
+FJI,2005,GF03,Public order and safety,Government spending,6.868949843936539,1.7340232389252,Central government (budgetary),25.2443718228032
+FJI,2005,GF04,Economic affairs,Government spending,12.28010874099219,3.100036310820625,Central government (budgetary),25.2443718228032
+FJI,2005,GF05,Environmental protection,Government spending,0.9874430044733398,0.2492737835875091,Central government (budgetary),25.2443718228032
+FJI,2005,GF06,Housing and community amenities,Government spending,9.192641284179336,2.320624546114742,Central government (budgetary),25.2443718228032
+FJI,2005,GF08,"Recreation, culture and religion",Government spending,0.8601470017116638,0.2171387073347858,Central government (budgetary),25.2443718228032
+FJI,2005,GF09,Education,Government spending,21.37422148066108,5.395787944807553,Central government (budgetary),25.2443718228032
+FJI,2005,GF10,Social protection,Government spending,4.491319419472692,1.133805374001452,Central government (budgetary),25.2443718228032
+FJI,2005,GF0170,Interest on public debt,Government spending,9.212059318498914,2.325526506899056,Central government (budgetary),25.2443718228032
+FJI,2005,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),25.2443718228032
+FJI,2005,GF073,Hospital services,Health,7.10052788285891,1.792483660130719,Central government (budgetary),25.2443718228032
+FJI,2005,GF0740,Public health services,Health,0.4315118737683932,0.1089324618736383,Central government (budgetary),25.2443718228032
+FJI,2005,GF07_rest,Health (not broken down),Health,2.1201616731153736,0.5352214960058099,Central government (budgetary),25.2443718228032
+FJI,2006,GF01,General public services,Government spending,15.727611719791858,4.13453208455061,Central government (budgetary),26.28836569857364
+FJI,2006,GF02,Defence,Government spending,5.400988416180739,1.419831586183193,Central government (budgetary),26.28836569857364
+FJI,2006,GF03,Public order and safety,Government spending,9.3821091441571,2.466403162055336,Central government (budgetary),26.28836569857364
+FJI,2006,GF04,Economic affairs,Government spending,14.2248254582538,3.739474136449562,Central government (budgetary),26.28836569857364
+FJI,2006,GF05,Environmental protection,Government spending,0.2189943257589624,0.0575700292146416,Central government (budgetary),26.28836569857364
+FJI,2006,GF06,Housing and community amenities,Government spending,9.410872577988128,2.473964598728304,Central government (budgetary),26.28836569857364
+FJI,2006,GF08,"Recreation, culture and religion",Government spending,0.6890149831341683,0.1811307784842756,Central government (budgetary),26.28836569857364
+FJI,2006,GF09,Education,Government spending,22.38056637816071,5.883485134902904,Central government (budgetary),26.28836569857364
+FJI,2006,GF10,Social protection,Government spending,3.9687001542766,1.043306410036089,Central government (budgetary),26.28836569857364
+FJI,2006,GF0170,Interest on public debt,Government spending,9.24885456161912,2.431372710087644,Central government (budgetary),26.28836569857364
+FJI,2006,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),26.28836569857364
+FJI,2006,GF073,Hospital services,Health,6.867923541563162,1.805464856504554,Central government (budgetary),26.28836569857364
+FJI,2006,GF0740,Public health services,Health,0.3065920560625474,0.0805980409004983,Central government (budgetary),26.28836569857364
+FJI,2006,GF07_rest,Health (not broken down),Health,2.172946683053106,0.571232170476027,Central government (budgetary),26.28836569857364

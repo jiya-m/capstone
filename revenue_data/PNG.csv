@@ -1,0 +1,261 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+PNG,1990,G1111,Personal income tax,Taxes,4.0883205,18.17240404822752,Central government,22.497411
+PNG,1990,G1112,Corporate income tax,Taxes,3.5767126,15.898329529592013,Central government,22.497411
+PNG,1990,G11NEC,Other taxes,Taxes,5.6555102,25.13849304458201,Central government,22.497411
+PNG,1990,G13,Grants (e.g. foreign aid),Grants,5.4702536,24.315035640055907,Central government,22.497411
+PNG,1990,G14X,Other non-tax revenue,Other revenue,3.7066145,16.475737737542552,Central government,22.497411
+PNG,1991,G1111,Personal income tax,Taxes,3.8630841,17.74942886034919,Central government,21.764554
+PNG,1991,G1112,Corporate income tax,Taxes,2.8909322,13.282753907426653,Central government,21.764554
+PNG,1991,G11NEC,Other taxes,Taxes,5.065242,23.27289549286614,Central government,21.764554
+PNG,1991,G13,Grants (e.g. foreign aid),Grants,6.3570915,29.20846153413552,Central government,21.764554
+PNG,1991,G14X,Other non-tax revenue,Other revenue,3.5882046,16.48646020522249,Central government,21.764554
+PNG,1992,G1111,Personal income tax,Taxes,3.7625236,20.382659067914567,Central government,18.459434
+PNG,1992,G1112,Corporate income tax,Taxes,2.4956358,13.519568001934188,Central government,18.459434
+PNG,1992,G1113,Other income taxes,Taxes,0.5623052999999993,3.0461675302133404,Central government,18.459434
+PNG,1992,G11NEC,Other taxes,Taxes,5.4860397,29.719435338065203,Central government,18.459434
+PNG,1992,G13,Grants (e.g. foreign aid),Grants,3.3978322,18.40702216527814,Central government,18.459434
+PNG,1992,G14X,Other non-tax revenue,Other revenue,2.7550979,14.925147896594558,Central government,18.459434
+PNG,1993,G1111,Personal income tax,Taxes,2.6255183,14.082495979101303,Central government,18.643842
+PNG,1993,G1112,Corporate income tax,Taxes,2.6174258,14.039090226145447,Central government,18.643842
+PNG,1993,G1113,Other income taxes,Taxes,2.927268600000001,15.700994462407486,Central government,18.643842
+PNG,1993,G11NEC,Other taxes,Taxes,5.552210299999998,29.78039773132597,Central government,18.643842
+PNG,1993,G13,Grants (e.g. foreign aid),Grants,2.7627296,14.818456410433,Central government,18.643842
+PNG,1993,G14X,Other non-tax revenue,Other revenue,2.1586893,11.578564654216656,Central government,18.643842
+PNG,1994,G1111,Personal income tax,Taxes,2.3718406,12.973427791923521,Central government,18.282297
+PNG,1994,G1112,Corporate income tax,Taxes,2.2826467,12.48555747672188,Central government,18.282297
+PNG,1994,G1113,Other income taxes,Taxes,2.7941548999999997,15.283390812434563,Central government,18.282297
+PNG,1994,G11NEC,Other taxes,Taxes,6.418986,35.11039121615845,Central government,18.282297
+PNG,1994,G13,Grants (e.g. foreign aid),Grants,2.4691213,13.505531061003985,Central government,18.282297
+PNG,1994,G14X,Other non-tax revenue,Other revenue,1.9455475,10.641701641757598,Central government,18.282297
+PNG,1995,G1111,Personal income tax,Taxes,2.815995,15.496154368781712,Central government,18.172218
+PNG,1995,G1112,Corporate income tax,Taxes,1.8508695,10.185159948249135,Central government,18.172218
+PNG,1995,G1113,Other income taxes,Taxes,2.433187,13.389598120775384,Central government,18.172218
+PNG,1995,G11NEC,Other taxes,Taxes,6.217298,34.21320334898245,Central government,18.172218
+PNG,1995,G13,Grants (e.g. foreign aid),Grants,2.808051,15.452439287502944,Central government,18.172218
+PNG,1995,G14X,Other non-tax revenue,Other revenue,2.0468178,11.26344492570838,Central government,18.172218
+PNG,1996,G1111,Personal income tax,Taxes,3.1574191,16.091618108572046,Central government,19.621514
+PNG,1996,G1112,Corporate income tax,Taxes,2.0112804,10.250383329237488,Central government,19.621514
+PNG,1996,G1113,Other income taxes,Taxes,3.5346437000000006,18.01412317112737,Central government,19.621514
+PNG,1996,G11NEC,Other taxes,Taxes,6.642225799999999,33.85174966620822,Central government,19.621514
+PNG,1996,G13,Grants (e.g. foreign aid),Grants,2.8760333,14.657550380668892,Central government,19.621514
+PNG,1996,G14X,Other non-tax revenue,Other revenue,1.3999115,7.134574324896641,Central government,19.621514
+PNG,1997,G1111,Personal income tax,Taxes,3.5145646,16.55013457609115,Central government,21.235867
+PNG,1997,G1112,Corporate income tax,Taxes,2.4701829,11.632126330117567,Central government,21.235867
+PNG,1997,G1113,Other income taxes,Taxes,3.2333509000000005,15.22589527212715,Central government,21.235867
+PNG,1997,G11NEC,Other taxes,Taxes,6.9491617,32.72370105987478,Central government,21.235867
+PNG,1997,G13,Grants (e.g. foreign aid),Grants,3.0715503,14.463973950637627,Central government,21.235867
+PNG,1997,G14X,Other non-tax revenue,Other revenue,1.9970568,9.40416881115173,Central government,21.235867
+PNG,1998,G1111,Personal income tax,Taxes,3.8903062,19.584269851729143,Central government,19.864443
+PNG,1998,G1112,Corporate income tax,Taxes,2.7604433,13.896403963677129,Central government,19.864443
+PNG,1998,G1113,Other income taxes,Taxes,1.745366900000001,8.786387138337844,Central government,19.864443
+PNG,1998,G11NEC,Other taxes,Taxes,5.5728236,28.054265039210712,Central government,19.864443
+PNG,1998,G13,Grants (e.g. foreign aid),Grants,3.8482728,19.372668654788484,Central government,19.864443
+PNG,1998,G14X,Other non-tax revenue,Other revenue,2.0472306,10.306005352256683,Central government,19.864443
+PNG,1999,G1111,Personal income tax,Taxes,4.0162251,20.58664814382248,Central government,19.508883
+PNG,1999,G1112,Corporate income tax,Taxes,3.2323956,16.568839948448097,Central government,19.508883
+PNG,1999,G1113,Other income taxes,Taxes,1.5544016000000007,7.967660680521795,Central government,19.508883
+PNG,1999,G11NEC,Other taxes,Taxes,6.054746,31.035841467704735,Central government,19.508883
+PNG,1999,G13,Grants (e.g. foreign aid),Grants,3.4486677,17.677422638702584,Central government,19.508883
+PNG,1999,G14X,Other non-tax revenue,Other revenue,1.2024468,6.163586095626284,Central government,19.508883
+PNG,2000,G1111,Personal income tax,Taxes,3.7779803,18.197931523109784,Central government,20.760493
+PNG,2000,G1112,Corporate income tax,Taxes,3.1535445,15.190123375201159,Central government,20.760493
+PNG,2000,G1113,Other income taxes,Taxes,2.8606593000000005,13.779341848962837,Central government,20.760493
+PNG,2000,G11NEC,Other taxes,Taxes,6.4457859000000015,31.048327705897936,Central government,20.760493
+PNG,2000,G13,Grants (e.g. foreign aid),Grants,3.5230113,16.969786314804757,Central government,20.760493
+PNG,2000,G14X,Other non-tax revenue,Other revenue,0.99951154,4.814488461328929,Central government,20.760493
+PNG,2001,G1111,Personal income tax,Taxes,3.894354,19.24508854908499,Central government,20.235573
+PNG,2001,G1112,Corporate income tax,Taxes,2.8072599,13.872895313521957,Central government,20.235573
+PNG,2001,G1113,Other income taxes,Taxes,2.7143010000000007,13.413511738755636,Central government,20.235573
+PNG,2001,G11NEC,Other taxes,Taxes,5.662327099999999,27.982044373311624,Central government,20.235573
+PNG,2001,G13,Grants (e.g. foreign aid),Grants,4.0392489,19.961129047922746,Central government,20.235573
+PNG,2001,G14X,Other non-tax revenue,Other revenue,1.1180824,5.525330977403047,Central government,20.235573
+PNG,2002,G1111,Personal income tax,Taxes,4.0578763,21.282064232255763,Central government,19.067118
+PNG,2002,G1112,Corporate income tax,Taxes,3.1124387,16.323592794674052,Central government,19.067118
+PNG,2002,G1113,Other income taxes,Taxes,1.1905061000000008,6.243765313667229,Central government,19.067118
+PNG,2002,G11NEC,Other taxes,Taxes,5.629263899999999,29.523412505235445,Central government,19.067118
+PNG,2002,G13,Grants (e.g. foreign aid),Grants,4.0796924,21.396481628739068,Central government,19.067118
+PNG,2002,G14X,Other non-tax revenue,Other revenue,0.99734044,5.2306826862874605,Central government,19.067118
+PNG,2003,G1111,Personal income tax,Taxes,3.8724607,20.53630229319508,Central government,18.85666
+PNG,2003,G1112,Corporate income tax,Taxes,2.9255887,15.514882805332439,Central government,18.85666
+PNG,2003,G1113,Other income taxes,Taxes,1.9506303000000007,10.344516473224848,Central government,18.85666
+PNG,2003,G11NEC,Other taxes,Taxes,5.062345300000001,26.846457962332675,Central government,18.85666
+PNG,2003,G13,Grants (e.g. foreign aid),Grants,3.8194194,20.2550154693355,Central government,18.85666
+PNG,2003,G14X,Other non-tax revenue,Other revenue,1.2262156,6.502824996579458,Central government,18.85666
+PNG,2004,G1111,Personal income tax,Taxes,4.0791585,19.006257377218827,Central government,21.462187
+PNG,2004,G1112,Corporate income tax,Taxes,3.6918102,17.20146320596312,Central government,21.462187
+PNG,2004,G1113,Other income taxes,Taxes,2.7570202999999998,12.845942960053417,Central government,21.462187
+PNG,2004,G11NEC,Other taxes,Taxes,5.5227603,25.732514118901303,Central government,21.462187
+PNG,2004,G13,Grants (e.g. foreign aid),Grants,4.1993434,19.56624178141771,Central government,21.462187
+PNG,2004,G14X,Other non-tax revenue,Other revenue,1.212094,5.6475791586384,Central government,21.462187
+PNG,2005,G1111,Personal income tax,Taxes,3.6890855,15.724394201809845,Central government,23.460907
+PNG,2005,G1112,Corporate income tax,Taxes,3.8808021,16.541568917177838,Central government,23.460907
+PNG,2005,G1113,Other income taxes,Taxes,4.0918484,17.44113473532801,Central government,23.460907
+PNG,2005,G11NEC,Other taxes,Taxes,4.9268301,21.00016891930052,Central government,23.460907
+PNG,2005,G13,Grants (e.g. foreign aid),Grants,5.6360038,24.022957850691792,Central government,23.460907
+PNG,2005,G14X,Other non-tax revenue,Other revenue,1.2363366,5.269773244487095,Central government,23.460907
+PNG,2006,G1111,Personal income tax,Taxes,3.5466605,14.311172672574584,Central government,24.782459
+PNG,2006,G1112,Corporate income tax,Taxes,3.6878817,14.881016044453057,Central government,24.782459
+PNG,2006,G1113,Other income taxes,Taxes,7.110210800000001,28.690497581373993,Central government,24.782459
+PNG,2006,G11NEC,Other taxes,Taxes,5.1851353,20.922602151788084,Central government,24.782459
+PNG,2006,G13,Grants (e.g. foreign aid),Grants,3.5812247,14.450643093972234,Central government,24.782459
+PNG,2006,G14X,Other non-tax revenue,Other revenue,1.6713458,6.744067648815641,Central government,24.782459
+PNG,2007,G1111,Personal income tax,Taxes,3.5525946,14.255633192682836,Central government,24.920637
+PNG,2007,G1112,Corporate income tax,Taxes,4.3736733,17.55040731904245,Central government,24.920637
+PNG,2007,G1113,Other income taxes,Taxes,7.277493100000001,29.202676881814867,Central government,24.920637
+PNG,2007,G11NEC,Other taxes,Taxes,5.6579892,22.70403120112861,Central government,24.920637
+PNG,2007,G13,Grants (e.g. foreign aid),Grants,2.5473149,10.221708618443422,Central government,24.920637
+PNG,2007,G14X,Other non-tax revenue,Other revenue,1.5115717,6.065541984340128,Central government,24.920637
+PNG,2008,G1111,Personal income tax,Taxes,3.5138497,15.62541902838554,Central government,22.488035
+PNG,2008,G1112,Corporate income tax,Taxes,4.8208127,21.43723406691603,Central government,22.488035
+PNG,2008,G1113,Other income taxes,Taxes,4.8995576000000005,21.787397609439868,Central government,22.488035
+PNG,2008,G11NEC,Other taxes,Taxes,5.190333999999999,23.080424768104457,Central government,22.488035
+PNG,2008,G13,Grants (e.g. foreign aid),Grants,3.1796969,14.1395052969279,Central government,22.488035
+PNG,2008,G14X,Other non-tax revenue,Other revenue,0.88378406,3.9300190523538405,Central government,22.488035
+PNG,2009,G1111,Personal income tax,Taxes,3.8737684,20.208961268555594,Central government,19.168567
+PNG,2009,G1112,Corporate income tax,Taxes,5.9919888,31.259449992110753,Central government,19.168567
+PNG,2009,G1113,Other income taxes,Taxes,0.6685818000000001,3.487906943807271,Central government,19.168567
+PNG,2009,G11NEC,Other taxes,Taxes,5.1393104,26.811134300306897,Central government,19.168567
+PNG,2009,G13,Grants (e.g. foreign aid),Grants,2.7410513,14.299718991157025,Central government,19.168567
+PNG,2009,G14X,Other non-tax revenue,Other revenue,0.75386689,3.9328285040624675,Central government,19.168567
+PNG,2010,G1111,Personal income tax,Taxes,3.8500603,17.943927252114495,Central government,21.456062
+PNG,2010,G1112,Corporate income tax,Taxes,5.2620878,24.524945928103826,Central government,21.456062
+PNG,2010,G1113,Other income taxes,Taxes,2.429736900000001,11.324243980121093,Central government,21.456062
+PNG,2010,G11NEC,Other taxes,Taxes,5.206924999999999,24.267849365168708,Central government,21.456062
+PNG,2010,G13,Grants (e.g. foreign aid),Grants,3.5897429,16.730669244685473,Central government,21.456062
+PNG,2010,G14X,Other non-tax revenue,Other revenue,1.1175099,5.208364229806413,Central government,21.456062
+PNG,2011,G1111,Personal income tax,Taxes,5.0557376,23.081963668491465,Central government,21.903412
+PNG,2011,G1112,Corporate income tax,Taxes,5.5081116,25.14727659781956,Central government,21.903412
+PNG,2011,G1113,Other income taxes,Taxes,3.2418088000000003,14.800474008341714,Central government,21.903412
+PNG,2011,G11NEC,Other taxes,Taxes,4.8916777,22.3329484009158,Central government,21.903412
+PNG,2011,G13,Grants (e.g. foreign aid),Grants,2.4037208,10.974184296035704,Central government,21.903412
+PNG,2011,G14X,Other non-tax revenue,Other revenue,0.80235545,3.6631528001208213,Central government,21.903412
+PNG,2012,G1111,Personal income tax,Taxes,5.9612768,28.083333859390482,Central government,21.227098
+PNG,2012,G1112,Corporate income tax,Taxes,3.9225577,18.479010649500932,Central government,21.227098
+PNG,2012,G1113,Other income taxes,Taxes,0.5742935,2.705473447194713,Central government,21.227098
+PNG,2012,G11412,VAT / sales tax,Taxes,2.4612367,11.594786531818905,Central government,21.227098
+PNG,2012,G1142,Excise taxes,Taxes,1.9275828,9.080764596272179,Central government,21.227098
+PNG,2012,G114X,Other goods & services taxes,Taxes,0.5312408999999996,2.5026543901573337,Central government,21.227098
+PNG,2012,G115,Trade taxes (customs),Taxes,0.9080125,4.277610156602659,Central government,21.227098
+PNG,2012,G13,Grants (e.g. foreign aid),Grants,2.0977365,9.88235179391926,Central government,21.227098
+PNG,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,2.2368052,10.537498814015933,Central government,21.227098
+PNG,2012,G14X,Other non-tax revenue,Other revenue,0.6063551999999999,2.856514818935682,Central government,21.227098
+PNG,2013,G1111,Personal income tax,Taxes,5.8849835,28.375008148495876,Central government,20.740024
+PNG,2013,G1112,Corporate income tax,Taxes,4.3178325,20.81884042178543,Central government,20.740024
+PNG,2013,G1113,Other income taxes,Taxes,0.6298540000000008,3.0369010180508993,Central government,20.740024
+PNG,2013,G11412,VAT / sales tax,Taxes,3.1350522,15.11595261413391,Central government,20.740024
+PNG,2013,G1142,Excise taxes,Taxes,1.7065728,8.228403207247977,Central government,20.740024
+PNG,2013,G114X,Other goods & services taxes,Taxes,0.5002812000000003,2.412153428559197,Central government,20.740024
+PNG,2013,G115,Trade taxes (customs),Taxes,0.99651311,4.804782819923449,Central government,20.740024
+PNG,2013,G13,Grants (e.g. foreign aid),Grants,1.8387987,8.865942970943525,Central government,20.740024
+PNG,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4361887,6.924720530699482,Central government,20.740024
+PNG,2013,G14X,Other non-tax revenue,Other revenue,0.29394659999999995,1.4172915132595796,Central government,20.740024
+PNG,2014,G1111,Personal income tax,Taxes,5.5926163,26.906457682427202,Central government,20.785405
+PNG,2014,G1112,Corporate income tax,Taxes,4.4151739,21.2417021530526,Central government,20.785405
+PNG,2014,G1113,Other income taxes,Taxes,0.4540507999999992,2.1844693039056144,Central government,20.785405
+PNG,2014,G11412,VAT / sales tax,Taxes,2.9209809,14.053037927352197,Central government,20.785405
+PNG,2014,G1142,Excise taxes,Taxes,1.5563241,7.487581176772595,Central government,20.785405
+PNG,2014,G114X,Other goods & services taxes,Taxes,0.5700098999999998,2.7423564267969813,Central government,20.785405
+PNG,2014,G115,Trade taxes (customs),Taxes,0.97147947,4.673853854215209,Central government,20.785405
+PNG,2014,G13,Grants (e.g. foreign aid),Grants,1.5184461,7.305347540595019,Central government,20.785405
+PNG,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,1.4292721,6.876325356939623,Central government,20.785405
+PNG,2014,G14X,Other non-tax revenue,Other revenue,1.3570518000000003,6.528868577942967,Central government,20.785405
+PNG,2015,G1111,Personal income tax,Taxes,5.0501228,27.60212854043948,Central government,18.296135
+PNG,2015,G1112,Corporate income tax,Taxes,3.9488432,21.582936080770228,Central government,18.296135
+PNG,2015,G1113,Other income taxes,Taxes,0.4556101000000008,2.4901985639878914,Central government,18.296135
+PNG,2015,G11412,VAT / sales tax,Taxes,2.6056246,14.241393325590261,Central government,18.296135
+PNG,2015,G1142,Excise taxes,Taxes,1.3335743,7.288830530383657,Central government,18.296135
+PNG,2015,G114X,Other goods & services taxes,Taxes,0.5171956,2.826802435724874,Central government,18.296135
+PNG,2015,G115,Trade taxes (customs),Taxes,0.93998696,5.137625741745715,Central government,18.296135
+PNG,2015,G13,Grants (e.g. foreign aid),Grants,1.3626735,7.447876139893185,Central government,18.296135
+PNG,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,0.37612781,2.055777368275876,Central government,18.296135
+PNG,2015,G14X,Other non-tax revenue,Other revenue,1.70637649,9.326431273188831,Central government,18.296135
+PNG,2016,G1111,Personal income tax,Taxes,4.3732708,27.125927441406635,Central government,16.122106
+PNG,2016,G1112,Corporate income tax,Taxes,3.219335,19.968451900938955,Central government,16.122106
+PNG,2016,G1113,Other income taxes,Taxes,0.3750099999999996,2.3260608626847192,Central government,16.122106
+PNG,2016,G11412,VAT / sales tax,Taxes,2.2180784,13.757994071108362,Central government,16.122106
+PNG,2016,G1142,Excise taxes,Taxes,1.3467454,8.353408620945256,Central government,16.122106
+PNG,2016,G114X,Other goods & services taxes,Taxes,0.4083749000000001,2.5330121121911073,Central government,16.122106
+PNG,2016,G115,Trade taxes (customs),Taxes,0.82551429,5.120387407151717,Central government,16.122106
+PNG,2016,G13,Grants (e.g. foreign aid),Grants,2.198859,13.63878259902953,Central government,16.122106
+PNG,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.18235415,1.1310814417299249,Central government,16.122106
+PNG,2016,G14X,Other non-tax revenue,Other revenue,0.9745641500000001,6.044893542813798,Central government,16.122106
+PNG,2017,G1111,Personal income tax,Taxes,4.2660366,26.8440181488169,Central government,15.891945
+PNG,2017,G1112,Corporate income tax,Taxes,2.4738821,15.566893165059405,Central government,15.891945
+PNG,2017,G1113,Other income taxes,Taxes,0.4156001000000007,2.615161957834618,Central government,15.891945
+PNG,2017,G11412,VAT / sales tax,Taxes,2.5768858,16.215043533060303,Central government,15.891945
+PNG,2017,G1142,Excise taxes,Taxes,1.5238209,9.588636884912452,Central government,15.891945
+PNG,2017,G114X,Other goods & services taxes,Taxes,0.3877462999999999,2.4398920333540035,Central government,15.891945
+PNG,2017,G115,Trade taxes (customs),Taxes,0.76901178,4.8390035329218675,Central government,15.891945
+PNG,2017,G13,Grants (e.g. foreign aid),Grants,1.9854762,12.493601003527258,Central government,15.891945
+PNG,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,0.19194269,1.2077986048907166,Central government,15.891945
+PNG,2017,G14X,Other non-tax revenue,Other revenue,1.30154241,8.189950380522962,Central government,15.891945
+PNG,2018,G1111,Personal income tax,Taxes,3.9064453,22.02146831499557,Central government,17.739259
+PNG,2018,G1112,Corporate income tax,Taxes,2.4343656,13.723039953359946,Central government,17.739259
+PNG,2018,G1113,Other income taxes,Taxes,0.3672328,2.0701698983029675,Central government,17.739259
+PNG,2018,G11412,VAT / sales tax,Taxes,2.6032474,14.675062808429594,Central government,17.739259
+PNG,2018,G1142,Excise taxes,Taxes,1.3535728,7.630379600410592,Central government,17.739259
+PNG,2018,G114X,Other goods & services taxes,Taxes,0.49808149999999984,2.8077920278406205,Central government,17.739259
+PNG,2018,G115,Trade taxes (customs),Taxes,1.0209727,5.755441644997685,Central government,17.739259
+PNG,2018,G13,Grants (e.g. foreign aid),Grants,2.3118287,13.032273219529632,Central government,17.739259
+PNG,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,1.0091346,5.688707741400022,Central government,17.739259
+PNG,2018,G14X,Other non-tax revenue,Other revenue,2.2343773999999996,12.595663663290555,Central government,17.739259
+PNG,2019,G1111,Personal income tax,Taxes,3.8304614,23.475750234131674,Central government,16.316673
+PNG,2019,G1112,Corporate income tax,Taxes,2.0238853,12.403786605271797,Central government,16.316673
+PNG,2019,G1113,Other income taxes,Taxes,0.42948960000000014,2.632213074319747,Central government,16.316673
+PNG,2019,G11412,VAT / sales tax,Taxes,2.686547,16.465041617246357,Central government,16.316673
+PNG,2019,G1142,Excise taxes,Taxes,1.622901,9.946273973867099,Central government,16.316673
+PNG,2019,G114X,Other goods & services taxes,Taxes,0.3855983999999999,2.363217060242611,Central government,16.316673
+PNG,2019,G115,Trade taxes (customs),Taxes,1.0845182,6.64668710343095,Central government,16.316673
+PNG,2019,G13,Grants (e.g. foreign aid),Grants,2.1177504,12.979057679221736,Central government,16.316673
+PNG,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,0.9585695,5.8747852579995925,Central government,16.316673
+PNG,2019,G14X,Other non-tax revenue,Other revenue,1.1769521000000003,7.213186781398391,Central government,16.316673
+PNG,2020,G1111,Personal income tax,Taxes,4.2626184,29.084939857767846,Central government,14.655758
+PNG,2020,G1112,Corporate income tax,Taxes,1.8835361,12.851850446766383,Central government,14.655758
+PNG,2020,G1113,Other income taxes,Taxes,0.46524869999999985,3.174511342231496,Central government,14.655758
+PNG,2020,G11412,VAT / sales tax,Taxes,2.519784,17.193133238144352,Central government,14.655758
+PNG,2020,G1142,Excise taxes,Taxes,1.3023085,8.885985289877194,Central government,14.655758
+PNG,2020,G114X,Other goods & services taxes,Taxes,0.26528509999999983,1.8101083546821652,Central government,14.655758
+PNG,2020,G115,Trade taxes (customs),Taxes,0.92152931,6.2878311036522305,Central government,14.655758
+PNG,2020,G13,Grants (e.g. foreign aid),Grants,1.7269585,11.78348127746105,Central government,14.655758
+PNG,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,0.25874081,1.7654549836316893,Central government,14.655758
+PNG,2020,G14X,Other non-tax revenue,Other revenue,1.04974839,7.162702809366803,Central government,14.655758
+PNG,2021,G1111,Personal income tax,Taxes,3.7848538,25.020237096562017,Central government,15.12717
+PNG,2021,G1112,Corporate income tax,Taxes,1.8447329,12.194831551440222,Central government,15.12717
+PNG,2021,G1113,Other income taxes,Taxes,0.5825765,3.8511929197596118,Central government,15.12717
+PNG,2021,G11412,VAT / sales tax,Taxes,2.6817794,17.72822940444247,Central government,15.12717
+PNG,2021,G1142,Excise taxes,Taxes,1.398188,9.242892094159053,Central government,15.12717
+PNG,2021,G114X,Other goods & services taxes,Taxes,0.2787863000000004,1.8429507964807719,Central government,15.12717
+PNG,2021,G115,Trade taxes (customs),Taxes,0.84997956,5.618893421571913,Central government,15.12717
+PNG,2021,G13,Grants (e.g. foreign aid),Grants,2.2787812,15.064160712149066,Central government,15.12717
+PNG,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,0.72572408,4.797487434860585,Central government,15.12717
+PNG,2021,G14X,Other non-tax revenue,Other revenue,0.70165882,4.638401102122869,Central government,15.12717
+PNG,2022,G1111,Personal income tax,Taxes,3.2785181,19.700296456788838,Central government,16.641973
+PNG,2022,G1112,Corporate income tax,Taxes,2.4748902,14.871374551203916,Central government,16.641973
+PNG,2022,G1113,Other income taxes,Taxes,0.6986858000000002,4.198335031351109,Central government,16.641973
+PNG,2022,G11412,VAT / sales tax,Taxes,2.2219162,13.351278384628017,Central government,16.641973
+PNG,2022,G1142,Excise taxes,Taxes,1.2607406,7.575667669826143,Central government,16.641973
+PNG,2022,G114X,Other goods & services taxes,Taxes,0.37174070000000015,2.233753717892912,Central government,16.641973
+PNG,2022,G115,Trade taxes (customs),Taxes,0.81332312,4.8871795397928235,Central government,16.641973
+PNG,2022,G13,Grants (e.g. foreign aid),Grants,1.3215154,7.940857533228773,Central government,16.641973
+PNG,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,3.6507076,21.936746970240026,Central government,16.641973
+PNG,2022,G14X,Other non-tax revenue,Other revenue,0.5499357000000002,3.3045101450474514,Central government,16.641973
+PNG,2023,G1111,Personal income tax,Taxes,3.7514757,20.948310371882037,Central government,17.908249
+PNG,2023,G1112,Corporate income tax,Taxes,2.7406187,15.303666004976087,Central government,17.908249
+PNG,2023,G1113,Other income taxes,Taxes,0.5477059999999998,3.058400533033446,Central government,17.908249
+PNG,2023,G11412,VAT / sales tax,Taxes,3.2531579,18.165694470029486,Central government,17.908249
+PNG,2023,G1142,Excise taxes,Taxes,1.1066313,6.179449846800102,Central government,17.908249
+PNG,2023,G114X,Other goods & services taxes,Taxes,0.3654265999999997,2.040548959158014,Central government,17.908249
+PNG,2023,G115,Trade taxes (customs),Taxes,0.60352356,3.3700868305299623,Central government,17.908249
+PNG,2023,G13,Grants (e.g. foreign aid),Grants,1.0474161,5.848791064088789,Central government,17.908249
+PNG,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,3.5662609,19.914067469584673,Central government,17.908249
+PNG,2023,G14X,Other non-tax revenue,Other revenue,0.9260328000000002,5.170984449917395,Central government,17.908249
+PNG,2024,G1111,Personal income tax,Taxes,3.6175271,21.575752959807314,Central government,16.766632
+PNG,2024,G1112,Corporate income tax,Taxes,2.8129154,16.77686609928577,Central government,16.766632
+PNG,2024,G1113,Other income taxes,Taxes,0.6504635999999997,3.8795125938232533,Central government,16.766632
+PNG,2024,G11412,VAT / sales tax,Taxes,2.5322391,15.102848920403332,Central government,16.766632
+PNG,2024,G1142,Excise taxes,Taxes,1.4080553,8.397961498767312,Central government,16.766632
+PNG,2024,G114X,Other goods & services taxes,Taxes,0.43725850000000044,2.6079089706269,Central government,16.766632
+PNG,2024,G115,Trade taxes (customs),Taxes,0.626808,3.738425224577005,Central government,16.766632
+PNG,2024,G13,Grants (e.g. foreign aid),Grants,0.47574217,2.8374343159675717,Central government,16.766632
+PNG,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,3.0930764,18.44780991197278,Central government,16.766632
+PNG,2024,G14X,Other non-tax revenue,Other revenue,1.1125463,6.6354787294192406,Central government,16.766632

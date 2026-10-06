@@ -1,0 +1,191 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+BGD,2005,GF01,General public services,Government spending,23.514122647207294,2.4134483051195303,Central government (budgetary),10.2638246016215
+BGD,2005,GF02,Defence,Government spending,9.73111888493736,0.998784974125238,Central government (budgetary),10.2638246016215
+BGD,2005,GF03,Public order and safety,Government spending,6.41535296606119,0.658460576011445,Central government (budgetary),10.2638246016215
+BGD,2005,GF04,Economic affairs,Government spending,11.0075143350021,1.12979196434296,Central government (budgetary),10.2638246016215
+BGD,2005,GF05,Environmental protection,Government spending,0.0972004265156283,0.0099764812895921,Central government (budgetary),10.2638246016215
+BGD,2005,GF06,Housing and community amenities,Government spending,8.72114698800266,0.895123230098191,Central government (budgetary),10.2638246016215
+BGD,2005,GF08,"Recreation, culture and religion",Government spending,1.30167692555892,0.133601836519147,Central government (budgetary),10.2638246016215
+BGD,2005,GF09,Education,Government spending,15.0383685041686,1.54351176621336,Central government (budgetary),10.2638246016215
+BGD,2005,GF10,Social protection,Government spending,2.49385666714756,0.25596507413187,Central government (budgetary),10.2638246016215
+BGD,2005,GF0170,Interest on public debt,Government spending,15.3075545463776,1.57114054943773,Central government (budgetary),10.2638246016215
+BGD,2005,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),10.2638246016215
+BGD,2005,GF072,Outpatient services,Health,4.00326371038564,0.410887965574348,Central government (budgetary),10.2638246016215
+BGD,2005,GF073,Hospital services,Health,1.15923805037552,0.1189821602058,Central government (budgetary),10.2638246016215
+BGD,2005,GF0740,Public health services,Health,1.20958534825991,0.12414971855231,Central government (budgetary),10.2638246016215
+BGD,2005,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),10.2638246016215
+BGD,2005,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),10.2638246016215
+BGD,2006,GF01,General public services,Government spending,21.7690562400478,2.25044023180483,Central government (budgetary),10.3377941927715
+BGD,2006,GF02,Defence,Government spending,9.7669031078498,1.00968234229692,Central government (budgetary),10.3377941927715
+BGD,2006,GF03,Public order and safety,Government spending,6.00842540401667,0.621138652493444,Central government (budgetary),10.3377941927715
+BGD,2006,GF04,Economic affairs,Government spending,10.0230345813408,1.03616068688933,Central government (budgetary),10.3377941927715
+BGD,2006,GF05,Environmental protection,Government spending,0.0832980605090401,0.0086111820619948,Central government (budgetary),10.3377941927715
+BGD,2006,GF06,Housing and community amenities,Government spending,8.35428031739383,0.863648305499394,Central government (budgetary),10.3377941927715
+BGD,2006,GF08,"Recreation, culture and religion",Government spending,1.32743214371938,0.137227203066405,Central government (budgetary),10.3377941927715
+BGD,2006,GF09,Education,Government spending,15.9169197122506,1.64545840168115,Central government (budgetary),10.3377941927715
+BGD,2006,GF10,Social protection,Government spending,2.65466072963216,0.2744333627457,Central government (budgetary),10.3377941927715
+BGD,2006,GF0170,Interest on public debt,Government spending,16.7932045834151,1.73604692820452,Central government (budgetary),10.3377941927715
+BGD,2006,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),10.3377941927715
+BGD,2006,GF072,Outpatient services,Health,4.8020564079459,0.496426708474245,Central government (budgetary),10.3377941927715
+BGD,2006,GF073,Hospital services,Health,1.24402458314886,0.128604701113413,Central government (budgetary),10.3377941927715
+BGD,2006,GF0740,Public health services,Health,1.2567041287301,0.12991548644018,Central government (budgetary),10.3377941927715
+BGD,2006,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),10.3377941927715
+BGD,2006,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),10.3377941927715
+BGD,2007,GF01,General public services,Government spending,18.274778666274297,1.8718812738746,Central government (budgetary),10.2429764434254
+BGD,2007,GF02,Defence,Government spending,10.9343953242021,1.12000753728903,Central government (budgetary),10.2429764434254
+BGD,2007,GF03,Public order and safety,Government spending,7.00659409220819,0.717683782351321,Central government (budgetary),10.2429764434254
+BGD,2007,GF04,Economic affairs,Government spending,9.58998764539953,0.98230017544568,Central government (budgetary),10.2429764434254
+BGD,2007,GF05,Environmental protection,Government spending,0.0866411283328619,0.008874630365453,Central government (budgetary),10.2429764434254
+BGD,2007,GF06,Housing and community amenities,Government spending,8.39870218452122,0.860277086313964,Central government (budgetary),10.2429764434254
+BGD,2007,GF08,"Recreation, culture and religion",Government spending,1.15830114938839,0.118644513875778,Central government (budgetary),10.2429764434254
+BGD,2007,GF09,Education,Government spending,16.5901982787656,1.69933010161153,Central government (budgetary),10.2429764434254
+BGD,2007,GF10,Social protection,Government spending,2.22610115686052,0.228019017104044,Central government (budgetary),10.2429764434254
+BGD,2007,GF0170,Interest on public debt,Government spending,18.3814580204256,1.88280841499033,Central government (budgetary),10.2429764434254
+BGD,2007,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),10.2429764434254
+BGD,2007,GF072,Outpatient services,Health,4.69618685065366,0.481029312851696,Central government (budgetary),10.2429764434254
+BGD,2007,GF073,Hospital services,Health,1.25206957670045,0.128249191796723,Central government (budgetary),10.2429764434254
+BGD,2007,GF0740,Public health services,Health,1.4045859262676,0.143871405555258,Central government (budgetary),10.2429764434254
+BGD,2007,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),10.2429764434254
+BGD,2007,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),10.2429764434254
+BGD,2008,GF01,General public services,Government spending,19.731563460580396,2.11749939516351,Central government (budgetary),10.7315337651466
+BGD,2008,GF02,Defence,Government spending,9.83271613341342,1.05520125188827,Central government (budgetary),10.7315337651466
+BGD,2008,GF03,Public order and safety,Government spending,6.62093442597581,0.710527813491807,Central government (budgetary),10.7315337651466
+BGD,2008,GF04,Economic affairs,Government spending,12.0419947494735,1.29229073253693,Central government (budgetary),10.7315337651466
+BGD,2008,GF05,Environmental protection,Government spending,0.0771753664973938,0.0082821005140434,Central government (budgetary),10.7315337651466
+BGD,2008,GF06,Housing and community amenities,Government spending,6.08209657173045,0.652702247224075,Central government (budgetary),10.7315337651466
+BGD,2008,GF08,"Recreation, culture and religion",Government spending,1.08228713084426,0.116146008882388,Central government (budgetary),10.7315337651466
+BGD,2008,GF09,Education,Government spending,15.0493818902807,1.61502949900132,Central government (budgetary),10.7315337651466
+BGD,2008,GF10,Social protection,Government spending,2.71075864296376,0.290905979061284,Central government (budgetary),10.7315337651466
+BGD,2008,GF0170,Interest on public debt,Government spending,20.1237543191935,2.15958748957939,Central government (budgetary),10.7315337651466
+BGD,2008,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),10.7315337651466
+BGD,2008,GF072,Outpatient services,Health,4.34757850146539,0.466561854851011,Central government (budgetary),10.7315337651466
+BGD,2008,GF073,Hospital services,Health,1.11097897622579,0.11922508395735,Central government (budgetary),10.7315337651466
+BGD,2008,GF0740,Public health services,Health,1.18877983135561,0.127574308995179,Central government (budgetary),10.7315337651466
+BGD,2008,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),10.7315337651466
+BGD,2008,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),10.7315337651466
+BGD,2009,GF01,General public services,Government spending,18.884703911891997,2.1404154583972903,Central government (budgetary),11.3341224113629
+BGD,2009,GF02,Defence,Government spending,7.77084258401553,0.880756810866638,Central government (budgetary),11.3341224113629
+BGD,2009,GF03,Public order and safety,Government spending,6.5882999294305,0.74672597882939,Central government (budgetary),11.3341224113629
+BGD,2009,GF04,Economic affairs,Government spending,16.6414407670112,1.8861612675475,Central government (budgetary),11.3341224113629
+BGD,2009,GF05,Environmental protection,Government spending,0.0679589349365248,0.0077025488751642,Central government (budgetary),11.3341224113629
+BGD,2009,GF06,Housing and community amenities,Government spending,6.56768581718883,0.744389550113903,Central government (budgetary),11.3341224113629
+BGD,2009,GF08,"Recreation, culture and religion",Government spending,1.09015173892416,0.123559132559266,Central government (budgetary),11.3341224113629
+BGD,2009,GF09,Education,Government spending,14.1144316593652,1.59974696194061,Central government (budgetary),11.3341224113629
+BGD,2009,GF10,Social protection,Government spending,2.97526465827839,0.337220138431292,Central government (budgetary),11.3341224113629
+BGD,2009,GF0170,Interest on public debt,Government spending,18.9619569977894,2.14917141771944,Central government (budgetary),11.3341224113629
+BGD,2009,GF072,Outpatient services,Health,1.15324792822854,0.130710531891929,Central government (budgetary),11.3341224113629
+BGD,2009,GF073,Hospital services,Health,1.15633188000682,0.131060070761588,Central government (budgetary),11.3341224113629
+BGD,2009,GF0740,Public health services,Health,1.09015173892416,0.123559132559266,Central government (budgetary),11.3341224113629
+BGD,2009,GF07_rest,Health (not broken down),Health,2.9375314540087802,0.332943410869644,Central government (budgetary),11.3341224113629
+BGD,2010,GF01,General public services,Government spending,19.0055361880247,2.0834039276087797,Central government (budgetary),10.9620897142672
+BGD,2010,GF02,Defence,Government spending,9.88441226786703,1.08353814053161,Central government (budgetary),10.9620897142672
+BGD,2010,GF03,Public order and safety,Government spending,7.04270156058293,0.772027263379194,Central government (budgetary),10.9620897142672
+BGD,2010,GF04,Economic affairs,Government spending,7.16475483077763,0.785406852357133,Central government (budgetary),10.9620897142672
+BGD,2010,GF05,Environmental protection,Government spending,0.721500640790134,0.0790915475324269,Central government (budgetary),10.9620897142672
+BGD,2010,GF06,Housing and community amenities,Government spending,6.73428083887922,0.738217907168643,Central government (budgetary),10.9620897142672
+BGD,2010,GF08,"Recreation, culture and religion",Government spending,1.12037955435958,0.122817011889204,Central government (budgetary),10.9620897142672
+BGD,2010,GF09,Education,Government spending,16.8720037928643,1.84952419236835,Central government (budgetary),10.9620897142672
+BGD,2010,GF10,Social protection,Government spending,7.45725711232349,0.817471214876469,Central government (budgetary),10.9620897142672
+BGD,2010,GF0170,Interest on public debt,Government spending,16.9466145753356,1.85770309327936,Central government (budgetary),10.9620897142672
+BGD,2010,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),10.9620897142672
+BGD,2010,GF072,Outpatient services,Health,4.53156882668564,0.496754640245044,Central government (budgetary),10.9620897142672
+BGD,2010,GF073,Hospital services,Health,1.22881104574535,0.134703369253429,Central government (budgetary),10.9620897142672
+BGD,2010,GF0740,Public health services,Health,1.29017876576438,0.141430553777516,Central government (budgetary),10.9620897142672
+BGD,2010,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),10.9620897142672
+BGD,2010,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),10.9620897142672
+BGD,2011,GF01,General public services,Government spending,6.859484096886,0.7924690728223398,Central government (budgetary),11.5528961308052
+BGD,2011,GF02,Defence,Government spending,10.6624135494862,1.23181756240904,Central government (budgetary),11.5528961308052
+BGD,2011,GF03,Public order and safety,Government spending,7.75504880451965,0.895932733279408,Central government (budgetary),11.5528961308052
+BGD,2011,GF04,Economic affairs,Government spending,26.0470063962157,3.00918359413899,Central government (budgetary),11.5528961308052
+BGD,2011,GF05,Environmental protection,Government spending,0.688749796204802,0.0795705485566735,Central government (budgetary),11.5528961308052
+BGD,2011,GF06,Housing and community amenities,Government spending,2.09045435105702,0.241508019839516,Central government (budgetary),11.5528961308052
+BGD,2011,GF08,"Recreation, culture and religion",Government spending,0.961374607472727,0.111066609829261,Central government (budgetary),11.5528961308052
+BGD,2011,GF09,Education,Government spending,16.8216077255511,1.94338286806442,Central government (budgetary),11.5528961308052
+BGD,2011,GF10,Social protection,Government spending,7.00273853489564,0.809019109248366,Central government (budgetary),11.5528961308052
+BGD,2011,GF0170,Interest on public debt,Government spending,14.7326183370784,1.70204409383064,Central government (budgetary),11.5528961308052
+BGD,2011,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),11.5528961308052
+BGD,2011,GF072,Outpatient services,Health,0.351071194818758,0.040558890482588,Central government (budgetary),11.5528961308052
+BGD,2011,GF073,Hospital services,Health,1.18058026695399,0.136391211981977,Central government (budgetary),11.5528961308052
+BGD,2011,GF0740,Public health services,Health,0.87221981999863,0.100766649836738,Central government (budgetary),11.5528961308052
+BGD,2011,GF075,Health R&D,Health,0.0250366831356815,0.0028924619972641,Central government (budgetary),11.5528961308052
+BGD,2011,GF0760,Other health,Health,3.94959583572571,0.456292704488,Central government (budgetary),11.5528961308052
+BGD,2012,GF01,General public services,Government spending,6.872576836565397,0.7988038331924499,Central government (budgetary),11.6230615122763
+BGD,2012,GF02,Defence,Government spending,10.8212992717882,1.25776627078745,Central government (budgetary),11.6230615122763
+BGD,2012,GF03,Public order and safety,Government spending,7.50147109171271,0.871900599315393,Central government (budgetary),11.6230615122763
+BGD,2012,GF04,Economic affairs,Government spending,26.1893298499491,3.04400191811252,Central government (budgetary),11.6230615122763
+BGD,2012,GF05,Environmental protection,Government spending,0.592203593059464,0.0688321878992119,Central government (budgetary),11.6230615122763
+BGD,2012,GF06,Housing and community amenities,Government spending,1.98161373848413,0.230324183759728,Central government (budgetary),11.6230615122763
+BGD,2012,GF08,"Recreation, culture and religion",Government spending,0.732443457039841,0.0851323535543838,Central government (budgetary),11.6230615122763
+BGD,2012,GF09,Education,Government spending,16.0722466858344,1.86808711869932,Central government (budgetary),11.6230615122763
+BGD,2012,GF10,Social protection,Government spending,6.69468419980234,0.778127262595669,Central government (budgetary),11.6230615122763
+BGD,2012,GF0170,Interest on public debt,Government spending,16.5465427979043,1.92321484755554,Central government (budgetary),11.6230615122763
+BGD,2012,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),11.6230615122763
+BGD,2012,GF072,Outpatient services,Health,0.338149295282453,0.0393033005940084,Central government (budgetary),11.6230615122763
+BGD,2012,GF073,Hospital services,Health,1.07999371529726,0.125528333857718,Central government (budgetary),11.6230615122763
+BGD,2012,GF0740,Public health services,Health,0.773447310293174,0.0898982566404221,Central government (budgetary),11.6230615122763
+BGD,2012,GF075,Health R&D,Health,0.021916555487166,0.0025473747256454,Central government (budgetary),11.6230615122763
+BGD,2012,GF0760,Other health,Health,3.78208160150011,0.439593670986842,Central government (budgetary),11.6230615122763
+BGD,2013,GF01,General public services,Government spending,6.828858112635,0.7965914747500102,Central government (budgetary),11.6650757946798
+BGD,2013,GF02,Defence,Government spending,9.39537507695454,1.0959776239212,Central government (budgetary),11.6650757946798
+BGD,2013,GF03,Public order and safety,Government spending,7.2688056870208,0.847911692758969,Central government (budgetary),11.6650757946798
+BGD,2013,GF04,Economic affairs,Government spending,29.6726902734469,3.46134181071815,Central government (budgetary),11.6650757946798
+BGD,2013,GF05,Environmental protection,Government spending,0.311393275764308,0.0363242616374427,Central government (budgetary),11.6650757946798
+BGD,2013,GF06,Housing and community amenities,Government spending,1.80435778980132,0.210479703787532,Central government (budgetary),11.6650757946798
+BGD,2013,GF08,"Recreation, culture and religion",Government spending,0.746242723729455,0.0870497793353236,Central government (budgetary),11.6650757946798
+BGD,2013,GF09,Education,Government spending,14.4414262455552,1.68460331737679,Central government (budgetary),11.6650757946798
+BGD,2013,GF10,Social protection,Government spending,6.39653270201415,0.746160387921428,Central government (budgetary),11.6650757946798
+BGD,2013,GF0170,Interest on public debt,Government spending,17.2779365529944,2.01548439466348,Central government (budgetary),11.6650757946798
+BGD,2013,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),11.6650757946798
+BGD,2013,GF072,Outpatient services,Health,0.316727360350305,0.0369464866473516,Central government (budgetary),11.6650757946798
+BGD,2013,GF073,Hospital services,Health,1.02854164268355,0.11998016219888,Central government (budgetary),11.6650757946798
+BGD,2013,GF0740,Public health services,Health,0.703956160402931,0.0821170196723193,Central government (budgetary),11.6650757946798
+BGD,2013,GF075,Health R&D,Health,0.0203567544454876,0.0023746308354029,Central government (budgetary),11.6650757946798
+BGD,2013,GF0760,Other health,Health,3.78679964220162,0.441733048455481,Central government (budgetary),11.6650757946798
+BGD,2014,GF01,General public services,Government spending,7.448221785854802,0.8992312423307403,Central government (budgetary),12.073099703321
+BGD,2014,GF02,Defence,Government spending,10.1613795564936,1.22679348508835,Central government (budgetary),12.073099703321
+BGD,2014,GF03,Public order and safety,Government spending,8.00698913811007,0.96669178187811,Central government (budgetary),12.073099703321
+BGD,2014,GF04,Economic affairs,Government spending,26.0912884505078,3.15002726851088,Central government (budgetary),12.073099703321
+BGD,2014,GF05,Environmental protection,Government spending,0.143678630331121,0.0173464642922422,Central government (budgetary),12.073099703321
+BGD,2014,GF06,Housing and community amenities,Government spending,1.96226617471058,0.236906351717351,Central government (budgetary),12.073099703321
+BGD,2014,GF08,"Recreation, culture and religion",Government spending,0.773366809854204,0.0933693460260908,Central government (budgetary),12.073099703321
+BGD,2014,GF09,Education,Government spending,15.9456526395894,1.92513454152286,Central government (budgetary),12.073099703321
+BGD,2014,GF10,Social protection,Government spending,6.46055757146868,0.779989556993867,Central government (budgetary),12.073099703321
+BGD,2014,GF0170,Interest on public debt,Government spending,17.262271137011,2.08409120542893,Central government (budgetary),12.073099703321
+BGD,2014,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),12.073099703321
+BGD,2014,GF072,Outpatient services,Health,0.299735272061971,0.0361873382420622,Central government (budgetary),12.073099703321
+BGD,2014,GF073,Hospital services,Health,1.02164826660067,0.123344613843949,Central government (budgetary),12.073099703321
+BGD,2014,GF0740,Public health services,Health,0.76770793810871,0.0926861447981743,Central government (budgetary),12.073099703321
+BGD,2014,GF075,Health R&D,Health,0.0219450799716317,0.0026494513849486,Central government (budgetary),12.073099703321
+BGD,2014,GF0760,Other health,Health,3.63329154932573,0.438650911262431,Central government (budgetary),12.073099703321
+BGD,2015,GF01,General public services,Government spending,6.309520823633097,0.7156149397329004,Central government (budgetary),11.3418270536881
+BGD,2015,GF02,Defence,Government spending,10.2646227833484,1.16419576380084,Central government (budgetary),11.3418270536881
+BGD,2015,GF03,Public order and safety,Government spending,8.05669908708058,0.913776876692751,Central government (budgetary),11.3418270536881
+BGD,2015,GF04,Economic affairs,Government spending,26.1908957662923,2.97052610162461,Central government (budgetary),11.3418270536881
+BGD,2015,GF05,Environmental protection,Government spending,0.138372769272048,0.0156940001802346,Central government (budgetary),11.3418270536881
+BGD,2015,GF06,Housing and community amenities,Government spending,1.97068789059523,0.223512012319285,Central government (budgetary),11.3418270536881
+BGD,2015,GF08,"Recreation, culture and religion",Government spending,0.79155110493934,0.0897763573637774,Central government (budgetary),11.3418270536881
+BGD,2015,GF09,Education,Government spending,16.0134096120616,1.8162132235987,Central government (budgetary),11.3418270536881
+BGD,2015,GF10,Social protection,Government spending,6.45942397839959,0.732616696294543,Central government (budgetary),11.3418270536881
+BGD,2015,GF0170,Interest on public debt,Government spending,18.0167232062529,2.0434255867949,Central government (budgetary),11.3418270536881
+BGD,2015,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),11.3418270536881
+BGD,2015,GF072,Outpatient services,Health,0.29739471803528,0.0337299945863649,Central government (budgetary),11.3418270536881
+BGD,2015,GF073,Hospital services,Health,1.02279748522542,0.116003921883739,Central government (budgetary),11.3418270536881
+BGD,2015,GF0740,Public health services,Health,0.713722893269498,0.0809492161972057,Central government (budgetary),11.3418270536881
+BGD,2015,GF075,Health R&D,Health,0.0218183302173043,0.0024745972792492,Central government (budgetary),11.3418270536881
+BGD,2015,GF0760,Other health,Health,3.73235955137744,0.42331776533904,Central government (budgetary),11.3418270536881
+BGD,2016,GF01,General public services,Government spending,5.018317347432902,0.5920834973922102,Central government (budgetary),11.7984466983756
+BGD,2016,GF02,Defence,Government spending,10.0102224983003,1.18105076585077,Central government (budgetary),11.7984466983756
+BGD,2016,GF03,Public order and safety,Government spending,9.3616563381935,1.10453003314687,Central government (budgetary),11.7984466983756
+BGD,2016,GF04,Economic affairs,Government spending,19.136614641161,2.25782327831093,Central government (budgetary),11.7984466983756
+BGD,2016,GF05,Environmental protection,Government spending,0.138419474592934,0.016331347930019,Central government (budgetary),11.7984466983756
+BGD,2016,GF06,Housing and community amenities,Government spending,8.02979687064382,0.947391303770747,Central government (budgetary),11.7984466983756
+BGD,2016,GF08,"Recreation, culture and religion",Government spending,1.09366058370954,0.129034961030114,Central government (budgetary),11.7984466983756
+BGD,2016,GF09,Education,Government spending,18.6259788408959,2.19757618559382,Central government (budgetary),11.7984466983756
+BGD,2016,GF10,Social protection,Government spending,6.32034081515864,0.745702042232173,Central government (budgetary),11.7984466983756
+BGD,2016,GF0170,Interest on public debt,Government spending,16.1701336750615,1.90782460270822,Central government (budgetary),11.7984466983756
+BGD,2016,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),11.7984466983756
+BGD,2016,GF072,Outpatient services,Health,3.60184102792356,0.424961293839787,Central government (budgetary),11.7984466983756
+BGD,2016,GF073,Hospital services,Health,1.1210510097774,0.132266605850189,Central government (budgetary),11.7984466983756
+BGD,2016,GF0740,Public health services,Health,1.37196687714905,0.161870780719799,Central government (budgetary),11.7984466983756
+BGD,2016,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),11.7984466983756
+BGD,2016,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),11.7984466983756

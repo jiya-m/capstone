@@ -1,0 +1,356 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+IND,1991,G1111,Personal income tax,Taxes,1.0163682,5.246763026900878,General government,19.371338
+IND,1991,G1112,Corporate income tax,Taxes,1.1857881,6.121353620488166,General government,19.371338
+IND,1991,G1113,Other income taxes,Taxes,0.09736350000000016,0.5026162880437074,General government,19.371338
+IND,1991,G11412,VAT / sales tax,Taxes,4.801362,24.785907922312852,General government,19.371338
+IND,1991,G1142,Excise taxes,Taxes,4.2445565,21.911529807595116,General government,19.371338
+IND,1991,G115,Trade taxes (customs),Taxes,3.3607647,17.349161426020235,General government,19.371338
+IND,1991,G113,Property taxes,Taxes,0.5003624,2.583003817289234,General government,19.371338
+IND,1991,G11NEC,Other taxes,Taxes,0.36390559999999794,1.8785775148830604,General government,19.371338
+IND,1991,G13,Grants (e.g. foreign aid),Grants,0.1429952,0.738179262578558,General government,19.371338
+IND,1991,G14X,Other non-tax revenue,Other revenue,3.6578715,18.88290576520837,General government,19.371338
+IND,1992,G1111,Personal income tax,Taxes,1.0362585,5.513182796435754,General government,18.796012
+IND,1992,G1112,Corporate income tax,Taxes,1.1690751,6.2198039669266,General government,18.796012
+IND,1992,G1113,Other income taxes,Taxes,0.07912510000000017,0.42096749033784486,General government,18.796012
+IND,1992,G11412,VAT / sales tax,Taxes,4.6821072,24.910109655175788,General government,18.796012
+IND,1992,G1142,Excise taxes,Taxes,4.0504467,21.549500500425303,General government,18.796012
+IND,1992,G115,Trade taxes (customs),Taxes,3.1234892,16.617829356567764,General government,18.796012
+IND,1992,G113,Property taxes,Taxes,0.47632685,2.5341910294588024,General government,18.796012
+IND,1992,G11NEC,Other taxes,Taxes,0.42590646,2.2659405622852336,General government,18.796012
+IND,1992,G13,Grants (e.g. foreign aid),Grants,0.12073043,0.6423193920071981,General government,18.796012
+IND,1992,G14X,Other non-tax revenue,Other revenue,3.632546,19.32615280305205,General government,18.796012
+IND,1993,G1111,Personal income tax,Taxes,1.0414502,5.909481393011955,General government,17.623377
+IND,1993,G1112,Corporate income tax,Taxes,1.1484149,6.516429189804451,General government,17.623377
+IND,1993,G1113,Other income taxes,Taxes,0.0741676,0.42084782562272627,General government,17.623377
+IND,1993,G11412,VAT / sales tax,Taxes,4.7319227,26.85026048179825,General government,17.623377
+IND,1993,G1142,Excise taxes,Taxes,3.6184203,20.531934637822076,General government,17.623377
+IND,1993,G115,Trade taxes (customs),Taxes,2.5334764,14.375657756304536,General government,17.623377
+IND,1993,G113,Property taxes,Taxes,0.49352162,2.8003804986922236,General government,17.623377
+IND,1993,G11NEC,Other taxes,Taxes,0.3047982800000001,1.7295111799700533,General government,17.623377
+IND,1993,G13,Grants (e.g. foreign aid),Grants,0.11335746,0.6432221153052703,General government,17.623377
+IND,1993,G14X,Other non-tax revenue,Other revenue,3.5638478,20.222274921668443,General government,17.623377
+IND,1994,G1111,Personal income tax,Taxes,1.1702366,6.4259801268749825,General government,18.211021
+IND,1994,G1112,Corporate income tax,Taxes,1.3451152,7.386270044499947,General government,18.211021
+IND,1994,G1113,Other income taxes,Taxes,0.06979570000000024,0.3832607706350406,General government,18.211021
+IND,1994,G11412,VAT / sales tax,Taxes,4.7421908,26.04022454830876,General government,18.211021
+IND,1994,G1142,Excise taxes,Taxes,3.6344969,19.957677661584615,General government,18.211021
+IND,1994,G115,Trade taxes (customs),Taxes,2.6070243,14.315640394498141,General government,18.211021
+IND,1994,G113,Property taxes,Taxes,0.61192911,3.3602130542800452,General government,18.211021
+IND,1994,G11NEC,Other taxes,Taxes,0.22489952,1.234963806518889,General government,18.211021
+IND,1994,G13,Grants (e.g. foreign aid),Grants,0.10101502,0.5546916846011131,General government,18.211021
+IND,1994,G14X,Other non-tax revenue,Other revenue,3.704318,20.341077908198464,General government,18.211021
+IND,1995,G1111,Personal income tax,Taxes,1.2942318,7.12464797420289,General government,18.165554
+IND,1995,G1112,Corporate income tax,Taxes,1.3675575,7.528300395633123,General government,18.165554
+IND,1995,G1113,Other income taxes,Taxes,0.0692862000000003,0.38141528006823694,General government,18.165554
+IND,1995,G11412,VAT / sales tax,Taxes,4.6247532,25.458915873932575,General government,18.165554
+IND,1995,G1142,Excise taxes,Taxes,3.3334163,18.35020410483647,General government,18.165554
+IND,1995,G115,Trade taxes (customs),Taxes,2.9659583,16.327375663049885,General government,18.165554
+IND,1995,G113,Property taxes,Taxes,0.6034274,3.3218221055830313,General government,18.165554
+IND,1995,G11NEC,Other taxes,Taxes,0.2656812999999988,1.462555421547038,General government,18.165554
+IND,1995,G13,Grants (e.g. foreign aid),Grants,0.09447735,0.5200906516789012,General government,18.165554
+IND,1995,G14X,Other non-tax revenue,Other revenue,3.546765,19.52467252946784,General government,18.165554
+IND,1996,G1111,Personal income tax,Taxes,1.3070504,7.401735835495487,General government,17.658701
+IND,1996,G1112,Corporate income tax,Taxes,1.3311123,7.53799670768535,General government,17.658701
+IND,1996,G1113,Other income taxes,Taxes,0.07244729999999988,0.41026403924048477,General government,17.658701
+IND,1996,G11412,VAT / sales tax,Taxes,4.4931611,25.44445992941383,General government,17.658701
+IND,1996,G1142,Excise taxes,Taxes,3.2267848,18.273058703468617,General government,17.658701
+IND,1996,G115,Trade taxes (customs),Taxes,3.0721491,17.39736745075416,General government,17.658701
+IND,1996,G113,Property taxes,Taxes,0.53193244,3.0122965443494394,General government,17.658701
+IND,1996,G11NEC,Other taxes,Taxes,0.2943455599999988,1.6668585078823113,General government,17.658701
+IND,1996,G13,Grants (e.g. foreign aid),Grants,0.08530133,0.4830555203352726,General government,17.658701
+IND,1996,G14X,Other non-tax revenue,Other revenue,3.2444165,18.372905798676808,General government,17.658701
+IND,1997,G1111,Personal income tax,Taxes,1.1063943,6.525402326036231,General government,16.955189
+IND,1997,G1112,Corporate income tax,Taxes,1.2952261,7.6391132941328745,General government,16.955189
+IND,1997,G1113,Other income taxes,Taxes,0.07026509999999986,0.41441649417315995,General government,16.955189
+IND,1997,G11412,VAT / sales tax,Taxes,4.648312,27.415276757067637,General government,16.955189
+IND,1997,G1142,Excise taxes,Taxes,3.103754,18.305628988728753,General government,16.955189
+IND,1997,G115,Trade taxes (customs),Taxes,2.6010005,15.34043940096347,General government,16.955189
+IND,1997,G113,Property taxes,Taxes,0.53800258,3.1730851170739878,General government,16.955189
+IND,1997,G11NEC,Other taxes,Taxes,0.25263866,1.4900374121691302,General government,16.955189
+IND,1997,G13,Grants (e.g. foreign aid),Grants,0.0658776,0.38853946036569814,General government,16.955189
+IND,1997,G14X,Other non-tax revenue,Other revenue,3.2737182,19.308060749289055,General government,16.955189
+IND,1998,G1111,Personal income tax,Taxes,1.1417367,7.007959047915969,General government,16.292
+IND,1998,G1112,Corporate income tax,Taxes,1.3840208,8.495094436277556,General government,16.292
+IND,1998,G1113,Other income taxes,Taxes,0.08017260000000004,0.492097957055202,General government,16.292
+IND,1998,G11412,VAT / sales tax,Taxes,4.4600293,27.375578526034353,General government,16.292
+IND,1998,G1142,Excise taxes,Taxes,3.0043446,18.440612378166946,General government,16.292
+IND,1998,G115,Trade taxes (customs),Taxes,2.2946454,14.084491628138741,General government,16.292
+IND,1998,G113,Property taxes,Taxes,0.481256,2.953940553512773,General government,16.292
+IND,1998,G11NEC,Other taxes,Taxes,0.28883372,1.7728561072068783,General government,16.292
+IND,1998,G13,Grants (e.g. foreign aid),Grants,0.05569035,0.341826352927174,General government,16.292
+IND,1998,G14X,Other non-tax revenue,Other revenue,3.1012707,19.035543012764403,General government,16.292
+IND,1999,G1111,Personal income tax,Taxes,1.2902991,7.5240170430213364,General government,17.149072
+IND,1999,G1112,Corporate income tax,Taxes,1.5436759,9.001512734916503,General government,17.149072
+IND,1999,G1113,Other income taxes,Taxes,0.08901239999999988,0.5190508267735996,General government,17.149072
+IND,1999,G11412,VAT / sales tax,Taxes,4.5823383,26.7206196346951,General government,17.149072
+IND,1999,G1142,Excise taxes,Taxes,3.1133639,18.154707729957632,General government,17.149072
+IND,1999,G115,Trade taxes (customs),Taxes,2.4352736,14.200614470567269,General government,17.149072
+IND,1999,G113,Property taxes,Taxes,0.48802973,2.8458083912645535,General government,17.149072
+IND,1999,G11NEC,Other taxes,Taxes,0.25569443,1.4910103007323077,General government,17.149072
+IND,1999,G13,Grants (e.g. foreign aid),Grants,0.05572712,0.32495705890091314,General government,17.149072
+IND,1999,G14X,Other non-tax revenue,Other revenue,3.2956575,19.217701692546395,General government,17.149072
+IND,2000,G1111,Personal income tax,Taxes,1.4843754,8.397371988361737,General government,17.676666
+IND,2000,G1112,Corporate income tax,Taxes,1.6681357,9.43693623591862,General government,17.676666
+IND,2000,G1113,Other income taxes,Taxes,0.09208890000000003,0.5209630591419431,General government,17.676666
+IND,2000,G11412,VAT / sales tax,Taxes,4.8985509,27.71196161781189,General government,17.676666
+IND,2000,G1142,Excise taxes,Taxes,3.2023141,18.116052530428508,General government,17.676666
+IND,2000,G115,Trade taxes (customs),Taxes,2.221703,12.568563544410152,General government,17.676666
+IND,2000,G113,Property taxes,Taxes,0.52277454,2.9574272643057085,General government,17.676666
+IND,2000,G11NEC,Other taxes,Taxes,0.23714945999999876,1.3415960898160275,General government,17.676666
+IND,2000,G13,Grants (e.g. foreign aid),Grants,0.03799261,0.21493085844642265,General government,17.676666
+IND,2000,G14X,Other non-tax revenue,Other revenue,3.3115814,18.734196811359002,General government,17.676666
+IND,2001,G1111,Personal income tax,Taxes,1.3823189,8.016813120312223,General government,17.242748
+IND,2001,G1112,Corporate income tax,Taxes,1.5812184,9.170338635461833,General government,17.242748
+IND,2001,G1113,Other income taxes,Taxes,0.13207699999999978,0.7659857840990787,General government,17.242748
+IND,2001,G11412,VAT / sales tax,Taxes,4.8398611,28.068965827616736,General government,17.242748
+IND,2001,G1142,Excise taxes,Taxes,3.1338004,18.174599336780897,General government,17.242748
+IND,2001,G115,Trade taxes (customs),Taxes,1.7392581,10.086896124830032,General government,17.242748
+IND,2001,G113,Property taxes,Taxes,0.56081875,3.252490516563943,General government,17.242748
+IND,2001,G11NEC,Other taxes,Taxes,0.24291234999999986,1.4087797790841707,General government,17.242748
+IND,2001,G13,Grants (e.g. foreign aid),Grants,0.0756725,0.43886565599792265,General government,17.242748
+IND,2001,G14X,Other non-tax revenue,Other revenue,3.5548107,20.616265219253155,General government,17.242748
+IND,2002,G1111,Personal income tax,Taxes,1.479012,8.197138878895323,General government,18.043027
+IND,2002,G1112,Corporate income tax,Taxes,1.8523696,10.26640139920689,General government,18.043027
+IND,2002,G1113,Other income taxes,Taxes,0.08675639999999984,0.4808306216805495,General government,18.043027
+IND,2002,G11412,VAT / sales tax,Taxes,4.9970192,27.695015566409474,General government,18.043027
+IND,2002,G1142,Excise taxes,Taxes,3.3021211,18.30136959783328,General government,18.043027
+IND,2002,G115,Trade taxes (customs),Taxes,1.7993838,9.972737817566326,General government,18.043027
+IND,2002,G113,Property taxes,Taxes,0.61880519,3.4296084693100584,General government,18.043027
+IND,2002,G11NEC,Other taxes,Taxes,0.24340471000000083,1.3490236804348092,General government,18.043027
+IND,2002,G13,Grants (e.g. foreign aid),Grants,0.07494153,0.41534898243347607,General government,18.043027
+IND,2002,G14X,Other non-tax revenue,Other revenue,3.5892137,19.89252498622982,General government,18.043027
+IND,2003,G1111,Personal income tax,Taxes,1.4820611,8.005220982171707,General government,18.513681
+IND,2003,G1112,Corporate income tax,Taxes,2.2761439,12.294388474754612,General government,18.513681
+IND,2003,G1113,Other income taxes,Taxes,0.08078689999999966,0.4363632423552611,General government,18.513681
+IND,2003,G11412,VAT / sales tax,Taxes,4.9934289,26.971561296131846,General government,18.513681
+IND,2003,G1142,Excise taxes,Taxes,3.2506007,17.557830057277695,General government,18.513681
+IND,2003,G115,Trade taxes (customs),Taxes,1.7413958,9.4059942578789,General government,18.513681
+IND,2003,G113,Property taxes,Taxes,0.65252656,3.5245640746770333,General government,18.513681
+IND,2003,G11NEC,Other taxes,Taxes,0.3579551400000016,1.9334627954301102,General government,18.513681
+IND,2003,G13,Grants (e.g. foreign aid),Grants,0.0773134,0.41760144158903717,General government,18.513681
+IND,2003,G14X,Other non-tax revenue,Other revenue,3.6014689,19.453013377733793,General government,18.513681
+IND,2004,G1111,Personal income tax,Taxes,1.5462303,8.041332161578906,General government,19.228534
+IND,2004,G1112,Corporate income tax,Taxes,2.5948348,13.494709378819033,General government,19.228534
+IND,2004,G1113,Other income taxes,Taxes,0.07372120000000004,0.38339479995327425,General government,19.228534
+IND,2004,G11412,VAT / sales tax,Taxes,5.1619889,26.845462386349123,General government,19.228534
+IND,2004,G1142,Excise taxes,Taxes,3.1109458,16.178798536329822,General government,19.228534
+IND,2004,G115,Trade taxes (customs),Taxes,1.8080676,9.403044386200934,General government,19.228534
+IND,2004,G113,Property taxes,Taxes,0.70008442,3.6408621421830336,General government,19.228534
+IND,2004,G11NEC,Other taxes,Taxes,0.51074434,2.6561792816932845,General government,19.228534
+IND,2004,G13,Grants (e.g. foreign aid),Grants,0.08040598,0.4181596964936403,General government,19.228534
+IND,2004,G14X,Other non-tax revenue,Other revenue,3.6415108,18.938057230398947,General government,19.228534
+IND,2005,G1111,Personal income tax,Taxes,1.5413821,7.951914963976335,General government,19.383785
+IND,2005,G1112,Corporate income tax,Taxes,2.7883639,14.385033160448282,General government,19.383785
+IND,2005,G1113,Other income taxes,Taxes,0.07056460000000042,0.36403932462107075,General government,19.383785
+IND,2005,G11412,VAT / sales tax,Taxes,5.0129538,25.861583792845412,General government,19.383785
+IND,2005,G1142,Excise taxes,Taxes,3.0622803,15.798154488403581,General government,19.383785
+IND,2005,G115,Trade taxes (customs),Taxes,1.7914282,9.241890580193703,General government,19.383785
+IND,2005,G113,Property taxes,Taxes,0.76172934,3.9297244578393746,General government,19.383785
+IND,2005,G11NEC,Other taxes,Taxes,0.89743484,4.629822503706062,General government,19.383785
+IND,2005,G13,Grants (e.g. foreign aid),Grants,0.0832294,0.4293764091997512,General government,19.383785
+IND,2005,G14X,Other non-tax revenue,Other revenue,3.3744183,17.408459183797177,General government,19.383785
+IND,2006,G1111,Personal income tax,Taxes,1.7649713,8.597281883389988,General government,20.52941
+IND,2006,G1112,Corporate income tax,Taxes,3.3920223,16.52274564909063,General government,20.52941
+IND,2006,G1113,Other income taxes,Taxes,0.06726800000000033,0.3276664939151591,General government,20.52941
+IND,2006,G11412,VAT / sales tax,Taxes,5.023163,24.468130590687167,General government,20.52941
+IND,2006,G1142,Excise taxes,Taxes,2.7643532,13.465331524456595,General government,20.52941
+IND,2006,G114X,Other goods & services taxes,Taxes,0.8836961000000003,4.304537116808862,General government,20.52941
+IND,2006,G115,Trade taxes (customs),Taxes,2.0290131,9.883445450807587,General government,20.52941
+IND,2006,G113,Property taxes,Taxes,0.84550243,4.118493441678747,General government,20.52941
+IND,2006,G11NEC,Other taxes,Taxes,0.29527856999999935,1.4383197621481416,General government,20.52941
+IND,2006,G13,Grants (e.g. foreign aid),Grants,0.05947262,0.28969472675489794,General government,20.52941
+IND,2006,G14X,Other non-tax revenue,Other revenue,3.40467,16.584353360262224,General government,20.52941
+IND,2007,G1111,Personal income tax,Taxes,2.0953485,9.371715859156058,General government,22.358216
+IND,2007,G1112,Corporate income tax,Taxes,3.9380361,17.613373323005252,General government,22.358216
+IND,2007,G1113,Other income taxes,Taxes,0.06773279999999948,0.302943665908101,General government,22.358216
+IND,2007,G11412,VAT / sales tax,Taxes,4.9353905,22.074169246775963,General government,22.358216
+IND,2007,G1142,Excise taxes,Taxes,2.5233635,11.286068036589397,General government,22.358216
+IND,2007,G114X,Other goods & services taxes,Taxes,1.0472456000000014,4.683940737281371,General government,22.358216
+IND,2007,G115,Trade taxes (customs),Taxes,2.1254588,9.506388051411403,General government,22.358216
+IND,2007,G113,Property taxes,Taxes,0.8463539,3.785426752203073,General government,22.358216
+IND,2007,G11NEC,Other taxes,Taxes,0.37889954,1.6946769609184031,General government,22.358216
+IND,2007,G13,Grants (e.g. foreign aid),Grants,0.05558663,0.24861835724608097,General government,22.358216
+IND,2007,G14X,Other non-tax revenue,Other revenue,4.3448004,19.432679009504902,General government,22.358216
+IND,2008,G1111,Personal income tax,Taxes,1.9231613,9.557441432058274,General government,20.122135
+IND,2008,G1112,Corporate income tax,Taxes,3.8699528,19.232316722903025,General government,20.122135
+IND,2008,G1113,Other income taxes,Taxes,0.06445229999999924,0.32030546913118635,General government,20.122135
+IND,2008,G11412,VAT / sales tax,Taxes,5.0233309,24.964203923299923,General government,20.122135
+IND,2008,G1142,Excise taxes,Taxes,1.9697143,9.788793618162792,General government,20.122135
+IND,2008,G114X,Other goods & services taxes,Taxes,1.1051747999999992,5.492333598428124,General government,20.122135
+IND,2008,G115,Trade taxes (customs),Taxes,1.8113218,9.0016380935444,General government,20.122135
+IND,2008,G113,Property taxes,Taxes,0.75048738,3.729660730927178,General government,20.122135
+IND,2008,G11NEC,Other taxes,Taxes,0.29785242000000123,1.4802227247120845,General government,20.122135
+IND,2008,G13,Grants (e.g. foreign aid),Grants,0.05066964,0.2518104522400057,General government,20.122135
+IND,2008,G14X,Other non-tax revenue,Other revenue,3.2560177,16.181273234593004,General government,20.122135
+IND,2009,G1111,Personal income tax,Taxes,2.0783299,11.030236721656456,General government,18.842115
+IND,2009,G1112,Corporate income tax,Taxes,3.8440031,20.40112310936837,General government,18.842115
+IND,2009,G1113,Other income taxes,Taxes,0.06078779999999995,0.32261664704371895,General government,18.842115
+IND,2009,G11412,VAT / sales tax,Taxes,4.9332355,26.181962434683374,General government,18.842115
+IND,2009,G1142,Excise taxes,Taxes,1.6276206,8.63820537396133,General government,18.842115
+IND,2009,G114X,Other goods & services taxes,Taxes,0.9176599999999999,4.870260024645396,General government,18.842115
+IND,2009,G115,Trade taxes (customs),Taxes,1.3088067,6.946177179999194,General government,18.842115
+IND,2009,G113,Property taxes,Taxes,0.70871967,3.7613594114169486,General government,18.842115
+IND,2009,G11NEC,Other taxes,Taxes,0.03329977,0.1767305305460476,General government,18.842115
+IND,2009,G13,Grants (e.g. foreign aid),Grants,0.04933707,0.26184464807677316,General government,18.842115
+IND,2009,G14X,Other non-tax revenue,Other revenue,3.280315,17.409483918602383,General government,18.842115
+IND,2010,G1111,Personal income tax,Taxes,1.9200678,10.005364666249756,General government,19.190383
+IND,2010,G1112,Corporate income tax,Taxes,3.9123606,20.387089720929488,General government,19.190383
+IND,2010,G1113,Other income taxes,Taxes,0.05475170000000018,0.28530801078852974,General government,19.190383
+IND,2010,G11412,VAT / sales tax,Taxes,5.1839879,27.013467631156708,General government,19.190383
+IND,2010,G1142,Excise taxes,Taxes,1.8115075,9.439663085411063,General government,19.190383
+IND,2010,G114X,Other goods & services taxes,Taxes,0.9302021,4.847230511240969,General government,19.190383
+IND,2010,G115,Trade taxes (customs),Taxes,1.7789447,9.26998017705014,General government,19.190383
+IND,2010,G113,Property taxes,Taxes,0.79586402,4.14720237735745,General government,19.190383
+IND,2010,G11NEC,Other taxes,Taxes,0.034968679999997324,0.18221981291356884,General government,19.190383
+IND,2010,G13,Grants (e.g. foreign aid),Grants,0.03501225,0.18244685371834424,General government,19.190383
+IND,2010,G14X,Other non-tax revenue,Other revenue,2.7327157,14.240026892636795,General government,19.190383
+IND,2011,G1111,Personal income tax,Taxes,1.9498233,10.10719915249416,General government,19.29143
+IND,2011,G1112,Corporate income tax,Taxes,3.6950985,19.154092797835805,General government,19.29143
+IND,2011,G1113,Other income taxes,Taxes,0.05167649999999968,0.26787282570880205,General government,19.29143
+IND,2011,G11412,VAT / sales tax,Taxes,5.4917897,28.46750892838144,General government,19.29143
+IND,2011,G1142,Excise taxes,Taxes,1.6666953,8.639563043290128,General government,19.29143
+IND,2011,G114X,Other goods & services taxes,Taxes,1.1161322999999992,5.785637825043607,General government,19.29143
+IND,2011,G115,Trade taxes (customs),Taxes,1.7092761,8.860286954873565,General government,19.29143
+IND,2011,G113,Property taxes,Taxes,0.83673579,4.3373444493916615,General government,19.29143
+IND,2011,G11NEC,Other taxes,Taxes,0.040898510000002435,0.2120035110926711,General government,19.29143
+IND,2011,G13,Grants (e.g. foreign aid),Grants,0.0339044,0.17574850138770165,General government,19.29143
+IND,2011,G14X,Other non-tax revenue,Other revenue,2.6994001,13.992742010500466,General government,19.29143
+IND,2012,G1111,Personal income tax,Taxes,2.0262148,10.226025035343017,General government,19.814295
+IND,2012,G1112,Corporate income tax,Taxes,3.583323,18.08453413118908,General government,19.814295
+IND,2012,G1113,Other income taxes,Taxes,0.049447999999999936,0.24955719697025258,General government,19.814295
+IND,2012,G11412,VAT / sales tax,Taxes,5.7480074,29.009396030340383,General government,19.814295
+IND,2012,G1142,Excise taxes,Taxes,1.7752898,8.959641366645382,General government,19.814295
+IND,2012,G114X,Other goods & services taxes,Taxes,1.3334762000000002,6.729869412282487,General government,19.814295
+IND,2012,G115,Trade taxes (customs),Taxes,1.6627698,8.391768534516826,General government,19.814295
+IND,2012,G113,Property taxes,Taxes,0.8536351,4.308177940289223,General government,19.814295
+IND,2012,G11NEC,Other taxes,Taxes,0.03962190000000141,0.199966233267999,General government,19.814295
+IND,2012,G13,Grants (e.g. foreign aid),Grants,0.02324012,0.11728966195705212,General government,19.814295
+IND,2012,G14X,Other non-tax revenue,Other revenue,2.7192692,13.72377445719831,General government,19.814295
+IND,2013,G1111,Personal income tax,Taxes,2.1618955,11.029893329224995,General government,19.60033
+IND,2013,G1112,Corporate income tax,Taxes,3.5133943,17.925179247797647,General government,19.60033
+IND,2013,G1113,Other income taxes,Taxes,0.04632250000000049,0.23633530563481456,General government,19.60033
+IND,2013,G11412,VAT / sales tax,Taxes,5.5166596,28.145748451599545,General government,19.60033
+IND,2013,G1142,Excise taxes,Taxes,1.5150811,7.729875434832473,General government,19.60033
+IND,2013,G114X,Other goods & services taxes,Taxes,1.3778238999999999,7.029595391385368,General government,19.60033
+IND,2013,G115,Trade taxes (customs),Taxes,1.5318922,7.815644908771864,General government,19.60033
+IND,2013,G113,Property taxes,Taxes,0.77891738,3.9740013398794765,General government,19.60033
+IND,2013,G11NEC,Other taxes,Taxes,0.03683352000000083,0.18792295767297013,General government,19.60033
+IND,2013,G13,Grants (e.g. foreign aid),Grants,0.03220718,0.16431957966291558,General government,19.60033
+IND,2013,G14X,Other non-tax revenue,Other revenue,3.0893029,15.761484053537941,General government,19.60033
+IND,2014,G1111,Personal income tax,Taxes,2.131327,11.130009135985658,General government,19.149373
+IND,2014,G1112,Corporate income tax,Taxes,3.440218,17.965172763157558,General government,19.149373
+IND,2014,G1113,Other income taxes,Taxes,0.041225999999999985,0.21528641857403602,General government,19.149373
+IND,2014,G11412,VAT / sales tax,Taxes,5.4398375,28.407391767324942,General government,19.149373
+IND,2014,G1142,Excise taxes,Taxes,1.5235211,7.955984117813416,General government,19.149373
+IND,2014,G114X,Other goods & services taxes,Taxes,1.3472052000000003,7.035244326209627,General government,19.149373
+IND,2014,G115,Trade taxes (customs),Taxes,1.5079933,7.874896346738515,General government,19.149373
+IND,2014,G113,Property taxes,Taxes,0.76919716,4.0168268023509395,General government,19.149373
+IND,2014,G11NEC,Other taxes,Taxes,0.02569787,0.13419692420514157,General government,19.149373
+IND,2014,G13,Grants (e.g. foreign aid),Grants,0.01283289,0.06701467345982055,General government,19.149373
+IND,2014,G14X,Other non-tax revenue,Other revenue,2.9103173,15.197976724180338,General government,19.149373
+IND,2015,G1111,Personal income tax,Taxes,2.0885835,10.51976914751874,General government,19.853891
+IND,2015,G1112,Corporate income tax,Taxes,3.2909692,16.575940706030874,General government,19.853891
+IND,2015,G1113,Other income taxes,Taxes,0.03956389999999965,0.19927529570903582,General government,19.853891
+IND,2015,G11412,VAT / sales tax,Taxes,5.3517535,26.95569095246871,General government,19.853891
+IND,2015,G1142,Excise taxes,Taxes,2.0917493,10.535714636491155,General government,19.853891
+IND,2015,G114X,Other goods & services taxes,Taxes,1.5351147000000003,7.732059675355326,General government,19.853891
+IND,2015,G115,Trade taxes (customs),Taxes,1.5273017,7.692707187724562,General government,19.853891
+IND,2015,G113,Property taxes,Taxes,0.75995192,3.827722837805446,General government,19.853891
+IND,2015,G11NEC,Other taxes,Taxes,0.03599555,0.18130224448195068,General government,19.853891
+IND,2015,G13,Grants (e.g. foreign aid),Grants,0.01365828,0.06879397091481967,General government,19.853891
+IND,2015,G14X,Other non-tax revenue,Other revenue,3.1192491,15.711021582620758,General government,19.853891
+IND,2016,G1111,Personal income tax,Taxes,2.3688398,11.777752319296075,General government,20.112834
+IND,2016,G1112,Corporate income tax,Taxes,3.1505613,15.664432292196144,General government,20.112834
+IND,2016,G1113,Other income taxes,Taxes,0.038148400000000304,0.18967192571546543,General government,20.112834
+IND,2016,G11412,VAT / sales tax,Taxes,5.1602838,25.656671461563572,General government,20.112834
+IND,2016,G1142,Excise taxes,Taxes,2.4824727,12.342729381705842,General government,20.112834
+IND,2016,G114X,Other goods & services taxes,Taxes,1.653485199999999,8.221045234558169,General government,20.112834
+IND,2016,G115,Trade taxes (customs),Taxes,1.4642336,7.280095799805138,General government,20.112834
+IND,2016,G113,Property taxes,Taxes,0.73276312,3.643261370428945,General government,20.112834
+IND,2016,G11NEC,Other taxes,Taxes,0.02693708000000005,0.13392980666952004,General government,20.112834
+IND,2016,G13,Grants (e.g. foreign aid),Grants,0.00844613,0.04199373347094901,General government,20.112834
+IND,2016,G14X,Other non-tax revenue,Other revenue,3.0266631,15.048416674590174,General government,20.112834
+IND,2017,G1111,Personal income tax,Taxes,2.526571,12.630059052252458,General government,20.004427
+IND,2017,G1112,Corporate income tax,Taxes,3.3423093,16.70784784195361,General government,20.004427
+IND,2017,G1113,Other income taxes,Taxes,0.03340580000000015,0.1669920325562737,General government,20.004427
+IND,2017,G11412,VAT / sales tax,Taxes,8.1183103,40.5825676355461,General government,20.004427
+IND,2017,G1142,Excise taxes,Taxes,1.5133727,7.565188775247852,General government,20.004427
+IND,2017,G114X,Other goods & services taxes,Taxes,0.4753000000000005,2.375974024690222,General government,20.004427
+IND,2017,G115,Trade taxes (customs),Taxes,0.75500116,3.774170302484713,General government,20.004427
+IND,2017,G113,Property taxes,Taxes,0.72454509,3.621923655705528,General government,20.004427
+IND,2017,G11NEC,Other taxes,Taxes,0.1564776499999985,0.782215089090183,General government,20.004427
+IND,2017,G13,Grants (e.g. foreign aid),Grants,0.02096075,0.10478055446670632,General government,20.004427
+IND,2017,G14X,Other non-tax revenue,Other revenue,2.3381737,11.688281036006359,General government,20.004427
+IND,2018,G1111,Personal income tax,Taxes,2.4417781,12.23835476744504,General government,19.951849
+IND,2018,G1112,Corporate income tax,Taxes,3.5110223,17.597478044303394,General government,19.951849
+IND,2018,G1113,Other income taxes,Taxes,0.03348849999999981,0.1678465965558381,General government,19.951849
+IND,2018,G11412,VAT / sales tax,Taxes,8.7563333,43.887326775267894,General government,19.951849
+IND,2018,G1142,Excise taxes,Taxes,1.2224811,6.1271568445537525,General government,19.951849
+IND,2018,G114X,Other goods & services taxes,Taxes,0.03652760000000077,0.1830787685430281,General government,19.951849
+IND,2018,G115,Trade taxes (customs),Taxes,0.6233593,3.124318405913381,General government,19.951849
+IND,2018,G113,Property taxes,Taxes,0.72983032,3.6579582625456184,General government,19.951849
+IND,2018,G11NEC,Other taxes,Taxes,0.03454764,0.1731550769080839,General government,19.951849
+IND,2018,G13,Grants (e.g. foreign aid),Grants,0.00562544,0.02819508064347699,General government,19.951849
+IND,2018,G14X,Other non-tax revenue,Other revenue,2.5568557,12.815131377320498,General government,19.951849
+IND,2019,G1111,Personal income tax,Taxes,2.4505772,12.795568450218557,General government,19.151765
+IND,2019,G1112,Corporate income tax,Taxes,2.7700326,14.463589126119707,General government,19.151765
+IND,2019,G1113,Other income taxes,Taxes,0.032156599999999536,0.16790410701050026,General government,19.151765
+IND,2019,G11412,VAT / sales tax,Taxes,8.3372318,43.53244622623554,General government,19.151765
+IND,2019,G1142,Excise taxes,Taxes,1.1968758,6.249428185861721,General government,19.151765
+IND,2019,G114X,Other goods & services taxes,Taxes,0.029989700000000674,0.1565897451227115,General government,19.151765
+IND,2019,G115,Trade taxes (customs),Taxes,0.54359943,2.83837771610084,General government,19.151765
+IND,2019,G113,Property taxes,Taxes,0.712456,3.7200540002448856,General government,19.151765
+IND,2019,G11NEC,Other taxes,Taxes,0.02912415,0.1520703183231415,General government,19.151765
+IND,2019,G14X,Other non-tax revenue,Other revenue,3.0478663,15.914284140391237,General government,19.151765
+IND,2020,G1111,Personal income tax,Taxes,2.4536192,13.514968126216663,General government,18.154827
+IND,2020,G1112,Corporate income tax,Taxes,2.305413,12.698622187487585,General government,18.154827
+IND,2020,G1113,Other income taxes,Taxes,0.03231539999999988,0.17799893356961846,General government,18.154827
+IND,2020,G11412,VAT / sales tax,Taxes,7.9273147,43.66505018259917,General government,18.154827
+IND,2020,G1142,Excise taxes,Taxes,1.973139,10.868398280220102,General government,18.154827
+IND,2020,G114X,Other goods & services taxes,Taxes,0.008134399999999209,0.04480571260849529,General government,18.154827
+IND,2020,G115,Trade taxes (customs),Taxes,0.67870112,3.738405700455699,General government,18.154827
+IND,2020,G113,Property taxes,Taxes,0.70686676,3.893547022652107,General government,18.154827
+IND,2020,G11NEC,Other taxes,Taxes,0.026876420000001365,0.14804007062172914,General government,18.154827
+IND,2020,G13,Grants (e.g. foreign aid),Grants,0.00882437,0.0486061892912896,General government,18.154827
+IND,2020,G14X,Other non-tax revenue,Other revenue,2.0336235,11.201557594277537,General government,18.154827
+IND,2021,G1111,Personal income tax,Taxes,2.9505624,14.436461488464825,General government,20.438266
+IND,2021,G1112,Corporate income tax,Taxes,3.0174384,14.763671242951826,General government,20.438266
+IND,2021,G1113,Other income taxes,Taxes,0.02949199999999985,0.144297955609345,General government,20.438266
+IND,2021,G11412,VAT / sales tax,Taxes,8.3701603,40.95337784526339,General government,20.438266
+IND,2021,G1142,Excise taxes,Taxes,1.6724046,8.182712760466078,General government,20.438266
+IND,2021,G115,Trade taxes (customs),Taxes,0.84639833,4.141243342267881,General government,20.438266
+IND,2021,G113,Property taxes,Taxes,0.79896479,3.9091613251339425,General government,20.438266
+IND,2021,G11NEC,Other taxes,Taxes,0.031885079999999615,0.15600677670013502,General government,20.438266
+IND,2021,G13,Grants (e.g. foreign aid),Grants,0.00553451,0.027079156323731184,General government,20.438266
+IND,2021,G14X,Other non-tax revenue,Other revenue,2.7111368,13.265003988107406,General government,20.438266
+IND,2022,G1111,Personal income tax,Taxes,3.0987186,15.391434661151807,General government,20.132747
+IND,2022,G1112,Corporate income tax,Taxes,3.0711029,15.254266593624807,General government,20.132747
+IND,2022,G1113,Other income taxes,Taxes,0.02889919999999968,0.14354325318844807,General government,20.132747
+IND,2022,G11412,VAT / sales tax,Taxes,8.8381198,43.89922448238186,General government,20.132747
+IND,2022,G1142,Excise taxes,Taxes,1.1862939,5.892359845380265,General government,20.132747
+IND,2022,G115,Trade taxes (customs),Taxes,0.79348557,3.941268273028018,General government,20.132747
+IND,2022,G113,Property taxes,Taxes,0.84426244,4.193478614716611,General government,20.132747
+IND,2022,G11NEC,Other taxes,Taxes,0.04898018,0.24328612483929787,General government,20.132747
+IND,2022,G13,Grants (e.g. foreign aid),Grants,0.00701736,0.03485545216457546,General government,20.132747
+IND,2022,G14X,Other non-tax revenue,Other revenue,2.2142644,10.99832228557782,General government,20.132747
+IND,2023,G1111,Personal income tax,Taxes,3.4697088,16.9283625733134,General government,20.496423
+IND,2023,G1112,Corporate income tax,Taxes,3.0244538,14.756007914161412,General government,20.496423
+IND,2023,G1113,Other income taxes,Taxes,0.027778400000000314,0.1355280382337948,General government,20.496423
+IND,2023,G11412,VAT / sales tax,Taxes,8.7837227,42.85490546326059,General government,20.496423
+IND,2023,G1142,Excise taxes,Taxes,1.0137184,4.945830792036249,General government,20.496423
+IND,2023,G115,Trade taxes (customs),Taxes,0.77389141,3.7757388691675615,General government,20.496423
+IND,2023,G113,Property taxes,Taxes,0.82598453,4.029895996974692,General government,20.496423
+IND,2023,G11NEC,Other taxes,Taxes,0.04586905999999815,0.2237905609188401,General government,20.496423
+IND,2023,G13,Grants (e.g. foreign aid),Grants,0.00708762,0.0345797898491849,General government,20.496423
+IND,2023,G14X,Other non-tax revenue,Other revenue,2.5227974,12.308476459526622,General government,20.496423
+IND,2024,G1111,Personal income tax,Taxes,3.8012408,18.188126618663453,General government,20.899573
+IND,2024,G1112,Corporate income tax,Taxes,2.9635767,14.18008253087276,General government,20.899573
+IND,2024,G1113,Other income taxes,Taxes,0.027778400000000314,0.13291372029466972,General government,20.899573
+IND,2024,G11412,VAT / sales tax,Taxes,8.7256717,41.7504783470935,General government,20.899573
+IND,2024,G1142,Excise taxes,Taxes,0.90797338,4.344458999234099,General government,20.899573
+IND,2024,G114X,Other goods & services taxes,Taxes,0.026006919999999933,0.1244375662603247,General government,20.899573
+IND,2024,G115,Trade taxes (customs),Taxes,0.7106536,3.400325930103931,General government,20.899573
+IND,2024,G113,Property taxes,Taxes,0.82598453,3.9521598359928216,General government,20.899573
+IND,2024,G11NEC,Other taxes,Taxes,0.12491924,0.5977119245450613,General government,20.899573
+IND,2024,G13,Grants (e.g. foreign aid),Grants,0.00708862,0.0339175350616015,General government,20.899573
+IND,2024,G14X,Other non-tax revenue,Other revenue,2.7786788,13.295385508593881,General government,20.899573

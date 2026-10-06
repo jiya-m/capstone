@@ -1,0 +1,92 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+IND,2005,GF02,Defence,Government spending,14.14781323669118,2.214100266234964,Central government (budgetary),15.64977024500775
+IND,2005,GF03,Public order and safety,Government spending,6.482882375708103,1.014556197052418,Central government (budgetary),15.64977024500775
+IND,2005,GF04,Economic affairs,Government spending,17.1885225713381,2.68996429092571,Central government (budgetary),15.64977024500775
+IND,2005,GF06,Housing and community amenities,Government spending,6.572604764082896,1.028597544691407,Central government (budgetary),15.64977024500775
+IND,2005,GF09,Education,Government spending,3.208015200028148,0.502047008229331,Central government (budgetary),15.64977024500775
+IND,2005,GF07,Health (no breakdown),Health,1.600577038105626,0.2504866290578806,Central government (budgetary),15.64977024500775
+IND,2005,UNCL,Unclassified,Unclassified,50.79958481404595,,Central government (budgetary),15.64977024500775
+IND,2006,GF02,Defence,Government spending,12.82948322603526,2.006566963519742,Central government (budgetary),15.64027894317485
+IND,2006,GF03,Public order and safety,Government spending,6.118695111175229,0.9569809830702082,Central government (budgetary),15.64027894317485
+IND,2006,GF04,Economic affairs,Government spending,18.25585029965316,2.855265910314175,Central government (budgetary),15.64027894317485
+IND,2006,GF06,Housing and community amenities,Government spending,6.33960290696626,0.9915315785391444,Central government (budgetary),15.64027894317485
+IND,2006,GF09,Education,Government spending,3.739503122764623,0.5848687194891213,Central government (budgetary),15.64027894317485
+IND,2006,GF07,Health (no breakdown),Health,1.705949182190323,0.2668152107233767,Central government (budgetary),15.64027894317485
+IND,2006,UNCL,Unclassified,Unclassified,51.01091615121514,,Central government (budgetary),15.64027894317485
+IND,2007,GF02,Defence,Government spending,11.84816457121557,1.868715118011864,Central government (budgetary),15.77219076237175
+IND,2007,GF03,Public order and safety,Government spending,6.606042250713799,1.041917585625457,Central government (budgetary),15.77219076237175
+IND,2007,GF04,Economic affairs,Government spending,19.23479147737715,3.033748004556348,Central government (budgetary),15.77219076237175
+IND,2007,GF06,Housing and community amenities,Government spending,6.679557767923937,1.053512593239784,Central government (budgetary),15.77219076237175
+IND,2007,GF09,Education,Government spending,2.250377284740612,0.354933798222371,Central government (budgetary),15.77219076237175
+IND,2007,GF07,Health (no breakdown),Health,1.913344878375825,0.3017764041595048,Central government (budgetary),15.77219076237175
+IND,2007,UNCL,Unclassified,Unclassified,51.46772176965311,,Central government (budgetary),15.77219076237175
+IND,2008,GF02,Defence,Government spending,11.61292425140492,2.067916179284205,Central government (budgetary),17.8070237479938
+IND,2008,GF03,Public order and safety,Government spending,6.402242169820736,1.140048783584052,Central government (budgetary),17.8070237479938
+IND,2008,GF04,Economic affairs,Government spending,22.99211940857883,4.094212163252723,Central government (budgetary),17.8070237479938
+IND,2008,GF06,Housing and community amenities,Government spending,8.742792079893595,1.556831061904373,Central government (budgetary),17.8070237479938
+IND,2008,GF09,Education,Government spending,2.399924228999517,0.4273550773918011,Central government (budgetary),17.8070237479938
+IND,2008,GF07,Health (no breakdown),Health,1.884192580552517,0.3355186202769239,Central government (budgetary),17.8070237479938
+IND,2008,UNCL,Unclassified,Unclassified,45.96580528074988,,Central government (budgetary),17.8070237479938
+IND,2009,GF02,Defence,Government spending,13.086420894915,2.222492739236084,Central government (budgetary),16.98319775195126
+IND,2009,GF03,Public order and safety,Government spending,7.845026914041546,1.332336434505475,Central government (budgetary),16.98319775195126
+IND,2009,GF04,Economic affairs,Government spending,20.0413421875289,3.403660775853267,Central government (budgetary),16.98319775195126
+IND,2009,GF06,Housing and community amenities,Government spending,9.154196185790125,1.554675240834316,Central government (budgetary),16.98319775195126
+IND,2009,GF09,Education,Government spending,2.456669317992638,0.417221008386202,Central government (budgetary),16.98319775195126
+IND,2009,GF07,Health (no breakdown),Health,1.847635078892362,0.3137875191827105,Central government (budgetary),16.98319775195126
+IND,2009,UNCL,Unclassified,Unclassified,45.568709420839426,,Central government (budgetary),16.98319775195126
+IND,2010,GF02,Defence,Government spending,12.06951187945627,2.015503368275728,Central government (budgetary),16.69912908165203
+IND,2010,GF03,Public order and safety,Government spending,7.071119861321369,1.18081543316039,Central government (budgetary),16.69912908165203
+IND,2010,GF04,Economic affairs,Government spending,22.51511895143895,3.75982877658829,Central government (budgetary),16.69912908165203
+IND,2010,GF06,Housing and community amenities,Government spending,7.954568629450384,1.328343683320519,Central government (budgetary),16.69912908165203
+IND,2010,GF09,Education,Government spending,3.17925468079599,0.5309078429805867,Central government (budgetary),16.69912908165203
+IND,2010,GF07,Health (no breakdown),Health,1.91757720273906,0.3202186923257279,Central government (budgetary),16.69912908165203
+IND,2010,UNCL,Unclassified,Unclassified,45.292848794797976,,Central government (budgetary),16.69912908165203
+IND,2011,GF02,Defence,Government spending,11.95204362212798,1.76130022560961,Central government (budgetary),14.73639388621996
+IND,2011,GF04,Economic affairs,Government spending,22.29598732348418,3.285624512810299,Central government (budgetary),14.73639388621996
+IND,2011,GF06,Housing and community amenities,Government spending,7.877149648133476,1.160807799155938,Central government (budgetary),14.73639388621996
+IND,2011,GF09,Education,Government spending,3.148312128132233,0.4639476759691999,Central government (budgetary),14.73639388621996
+IND,2011,GF07,Health (no breakdown),Health,1.898914107284336,0.2798314624104172,Central government (budgetary),14.73639388621996
+IND,2011,UNCL,Unclassified,Unclassified,52.827593170837794,,Central government (budgetary),14.73639388621996
+IND,2012,GF02,Defence,Government spending,11.84724198851646,1.942164177228301,Central government (budgetary),16.39338657141334
+IND,2012,GF03,Public order and safety,Government spending,6.286008735338862,1.030489711896911,Central government (budgetary),16.39338657141334
+IND,2012,GF04,Economic affairs,Government spending,21.55101339745792,3.532940936302357,Central government (budgetary),16.39338657141334
+IND,2012,GF06,Housing and community amenities,Government spending,7.407125680914757,1.214278746702789,Central government (budgetary),16.39338657141334
+IND,2012,GF09,Education,Government spending,3.582777150709133,0.5873385083080166,Central government (budgetary),16.39338657141334
+IND,2012,GF07,Health (no breakdown),Health,1.942508710801394,0.3184429621450501,Central government (budgetary),16.39338657141334
+IND,2012,UNCL,Unclassified,Unclassified,47.383324336261474,,Central government (budgetary),16.39338657141334
+IND,2013,GF02,Defence,Government spending,10.86708167463731,1.810403150570792,Central government (budgetary),16.65951545018836
+IND,2013,GF04,Economic affairs,Government spending,20.8321889444014,3.470541735804984,Central government (budgetary),16.65951545018836
+IND,2013,GF06,Housing and community amenities,Government spending,7.028560741670897,1.170924162684537,Central government (budgetary),16.65951545018836
+IND,2013,GF09,Education,Government spending,3.311923909268214,0.5517504753630207,Central government (budgetary),16.65951545018836
+IND,2013,GF07,Health (no breakdown),Health,1.875070132784739,0.3123775984731411,Central government (budgetary),16.65951545018836
+IND,2013,UNCL,Unclassified,Unclassified,56.08517459723744,,Central government (budgetary),16.65951545018836
+IND,2014,GF02,Defence,Government spending,11.31879973417527,1.750746517473588,Central government (budgetary),15.46759867291842
+IND,2014,GF04,Economic affairs,Government spending,18.17589254530928,2.811374114129336,Central government (budgetary),15.46759867291842
+IND,2014,GF06,Housing and community amenities,Government spending,7.023075981124298,1.086301207254435,Central government (budgetary),15.46759867291842
+IND,2014,GF09,Education,Government spending,3.8890398101938,0.6015410700708055,Central government (budgetary),15.46759867291842
+IND,2014,GF07,Health (no breakdown),Health,1.662033158640103,0.2570766187892807,Central government (budgetary),15.46759867291842
+IND,2014,UNCL,Unclassified,Unclassified,57.931158770557246,,Central government (budgetary),15.46759867291842
+IND,2015,GF02,Defence,Government spending,10.16692632359495,1.576989907688644,Central government (budgetary),15.51097999037168
+IND,2015,GF04,Economic affairs,Government spending,15.15388418052648,2.350515943005561,Central government (budgetary),15.51097999037168
+IND,2015,GF06,Housing and community amenities,Government spending,3.667529276942839,0.5688697322876269,Central government (budgetary),15.51097999037168
+IND,2015,GF09,Education,Government spending,3.178238252708609,0.4929758994239707,Central government (budgetary),15.51097999037168
+IND,2015,GF07,Health (no breakdown),Health,1.609904164123152,0.2497119127613026,Central government (budgetary),15.51097999037168
+IND,2015,UNCL,Unclassified,Unclassified,66.22351780210397,,Central government (budgetary),15.51097999037168
+IND,2016,GF02,Defence,Government spending,10.3541479617059,1.612580051417423,Central government (budgetary),15.57424191137154
+IND,2016,GF04,Economic affairs,Government spending,11.02528220427317,1.717104121904901,Central government (budgetary),15.57424191137154
+IND,2016,GF06,Housing and community amenities,Government spending,7.662602627889369,1.193392269974603,Central government (budgetary),15.57424191137154
+IND,2016,GF09,Education,Government spending,2.898959521661166,0.4514909688162493,Central government (budgetary),15.57424191137154
+IND,2016,GF07,Health (no breakdown),Health,1.794599949092582,0.2794953374130293,Central government (budgetary),15.57424191137154
+IND,2016,UNCL,Unclassified,Unclassified,66.26440773537782,,Central government (budgetary),15.57424191137154
+IND,2017,GF02,Defence,Government spending,9.662125667646881,1.535572766359821,Central government (budgetary),15.89270124587186
+IND,2017,GF04,Economic affairs,Government spending,13.98918805081903,2.223259863639874,Central government (budgetary),15.89270124587186
+IND,2017,GF06,Housing and community amenities,Government spending,7.648222486247588,1.215509150358923,Central government (budgetary),15.89270124587186
+IND,2017,GF09,Education,Government spending,3.386695993363939,0.5382374763312432,Central government (budgetary),15.89270124587186
+IND,2017,GF07,Health (no breakdown),Health,1.883273215813,0.2993029858326838,Central government (budgetary),15.89270124587186
+IND,2017,UNCL,Unclassified,Unclassified,63.43049458610956,,Central government (budgetary),15.89270124587186
+IND,2018,GF02,Defence,Government spending,9.254381085994636,1.47461833989694,Central government (budgetary),15.9342729264585
+IND,2018,GF04,Economic affairs,Government spending,14.01177144469994,2.232673903830067,Central government (budgetary),15.9342729264585
+IND,2018,GF06,Housing and community amenities,Government spending,7.679531134558073,1.223677450452839,Central government (budgetary),15.9342729264585
+IND,2018,GF09,Education,Government spending,2.670540672914885,0.4255312394343393,Central government (budgetary),15.9342729264585
+IND,2018,GF07,Health (no breakdown),Health,1.731846821792945,0.2759571992526854,Central government (budgetary),15.9342729264585
+IND,2018,UNCL,Unclassified,Unclassified,64.65192884003952,,Central government (budgetary),15.9342729264585

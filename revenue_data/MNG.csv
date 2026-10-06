@@ -1,0 +1,162 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+MNG,2008,G1111,Personal income tax,Taxes,1.7803592,5.377547752428628,Central government,33.107269
+MNG,2008,G1112,Corporate income tax,Taxes,3.8635839,11.669896118583504,Central government,33.107269
+MNG,2008,G1113,Other income taxes,Taxes,5.8705389,17.731873021601384,Central government,33.107269
+MNG,2008,G11412,VAT / sales tax,Taxes,5.6143019,16.957913079450922,Central government,33.107269
+MNG,2008,G1142,Excise taxes,Taxes,0.94614299,2.8578104403597893,Central government,33.107269
+MNG,2008,G114X,Other goods & services taxes,Taxes,1.77622741,5.36506774388428,Central government,33.107269
+MNG,2008,G115,Trade taxes (customs),Taxes,2.1483824,6.489156203128685,Central government,33.107269
+MNG,2008,G11NEC,Other taxes,Taxes,1.2651983000000024,3.8215121277445214,Central government,33.107269
+MNG,2008,G121,Social contributions,Social contributions,3.4986011,10.5674711496137,Central government,33.107269
+MNG,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,2.0807877,6.284987444902206,Central government,33.107269
+MNG,2008,G14X,Other non-tax revenue,Other revenue,4.2631452,12.876764918302381,Central government,33.107269
+MNG,2009,G1111,Personal income tax,Taxes,1.9457992,6.431336461484495,Central government,30.254974
+MNG,2009,G1112,Corporate income tax,Taxes,3.1165913,10.301087215595198,Central government,30.254974
+MNG,2009,G1113,Other income taxes,Taxes,2.8301784,9.354423383680006,Central government,30.254974
+MNG,2009,G11412,VAT / sales tax,Taxes,4.9457491,16.346895669493605,Central government,30.254974
+MNG,2009,G1142,Excise taxes,Taxes,1.0024548,3.3133553072846094,Central government,30.254974
+MNG,2009,G114X,Other goods & services taxes,Taxes,1.5275473000000008,5.048912882239955,Central government,30.254974
+MNG,2009,G115,Trade taxes (customs),Taxes,1.7598829,5.816838172568409,Central government,30.254974
+MNG,2009,G11NEC,Other taxes,Taxes,1.3162413,4.350495500667156,Central government,30.254974
+MNG,2009,G121,Social contributions,Social contributions,3.9990576,13.217851541133678,Central government,30.254974
+MNG,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,2.1451614,7.0902766984327705,Central government,30.254974
+MNG,2009,G14X,Other non-tax revenue,Other revenue,5.6663111,18.728527167420108,Central government,30.254974
+MNG,2010,G1111,Personal income tax,Taxes,1.6495986,5.154856927130804,Central government,32.000861
+MNG,2010,G1112,Corporate income tax,Taxes,4.0032709,12.50988496840757,Central government,32.000861
+MNG,2010,G1113,Other income taxes,Taxes,4.337292299999998,13.553673758965417,Central government,32.000861
+MNG,2010,G11412,VAT / sales tax,Taxes,5.935677,18.54849155464911,Central government,32.000861
+MNG,2010,G1142,Excise taxes,Taxes,1.0659175,3.33090256540285,Central government,32.000861
+MNG,2010,G114X,Other goods & services taxes,Taxes,1.6863430000000001,5.2696800876701415,Central government,32.000861
+MNG,2010,G115,Trade taxes (customs),Taxes,1.9814472,6.19185590037718,Central government,32.000861
+MNG,2010,G11NEC,Other taxes,Taxes,1.3239758,4.137313055420603,Central government,32.000861
+MNG,2010,G121,Social contributions,Social contributions,3.3957461,10.611421048952401,Central government,32.000861
+MNG,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,2.1709815,6.7841346518770225,Central government,32.000861
+MNG,2010,G14X,Other non-tax revenue,Other revenue,4.4506107,13.90778423118053,Central government,32.000861
+MNG,2011,G1111,Personal income tax,Taxes,1.7630293,5.197924261281247,Central government,33.917949
+MNG,2011,G1112,Corporate income tax,Taxes,4.786998,14.113465410305322,Central government,33.917949
+MNG,2011,G1113,Other income taxes,Taxes,0.423953,1.2499370171232937,Central government,33.917949
+MNG,2011,G11412,VAT / sales tax,Taxes,8.4591049,24.939906891186137,Central government,33.917949
+MNG,2011,G1142,Excise taxes,Taxes,0.68877805,2.030718455293391,Central government,33.917949
+MNG,2011,G114X,Other goods & services taxes,Taxes,1.5426800499999993,4.548270445244196,Central government,33.917949
+MNG,2011,G115,Trade taxes (customs),Taxes,2.5613226,7.55152559489962,Central government,33.917949
+MNG,2011,G11NEC,Other taxes,Taxes,1.4238470999999977,4.197916271411333,Central government,33.917949
+MNG,2011,G121,Social contributions,Social contributions,3.5931362,10.59361283903104,Central government,33.917949
+MNG,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,4.4328017,13.069191477350238,Central government,33.917949
+MNG,2011,G14X,Other non-tax revenue,Other revenue,4.242297700000001,12.507530157557584,Central government,33.917949
+MNG,2012,G1111,Personal income tax,Taxes,2.0794045,6.974110089346159,Central government,29.816055
+MNG,2012,G1112,Corporate income tax,Taxes,3.2801199,11.001186776721466,Central government,29.816055
+MNG,2012,G11412,VAT / sales tax,Taxes,7.7685663,26.05497709203984,Central government,29.816055
+MNG,2012,G1142,Excise taxes,Taxes,0.64937915,2.17795127490877,Central government,29.816055
+MNG,2012,G115,Trade taxes (customs),Taxes,1.9616584,6.579201708609674,Central government,29.816055
+MNG,2012,G11NEC,Other taxes,Taxes,2.6313317,8.825217487692454,Central government,29.816055
+MNG,2012,G121,Social contributions,Social contributions,4.0401683,13.550311401022034,Central government,29.816055
+MNG,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,3.3003338,11.068982130600444,Central government,29.816055
+MNG,2012,G14X,Other non-tax revenue,Other revenue,4.1046093,13.766439926408776,Central government,29.816055
+MNG,2013,G1111,Personal income tax,Taxes,2.3419226,7.500443089227656,Central government,31.22379
+MNG,2013,G1112,Corporate income tax,Taxes,3.4823455,11.152859722937906,Central government,31.22379
+MNG,2013,G11412,VAT / sales tax,Taxes,7.484476,23.97042766942436,Central government,31.22379
+MNG,2013,G1142,Excise taxes,Taxes,0.97944041,3.1368402416436822,Central government,31.22379
+MNG,2013,G115,Trade taxes (customs),Taxes,1.9892677,6.371000123184597,Central government,31.22379
+MNG,2013,G11NEC,Other taxes,Taxes,1.656947,5.306681217973,Central government,31.22379
+MNG,2013,G121,Social contributions,Social contributions,4.5593935,14.602306441786116,Central government,31.22379
+MNG,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,2.8424983,9.103629953601521,Central government,31.22379
+MNG,2013,G14X,Other non-tax revenue,Other revenue,5.887499000000001,18.855811540221158,Central government,31.22379
+MNG,2014,G1111,Personal income tax,Taxes,2.1585999,7.595843432106055,Central government,28.418172
+MNG,2014,G1112,Corporate income tax,Taxes,2.7949589,9.835111269842718,Central government,28.418172
+MNG,2014,G11412,VAT / sales tax,Taxes,6.1714223,21.716464243423637,Central government,28.418172
+MNG,2014,G1142,Excise taxes,Taxes,0.92700014,3.261997707393757,Central government,28.418172
+MNG,2014,G115,Trade taxes (customs),Taxes,1.5986325,5.625388093215553,Central government,28.418172
+MNG,2014,G11NEC,Other taxes,Taxes,1.5005133000000017,5.280118883815753,Central government,28.418172
+MNG,2014,G121,Social contributions,Social contributions,4.1282562,14.526817935468774,Central government,28.418172
+MNG,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,2.9844437,10.501884613788453,Central government,28.418172
+MNG,2014,G14X,Other non-tax revenue,Other revenue,6.1543457,21.656373820945298,Central government,28.418172
+MNG,2015,G1111,Personal income tax,Taxes,2.1067443,8.061214020807554,Central government,26.13433
+MNG,2015,G1112,Corporate income tax,Taxes,3.0072216,11.506786526298102,Central government,26.13433
+MNG,2015,G11412,VAT / sales tax,Taxes,4.5844016,17.541683845985766,Central government,26.13433
+MNG,2015,G1142,Excise taxes,Taxes,0.70247162,2.6879266137629503,Central government,26.13433
+MNG,2015,G115,Trade taxes (customs),Taxes,1.4002966,5.358073395622405,Central government,26.13433
+MNG,2015,G11NEC,Other taxes,Taxes,1.4159803000000017,5.418085264332886,Central government,26.13433
+MNG,2015,G121,Social contributions,Social contributions,4.4470959,17.016299425115708,Central government,26.13433
+MNG,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,2.8200146,10.790460537808034,Central government,26.13433
+MNG,2015,G14X,Other non-tax revenue,Other revenue,5.6501038,21.6194703702666,Central government,26.13433
+MNG,2016,G1111,Personal income tax,Taxes,2.1871318,8.970113009714543,Central government,24.382433
+MNG,2016,G1112,Corporate income tax,Taxes,2.1727101,8.910965097918739,Central government,24.382433
+MNG,2016,G11412,VAT / sales tax,Taxes,4.7666419,19.5494924082035,Central government,24.382433
+MNG,2016,G1142,Excise taxes,Taxes,0.71541486,2.934140568496653,Central government,24.382433
+MNG,2016,G115,Trade taxes (customs),Taxes,1.3726377,5.629617424242402,Central government,24.382433
+MNG,2016,G11NEC,Other taxes,Taxes,1.5594187,6.395664846746841,Central government,24.382433
+MNG,2016,G121,Social contributions,Social contributions,4.6372551,19.018836588574644,Central government,24.382433
+MNG,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,1.359295,5.574894829630263,Central government,24.382433
+MNG,2016,G14X,Other non-tax revenue,Other revenue,5.6119278999999995,23.016275226472413,Central government,24.382433
+MNG,2017,G1111,Personal income tax,Taxes,2.312509,8.125212962100914,Central government,28.460903
+MNG,2017,G1112,Corporate income tax,Taxes,3.4349218,12.068913519109765,Central government,28.460903
+MNG,2017,G11412,VAT / sales tax,Taxes,5.780733,20.311136822405665,Central government,28.460903
+MNG,2017,G1142,Excise taxes,Taxes,0.63904555,2.2453452878379747,Central government,28.460903
+MNG,2017,G115,Trade taxes (customs),Taxes,1.8291204,6.426782677742318,Central government,28.460903
+MNG,2017,G11NEC,Other taxes,Taxes,1.9804031999999994,6.958328703077965,Central government,28.460903
+MNG,2017,G121,Social contributions,Social contributions,4.7173927,16.57499292472385,Central government,28.460903
+MNG,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,3.1274556,10.98860275982281,Central government,28.460903
+MNG,2017,G14X,Other non-tax revenue,Other revenue,4.639322,16.300684343178744,Central government,28.460903
+MNG,2018,G1111,Personal income tax,Taxes,2.4843718,7.947487763692186,Central government,31.259838
+MNG,2018,G1112,Corporate income tax,Taxes,3.9190737,12.537088963800773,Central government,31.259838
+MNG,2018,G11412,VAT / sales tax,Taxes,6.741054,21.5645839239474,Central government,31.259838
+MNG,2018,G1142,Excise taxes,Taxes,2.3154672,7.407163146526863,Central government,31.259838
+MNG,2018,G115,Trade taxes (customs),Taxes,2.0946029,6.7006198176714795,Central government,31.259838
+MNG,2018,G11NEC,Other taxes,Taxes,1.5466624999999987,4.94776236524322,Central government,31.259838
+MNG,2018,G121,Social contributions,Social contributions,4.9746268,15.913795842448065,Central government,31.259838
+MNG,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,4.0296712,12.890889581705448,Central government,31.259838
+MNG,2018,G14X,Other non-tax revenue,Other revenue,3.1543079,10.090608594964568,Central government,31.259838
+MNG,2019,G1111,Personal income tax,Taxes,2.3648477,7.431536169925233,Central government,31.821788
+MNG,2019,G1112,Corporate income tax,Taxes,4.389632,13.794422778541401,Central government,31.821788
+MNG,2019,G11412,VAT / sales tax,Taxes,6.5706105,20.648149810763936,Central government,31.821788
+MNG,2019,G1142,Excise taxes,Taxes,2.2817764,7.170484529841726,Central government,31.821788
+MNG,2019,G115,Trade taxes (customs),Taxes,2.088252,6.5623339168601476,Central government,31.821788
+MNG,2019,G11NEC,Other taxes,Taxes,1.5892394000000012,4.9941863417971,Central government,31.821788
+MNG,2019,G121,Social contributions,Social contributions,5.3661651,16.863178983763078,Central government,31.821788
+MNG,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,3.8803549,12.19401900236392,Central government,31.821788
+MNG,2019,G14X,Other non-tax revenue,Other revenue,3.2909102000000003,10.34168846614346,Central government,31.821788
+MNG,2020,G1111,Personal income tax,Taxes,2.2128135,7.935812023622196,Central government,27.883895
+MNG,2020,G1112,Corporate income tax,Taxes,3.7443237,13.428266340020766,Central government,27.883895
+MNG,2020,G11412,VAT / sales tax,Taxes,5.897892,21.151607330498095,Central government,27.883895
+MNG,2020,G1142,Excise taxes,Taxes,2.0742812,7.4389937007043185,Central government,27.883895
+MNG,2020,G115,Trade taxes (customs),Taxes,1.9777773,7.092901809116332,Central government,27.883895
+MNG,2020,G11NEC,Other taxes,Taxes,1.4168416,5.081218369667442,Central government,27.883895
+MNG,2020,G121,Social contributions,Social contributions,4.2346505,15.186725114311592,Central government,27.883895
+MNG,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,3.3551076,12.032420822010623,Central government,27.883895
+MNG,2020,G14X,Other non-tax revenue,Other revenue,2.9702076999999996,10.652054490048629,Central government,27.883895
+MNG,2021,G1111,Personal income tax,Taxes,2.6345852,8.020965275771841,Central government,32.846236
+MNG,2021,G1112,Corporate income tax,Taxes,5.4608418,16.625471992434857,Central government,32.846236
+MNG,2021,G11412,VAT / sales tax,Taxes,6.5151604,19.835333218483036,Central government,32.846236
+MNG,2021,G1142,Excise taxes,Taxes,1.8986883,5.780535366179946,Central government,32.846236
+MNG,2021,G115,Trade taxes (customs),Taxes,2.1556752,6.5629291188011365,Central government,32.846236
+MNG,2021,G11NEC,Other taxes,Taxes,1.4845954,4.519834147694524,Central government,32.846236
+MNG,2021,G121,Social contributions,Social contributions,5.2485828,15.979251832817303,Central government,32.846236
+MNG,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,3.7277135,11.348982200889123,Central government,32.846236
+MNG,2021,G14X,Other non-tax revenue,Other revenue,3.7203935999999995,11.32669684692823,Central government,32.846236
+MNG,2022,G1111,Personal income tax,Taxes,2.4356495,7.081665954865543,Central government,34.393736
+MNG,2022,G1112,Corporate income tax,Taxes,5.1124181,14.864387181246066,Central government,34.393736
+MNG,2022,G11412,VAT / sales tax,Taxes,7.3279016,21.305919132175934,Central government,34.393736
+MNG,2022,G1142,Excise taxes,Taxes,1.5743375,4.577395998569635,Central government,34.393736
+MNG,2022,G115,Trade taxes (customs),Taxes,2.3314784,6.778787838637863,Central government,34.393736
+MNG,2022,G11NEC,Other taxes,Taxes,1.3946418000000012,4.054929641679728,Central government,34.393736
+MNG,2022,G121,Social contributions,Social contributions,5.641904,16.40387070365409,Central government,34.393736
+MNG,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,5.4780756,15.927538619452282,Central government,34.393736
+MNG,2022,G14X,Other non-tax revenue,Other revenue,3.0973296,9.005504929718875,Central government,34.393736
+MNG,2023,G1111,Personal income tax,Taxes,2.5837763,7.463186106064694,Central government,34.620285
+MNG,2023,G1112,Corporate income tax,Taxes,5.6425558,16.298409444058592,Central government,34.620285
+MNG,2023,G11412,VAT / sales tax,Taxes,6.7814998,19.588226382307365,Central government,34.620285
+MNG,2023,G1142,Excise taxes,Taxes,1.1216491,3.239860965904815,Central government,34.620285
+MNG,2023,G115,Trade taxes (customs),Taxes,2.0802224,6.008680748873095,Central government,34.620285
+MNG,2023,G11NEC,Other taxes,Taxes,1.5620267000000012,4.511882845562944,Central government,34.620285
+MNG,2023,G121,Social contributions,Social contributions,5.608684,16.200571427993733,Central government,34.620285
+MNG,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,6.0784062,17.557354597167524,Central government,34.620285
+MNG,2023,G14X,Other non-tax revenue,Other revenue,3.1614647,9.131827482067232,Central government,34.620285
+MNG,2024,G1111,Personal income tax,Taxes,3.1801319,8.17598442649604,Central government,38.896012
+MNG,2024,G1112,Corporate income tax,Taxes,8.1322502,20.907670838297403,Central government,38.896012
+MNG,2024,G11412,VAT / sales tax,Taxes,7.2701803,18.691325636719128,Central government,38.896012
+MNG,2024,G1142,Excise taxes,Taxes,1.3614628,3.500263196647187,Central government,38.896012
+MNG,2024,G115,Trade taxes (customs),Taxes,2.2216013,5.711642850626214,Central government,38.896012
+MNG,2024,G11NEC,Other taxes,Taxes,1.6855155000000024,4.333388963714904,Central government,38.896012
+MNG,2024,G121,Social contributions,Social contributions,5.8268025,14.980462444425086,Central government,38.896012
+MNG,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,5.8555055,15.05425664176442,Central government,38.896012
+MNG,2024,G14X,Other non-tax revenue,Other revenue,3.362562200000001,8.645005001309622,Central government,38.896012

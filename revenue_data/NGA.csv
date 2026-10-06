@@ -1,0 +1,186 @@
+iso3,year,code,label,group,pct_gdp,pct_revenue,coverage,total_pct_gdp
+NGA,2002,G1112,Corporate income tax,Taxes,0.55835924,3.7941669123134196,General government,14.716254
+NGA,2002,G1113,Other income taxes,Taxes,0.059970169999999934,0.4075097507830453,General government,14.716254
+NGA,2002,G11412,VAT / sales tax,Taxes,0.68053604,4.624383623712937,General government,14.716254
+NGA,2002,G1142,Excise taxes,Taxes,1.1367721,7.724602334262511,General government,14.716254
+NGA,2002,G115,Trade taxes (customs),Taxes,0.12532754,0.8516266435738333,General government,14.716254
+NGA,2002,G11NEC,Other taxes,Taxes,0.62681189,4.259316875068887,General government,14.716254
+NGA,2002,NONTAXRES,Resource (extractive) revenue,Other revenue,9.2490465,62.84919042577005,General government,14.716254
+NGA,2002,G14X,Other non-tax revenue,Other revenue,2.2794305,15.489203298611185,General government,14.716254
+NGA,2003,G1112,Corporate income tax,Taxes,0.61271689,4.106614684492739,General government,14.920243
+NGA,2003,G1113,Other income taxes,Taxes,0.051806110000000016,0.34722028320852427,General government,14.920243
+NGA,2003,G11412,VAT / sales tax,Taxes,0.72820037,4.880620040839817,General government,14.920243
+NGA,2003,G1142,Excise taxes,Taxes,1.0435019,6.993866654852741,General government,14.920243
+NGA,2003,G115,Trade taxes (customs),Taxes,0.20997385,1.4073085136750119,General government,14.920243
+NGA,2003,G11NEC,Other taxes,Taxes,0.74166986,4.970896653626888,General government,14.920243
+NGA,2003,NONTAXRES,Resource (extractive) revenue,Other revenue,11.24321,75.35540808551174,General government,14.920243
+NGA,2003,G14X,Other non-tax revenue,Other revenue,0.2891640000000013,1.9380649497464708,General government,14.920243
+NGA,2004,G1112,Corporate income tax,Taxes,0.53348882,3.1528607477217663,General government,16.920786
+NGA,2004,G1113,Other income taxes,Taxes,0.07145782,0.4223079235208105,General government,16.920786
+NGA,2004,G11412,VAT / sales tax,Taxes,0.64506683,3.8122746189213665,General government,16.920786
+NGA,2004,G1142,Excise taxes,Taxes,0.89026734,5.261382893206024,General government,16.920786
+NGA,2004,G115,Trade taxes (customs),Taxes,0.14348961,0.8480079471485544,General government,16.920786
+NGA,2004,G11NEC,Other taxes,Taxes,0.64201349,3.794229712496807,General government,16.920786
+NGA,2004,NONTAXRES,Resource (extractive) revenue,Other revenue,13.753554,81.2820042756879,General government,16.920786
+NGA,2004,G14X,Other non-tax revenue,Other revenue,0.2414480000000001,1.4269313494065825,General government,16.920786
+NGA,2005,G1112,Corporate income tax,Taxes,0.5170975,3.205086883625218,General government,16.13365
+NGA,2005,G1113,Other income taxes,Taxes,0.06951355000000004,0.4308606545945898,General government,16.13365
+NGA,2005,G11412,VAT / sales tax,Taxes,0.58802013,3.6446813337341517,General government,16.13365
+NGA,2005,G1142,Excise taxes,Taxes,0.74217628,4.600175905638216,General government,16.13365
+NGA,2005,G115,Trade taxes (customs),Taxes,0.10203824,0.6324560158426643,General government,16.13365
+NGA,2005,G11NEC,Other taxes,Taxes,0.46395512,2.87569843153905,General government,16.13365
+NGA,2005,NONTAXRES,Resource (extractive) revenue,Other revenue,13.47649,83.53032326844826,General government,16.13365
+NGA,2005,G14X,Other non-tax revenue,Other revenue,0.17435899999999904,1.08071639089728,General government,16.13365
+NGA,2006,G1112,Corporate income tax,Taxes,0.60672125,4.053914777227913,General government,14.966305
+NGA,2006,G1113,Other income taxes,Taxes,0.07033712000000003,0.4699698422556538,General government,14.966305
+NGA,2006,G11412,VAT / sales tax,Taxes,0.56144502,3.751393680671348,General government,14.966305
+NGA,2006,G1142,Excise taxes,Taxes,0.44033594,2.9421820549561164,General government,14.966305
+NGA,2006,G115,Trade taxes (customs),Taxes,0.079281,0.5297299500444499,General government,14.966305
+NGA,2006,G11NEC,Other taxes,Taxes,0.36766566,2.4566227936688447,General government,14.966305
+NGA,2006,NONTAXRES,Resource (extractive) revenue,Other revenue,12.75781,85.24355209919882,General government,14.966305
+NGA,2006,G14X,Other non-tax revenue,Other revenue,0.08270900000000125,0.5526347351600897,General government,14.966305
+NGA,2007,G1112,Corporate income tax,Taxes,0.70383891,5.824156201886962,General government,12.084822
+NGA,2007,G1113,Other income taxes,Taxes,0.11133897999999998,0.921312535674915,General government,12.084822
+NGA,2007,G11412,VAT / sales tax,Taxes,0.6493317,5.373117618116344,General government,12.084822
+NGA,2007,G1142,Excise taxes,Taxes,0.51945629,4.298419041670618,General government,12.084822
+NGA,2007,G115,Trade taxes (customs),Taxes,0.085876,0.7106103838351943,General government,12.084822
+NGA,2007,G11NEC,Other taxes,Taxes,0.34034751000000046,2.816322077395931,General government,12.084822
+NGA,2007,NONTAXRES,Resource (extractive) revenue,Other revenue,9.152569,75.7360679371198,General government,12.084822
+NGA,2007,G14X,Other non-tax revenue,Other revenue,0.522063300000001,4.319991639099037,General government,12.084822
+NGA,2008,G1112,Corporate income tax,Taxes,0.75590565,5.302123625135566,General government,14.256658
+NGA,2008,G1113,Other income taxes,Taxes,0.10769189000000001,0.7553796088235359,General government,14.256658
+NGA,2008,G11412,VAT / sales tax,Taxes,0.73360379,5.145692437208255,General government,14.256658
+NGA,2008,G1142,Excise taxes,Taxes,0.51005206,3.577641042073258,General government,14.256658
+NGA,2008,G115,Trade taxes (customs),Taxes,0.12670807,0.8887641618267188,General government,14.256658
+NGA,2008,G11NEC,Other taxes,Taxes,0.32995188,2.314370395440086,General government,14.256658
+NGA,2008,NONTAXRES,Resource (extractive) revenue,Other revenue,11.484437,80.55490091796645,General government,14.256658
+NGA,2008,G14X,Other non-tax revenue,Other revenue,0.2083080000000006,1.461127811526138,General government,14.256658
+NGA,2009,G1112,Corporate income tax,Taxes,0.91090756,12.694199114100254,General government,7.1757781
+NGA,2009,G1113,Other income taxes,Taxes,0.2032604400000001,2.832590935330067,General government,7.1757781
+NGA,2009,G11412,VAT / sales tax,Taxes,0.75106446,10.46666228433123,General government,7.1757781
+NGA,2009,G1142,Excise taxes,Taxes,0.47705894,6.648184118179463,General government,7.1757781
+NGA,2009,G115,Trade taxes (customs),Taxes,0.11851186,1.651554135989796,General government,7.1757781
+NGA,2009,G11NEC,Other taxes,Taxes,0.3323895399999998,4.632104496096385,General government,7.1757781
+NGA,2009,NONTAXRES,Resource (extractive) revenue,Other revenue,4.2652946,59.44016858603808,General government,7.1757781
+NGA,2009,G14X,Other non-tax revenue,Other revenue,0.11729069999999986,1.6345363299347266,General government,7.1757781
+NGA,2010,G1112,Corporate income tax,Taxes,0.84145064,9.540169172892544,General government,8.8200809
+NGA,2010,G1113,Other income taxes,Taxes,0.11415067000000001,1.2942134110196049,General government,8.8200809
+NGA,2010,G11412,VAT / sales tax,Taxes,0.72057325,8.169689794829786,General government,8.8200809
+NGA,2010,G1142,Excise taxes,Taxes,0.39582916,4.487817788057004,General government,8.8200809
+NGA,2010,G115,Trade taxes (customs),Taxes,0.09833261,1.1148719723025762,General government,8.8200809
+NGA,2010,G11NEC,Other taxes,Taxes,0.2967291800000001,3.3642455554299455,General government,8.8200809
+NGA,2010,NONTAXRES,Resource (extractive) revenue,Other revenue,6.1564231,69.80007511064883,General government,8.8200809
+NGA,2010,G14X,Other non-tax revenue,Other revenue,0.19659230000000072,2.2289171948197097,General government,8.8200809
+NGA,2011,G1112,Corporate income tax,Taxes,0.79905037,6.346779218824256,General government,12.589856
+NGA,2011,G1113,Other income taxes,Taxes,0.14573389000000003,1.157550086023263,General government,12.589856
+NGA,2011,G11412,VAT / sales tax,Taxes,0.72390026,5.74986921871956,General government,12.589856
+NGA,2011,G1142,Excise taxes,Taxes,0.47046562,3.736862571238493,General government,12.589856
+NGA,2011,G115,Trade taxes (customs),Taxes,0.11687394,0.9283183156702787,General government,12.589856
+NGA,2011,G11NEC,Other taxes,Taxes,0.28491001,2.2630124440127735,General government,12.589856
+NGA,2011,NONTAXRES,Resource (extractive) revenue,Other revenue,9.8455226,78.20202653325167,General government,12.589856
+NGA,2011,G14X,Other non-tax revenue,Other revenue,0.20339939999999856,1.6155816122597044,General government,12.589856
+NGA,2012,G1112,Corporate income tax,Taxes,0.83001124,7.944511041038601,General government,10.447606
+NGA,2012,G1113,Other income taxes,Taxes,0.18398875999999997,1.7610613745989765,General government,10.447606
+NGA,2012,G11412,VAT / sales tax,Taxes,0.69461794,6.648584534389544,General government,10.447606
+NGA,2012,G1142,Excise taxes,Taxes,0.46453344,4.446314537874984,General government,10.447606
+NGA,2012,G115,Trade taxes (customs),Taxes,0.11540025,1.104561620471085,General government,10.447606
+NGA,2012,G11NEC,Other taxes,Taxes,0.57161172,5.471221836377861,General government,10.447606
+NGA,2012,NONTAXRES,Resource (extractive) revenue,Other revenue,7.3851976,70.6879389650817,General government,10.447606
+NGA,2012,G14X,Other non-tax revenue,Other revenue,0.20224540000000069,1.9358060901672531,General government,10.447606
+NGA,2013,G1112,Corporate income tax,Taxes,0.86389261,10.594401276430858,General government,8.1542372
+NGA,2013,G1113,Other income taxes,Taxes,0.2479414900000001,3.0406460336964454,General government,8.1542372
+NGA,2013,G11412,VAT / sales tax,Taxes,0.69740973,8.55272802218704,General government,8.1542372
+NGA,2013,G1142,Excise taxes,Taxes,0.37924423,4.6508854316869765,General government,8.1542372
+NGA,2013,G115,Trade taxes (customs),Taxes,0.09421255,1.155381523608364,General government,8.1542372
+NGA,2013,G11NEC,Other taxes,Taxes,0.58033909,7.117024876342816,General government,8.1542372
+NGA,2013,NONTAXRES,Resource (extractive) revenue,Other revenue,5.0612217,62.068610169937166,General government,8.1542372
+NGA,2013,G14X,Other non-tax revenue,Other revenue,0.22997569999999978,2.820321439754043,General government,8.1542372
+NGA,2014,G1112,Corporate income tax,Taxes,0.95112768,12.246472877678228,General government,7.7665438
+NGA,2014,G1113,Other income taxes,Taxes,0.17533601999999993,2.2575810362390527,General government,7.7665438
+NGA,2014,G11412,VAT / sales tax,Taxes,0.62570634,8.05643225755065,General government,7.7665438
+NGA,2014,G1142,Excise taxes,Taxes,0.44609879,5.7438521108964835,General government,7.7665438
+NGA,2014,G115,Trade taxes (customs),Taxes,0.11082068,1.4268982813178752,General government,7.7665438
+NGA,2014,G11NEC,Other taxes,Taxes,0.5576674199999999,7.1803808020756925,General government,7.7665438
+NGA,2014,NONTAXRES,Resource (extractive) revenue,Other revenue,4.639974,59.743099626889375,General government,7.7665438
+NGA,2014,G14X,Other non-tax revenue,Other revenue,0.2598128000000006,3.3452821060508358,General government,7.7665438
+NGA,2015,G1112,Corporate income tax,Taxes,0.75848215,14.730558918912726,General government,5.1490385
+NGA,2015,G1113,Other income taxes,Taxes,0.15372671000000004,2.9855420579978196,General government,5.1490385
+NGA,2015,G11412,VAT / sales tax,Taxes,0.57710807,11.208074478371058,General government,5.1490385
+NGA,2015,G1142,Excise taxes,Taxes,0.40731796,7.910563496466379,General government,5.1490385
+NGA,2015,G115,Trade taxes (customs),Taxes,0.10118668,1.9651567957784741,General government,5.1490385
+NGA,2015,G11NEC,Other taxes,Taxes,0.51259275,9.95511589202528,General government,5.1490385
+NGA,2015,NONTAXRES,Resource (extractive) revenue,Other revenue,1.984426,38.53973902117842,General government,5.1490385
+NGA,2015,G14X,Other non-tax revenue,Other revenue,0.6541980999999999,12.705247785581713,General government,5.1490385
+NGA,2016,G1112,Corporate income tax,Taxes,0.68428657,18.832309237045052,General government,3.6335776
+NGA,2016,G1113,Other income taxes,Taxes,0.1261450799999999,3.4716495390108055,General government,3.6335776
+NGA,2016,G11412,VAT / sales tax,Taxes,0.56144554,15.451590740761942,General government,3.6335776
+NGA,2016,G1142,Excise taxes,Taxes,0.37974514,10.450998487000799,General government,3.6335776
+NGA,2016,G115,Trade taxes (customs),Taxes,0.09433699,2.5962563727825705,General government,3.6335776
+NGA,2016,G11NEC,Other taxes,Taxes,0.5681912800000002,15.637240828433118,General government,3.6335776
+NGA,2016,NONTAXRES,Resource (extractive) revenue,Other revenue,0.92309755,25.404646649076657,General government,3.6335776
+NGA,2016,G14X,Other non-tax revenue,Other revenue,0.29632945,8.155308145889054,General government,3.6335776
+NGA,2017,G1112,Corporate income tax,Taxes,0.72240548,15.470634703030207,General government,4.6695271
+NGA,2017,G1113,Other income taxes,Taxes,0.09579598,2.0515135247849834,General government,4.6695271
+NGA,2017,G11412,VAT / sales tax,Taxes,0.59162729,12.669961589900614,General government,4.6695271
+NGA,2017,G1142,Excise taxes,Taxes,0.38814613,8.312322033638052,General government,4.6695271
+NGA,2017,G115,Trade taxes (customs),Taxes,0.09703653,2.078080454870901,General government,4.6695271
+NGA,2017,G11NEC,Other taxes,Taxes,0.5787745899999999,12.394715302112711,General government,4.6695271
+NGA,2017,NONTAXRES,Resource (extractive) revenue,Other revenue,1.849826,39.614846651173735,General government,4.6695271
+NGA,2017,G14X,Other non-tax revenue,Other revenue,0.3459150999999998,7.407925740488792,General government,4.6695271
+NGA,2018,G1112,Corporate income tax,Taxes,0.77996485,12.914636252232823,General government,6.0393869
+NGA,2018,G1113,Other income taxes,Taxes,0.0852672499999999,1.4118527494901825,General government,6.0393869
+NGA,2018,G11412,VAT / sales tax,Taxes,0.59970548,9.929906626780278,General government,6.0393869
+NGA,2018,G1142,Excise taxes,Taxes,0.38807491,6.425733545900163,General government,6.0393869
+NGA,2018,G115,Trade taxes (customs),Taxes,0.09701873,1.6064334278699712,General government,6.0393869
+NGA,2018,G11NEC,Other taxes,Taxes,0.6381291,10.56612385604903,General government,6.0393869
+NGA,2018,NONTAXRES,Resource (extractive) revenue,Other revenue,3.2336667,53.542963111040294,General government,6.0393869
+NGA,2018,G14X,Other non-tax revenue,Other revenue,0.21755980000000008,3.602349105999486,General government,6.0393869
+NGA,2019,G1112,Corporate income tax,Taxes,0.78797787,14.16761628470902,General government,5.5618239
+NGA,2019,G1113,Other income taxes,Taxes,0.10903249999999998,1.960373103577815,General government,5.5618239
+NGA,2019,G11412,VAT / sales tax,Taxes,0.57128904,10.271613219772002,General government,5.5618239
+NGA,2019,G1142,Excise taxes,Taxes,0.3979684,7.155357782623507,General government,5.5618239
+NGA,2019,G115,Trade taxes (customs),Taxes,0.12586537,2.26302328223117,General government,5.5618239
+NGA,2019,G11NEC,Other taxes,Taxes,0.6381291300000003,11.473378883007467,General government,5.5618239
+NGA,2019,NONTAXRES,Resource (extractive) revenue,Other revenue,2.6418034,47.49886804668722,General government,5.5618239
+NGA,2019,G14X,Other non-tax revenue,Other revenue,0.2897582000000001,5.2097693973918,General government,5.5618239
+NGA,2020,G1112,Corporate income tax,Taxes,0.6777507,14.396316511176448,General government,4.7078063
+NGA,2020,G1113,Other income taxes,Taxes,0.09378036000000001,1.9920182230605907,General government,4.7078063
+NGA,2020,G11412,VAT / sales tax,Taxes,0.69020784,14.660922553286087,General government,4.7078063
+NGA,2020,G1142,Excise taxes,Taxes,0.4110976,8.73225386057884,General government,4.7078063
+NGA,2020,G115,Trade taxes (customs),Taxes,0.1027744,2.18306346514471,General government,4.7078063
+NGA,2020,G11NEC,Other taxes,Taxes,0.48662414000000026,10.336536932265865,General government,4.7078063
+NGA,2020,G13,Grants (e.g. foreign aid),Grants,0.04339299,0.9217241950562566,General government,4.7078063
+NGA,2020,NONTAXRES,Resource (extractive) revenue,Other revenue,1.6870156,35.83443076767348,General government,4.7078063
+NGA,2020,G14X,Other non-tax revenue,Other revenue,0.5151626999999999,10.942733491757716,General government,4.7078063
+NGA,2021,G1112,Corporate income tax,Taxes,0.65078945,12.70620905237925,General government,5.1218222
+NGA,2021,G1113,Other income taxes,Taxes,0.060350870000000056,1.1783085462017924,General government,5.1218222
+NGA,2021,G11412,VAT / sales tax,Taxes,0.8396748,16.394063463712783,General government,5.1218222
+NGA,2021,G1142,Excise taxes,Taxes,0.52062401,10.164819833431512,General government,5.1218222
+NGA,2021,G115,Trade taxes (customs),Taxes,0.130156,2.5412049095471256,General government,5.1218222
+NGA,2021,G11NEC,Other taxes,Taxes,0.6780376800000001,13.238211694228028,General government,5.1218222
+NGA,2021,NONTAXRES,Resource (extractive) revenue,Other revenue,1.616864,31.568139270337166,General government,5.1218222
+NGA,2021,G14X,Other non-tax revenue,Other revenue,0.6253254999999998,12.209043230162347,General government,5.1218222
+NGA,2022,G1112,Corporate income tax,Taxes,0.96249618,14.559749766751883,General government,6.6106643
+NGA,2022,G1113,Other income taxes,Taxes,0.11769481999999987,1.7803781081426244,General government,6.6106643
+NGA,2022,G11412,VAT / sales tax,Taxes,0.89786882,13.582126988357283,General government,6.6106643
+NGA,2022,G1142,Excise taxes,Taxes,0.61496779,9.302662517592976,General government,6.6106643
+NGA,2022,G11NEC,Other taxes,Taxes,0.4376881000000003,6.6209397442856135,General government,6.6106643
+NGA,2022,G13,Grants (e.g. foreign aid),Grants,0.41752708,6.315962527396831,General government,6.6106643
+NGA,2022,NONTAXRES,Resource (extractive) revenue,Other revenue,2.4720874,37.39544602196787,General government,6.6106643
+NGA,2022,G14X,Other non-tax revenue,Other revenue,0.6903341000000003,10.442734174234204,General government,6.6106643
+NGA,2023,G1112,Corporate income tax,Taxes,1.2408227,17.02364859415477,General government,7.2888176
+NGA,2023,G1113,Other income taxes,Taxes,0.22910459999999988,3.143234083084061,General government,7.2888176
+NGA,2023,G11412,VAT / sales tax,Taxes,1.0818671,14.842833981017028,General government,7.2888176
+NGA,2023,G1142,Excise taxes,Taxes,0.60741552,8.333526105797217,General government,7.2888176
+NGA,2023,G115,Trade taxes (customs),Taxes,0.0766046,1.0509880187522267,General government,7.2888176
+NGA,2023,G13,Grants (e.g. foreign aid),Grants,0.49260141,6.758317123651234,General government,7.2888176
+NGA,2023,NONTAXRES,Resource (extractive) revenue,Other revenue,2.1860029,29.991186650117903,General government,7.2888176
+NGA,2023,G14X,Other non-tax revenue,Other revenue,1.3743987999999998,18.85626544342556,General government,7.2888176
+NGA,2024,G1112,Corporate income tax,Taxes,1.0774738,10.022634020621236,General government,10.750405
+NGA,2024,G1113,Other income taxes,Taxes,0.2825004,2.627811571732981,General government,10.750405
+NGA,2024,G11412,VAT / sales tax,Taxes,1.4556639,13.540548760192769,General government,10.750405
+NGA,2024,G1142,Excise taxes,Taxes,0.53312661,4.959130234706839,General government,10.750405
+NGA,2024,G115,Trade taxes (customs),Taxes,0.07476224,0.6954364645171417,General government,10.750405
+NGA,2024,G13,Grants (e.g. foreign aid),Grants,0.26902126,2.502428952561437,General government,10.750405
+NGA,2024,NONTAXRES,Resource (extractive) revenue,Other revenue,5.8176488,54.11562191387513,General government,10.750405
+NGA,2024,G14X,Other non-tax revenue,Other revenue,1.2402085000000005,11.536388081792465,General government,10.750405

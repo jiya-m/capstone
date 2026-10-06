@@ -1,0 +1,295 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+ZMB,2005,GF01,General public services,Government spending,22.75397348763782,5.7909093085297005,Central government (budgetary),25.45010132703146
+ZMB,2005,GF02,Defence,Government spending,7.467706826301296,1.900538954099325,Central government (budgetary),25.45010132703146
+ZMB,2005,GF03,Public order and safety,Government spending,5.443534599063648,1.385385071233714,Central government (budgetary),25.45010132703146
+ZMB,2005,GF04,Economic affairs,Government spending,24.59070276289833,6.258358770186749,Central government (budgetary),25.45010132703146
+ZMB,2005,GF05,Environmental protection,Government spending,0.02459251009439,0.0062588187378827,Central government (budgetary),25.45010132703146
+ZMB,2005,GF06,Housing and community amenities,Government spending,4.452913761915576,1.133271064412843,Central government (budgetary),25.45010132703146
+ZMB,2005,GF08,"Recreation, culture and religion",Government spending,2.930478852313939,0.7458098372811262,Central government (budgetary),25.45010132703146
+ZMB,2005,GF09,Education,Government spending,9.830922050063812,2.501979623122719,Central government (budgetary),25.45010132703146
+ZMB,2005,GF10,Social protection,Government spending,0.4055459260010169,0.1032118490949068,Central government (budgetary),25.45010132703146
+ZMB,2005,GF0170,Interest on public debt,Government spending,15.07193378650356,3.835822420608244,Central government (budgetary),25.45010132703146
+ZMB,2005,GF073,Hospital services,Health,4.934356363440837,1.255798694332518,Central government (budgetary),25.45010132703146
+ZMB,2005,GF07_rest,Health (not broken down),Health,1.2621980704522633,0.3212306878779372,Central government (budgetary),25.45010132703146
+ZMB,2005,UNCL,Unclassified,Unclassified,0.8311410033135189,,Central government (budgetary),25.45010132703146
+ZMB,2007,GF01,General public services,Government spending,21.138725351010226,4.2921412839225965,Central government (budgetary),20.30463621931429
+ZMB,2007,GF02,Defence,Government spending,8.369293940758633,1.699354688796154,Central government (budgetary),20.30463621931429
+ZMB,2007,GF03,Public order and safety,Government spending,4.283911042606758,0.8698325531603363,Central government (budgetary),20.30463621931429
+ZMB,2007,GF04,Economic affairs,Government spending,36.71785601379355,7.455427091132396,Central government (budgetary),20.30463621931429
+ZMB,2007,GF05,Environmental protection,Government spending,0.3306785524589105,0.0671430771320761,Central government (budgetary),20.30463621931429
+ZMB,2007,GF06,Housing and community amenities,Government spending,1.035055312283373,0.2101642158278265,Central government (budgetary),20.30463621931429
+ZMB,2007,GF08,"Recreation, culture and religion",Government spending,0.8633996599426546,0.1753101600701527,Central government (budgetary),20.30463621931429
+ZMB,2007,GF09,Education,Government spending,13.6280009846295,2.767116023893589,Central government (budgetary),20.30463621931429
+ZMB,2007,GF10,Social protection,Government spending,0.2269410292031369,0.0460795504120647,Central government (budgetary),20.30463621931429
+ZMB,2007,GF0170,Interest on public debt,Government spending,5.246662645628113,1.065315763849439,Central government (budgetary),20.30463621931429
+ZMB,2007,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),20.30463621931429
+ZMB,2007,GF072,Outpatient services,Health,4.415536174702543,0.8965585574055774,Central government (budgetary),20.30463621931429
+ZMB,2007,GF073,Hospital services,Health,0.0303470050684201,0.0061618489825995,Central government (budgetary),20.30463621931429
+ZMB,2007,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),20.30463621931429
+ZMB,2007,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),20.30463621931429
+ZMB,2007,GF0760,Other health,Health,3.713592287914004,0.7540314047294492,Central government (budgetary),20.30463621931429
+ZMB,2008,GF01,General public services,Government spending,27.404494273497853,5.042661892502332,Central government (budgetary),18.40085732718285
+ZMB,2008,GF02,Defence,Government spending,8.927237533431429,1.642688241785434,Central government (budgetary),18.40085732718285
+ZMB,2008,GF03,Public order and safety,Government spending,4.781530486811354,0.8798426029339087,Central government (budgetary),18.40085732718285
+ZMB,2008,GF04,Economic affairs,Government spending,21.94937722756328,4.038873587849081,Central government (budgetary),18.40085732718285
+ZMB,2008,GF05,Environmental protection,Government spending,0.2067251420254292,0.0380391984435153,Central government (budgetary),18.40085732718285
+ZMB,2008,GF06,Housing and community amenities,Government spending,0.9817453364447836,0.1806495586754759,Central government (budgetary),18.40085732718285
+ZMB,2008,GF08,"Recreation, culture and religion",Government spending,0.8886775698768488,0.1635242917317146,Central government (budgetary),18.40085732718285
+ZMB,2008,GF09,Education,Government spending,16.37887037579465,3.013852569654191,Central government (budgetary),18.40085732718285
+ZMB,2008,GF10,Social protection,Government spending,0.3133158516366287,0.0576528028431039,Central government (budgetary),18.40085732718285
+ZMB,2008,GF0170,Interest on public debt,Government spending,8.880591319842898,1.634104938574476,Central government (budgetary),18.40085732718285
+ZMB,2008,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),18.40085732718285
+ZMB,2008,GF072,Outpatient services,Health,5.006054222147237,0.9211568951387262,Central government (budgetary),18.40085732718285
+ZMB,2008,GF073,Hospital services,Health,0.0325949802587346,0.0059977558132331,Central government (budgetary),18.40085732718285
+ZMB,2008,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),18.40085732718285
+ZMB,2008,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.40085732718285
+ZMB,2008,GF0760,Other health,Health,4.2487856806692,0.7818129912377141,Central government (budgetary),18.40085732718285
+ZMB,2009,GF01,General public services,Government spending,19.0966880380444,3.4241689191510707,Central government (budgetary),17.93069516729521
+ZMB,2009,GF02,Defence,Government spending,8.521421738854192,1.527950155913572,Central government (budgetary),17.93069516729521
+ZMB,2009,GF03,Public order and safety,Government spending,5.698894380937793,1.021851379352071,Central government (budgetary),17.93069516729521
+ZMB,2009,GF04,Economic affairs,Government spending,30.6687783226462,5.499125152567203,Central government (budgetary),17.93069516729521
+ZMB,2009,GF05,Environmental protection,Government spending,0.3357389134597085,0.0602003211304494,Central government (budgetary),17.93069516729521
+ZMB,2009,GF06,Housing and community amenities,Government spending,1.130984405774699,0.2027933661891064,Central government (budgetary),17.93069516729521
+ZMB,2009,GF08,"Recreation, culture and religion",Government spending,2.419167244120522,0.4337735041303072,Central government (budgetary),17.93069516729521
+ZMB,2009,GF09,Education,Government spending,16.40449802734231,2.941440535007705,Central government (budgetary),17.93069516729521
+ZMB,2009,GF10,Social protection,Government spending,0.258470942478256,0.046345636791811,Central government (budgetary),17.93069516729521
+ZMB,2009,GF0170,Interest on public debt,Government spending,7.610600301907759,1.364633540536329,Central government (budgetary),17.93069516729521
+ZMB,2009,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),17.93069516729521
+ZMB,2009,GF072,Outpatient services,Health,5.143719832372682,0.9223047234024538,Central government (budgetary),17.93069516729521
+ZMB,2009,GF073,Hospital services,Health,0.0240206372710593,0.0043070672463153,Central government (budgetary),17.93069516729521
+ZMB,2009,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),17.93069516729521
+ZMB,2009,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),17.93069516729521
+ZMB,2009,GF0760,Other health,Health,2.687017214790133,0.4818008658767648,Central government (budgetary),17.93069516729521
+ZMB,2010,GF01,General public services,Government spending,20.60323110230343,3.764918201770419,Central government (budgetary),18.27343576876882
+ZMB,2010,GF02,Defence,Government spending,7.875561903383596,1.439135745844429,Central government (budgetary),18.27343576876882
+ZMB,2010,GF03,Public order and safety,Government spending,5.622429954361814,1.027411126354324,Central government (budgetary),18.27343576876882
+ZMB,2010,GF04,Economic affairs,Government spending,34.6301283194809,6.328114255102565,Central government (budgetary),18.27343576876882
+ZMB,2010,GF05,Environmental protection,Government spending,0.0902015441454411,0.0164829212318548,Central government (budgetary),18.27343576876882
+ZMB,2010,GF06,Housing and community amenities,Government spending,0.8852692589468272,0.1617691094143042,Central government (budgetary),18.27343576876882
+ZMB,2010,GF08,"Recreation, culture and religion",Government spending,0.8088676866317552,0.1478079171709801,Central government (budgetary),18.27343576876882
+ZMB,2010,GF09,Education,Government spending,13.4557634525607,2.45883029170115,Central government (budgetary),18.27343576876882
+ZMB,2010,GF10,Social protection,Government spending,0.1899254965373763,0.0347059136182727,Central government (budgetary),18.27343576876882
+ZMB,2010,GF0170,Interest on public debt,Government spending,8.6333685859042,1.577613063226269,Central government (budgetary),18.27343576876882
+ZMB,2010,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),18.27343576876882
+ZMB,2010,GF072,Outpatient services,Health,3.893929454672706,0.7115546977807871,Central government (budgetary),18.27343576876882
+ZMB,2010,GF073,Hospital services,Health,0.0166683519123677,0.0030458805804188,Central government (budgetary),18.27343576876882
+ZMB,2010,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),18.27343576876882
+ZMB,2010,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),18.27343576876882
+ZMB,2010,GF0760,Other health,Health,3.294654889158712,0.6020466449730189,Central government (budgetary),18.27343576876882
+ZMB,2011,GF01,General public services,Government spending,12.45147308206643,2.861811109142805,Central government (budgetary),22.98371518197799
+ZMB,2011,GF02,Defence,Government spending,6.734014936928058,1.547726813415399,Central government (budgetary),22.98371518197799
+ZMB,2011,GF03,Public order and safety,Government spending,5.618297862671369,1.291293578831544,Central government (budgetary),22.98371518197799
+ZMB,2011,GF04,Economic affairs,Government spending,51.58749982195298,11.85672402858108,Central government (budgetary),22.98371518197799
+ZMB,2011,GF05,Environmental protection,Government spending,0.2389884736617554,0.0549284301041743,Central government (budgetary),22.98371518197799
+ZMB,2011,GF06,Housing and community amenities,Government spending,1.401264659277775,0.3220626782341182,Central government (budgetary),22.98371518197799
+ZMB,2011,GF08,"Recreation, culture and religion",Government spending,1.718952820110666,0.395079220286814,Central government (budgetary),22.98371518197799
+ZMB,2011,GF09,Education,Government spending,13.15310838270727,3.023072968258309,Central government (budgetary),22.98371518197799
+ZMB,2011,GF10,Social protection,Government spending,0.2904287121682047,0.0667513080114268,Central government (budgetary),22.98371518197799
+ZMB,2011,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),22.98371518197799
+ZMB,2011,GF072,Outpatient services,Health,3.926654341394761,0.9024910500069456,Central government (budgetary),22.98371518197799
+ZMB,2011,GF073,Hospital services,Health,0.0189592613238619,0.0043575426232833,Central government (budgetary),22.98371518197799
+ZMB,2011,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),22.98371518197799
+ZMB,2011,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),22.98371518197799
+ZMB,2011,GF0760,Other health,Health,2.860357645736997,0.6574164544821222,Central government (budgetary),22.98371518197799
+ZMB,2012,GF01,General public services,Government spending,21.3558268313672,4.51901169259248,Central government (budgetary),21.16055598444451
+ZMB,2012,GF02,Defence,Government spending,6.997968337287214,1.480809007785362,Central government (budgetary),21.16055598444451
+ZMB,2012,GF03,Public order and safety,Government spending,5.506424243394217,1.165189984764459,Central government (budgetary),21.16055598444451
+ZMB,2012,GF04,Economic affairs,Government spending,32.15046148910873,6.803216402660126,Central government (budgetary),21.16055598444451
+ZMB,2012,GF05,Environmental protection,Government spending,0.0,0.0,Central government (budgetary),21.16055598444451
+ZMB,2012,GF06,Housing and community amenities,Government spending,1.257195606676014,0.2660295801846548,Central government (budgetary),21.16055598444451
+ZMB,2012,GF08,"Recreation, culture and religion",Government spending,0.7476232614973513,0.158201238801877,Central government (budgetary),21.16055598444451
+ZMB,2012,GF09,Education,Government spending,15.99721367230603,3.38509935507953,Central government (budgetary),21.16055598444451
+ZMB,2012,GF10,Social protection,Government spending,0.3115371610844822,0.0659229953836309,Central government (budgetary),21.16055598444451
+ZMB,2012,GF0170,Interest on public debt,Government spending,7.18414161651051,1.520204308763483,Central government (budgetary),21.16055598444451
+ZMB,2012,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),21.16055598444451
+ZMB,2012,GF072,Outpatient services,Health,4.355478147236576,0.9216433917362424,Central government (budgetary),21.16055598444451
+ZMB,2012,GF073,Hospital services,Health,0.0233593907091071,0.0049429769486257,Central government (budgetary),21.16055598444451
+ZMB,2012,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),21.16055598444451
+ZMB,2012,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),21.16055598444451
+ZMB,2012,GF0760,Other health,Health,4.112770242822563,0.8702850497440429,Central government (budgetary),21.16055598444451
+ZMB,2013,GF01,General public services,Government spending,28.62785734049229,6.377468702248713,Central government (budgetary),22.27714294645512
+ZMB,2013,GF02,Defence,Government spending,7.216669581897178,1.60766779873258,Central government (budgetary),22.27714294645512
+ZMB,2013,GF03,Public order and safety,Government spending,4.897531279921966,1.091030044075569,Central government (budgetary),22.27714294645512
+ZMB,2013,GF04,Economic affairs,Government spending,29.27257043093497,6.521092359001137,Central government (budgetary),22.27714294645512
+ZMB,2013,GF05,Environmental protection,Government spending,0.0196341512757658,0.0043739279460256,Central government (budgetary),22.27714294645512
+ZMB,2013,GF06,Housing and community amenities,Government spending,1.917803750622032,0.4272318829585478,Central government (budgetary),22.27714294645512
+ZMB,2013,GF08,"Recreation, culture and religion",Government spending,0.852045646356564,0.1898114266078992,Central government (budgetary),22.27714294645512
+ZMB,2013,GF09,Education,Government spending,14.09992135726514,3.141059636095711,Central government (budgetary),22.27714294645512
+ZMB,2013,GF10,Social protection,Government spending,0.2414376335719998,0.0537854067573729,Central government (budgetary),22.27714294645512
+ZMB,2013,GF0170,Interest on public debt,Government spending,8.09735392065005,1.8038591077836,Central government (budgetary),22.27714294645512
+ZMB,2013,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),22.27714294645512
+ZMB,2013,GF072,Outpatient services,Health,1.451244655712133,0.3232958464557824,Central government (budgetary),22.27714294645512
+ZMB,2013,GF073,Hospital services,Health,0.0181538893625913,0.0040441678836457,Central government (budgetary),22.27714294645512
+ZMB,2013,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),22.27714294645512
+ZMB,2013,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),22.27714294645512
+ZMB,2013,GF0760,Other health,Health,3.287776361937349,0.7324226399085448,Central government (budgetary),22.27714294645512
+ZMB,2014,GF01,General public services,Government spending,20.658404991836278,5.0546462969177455,Central government (budgetary),24.46774714173346
+ZMB,2014,GF02,Defence,Government spending,7.447475252293142,1.822229413174262,Central government (budgetary),24.46774714173346
+ZMB,2014,GF03,Public order and safety,Government spending,4.798930087394278,1.174190079292201,Central government (budgetary),24.46774714173346
+ZMB,2014,GF04,Economic affairs,Government spending,29.12062453536202,7.125160777405973,Central government (budgetary),24.46774714173346
+ZMB,2014,GF05,Environmental protection,Government spending,0.0131149453597194,0.0032089316683926,Central government (budgetary),24.46774714173346
+ZMB,2014,GF06,Housing and community amenities,Government spending,3.542869660987004,0.8668603902114898,Central government (budgetary),24.46774714173346
+ZMB,2014,GF08,"Recreation, culture and religion",Government spending,0.6564497191480374,0.1606184573937613,Central government (budgetary),24.46774714173346
+ZMB,2014,GF09,Education,Government spending,17.83346096035928,4.36344613440046,Central government (budgetary),24.46774714173346
+ZMB,2014,GF10,Social protection,Government spending,0.3841666701679567,0.0939969294595128,Central government (budgetary),24.46774714173346
+ZMB,2014,GF0170,Interest on public debt,Government spending,10.05730968993551,2.460797104194477,Central government (budgetary),24.46774714173346
+ZMB,2014,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),24.46774714173346
+ZMB,2014,GF072,Outpatient services,Health,1.460549990340809,0.3573636785152018,Central government (budgetary),24.46774714173346
+ZMB,2014,GF073,Hospital services,Health,0.0067769571887226,0.0016581687488401,Central government (budgetary),24.46774714173346
+ZMB,2014,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),24.46774714173346
+ZMB,2014,GF075,Health R&D,Health,0.2097408724252469,0.0513188663178751,Central government (budgetary),24.46774714173346
+ZMB,2014,GF0760,Other health,Health,3.810125667202002,0.9322519140332708,Central government (budgetary),24.46774714173346
+ZMB,2015,GF01,General public services,Government spending,22.20194764146394,6.2790050377083775,Central government (budgetary),28.28132531031568
+ZMB,2015,GF02,Defence,Government spending,6.966106370832686,1.970107204197818,Central government (budgetary),28.28132531031568
+ZMB,2015,GF03,Public order and safety,Government spending,4.124899165266375,1.16657615165148,Central government (budgetary),28.28132531031568
+ZMB,2015,GF04,Economic affairs,Government spending,30.8460145948427,8.723661732834916,Central government (budgetary),28.28132531031568
+ZMB,2015,GF05,Environmental protection,Government spending,0.0120331782970739,0.0034031422993658,Central government (budgetary),28.28132531031568
+ZMB,2015,GF06,Housing and community amenities,Government spending,3.823240264253234,1.08126301652843,Central government (budgetary),28.28132531031568
+ZMB,2015,GF08,"Recreation, culture and religion",Government spending,0.5453141486733968,0.1542220683495019,Central government (budgetary),28.28132531031568
+ZMB,2015,GF09,Education,Government spending,14.72770057411355,4.165188910094285,Central government (budgetary),28.28132531031568
+ZMB,2015,GF10,Social protection,Government spending,0.3827900800987076,0.1082581078083335,Central government (budgetary),28.28132531031568
+ZMB,2015,GF0170,Interest on public debt,Government spending,11.82421685207988,3.344045233333879,Central government (budgetary),28.28132531031568
+ZMB,2015,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),28.28132531031568
+ZMB,2015,GF072,Outpatient services,Health,1.311897091278486,0.3710218841210376,Central government (budgetary),28.28132531031568
+ZMB,2015,GF073,Hospital services,Health,0.0049669793533201,0.0014047275890086,Central government (budgetary),28.28132531031568
+ZMB,2015,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),28.28132531031568
+ZMB,2015,GF075,Health R&D,Health,0.0332234869555629,0.009396042425333,Central government (budgetary),28.28132531031568
+ZMB,2015,GF0760,Other health,Health,3.195649572491083,0.9037720513739156,Central government (budgetary),28.28132531031568
+ZMB,2016,GF01,General public services,Government spending,25.59871489189144,6.533526361211113,Central government (budgetary),25.52286858462827
+ZMB,2016,GF02,Defence,Government spending,6.81847153588338,1.7402695295838,Central government (budgetary),25.52286858462827
+ZMB,2016,GF03,Public order and safety,Government spending,3.946161938512454,1.007173725703153,Central government (budgetary),25.52286858462827
+ZMB,2016,GF04,Economic affairs,Government spending,22.86815682122474,5.836609613207896,Central government (budgetary),25.52286858462827
+ZMB,2016,GF05,Environmental protection,Government spending,0.2211966345546643,0.0564557263510074,Central government (budgetary),25.52286858462827
+ZMB,2016,GF06,Housing and community amenities,Government spending,0.8612843158037319,0.2198244640626012,Central government (budgetary),25.52286858462827
+ZMB,2016,GF08,"Recreation, culture and religion",Government spending,0.4343418306179677,0.1108564946366926,Central government (budgetary),25.52286858462827
+ZMB,2016,GF09,Education,Government spending,13.63569304554388,3.480220016617461,Central government (budgetary),25.52286858462827
+ZMB,2016,GF10,Social protection,Government spending,0.3462115731202359,0.088363124832252,Central government (budgetary),25.52286858462827
+ZMB,2016,GF0170,Interest on public debt,Government spending,18.20635895860753,4.646785071051097,Central government (budgetary),25.52286858462827
+ZMB,2016,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),25.52286858462827
+ZMB,2016,GF072,Outpatient services,Health,4.020598987293055,1.026172195841701,Central government (budgetary),25.52286858462827
+ZMB,2016,GF073,Hospital services,Health,0.004397061619517,0.0011222562587344,Central government (budgetary),25.52286858462827
+ZMB,2016,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),25.52286858462827
+ZMB,2016,GF075,Health R&D,Health,0.0115804386765301,0.0029556601449342,Central government (budgetary),25.52286858462827
+ZMB,2016,GF0760,Other health,Health,3.026831966650876,0.7725343451258225,Central government (budgetary),25.52286858462827
+ZMB,2017,GF01,General public services,Government spending,17.65448973147929,4.422206381958318,Central government (budgetary),25.04862190422413
+ZMB,2017,GF02,Defence,Government spending,6.542738163025503,1.638865744639637,Central government (budgetary),25.04862190422413
+ZMB,2017,GF03,Public order and safety,Government spending,3.924403364214718,0.9830089606987964,Central government (budgetary),25.04862190422413
+ZMB,2017,GF04,Economic affairs,Government spending,26.33638023554484,6.596900308460439,Central government (budgetary),25.04862190422413
+ZMB,2017,GF05,Environmental protection,Government spending,0.2494426366739383,0.0624819429283823,Central government (budgetary),25.04862190422413
+ZMB,2017,GF06,Housing and community amenities,Government spending,0.6302075729170502,0.1578583121517795,Central government (budgetary),25.04862190422413
+ZMB,2017,GF08,"Recreation, culture and religion",Government spending,0.4959071937976022,0.1242179179702094,Central government (budgetary),25.04862190422413
+ZMB,2017,GF09,Education,Government spending,15.04865282098928,3.769480146808964,Central government (budgetary),25.04862190422413
+ZMB,2017,GF10,Social protection,Government spending,0.831825480356949,0.2083608194776083,Central government (budgetary),25.04862190422413
+ZMB,2017,GF0170,Interest on public debt,Government spending,18.53678445507966,4.643209051353898,Central government (budgetary),25.04862190422413
+ZMB,2017,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),25.04862190422413
+ZMB,2017,GF072,Outpatient services,Health,4.075994311250051,1.02098040386271,Central government (budgetary),25.04862190422413
+ZMB,2017,GF073,Hospital services,Health,0.0051093277272,0.001279816184234,Central government (budgetary),25.04862190422413
+ZMB,2017,GF0740,Public health services,Health,0.1592632583532266,0.0398932514172473,Central government (budgetary),25.04862190422413
+ZMB,2017,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),25.04862190422413
+ZMB,2017,GF0760,Other health,Health,5.508801448590708,1.379878846311908,Central government (budgetary),25.04862190422413
+ZMB,2018,GF03,Public order and safety,Government spending,2.67379473363267,0.781557261208322,Central government (budgetary),29.23026406542746
+ZMB,2018,GF05,Environmental protection,Government spending,0.4279148225812619,0.1250806326156082,Central government (budgetary),29.23026406542746
+ZMB,2018,GF10,Social protection,Government spending,0.654758024687406,0.1913874996057055,Central government (budgetary),29.23026406542746
+ZMB,2018,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),29.23026406542746
+ZMB,2018,GF072,Outpatient services,Health,3.406010224573379,0.9955857827382576,Central government (budgetary),29.23026406542746
+ZMB,2018,GF073,Hospital services,Health,0.01803413930054,0.0052714265394748,Central government (budgetary),29.23026406542746
+ZMB,2018,GF0740,Public health services,Health,1.262582915393214,0.369056320214409,Central government (budgetary),29.23026406542746
+ZMB,2018,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),29.23026406542746
+ZMB,2018,GF0760,Other health,Health,1.166448562701252,0.340955995064959,Central government (budgetary),29.23026406542746
+ZMB,2018,UNCL,Unclassified,Unclassified,90.39045657713028,,Central government (budgetary),29.23026406542746
+ZMB,2019,GF01,General public services,Government spending,14.241096156406442,4.101055774754537,Central government (budgetary),28.79733223983358
+ZMB,2019,GF02,Defence,Government spending,5.246134986955589,1.510746921943751,Central government (budgetary),28.79733223983358
+ZMB,2019,GF03,Public order and safety,Government spending,2.697406330904522,0.77678106296888,Central government (budgetary),28.79733223983358
+ZMB,2019,GF04,Economic affairs,Government spending,28.45448256347221,8.194131880928607,Central government (budgetary),28.79733223983358
+ZMB,2019,GF05,Environmental protection,Government spending,0.2387701957627081,0.0687594465634881,Central government (budgetary),28.79733223983358
+ZMB,2019,GF06,Housing and community amenities,Government spending,0.6918890073439935,0.1992455761757364,Central government (budgetary),28.79733223983358
+ZMB,2019,GF08,"Recreation, culture and religion",Government spending,0.290999934837731,0.0838002180529206,Central government (budgetary),28.79733223983358
+ZMB,2019,GF09,Education,Government spending,10.52026468087349,3.029555572661008,Central government (budgetary),28.79733223983358
+ZMB,2019,GF10,Social protection,Government spending,0.2084514825115169,0.0600284659777001,Central government (budgetary),28.79733223983358
+ZMB,2019,GF0170,Interest on public debt,Government spending,32.019273123313,9.220696462100184,Central government (budgetary),28.79733223983358
+ZMB,2019,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),28.79733223983358
+ZMB,2019,GF072,Outpatient services,Health,4.266274664809713,1.2285732894891,Central government (budgetary),28.79733223983358
+ZMB,2019,GF073,Hospital services,Health,0.0028543490831182,0.0008219763887502,Central government (budgetary),28.79733223983358
+ZMB,2019,GF0740,Public health services,Health,0.1703158352174379,0.049046416924613,Central government (budgetary),28.79733223983358
+ZMB,2019,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),28.79733223983358
+ZMB,2019,GF0760,Other health,Health,0.951786688508526,0.2740891749043102,Central government (budgetary),28.79733223983358
+ZMB,2020,GF01,General public services,Government spending,27.312345319454174,7.222810598693801,Central government (budgetary),26.44522289907159
+ZMB,2020,GF02,Defence,Government spending,5.765096765454002,1.524592689971478,Central government (budgetary),26.44522289907159
+ZMB,2020,GF03,Public order and safety,Government spending,3.390589268054698,0.8966488895290649,Central government (budgetary),26.44522289907159
+ZMB,2020,GF04,Economic affairs,Government spending,7.269333190876991,1.922391365603614,Central government (budgetary),26.44522289907159
+ZMB,2020,GF05,Environmental protection,Government spending,0.3242097994780054,0.0857380041325915,Central government (budgetary),26.44522289907159
+ZMB,2020,GF06,Housing and community amenities,Government spending,3.835642881457319,1.01434430961376,Central government (budgetary),26.44522289907159
+ZMB,2020,GF08,"Recreation, culture and religion",Government spending,0.6966197652504136,0.1842226496794612,Central government (budgetary),26.44522289907159
+ZMB,2020,GF09,Education,Government spending,10.73522169754878,2.838953306626272,Central government (budgetary),26.44522289907159
+ZMB,2020,GF10,Social protection,Government spending,1.377715529497441,0.3643399426907229,Central government (budgetary),26.44522289907159
+ZMB,2020,GF0170,Interest on public debt,Government spending,31.2017724985351,8.251378285698829,Central government (budgetary),26.44522289907159
+ZMB,2020,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),26.44522289907159
+ZMB,2020,GF072,Outpatient services,Health,3.780637102728314,0.9997979088215052,Central government (budgetary),26.44522289907159
+ZMB,2020,GF073,Hospital services,Health,0.0054000227023992,0.0014280480402499,Central government (budgetary),26.44522289907159
+ZMB,2020,GF0740,Public health services,Health,0.3599417928765894,0.0951874094331286,Central government (budgetary),26.44522289907159
+ZMB,2020,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),26.44522289907159
+ZMB,2020,GF0760,Other health,Health,3.945474366085781,1.043389490537117,Central government (budgetary),26.44522289907159
+ZMB,2021,GF01,General public services,Government spending,31.04415418113071,8.415785845615451,Central government (budgetary),27.10908403724762
+ZMB,2021,GF02,Defence,Government spending,4.194852843080171,1.137186182469475,Central government (budgetary),27.10908403724762
+ZMB,2021,GF03,Public order and safety,Government spending,2.979476699157116,0.807708842244714,Central government (budgetary),27.10908403724762
+ZMB,2021,GF04,Economic affairs,Government spending,14.62281273270234,3.964110592317622,Central government (budgetary),27.10908403724762
+ZMB,2021,GF05,Environmental protection,Government spending,0.2715926757534139,0.0736262867090024,Central government (budgetary),27.10908403724762
+ZMB,2021,GF06,Housing and community amenities,Government spending,3.64992183048274,0.9894603763194126,Central government (budgetary),27.10908403724762
+ZMB,2021,GF08,"Recreation, culture and religion",Government spending,0.5205386811747127,0.1411132685260333,Central government (budgetary),27.10908403724762
+ZMB,2021,GF09,Education,Government spending,8.816287617153009,2.390014819099465,Central government (budgetary),27.10908403724762
+ZMB,2021,GF10,Social protection,Government spending,2.130168761342736,0.577469239647599,Central government (budgetary),27.10908403724762
+ZMB,2021,GF0170,Interest on public debt,Government spending,24.60974408127422,6.671476204344199,Central government (budgetary),27.10908403724762
+ZMB,2021,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),27.10908403724762
+ZMB,2021,GF072,Outpatient services,Health,6.69435666506764,1.814778774086274,Central government (budgetary),27.10908403724762
+ZMB,2021,GF073,Hospital services,Health,0.010282898413099,0.0027875995722718,Central government (budgetary),27.10908403724762
+ZMB,2021,GF0740,Public health services,Health,0.1667688869346162,0.0452095177070875,Central government (budgetary),27.10908403724762
+ZMB,2021,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),27.10908403724762
+ZMB,2021,GF0760,Other health,Health,0.2890414463334723,0.0783564885890169,Central government (budgetary),27.10908403724762
+ZMB,2022,GF01,General public services,Government spending,27.91326743453799,7.130271998005931,Central government (budgetary),25.54438320317675
+ZMB,2022,GF02,Defence,Government spending,5.121855821706645,1.308346478210963,Central government (budgetary),25.54438320317675
+ZMB,2022,GF03,Public order and safety,Government spending,3.053967528167399,0.7801171682956654,Central government (budgetary),25.54438320317675
+ZMB,2022,GF04,Economic affairs,Government spending,10.90989192063831,2.78686459926027,Central government (budgetary),25.54438320317675
+ZMB,2022,GF05,Environmental protection,Government spending,0.5180573653830578,0.1323345586257298,Central government (budgetary),25.54438320317675
+ZMB,2022,GF06,Housing and community amenities,Government spending,5.643117111691302,1.441499459614466,Central government (budgetary),25.54438320317675
+ZMB,2022,GF08,"Recreation, culture and religion",Government spending,0.2585891282104282,0.0660549978318258,Central government (budgetary),25.54438320317675
+ZMB,2022,GF09,Education,Government spending,10.58613422052734,2.704162691694132,Central government (budgetary),25.54438320317675
+ZMB,2022,GF10,Social protection,Government spending,2.671455662980146,0.6824068716546146,Central government (budgetary),25.54438320317675
+ZMB,2022,GF0170,Interest on public debt,Government spending,24.73404545754536,6.318159353323319,Central government (budgetary),25.54438320317675
+ZMB,2022,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),25.54438320317675
+ZMB,2022,GF072,Outpatient services,Health,7.039484920893751,1.798193003722943,Central government (budgetary),25.54438320317675
+ZMB,2022,GF073,Hospital services,Health,0.1577883485960286,0.0403060604153339,Central government (budgetary),25.54438320317675
+ZMB,2022,GF0740,Public health services,Health,0.8604863363838975,0.2198059271768793,Central government (budgetary),25.54438320317675
+ZMB,2022,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),25.54438320317675
+ZMB,2022,GF0760,Other health,Health,0.5318587427383455,0.135860035344681,Central government (budgetary),25.54438320317675
+ZMB,2023,GF01,General public services,Government spending,16.933441494592028,4.193522444378068,Central government (budgetary),24.76473814089909
+ZMB,2023,GF02,Defence,Government spending,4.63555167939961,1.147982234789364,Central government (budgetary),24.76473814089909
+ZMB,2023,GF03,Public order and safety,Government spending,4.909347376760287,1.215787022281784,Central government (budgetary),24.76473814089909
+ZMB,2023,GF04,Economic affairs,Government spending,9.959662302156536,2.466484288846909,Central government (budgetary),24.76473814089909
+ZMB,2023,GF05,Environmental protection,Government spending,0.5646594158307554,0.1398364257184171,Central government (budgetary),24.76473814089909
+ZMB,2023,GF06,Housing and community amenities,Government spending,6.351206821783478,1.572859738201598,Central government (budgetary),24.76473814089909
+ZMB,2023,GF08,"Recreation, culture and religion",Government spending,0.2801462913662588,0.0693774954682942,Central government (budgetary),24.76473814089909
+ZMB,2023,GF09,Education,Government spending,14.16743353250246,3.508527815610166,Central government (budgetary),24.76473814089909
+ZMB,2023,GF10,Social protection,Government spending,2.805149418353961,0.6946879079163123,Central government (budgetary),24.76473814089909
+ZMB,2023,GF0170,Interest on public debt,Government spending,30.72422259916649,7.608773272510522,Central government (budgetary),24.76473814089909
+ZMB,2023,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),24.76473814089909
+ZMB,2023,GF072,Outpatient services,Health,7.840844855003241,1.941764696375712,Central government (budgetary),24.76473814089909
+ZMB,2023,GF073,Hospital services,Health,0.012418064181727,0.0030753010767734,Central government (budgetary),24.76473814089909
+ZMB,2023,GF0740,Public health services,Health,0.3517482465891412,0.0871095321830048,Central government (budgetary),24.76473814089909
+ZMB,2023,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),24.76473814089909
+ZMB,2023,GF0760,Other health,Health,0.4641679023140231,0.1149499655421721,Central government (budgetary),24.76473814089909
+ZMB,2024,GF01,General public services,Government spending,19.874762639477478,4.428788231796133,Central government (budgetary),22.2834773533304
+ZMB,2024,GF02,Defence,Government spending,5.467640313397398,1.218380390997473,Central government (budgetary),22.2834773533304
+ZMB,2024,GF03,Public order and safety,Government spending,5.026532178540668,1.120086159662975,Central government (budgetary),22.2834773533304
+ZMB,2024,GF04,Economic affairs,Government spending,4.609280496144987,1.027107975509943,Central government (budgetary),22.2834773533304
+ZMB,2024,GF05,Environmental protection,Government spending,0.5585844706837514,0.1244720440240342,Central government (budgetary),22.2834773533304
+ZMB,2024,GF06,Housing and community amenities,Government spending,4.842853340294745,1.079156127339584,Central government (budgetary),22.2834773533304
+ZMB,2024,GF08,"Recreation, culture and religion",Government spending,0.2692889103952147,0.0600069333629478,Central government (budgetary),22.2834773533304
+ZMB,2024,GF09,Education,Government spending,14.60094108519404,3.253597400092328,Central government (budgetary),22.2834773533304
+ZMB,2024,GF10,Social protection,Government spending,5.574945901135941,1.242291807340049,Central government (budgetary),22.2834773533304
+ZMB,2024,GF0170,Interest on public debt,Government spending,30.81734134504661,6.867175279521987,Central government (budgetary),22.2834773533304
+ZMB,2024,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),22.2834773533304
+ZMB,2024,GF072,Outpatient services,Health,7.873230488361904,1.754429532849629,Central government (budgetary),22.2834773533304
+ZMB,2024,GF073,Hospital services,Health,0.0110447449806357,0.002461153246493,Central government (budgetary),22.2834773533304
+ZMB,2024,GF0740,Public health services,Health,0.3278643374255612,0.0730595753798717,Central government (budgetary),22.2834773533304
+ZMB,2024,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),22.2834773533304
+ZMB,2024,GF0760,Other health,Health,0.1456897489210694,0.0324647422069504,Central government (budgetary),22.2834773533304

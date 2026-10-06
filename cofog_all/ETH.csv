@@ -1,0 +1,248 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+ETH,2005,GF01,General public services,Government spending,30.130279758639606,6.1400665120308515,Central government (budgetary),20.37839197384233
+ETH,2005,GF02,Defence,Government spending,13.14911318339733,2.679577825596885,Central government (budgetary),20.37839197384233
+ETH,2005,GF03,Public order and safety,Government spending,1.834430426037667,0.3738274227053815,Central government (budgetary),20.37839197384233
+ETH,2005,GF04,Economic affairs,Government spending,27.48217224355458,5.60042478271805,Central government (budgetary),20.37839197384233
+ETH,2005,GF05,Environmental protection,Government spending,0.012342292923752,0.0025151608305619,Central government (budgetary),20.37839197384233
+ETH,2005,GF06,Housing and community amenities,Government spending,0.0,0.0,Central government (budgetary),20.37839197384233
+ETH,2005,GF08,"Recreation, culture and religion",Government spending,0.1897056134576705,0.0386589535067862,Central government (budgetary),20.37839197384233
+ETH,2005,GF09,Education,Government spending,8.971475589687328,1.828242461504066,Central government (budgetary),20.37839197384233
+ETH,2005,GF10,Social protection,Government spending,9.958859023587491,2.029455327949026,Central government (budgetary),20.37839197384233
+ETH,2005,GF0170,Interest on public debt,Government spending,5.092338635948071,1.037736727868914,Central government (budgetary),20.37839197384233
+ETH,2005,GF072,Outpatient services,Health,0.0050283415615286,0.0010246951531919,Central government (budgetary),20.37839197384233
+ETH,2005,GF073,Hospital services,Health,0.1727921009325288,0.0352122516278679,Central government (budgetary),20.37839197384233
+ETH,2005,GF0740,Public health services,Health,3.001462790272445,0.6116498523507438,Central government (budgetary),20.37839197384233
+ETH,2006,GF01,General public services,Government spending,0.0,0.0,Central government (budgetary),14.49494606878773
+ETH,2006,GF02,Defence,Government spending,13.33208530288139,1.932478574497433,Central government (budgetary),14.49494606878773
+ETH,2006,GF03,Public order and safety,Government spending,2.891270547001347,0.4190881064905894,Central government (budgetary),14.49494606878773
+ETH,2006,GF04,Economic affairs,Government spending,45.96392151968508,6.662445635378272,Central government (budgetary),14.49494606878773
+ETH,2006,GF05,Environmental protection,Government spending,0.016640406025907,0.0024120178790825,Central government (budgetary),14.49494606878773
+ETH,2006,GF06,Housing and community amenities,Government spending,0.0,0.0,Central government (budgetary),14.49494606878773
+ETH,2006,GF08,"Recreation, culture and religion",Government spending,0.639095593932492,0.0926365616685133,Central government (budgetary),14.49494606878773
+ETH,2006,GF09,Education,Government spending,17.92899746753821,2.598798513593982,Central government (budgetary),14.49494606878773
+ETH,2006,GF10,Social protection,Government spending,0.0691616875451761,0.0100249493099367,Central government (budgetary),14.49494606878773
+ETH,2006,GF0170,Interest on public debt,Government spending,12.62486804678034,1.829967814636426,Central government (budgetary),14.49494606878773
+ETH,2006,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),14.49494606878773
+ETH,2006,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),14.49494606878773
+ETH,2006,GF0740,Public health services,Health,6.533959428610058,0.9470938953334992,Central government (budgetary),14.49494606878773
+ETH,2007,GF01,General public services,Government spending,11.20966289748408,1.400947506304206,Central government (budgetary),12.49767739776222
+ETH,2007,GF02,Defence,Government spending,11.83760348322337,1.47942549495952,Central government (budgetary),12.49767739776222
+ETH,2007,GF03,Public order and safety,Government spending,2.567168865228252,0.3208364830320202,Central government (budgetary),12.49767739776222
+ETH,2007,GF04,Economic affairs,Government spending,40.81152086286424,5.100492218561198,Central government (budgetary),12.49767739776222
+ETH,2007,GF05,Environmental protection,Government spending,0.0147750726056302,0.0018465409095368,Central government (budgetary),12.49767739776222
+ETH,2007,GF06,Housing and community amenities,Government spending,0.0,0.0,Central government (budgetary),12.49767739776222
+ETH,2007,GF08,"Recreation, culture and religion",Government spending,0.5674551322599859,0.0709187118068979,Central government (budgetary),12.49767739776222
+ETH,2007,GF09,Education,Government spending,15.91921729052872,1.989532421219063,Central government (budgetary),12.49767739776222
+ETH,2007,GF10,Social protection,Government spending,0.0614088955171506,0.0076746856552623,Central government (budgetary),12.49767739776222
+ETH,2007,GF0170,Interest on public debt,Government spending,11.20966289748408,1.400947506304206,Central government (budgetary),12.49767739776222
+ETH,2007,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),12.49767739776222
+ETH,2007,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),12.49767739776222
+ETH,2007,GF0740,Public health services,Health,5.801524602804493,0.7250558290103118,Central government (budgetary),12.49767739776222
+ETH,2012,GF01,General public services,Government spending,33.862167024092884,2.8840291920794945,Central government (budgetary),8.516965822144552
+ETH,2012,GF02,Defence,Government spending,6.213088869511936,0.529166655515799,Central government (budgetary),8.516965822144552
+ETH,2012,GF03,Public order and safety,Government spending,1.84981814468299,0.1575483791544788,Central government (budgetary),8.516965822144552
+ETH,2012,GF04,Economic affairs,Government spending,38.1468825363907,3.248956947838025,Central government (budgetary),8.516965822144552
+ETH,2012,GF05,Environmental protection,Government spending,0.0073841899779259,0.0006289089366621,Central government (budgetary),8.516965822144552
+ETH,2012,GF06,Housing and community amenities,Government spending,2.937964948664169,0.250225470544314,Central government (budgetary),8.516965822144552
+ETH,2012,GF08,"Recreation, culture and religion",Government spending,0.3047942246207747,0.0259592199388218,Central government (budgetary),8.516965822144552
+ETH,2012,GF09,Education,Government spending,4.802865694153136,0.4090584296545283,Central government (budgetary),8.516965822144552
+ETH,2012,GF10,Social protection,Government spending,1.950683037572958,0.16613900760846,Central government (budgetary),8.516965822144552
+ETH,2012,GF0170,Interest on public debt,Government spending,3.975993527050487,0.3386340097895697,Central government (budgetary),8.516965822144552
+ETH,2012,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),8.516965822144552
+ETH,2012,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),8.516965822144552
+ETH,2012,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),8.516965822144552
+ETH,2012,GF0740,Public health services,Health,5.948357803282037,0.5066196010843996,Central government (budgetary),8.516965822144552
+ETH,2012,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),8.516965822144552
+ETH,2012,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),8.516965822144552
+ETH,2013,GF01,General public services,Government spending,46.42928671532348,6.658673802355693,Central government (budgetary),14.34153801065841
+ETH,2013,GF02,Defence,Government spending,5.251025096757967,0.7530777602007565,Central government (budgetary),14.34153801065841
+ETH,2013,GF03,Public order and safety,Government spending,1.348717476506942,0.193426829549636,Central government (budgetary),14.34153801065841
+ETH,2013,GF04,Economic affairs,Government spending,12.21398977226449,1.751673985807242,Central government (budgetary),14.34153801065841
+ETH,2013,GF05,Environmental protection,Government spending,0.0373008817539443,0.0053495201350526,Central government (budgetary),14.34153801065841
+ETH,2013,GF06,Housing and community amenities,Government spending,14.09577824597114,2.02155139504407,Central government (budgetary),14.34153801065841
+ETH,2013,GF08,"Recreation, culture and religion",Government spending,0.3566474219891421,0.0511487255886061,Central government (budgetary),14.34153801065841
+ETH,2013,GF09,Education,Government spending,13.80051811646686,1.979206551340895,Central government (budgetary),14.34153801065841
+ETH,2013,GF10,Social protection,Government spending,0.0756847942685693,0.0108543635383154,Central government (budgetary),14.34153801065841
+ETH,2013,GF0170,Interest on public debt,Government spending,2.524763487653289,0.3620899152610215,Central government (budgetary),14.34153801065841
+ETH,2013,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),14.34153801065841
+ETH,2013,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),14.34153801065841
+ETH,2013,GF073,Hospital services,Health,0.0,0.0,Central government (budgetary),14.34153801065841
+ETH,2013,GF0740,Public health services,Health,3.866287991044179,0.5544851618371224,Central government (budgetary),14.34153801065841
+ETH,2013,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),14.34153801065841
+ETH,2013,GF0760,Other health,Health,0.0,0.0,Central government (budgetary),14.34153801065841
+ETH,2014,GF01,General public services,Government spending,40.32872057065926,5.883148759142177,Central government (budgetary),14.58798760757712
+ETH,2014,GF02,Defence,Government spending,4.550218356396773,0.6637852899488605,Central government (budgetary),14.58798760757712
+ETH,2014,GF03,Public order and safety,Government spending,2.350212997268876,0.3428487807932505,Central government (budgetary),14.58798760757712
+ETH,2014,GF04,Economic affairs,Government spending,28.53017798641765,4.161978829078302,Central government (budgetary),14.58798760757712
+ETH,2014,GF05,Environmental protection,Government spending,0.0227823619566431,0.0033234881389484,Central government (budgetary),14.58798760757712
+ETH,2014,GF06,Housing and community amenities,Government spending,4.039902621390599,0.5893404937666439,Central government (budgetary),14.58798760757712
+ETH,2014,GF08,"Recreation, culture and religion",Government spending,0.4105765205076677,0.0598948519312799,Central government (budgetary),14.58798760757712
+ETH,2014,GF09,Education,Government spending,12.84650968005716,1.874047240132934,Central government (budgetary),14.58798760757712
+ETH,2014,GF10,Social protection,Government spending,0.0377641537815806,0.0055090300737633,Central government (budgetary),14.58798760757712
+ETH,2014,GF0170,Interest on public debt,Government spending,2.459875170437808,0.3588462850253341,Central government (budgetary),14.58798760757712
+ETH,2014,GF0712,Medical products,Health,0.0390354031412843,0.0056944797728183,Central government (budgetary),14.58798760757712
+ETH,2014,GF072,Outpatient services,Health,0.9059999940776567,0.132167166860698,Central government (budgetary),14.58798760757712
+ETH,2014,GF073,Hospital services,Health,0.2072858325462694,0.0302388315641128,Central government (budgetary),14.58798760757712
+ETH,2014,GF0740,Public health services,Health,2.966530924936392,0.4327571637046638,Central government (budgetary),14.58798760757712
+ETH,2014,GF075,Health R&D,Health,0.0597865335074985,0.0087216520990738,Central government (budgetary),14.58798760757712
+ETH,2014,GF0760,Other health,Health,0.2446208929169549,0.0356852655442698,Central government (budgetary),14.58798760757712
+ETH,2015,GF01,General public services,Government spending,45.13373313586843,6.446733412230413,Central government (budgetary),14.28362549320588
+ETH,2015,GF02,Defence,Government spending,4.728949412333662,0.6754654238209006,Central government (budgetary),14.28362549320588
+ETH,2015,GF03,Public order and safety,Government spending,2.56571375776904,0.3664769443873891,Central government (budgetary),14.28362549320588
+ETH,2015,GF04,Economic affairs,Government spending,24.09394244830326,3.441488505864198,Central government (budgetary),14.28362549320588
+ETH,2015,GF05,Environmental protection,Government spending,0.0682626508488107,0.0097503813989788,Central government (budgetary),14.28362549320588
+ETH,2015,GF06,Housing and community amenities,Government spending,1.091345703831545,0.1558837331714897,Central government (budgetary),14.28362549320588
+ETH,2015,GF08,"Recreation, culture and religion",Government spending,0.4450361226560076,0.0635672930696685,Central government (budgetary),14.28362549320588
+ETH,2015,GF09,Education,Government spending,14.15972854753304,2.022522596584181,Central government (budgetary),14.28362549320588
+ETH,2015,GF10,Social protection,Government spending,0.1878158015992969,0.0268269057175061,Central government (budgetary),14.28362549320588
+ETH,2015,GF0170,Interest on public debt,Government spending,2.879535590514651,0.4113020796926872,Central government (budgetary),14.28362549320588
+ETH,2015,GF0712,Medical products,Health,0.0379359960080633,0.0054186355969093,Central government (budgetary),14.28362549320588
+ETH,2015,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),14.28362549320588
+ETH,2015,GF073,Hospital services,Health,0.378324624552038,0.0540384725195903,Central government (budgetary),14.28362549320588
+ETH,2015,GF0740,Public health services,Health,3.746632749937026,0.5351549906068056,Central government (budgetary),14.28362549320588
+ETH,2015,GF075,Health R&D,Health,0.0417179733403291,0.005958839075288,Central government (budgetary),14.28362549320588
+ETH,2015,GF0760,Other health,Health,0.4413254849047981,0.0630372794698762,Central government (budgetary),14.28362549320588
+ETH,2016,GF01,General public services,Government spending,38.24431518650834,5.678352141996955,Central government (budgetary),14.8475717614631
+ETH,2016,GF02,Defence,Government spending,3.943981450366268,0.5855854761019248,Central government (budgetary),14.8475717614631
+ETH,2016,GF03,Public order and safety,Government spending,2.195699865577177,0.3260081132079202,Central government (budgetary),14.8475717614631
+ETH,2016,GF04,Economic affairs,Government spending,23.08975978026233,3.428268652923894,Central government (budgetary),14.8475717614631
+ETH,2016,GF05,Environmental protection,Government spending,0.1742932541602332,0.0258783159868299,Central government (budgetary),14.8475717614631
+ETH,2016,GF06,Housing and community amenities,Government spending,2.41863689873683,0.3591088491891764,Central government (budgetary),14.8475717614631
+ETH,2016,GF08,"Recreation, culture and religion",Government spending,0.4914374614725924,0.0729665297548557,Central government (budgetary),14.8475717614631
+ETH,2016,GF09,Education,Government spending,14.65725873916787,2.176247009561271,Central government (budgetary),14.8475717614631
+ETH,2016,GF10,Social protection,Government spending,8.038165391034479,1.193472374738935,Central government (budgetary),14.8475717614631
+ETH,2016,GF0170,Interest on public debt,Government spending,3.105782107577651,0.4611332271772728,Central government (budgetary),14.8475717614631
+ETH,2016,GF0712,Medical products,Health,0.0674582466651845,0.010015911582638,Central government (budgetary),14.8475717614631
+ETH,2016,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),14.8475717614631
+ETH,2016,GF073,Hospital services,Health,0.5471063740459639,0.0812320114980132,Central government (budgetary),14.8475717614631
+ETH,2016,GF0740,Public health services,Health,2.08358959358162,0.3093624601214083,Central government (budgetary),14.8475717614631
+ETH,2016,GF075,Health R&D,Health,0.0743692996089001,0.0110420351279289,Central government (budgetary),14.8475717614631
+ETH,2016,GF0760,Other health,Health,0.868146351234555,0.128898652494074,Central government (budgetary),14.8475717614631
+ETH,2017,GF01,General public services,Government spending,44.8427821995921,6.680078698094049,Central government (budgetary),14.89666423542028
+ETH,2017,GF02,Defence,Government spending,4.145589822834102,0.6175545964853507,Central government (budgetary),14.89666423542028
+ETH,2017,GF03,Public order and safety,Government spending,2.004725429977287,0.2986372161458021,Central government (budgetary),14.89666423542028
+ETH,2017,GF04,Economic affairs,Government spending,20.60321464758129,3.069191707753115,Central government (budgetary),14.89666423542028
+ETH,2017,GF05,Environmental protection,Government spending,0.1430637166931869,0.0213117215184969,Central government (budgetary),14.89666423542028
+ETH,2017,GF06,Housing and community amenities,Government spending,1.931043271082488,0.2876610323338349,Central government (budgetary),14.89666423542028
+ETH,2017,GF08,"Recreation, culture and religion",Government spending,0.4766690063933876,0.0710077813967369,Central government (budgetary),14.89666423542028
+ETH,2017,GF09,Education,Government spending,15.55606042867491,2.317334090318782,Central government (budgetary),14.89666423542028
+ETH,2017,GF10,Social protection,Government spending,4.315012399512082,0.6427929088720669,Central government (budgetary),14.89666423542028
+ETH,2017,GF0170,Interest on public debt,Government spending,3.171527330941109,0.4724517776248836,Central government (budgetary),14.89666423542028
+ETH,2017,GF0712,Medical products,Health,0.049907730009629,0.0074345869670545,Central government (budgetary),14.89666423542028
+ETH,2017,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),14.89666423542028
+ETH,2017,GF073,Hospital services,Health,0.5655225327811827,0.0842439928840573,Central government (budgetary),14.89666423542028
+ETH,2017,GF0740,Public health services,Health,1.915862067185988,0.2853995393624788,Central government (budgetary),14.89666423542028
+ETH,2017,GF075,Health R&D,Health,0.130144597027348,0.0193872036397048,Central government (budgetary),14.89666423542028
+ETH,2017,GF0760,Other health,Health,0.1488748197139182,0.0221773820238696,Central government (budgetary),14.89666423542028
+ETH,2018,GF01,General public services,Government spending,42.62967423737929,5.706213097187836,Central government (budgetary),13.38554234642595
+ETH,2018,GF02,Defence,Government spending,4.291720651519162,0.5744700851994049,Central government (budgetary),13.38554234642595
+ETH,2018,GF03,Public order and safety,Government spending,2.213340934447487,0.2962676880512481,Central government (budgetary),13.38554234642595
+ETH,2018,GF04,Economic affairs,Government spending,18.5974805177226,2.489373630068074,Central government (budgetary),13.38554234642595
+ETH,2018,GF05,Environmental protection,Government spending,0.4726379472832733,0.0632651525788808,Central government (budgetary),13.38554234642595
+ETH,2018,GF06,Housing and community amenities,Government spending,1.815556302813975,0.24302205773637,Central government (budgetary),13.38554234642595
+ETH,2018,GF08,"Recreation, culture and religion",Government spending,0.6090019127499692,0.0815182089216911,Central government (budgetary),13.38554234642595
+ETH,2018,GF09,Education,Government spending,15.72787525795738,2.105261402846934,Central government (budgetary),13.38554234642595
+ETH,2018,GF10,Social protection,Government spending,5.513271226299447,0.7379812546696295,Central government (budgetary),13.38554234642595
+ETH,2018,GF0170,Interest on public debt,Government spending,3.766963733801044,0.5042285257624467,Central government (budgetary),13.38554234642595
+ETH,2018,GF0712,Medical products,Health,0.0518251971855881,0.0069370837153956,Central government (budgetary),13.38554234642595
+ETH,2018,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),13.38554234642595
+ETH,2018,GF073,Hospital services,Health,0.5915975439358522,0.0791885397639493,Central government (budgetary),13.38554234642595
+ETH,2018,GF0740,Public health services,Health,3.157376243559984,0.4226319341177144,Central government (budgetary),13.38554234642595
+ETH,2018,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),13.38554234642595
+ETH,2018,GF0760,Other health,Health,0.5616782933449554,0.0751836858063715,Central government (budgetary),13.38554234642595
+ETH,2019,GF01,General public services,Government spending,44.61646262733132,5.534396281403593,Central government (budgetary),12.4043816015421
+ETH,2019,GF02,Defence,Government spending,4.055435192679679,0.5030516569032214,Central government (budgetary),12.4043816015421
+ETH,2019,GF03,Public order and safety,Government spending,1.950134071063087,0.2419020719163535,Central government (budgetary),12.4043816015421
+ETH,2019,GF04,Economic affairs,Government spending,18.37733885030681,2.279595239200506,Central government (budgetary),12.4043816015421
+ETH,2019,GF05,Environmental protection,Government spending,0.5055515810429326,0.0627105473051947,Central government (budgetary),12.4043816015421
+ETH,2019,GF06,Housing and community amenities,Government spending,1.946786577534897,0.2414868360450298,Central government (budgetary),12.4043816015421
+ETH,2019,GF08,"Recreation, culture and religion",Government spending,0.5415735743346604,0.0671788528135825,Central government (budgetary),12.4043816015421
+ETH,2019,GF09,Education,Government spending,14.91207543475489,1.849750741636814,Central government (budgetary),12.4043816015421
+ETH,2019,GF10,Social protection,Government spending,4.431197182409178,0.5496626080228159,Central government (budgetary),12.4043816015421
+ETH,2019,GF0170,Interest on public debt,Government spending,3.818173644404794,0.4736208290614776,Central government (budgetary),12.4043816015421
+ETH,2019,GF0712,Medical products,Health,0.0611887024056165,0.0075900801434246,Central government (budgetary),12.4043816015421
+ETH,2019,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),12.4043816015421
+ETH,2019,GF073,Hospital services,Health,0.3928813415503329,0.0487345008471612,Central government (budgetary),12.4043816015421
+ETH,2019,GF0740,Public health services,Health,4.078130547497774,0.5058668753206818,Central government (budgetary),12.4043816015421
+ETH,2019,GF075,Health R&D,Health,0.0,0.0,Central government (budgetary),12.4043816015421
+ETH,2019,GF0760,Other health,Health,0.3130706726840201,0.0388344809222406,Central government (budgetary),12.4043816015421
+ETH,2020,GF01,General public services,Government spending,52.10475513002851,5.603706645285536,Central government (budgetary),10.75469336973443
+ETH,2020,GF02,Defence,Government spending,4.200955722183554,0.4517999065191538,Central government (budgetary),10.75469336973443
+ETH,2020,GF03,Public order and safety,Government spending,2.238295894205609,0.2407218601291686,Central government (budgetary),10.75469336973443
+ETH,2020,GF04,Economic affairs,Government spending,14.15541509625474,1.522371488815294,Central government (budgetary),10.75469336973443
+ETH,2020,GF05,Environmental protection,Government spending,0.3224736151366592,0.0346810485062452,Central government (budgetary),10.75469336973443
+ETH,2020,GF06,Housing and community amenities,Government spending,0.8470485456211411,0.0910974737743487,Central government (budgetary),10.75469336973443
+ETH,2020,GF08,"Recreation, culture and religion",Government spending,0.3072835897588588,0.0330474078540779,Central government (budgetary),10.75469336973443
+ETH,2020,GF09,Education,Government spending,14.34522340475201,1.542784790384456,Central government (budgetary),10.75469336973443
+ETH,2020,GF10,Social protection,Government spending,1.997633157648855,0.2148393207572779,Central government (budgetary),10.75469336973443
+ETH,2020,GF0170,Interest on public debt,Government spending,3.728871326797542,0.4010286773490235,Central government (budgetary),10.75469336973443
+ETH,2020,GF0712,Medical products,Health,0.003837017875607,0.0004126595070634,Central government (budgetary),10.75469336973443
+ETH,2020,GF072,Outpatient services,Health,0.6853275507010423,0.0737048766562083,Central government (budgetary),10.75469336973443
+ETH,2020,GF073,Hospital services,Health,0.7262336674858921,0.0781042040858844,Central government (budgetary),10.75469336973443
+ETH,2020,GF0740,Public health services,Health,3.969922568680666,0.4269529992774903,Central government (budgetary),10.75469336973443
+ETH,2020,GF075,Health R&D,Health,0.1109330396282194,0.0119305082577409,Central government (budgetary),10.75469336973443
+ETH,2020,GF0760,Other health,Health,0.2557906732411009,0.0275095025754597,Central government (budgetary),10.75469336973443
+ETH,2021,GF01,General public services,Government spending,44.865361830976575,4.692263581410515,Central government (budgetary),10.45854394106506
+ETH,2021,GF02,Defence,Government spending,4.927312293306258,0.5153251213089354,Central government (budgetary),10.45854394106506
+ETH,2021,GF03,Public order and safety,Government spending,2.177460683405019,0.2277306823733294,Central government (budgetary),10.45854394106506
+ETH,2021,GF04,Economic affairs,Government spending,16.05506341045539,1.679125861548335,Central government (budgetary),10.45854394106506
+ETH,2021,GF05,Environmental protection,Government spending,0.2632884913529173,0.0275361425599121,Central government (budgetary),10.45854394106506
+ETH,2021,GF06,Housing and community amenities,Government spending,2.154591811233209,0.2253389313284147,Central government (budgetary),10.45854394106506
+ETH,2021,GF08,"Recreation, culture and religion",Government spending,0.3288086226129488,0.034388594277986,Central government (budgetary),10.45854394106506
+ETH,2021,GF09,Education,Government spending,13.52976620990119,1.415016544185888,Central government (budgetary),10.45854394106506
+ETH,2021,GF10,Social protection,Government spending,4.077839609469739,0.4264826474025483,Central government (budgetary),10.45854394106506
+ETH,2021,GF0170,Interest on public debt,Government spending,5.654641652621969,0.5913931819492358,Central government (budgetary),10.45854394106506
+ETH,2021,GF0712,Medical products,Health,0.0029602205831752,0.0003095959704438,Central government (budgetary),10.45854394106506
+ETH,2021,GF072,Outpatient services,Health,0.938838171526735,0.0981888027046153,Central government (budgetary),10.45854394106506
+ETH,2021,GF073,Hospital services,Health,0.8305506241893507,0.0868635019836333,Central government (budgetary),10.45854394106506
+ETH,2021,GF0740,Public health services,Health,3.616510491582513,0.3782343388953851,Central government (budgetary),10.45854394106506
+ETH,2021,GF075,Health R&D,Health,0.1021319995123067,0.0106815200468829,Central government (budgetary),10.45854394106506
+ETH,2021,GF0760,Other health,Health,0.4748738772707124,0.0496648931189968,Central government (budgetary),10.45854394106506
+ETH,2022,GF01,General public services,Government spending,37.74846173033647,3.7261503987822024,Central government (budgetary),9.870999314887817
+ETH,2022,GF02,Defence,Government spending,15.07236877793993,1.487793418807815,Central government (budgetary),9.870999314887817
+ETH,2022,GF03,Public order and safety,Government spending,2.091432142715993,0.2064452524788392,Central government (budgetary),9.870999314887817
+ETH,2022,GF04,Economic affairs,Government spending,12.34657452106894,1.218730286386829,Central government (budgetary),9.870999314887817
+ETH,2022,GF05,Environmental protection,Government spending,0.2669799350076761,0.0263535875554956,Central government (budgetary),9.870999314887817
+ETH,2022,GF06,Housing and community amenities,Government spending,1.739085135801758,0.1716650818403074,Central government (budgetary),9.870999314887817
+ETH,2022,GF08,"Recreation, culture and religion",Government spending,0.4263067214650921,0.0420807335551399,Central government (budgetary),9.870999314887817
+ETH,2022,GF09,Education,Government spending,11.78654174214806,1.163449454616401,Central government (budgetary),9.870999314887817
+ETH,2022,GF10,Social protection,Government spending,6.994061654077798,0.6903837779568508,Central government (budgetary),9.870999314887817
+ETH,2022,GF0170,Interest on public debt,Government spending,7.635214839451159,0.7536720044924367,Central government (budgetary),9.870999314887817
+ETH,2022,GF0712,Medical products,Health,0.0039197409101033,0.0003869175983816,Central government (budgetary),9.870999314887817
+ETH,2022,GF072,Outpatient services,Health,0.4753468876802647,0.0469214880262594,Central government (budgetary),9.870999314887817
+ETH,2022,GF073,Hospital services,Health,0.7019568636249542,0.0692901571992272,Central government (budgetary),9.870999314887817
+ETH,2022,GF0740,Public health services,Health,1.731938818318808,0.1709596688905257,Central government (budgetary),9.870999314887817
+ETH,2022,GF075,Health R&D,Health,0.114200202922582,0.0112727012480885,Central government (budgetary),9.870999314887817
+ETH,2022,GF0760,Other health,Health,0.8656102865304157,0.0854443854530157,Central government (budgetary),9.870999314887817
+ETH,2023,GF01,General public services,Government spending,38.54423792432075,3.01341022939392,Central government (budgetary),7.818056320922899
+ETH,2023,GF02,Defence,Government spending,9.41329209643358,0.7359364777521613,Central government (budgetary),7.818056320922899
+ETH,2023,GF03,Public order and safety,Government spending,2.411088800199185,0.1885002803470365,Central government (budgetary),7.818056320922899
+ETH,2023,GF04,Economic affairs,Government spending,15.19723064461591,1.188128051016626,Central government (budgetary),7.818056320922899
+ETH,2023,GF05,Environmental protection,Government spending,0.4955583624227285,0.0387430318772521,Central government (budgetary),7.818056320922899
+ETH,2023,GF06,Housing and community amenities,Government spending,1.666079648880272,0.1302550453008942,Central government (budgetary),7.818056320922899
+ETH,2023,GF08,"Recreation, culture and religion",Government spending,0.4169488115602522,0.0325972929171992,Central government (budgetary),7.818056320922899
+ETH,2023,GF09,Education,Government spending,12.56507905971188,0.9823449576567642,Central government (budgetary),7.818056320922899
+ETH,2023,GF10,Social protection,Government spending,6.554945597967794,0.5124693386549785,Central government (budgetary),7.818056320922899
+ETH,2023,GF0170,Interest on public debt,Government spending,7.06914091975374,0.5526694185117546,Central government (budgetary),7.818056320922899
+ETH,2023,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),7.818056320922899
+ETH,2023,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),7.818056320922899
+ETH,2023,GF073,Hospital services,Health,0.569138427005438,0.0444955627672998,Central government (budgetary),7.818056320922899
+ETH,2023,GF0740,Public health services,Health,2.423185961076175,0.1894460431976322,Central government (budgetary),7.818056320922899
+ETH,2023,GF075,Health R&D,Health,0.1623365673565519,0.0126915642653881,Central government (budgetary),7.818056320922899
+ETH,2023,GF0760,Other health,Health,2.511737178695741,0.1963690272639929,Central government (budgetary),7.818056320922899
+ETH,2024,GF01,General public services,Government spending,36.29887218820761,2.397562585172672,Central government (budgetary),6.605060820461434
+ETH,2024,GF02,Defence,Government spending,8.93906644381086,0.5904307753951664,Central government (budgetary),6.605060820461434
+ETH,2024,GF03,Public order and safety,Government spending,2.71318537237425,0.1792075440171822,Central government (budgetary),6.605060820461434
+ETH,2024,GF04,Economic affairs,Government spending,14.10550124885029,0.9316769365175086,Central government (budgetary),6.605060820461434
+ETH,2024,GF05,Environmental protection,Government spending,0.829328997601274,0.0547776846932873,Central government (budgetary),6.605060820461434
+ETH,2024,GF06,Housing and community amenities,Government spending,2.540949863715319,0.1678312839158288,Central government (budgetary),6.605060820461434
+ETH,2024,GF08,"Recreation, culture and religion",Government spending,0.5483773409781897,0.0362206568972386,Central government (budgetary),6.605060820461434
+ETH,2024,GF09,Education,Government spending,13.51410405872476,0.8926147924192177,Central government (budgetary),6.605060820461434
+ETH,2024,GF10,Social protection,Government spending,6.248175910134132,0.4126958190337792,Central government (budgetary),6.605060820461434
+ETH,2024,GF0170,Interest on public debt,Government spending,8.963989342946295,0.5920769480412841,Central government (budgetary),6.605060820461434
+ETH,2024,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),6.605060820461434
+ETH,2024,GF072,Outpatient services,Health,0.0,0.0,Central government (budgetary),6.605060820461434
+ETH,2024,GF073,Hospital services,Health,0.7257920001114496,0.0479390030374047,Central government (budgetary),6.605060820461434
+ETH,2024,GF0740,Public health services,Health,2.05923997504906,0.1360140527912453,Central government (budgetary),6.605060820461434
+ETH,2024,GF075,Health R&D,Health,0.0478641389104788,0.0031614554862272,Central government (budgetary),6.605060820461434
+ETH,2024,GF0760,Other health,Health,2.465553118586043,0.1628512830433918,Central government (budgetary),6.605060820461434

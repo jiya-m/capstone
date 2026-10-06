@@ -1,0 +1,283 @@
+iso3,year,code,label,group,pct_outlays,pct_gdp,coverage,total_pct_gdp
+JOR,2005,GF01,General public services,Government spending,7.82403726002499,2.958598944999055,Central government (budgetary),37.81422361208955
+JOR,2005,GF02,Defence,Government spending,12.22594570032943,4.62314644581522,Central government (budgetary),37.81422361208955
+JOR,2005,GF03,Public order and safety,Government spending,8.173349994320118,3.090688843450918,Central government (budgetary),37.81422361208955
+JOR,2005,GF04,Economic affairs,Government spending,8.03987277064637,3.040215467619719,Central government (budgetary),37.81422361208955
+JOR,2005,GF05,Environmental protection,Government spending,0.181756219470635,0.0687297032595061,Central government (budgetary),37.81422361208955
+JOR,2005,GF06,Housing and community amenities,Government spending,0.701465409519482,0.2652536985171567,Central government (budgetary),37.81422361208955
+JOR,2005,GF08,"Recreation, culture and religion",Government spending,2.016358059752357,0.7624701455351467,Central government (budgetary),37.81422361208955
+JOR,2005,GF09,Education,Government spending,12.86209246847666,4.863700407223492,Central government (budgetary),37.81422361208955
+JOR,2005,GF10,Social protection,Government spending,32.91491536976031,12.4465196996512,Central government (budgetary),37.81422361208955
+JOR,2005,GF0170,Interest on public debt,Government spending,5.88151766443258,2.224050241413083,Central government (budgetary),37.81422361208955
+JOR,2005,GF072,Outpatient services,Health,1.255253890719073,0.4746645131359645,Central government (budgetary),37.81422361208955
+JOR,2005,GF073,Hospital services,Health,6.673861183687379,2.523668791559992,Central government (budgetary),37.81422361208955
+JOR,2005,GF0740,Public health services,Health,0.0028399409292286,0.0010739016134297,Central government (budgetary),37.81422361208955
+JOR,2005,GF07_rest,Health (not broken down),Health,0.2726343292059541,0.10309455488925989,Central government (budgetary),37.81422361208955
+JOR,2005,UNCL,Unclassified,Unclassified,0.9740997387254424,,Central government (budgetary),37.81422361208955
+JOR,2006,GF01,General public services,Government spending,10.553712152633764,3.635366782541453,Central government (budgetary),34.44633253176437
+JOR,2006,GF02,Defence,Government spending,12.89376814599751,4.441430251445012,Central government (budgetary),34.44633253176437
+JOR,2006,GF03,Public order and safety,Government spending,8.487919950228122,2.923777131085547,Central government (budgetary),34.44633253176437
+JOR,2006,GF04,Economic affairs,Government spending,8.459664039817502,2.914044006225628,Central government (budgetary),34.44633253176437
+JOR,2006,GF05,Environmental protection,Government spending,0.3688822065532974,0.1270663915198587,Central government (budgetary),34.44633253176437
+JOR,2006,GF06,Housing and community amenities,Government spending,0.7229883865615927,0.2490429838010442,Central government (budgetary),34.44633253176437
+JOR,2006,GF08,"Recreation, culture and religion",Government spending,1.288106594773953,0.4437054809994223,Central government (budgetary),34.44633253176437
+JOR,2006,GF09,Education,Government spending,13.29427623392783,4.579390599230101,Central government (budgetary),34.44633253176437
+JOR,2006,GF10,Social protection,Government spending,26.00580671920365,8.95804666006481,Central government (budgetary),34.44633253176437
+JOR,2006,GF0170,Interest on public debt,Government spending,6.894960597262547,2.375061055267183,Central government (budgetary),34.44633253176437
+JOR,2006,GF072,Outpatient services,Health,1.154344670261302,0.3976294036809071,Central government (budgetary),34.44633253176437
+JOR,2006,GF073,Hospital services,Health,8.577353795105765,2.954583810688043,Central government (budgetary),34.44633253176437
+JOR,2006,GF0740,Public health services,Health,0.6970655329738698,0.2401135114524948,Central government (budgetary),34.44633253176437
+JOR,2006,GF07_rest,Health (not broken down),Health,0.6745126503525523,0.23234487050925656,Central government (budgetary),34.44633253176437
+JOR,2007,GF01,General public services,Government spending,9.076892579458598,3.23691449235975,Central government (budgetary),35.66104219063942
+JOR,2007,GF02,Defence,Government spending,16.69566749631065,5.953849029868214,Central government (budgetary),35.66104219063942
+JOR,2007,GF03,Public order and safety,Government spending,8.7883526794564,3.134018156883136,Central government (budgetary),35.66104219063942
+JOR,2007,GF04,Economic affairs,Government spending,7.554899671813396,2.694155959425854,Central government (budgetary),35.66104219063942
+JOR,2007,GF05,Environmental protection,Government spending,0.1101297328252682,0.0392734104872573,Central government (budgetary),35.66104219063942
+JOR,2007,GF06,Housing and community amenities,Government spending,0.8369859694720381,0.2984779197031559,Central government (budgetary),35.66104219063942
+JOR,2007,GF08,"Recreation, culture and religion",Government spending,0.8612145106935971,0.3071180700103525,Central government (budgetary),35.66104219063942
+JOR,2007,GF09,Education,Government spending,13.89837228254884,4.956304403491877,Central government (budgetary),35.66104219063942
+JOR,2007,GF10,Social protection,Government spending,27.97295213761811,9.975446263763368,Central government (budgetary),35.66104219063942
+JOR,2007,GF0170,Interest on public debt,Government spending,7.068126252725711,2.520567485072177,Central government (budgetary),35.66104219063942
+JOR,2007,GF072,Outpatient services,Health,1.079271381687628,0.384879422775122,Central government (budgetary),35.66104219063942
+JOR,2007,GF073,Hospital services,Health,5.924979625999427,2.112909484214445,Central government (budgetary),35.66104219063942
+JOR,2007,GF0740,Public health services,Health,0.0,0.0,Central government (budgetary),35.66104219063942
+JOR,2007,GF07_rest,Health (not broken down),Health,0.1321556793903227,0.04712809258470907,Central government (budgetary),35.66104219063942
+JOR,2008,GF01,General public services,Government spending,8.896285500452986,2.809055145042269,Central government (budgetary),31.575595734863
+JOR,2008,GF02,Defence,Government spending,18.74581478709576,5.919102694379527,Central government (budgetary),31.575595734863
+JOR,2008,GF03,Public order and safety,Government spending,10.84807184779612,3.425343311687585,Central government (budgetary),31.575595734863
+JOR,2008,GF04,Economic affairs,Government spending,8.524047740969788,2.691518854935343,Central government (budgetary),31.575595734863
+JOR,2008,GF05,Environmental protection,Government spending,0.1201402292511916,0.0379349931032938,Central government (budgetary),31.575595734863
+JOR,2008,GF06,Housing and community amenities,Government spending,3.32650569188955,1.050363989368252,Central government (budgetary),31.575595734863
+JOR,2008,GF08,"Recreation, culture and religion",Government spending,1.945877811478316,0.6144225112467926,Central government (budgetary),31.575595734863
+JOR,2008,GF09,Education,Government spending,11.62996809390633,3.672231709425415,Central government (budgetary),31.575595734863
+JOR,2008,GF10,Social protection,Government spending,18.15496120061449,5.732537154527262,Central government (budgetary),31.575595734863
+JOR,2008,GF0170,Interest on public debt,Government spending,7.440816165754126,2.349482031872857,Central government (budgetary),31.575595734863
+JOR,2008,GF072,Outpatient services,Health,0.1221097412061291,0.0385568782361347,Central government (budgetary),31.575595734863
+JOR,2008,GF073,Hospital services,Health,5.475243234726435,1.728840669297655,Central government (budgetary),31.575595734863
+JOR,2008,GF0740,Public health services,Health,1.002481585063221,0.3165395326160096,Central government (budgetary),31.575595734863
+JOR,2008,GF07_rest,Health (not broken down),Health,3.7676763697955664,1.1896662591246097,Central government (budgetary),31.575595734863
+JOR,2009,GF01,General public services,Government spending,9.528863534601417,3.298149626705254,Central government (budgetary),34.61220338321502
+JOR,2009,GF02,Defence,Government spending,16.52874745029104,5.720963684192702,Central government (budgetary),34.61220338321502
+JOR,2009,GF03,Public order and safety,Government spending,11.51390524203579,3.985216299724083,Central government (budgetary),34.61220338321502
+JOR,2009,GF04,Economic affairs,Government spending,9.162368783270592,3.171297717985821,Central government (budgetary),34.61220338321502
+JOR,2009,GF05,Environmental protection,Government spending,0.0796006699723056,0.0275515457852161,Central government (budgetary),34.61220338321502
+JOR,2009,GF06,Housing and community amenities,Government spending,4.837399048108655,1.674330396989075,Central government (budgetary),34.61220338321502
+JOR,2009,GF08,"Recreation, culture and religion",Government spending,1.676589111291687,0.5803044331011159,Central government (budgetary),34.61220338321502
+JOR,2009,GF09,Education,Government spending,10.36632891660171,3.588014847987216,Central government (budgetary),34.61220338321502
+JOR,2009,GF10,Social protection,Government spending,18.23850350740452,6.312747928037658,Central government (budgetary),34.61220338321502
+JOR,2009,GF0170,Interest on public debt,Government spending,6.504038075653803,2.251190886867039,Central government (budgetary),34.61220338321502
+JOR,2009,GF07,Health (no breakdown),Health,11.57028904993284,4.004731977988611,Central government (budgetary),34.61220338321502
+JOR,2010,GF01,General public services,Government spending,7.368605466012613,2.183233843758111,Central government (budgetary),29.62886062808201
+JOR,2010,GF02,Defence,Government spending,17.00770847932726,5.039190241370361,Central government (budgetary),29.62886062808201
+JOR,2010,GF03,Public order and safety,Government spending,13.32690960056062,3.948611471580587,Central government (budgetary),29.62886062808201
+JOR,2010,GF04,Economic affairs,Government spending,7.978276103714085,2.363872307293018,Central government (budgetary),29.62886062808201
+JOR,2010,GF05,Environmental protection,Government spending,0.0578135949544498,0.0171295094731378,Central government (budgetary),29.62886062808201
+JOR,2010,GF06,Housing and community amenities,Government spending,4.577785564120533,1.356345704645731,Central government (budgetary),29.62886062808201
+JOR,2010,GF08,"Recreation, culture and religion",Government spending,2.053258584442887,0.6083571243187127,Central government (budgetary),29.62886062808201
+JOR,2010,GF09,Education,Government spending,11.20357393132446,3.319491305476252,Central government (budgetary),29.62886062808201
+JOR,2010,GF10,Social protection,Government spending,18.54765241765943,5.495458084609395,Central government (budgetary),29.62886062808201
+JOR,2010,GF0170,Interest on public debt,Government spending,6.965662228451296,2.063846353490786,Central government (budgetary),29.62886062808201
+JOR,2010,GF072,Outpatient services,Health,0.0420462508759635,0.0124578250713729,Central government (budgetary),29.62886062808201
+JOR,2010,GF073,Hospital services,Health,5.967063770147162,1.767973008045679,Central government (budgetary),29.62886062808201
+JOR,2010,GF0740,Public health services,Health,0.9530483531885074,0.2823773682844537,Central government (budgetary),29.62886062808201
+JOR,2010,GF07_rest,Health (not broken down),Health,3.950595655220747,1.1705164806644173,Central government (budgetary),29.62886062808201
+JOR,2011,GF01,General public services,Government spending,5.536559241036749,1.7951402885677283,Central government (budgetary),32.42339168453618
+JOR,2011,GF02,Defence,Government spending,14.47038536688717,4.691789725767634,Central government (budgetary),32.42339168453618
+JOR,2011,GF03,Public order and safety,Government spending,12.42231455542739,4.027735704591371,Central government (budgetary),32.42339168453618
+JOR,2011,GF04,Economic affairs,Government spending,7.662609760116764,2.484477975780156,Central government (budgetary),32.42339168453618
+JOR,2011,GF05,Environmental protection,Government spending,0.2869064714329433,0.0930248090009851,Central government (budgetary),32.42339168453618
+JOR,2011,GF06,Housing and community amenities,Government spending,3.703300454342146,1.200735611566562,Central government (budgetary),32.42339168453618
+JOR,2011,GF08,"Recreation, culture and religion",Government spending,1.843557993361426,0.5977440291191505,Central government (budgetary),32.42339168453618
+JOR,2011,GF09,Education,Government spending,11.27027472398126,3.654205317679723,Central government (budgetary),32.42339168453618
+JOR,2011,GF10,Social protection,Government spending,26.50721532992773,8.594538251085886,Central government (budgetary),32.42339168453618
+JOR,2011,GF0170,Interest on public debt,Government spending,6.319298947715342,2.048931049534518,Central government (budgetary),32.42339168453618
+JOR,2011,GF072,Outpatient services,Health,0.0411968266672944,0.0133574084719363,Central government (budgetary),32.42339168453618
+JOR,2011,GF073,Hospital services,Health,5.64837919913369,1.831396111562984,Central government (budgetary),32.42339168453618
+JOR,2011,GF0740,Public health services,Health,0.8121660114409474,0.2633317670181732,Central government (budgetary),32.42339168453618
+JOR,2011,GF07_rest,Health (not broken down),Health,3.4737752771957897,1.1263157643657737,Central government (budgetary),32.42339168453618
+JOR,2012,GF01,General public services,Government spending,4.8282279051509835,1.4785931237628303,Central government (budgetary),30.62392978975572
+JOR,2012,GF02,Defence,Government spending,12.86655132808979,3.9402436450771,Central government (budgetary),30.62392978975572
+JOR,2012,GF03,Public order and safety,Government spending,12.83747437593591,3.931339139664496,Central government (budgetary),30.62392978975572
+JOR,2012,GF04,Economic affairs,Government spending,4.137650291496445,1.267111120213494,Central government (budgetary),30.62392978975572
+JOR,2012,GF05,Environmental protection,Government spending,0.1512001512001512,0.0463034281455388,Central government (budgetary),30.62392978975572
+JOR,2012,GF06,Housing and community amenities,Government spending,2.446825523748601,0.7493141304705943,Central government (budgetary),30.62392978975572
+JOR,2012,GF08,"Recreation, culture and religion",Government spending,1.73153250076327,0.5302632973205453,Central government (budgetary),30.62392978975572
+JOR,2012,GF09,Education,Government spending,12.13090443859675,3.714959658138228,Central government (budgetary),30.62392978975572
+JOR,2012,GF10,Social protection,Government spending,30.67618452233837,9.394253210296814,Central government (budgetary),30.62392978975572
+JOR,2012,GF0170,Interest on public debt,Government spending,8.474477705246937,2.595218102503324,Central government (budgetary),30.62392978975572
+JOR,2012,GF072,Outpatient services,Health,0.0232615617231001,0.0071236043300828,Central government (budgetary),30.62392978975572
+JOR,2012,GF073,Hospital services,Health,5.64674410828257,1.729254951127622,Central government (budgetary),30.62392978975572
+JOR,2012,GF0740,Public health services,Health,0.92755477370862,0.2840537226620553,Central government (budgetary),30.62392978975572
+JOR,2012,GF07_rest,Health (not broken down),Health,3.121410813718507,0.9558986560429981,Central government (budgetary),30.62392978975572
+JOR,2013,GF01,General public services,Government spending,5.629504027130139,1.6286052410511536,Central government (budgetary),28.92981749728668
+JOR,2013,GF02,Defence,Government spending,11.99660873251378,3.470597012179792,Central government (budgetary),28.92981749728668
+JOR,2013,GF03,Public order and safety,Government spending,12.98572841599548,3.756747531440788,Central government (budgetary),28.92981749728668
+JOR,2013,GF04,Economic affairs,Government spending,5.758089585982761,1.665804808555083,Central government (budgetary),28.92981749728668
+JOR,2013,GF05,Environmental protection,Government spending,0.9099901088031652,0.2632584777201162,Central government (budgetary),28.92981749728668
+JOR,2013,GF06,Housing and community amenities,Government spending,3.946587537091988,1.141740571851373,Central government (budgetary),28.92981749728668
+JOR,2013,GF08,"Recreation, culture and religion",Government spending,1.911827045358203,0.5530880750858963,Central government (budgetary),28.92981749728668
+JOR,2013,GF09,Education,Government spending,13.32909424897555,3.856082640269963,Central government (budgetary),28.92981749728668
+JOR,2013,GF10,Social protection,Government spending,23.02670623145401,6.661584088395983,Central government (budgetary),28.92981749728668
+JOR,2013,GF0170,Interest on public debt,Government spending,10.40695209834676,3.010712249081763,Central government (budgetary),28.92981749728668
+JOR,2013,GF072,Outpatient services,Health,0.0310866186237106,0.008993302033917,Central government (budgetary),28.92981749728668
+JOR,2013,GF073,Hospital services,Health,6.261127596439169,1.811332786922104,Central government (budgetary),28.92981749728668
+JOR,2013,GF0740,Public health services,Health,0.9919457397202204,0.2869680921731701,Central government (budgetary),28.92981749728668
+JOR,2013,GF07_rest,Health (not broken down),Health,2.8161650416843296,0.8147114069816639,Central government (budgetary),28.92981749728668
+JOR,2014,GF01,General public services,Government spending,6.60544382315854,1.982277233664465,Central government (budgetary),30.00975084693999
+JOR,2014,GF02,Defence,Government spending,11.4544458738266,3.43745066763296,Central government (budgetary),30.00975084693999
+JOR,2014,GF03,Public order and safety,Government spending,12.80839627568111,3.843767809820643,Central government (budgetary),30.00975084693999
+JOR,2014,GF04,Economic affairs,Government spending,7.358204582797315,2.208178862105594,Central government (budgetary),30.00975084693999
+JOR,2014,GF05,Environmental protection,Government spending,0.518398695724166,0.1555701569806088,Central government (budgetary),30.00975084693999
+JOR,2014,GF06,Housing and community amenities,Government spending,2.797060284546115,0.8393908224309997,Central government (budgetary),30.00975084693999
+JOR,2014,GF08,"Recreation, culture and religion",Government spending,1.788284444218008,0.5366597061444096,Central government (budgetary),30.00975084693999
+JOR,2014,GF09,Education,Government spending,12.81731222376482,3.846443463626207,Central government (budgetary),30.00975084693999
+JOR,2014,GF10,Social protection,Government spending,20.96648877227395,6.291991041911059,Central government (budgetary),30.00975084693999
+JOR,2014,GF0170,Interest on public debt,Government spending,11.7932519010075,3.539125512244365,Central government (budgetary),30.00975084693999
+JOR,2014,GF072,Outpatient services,Health,0.017831896167416,0.0053513076111265,Central government (budgetary),30.00975084693999
+JOR,2014,GF073,Hospital services,Health,5.573741259186611,1.672665864734998,Central government (budgetary),30.00975084693999
+JOR,2014,GF0740,Public health services,Health,1.718230566417445,0.5156367119578409,Central government (budgetary),30.00975084693999
+JOR,2014,GF07_rest,Health (not broken down),Health,3.7829094012303974,1.1352416860747123,Central government (budgetary),30.00975084693999
+JOR,2015,GF01,General public services,Government spending,5.907563005622849,1.6651804828229881,Central government (budgetary),28.18726573441633
+JOR,2015,GF02,Defence,Government spending,12.11798499068814,3.415728630981951,Central government (budgetary),28.18726573441633
+JOR,2015,GF03,Public order and safety,Government spending,13.51521792560505,3.809570391275766,Central government (budgetary),28.18726573441633
+JOR,2015,GF04,Economic affairs,Government spending,6.631352974707624,1.86919708476796,Central government (budgetary),28.18726573441633
+JOR,2015,GF05,Environmental protection,Government spending,0.5671807465186368,0.1598727442156545,Central government (budgetary),28.18726573441633
+JOR,2015,GF06,Housing and community amenities,Government spending,3.092300508416677,0.8716349616141161,Central government (budgetary),28.18726573441633
+JOR,2015,GF08,"Recreation, culture and religion",Government spending,2.011031277039824,0.5668547300614415,Central government (budgetary),28.18726573441633
+JOR,2015,GF09,Education,Government spending,13.49838379385906,3.804825309826443,Central government (budgetary),28.18726573441633
+JOR,2015,GF10,Social protection,Government spending,19.47061576405074,5.488234205540138,Central government (budgetary),28.18726573441633
+JOR,2015,GF0170,Interest on public debt,Government spending,11.84345914990743,3.338347302731451,Central government (budgetary),28.18726573441633
+JOR,2015,GF0712,Medical products,Health,1.20687775286614,0.3401858392899314,Central government (budgetary),28.18726573441633
+JOR,2015,GF072,Outpatient services,Health,0.0207189313796762,0.0058401002453207,Central government (budgetary),28.18726573441633
+JOR,2015,GF073,Hospital services,Health,6.014964766162256,1.695454102469669,Central government (budgetary),28.18726573441633
+JOR,2015,GF0740,Public health services,Health,1.424426532352741,0.4015068918657989,Central government (budgetary),28.18726573441633
+JOR,2015,GF075,Health R&D,Health,0.0802858590962453,0.0226303884506177,Central government (budgetary),28.18726573441633
+JOR,2015,GF0760,Other health,Health,2.597636021726907,0.7322025682570841,Central government (budgetary),28.18726573441633
+JOR,2016,GF01,General public services,Government spending,6.636542766653262,1.8624184473008656,Central government (budgetary),28.0630821315428
+JOR,2016,GF02,Defence,Government spending,12.90179563304098,3.620641504944091,Central government (budgetary),28.0630821315428
+JOR,2016,GF03,Public order and safety,Government spending,14.03030959528747,3.937337305035251,Central government (budgetary),28.0630821315428
+JOR,2016,GF04,Economic affairs,Government spending,6.367234295350598,1.786842189811998,Central government (budgetary),28.0630821315428
+JOR,2016,GF05,Environmental protection,Government spending,0.1660689442770755,0.0466040642274617,Central government (budgetary),28.0630821315428
+JOR,2016,GF06,Housing and community amenities,Government spending,2.814365366271347,0.7897976642184233,Central government (budgetary),28.0630821315428
+JOR,2016,GF08,"Recreation, culture and religion",Government spending,2.098507568592135,0.5889059025106527,Central government (budgetary),28.0630821315428
+JOR,2016,GF09,Education,Government spending,13.13076948045331,3.684898623803167,Central government (budgetary),28.0630821315428
+JOR,2016,GF10,Social protection,Government spending,19.80875399729207,5.55894690349534,Central government (budgetary),28.0630821315428
+JOR,2016,GF0170,Interest on public debt,Government spending,10.50889311777584,2.949119306757483,Central government (budgetary),28.0630821315428
+JOR,2016,GF0712,Medical products,Health,1.232936101451015,0.3459998707796401,Central government (budgetary),28.0630821315428
+JOR,2016,GF072,Outpatient services,Health,0.0201295690032818,0.0056489774821165,Central government (budgetary),28.0630821315428
+JOR,2016,GF073,Hospital services,Health,6.796245734733043,1.907236022399608,Central government (budgetary),28.0630821315428
+JOR,2016,GF0740,Public health services,Health,1.205257944071502,0.3382325267417298,Central government (budgetary),28.0630821315428
+JOR,2016,GF075,Health R&D,Health,0.0629049031352558,0.0176530546316142,Central government (budgetary),28.0630821315428
+JOR,2016,GF0760,Other health,Health,2.219284982611827,0.6227997674033522,Central government (budgetary),28.0630821315428
+JOR,2017,GF01,General public services,Government spending,6.016072517932381,1.6644303026199987,Central government (budgetary),27.66639360909891
+JOR,2017,GF02,Defence,Government spending,13.94312097358124,3.857558729943809,Central government (budgetary),27.66639360909891
+JOR,2017,GF03,Public order and safety,Government spending,14.60381642160983,4.040349333152799,Central government (budgetary),27.66639360909891
+JOR,2017,GF04,Economic affairs,Government spending,6.097974283286143,1.687089567395572,Central government (budgetary),27.66639360909891
+JOR,2017,GF05,Environmental protection,Government spending,0.2128907554758806,0.0588991943673414,Central government (budgetary),27.66639360909891
+JOR,2017,GF06,Housing and community amenities,Government spending,3.118727216712756,0.8628393473698464,Central government (budgetary),27.66639360909891
+JOR,2017,GF08,"Recreation, culture and religion",Government spending,2.138695635470341,0.5916999526098436,Central government (budgetary),27.66639360909891
+JOR,2017,GF09,Education,Government spending,12.46634429622843,3.448987881660009,Central government (budgetary),27.66639360909891
+JOR,2017,GF10,Social protection,Government spending,21.17406559922752,5.858100331731095,Central government (budgetary),27.66639360909891
+JOR,2017,GF0170,Interest on public debt,Government spending,10.47569338152005,2.898246564213662,Central government (budgetary),27.66639360909891
+JOR,2017,GF0712,Medical products,Health,1.192922336718296,0.3300385891273441,Central government (budgetary),27.66639360909891
+JOR,2017,GF072,Outpatient services,Health,0.0159056311562439,0.0044005145216979,Central government (budgetary),27.66639360909891
+JOR,2017,GF073,Hospital services,Health,5.881412997543436,1.62717486967707,Central government (budgetary),27.66639360909891
+JOR,2017,GF0740,Public health services,Health,1.207604457785598,0.3341006025319884,Central government (budgetary),27.66639360909891
+JOR,2017,GF075,Health R&D,Health,0.0562814640913247,0.0155710513844695,Central government (budgetary),27.66639360909891
+JOR,2017,GF0760,Other health,Health,1.398472031660526,0.3869067767923634,Central government (budgetary),27.66639360909891
+JOR,2018,GF01,General public services,Government spending,5.045006388462911,1.4035706445423868,Central government (budgetary),27.82098844814395
+JOR,2018,GF02,Defence,Government spending,14.10994692895044,3.925526705142544,Central government (budgetary),27.82098844814395
+JOR,2018,GF03,Public order and safety,Government spending,14.99473678435617,4.171683988605321,Central government (budgetary),27.82098844814395
+JOR,2018,GF04,Economic affairs,Government spending,4.800977144173822,1.33567929667863,Central government (budgetary),27.82098844814395
+JOR,2018,GF05,Environmental protection,Government spending,0.1890975680418573,0.0526088125606462,Central government (budgetary),27.82098844814395
+JOR,2018,GF06,Housing and community amenities,Government spending,2.879652471353469,0.8011477814019404,Central government (budgetary),27.82098844814395
+JOR,2018,GF08,"Recreation, culture and religion",Government spending,2.312359767227897,0.6433213437200016,Central government (budgetary),27.82098844814395
+JOR,2018,GF09,Education,Government spending,12.12558973344947,3.373458919012305,Central government (budgetary),27.82098844814395
+JOR,2018,GF10,Social protection,Government spending,19.97313880718655,5.556724640279125,Central government (budgetary),27.82098844814395
+JOR,2018,GF0170,Interest on public debt,Government spending,11.72288194965662,3.261421633003522,Central government (budgetary),27.82098844814395
+JOR,2018,GF0712,Medical products,Health,0.8077501054627486,0.2247240635306618,Central government (budgetary),27.82098844814395
+JOR,2018,GF072,Outpatient services,Health,0.0361853370944294,0.0100671184529631,Central government (budgetary),27.82098844814395
+JOR,2018,GF073,Hospital services,Health,5.594720022374211,1.556506411130726,Central government (budgetary),27.82098844814395
+JOR,2018,GF0740,Public health services,Health,1.167268938529984,0.3247457565471992,Central government (budgetary),27.82098844814395
+JOR,2018,GF075,Health R&D,Health,0.0303489924017795,0.0084433896702271,Central government (budgetary),27.82098844814395
+JOR,2018,GF0760,Other health,Health,4.210339061277651,1.171357943865748,Central government (budgetary),27.82098844814395
+JOR,2019,GF01,General public services,Government spending,4.89866781653542,1.366262895945646,Central government (budgetary),27.89049895022144
+JOR,2019,GF02,Defence,Government spending,13.93232417220797,3.885794726991114,Central government (budgetary),27.89049895022144
+JOR,2019,GF03,Public order and safety,Government spending,15.55159657762749,4.337417880225869,Central government (budgetary),27.89049895022144
+JOR,2019,GF04,Economic affairs,Government spending,5.39908766992715,1.505832489902567,Central government (budgetary),27.89049895022144
+JOR,2019,GF05,Environmental protection,Government spending,0.3222658466286907,0.0898815525708972,Central government (budgetary),27.89049895022144
+JOR,2019,GF06,Housing and community amenities,Government spending,1.794022195492817,0.5003617416006639,Central government (budgetary),27.89049895022144
+JOR,2019,GF08,"Recreation, culture and religion",Government spending,2.161677597984704,0.6029026677730959,Central government (budgetary),27.89049895022144
+JOR,2019,GF09,Education,Government spending,12.31532124458162,3.434804542436436,Central government (budgetary),27.89049895022144
+JOR,2019,GF10,Social protection,Government spending,19.57765018269296,5.460304318682007,Central government (budgetary),27.89049895022144
+JOR,2019,GF0170,Interest on public debt,Government spending,12.63418287452057,3.523736641987218,Central government (budgetary),27.89049895022144
+JOR,2019,GF0712,Medical products,Health,0.7807003608469691,0.2177412259463989,Central government (budgetary),27.89049895022144
+JOR,2019,GF072,Outpatient services,Health,0.1441118398656469,0.040193511184873,Central government (budgetary),27.89049895022144
+JOR,2019,GF073,Hospital services,Health,5.732700905521639,1.598878885873848,Central government (budgetary),27.89049895022144
+JOR,2019,GF0740,Public health services,Health,1.226652747202869,0.3421195715814786,Central government (budgetary),27.89049895022144
+JOR,2019,GF075,Health R&D,Health,0.0363116446905567,0.0101274988812278,Central government (budgetary),27.89049895022144
+JOR,2019,GF0760,Other health,Health,3.492726323672923,0.9741387986381046,Central government (budgetary),27.89049895022144
+JOR,2020,GF01,General public services,Government spending,5.639811970080231,1.6743335781717184,Central government (budgetary),29.68775531975581
+JOR,2020,GF02,Defence,Government spending,12.86246241030039,3.818576368465547,Central government (budgetary),29.68775531975581
+JOR,2020,GF03,Public order and safety,Government spending,15.53092397381477,4.610782708243426,Central government (budgetary),29.68775531975581
+JOR,2020,GF04,Economic affairs,Government spending,4.740916048766189,1.407471556472742,Central government (budgetary),29.68775531975581
+JOR,2020,GF05,Environmental protection,Government spending,0.056452400855471,0.0167594506380999,Central government (budgetary),29.68775531975581
+JOR,2020,GF06,Housing and community amenities,Government spending,2.034457676983705,0.6039848172269104,Central government (budgetary),29.68775531975581
+JOR,2020,GF08,"Recreation, culture and religion",Government spending,2.024687069143335,0.6010841430780085,Central government (budgetary),29.68775531975581
+JOR,2020,GF09,Education,Government spending,12.37067514900177,3.672575769637483,Central government (budgetary),29.68775531975581
+JOR,2020,GF10,Social protection,Government spending,21.8503360003474,6.486874288327655,Central government (budgetary),29.68775531975581
+JOR,2020,GF0170,Interest on public debt,Government spending,13.49755191992444,4.007120188144171,Central government (budgetary),29.68775531975581
+JOR,2020,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),29.68775531975581
+JOR,2020,GF072,Outpatient services,Health,0.2279808496086329,0.0676823968077114,Central government (budgetary),29.68775531975581
+JOR,2020,GF073,Hospital services,Health,8.96181863580602,2.66056278879837,Central government (budgetary),29.68775531975581
+JOR,2020,GF0740,Public health services,Health,0.1139904248043164,0.0338411984038557,Central government (budgetary),29.68775531975581
+JOR,2020,GF075,Health R&D,Health,0.0086849847469955,0.0025783770212461,Central government (budgetary),29.68775531975581
+JOR,2020,GF0760,Other health,Health,0.0792504858163342,0.0235276903188711,Central government (budgetary),29.68775531975581
+JOR,2021,GF01,General public services,Government spending,6.5206864380149305,1.9557508554850829,Central government (budgetary),29.99302104274261
+JOR,2021,GF02,Defence,Government spending,12.75959353177442,3.826987572953529,Central government (budgetary),29.99302104274261
+JOR,2021,GF03,Public order and safety,Government spending,15.24387708091206,4.572099260607772,Central government (budgetary),29.99302104274261
+JOR,2021,GF04,Economic affairs,Government spending,6.059878820681427,1.817540729851683,Central government (budgetary),29.99302104274261
+JOR,2021,GF05,Environmental protection,Government spending,0.1420865750298871,0.0426160563476263,Central government (budgetary),29.99302104274261
+JOR,2021,GF06,Housing and community amenities,Government spending,1.97397689652815,0.5920553059545656,Central government (budgetary),29.99302104274261
+JOR,2021,GF08,"Recreation, culture and religion",Government spending,1.916870427551974,0.574927350697774,Central government (budgetary),29.99302104274261
+JOR,2021,GF09,Education,Government spending,12.08821214961935,3.625620013726702,Central government (budgetary),29.99302104274261
+JOR,2021,GF10,Social protection,Government spending,19.12894275538003,5.737347825875321,Central government (budgetary),29.99302104274261
+JOR,2021,GF0170,Interest on public debt,Government spending,14.23513137226541,4.269545947945619,Central government (budgetary),29.99302104274261
+JOR,2021,GF0712,Medical products,Health,0.9574208892826273,0.2871594487901518,Central government (budgetary),29.99302104274261
+JOR,2021,GF072,Outpatient services,Health,0.1063012069041417,0.0318829433554485,Central government (budgetary),29.99302104274261
+JOR,2021,GF073,Hospital services,Health,5.83388732356079,1.749759052565482,Central government (budgetary),29.99302104274261
+JOR,2021,GF0740,Public health services,Health,1.24254750436616,0.3726775344506155,Central government (budgetary),29.99302104274261
+JOR,2021,GF075,Health R&D,Health,0.0348927625715884,0.0104653936204907,Central government (budgetary),29.99302104274261
+JOR,2021,GF0760,Other health,Health,1.75569426555705,0.5265857505147513,Central government (budgetary),29.99302104274261
+JOR,2022,GF01,General public services,Government spending,6.01442123496753,1.822318318916417,Central government (budgetary),30.29914679606333
+JOR,2022,GF02,Defence,Government spending,13.40370381340103,4.061207894531916,Central government (budgetary),30.29914679606333
+JOR,2022,GF03,Public order and safety,Government spending,14.41359154101988,4.36719525959858,Central government (budgetary),30.29914679606333
+JOR,2022,GF04,Economic affairs,Government spending,7.651069936397137,2.318208911498438,Central government (budgetary),30.29914679606333
+JOR,2022,GF05,Environmental protection,Government spending,0.0582811271378902,0.0176586842659096,Central government (budgetary),30.29914679606333
+JOR,2022,GF06,Housing and community amenities,Government spending,2.175510270376659,0.659161050384858,Central government (budgetary),30.29914679606333
+JOR,2022,GF08,"Recreation, culture and religion",Government spending,1.952895473276192,0.5917106662216292,Central government (budgetary),30.29914679606333
+JOR,2022,GF09,Education,Government spending,11.72406083785331,3.552290403720945,Central government (budgetary),30.29914679606333
+JOR,2022,GF10,Social protection,Government spending,19.77555078053716,5.991823160725002,Central government (budgetary),30.29914679606333
+JOR,2022,GF0170,Interest on public debt,Government spending,13.64065003520753,4.133000578104795,Central government (budgetary),30.29914679606333
+JOR,2022,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),30.29914679606333
+JOR,2022,GF072,Outpatient services,Health,0.2990490621993387,0.0906093143480283,Central government (budgetary),30.29914679606333
+JOR,2022,GF073,Hospital services,Health,8.134516663147506,2.464689144917295,Central government (budgetary),30.29914679606333
+JOR,2022,GF0740,Public health services,Health,0.1891748061197094,0.0573183522073789,Central government (budgetary),30.29914679606333
+JOR,2022,GF075,Health R&D,Health,0.0076434265098872,0.0023158930184799,Central government (budgetary),30.29914679606333
+JOR,2022,GF0760,Other health,Health,0.5598809918492411,0.1696391636036569,Central government (budgetary),30.29914679606333
+JOR,2023,GF01,General public services,Government spending,5.37804434750999,1.6403489247787206,Central government (budgetary),30.50084415049855
+JOR,2023,GF02,Defence,Government spending,13.54598327880771,4.131639248521732,Central government (budgetary),30.50084415049855
+JOR,2023,GF03,Public order and safety,Government spending,14.48291530352599,4.417411425177166,Central government (budgetary),30.50084415049855
+JOR,2023,GF04,Economic affairs,Government spending,4.964558342420938,1.514232202782384,Central government (budgetary),30.50084415049855
+JOR,2023,GF05,Environmental protection,Government spending,0.0681570338058887,0.0207884706587367,Central government (budgetary),30.50084415049855
+JOR,2023,GF06,Housing and community amenities,Government spending,2.935296255906943,0.8952901363695956,Central government (budgetary),30.50084415049855
+JOR,2023,GF08,"Recreation, culture and religion",Government spending,2.029262086513995,0.6189420664127886,Central government (budgetary),30.50084415049855
+JOR,2023,GF09,Education,Government spending,11.84387495456198,3.61248184127088,Central government (budgetary),30.50084415049855
+JOR,2023,GF10,Social protection,Government spending,19.62559069429298,5.985970831281049,Central government (budgetary),30.50084415049855
+JOR,2023,GF0170,Interest on public debt,Government spending,15.47437295528899,4.71981437835959,Central government (budgetary),30.50084415049855
+JOR,2023,GF0712,Medical products,Health,0.0,0.0,Central government (budgetary),30.50084415049855
+JOR,2023,GF072,Outpatient services,Health,0.3080697928026172,0.09396388737749,Central government (budgetary),30.50084415049855
+JOR,2023,GF073,Hospital services,Health,9.086695747001093,2.771518908222783,Central government (budgetary),30.50084415049855
+JOR,2023,GF0740,Public health services,Health,0.1226826608505998,0.0374192471857261,Central government (budgetary),30.50084415049855
+JOR,2023,GF075,Health R&D,Health,0.0090876045074518,0.0027717960878315,Central government (budgetary),30.50084415049855
+JOR,2023,GF0760,Other health,Health,0.1254089422028353,0.0382507860120756,Central government (budgetary),30.50084415049855
