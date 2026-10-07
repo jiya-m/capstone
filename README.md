@@ -7,3 +7,5 @@ Run:
 python -m pip install -r requirements.txt
 python -m streamlit run streamlit.py
 ```
+
+site: https://jiya-m-capstone-app-gk8k4p.streamlit.app/
