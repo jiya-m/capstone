@@ -266,14 +266,21 @@ def fiscal_space(row: pd.Series, effort: str = "p75") -> dict:
     p75 = _v(row, "ghes_growth_p75", 0.0)
     top = p90 if effort == "p90" else p75
     surge = max(0.0, top - max(med, 0.0))
-    intr = _v(row, "gc_xpn_intp_rv_zs")
-    stress = 1.0 if np.isnan(intr) else float(np.clip(1 - (intr - 10) / 40, 0.25, 1.0))
+    # interest % of revenue (fiscal_inputs.py, audit I-26): the more recent of World Bank and IMF WEO, else the
+    # income-group median (estimated); never a silent default of 1
+    intr = _v(row, "interest_pct_revenue")
+    if np.isnan(intr):
+        raise ValueError(f"{row.name}: no interest-to-revenue value (run fiscal_inputs.py)")
+    stress = float(np.clip(1 - (intr - 10) / 40, 0.25, 1.0))
     pop, gdp_pc = _v(row, "sp_pop_totl"), _v(row, "gdp_pc")
     rev_pct = _v(row, "gc_rev_xgrt_gd_zs")
     gdp = pop * gdp_pc if not (np.isnan(pop) or np.isnan(gdp_pc)) else np.nan
     return {"ghes": ghes, "ghes_growth_median": med, "ghes_growth_p90": p90, "ghes_growth_p75": p75,
             "ghes_growth_top": top, "effort": effort, "surge_rate": surge,
             "interest_pct_revenue": intr, "stress_factor": stress,
+            "interest_year": _v(row, "interest_pct_revenue_year"),
+            "interest_source": str(row.get("interest_pct_revenue_source", "")),
+            "interest_estimated": bool(row.get("interest_estimated", False)),
             "capacity": (ghes * surge * stress) if not np.isnan(ghes) else 0.0,
             "gdp": gdp, "revenue": gdp * rev_pct / 100 if not np.isnan(rev_pct) else np.nan, "revenue_pct_gdp": rev_pct,
             "debt_pct_gdp": _v(row, "gc_dod_totl_gd_zs"), "ghes_pct_gov_spend": hs["share_pct"],
@@ -385,6 +392,8 @@ def unit_costs(row: pd.Series, P: dict) -> dict:
     }
 
 
+AID_BASE_YEARS = (2021, 2023)    # aid baseline = average of these years (prepare_model.py uses the same constant)
+GHES_YEAR = 2023                 # government health spending year (column ghes_2023)
 FALLBACK_MORTALITY_TREND = -0.009    # %/yr decline in baseline mortality (Cavalcanti et al. 2025, Lancet, appendix 10.2)
 TREND_COLUMNS = {"u5": "trend_u5mr", "malaria": "trend_malaria_deaths", "tb": "trend_tb_deaths"}
 

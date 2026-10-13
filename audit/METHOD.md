@@ -64,7 +64,9 @@ Compute the same with base amounts to get the effective baseline eff_base_l.
 ## 2. Government response
 
 Fiscal capacity per year = ghes_2023 x max(0, ghes_growth_p75 - max(ghes_growth_median, 0)) x stress, where
-stress = clip(1 - (gc_xpn_intp_rv_zs - 10) / 40, 0.25, 1), or 1 if `gc_xpn_intp_rv_zs` is missing. Missing
+stress = clip(1 - (interest_pct_revenue - 10) / 40, 0.25, 1). `interest_pct_revenue` (I-26) is the more recent of
+World Bank `gc_xpn_intp_rv_zs` and IMF WEO net interest ((GGXONLB_NGDP - GGXCNL_NGDP) / GGR_NGDP x 100, latest actual
+year; ties: World Bank), else the income-group median (estimated); it is never missing. Missing
 growth values count as 0; missing ghes_2023 gives capacity 0.
 - No backfill: replaced R = 0.
 - Replace 25%: R = min(0.25 x G, capacity), and never above G.

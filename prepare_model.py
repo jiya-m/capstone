@@ -37,7 +37,8 @@ HERE = Path(__file__).parent
 OUT = HERE / "model_data"
 EXT = HERE / "ext_data"
 
-BASE_YEARS = (2021, 2023)          # baseline = average of these years (smooths lumpy net campaigns / Gavi tranches)
+BASE_YEARS = (2021, 2023)          # baseline = average of these years (smooths lumpy net campaigns / Gavi tranches);
+                                   # health_model.AID_BASE_YEARS must match (tested)
 
 # --------------------------------------------------------------------------- #
 # Country lists: ISO3 = the wider panel used to build inputs and fit the regressions (unchanged, so the estimates keep

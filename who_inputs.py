@@ -109,7 +109,10 @@ def apply(ci: pd.DataFrame) -> pd.DataFrame:
          "latest household survey: children under 5 sleeping under an ITN (World Bank WDI)")
     # malaria coverage, cases and the baseline death trend come from the Malaria Atlas Project (audit I-06 / I-11)
     import malaria_inputs
-    return malaria_inputs.apply(ci)
+    ci = malaria_inputs.apply(ci)
+    # interest % of revenue: the more recent of World Bank and IMF WEO (audit I-26)
+    import fiscal_inputs
+    return fiscal_inputs.apply(ci)
 
 
 def main():

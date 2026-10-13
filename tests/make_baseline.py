@@ -28,6 +28,10 @@ PMTCT costs US$250 a woman including her ART, and PMTCT women are outside the AR
 with HIV results were refreshed (later mechanisms off); outside lives first only HIV lines, the totals and the HIV path
 were allowed to change, and that is checked:  python tests/make_baseline.py --hiv
 
+Interest (audit I-26): the debt-stress factor now uses the more recent of World Bank and IMF WEO interest-to-revenue,
+so fiscal capacity changed; entries with a government response were refreshed, and entries with no response were
+checked to be unchanged:  python tests/make_baseline.py --fiscal
+
 Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
 Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
     python tests/make_baseline.py --gains-only"""
@@ -155,6 +159,32 @@ def _refresh(prefix, label):
           f"{other}")
 
 
+def refresh_fiscal():
+    """I-26: interest as % of revenue now comes from the more recent of World Bank and IMF WEO (no silent default), so
+    the debt-stress factor and fiscal capacity changed. Only runs with a government response can change; entries with
+    no response must be identical (checked)."""
+    I, P = hm.load_inputs(), hm.load_params()
+    P.loc[NEW_MECHANISMS, ["central", "low", "high"]] = 0.0
+    p = Path(__file__).parent / "baseline_sudden.json"
+    out = json.loads(p.read_text())
+    done = []
+    for key in list(out):
+        iso, preset, fk = key.split("|")
+        sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
+        new = snapshot(hm.run_country(iso, sc, hm.Fiscal(*FISCALS[fk]), I, P, n_draws=N_DRAWS))
+        old = out[key]
+        same = all(_close(new["lines"][l][c], v) for l, cols in old["lines"].items() for c, v in cols.items()) and \
+            all(_close(new["totals"][k], v) for k, v in old["totals"].items())
+        if same:
+            continue
+        if fk == "none":
+            raise SystemExit(f"{key}: a run with no government response changed")
+        out[key] = new
+        done.append(key)
+    p.write_text(json.dumps(out))
+    print(f"refreshed {len(done)} of {len(out)} entries (all with a government response): {done}")
+
+
 def refresh_malaria():
     """I-06 / I-11 / I-27 (malaria): malaria coverage, cases and death trend now come from the Malaria Atlas Project,
     bednets and spraying have separate coverages, and malaria treatment costs US$14 a case. Replace the entries whose
@@ -195,5 +225,7 @@ if __name__ == "__main__":
         refresh_malaria()
     elif "--hiv" in sys.argv:
         refresh_hiv()
+    elif "--fiscal" in sys.argv:
+        refresh_fiscal()
     else:
         main()

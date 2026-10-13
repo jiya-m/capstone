@@ -283,8 +283,8 @@ def run(iso, scen, resp_share):
     ghes = g(iso, "ghes_2023")
     gm = g(iso, "ghes_growth_median") or 0.0
     gp = g(iso, "ghes_growth_p75") or 0.0
-    ir = g(iso, "gc_xpn_intp_rv_zs")
-    stress = 1.0 if ir is None else float(np.clip(1 - (ir - 10) / 40, 0.25, 1))
+    ir = g(iso, "interest_pct_revenue")          # METHOD.md (I-26): never missing
+    stress = float(np.clip(1 - (ir - 10) / 40, 0.25, 1))
     cap = 0.0 if ghes is None else ghes * max(0.0, gp - max(gm, 0.0)) * stress
     R = min(resp_share * G, cap, G) if resp_share > 0 else 0.0
     pos = [v for v in eff.values() if v > 0] + [v for v in nonserv.values() if v > 0]

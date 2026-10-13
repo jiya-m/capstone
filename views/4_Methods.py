@@ -327,7 +327,13 @@ with tabs[2]:
     - **g_strong**: the 75th percentile of that growth (a strong year), or the 90th (the best years), chosen under
       Advanced.
     - **s, the debt-stress factor**: 1 when interest takes 10% of revenue or less, falling linearly to 0.25 at 40%
-      or more. Interest as % of revenue is World Bank WDI `GC.XPN.INTP.RV.ZS`, latest year.
+      or more. Interest as % of revenue is the more recent of two sources (ties: World Bank): World Bank WDI
+      interest payments (`GC.XPN.INTP.RV.ZS`), and IMF World Economic Outlook (October 2026) net interest = (primary
+      balance - overall balance) ÷ revenue (`GGXONLB_NGDP`, `GGXCNL_NGDP`, `GGR_NGDP`), latest actual year. WEO's
+      data API does not flag projections, so a year counts as actual only if it is before the country's first GDP
+      estimate year. Net interest is interest paid minus interest received, so it can be a little below interest
+      paid. Where neither source has a value, the median of the dashboard countries in the same income group is used
+      and marked "estimated". The source and year are shown in the fiscal panel.
     """)
     st.latex(r"s=\operatorname{clip}\!\Big(1-\frac{\text{interest \% of revenue}-10}{40},\ 0.25,\ 1\Big)")
     md(f"""
@@ -617,6 +623,7 @@ with tabs[3]:
     | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules (nominal US$, as written in the MOU) | America First MOUs scenario |
     | KFF Tracker: America First MOU Bilateral Global Health Agreements | KFF, data as of 8 October 2026 | Countries with a signed MOU (36), agreement date, US funding | Header MOU status; which countries can run America First MOUs |
     | Gavi financial data | Gavi, FY2021-25 | Disbursements | Cost per child immunized |
+    | World Economic Outlook, October 2026 (fiscal balances) | IMF, api.imf.org SDMX (dataflow IMF.RES:WEO), downloaded 13 October 2026 | Primary net lending/borrowing, net lending/borrowing and revenue, % of GDP (`GGXONLB_NGDP`, `GGXCNL_NGDP`, `GGR_NGDP`) | Net interest % of revenue for the debt-stress factor, where more recent than the World Bank figure |
     | Malaria Atlas Project national unit data | MAP (data.malariaatlas.org), downloaded 13 October 2026 | Effective treatment per 100 cases; ITN use; household IRS coverage; *P. falciparum* and *P. vivax* clinical cases (2000-2025) | Malaria coverage and cases (2025); malaria death trend (*P. falciparum* cases 2015-2025) |
     | World Malaria Report 2025 | WHO | 610,000 malaria deaths in 2024; case incidence trend 2015-2024 | Validation page; malaria trend rationale |
 
@@ -645,7 +652,7 @@ with tabs[3]:
     | `SP.POP.TOTL`, `SP.POP.1564.TO` | Population, total and 15-64 | People in need; per-person rates |
     | `GC.REV.XGRT.GD.ZS` | Revenue excluding grants (% of GDP) | Aid lost as % of revenue |
     | `GC.DOD.TOTL.GD.ZS` | Central government debt (% of GDP) | Fiscal panel |
-    | `GC.XPN.INTP.RV.ZS` | Interest payments (% of revenue) | Debt-stress factor |
+    | `GC.XPN.INTP.RV.ZS` | Interest payments (% of revenue) | Debt-stress factor (or IMF WEO net interest, whichever is more recent) |
     | `SH.XPD.GHED.GE.ZS` | Government health spending (% of government spending) | Health's share of government spending (first choice, latest year); fastest historical rise in that share (benchmark under the sliders) |
     | `SP.DYN.CDRT.IN`, `SH.MMR.DTHS` | Crude death rate; maternal deaths | Validation page |
     """)
@@ -702,7 +709,10 @@ with tabs[4]:
       chain breakdowns are not modelled.
     - **No re-allocation by other donors** beyond the government response.
     - **Post-2023 aid is not observed by recipient.** IHME's 2024-2025 estimates have no country split, so the model's
-      baseline is 2021-2023.
+      baseline is 2021-2023. A 2025 baseline (IHME's preliminary 2025 aid levels) would reflect aid already lost
+      after 2023; this is planned as a future option. The IHME 2025 scenario shows the effect of those losses.
+    - **Inputs come from different years** and are applied to 2026-2030 without projection (see *Data Years*): aid is
+      the 2021-2023 average, coverage is 2024-2025, government health spending is 2023.
     - **Malaria coverage is modelled.** Treatment, bednet and spraying coverage are Malaria Atlas Project 2025
       estimates (MAP's 2025 values repeat 2024 for treatment and bednets). Outside MAP's bednet countries, surveys
       from 2015 on or a default are used and flagged with the source and year next to each value.

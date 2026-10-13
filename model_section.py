@@ -1398,17 +1398,27 @@ def health_share_pill(F) -> tuple:
             "Database).", "Abuja Target: 15%")
 
 
+def interest_text(F: dict) -> str:
+    """'Interest: 38% of revenue (IMF WEO, 2024)', or '(estimated: median of low income countries)' (audit I-26)."""
+    if F.get("interest_estimated"):
+        return f"Interest: {F['interest_pct_revenue']:.0f}% of revenue (estimated: {F['interest_source']})"
+    src = "IMF WEO" if str(F.get("interest_source", "")).startswith("net interest") else "World Bank WDI"
+    y = F.get("interest_year")
+    return f"Interest: {F['interest_pct_revenue']:.0f}% of revenue ({src}{f', {int(y)}' if y == y and y else ''})"
+
+
 def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_FISCAL):
     F = res["fiscal"]
-    stress = (f" High interest costs shrink it: interest takes {F['interest_pct_revenue']:.0f}% of revenue, so the "
-              f"debt-stress factor is {F['stress_factor']:.2f} (1 at 10% or less, falling to 0.25 at 40%)."
-              if not pd.isna(F["interest_pct_revenue"]) else "")
+    stress = (f" {interest_text(F)}, so the debt-stress factor is {F['stress_factor']:.2f} (1 at 10% of revenue or "
+              "less, falling to 0.25 at 40%).")
     st.subheader(f"Can {country_name} Fill the Gap?",
                  help=_esc("All three numbers come from the same run as the headline, as averages per year over "
                            "2026-2030 (2030 shown underneath when it differs). Backfill capacity (fiscal space) = "
                            "government health spending x (strong-year growth minus typical growth) x a debt-stress "
                            "factor." + stress + " Growth rates are real (constant 2023 US$) from IHME, 2001-2023; "
-                           "interest and revenue are World Bank WDI, latest year (IMF data fill gaps)."))
+                           "interest is the more recent of World Bank WDI interest payments and IMF WEO net "
+                           "interest (primary minus overall balance), or the income-group median where neither "
+                           "exists."))
     avg, y30, show30 = fiscal_gap_values(res)
     rev = F["revenue"]
     if (pd.isna(rev) or not rev) and imf.get("revenue_pct_gdp") and F["gdp"]:
@@ -1475,8 +1485,8 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_
             xaxis=dict(range=[0, xmax], nticks=4), yaxis=dict(type="category"), margin=dict(l=10, r=90, t=70, b=10))
     note = (None if on_scale or cap <= 0 else
             f"Backfill capacity (fiscal space), {money(cap)} a year, is off the scale of this chart.")
-    chart(fig, source="Model estimates; IHME government health spending and its real growth, 2001-2023; World Bank "
-                      "WDI (interest and revenue).", note=note)
+    chart(fig, source="Model estimates; IHME government health spending and its real growth, 2001-2023; "
+                      f"{interest_text(F)}.", note=note)
 
 
 # --------------------------------------------------------------------------- #
@@ -1506,17 +1516,42 @@ DATA_YEARS = [   # (input, column holding each country's year or None, fixed yea
     ("Under-5 mortality", "sh_dyn_mort_year", None, "UN IGME (World Bank WDI)", None),
     ("Under-5 mortality trend", None, "2010-2019", "UN IGME (World Bank WDI)", None),
     ("Population and births", "sp_pop_totl_year", None, "World Bank WDI", None),
+    ("Interest as % of revenue (debt stress)", "interest_pct_revenue_year", None,
+     "more recent of World Bank WDI and IMF WEO (Oct 2026)", "interest_pct_revenue_source"),
 ]
 
 
 def _source_kind(s) -> str:
     s = str(s) if isinstance(s, str) else ""
-    for key, kind in (("MAP", "MAP"), ("WHO", "WHO"), ("UNAIDS", "UNAIDS"), ("survey", "survey"),
+    for key, kind in (("net interest", "IMF WEO"), ("median of", "estimated"), ("MAP", "MAP"), ("WHO", "WHO"), ("UNAIDS", "UNAIDS"), ("survey", "survey"),
                       ("World Bank", "World Bank"), ("default", "default"), ("no MAP", "no estimate"),
                       ("derived", "derived"), ("assumption", "assumed")):
         if s.startswith(key) or (key == "World Bank" and "World Bank" in s):
             return kind
     return "other" if s else "n/a"
+
+
+COVERAGE_YEAR_COLS = ["sh_hiv_artc_zs_year", "sh_hiv_pmtc_zs_year", "sh_tbs_dtec_zs_year", "sh_imm_idpt_year",
+                      "mal_cm_cov_year", "mal_itn_cov_year", "mal_irs_cov_year"]
+
+
+def _yr_range(a: int, b: int) -> str:
+    return str(a) if a == b else f"{a}-{str(b)[2:] if str(a)[:2] == str(b)[:2] else b}"
+
+
+def inputs_years_line(ci: pd.DataFrame, isos) -> str:
+    """One line for under the country header (audit I-17), with every year read from the inputs: 'Inputs: aid
+    2021-23 average; coverage 2024-25 (malaria: MAP 2025); government health spending 2023; applied to 2026-2030
+    without projection.'"""
+    d = ci.loc[[c for c in isos if c in ci.index]]
+    modes = [int(pd.to_numeric(d[c], errors="coerce").dropna().mode()[0]) for c in COVERAGE_YEAR_COLS
+             if c in d and pd.to_numeric(d[c], errors="coerce").notna().any()]
+    mal = pd.to_numeric(d.get("mal_cm_cov_year"), errors="coerce").dropna()
+    a0, a1 = hm.AID_BASE_YEARS
+    return (f"Inputs: aid {_yr_range(a0, a1)} average; coverage {_yr_range(min(modes), max(modes))}"
+            + (f" (malaria: MAP {int(mal.mode()[0])})" if len(mal) else "")
+            + f"; government health spending {hm.GHES_YEAR}; applied to {scn.YEARS[0]}-{scn.YEARS[-1]} without "
+              "projection.")
 
 
 def data_years_table(ci: pd.DataFrame, isos) -> pd.DataFrame:
