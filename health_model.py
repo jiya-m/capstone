@@ -136,7 +136,10 @@ class Scenario:
     src_multi: dict = field(default_factory=dict)       # source group -> cut on its contributions via multilaterals
     pair: dict = field(default_factory=dict)            # (source group, channel group) -> cut (overrides the above)
     chan: dict = field(default_factory=dict)            # channel group -> cut for ALL sources (replenishment shortfall)
-    us_direct_by_country: dict = field(default_factory=dict)   # iso3 -> cut on US direct channels (MOU schedule)
+    us_direct_by_country: dict = field(default_factory=dict)   # iso3 -> cut on US direct channels (one value)
+    # iso3 -> 5 cuts (2026-2030) on US direct channels, used as written (America First MOU schedules)
+    us_direct_path_by_country: dict = field(default_factory=dict)
+    mou_only: bool = False                              # only countries in us_direct_path_by_country can be run
     ihme_trend: bool = False
     bucket_only: str | None = None                      # restrict the shock to one bucket (dose-response curves)
     scale: float = 1.0                                  # multiplies every cut (the scenario's own path, 0 -> 1)
@@ -157,6 +160,23 @@ class Scenario:
             y = self.chan.get(c, 0.0)
             out[i] = 1.0 - (1.0 - x) * (1.0 - y)
         return np.clip(out, -1.0, 1.0) * self.scale
+
+    def cuts_by_year(self, cells: pd.DataFrame, iso3: str, trend_map: dict) -> np.ndarray:
+        """Cut on every cell in each year 2026-2030 (cells x 5). The same as cuts() in every year, except US direct
+        channels in a country with a yearly schedule (us_direct_path_by_country), which follow that schedule."""
+        base = self.cuts(cells, iso3, trend_map)
+        out = np.repeat(base[:, None], N_YEARS, axis=1)
+        path = self.us_direct_path_by_country.get(iso3)
+        if path is None or not len(cells):
+            return out
+        for i, (s, c, b) in enumerate(zip(cells["src_grp"], cells["chan_grp"], cells["bucket"])):
+            if s != "United States" or c not in DIRECT_CHANNELS or (self.bucket_only and b != self.bucket_only):
+                continue
+            y = self.chan.get(c, 0.0)
+            for t in range(N_YEARS):
+                x = self.pair.get((s, c), float(path[t]))
+                out[i, t] = float(np.clip(1.0 - (1.0 - x) * (1.0 - y), -1.0, 1.0)) * self.scale
+        return out
 
 
 def uniform_scenario(bucket: str, cut: float) -> Scenario:
@@ -462,13 +482,22 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     cut_path = np.clip(_path(cut_path, 1.0), 0.0, 1.0)
     gov_add = np.clip(_path(gov_add_usd, 0.0), 0.0, None)
     ci, lines = inputs["ci"], inputs["lines"]
+    if scenario.mou_only and iso3 not in scenario.us_direct_path_by_country:
+        raise ValueError(f"{iso3}: no MOU funding schedule, so the America First MOUs scenario can't be run")
     row = ci.loc[iso3] if iso3 in ci.index else pd.Series(dtype=float)
     cells = lines[lines.iso3 == iso3].copy()
-    cells["cut"] = scenario.cuts(cells, iso3, inputs["trend_map"]) if len(cells) else []
+    # cut on each cell in each year: the scenario's own yearly cuts (MOU schedules) x the funding path
+    cut_y = scenario.cuts_by_year(cells, iso3, inputs["trend_map"]) if len(cells) else np.zeros((0, N_YEARS))
+    cut_m = cut_y * cut_path[None, :]
+    usd = cells["usd"].to_numpy()
+    gross_t = [pd.Series(usd * cut_m[:, t], index=cells.index).groupby(cells["line"]).sum() for t in range(N_YEARS)]
+    gross_full_t = [pd.Series(usd * cut_y[:, t], index=cells.index).groupby(cells["line"]).sum()
+                    for t in range(N_YEARS)]
+    cells["cut"] = cut_m.mean(axis=1) if len(cells) else []          # average yearly cut (shown in charts)
     cells["loss"] = cells["usd"] * cells["cut"]
 
     base = cells.groupby("line")["usd"].sum()
-    gross = cells.groupby("line")["loss"].sum()
+    gross = cells.groupby("line")["loss"].sum()                       # average yearly loss by line
     P = draw_params(ptab, n_draws, seed)
     Pc = draw_params(ptab, 0)
     n = len(P["uc_imm"])
@@ -487,16 +516,15 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             nonservice[b] = (1 - kappa) * s
         return eff, nonservice
 
-    eff, nonserv = effective(gross, P["hss_kappa"])
     eff_base, _ = effective(base, P["hss_kappa"])
-    effc, nonservc = effective(gross, Pc["hss_kappa"])
     effc_base, _ = effective(base, Pc["hss_kappa"])
 
     # ---- 2. fiscal response, year by year ----
     # aid lost in year t = full scenario loss x cut_path(t); the government response in `fiscal` applies to that year's
     # loss (capped by fiscal space), then any extra money (gov_add) is added. Net gap = loss - both, floored at 0.
     fs = fiscal_space(row, fiscal.effort)
-    G = float(np.clip(gross, 0, None).sum())
+    # full-cut yearly loss (the scenario's own deepest year), reported for the fiscal panel and break-even
+    G = float(max(np.clip(g, 0, None).sum() for g in gross_full_t)) if len(cells) else 0.0
     th_hist = max(0.0, theta_historical(inputs["reg"])[0])
 
     def response(g):
@@ -505,7 +533,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         r = min(want, fs["capacity"]) if (fiscal.cap_to_space or fiscal.mode == "max") else want
         return max(r, 0.0), want
 
-    G_t = G * cut_path
+    G_t = np.array([float(np.clip(g, 0, None).sum()) for g in gross_t]) if len(cells) else np.zeros(N_YEARS)
     R_t = np.array([response(g)[0] for g in G_t])                    # the existing government response, per year
     budget_t = np.minimum(R_t + gov_add, G_t)                        # total replacement, never more than is lost
     R, want = response(G)                                            # full-cut values, reported for the fiscal panel
@@ -552,10 +580,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     years = range(N_YEARS)
     effc_t, repc_t, repnc_t, net_t, netc_t = [], [], [], [], []
     for t in years:
-        e_t = {l: v * cut_path[t] for l, v in eff.items()}
-        ns_t = {b: v * cut_path[t] for b, v in nonserv.items()}
-        ec_t = {l: v * cut_path[t] for l, v in effc.items()}
-        nsc_t = {b: v * cut_path[t] for b, v in nonservc.items()}
+        e_t, ns_t = effective(gross_t[t], P["hss_kappa"])
+        ec_t, nsc_t = effective(gross_t[t], Pc["hss_kappa"])
         r, _ = allocate(e_t, ns_t, budget_t[t])
         rc, rnc = allocate(ec_t, nsc_t, budget_t[t])
         effc_t.append(ec_t)
@@ -606,7 +632,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     # ---- 4. lives ----
     # ramp-up (LAG) is indexed by how long the cut has been in force, not by calendar year
-    started = np.flatnonzero(cut_path > 0)
+    # the cut "starts" in the first year anything is cut (a funding path, or a schedule that begins later)
+    started = np.flatnonzero(np.abs(cut_m).sum(axis=0) > 0) if len(cells) else np.flatnonzero(cut_path > 0)
     dur = np.array([t - started[0] if started.size and t >= started[0] else 0 for t in years])
     mal_f = mortality_trend_factors(row, "malaria", mortality_trend)
 
@@ -753,7 +780,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         inf5 = sum(infections[l].sum(axis=1) for l in lb if l in infections) if b == "HIV" else np.zeros(n)
         bl = [l for l in base.index if FULL_LINE_BUCKET.get(l) == b]
         b_base = float(base.reindex(bl).sum()) if bl else 0.0
-        b_gross = float(gross.reindex(bl).sum()) * float(cut_path.mean()) if bl else 0.0
+        b_gross = float(gross.reindex(bl).sum()) if bl else 0.0           # average yearly loss
         b_rep = float(np.mean([sum(np.asarray(repc_t[t][l]).ravel()[0] for l in lb)
                                + float(np.asarray(repnc_t[t].get(b, 0.0)).ravel()[0]) for t in years]))
         b_net = b_gross - b_rep
@@ -774,7 +801,11 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                               "hi": np.percentile(np.cumsum(all_d, axis=1), 97.5, axis=0)}, index=path.index)
     d5c = float(sum(deathsc[l].sum() for l in deathsc))
     committed = tot5 + after                           # deaths set in motion by the 2026-2030 losses
-    year_tab = pd.DataFrame({"year": [2026 + t for t in years], "cut_share": cut_path, "aid_lost_usd": G_t,
+    us_path = scenario.us_direct_path_by_country.get(iso3)
+    year_tab = pd.DataFrame({"year": [2026 + t for t in years], "cut_share": cut_path,
+                             "us_bilateral_cut": (np.asarray(us_path, dtype=float) * cut_path * scenario.scale
+                                                  if us_path is not None else np.full(N_YEARS, np.nan)),
+                             "aid_lost_usd": G_t,
                              "response_usd": R_t, "gov_add_usd": gov_add, "replaced_usd": budget_t,
                              "gap_usd": G_t - budget_t,
                              "deaths": [float(sum(deathsc[l][0, t] for l in deathsc)) for t in years]})
@@ -790,7 +821,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                          "after_parts": afterc},
            "totals": {"base": float(base.sum()), "gross": float(G_t.mean()), "replaced": float(budget_t.mean()),
                       "net": float((G_t - budget_t).mean()), "gross_full": G,
-                      "gains": float(-np.clip(gross, None, 0).sum()),
+                      "gains": float(np.mean([-np.clip(g, None, 0).sum() for g in gross_full_t])) if len(cells) else 0.0,
                       "deaths_5y": d5c, "deaths_5y_lo": q(tot5, 2.5), "deaths_5y_hi": q(tot5, 97.5),
                       "deaths_y1": float(sum(deathsc[l][0, 0] for l in deathsc))}}
     if keep_draws:
@@ -934,11 +965,16 @@ def _money_by_year(iso3, scenario, fiscal, inputs, cut_path):
     ci, lines = inputs["ci"], inputs["lines"]
     row = ci.loc[iso3] if iso3 in ci.index else pd.Series(dtype=float)
     cells = lines[lines.iso3 == iso3].copy()
-    loss = (cells["usd"] * scenario.cuts(cells, iso3, inputs["trend_map"])) if len(cells) else pd.Series(dtype=float)
-    G = float(np.clip(loss.groupby(cells["line"]).sum(), 0, None).sum()) if len(cells) else 0.0
+    path = np.clip(_path(cut_path, 1.0), 0, 1)
+    if len(cells):
+        cut_m = scenario.cuts_by_year(cells, iso3, inputs["trend_map"]) * path[None, :]
+        usd = cells["usd"].to_numpy()
+        G_t = np.array([float(np.clip(pd.Series(usd * cut_m[:, t], index=cells.index).groupby(cells["line"]).sum(),
+                                      0, None).sum()) for t in range(N_YEARS)])
+    else:
+        G_t = np.zeros(N_YEARS)
     fs = fiscal_space(row, fiscal.effort)
     th = max(0.0, theta_historical(inputs["reg"])[0])
-    G_t = G * np.clip(_path(cut_path, 1.0), 0, 1)
     R_t = []
     for g in G_t:
         want = {"none": 0.0, "gradual": 0.0, "historical": th * g, "custom": fiscal.theta * g,
@@ -981,6 +1017,8 @@ def break_even_share(iso3, scenario, fiscal, inputs, cut_path=None, tol: float =
 
 def run_all(scenario, fiscal, inputs, ptab, n_draws=80, countries=None, mortality_trend=True):
     countries = countries or [c for c in inputs["ci"].index if c in set(inputs["lines"].iso3)]
+    if scenario.mou_only:                              # America First MOUs: only countries with an MOU schedule
+        countries = [c for c in countries if c in scenario.us_direct_path_by_country]
     recs = []
     for c in countries:
         r = run_country(c, scenario, fiscal, inputs, ptab, n_draws=n_draws, mortality_trend=mortality_trend)

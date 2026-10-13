@@ -312,6 +312,9 @@ def regression_claims():
 
 
 def main():
+    if not hasattr(scn, "mou_cuts"):
+        sys.exit("analysis.py records the audit of commit 4cbb7ff; the MOU functions it tests were replaced in the "
+                 "I-02/I-03/I-08 fix. Run it at that commit.")
     fallbacks()
     print("fallbacks done")
     df = outliers()

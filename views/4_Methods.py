@@ -125,7 +125,7 @@ with tabs[1]:
     |---|---|---|
     | Region | World Bank region code recorded with the country in the IHME aid database (most common value) | IHME DAH database |
     | Income Group | World Bank income classification; if missing, GDP per person below $1,150 = low, below $4,500 = lower-middle, otherwise upper-middle | World Bank country entities (Gapminder mirror) |
-    | US MOU | "MOU Signed" if the team's MOU / co-financing sheet records a status of signed, or (when no status is recorded) has a 2026 US funding schedule; otherwise "No MOU" | Team's MOU / co-financing sheet |
+    | US MOU | "MOU Signed" if the country is in KFF's tracker of signed America First MOU bilateral global health agreements (36 countries, data as of 8 October 2026); otherwise "No MOU". Never inferred from whether schedule data exist | KFF Tracker: America First MOU Bilateral Global Health Agreements (as of 2026-10-08) |
     | GDP | Latest year the IMF reports as actual (not an estimate), in constant 2023 US$ (see *Units and Currency*) | IMF World Economic Outlook, IHME GDP |
     | Population | Same year as GDP | IMF World Economic Outlook |
     """)
@@ -283,7 +283,7 @@ with tabs[2]:
     | Scenario | What is cut | Source of the numbers |
     |---|---|---|
     | Full US Exit | US direct aid -100%; US contributions through WHO, Gavi and UNFPA -100%; US Global Fund pledge -23% (US$6.0B to US$4.6B) | US announcements (WHO exit effective Jan 2026; Gavi June 2025); Global Fund 8th replenishment, Nov 2025 |
-    | America First MOUs | US direct aid follows each country's 2026-2030 MOU schedule (US funding that year ÷ 2021-25 reference); countries without a schedule get the average MOU-country cut; US multilateral exits as above | Team's MOU / co-financing sheet |
+    | America First MOUs | Only for countries with a signed MOU (KFF) **and** 2026-2030 US funding values in the team's sheet (16 countries). US direct aid follows the country's own schedule year by year: cut in year t = 1 - US funding in t ÷ 2021-25 reference, used exactly as written (never rescaled); a funding increase counts as a 0% cut; a schedule that eases later is followed as written (people return to care); where the schedule ends in 2028 (Botswana, South Sudan) the 2028 cut is held through 2030. US multilateral exits as above. Countries that signed without funding data list the scenario as unavailable; countries without an MOU don't offer it | KFF tracker (status); team's MOU / co-financing sheet (schedules) |
     | IHME 2025 Preliminary Estimates | Each source x channel x disease cell changes by IHME's 2025 preliminary total ÷ its 2021-23 average (global ratio applied to the country's mix; cells under US$20M a year use the source x disease ratio; clipped to 0-1.5) | IHME DAH database, 2025 preliminary estimates |
     | OECD-Reported 2025 Aid Cuts | Each donor's 2025 change in total aid applied to its health aid: US -57%, Germany -17.4%, France -10.9%, UK -10.8%, Japan -5.6% | OECD preliminary 2025 ODA data, April 2026 |
     | Global Fund & Gavi Shortfalls | Every donor's money through the Global Fund -28% (US$11.34B vs US$15.7B) and Gavi -24% (about US$9B vs US$11.9B target) | Replenishment outcomes |
@@ -497,7 +497,6 @@ with tabs[2]:
     | Front-loaded | 1 - (1 - t/5)² | {", ".join(f"{v:.0%}" for v in scn.path_shape("Front-loaded"))} |
     | Back-loaded | (t/5)² | {", ".join(f"{v:.0%}" for v in scn.path_shape("Back-loaded"))} |
     | S-curve | logistic with midpoint year 3 (slope {scn.S_CURVE_STEEPNESS}), rescaled so year 5 = 1 | {", ".join(f"{v:.0%}" for v in scn.path_shape("S-curve"))} |
-    | MOU schedule | each year's cut in US bilateral aid from the team's MOU sheet (1 - US funding that year ÷ 2021-25 reference), as a share of the deepest year's cut | MOU countries only |
     | Custom | set year by year with the sliders | |
 
     **Gradual budget increase.** The government raises health's share of its total spending by a number of
@@ -576,7 +575,8 @@ with tabs[3]:
     | Systema Globalis | Gapminder (WHO estimates) | TB incidence and deaths (HIV-negative and HIV-positive); child (1-59 months) malaria, measles and pneumonia deaths (WHO/MCEE) | TB inputs; Validation page regressions |
     | HIV share of deaths | Gapminder fasttrack (IHME GBD) | HIV deaths as % of all deaths | Validation page (Lancet rate ratios) |
     | Country classifications | World Bank (Gapminder mirror) | Income group | Header; TB costs |
-    | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules; MOU status | America First MOUs scenario; header |
+    | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules | America First MOUs scenario |
+    | KFF Tracker: America First MOU Bilateral Global Health Agreements | KFF, data as of 8 October 2026 | Countries with a signed MOU (36), agreement date, US funding | Header MOU status; which countries can run America First MOUs |
     | Gavi financial data | Gavi, FY2021-25 | Disbursements | Cost per child immunized |
 
     Section 1 uses IHME's health spending database and Section 2 its DAH database; aid totals agree within 2% for 624 of

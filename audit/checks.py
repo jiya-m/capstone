@@ -83,7 +83,7 @@ def expected_cut(preset, iso, src, chan, bucket, opts):
         pair = US_PAIRS
     if preset == "America First MOUs":
         if src == "United States" and direct:
-            a = scn.mou_cuts(CI, opts["mou_year"]).get(iso, opts["non_mou_cut"])
+            a = float(np.mean(scn.mou_schedule(CI, iso)[0]))   # cells show the average yearly cut of the schedule
         pair = US_PAIRS
     if preset in ("OECD-reported 2025 aid cuts", "Combined retreat") and src in OECD:
         if not (preset == "Combined retreat" and src == "United States"):
@@ -235,6 +235,8 @@ def main():
         sc = scn.build_scenario(preset, opts, CI)
         for resp, ft in RESPONSES.items():
             for iso in COUNTRIES:
+                if preset == "America First MOUs" and iso not in sc.us_direct_path_by_country:
+                    continue                                   # group A only (I-02/I-03/I-08)
                 gov_add = gov_add_for(iso) if resp == "gradual" else None
                 res = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=400, gov_add_usd=gov_add)
                 per_run(iso, preset, resp, res, ft, opts)
@@ -256,6 +258,8 @@ def main():
         rec("ALL", preset, "none", "precomputed_csv_has_all_columns", not missing, len(missing), ", ".join(missing))
         # also the dashboard's own country run == the All Countries row
         for iso in ("KEN", "NGA", "MOZ", "HND", "IRQ"):
+            if iso not in old.index:                   # America First MOUs: group A countries only
+                continue
             r = hm.run_country(iso, scn.build_scenario(preset, scn.default_opts(preset, CI), CI),
                                hm.Fiscal(*scn.DEFAULT_FISCAL), I, P, n_draws=400)
             ok = close(r["totals"]["deaths_5y"], old.loc[iso, "deaths_5y"], 1e-6, 1e-3) and \
@@ -269,6 +273,8 @@ def main():
         opts = scn.default_opts(preset, CI)
         for resp in ("none", "custom25"):
             for iso in COUNTRIES:
+                if preset == "America First MOUs" and scn.mou_group(CI, iso) != "A":
+                    continue
                 vals = []
                 for k in (0.0, 0.25, 0.5, 0.75, 1.0):
                     sc = scn.build_scenario(preset, opts, CI)

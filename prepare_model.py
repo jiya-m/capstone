@@ -129,9 +129,40 @@ HIV_SHARE_URL = "https://raw.githubusercontent.com/open-numbers/ddf--gapminder--
 HIV_SHARE_FILE = EXT / "gm" / "ddf--datapoints--ihme_hiv_death--by--country--time.csv"   # IHME HIV share of all deaths, %
 WB_REGIONS = {"SSA": "Sub-Saharan Africa", "SAS": "South Asia", "EAP": "East Asia & Pacific",
               "ECA": "Europe & Central Asia", "LAC": "Latin America & Caribbean", "MNA": "Middle East & North Africa"}
-MOU_STATUS_VALUES = {"signed": "Signed", "rejected": "Rejected", "negotiating": "Negotiating"}
+KFF_MOU_FILE = HERE / "datasets" / "KFF_MOU_Tracker_2026-10-08.xlsx"
+KFF_SOURCE = ("KFF Tracker: America First MOU Bilateral Global Health Agreements (data as of 2026-10-08), "
+              "https://www.kff.org/global-health-policy/kff-tracker-america-first-mou-bilateral-global-health-agreements/")
+KFF_NAME_FIX = {"Côte d'Ivoire": "CIV"}            # KFF spelling -> ISO3 where it differs from country_lists.py
 TREND_YEARS = (2010, 2019)          # pre-COVID window for baseline mortality trends
 TREND_CLIP = (-0.08, 0.02)          # annual % change, clipped
+
+
+def build_mou_signed(path: Path) -> pd.DataFrame:
+    """Signed America First MOUs from KFF's tracker table -> model_data/mou_signed.csv
+    (iso3, country, agreement_date, us_funding_total, source, note). The 'Total' row is dropped; a date KFF gives as
+    text (Madagascar: '12/22/25 or 12/23/25') is stored as its first date with the original text in note."""
+    from country_lists import ALLOWED_COUNTRIES
+    k = pd.read_excel(path)
+    k = k[k["Country Name"].astype(str).str.strip().str.lower() != "total"].copy()
+    name_to_iso = {v: c for c, v in ALLOWED_COUNTRIES.items()} | KFF_NAME_FIX
+    k["iso3"] = k["Country Name"].map(name_to_iso)
+    missing = k.loc[k["iso3"].isna(), "Country Name"].tolist()
+    assert not missing, f"KFF countries with no ISO3 code: {missing}"
+    dates, notes = [], []
+    for v in k["Agreement Date"]:
+        if isinstance(v, str):
+            first = re.split(r"\s+or\s+", v.strip())[0]
+            dates.append(pd.to_datetime(first, format="%m/%d/%y").date().isoformat())
+            notes.append(f"KFF date: {v.strip()}")
+        else:
+            dates.append(pd.Timestamp(v).date().isoformat())
+            notes.append("")
+    out = pd.DataFrame({"iso3": k["iso3"], "country": k["Country Name"], "agreement_date": dates,
+                        "us_funding_total": pd.to_numeric(k["U.S. Funding"], errors="coerce"),
+                        "source": KFF_SOURCE, "note": notes}).sort_values("iso3")
+    out.to_csv(OUT / "mou_signed.csv", index=False)
+    print(f"  mou_signed: {len(out)} signed MOUs (KFF)")
+    return out
 
 
 def download_ext():
@@ -391,20 +422,11 @@ def main(a):
         names = ["country", "iso3", "us_ref", "gf_ref", "gavi_ref", "wb_ref", "oth_ref", "us_2026", "us_2027", "us_2028",
                  "us_2029", "us_2030", "gf_gc8_hiv", "gf_gc8_tb", "gf_gc8_mal", "gf_gc8_rssh", "gavi_2026_30",
                  "wb_2026_30"]
-        raw = m
         m = m.iloc[5:, :len(names)]
         m.columns = names
         m = m[m.iso3.isin(ISO3)].set_index("iso3").drop(columns="country")
         m = m.apply(pd.to_numeric, errors="coerce")
         ci = ci.join(m.add_prefix("mou_"))
-        # optional "mou_status" column (Signed / Rejected / Negotiating), found by its header anywhere in rows 0-3
-        hdr = raw.iloc[:4].astype(str).apply(lambda c: c.str.strip().str.lower().str.replace(" ", "_"))
-        hit = [j for j in raw.columns if (hdr[j] == "mou_status").any()]
-        if hit:
-            st_ = raw.iloc[5:, [1, hit[0]]].dropna(subset=[1])
-            st_.columns = ["iso3", "status"]
-            ci["mou_status"] = (st_.set_index("iso3")["status"].astype(str).str.strip().str.lower()
-                                .map(MOU_STATUS_VALUES).reindex(ci.index))
     import who_inputs                    # current WHO / UNAIDS estimates replace the derived HIV and malaria inputs
     ci = who_inputs.apply(ci)
     ci.loc[DASHBOARD_ISO3].reset_index().to_csv(OUT / "country_inputs.csv", index=False)
@@ -422,10 +444,9 @@ def main(a):
     cd = ci.loc[DASHBOARD_ISO3]
     ig = cd.get("income_group", pd.Series(index=cd.index, dtype=object)).copy()
     prof["income_group"] = [g if isinstance(g, str) and g else hm.income_group(r) for g, (_, r) in zip(ig, cd.iterrows())]
-    has_2026 = cd["mou_us_2026"].notna() if "mou_us_2026" in cd else pd.Series(False, index=cd.index)
-    fallback = np.where(has_2026, "Signed", "No MOU in Team Data")
-    prof["mou_status"] = cd["mou_status"].fillna(pd.Series(fallback, index=cd.index)) if "mou_status" in cd \
-        else fallback
+    # MOU status comes only from KFF's list of signed agreements (never from whether the team sheet has a schedule)
+    signed = build_mou_signed(Path(a.kff))
+    prof["mou_status"] = np.where(prof.index.isin(signed["iso3"]), "Signed", "No MOU")
     missing = prof[["region", "income_group", "mou_status"]].isna()
     assert not missing.any().any(), f"country_profile has missing values: {prof.index[missing.any(axis=1)].tolist()}"
     prof.reset_index().to_csv(OUT / "country_profile.csv", index=False)
@@ -535,6 +556,7 @@ if __name__ == "__main__":
     p.add_argument("--expected")
     p.add_argument("--gdp")
     p.add_argument("--mou", default=None)
+    p.add_argument("--kff", default=str(KFF_MOU_FILE), help="KFF America First MOU tracker table (signed MOUs)")
     p.add_argument("--download", action="store_true")
     p.add_argument("--precompute-only", action="store_true",
                    help="skip the rebuild and only refresh model_data/all_countries_<preset>.csv")

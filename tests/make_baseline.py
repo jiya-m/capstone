@@ -1,7 +1,13 @@
 """Save sudden-cut results so tests can check that the current model, with the default path and the later mechanisms
 switched off, reproduces them. baseline_sudden.json was made by running this file at commit 5eb6111 (before TB spread,
 malaria rebound, vaccine cohorts and HIV infection deaths) with the current model_data/country_inputs.csv.
-Run from the repo root:  python tests/make_baseline.py"""
+Run from the repo root:  python tests/make_baseline.py
+
+America First MOUs is the exception (audit I-02/I-03): the preset was redefined to follow each country's MOU schedule
+year by year, only for countries with a signed MOU and schedule data, so the old model cannot produce it. Its entries
+(KEN, NGA, MOZ; HND and IRQ cannot run it) are written by the current model with the later mechanisms switched off,
+as test (a) runs it:  python tests/make_baseline.py --mou-only
+They lock the schedule-driven results against unintended changes; tests/test_mou.py checks the schedule itself."""
 import json
 import logging
 import sys
@@ -16,6 +22,8 @@ COUNTRIES = ["KEN", "NGA", "MOZ", "HND", "IRQ"]
 FISCALS = {"none": scn.DEFAULT_FISCAL, "custom25": ("custom", 0.25, True, "pro_rata", "p75"),
            "max_lives": ("max", 0.0, True, "lives_first", "p75")}
 N_DRAWS = 100
+MOU = "America First MOUs"
+NEW_MECHANISMS = ["tb_secondary", "mal_resurgence", "hiv_inf_death_untreated", "hiv_inf_death_treated"]  # 0 = off
 
 
 def snapshot(res):
@@ -32,6 +40,8 @@ def main():
     out = {}
     for iso in COUNTRIES:
         for preset in scn.PRESETS:
+            if preset == MOU and hasattr(scn, "mou_group") and scn.mou_group(I["ci"], iso) != "A":
+                continue
             sc = scn.build_scenario(preset, scn.default_opts(preset, I["ci"]), I["ci"])
             for fk, ft in FISCALS.items():
                 out[f"{iso}|{preset}|{fk}"] = snapshot(hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=N_DRAWS))
@@ -40,5 +50,21 @@ def main():
     print(f"saved {len(out)} runs to {p}")
 
 
+def refresh_mou():
+    """Replace only the America First MOUs entries, with the current model and the later mechanisms switched off."""
+    I, P = hm.load_inputs(), hm.load_params()
+    P.loc[NEW_MECHANISMS, ["central", "low", "high"]] = 0.0
+    p = Path(__file__).parent / "baseline_sudden.json"
+    out = {k: v for k, v in json.loads(p.read_text()).items() if k.split("|")[1] != MOU}
+    sc = scn.build_scenario(MOU, scn.default_opts(MOU, I["ci"]), I["ci"])
+    for iso in COUNTRIES:
+        if scn.mou_group(I["ci"], iso) != "A":
+            continue
+        for fk, ft in FISCALS.items():
+            out[f"{iso}|{MOU}|{fk}"] = snapshot(hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=N_DRAWS))
+    p.write_text(json.dumps(out))
+    print(f"saved {len(out)} runs to {p} ({sum(k.split('|')[1] == MOU for k in out)} America First MOUs)")
+
+
 if __name__ == "__main__":
-    main()
+    refresh_mou() if "--mou-only" in sys.argv else main()

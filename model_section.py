@@ -47,8 +47,8 @@ SRC_MODEL = "Model estimates from IHME aid data (2021-23 average), WHO, UNAIDS a
 SHOW_BRIEF = False                   # the Download Country Brief button (code kept for later)
 PRESET_SHORT = {
     "Full US exit": "All US health aid ends, including WHO, Gavi and UNFPA; the US Global Fund pledge falls 23%.",
-    "America First MOUs": "US bilateral aid follows each country's 2026-2030 MOU schedule; US multilateral exits as in "
-                          "Full US Exit.",
+    "America First MOUs": "US bilateral aid follows this country's signed MOU year by year, 2026-2030; US multilateral "
+                          "exits as in Full US Exit.",
     "IHME 2025 preliminary estimates": "IHME's preliminary 2025 change for every donor, channel and disease, applied to "
                                        "this country's mix.",
     "OECD-reported 2025 aid cuts": "Each donor's 2025 aid cut (US -57%, Germany -17%, France -11%, UK -11%, Japan -6%) "
@@ -284,20 +284,6 @@ def _resp_label(fiscal_t) -> str:
 # --------------------------------------------------------------------------- #
 def _preset_options(preset, ci, iso3, country_name, key):
     opts = scn.default_opts(preset, ci)
-    if preset == "America First MOUs":
-        opts["mou_year"] = st.select_slider("MOU Year", options=[2026, 2027, 2028, 2029, 2030],
-                                            value=scn.DEFAULT_MOU_YEAR, key=f"{key}_mouy")
-        avg = scn.mou_average_cut_pct(ci, opts["mou_year"])
-        opts["non_mou_cut"] = st.slider("US Cut Where There Is No MOU Schedule (%)", 0, 100, avg, 1,
-                                        key=f"{key}_nonmou_{opts['mou_year']}",
-                                        help=f"Default = average cut across the MOU countries in {opts['mou_year']} "
-                                             f"({avg}%).") / 100
-        mc = scn.mou_cuts(ci, opts["mou_year"])
-        if iso3 in mc:
-            st.caption(_esc(f"{country_name}: the MOU schedule implies a {mc[iso3]:.0%} cut in US bilateral aid in "
-                            f"{opts['mou_year']} (US${ci.loc[iso3, 'mou_us_ref'] / 1e6:,.0f}M a year before the cut)."))
-        else:
-            st.caption(f"{country_name} has no MOU schedule, so the default above applies.")
     if preset == "Custom":
         with st.expander("Cuts by Donor and Channel", expanded=True):
             ed = pd.DataFrame({"Donor": hm.SOURCE_GROUPS,
@@ -315,6 +301,51 @@ def _preset_options(preset, ci, iso3, country_name, key):
     return opts
 
 
+MOU = "America First MOUs"
+MOU_SHAPE = "Follows MOU schedule"   # internal path label: the scenario carries the country's own yearly cuts
+
+
+def preset_choices(ci, iso3) -> tuple:
+    """(options, format_func, group) for the Donor Scenario dropdown: America First MOUs is offered where the country
+    has a signed MOU with schedule data (group A), listed but unavailable where it has signed without data (B), and not
+    listed otherwise (C)."""
+    group = scn.mou_group(ci, iso3)
+    opts = [p for p in PRESETS if not (p == MOU and group == scn.MOU_GROUP_C)]
+
+    def fmt(p):
+        return title_case(p) + (f" ({scn.NO_MOU_DATA})" if p == MOU and group == scn.MOU_GROUP_B else "")
+    return opts, fmt, group
+
+
+def mou_fallback(ci, iso3, country_name):
+    """If America First MOUs is selected for a country without MOU schedule data, switch to Full US Exit and return the
+    one-line notice (None otherwise). Call before the Donor Scenario dropdown is drawn."""
+    if st.session_state.get("sel_preset") == MOU and scn.mou_group(ci, iso3) != scn.MOU_GROUP_A:
+        prev = st.session_state.get("prev_preset")
+        if prev and prev != MOU:                     # just picked for a country that signed without funding data
+            st.session_state["sel_preset"] = prev
+            return f"America First MOUs: {scn.NO_MOU_DATA}"
+        st.session_state["sel_preset"] = "Full US exit"   # switched country while the preset was on
+        return f"{country_name}: no MOU funding data; showing Full US Exit."
+    return None
+
+
+def donor_scenario_select(ci, iso3, country_name, widget_key, label="Donor Scenario"):
+    """The Donor Scenario dropdown with the MOU rules (shared by the Dashboard and Validation pages). Returns
+    (preset, MOU group of the country, notice or None)."""
+    note = st.session_state.pop("mou_note", None) or mou_fallback(ci, iso3, country_name)
+    opts, fmt, group = preset_choices(ci, iso3)
+    preset = th.shared_select(label, opts, widget_key, "sel_preset", opts[0], format_func=fmt,
+                              help=_esc(PRESETS[st.session_state.get("sel_preset", opts[0])]))
+    if preset == MOU and group == scn.MOU_GROUP_B:                   # listed but unavailable: no model run
+        prev = st.session_state.get("prev_preset", "Full US exit")
+        st.session_state["sel_preset"] = prev if prev != MOU else "Full US exit"
+        st.session_state["mou_note"] = f"America First MOUs: {scn.NO_MOU_DATA}"
+        st.rerun()
+    st.session_state["prev_preset"] = preset
+    return preset, group, note
+
+
 def _controls(iso3, country_name, I) -> dict:
     """Slim scenario bar under the story headline: scenario | government response | Advanced (popover)."""
     ci = I["ci"]
@@ -329,13 +360,25 @@ def _controls(iso3, country_name, I) -> dict:
                     unsafe_allow_html=True)
         c1, c2, c3, c4 = st.columns([1.3, 1.1, 1.3, 0.75], gap="medium")
         with c1:
-            preset = th.shared_select("Donor Scenario", list(PRESETS), "m_preset", "sel_preset", list(PRESETS)[0],
-                                      format_func=title_case,
-                                      help=_esc(PRESETS[st.session_state.get("sel_preset", list(PRESETS)[0])]))
-            st.caption(_esc(PRESET_SHORT.get(preset, PRESETS[preset])))
+            preset, group, note = donor_scenario_select(ci, iso3, country_name, "m_preset")
+            if note:
+                st.caption(_esc(note))
+            schedule, sched_end = scn.mou_schedule(ci, iso3) if preset == MOU else (None, None)
+            st.caption(_esc(scn.mou_schedule_text(ci, iso3, country_name) if preset == MOU
+                            else PRESET_SHORT.get(preset, PRESETS[preset])))
             opts = _preset_options(preset, ci, iso3, country_name, "m")
         with c2:
-            shape = paths_ui.path_selector(ci, iso3)
+            if preset == MOU:
+                ended = sched_end is not None and sched_end < scn.YEARS[-1]
+                tip = (f" title='{html.escape(f'Schedule ends {sched_end}; {sched_end} level held through {scn.YEARS[-1]}.', quote=True)}'"
+                       if ended else "")
+                st.markdown(f"<div class='ed-kicker' style='margin:0.35rem 0 0'{tip}>"
+                            f"{html.escape(f'Follows {country_name}' + chr(39) + 's MOU schedule')}</div>",
+                            unsafe_allow_html=True)
+                paths_ui.mou_schedule_chart(schedule, sched_end)
+                shape = MOU_SHAPE
+            else:
+                shape = paths_ui.path_selector()
         budget = hm.health_budget(iso3, I)
         room = 0.0
         with c3:
@@ -379,7 +422,8 @@ def _controls(iso3, country_name, I) -> dict:
             st.divider()
             cmp = None
             if st.toggle("Compare with a Second Scenario", value=False, key="m_compare"):
-                options_b = ["Same as Scenario A"] + scn.PRECOMPUTED_PRESETS
+                options_b = ["Same as Scenario A"] + [p for p in scn.PRECOMPUTED_PRESETS
+                                                      if p != MOU or group == scn.MOU_GROUP_A]
                 pb = st.selectbox("Donor Scenario (B)", options_b, index=0, key="mb_preset", format_func=title_case)
                 if pb == "Same as Scenario A":
                     preset_b, opts_b = preset, opts
@@ -408,13 +452,13 @@ def _controls(iso3, country_name, I) -> dict:
             ptab = ptab.set_index("param")
 
         # ---- when the funding path or the response is not the default, the box expands: chart + year sliders ----
-        expanded = shape != paths_ui.SUDDEN or mode == "gradual"
+        expanded = (shape not in (paths_ui.SUDDEN, MOU_SHAPE)) or mode == "gradual"
         cut_path, pts, outcome_slot = None, [0.0] * 5, None
         if expanded:
             st.divider()
             cut, pts = paths_ui.year_panel(iso3, country_name, scn.build_scenario(preset, opts, ci),
                                            hm.Fiscal(mode, theta, cap, alloc, ceiling), I, mode == "gradual", budget,
-                                           room, scn.mou_cut_path(ci, iso3))
+                                           room, schedule)
             cut_path = tuple(round(c, 4) for c in cut)
             outcome_slot = st.container()
     gov_add = tuple(float(v) for v in hm.gov_add_from_points(pts, budget["gov_spend_usd"])) \
@@ -539,7 +583,8 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
     I = _inputs()
     e = html.escape
     path_lbl = "Sudden Cut" if ctl.get("shape", paths_ui.SUDDEN) == paths_ui.SUDDEN else title_case(ctl["shape"])
-    kicker = f"Funding-Cut Scenario · {title_case(ctl['preset'])} · {path_lbl} · {response_kicker(ctl['fiscal_t'])}"
+    kicker = (f"America First MOUs · Follows MOU Schedule · {response_kicker(ctl['fiscal_t'])}" if ctl["preset"] == MOU
+              else f"Funding-Cut Scenario · {title_case(ctl['preset'])} · {path_lbl} · {response_kicker(ctl['fiscal_t'])}")
     # the controls sit in the scenario bar just below; the link jumps there (same cached run as Section 4)
     kick_html = (f"<div class='ed-kicker-row'><div class='ed-kicker'>{e(kicker)}</div>"
                  f"<a class='ed-jump' href='#change-scenario' target='_self'>Change Scenario ↓</a></div>")
@@ -703,7 +748,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     bsel = st.radio("Bucket (Left Chart Only)", hm.BUCKETS, horizontal=True, key="m_dose_b",
                     help="Picks the bucket for the left chart; the right chart always shows all four buckets.")
     dr = _dose(iso3, bsel, fiscal_t, ptab_json, trend)
-    path = _scenario_path(iso3, sk, bsel, fiscal_t, ptab_json, trend, ctl.get("cut_path"), ctl.get("gov_add"))
+    # the dashed "this scenario, scaled" path is not drawn for an MOU schedule, which is never rescaled
+    path = None if preset == MOU else _scenario_path(iso3, sk, bsel, fiscal_t, ptab_json, trend, ctl.get("cut_path"),
+                                                     ctl.get("gov_add"))
     base_b = B.loc[bsel, "base_usd"]
     cur_cut = B.loc[bsel, "gross_loss_usd"] / base_b if base_b > 0 else 0
     if base_b > 0:
@@ -771,7 +818,9 @@ def _comparison(iso3, country_name, ctl, res_a, items_a):
     c = ctl["cmp"]
     ci = _inputs()["ci"]
     sk_b = scn.scenario_key(scn.build_scenario(c["preset"], c["opts"], ci))
-    res_b = _run(iso3, sk_b, c["fiscal_t"], ctl["ptab_json"], ctl["trend"], cut_path=ctl.get("cut_path"))
+    # an MOU schedule is never rescaled by Scenario A's funding path
+    res_b = _run(iso3, sk_b, c["fiscal_t"], ctl["ptab_json"], ctl["trend"],
+                 cut_path=None if c["preset"] == MOU else ctl.get("cut_path"))
     st.subheader("Scenario A vs Scenario B")
     a, b = st.columns(2, gap="large")
     for col, tag, preset, fiscal_t, items in ((a, "A", ctl["preset"], ctl["fiscal_t"], items_a),
@@ -1239,13 +1288,20 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
     if A.empty:
         st.info("No country loses aid in this scenario.")
         return A
+    is_mou = ctl["preset"] == MOU
     st.caption(_esc(f"{title_case(ctl['preset'])} · {_resp_label(ctl['fiscal_t'])}"
                     + ("" if ctl["trend"] else " · Death Rates Held Constant")))
+    if is_mou:
+        st.subheader(f"MOU Countries With Funding Data ({len(A)})",
+                     help="America First MOUs is modelled only where the country has signed an MOU (KFF tracker) and "
+                          "the team's sheet has its 2026-2030 US funding schedule. On the map, countries that signed "
+                          "without funding data are light grey; countries without an MOU are lighter grey.")
     after_cols = [c for c in ("deaths_after_2030", "deaths_after_2030_lo", "deaths_after_2030_hi") if c in A]
     tot = A[["gross_loss_usd", "net_loss_usd", "deaths_y1", "deaths_5y", "deaths_5y_lo", "deaths_5y_hi",
              "hiv_infections_5y"] + after_cols].sum()
     st.markdown(th.pills_html([
-        (f"Aid Lost per Year, {len(A)} of {len(names)} Countries", money(tot["gross_loss_usd"]),
+        (f"Aid Lost per Year, MOU Countries With Funding Data ({len(A)})" if is_mou
+         else f"Aid Lost per Year, {len(A)} of {len(names)} Countries", money(tot["gross_loss_usd"]),
          "HIV, TB, malaria and vaccine aid removed by the scenario", f"Net of Backfill {money(tot['net_loss_usd'])}"),
         ("Further Deaths, 2031-2035", num(tot["deaths_after_2030"]),
          "Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031: people still off HIV "
@@ -1263,7 +1319,8 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
 
     _, tcol = st.columns([5, 1])
     world = tcol.toggle("World", value=False, key="m_map_world", help="Show the whole world instead of Africa and Asia")
-    chart(_world_map(A, iso3, world), source=SRC_MODEL)
+    groups = scn.mou_groups(_inputs()["ci"], list(names)) if is_mou else None
+    chart(_world_map(A, iso3, world, groups, names), source=SRC_MODEL)
 
     c1, c2 = st.columns([1.15, 1])
     with c1:
@@ -1340,7 +1397,9 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
     return A
 
 
-def _world_map(A: pd.DataFrame, iso3: str, world: bool = False):
+def _world_map(A: pd.DataFrame, iso3: str, world: bool = False, groups: dict | None = None, names: dict | None = None):
+    """Deaths per 100,000 by country. With MOU groups (America First MOUs), countries outside the modelled group are
+    drawn in grey: signed without funding data (light) and no MOU (lighter)."""
     zmax = float(A["deaths_per_100k"].quantile(0.95))
     pct = A["loss_pct_ghes_pct"].map(lambda v: "n/a" if pd.isna(v) else f"{v:,.0f}%")
     fig = go.Figure(go.Choropleth(
@@ -1355,6 +1414,15 @@ def _world_map(A: pd.DataFrame, iso3: str, world: bool = False):
         hovertemplate="<b>%{customdata[0]}</b><br>%{customdata[2]} extra deaths over 5 years "
                       "(%{z:,.0f} per 100,000)<br>aid lost: %{customdata[1]} a year<br>"
                       "= %{customdata[3]} of government health spending<extra></extra>"))
+    if groups:
+        for g, col, txt in ((scn.MOU_GROUP_B, th.blend(th.MUTED, 0.45), "MOU signed; no funding data"),
+                            (scn.MOU_GROUP_C, th.blend(th.MUTED, 0.2), "No MOU")):
+            locs = [c for c, v in groups.items() if v == g and c not in set(A["iso3"])]
+            if locs:
+                fig.add_trace(go.Choropleth(locations=locs, z=[1] * len(locs), locationmode="ISO-3", showscale=False,
+                                            colorscale=[[0, col], [1, col]], marker_line_color=th.SURFACE,
+                                            marker_line_width=0.5, customdata=[(names or {}).get(c, c) for c in locs],
+                                            hovertemplate=f"<b>%{{customdata}}</b><br>{txt}<extra></extra>"))
     sel = A[A["iso3"] == iso3]
     if len(sel):
         fig.add_trace(go.Choropleth(locations=sel["iso3"], z=[1], locationmode="ISO-3", showscale=False,

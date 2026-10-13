@@ -143,7 +143,7 @@ def load_countries() -> pd.DataFrame:
 
 INCOME_LABELS = {"low_income": "Low Income", "lower_middle_income": "Lower-Middle Income",
                  "upper_middle_income": "Upper-Middle Income", "high_income": "High Income"}
-MOU_LABELS = {"Signed": "MOU Signed", "No MOU in Team Data": "No MOU"}
+MOU_LABELS = {"Signed": "MOU Signed", "No MOU": "No MOU"}
 PROFILE_FILE = ROOT / "model_data" / "country_profile.csv"   # built by prepare_model.py
 
 
@@ -292,7 +292,7 @@ _prof = load_profile().get(crow["iso3"], {})
 _items = [
     ("Region", _prof.get("region") or "n/a", "World Bank region (IHME DAH database)"),
     ("Income Group", INCOME_LABELS.get(_prof.get("income_group"), "n/a"), "World Bank income group"),
-    ("US MOU", MOU_LABELS.get(_prof.get("mou_status"), _prof.get("mou_status") or "n/a"), "US bilateral health MOU, from the team's MOU / co-financing sheet"),
+    ("US MOU", MOU_LABELS.get(_prof.get("mou_status"), _prof.get("mou_status") or "n/a"), "America First bilateral health MOU signed (KFF tracker, data as of 2026-10-08)"),
     (f"GDP{', ' + str(_gdp_yr) if _gdp_yr else ''}", fmt_usd(_gdp_bn * 1e3) if _gdp_bn else "n/a",
      "Constant 2023 US$: IMF World Economic Outlook GDP for 2023, moved to other years with IHME's real GDP "
      "per person (each country's own prices, 2023 exchange rates)"),

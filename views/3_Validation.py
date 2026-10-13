@@ -36,8 +36,9 @@ pc1, pc2 = st.columns(2)
 with pc1:
     iso3 = th.shared_select("Country", isos, "v_country", "sel_iso3", "KEN", format_func=names.get)
 with pc2:
-    preset = th.shared_select("Donor Scenario", list(PRESETS), "v_preset", "sel_preset", list(PRESETS)[0],
-                              format_func=title_case)
+    preset, _grp, _note = ms.donor_scenario_select(I["ci"], iso3, names[iso3], "v_preset")
+    if _note:
+        st.caption(ms._esc(_note))
 fiscal_t = tuple(ctx.get("fiscal_t", scn.DEFAULT_FISCAL))
 ptab_json = ctx.get("ptab_json", ms._default_params().to_json(orient="split"))
 trend = ctx.get("trend", scn.DEFAULT_MORTALITY_TREND)
@@ -60,10 +61,12 @@ for p in scn.PRECOMPUTED_PRESETS:
         continue
     A = pd.read_csv(path)
     all_country[p] = A
-    rows.append({"Scenario": title_case(p), **{b: num(A[f"deaths_5y_{b}"].sum()) for b in hm.BUCKETS},
+    rows.append({"Scenario": title_case(p) + (f" ({len(A)} MOU Countries With Funding Data)" if p == ms.MOU else ""),
+                 **{b: num(A[f"deaths_5y_{b}"].sum()) for b in hm.BUCKETS},
                  "All Four": num(A["deaths_5y"].sum()),
                  "Range": rng(A["deaths_5y_lo"].sum(), A["deaths_5y_hi"].sum())})
-st.subheader(f"Model: Extra Deaths Over 5 Years, All {len(next(iter(all_country.values()), []))} Countries")
+st.subheader(f"Model: Extra Deaths Over 5 Years, All {len(next(iter(all_country.values()), []))} Countries",
+             help="America First MOUs covers only the countries with a signed MOU and schedule data.")
 st.table(pd.DataFrame(rows).set_index("Scenario"))
 st.caption("Read from the precomputed results: no government backfill, death rates already falling, default "
            "parameters. Ranges add country 2.5th and 97.5th percentiles.")

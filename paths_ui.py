@@ -36,8 +36,8 @@ def _fmt(v: float) -> str:
 # --------------------------------------------------------------------------- #
 # State helpers (callbacks run before the next rerun, so they may set widget values)
 # --------------------------------------------------------------------------- #
-def _fill_cut(shape: str, mou):
-    for k, v in zip(CUT_KEYS, scn.path_shape(shape, mou)):
+def _fill_cut(shape: str):
+    for k, v in zip(CUT_KEYS, scn.path_shape(shape)):
         st.session_state[k] = int(round(v * 100))
     if shape != "Custom":
         st.session_state["m_path_last"] = shape
@@ -51,10 +51,10 @@ def _fill_gov(shape: str, room: float):
         st.session_state["m_gov_last"] = shape
 
 
-def _on_shape(mou):
+def _on_shape():
     shape = st.session_state["m_path_shape"]
     if shape != "Custom":
-        _fill_cut(shape, mou)
+        _fill_cut(shape)
 
 
 def _on_cut_slider():
@@ -70,10 +70,10 @@ def _on_gov_slider():
     st.session_state["m_gov_shape"] = "Custom"
 
 
-def _reset(mou, room):
+def _reset(room):
     last = st.session_state.get("m_path_last", SUDDEN)
     st.session_state["m_path_shape"] = last
-    _fill_cut(last, mou)
+    _fill_cut(last)
     if room > 0:                                       # only while a gradual budget increase is on
         g = st.session_state.get("m_gov_last", "Steady")
         st.session_state["m_gov_shape"] = g
@@ -83,24 +83,36 @@ def _reset(mou, room):
 # --------------------------------------------------------------------------- #
 # Dropdowns
 # --------------------------------------------------------------------------- #
-def path_selector(ci, iso3: str) -> str:
-    """'How Funding Changes'. MOU Schedule is offered only where the team's sheet has a 2026-2030 schedule."""
-    mou = scn.mou_cut_path(ci, iso3)
-    options = [s for s in scn.PATH_SHAPES if s != "MOU schedule" or mou is not None]
-    if st.session_state.get("m_path_shape") not in options:            # first visit, or MOU shape on a non-MOU country
+def path_selector() -> str:
+    """'How Funding Changes' (not shown for America First MOUs, which follows each country's own schedule)."""
+    options = scn.PATH_SHAPES
+    if st.session_state.get("m_path_shape") not in options:            # first visit, or an option that was removed
         st.session_state["m_path_shape"] = SUDDEN
-        _fill_cut(SUDDEN, mou)
+        _fill_cut(SUDDEN)
     if any(k not in st.session_state for k in CUT_KEYS):
-        _fill_cut(st.session_state["m_path_shape"] if st.session_state["m_path_shape"] != "Custom" else SUDDEN, mou)
-    if st.session_state.get("m_path_iso") != iso3:                    # new country: refill a shape that depends on it
-        st.session_state["m_path_iso"] = iso3
-        if st.session_state["m_path_shape"] == "MOU schedule":
-            _fill_cut("MOU schedule", mou)
+        _fill_cut(st.session_state["m_path_shape"] if st.session_state["m_path_shape"] != "Custom" else SUDDEN)
     from model_section import title_case
     return st.selectbox("How Funding Changes", options, key="m_path_shape", format_func=title_case,
-                        on_change=_on_shape, args=(mou,),
+                        on_change=_on_shape,
                         help="How the scenario's cut is phased in over 2026-2030. Sudden = the full cut from 2026. "
                              "Phase-outs reach the full cut by 2030; the sliders below set each year.")
+
+
+def mou_schedule_chart(cuts, end_year=None):
+    """Small red line of the MOU schedule's yearly cut in US bilateral aid (inside the scenario box)."""
+    fig = go.Figure(go.Scatter(x=YEARS, y=[c * 100 for c in cuts], mode="lines+markers+text",
+                               line=dict(color=th.ROSE, width=2), marker=dict(size=6, color=th.ROSE),
+                               text=[f"{c:.0%}" for c in cuts], textposition="top center",
+                               textfont=dict(size=10, color=th.ROSE), cliponaxis=False,
+                               hovertemplate="%{x}: US bilateral aid cut %{y:.0f}%<extra></extra>"))
+    if end_year and end_year < YEARS[-1]:
+        fig.add_annotation(x=YEARS[-1], y=cuts[-1] * 100, text=f"held from {end_year}", showarrow=False,
+                           yshift=-14, font=dict(size=9, color=th.MUTED))
+    fig.update_layout(height=120, margin=dict(l=0, r=0, t=16, b=0), showlegend=False,
+                      xaxis=dict(tickvals=YEARS, tickfont=dict(size=10), showgrid=False, range=[2025.55, 2030.45]),
+                      yaxis=dict(range=[-5, 115], visible=False))
+    from model_section import chart
+    chart(fig)
 
 
 def gradual_controls(budget: dict) -> float:
@@ -130,15 +142,18 @@ def gradual_controls(budget: dict) -> float:
 # --------------------------------------------------------------------------- #
 # Chart + sliders
 # --------------------------------------------------------------------------- #
-def year_panel(iso3, country_name, scenario, fiscal, I, gradual: bool, budget: dict, room: float, mou):
-    """One chart (2026-2030) with a row of per-year sliders under it. Returns (cut_path 0-1, extra points)."""
+def year_panel(iso3, country_name, scenario, fiscal, I, gradual: bool, budget: dict, room: float, schedule=None):
+    """One chart (2026-2030) with a row of per-year sliders under it. Returns (cut_path 0-1, extra points).
+    schedule: an America First MOU schedule (yearly US bilateral cuts). It is applied by the scenario itself, so there
+    are no cut sliders, the funding path stays at 100% and the chart shows the schedule as written."""
     chart_slot = st.container()
     cols = st.columns(5, gap="small")
     for y, c, ck, gk in zip(YEARS, cols, CUT_KEYS, GOV_KEYS):
         with c:
             st.markdown(f"<div class='ed-year'>{y}</div>", unsafe_allow_html=True)
-            with st.container(key=f"cutsl_{y}"):
-                st.slider("Aid Cut", 0, 100, step=5, key=ck, format="%d%%", on_change=_on_cut_slider)
+            if schedule is None:
+                with st.container(key=f"cutsl_{y}"):
+                    st.slider("Aid Cut", 0, 100, step=5, key=ck, format="%d%%", on_change=_on_cut_slider)
             if gradual:
                 with st.container(key=f"govsl_{y}"):
                     if room > 0:
@@ -147,24 +162,29 @@ def year_panel(iso3, country_name, scenario, fiscal, I, gradual: bool, budget: d
                                   on_change=_on_gov_slider)
                     else:
                         st.caption("Already at the 15% target")
-    cut = [st.session_state[k] / 100 for k in CUT_KEYS]
     pts = [float(st.session_state.get(k, 0.0)) if gradual and room > 0 else 0.0 for k in GOV_KEYS]
-    falls = [YEARS[i] for i in range(1, 5) if cut[i] < cut[i - 1] - 1e-9]
-    r1, r2 = st.columns([4, 1])
-    if falls:
-        r1.caption(f"Note: the cut falls in {', '.join(map(str, falls))}. That is read as aid returning, and people "
-                   "return to care.")
-    r2.button("Reset to Shape", type="tertiary", key="path_reset_btn", on_click=_reset, args=(mou, room),
-              icon=":material/restart_alt:")
+    if schedule is None:
+        cut = [st.session_state[k] / 100 for k in CUT_KEYS]
+        falls = [YEARS[i] for i in range(1, 5) if cut[i] < cut[i - 1] - 1e-9]
+        r1, r2 = st.columns([4, 1])
+        if falls:
+            r1.caption(f"Note: the cut falls in {', '.join(map(str, falls))}. That is read as aid returning, and "
+                       "people return to care.")
+        r2.button("Reset to Shape", type="tertiary", key="path_reset_btn", on_click=_reset, args=(room,),
+                  icon=":material/restart_alt:")
+        shown = cut
+    else:
+        cut = [1.0] * 5                               # the schedule is in the scenario; nothing rescales it
+        shown = list(schedule)
 
     gov_usd = hm.gov_add_from_points(pts, budget["gov_spend_usd"])
     G_t, R_t = hm._money_by_year(iso3, scenario, fiscal, I, cut)
     with chart_slot:
-        _chart(cut, pts, G_t, R_t, gov_usd, gradual)
+        _chart(shown, pts, G_t, R_t, gov_usd, gradual, "US Bilateral Aid Cut (MOU)" if schedule is not None else None)
     return cut, pts
 
 
-def _chart(cut, pts, G_t, R_t, gov_usd, gradual):
+def _chart(cut, pts, G_t, R_t, gov_usd, gradual, cut_name=None):
     gap = G_t - np.minimum(R_t + gov_usd, G_t)
     fig = go.Figure()
     for i, y in enumerate(YEARS):                    # shading: unfilled gap (red) or government keeps up (blue)
@@ -178,9 +198,10 @@ def _chart(cut, pts, G_t, R_t, gov_usd, gradual):
             fig.add_annotation(x=y - 0.45, y=0.0, yref="paper", xanchor="left", yanchor="bottom", yshift=3,
                                showarrow=False, text=f"<b>{txt}</b>", font=dict(size=11, color=col))
     cd = np.c_[[_fmt(v) for v in G_t], [_fmt(v) for v in R_t + gov_usd]]
-    fig.add_trace(go.Scatter(x=YEARS, y=[c * 100 for c in cut], mode="lines+markers", name="Aid Cut in Force",
+    fig.add_trace(go.Scatter(x=YEARS, y=[c * 100 for c in cut], mode="lines+markers", name=cut_name or "Aid Cut in Force",
                              line=dict(color=th.ROSE, width=3), marker=dict(size=9), customdata=cd,
-                             hovertemplate="%{x}: %{y:.0f}% of the cut in force<br>aid lost %{customdata[0]}<br>"
+                             hovertemplate="%{x}: %{y:.0f}% " + ("US bilateral aid cut (MOU)" if cut_name else
+                                                                 "of the cut in force") + "<br>aid lost %{customdata[0]}<br>"
                                            "government money %{customdata[1]}<extra></extra>"))
     if gradual:
         fig.add_trace(go.Scatter(x=YEARS, y=pts, mode="lines+markers", name="Extra Health Share", yaxis="y2",
@@ -206,7 +227,7 @@ def _chart(cut, pts, G_t, R_t, gov_usd, gradual):
 # --------------------------------------------------------------------------- #
 PATH_PHRASE = {"Sudden (default)": "With a sudden cut", "Linear phase-out": "Phasing the cut in evenly over 5 years",
                "Front-loaded": "Front-loading the cut", "Back-loaded": "Back-loading the cut",
-               "S-curve": "Phasing the cut in along an S-curve", "MOU schedule": "Following the MOU schedule",
+               "S-curve": "Phasing the cut in along an S-curve", "Follows MOU schedule": "Following the MOU schedule",
                "Custom": "With this path"}
 
 
