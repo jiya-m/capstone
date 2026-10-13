@@ -33,7 +33,7 @@ The problems are upstream of the arithmetic and in a few labels:
 - the per-US$1M cards;
 - several labels that claim more than the math does.
 
-**Issues by severity:** Critical 4, Major 7, Minor 7, Cosmetic 7 (25 in total, full log in section 5). **Fixed: I-01** (see `I-01.md`); **I-02, I-03, I-08** (see `I-02_I-03_I-08.md`); **I-05** (see `I-05.md`); **I-12, I-18, I-19, I-20, I-21, I-22, I-24** (wording, COMMIT_HASH; see `cosmetic_fixes.md`).
+**Issues by severity:** Critical 4, Major 7, Minor 7, Cosmetic 7 (25 in total, full log in section 5). **Fixed: I-01** (see `I-01.md`); **I-02, I-03, I-08** (see `I-02_I-03_I-08.md`); **I-05** (see `I-05.md`); **I-12, I-18, I-19, I-20, I-21, I-22, I-24** (wording, commit ea998aa; see `cosmetic_fixes.md`).
 
 **The five that matter most**
 
@@ -438,13 +438,13 @@ Effect is on the headline numbers (Extra Deaths 2026-2030, Aid at Risk) unless s
 | I-17 | Minor | Base-year mismatch: aid 2021-23, coverage 2024-25, GHES 2023, GDP 2024, all applied to 2026-2030 without projection | Throughout | All | Section 2.1 | State it in the header; consider the IHME 2025 levels as a baseline option | Unknown; largest where aid already fell after 2023 |
 | I-26 | Minor | Interest/revenue missing -> debt-stress factor silently 1 (18 countries); the interest year can be as old as 2015 | `health_model.py:192-193` | 18 countries | `fallbacks.csv` | Flag it in the panel; use the IMF interest series | Fiscal capacity overstated for any of them under stress |
 | I-27 | Minor | Donor money exceeds cost x people covered in 204 country-lines (PMTCT 52, malaria treatment 51): unit costs (PMTCT $150, malaria treatment $8, both assumptions) are probably too low | `model_params.csv`; Validation page | 67 countries | `fallbacks.csv`; Validation page | Recalibrate PMTCT (cost per HIV+ woman incl. testing all pregnant women) and malaria case management | Small on deaths (sensitivity ±1.5% and ±2.9%), because proportional scaling already caps the lines |
-| I-12 | Cosmetic, **Fixed** (COMMIT_HASH; see `cosmetic_fixes.md`) | "Net Loss to Services" includes non-service systems money | `model_section.py:756` | All | Kenya: $30.4M of $290.8M | Rename "Net Aid Lost" or subtract the non-service part | Label |
-| I-18 | Cosmetic, **Fixed** (COMMIT_HASH; see `cosmetic_fixes.md`) | "2001-2023" for a regression run on 2002-2023 | `model_section.py:345, 1172` | All | `regressions.json` | Read the years from the file | Label |
-| I-19 | Cosmetic, **Fixed** (COMMIT_HASH; see `cosmetic_fixes.md`) | "Assumes the cut is sustained for five years" shown under phased paths | `model_section.py:761` | Phased paths | — | Make it conditional | Label |
-| I-20 | Cosmetic, **Fixed** (COMMIT_HASH; see `cosmetic_fixes.md`) | Three names for the no-response setting | `model_section.py:44, 274, 503` | All | — | One name | Label |
-| I-21 | Cosmetic, **Fixed** (COMMIT_HASH; see `cosmetic_fixes.md`) | MOU caption in nominal US$ under a constant-2023 header | `model_section.py:297-298` | MOU countries | Sheet header: "US$ per year" (KFF / Foreign Assistance) | Say "nominal" | Label |
-| I-22 | Cosmetic, **Fixed** (COMMIT_HASH; see `cosmetic_fixes.md`) | Validation cites "UNAIDS 2025 (Goals model) 4.2M"; UNAIDS's July 2025 statement says "more than 4 million" deaths and 6 million infections by 2029 | `views/3_Validation.py:86-89` | — | Press coverage of the UNAIDS report | Cite the document and figure exactly | Label |
-| I-24 | Cosmetic, **Fixed** (COMMIT_HASH; see `cosmetic_fixes.md`) | Card foot "$X of aid per death" assumes $1M a year for 5 years without saying so | `model_section.py:825` | All | — | "per death over 5 years of a $1M-a-year cut" | Label |
+| I-12 | Cosmetic, **Fixed** (commit ea998aa; see `cosmetic_fixes.md`) | "Net Loss to Services" includes non-service systems money | `model_section.py:756` | All | Kenya: $30.4M of $290.8M | Rename "Net Aid Lost" or subtract the non-service part | Label |
+| I-18 | Cosmetic, **Fixed** (commit ea998aa; see `cosmetic_fixes.md`) | "2001-2023" for a regression run on 2002-2023 | `model_section.py:345, 1172` | All | `regressions.json` | Read the years from the file | Label |
+| I-19 | Cosmetic, **Fixed** (commit ea998aa; see `cosmetic_fixes.md`) | "Assumes the cut is sustained for five years" shown under phased paths | `model_section.py:761` | Phased paths | — | Make it conditional | Label |
+| I-20 | Cosmetic, **Fixed** (commit ea998aa; see `cosmetic_fixes.md`) | Three names for the no-response setting | `model_section.py:44, 274, 503` | All | — | One name | Label |
+| I-21 | Cosmetic, **Fixed** (commit ea998aa; see `cosmetic_fixes.md`) | MOU caption in nominal US$ under a constant-2023 header | `model_section.py:297-298` | MOU countries | Sheet header: "US$ per year" (KFF / Foreign Assistance) | Say "nominal" | Label |
+| I-22 | Cosmetic, **Fixed** (commit ea998aa; see `cosmetic_fixes.md`) | Validation cites "UNAIDS 2025 (Goals model) 4.2M"; UNAIDS's July 2025 statement says "more than 4 million" deaths and 6 million infections by 2029 | `views/3_Validation.py:86-89` | — | Press coverage of the UNAIDS report | Cite the document and figure exactly | Label |
+| I-24 | Cosmetic, **Fixed** (commit ea998aa; see `cosmetic_fixes.md`) | Card foot "$X of aid per death" assumes $1M a year for 5 years without saying so | `model_section.py:825` | All | — | "per death over 5 years of a $1M-a-year cut" | Label |
 
 (IDs I-23 and I-25 were checked and dropped. I-23: no country shows a misleading "0%" aid share. I-25: the All Countries
 range caption is correct.)
