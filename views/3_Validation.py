@@ -166,6 +166,20 @@ st.caption(ms._esc(
     "countries). Source: Malaria Atlas Project (data.malariaatlas.org), downloaded 13 October 2026; WHO World "
     "Malaria Report 2025."))
 
+# Pakistan: the largest case gap among high-burden countries (decision on the malaria batch)
+if "PAK" in _mc.index:
+    import malaria_inputs as mi
+    _pf, _pv = mi.load("pf_cases").query("iso3 == 'PAK'").set_index("year")["value"], \
+        mi.load("pv_cases").query("iso3 == 'PAK'").set_index("year")["value"]
+    _who = _mc.loc["PAK", "malaria_cases_prev"]
+    st.caption(ms._esc(
+        f"Pakistan: MAP puts cases at {ms.num(_mc.loc['PAK', 'malaria_cases'])} in 2025 against WHO's "
+        f"{ms.num(_who)} (2024). MAP's P. falciparum estimate for 2024 ({ms.num(_pf.get(2024))}) is close to WHO's "
+        f"total; the gap is P. vivax, which MAP puts at {ms.num(_pv.get(2024))} in 2024 and {ms.num(_pv.get(2025))} in "
+        "2025, after the surge that followed the 2022 floods. P. vivax rarely kills, so Pakistan's baseline malaria "
+        f"deaths (WHO, {_mc.loc['PAK', 'malaria_deaths']:,.0f}) are unchanged; the case number only sets how many "
+        "people need treatment."))
+
 th.section_header("event", "Data Years")
 st.table(ms.data_years_table(_ci, _iso_model))
 st.caption("Year = the most common year across the dashboard countries (range in brackets). Countries by source: "

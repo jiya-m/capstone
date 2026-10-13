@@ -23,3 +23,5 @@ audit/after_i07.csv
 datasets/
 audit/before_malaria.csv
 audit/after_malaria.csv
+audit/before_malaria_fu.csv
+audit/after_malaria_fu.csv

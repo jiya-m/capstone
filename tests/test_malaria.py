@@ -95,8 +95,14 @@ def test_each_vector_line_capped_at_its_own_coverage():
         L = L.set_index("line")
         for l in ("mal_itn", "mal_irs", "mal_cm"):
             assert L.loc[l, "units_lost"] <= L.loc[l, "cov0"] * L.loc[l, "need"] + 1e-6
-    assert hm.run_country("NGA", scn.build_scenario("Full US exit", {}, CI), NONE, I, P, n_draws=0)[
-        "lines"].set_index("line").loc["mal_irs", "deaths_5y"] == 0          # MAP: nobody sprayed in Nigeria
+    # MAP shows no spraying in Nigeria, but donor IRS money still buys some: coverage = max(MAP, what money buys)
+    L = hm.run_country("NGA", scn.build_scenario("Full US exit", {}, CI), NONE, I, P, n_draws=0)["lines"].set_index("line")
+    implied = L.loc["mal_irs", "base_usd"] / L.loc["mal_irs", "unit_cost"] / L.loc["mal_irs", "need"]
+    assert CI.loc["NGA", "mal_irs_cov"] == 0 and L.loc["mal_irs", "cov0"] == pytest.approx(implied)
+    assert L.loc["mal_irs", "cov_source"].startswith("implied by donor spending; MAP 2025")
+    assert L.loc["mal_irs", "deaths_5y"] > 0
+    Z = hm.run_country("ZMB", scn.build_scenario("Full US exit", {}, CI), NONE, I, P, n_draws=0)["lines"].set_index("line")
+    assert Z.loc["mal_irs", "cov0"] == pytest.approx(CI.loc["ZMB", "mal_irs_cov"])   # MAP above what money buys
 
 
 # ---------------- I-06: malaria death trend ----------------
@@ -119,7 +125,7 @@ def test_under5_trend_unchanged():
 # ---------------- I-27 (malaria): treatment cost ----------------
 def test_malaria_treatment_cost_sourced():
     r = P.loc["uc_mal_cm"]
-    assert (r["central"], r["low"], r["high"], r["status"]) == (14, 5, 34, "sourced")
+    assert (r["central"], r["low"], r["high"], r["status"]) == (14, 4, 47, "sourced")
     assert "White et al. 2011" in r["source"]
 
 

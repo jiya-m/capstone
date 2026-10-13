@@ -593,12 +593,17 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     ep = epi(row, Pc)
     ucc = unit_costs(row, Pc)
-    # spraying without a MAP estimate (MAP models IRS for Africa only): coverage = the people donor IRS money pays for /
-    # people at risk, so losing that money removes the spraying it bought
+    # spraying coverage = the larger of MAP's estimate and the coverage donor IRS money pays for (people it buys /
+    # people at risk), so losing that money removes the spraying it bought even where MAP shows little or none (MAP
+    # models IRS for Africa only; elsewhere the implied coverage is used on its own)
     par, irs = ep["need_cov"]["mal_irs"]
-    if np.isnan(irs) and par and not np.isnan(par):
+    if par and not np.isnan(par):
         bought = float(np.asarray(effc_base["mal_irs"]).ravel()[0]) / float(ucc["mal_irs"][0])
-        ep["need_cov"]["mal_irs"] = (par, float(np.clip(bought / par, 0, 1)))
+        implied = float(np.clip(bought / par, 0, 1))
+        if np.isnan(irs) or implied > irs:
+            ep["need_cov"]["mal_irs"] = (par, implied)
+            if not np.isnan(irs):
+                ep["cov_source"]["mal_irs"] = f"implied by donor spending; {ep['cov_source']['mal_irs']}: {irs:.0%}"
     pudc = per_unit_deaths(row, Pc, ep["art_cov"], mortality_trend)
 
     # deaths per $ (central) for "lives first" ranking; malaria via a small marginal LiST calculation

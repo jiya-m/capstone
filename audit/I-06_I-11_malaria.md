@@ -195,3 +195,56 @@ or spraying now adds to vector-control coverage (Kenya 288 → 262, DR Congo 885
     Section 2 aid gaps.
 - **App:** every page checked headless (Streamlit AppTest), with no exceptions, including from a clean clone without
   `datasets/`.
+
+## Follow-up (decisions on the malaria batch)
+
+1. **Spraying where MAP shows 0% or little.**
+   - Coverage = max(MAP IRS coverage, coverage that donor spraying money buys = donor IRS spending / `uc_irs` /
+     people at risk).
+   - Where the money-based figure is larger, the source reads "implied by donor spending; MAP 2025: 0%".
+   - Full US Exit, no government response, sudden cut, deaths 2026-2030:
+
+     | Country | Spraying coverage | Spraying deaths | Malaria deaths | All deaths |
+     |---|---|---|---|---|
+     | Nigeria | 0% (MAP) → 1.04% | 0 → 1,276 | 65,337 → 66,489 | 234,313 → 235,466 |
+     | Benin | 0% (MAP) → 1.85% | 0 → 94 | 6,196 → 6,258 | 9,709 → 9,771 |
+     | Burkina Faso | 0% (MAP) → 3.11% | 0 → 284 | 16,494 → 16,663 | 22,765 → 22,935 |
+
+   - Bednet deaths dip slightly in these countries (Nigeria 40,692 → 40,564), because spraying now adds to
+     combined vector-control coverage.
+   - Other countries with donor IRS money above MAP's coverage also move:
+     - Tanzania: spraying 1% → 3%, deaths 142 → 423;
+     - Malawi: 1% → 4%, 60 → 171;
+     - Niger: 0% → 2%, 0 → 116;
+     - DR Congo: 1 → 98.
+2. **Spraying outside MAP's coverage:** unchanged (the money-based figure alone).
+3. **`uc_mal_cm`:** central 14, low 4, high 47.
+   - Note: "Low and high add the low and high ends of White et al.'s separate treatment and diagnosis ranges, inflated
+     x1.42; deliberately wide."
+   - Central results are unchanged; only the ranges move.
+4. **Display:** as before.
+5. **Pakistan:** a note under the Validation page's MAP-vs-WHO comparison.
+   - Cases: MAP 14.4M (2025) vs WHO 3.15M (2024).
+   - MAP's *P. falciparum* estimate for 2024, 3.2M, is close to WHO's total; the gap is *P. vivax* (MAP: 8.6M in 2024,
+     10.1M in 2025), after the surge that followed the 2022 floods.
+   - Baseline deaths are unchanged (WHO, 3,037). Pakistan's model results are unchanged: spraying 0.02%, 54 malaria
+     deaths.
+
+**All Countries malaria deaths** (default settings):
+
+| Preset | Before | After |
+|---|---|---|
+| Full US Exit | 383,794 | 385,713 (+0.5%) |
+| America First MOUs | 84,980 | 85,543 (+0.7%) |
+| IHME 2025 | 271,894 | 273,636 (+0.6%) |
+| OECD 2025 | 382,425 | 384,775 (+0.6%) |
+| Global Fund & Gavi Shortfalls | 156,198 | 157,227 (+0.7%) |
+| Combined Retreat | 424,092 | 426,369 (+0.5%) |
+
+**Diff, tests and checks:**
+- **Snapshot diff:** 3,006,850 values compared; 102,546 changed. All are in malaria lines, buckets, paths and cards,
+  totals that include malaria deaths, or All Countries sums; none is unexplained.
+- **Tests:** 331 / 331 pass. Test baseline: 53 of 99 entries refreshed (`--malaria`); outside lives first, only
+  malaria changed. In lives first, NGA IHME 2025 also moved non-malaria lines.
+- **Recompute:** 0 of 932 values differ by more than 0.5%.
+- **`audit/checks.py`:** only the pre-existing I-10 and Section 1 / 2 items fail.

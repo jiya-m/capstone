@@ -75,7 +75,7 @@ eff_l and nonserv_b). net_l = eff_l - replaced_l. **Net loss** (headline) = G - 
 | tb_ds | `all_forms_of_tb_incidence_estimated` | `sh_tbs_dtec_zs` |
 | tb_dr | 0.04 x TB incidence | 0.45 |
 | mal_itn | `malaria_pop_at_risk` | `mal_itn_cov` (MAP ITN use 2025, or a survey from 2015 on); if missing, `mal_itn_default_use` |
-| mal_irs | `malaria_pop_at_risk` | `mal_irs_cov` (MAP household IRS coverage 2025, Africa); if missing, eff_base_irs / cost_irs / par (clipped to 1) |
+| mal_irs | `malaria_pop_at_risk` | max(`mal_irs_cov` (MAP household IRS coverage 2025, Africa), eff_base_irs / cost_irs / par clipped to 1); the second alone where MAP has no estimate |
 | mal_cm | `malaria_cases` (MAP Pf + Pv clinical cases 2025 where MAP has them) | `mal_cm_cov` (MAP effective treatment 2025); if missing, `mal_cm_default_cov` |
 | imm | `births` | `sh_imm_idpt` |
 | hiv_prev, hiv_ovc | none | none |

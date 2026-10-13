@@ -218,7 +218,7 @@ def malaria_split(iso, itn, irs, cm, irs0=None):
         return 0.0, 0.0, 0.5
     nc = need_cov(iso)
     par, n0 = nc["mal_itn"]
-    r0 = nc["mal_irs"][1] if nc["mal_irs"][1] is not None else (irs0 or 0.0)
+    r0 = irs0 if irs0 is not None else (nc["mal_irs"][1] or 0.0)
     cases, cc0 = nc["mal_cm"]
     Ev, Ec = P["mal_vc_eff"], P["mal_cm_eff"]
     n1 = float(np.clip(n0 - itn / par, 0, 1)) if par else n0
@@ -295,9 +295,11 @@ def run(iso, scen, resp_share):
     units = {}
     par0 = nc["mal_irs"][0]
     irs_implied = None
-    if nc["mal_irs"][1] is None and par0:                  # no MAP spraying estimate: what donor IRS money pays for
-        irs_implied = min(eff_base["mal_irs"] / cost["mal_irs"] / par0, 1.0)
-        nc["mal_irs"] = (par0, irs_implied)
+    if par0:                                    # spraying = max(MAP coverage, what donor IRS money pays for)
+        implied = min(eff_base["mal_irs"] / cost["mal_irs"] / par0, 1.0)
+        if nc["mal_irs"][1] is None or implied > nc["mal_irs"][1]:
+            irs_implied = implied
+            nc["mal_irs"] = (par0, irs_implied)
     for l in DIRECT:
         need, cov = nc[l]
         covered = None if (need is None or cov is None) else cov * need
