@@ -22,7 +22,7 @@ ceiling). Sudden cut (the full cut in every year 2026-2030). Mortality trend swi
 
 ## 1. Money: aid lost by service line
 
-Lines: HIV `hiv_art, hiv_pmtct, hiv_prev, hiv_ovc, hiv_unspec, hiv_hss`; TB `tb_ds, tb_dr, tb_unspec, tb_hss`;
+Lines: HIV `hiv_art, hiv_care_ct, hiv_pmtct, hiv_prev, hiv_ovc, hiv_unspec, hiv_hss`; TB `tb_ds, tb_dr, tb_unspec, tb_hss`;
 Malaria `mal_itn, mal_irs, mal_cm, mal_unspec, mal_hss`; Immunization `imm`. The "direct" lines are
 `hiv_art, hiv_pmtct, hiv_prev, hiv_ovc, tb_ds, tb_dr, mal_itn, mal_irs, mal_cm, imm`.
 
@@ -52,6 +52,13 @@ for each bucket b, with mix_l = base_l / (sum of base over b's direct lines) (if
 the share of each direct line in that bucket's baseline across all countries in dah_lines):
   eff_l = gross_l + (gross_unspec_b + kappa x gross_hss_b) x mix_l.
 The non-service part of systems money is nonserv_b = (1 - kappa) x gross_hss_b. Immunization has no unspec/hss line.
+**HIV testing & care** (`hiv_care_ct`, I-09) is a known line for the mix (mix over direct lines + hiv_care_ct) but has no
+units: pool = gross_care + (gross_unspec + gross_hss) x mix_care; kappa x pool is service money that adds to hiv_art's
+money lost (and base); (1 - kappa) x pool is non-service; nonserv_HIV = (1 - kappa) x gross_hss x (1 - mix_care).
+For units, hiv_art uses net_art + net_care_kappa over base eff_base_art + eff_base_care_kappa, but whether donor money
+exceeds cost x covered is judged on eff_base_art only (raw = min(covered, eff_base_art / cost) x net / base).
+**PMTCT women are outside the ART pool** (I-27): covered_art = ART coverage x PLHIV - PMTCT coverage x HIV+ pregnancies
+(not below 0); units of hiv_art are clipped to covered_art. uc_pmtct includes the mother's ART.
 Compute the same with base amounts to get the effective baseline eff_base_l.
 
 ## 2. Government response
@@ -157,13 +164,13 @@ people off ART (deaths), new HIV infections (deaths in 2031-2035 from all infect
 c_t computed from the people still off ART), missed vaccine cohorts (remaining weights x the 2030 level x
 (1 + trend_u5mr)^(years after 2030)), TB spread (arrivals in 2031-2032).
 
-## 6. "Every US$1 Million Lost" cards (main line of each bucket: hiv_art, tb_ds, mal_itn, imm)
+## 6. "What Every US$1 Million Cut Does, by Disease" cards (I-04)
 
-- People losing the service = 1,000,000 / cost x (1 - continuity).
+- For each disease with aid B (all its lines in dah_lines, including unspec, hss, ovc and hiv_care_ct): run this whole
+  calculation (sections 2-5, sudden cut, no government response) with every row of that disease cut by
+  c = min(1, 1,000,000 / B) and every other row by 0. k = 1,000,000 / (c x B).
+- People losing the service = units lost on the main line (hiv_art, tb_ds, mal_itn, imm) x k.
 - Coverage drop (points) = that / need x 100.
-- Extra deaths over 5 years = (deaths per unit over 5 years of a sudden cut, ignoring TB spread, malaria rebound and
-  HIV infection deaths) x people. Per unit: ART = sum of the 5 hazards; TB = dCFR x (0.7 + 4); immunization = sum over
-  years of level_t x (0.4, 0.75, 0.95, 1, 1). Bednets: run the malaria formula over 5 years (with ramp-up and
-  trend, no rebound) for 1,000,000 / cost itn units alone (before continuity), then multiply those deaths by
-  (1 - continuity).
+- Extra deaths over 5 years = the disease's deaths 2026-2030 x k (all mechanisms: TB spread, malaria rebound, HIV
+  infection deaths).
 - Aid per death = 5,000,000 / deaths.

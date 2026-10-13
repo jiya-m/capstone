@@ -737,7 +737,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     rows = _service_rows(show)
     cov_fig = _coverage_fig(rows)
     path_fig = _path_fig(res)
-    cards = _per_million_cards(res, ptab, country_name)
+    cards = _per_million_cards(iso3, ptab_json, ctl["trend"], country_name)
     items = _headline_items(res, ptab, deaths_basis_text(preset, ctl.get("cut_path"), country_name))
 
     # ------------------------------ headline ------------------------------ #
@@ -761,9 +761,12 @@ def _country_results(iso3, country_name, ctl, sk, imf):
             help="A one-page HTML summary of this scenario. Open it in a browser and print to PDF.")
 
     # ------------------------------ per $1M ------------------------------ #
-    st.subheader(_esc("Every US$1 Million Lost, by Bucket"),
-                 help="Coverage drop per $1M is linear, and so are deaths, except for malaria, where the Lives Saved "
-                      "Tool equations make each extra point of lost coverage slightly worse.")
+    st.subheader(_esc(CARDS_TITLE),
+                 help="Each card runs the full model for a US$1M-a-year cut to that disease, spread across all its "
+                      "services (including HIV testing and care) in proportion to current aid, with no government "
+                      "replacement and a sudden cut. People and coverage are for the main service; deaths are for the "
+                      "whole disease over 2026-2030, including TB spread, malaria rebound and deaths from new HIV "
+                      "infections. The death-rate setting and model parameters follow your choices above.")
     st.markdown(_cards_html(cards), unsafe_allow_html=True)
 
     # ------------------------------ where the money is lost ------------------------------ #
@@ -793,8 +796,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                  "year they happen (few before 2031). Program money with no "
                  "reported purpose is spread over each bucket's known mix, and "
                  f"{float(ptab.loc['hss_kappa', 'central']):.0%} of lost systems money (labs, staff, monitoring) is "
-                 "assumed to cut services. Bednets and spraying protect the same population at risk, so they share one "
-                 "row. Deaths ranges are 95% intervals.")
+                 "assumed to cut services. HIV Testing & Care has no patients of its own: " + care_ct_note()
+                 + " Bednets and spraying have their own coverage; together they set vector-control coverage. "
+                 "Deaths ranges are 95% intervals.")
     st.subheader("What Each Service Loses", help=" ".join(notes))
     st.html(_service_table_html(rows, country_name, T, {b: float(B.loc[b, "gains_usd"]) for b in hm.BUCKETS}))
     ovc = show[show["line"] == "hiv_ovc"]
@@ -951,34 +955,46 @@ def _comparison(iso3, country_name, ctl, res_a, items_a):
 
 CARD_FOOT_TIP = ("Total aid lost over 5 years ($5M) divided by extra deaths over the same 5 years; this equals $1M "
                  "divided by the average extra deaths per year.")
-CARD_SERVICE = {"HIV": "HIV Treatment", "TB": "TB Treatment", "Malaria": "Bednets",
-                "Immunization": "Routine Immunization"}
+CARDS_TITLE = "What Every US$1 Million Cut Does, by Disease"
+CARD_MAIN = {"HIV": "HIV treatment (ART)", "TB": "TB treatment", "Malaria": "bednets", "Immunization": "routine vaccines"}
 NO_DEATHS_REASON = {"Malaria": " (very low transmission)"}
 
 
-def _per_million_cards(res, ptab, country_name: str = "") -> list:
-    Ls = res["lines"].set_index("line")
-    cont = float(ptab.loc["continuity", "central"])
+@st.cache_data(show_spinner=False, max_entries=64)
+def _card_runs(iso3: str, ptab_json: str, trend: bool) -> dict:
+    """Full-model US$1M-a-year cut per disease (audit I-04), cached by country, parameters and death-rate setting."""
+    ptab = pd.read_json(io.StringIO(ptab_json), orient="split")
+    return {b: hm.per_million_card(iso3, b, _inputs(), ptab, trend) for b in hm.BUCKETS}
+
+
+def _per_million_cards(iso3: str, ptab_json: str, trend: bool, country_name: str = "") -> list:
+    """The four cards: people losing and coverage drop for the disease's main service, extra deaths for the whole
+    disease, from a US$1M-a-year loss spread over all the disease's services in proportion to current aid."""
+    runs = _card_runs(iso3, ptab_json, trend)
     out = []
     for b in hm.BUCKETS:
-        line = MAIN_LINE[b]
-        ln = Ls.loc[line]
-        uc, need = ln["unit_cost"], ln["need"]
-        per_m_units = 1e6 / uc * (1 - cont)
-        dpp = per_m_units / need * 100 if need and not np.isnan(need) else np.nan
-        d_per = res["deaths_per_dollar"][line] * 1e6 * (1 - cont)
-        no_deaths = not (d_per > 0)                     # e.g. malaria in Iraq: nothing to model
-        out.append({"bucket": b, "color": BUCKET_COLORS[b], "service": CARD_SERVICE[b],
-                    "people": f"{num(per_m_units)} {ln['unit_label']} lose the service",       # a sentence (brief)
-                    "people_n": f"{per_m_units:,.0f}", "unit": ln["unit_label"],
-                    "cov_n": None if np.isnan(dpp) else f"{dpp:,.1f}",
-                    "coverage": "n/a" if np.isnan(dpp) else f"{dpp:,.1f} Percentage Points",
-                    "deaths": f"{d_per:,.0f}",
-                    "no_deaths": (f"No {BUCKET_WORD[b]} deaths modelled in {country_name}{NO_DEATHS_REASON.get(b, '')}"
+        word = BUCKET_WORD[b]
+        c = runs[b]
+        base = {"bucket": b, "color": BUCKET_COLORS[b], "service": b, "foot_tip": ""}
+        if c is None:                                   # no aid for this disease in the country
+            out.append({**base, "unit": "", "people": "", "people_n": None, "cov_n": None, "coverage": "n/a",
+                        "deaths": "", "no_deaths": f"No {word} aid in {country_name}", "foot": ""})
+            continue
+        d = c["deaths_5y"]
+        no_deaths = not (d >= 0.5)
+        spread = f"Spread across all {word} services in proportion to current aid"
+        if c["scaled"]:
+            spread += f" ({money(c['aid_usd'])} a year in total; results scaled to $1M)"
+        out.append({**base, "unit": f"main service: {CARD_MAIN[b]} ({c['unit_label']})",
+                    "people": f"{num(c['people'])} {c['unit_label']} lose the service",
+                    "people_n": f"{c['people']:,.0f}",
+                    "cov_n": None if not np.isfinite(c["cov_drop_pp"]) else f"{c['cov_drop_pp']:,.1f}",
+                    "coverage": "n/a" if not np.isfinite(c["cov_drop_pp"]) else f"{c['cov_drop_pp']:,.1f} Percentage Points",
+                    "deaths": f"{d:,.0f}",
+                    "no_deaths": (f"No {word} deaths modelled in {country_name}{NO_DEATHS_REASON.get(b, '')}"
                                   if no_deaths else ""),
-                    "foot": f"Cost {money(uc)} per {hm.UNIT_SINGULAR[line]}"
-                            + ("" if no_deaths else f" · About {money(5e6 / d_per)} of aid lost per life lost "
-                                                    "(based on US$1M a year for 5 years)"),
+                    "foot": spread + ("" if no_deaths else f" · About {money(5e6 / d)} of aid lost per life lost "
+                                                         "(based on US$1M a year for 5 years)"),
                     "foot_tip": "" if no_deaths else CARD_FOOT_TIP})
     return out
 
@@ -986,13 +1002,16 @@ def _per_million_cards(res, ptab, country_name: str = "") -> list:
 def _card_html(c) -> str:
     """One card: bucket, service on one line, unit as a grey second line, then three big numbers."""
     e = html.escape
-    big = (f"<div class='big'>{e(c['people_n'])}</div><div class='lbl'>People Losing the Service</div>")
+    if c.get("people_n") is None:                      # no aid for this disease in the country
+        return (f"<div class='ed-card' style='border-top-color:{c['color']}'><div class='t'>{e(c['bucket'])}</div>"
+                f"<div class='none'>{e(c['no_deaths'])}</div></div>").replace("$", "&#36;")
+    big = (f"<div class='big'>{e(c['people_n'])}</div><div class='lbl'>People Losing the Main Service</div>")
     big += (f"<div class='big'>{e(c['cov_n'])}</div><div class='lbl'>Coverage Drop (Percentage Points)</div>"
             if c["cov_n"] is not None else "")
     big += (f"<div class='none'>{e(c['no_deaths'])}</div>" if c["no_deaths"] else
             f"<div class='big'>{e(c['deaths'])}</div><div class='lbl'>Extra Deaths Over 5 Years</div>")
     return (f"<div class='ed-card' style='border-top-color:{c['color']}'>"
-            f"<div class='t'>{e(c['bucket'])}</div><div class='s1'>{e(c['service'])}</div>"
+            f"<div class='t'>{e(c['bucket'])}</div>"
             f"<div class='s'>{e(c['unit'])}</div>{big}"
             f"<div class='foot' title='{e(c.get('foot_tip', ''), quote=True)}'>{e(c['foot'])}</div></div>"
             ).replace("$", "&#36;")
@@ -1080,7 +1099,8 @@ SUM_COLS = ["base_usd", "gross_loss_usd", "replaced_usd", "net_loss_usd", "units
             "deaths_5y", "deaths_5y_lo", "deaths_5y_hi"]
 
 
-LINE_SHORT = {"hiv_art": ("HIV Treatment", "ART, testing, care"),
+LINE_SHORT = {"hiv_art": ("HIV Treatment", "antiretroviral therapy (ART)"),
+              "hiv_care_ct": ("HIV Testing & Care", "counselling, testing, care & support"),
               "hiv_pmtct": ("Mother-to-Child Transmission", "prevention (PMTCT)"),
               "hiv_prev": ("HIV Prevention", "PrEP, VMMC, condoms, key populations"),
               "hiv_ovc": ("Orphans & Vulnerable Children", "support"),
@@ -1092,14 +1112,33 @@ LINE_SHORT = {"hiv_art": ("HIV Treatment", "ART, testing, care"),
               "imm": ("Routine Immunization", "vaccines + delivery")}
 
 
+LINE_ORDER = ["hiv_art", "hiv_care_ct", "hiv_pmtct", "hiv_prev", "hiv_ovc", "tb_ds", "tb_dr", "mal_itn", "mal_irs",
+              "mal_cm", "imm"]
+COST_UNIT = {"hiv_pmtct": "per woman per year, including her ART"}
+
+
+def care_ct_note() -> str:
+    """How HIV testing and care money enters the model (audit I-09); values from hss_kappa in model_params.csv."""
+    k = _default_params().loc["hss_kappa"]
+    return (f"{float(k['central']):.0%} of lost testing and care money is counted as lost ART care (assumption; range "
+            f"{float(k['low']):.0%}-{float(k['high']):.0%}).")
+
+
+def care_ct_tip() -> str:
+    return ("HIV testing, counselling, care and support have no patients of their own in the model. Cutting them means "
+            "fewer people diagnosed and kept in care, so fewer on ART: " + care_ct_note()
+            + " Those people and deaths are counted in the HIV Treatment row.")
+
+
 def _service_rows(show: pd.DataFrame) -> pd.DataFrame:
     """Lines as shown to readers: support for orphans and vulnerable children dropped (it has no modelled effect on
     deaths). Bednets and indoor spraying are separate rows, each with its own coverage (MAP ITN use and MAP household
     IRS coverage). Adds the short name, the cost text, the coverage source and whether coverage can be shown (it can't
     when nobody is in need, e.g. malaria treatment in Iraq: the drop would be 0 / 0)."""
     d = show[show["line"] != "hiv_ovc"].copy()
-    d["cost_big"] = d["unit_cost"].map(money)
-    d["cost_unit"] = [f"per {hm.UNIT_SINGULAR[r.line]}" for r in d.itertuples()]
+    d["cost_big"] = [("–" if r.line in hm.LINKED else money(r.unit_cost)) for r in d.itertuples()]
+    d["cost_unit"] = [("" if r.line in hm.LINKED else COST_UNIT.get(r.line, f"per {hm.UNIT_SINGULAR[r.line]}"))
+                      for r in d.itertuples()]
     if "cov_source" not in d:
         d["cov_source"] = ""
     d["cov_source"] = d["cov_source"].fillna("")
@@ -1109,7 +1148,9 @@ def _service_rows(show: pd.DataFrame) -> pd.DataFrame:
     d["after"] = np.where(d["cov_ok"], (d["cov0"] - d["cov_drop_pp"].fillna(0) / 100).clip(0, 1), np.nan)
     d["drop"] = np.where(d["cov_ok"], (d["cov0"] - d["after"]) * 100, np.nan)
     order = {b: i for i, b in enumerate(hm.BUCKETS)}
-    return d.assign(_o=d["bucket"].map(order)).sort_values("_o", kind="stable").drop(columns="_o")
+    lo = {l: i for i, l in enumerate(LINE_ORDER)}
+    return (d.assign(_o=d["bucket"].map(order), _l=d["line"].map(lambda l: lo.get(l, 99)))
+            .sort_values(["_o", "_l"], kind="stable").drop(columns=["_o", "_l"]))
 
 
 def _pts(v: float) -> str:
@@ -1154,6 +1195,12 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
         prev = r.bucket
         service = (f"<td class='svc' style='border-left:3px solid {col}'><span class='dot' style='background:{col}'>"
                    f"</span><b>{e(r.name)}</b><br>{grey(e(r.detail))}</td>")
+        dash = f"<span class='nm' title='{e(care_ct_tip(), quote=True)}'>–</span>"
+        if r.line in hm.LINKED:                        # HIV testing & care: works through ART (I-09)
+            cells = [money(r.base_usd), money(r.net_loss_usd), f"<span class='big'>–</span>", dash, dash,
+                     f"<span class='nm' title='{e(care_ct_tip(), quote=True)}'>In HIV<br>Treatment</span>"]
+            body.append("<tr>" + service + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
+            continue
         if r.cov_ok:
             src = f"<br>{grey(e('(' + r.cov_source + ')'))}" if r.cov_source else ""
             cov = f"{cov_pair(r.cov0, r.after)}{src}<br><span class='drop'>{_pts(r.drop)}</span>"
@@ -1827,7 +1874,7 @@ def _brief_html(country_name, preset, resp_label, items, cards, figs, opts=None)
 <div class="meta"><b>Donor Scenario:</b> {e(scenario_title(preset, opts))}<br><b>Government Response:</b> {e(resp_label)}</div>
 <p class="meta">{e(scn.preset_description(preset, opts))}</p>
 <h2>The Headline</h2><div class="grid">{stats}</div>
-<h2>Every US$1 Million Lost, by Bucket</h2><div class="cards">{card_html}</div>
+<h2>What Every US$1 Million Cut Does, by Disease</h2><div class="cards">{card_html}</div>
 <h2>Coverage and Deaths</h2>{''.join(charts)}
 <div class="foot">Generated {_dt.date.today():%d %B %Y} from the Health Financing dashboard. Sources: IHME Development
 Assistance for Health and health spending; World Bank WDI; WHO and UNAIDS series via Gapminder. Ranges are 95% intervals

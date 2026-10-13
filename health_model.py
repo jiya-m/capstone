@@ -42,9 +42,15 @@ UNSPEC = {"HIV": "hiv_unspec", "TB": "tb_unspec", "Malaria": "mal_unspec"}
 HSS = {"HIV": "hiv_hss", "TB": "tb_hss", "Malaria": "mal_hss"}
 ALL_DIRECT = [l for b in BUCKETS for l in DIRECT[b]]
 LINE_BUCKET = {l: b for b in BUCKETS for l in DIRECT[b]}
-FULL_LINE_BUCKET = {**LINE_BUCKET, **{v: k for k, v in UNSPEC.items()}, **{v: k for k, v in HSS.items()}}
+# money lines with no units of their own (audit I-09): hss_kappa of their lost money counts as lost service on the
+# target line, like health-systems money; the rest is non-service money
+LINKED = {"hiv_care_ct": "hiv_art"}
+LINKED_IN = {b: [l for l, t in LINKED.items() if LINE_BUCKET[t] == b] for b in BUCKETS}
+MONEY_LINES = ALL_DIRECT + list(LINKED)
+FULL_LINE_BUCKET = {**LINE_BUCKET, **{v: k for k, v in UNSPEC.items()}, **{v: k for k, v in HSS.items()},
+                    **{l: LINE_BUCKET[t] for l, t in LINKED.items()}}
 LINE_LABELS = {
-    "hiv_art": "HIV treatment (ART, testing, care)", "hiv_pmtct": "Prevention of mother-to-child transmission",
+    "hiv_art": "HIV treatment (ART)", "hiv_care_ct": "HIV testing & care", "hiv_pmtct": "Prevention of mother-to-child transmission",
     "hiv_prev": "HIV prevention (PrEP, VMMC, condoms, key populations)", "hiv_ovc": "Orphans & vulnerable children",
     "tb_ds": "TB case finding & treatment", "tb_dr": "Drug-resistant TB",
     "mal_itn": "Bednets & other vector control", "mal_irs": "Indoor residual spraying",
@@ -96,8 +102,8 @@ def load_inputs(model_dir: Path = MODEL_DIR) -> dict:
     trend = pd.read_csv(model_dir / "ihme_trend.csv")
     reg = json.loads((model_dir / "regressions.json").read_text())
     # global mix of each bucket's known (direct) lines -> fallback for allocating unreported program areas
-    gm = lines[lines.line.isin(ALL_DIRECT)].groupby(["bucket", "line"])["usd"].sum()
-    gmix = {b: (gm[b] / gm[b].sum()).reindex(DIRECT[b]).fillna(0).to_dict() for b in BUCKETS}
+    gm = lines[lines.line.isin(MONEY_LINES)].groupby(["bucket", "line"])["usd"].sum()
+    gmix = {b: (gm[b] / gm[b].sum()).reindex(DIRECT[b] + LINKED_IN[b]).fillna(0).to_dict() for b in BUCKETS}
     return {"lines": lines, "ci": ci, "trend": trend, "reg": reg, "global_mix": gmix,
             "trend_map": trend.set_index(["src_grp", "chan_grp", "bucket"])["ratio"].to_dict()}
 
@@ -209,6 +215,29 @@ def uniform_scenario(bucket: str, cut: float) -> Scenario:
     sc.src_direct = {s: cut for s in SOURCE_GROUPS}
     sc.src_multi = {s: cut for s in SOURCE_GROUPS}
     return sc
+
+
+def per_million_card(iso3: str, bucket: str, inputs: dict, ptab: pd.DataFrame, mortality_trend: bool = True):
+    """What a US$1M-a-year loss does to one disease (audit I-04): the full model with the loss spread over all of the
+    disease's aid lines in proportion to current aid (a uniform cut, every donor and channel), no government
+    replacement, sudden path, every mechanism included (caps, TB spread, malaria rebound, HIV infection deaths).
+    Returns None when the country has no aid for the disease. Where the disease's aid is under US$1M a year, the whole
+    of it is cut and the results are scaled up to US$1M (flag 'scaled')."""
+    L = inputs["lines"]
+    base = float(L.loc[(L.iso3 == iso3) & (L.bucket == bucket), "usd"].sum())
+    if base <= 0:
+        return None
+    cut = min(1.0, 1e6 / base)
+    r = run_country(iso3, uniform_scenario(bucket, cut), Fiscal(), inputs, ptab, n_draws=0,
+                    mortality_trend=mortality_trend)
+    lost = float(r["buckets"].set_index("bucket").loc[bucket, "gross_loss_usd"])
+    k = 1e6 / lost if lost > 0 else np.nan
+    main = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_itn", "Immunization": "imm"}[bucket]
+    ln = r["lines"].set_index("line").loc[main]
+    return {"bucket": bucket, "main_line": main, "aid_usd": base, "cut": cut, "aid_lost_usd": lost, "scaled": base < 1e6,
+            "people": float(ln["units_lost"]) * k, "cov_drop_pp": float(ln["cov_drop_pp"]) * k,
+            "deaths_5y": float(r["buckets"].set_index("bucket").loc[bucket, "deaths_5y"]) * k,
+            "unit_label": ln["unit_label"], "unit_cost": float(ln["unit_cost"])}
 
 
 @dataclass
@@ -371,15 +400,18 @@ def mortality_trend_factors(row: pd.Series, kind: str, use: bool = True) -> np.n
     return (1.0 + t) ** np.arange(N_YEARS)
 
 
-def _units_lost(net, base, unit_cost, covered):
-    """Units of service lost (before continuity): donor-funded units x share of donor money lost."""
+def _units_lost(net, base, unit_cost, covered, cap_base=None):
+    """Units of service lost (before continuity): donor-funded units x share of donor money lost. cap_base: the money
+    that pays for the service itself, used to test whether donor money buys more than everyone covered (for ART, the
+    treatment money only, not the testing and care money that also counts toward it; audit I-09)."""
     net, base, unit_cost = np.asarray(net, dtype=float), np.asarray(base, dtype=float), np.asarray(unit_cost, dtype=float)
+    cap_base = base if cap_base is None else np.asarray(cap_base, dtype=float)
     plain = net / unit_cost
     if np.isnan(covered):
         return plain
-    funded = np.minimum(covered, base / unit_cost)
+    funded = np.minimum(covered, cap_base / unit_cost)
     share = np.divide(net, base, out=np.zeros_like(net * base), where=np.abs(base) > 0)
-    return np.where(base / unit_cost > covered, funded * share, plain)
+    return np.where(cap_base / unit_cost > covered, funded * share, plain)
 
 
 def per_unit_levels(row: pd.Series, P: dict, art_cov: float, trend: bool = True) -> dict:
@@ -557,20 +589,29 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     # ---- 1. money: effective loss by direct line (per draw because kappa is uncertain) ----
     def effective(series, kappa):
+        """Money by line after spreading unspecified and systems money over the known mix. Linked lines (HIV testing
+        and care) keep kappa x their pool as service money (it counts toward the target line's units) and put the rest
+        in nonservice[line]; nonservice[bucket] is the systems money that does not cut services."""
         eff, nonservice = {}, {}
         for b in BUCKETS:
-            d = series.reindex(DIRECT[b]).fillna(0.0)
-            bmix = base.reindex(DIRECT[b]).fillna(0.0)
+            known = DIRECT[b] + LINKED_IN[b]
+            d = series.reindex(known).fillna(0.0)
+            bmix = base.reindex(known).fillna(0.0)
             mix = (bmix / bmix.sum()) if bmix.sum() > 0 else pd.Series(inputs["global_mix"][b])
             u = series.get(UNSPEC.get(b, ""), 0.0)
             s = series.get(HSS.get(b, ""), 0.0)
             for l in DIRECT[b]:
                 eff[l] = d[l] + (u + kappa * s) * mix.get(l, 0.0)
-            nonservice[b] = (1 - kappa) * s
+            m_link = 0.0
+            for l in LINKED_IN[b]:
+                pool = d[l] + (u + s) * mix.get(l, 0.0)        # its own money + its share of unspecified and systems
+                eff[l], nonservice[l] = kappa * pool, (1 - kappa) * pool
+                m_link += mix.get(l, 0.0)
+            nonservice[b] = (1 - kappa) * s * (1 - m_link)
         return eff, nonservice
 
     eff_base, _ = effective(base, P["hss_kappa"])
-    effc_base, _ = effective(base, Pc["hss_kappa"])
+    effc_base, nsc_base = effective(base, Pc["hss_kappa"])
 
     # ---- 2. fiscal response, year by year ----
     # aid lost in year t = full scenario loss x cut_path(t); the government response in `fiscal` applies to that year's
@@ -617,6 +658,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         return 0.0
 
     dpd = {l: deaths_per_dollar(l) for l in ALL_DIRECT}
+    dpd.update({l: dpd[t] for l, t in LINKED.items()})           # linked money works through its target line
 
     def allocate(eff_d, nons, budget):
         """Split a replacement budget over lines with a loss. Returns (by direct line, by bucket systems)."""
@@ -633,7 +675,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             repn = {b: budget * v / safe for b, v in posn.items()}
         else:                                  # lives first: most deaths averted per dollar gets refilled first
             left = np.full_like(np.asarray(tot, dtype=float), budget)
-            for l in sorted(ALL_DIRECT, key=lambda k: -dpd[k]):
+            for l in sorted(MONEY_LINES, key=lambda k: -dpd[k]):
                 take = np.minimum(left, pos[l])
                 rep[l], left = take, left - take
             sn = sum(posn.values())
@@ -642,7 +684,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     # per year: effective loss scaled by the path, replacement allocated, net loss by line
     years = range(N_YEARS)
-    effc_t, repc_t, repnc_t, net_t, netc_t = [], [], [], [], []
+    effc_t, repc_t, repnc_t, net_t, netc_t, nsc_t_all = [], [], [], [], [], []
     for t in years:
         e_t, ns_t = effective(gross_t[t], P["hss_kappa"])
         ec_t, nsc_t = effective(gross_t[t], Pc["hss_kappa"])
@@ -651,14 +693,17 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         effc_t.append(ec_t)
         repc_t.append(rc)
         repnc_t.append(rnc)
-        net_t.append({l: e_t[l] - r[l] for l in ALL_DIRECT})
-        netc_t.append({l: ec_t[l] - rc[l] for l in ALL_DIRECT})
+        nsc_t_all.append(nsc_t)
+        net_t.append({l: e_t[l] - r[l] for l in MONEY_LINES})
+        netc_t.append({l: ec_t[l] - rc[l] for l in MONEY_LINES})
 
     # ---- 3. coverage: people losing each service in each year ----
     uc = unit_costs(row, P)
     units = {l: np.zeros((n, N_YEARS)) for l in ALL_DIRECT}           # per draw x year
     unitsc = {l: np.zeros((1, N_YEARS)) for l in ALL_DIRECT}          # central x year
-    capped, excess = {}, {}
+    capped, excess, funded = {}, {}, {}
+    pm_need, pm_cov = ep["need_cov"]["hiv_pmtct"]
+    pmtct_covered = pm_need * pm_cov if not (np.isnan(pm_need) or np.isnan(pm_cov)) else 0.0
     for l in ALL_DIRECT:
         need, cov = ep["need_cov"].get(l, (np.nan, np.nan))
         if l == "mal_itn" and np.isnan(cov):
@@ -670,18 +715,30 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         # pays for things other than the service itself, so the loss scales proportionally instead of running past
         # the people covered. When aid buys less than full coverage this equals net loss / cost per person.
         covered = cov * need if (l in ep["need_cov"] and not np.isnan(need) and not np.isnan(cov)) else np.nan
+        # pregnant women on PMTCT (Option B+) are on ART, but their ART is in the PMTCT cost and paid from PMTCT money
+        # (audit I-27), so they are not part of the people the ART line's money can pay for or lose
+        if l == "hiv_art" and not np.isnan(covered):
+            covered = max(covered - pmtct_covered, 0.0)
         b0 = float(np.asarray(effc_base[l]).ravel()[0])
+        funded[l] = b0 / float(ucc[l][0]) if np.isnan(covered) else min(covered, b0 / float(ucc[l][0]))
         excess[l] = bool(not np.isnan(covered) and b0 / float(ucc[l][0]) > covered * (1 + 1e-9))   # tolerance: ties
         if excess[l] and (iso3, l) not in _EXCESS_LOGGED:
             _EXCESS_LOGGED.add((iso3, l))
             log.warning("%s %s: donor aid ($%.0f) buys %.0f units at $%.0f each, more than the %.0f people covered; "
                         "units lost scaled proportionally", iso3, l, b0, b0 / float(ucc[l][0]), float(ucc[l][0]), covered)
         capped[l] = False
+        # linked money (HIV testing and care -> ART) adds to this line's money lost and its base, but whether donor
+        # money buys more than everyone covered is judged on the line's own money only (audit I-09)
+        links = [k for k, t in LINKED.items() if t == l]
         for t in years:
-            u = _units_lost(net_t[t][l], eff_base[l], uc[l], covered) * (1 - P["continuity"])
-            uc0 = _units_lost(netc_t[t][l], effc_base[l], ucc[l], covered) * (1 - Pc["continuity"])
+            n_t = net_t[t][l] + sum(net_t[t][k] for k in links)
+            nc_t = netc_t[t][l] + sum(netc_t[t][k] for k in links)
+            b_all = eff_base[l] + sum(eff_base[k] for k in links)
+            bc_all = effc_base[l] + sum(effc_base[k] for k in links)
+            u = _units_lost(n_t, b_all, uc[l], covered, cap_base=eff_base[l]) * (1 - P["continuity"])
+            uc0 = _units_lost(nc_t, bc_all, ucc[l], covered, cap_base=effc_base[l]) * (1 - Pc["continuity"])
             if l in ep["need_cov"] and not np.isnan(need) and not np.isnan(cov):
-                hi = cov * need
+                hi = covered if l == "hiv_art" else cov * need
                 capped[l] = capped[l] or bool(np.ravel(uc0)[0] > hi)
                 u, uc0 = np.minimum(u, hi), np.minimum(uc0, hi)
             # never negative: aid rises count as no loss (I-15), so this only removes floating-point noise when the
@@ -823,6 +880,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             "cov_drop_pp": uc_mean / need * 100 if (need and not np.isnan(need)) else np.nan,
             "capped": capped.get(l, False),
             "donor_exceeds_cost": excess.get(l, False),
+            "donor_funded_units": funded.get(l, np.nan),        # people donor money pays for now (central)
             "deaths_y1": float(deathsc[l][0, 0]) if l in deathsc else 0.0,
             "deaths_y1_lo": q(d1, 2.5), "deaths_y1_hi": q(d1, 97.5),
             "deaths_5y": float(deathsc[l].sum()) if l in deathsc else 0.0,
@@ -831,6 +889,20 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             "infections_5y": float(np.asarray(infectionsc[l]).sum()) if l in infectionsc else 0.0,
             "infections_5y_lo": q(inf5, 2.5), "infections_5y_hi": q(inf5, 97.5),
         })
+    # linked money lines (HIV testing and care): their full money, no units of their own; kappa of their lost money is
+    # already inside the target line's people losing the service and deaths
+    for l, tgt in LINKED.items():
+        full = lambda e, ns: float(np.asarray(e[l]).ravel()[0]) + float(np.asarray(ns.get(l, 0.0)).ravel()[0])  # noqa: E731
+        g_full = float(np.mean([full(effc_t[t], nsc_t_all[t]) for t in years]))
+        r_full = float(np.mean([full(repc_t[t], repnc_t[t]) for t in years]))
+        recs.append({"bucket": LINE_BUCKET[tgt], "line": l, "label": LINE_LABELS[l], "linked_to": tgt,
+                     "base_usd": full(effc_base, nsc_base), "gross_loss_usd": g_full, "replaced_usd": r_full,
+                     "net_loss_usd": g_full - r_full, "unit_cost": np.nan, "unit_label": "", "need": np.nan,
+                     "cov0": np.nan, "cov_source": "", "donor_share_of_coverage": np.nan, "units_lost": np.nan,
+                     "units_lost_lo": np.nan, "units_lost_hi": np.nan, "cov_drop_pp": np.nan, "capped": False,
+                     "donor_exceeds_cost": False, "donor_funded_units": np.nan, "deaths_y1": 0.0, "deaths_y1_lo": 0.0, "deaths_y1_hi": 0.0,
+                     "deaths_5y": 0.0, "deaths_5y_lo": 0.0, "deaths_5y_hi": 0.0, "infections_5y": 0.0,
+                     "infections_5y_lo": 0.0, "infections_5y_hi": 0.0})
     tab = pd.DataFrame(recs)
 
     # bucket summary incl. money that has no modelled outcome (OVC, systems share)
@@ -843,8 +915,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         bl = [l for l in base.index if FULL_LINE_BUCKET.get(l) == b]
         b_base = float(base.reindex(bl).sum()) if bl else 0.0
         b_gross = float(gross.reindex(bl).sum()) if bl else 0.0           # average yearly loss
-        b_rep = float(np.mean([sum(np.asarray(repc_t[t][l]).ravel()[0] for l in lb)
-                               + float(np.asarray(repnc_t[t].get(b, 0.0)).ravel()[0]) for t in years]))
+        b_rep = float(np.mean([sum(np.asarray(repc_t[t][l]).ravel()[0] for l in lb + LINKED_IN[b])
+                               + sum(float(np.asarray(repnc_t[t].get(k, 0.0)).ravel()[0]) for k in [b] + LINKED_IN[b])
+                               for t in years]))
         b_net = b_gross - b_rep
         b_gain = float(gains.reindex(bl).sum()) if bl else 0.0
         dc5 = float(sum(deathsc[l].sum() for l in lb if l in deathsc))
@@ -952,6 +1025,19 @@ def dose_response(iso3, bucket, fiscal, inputs, ptab, grid=None, n_draws=120, mo
         rows.append({"cut": g, "net_loss_usd": bb["net_loss_usd"], "deaths_5y": bb["deaths_5y"],
                      "lo": bb["deaths_5y_lo"], "hi": bb["deaths_5y_hi"], "cov_drop_pp": ln["cov_drop_pp"],
                      "cov0": ln["cov0"]})
+    return pd.DataFrame(rows)
+
+
+PEPFAR_ON_ART = 20.6e6           # people on ART that PEPFAR reports supporting (Validation comparison)
+
+
+def donor_funded_on_art(inputs, ptab) -> pd.DataFrame:
+    """People on ART that donor treatment money pays for now, per country (central): min(people on ART outside PMTCT,
+    ART money / cost per patient-year)."""
+    rows = []
+    for c in [c for c in inputs["ci"].index if c in set(inputs["lines"].iso3)]:
+        L = run_country(c, Scenario(), Fiscal(), inputs, ptab, n_draws=0)["lines"].set_index("line")
+        rows.append({"iso3": c, "donor_funded_on_art": float(L.loc["hiv_art", "donor_funded_units"])})
     return pd.DataFrame(rows)
 
 

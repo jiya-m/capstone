@@ -67,7 +67,7 @@ def test_pts_formatter_never_shows_double_sign():
 def test_no_negative_losses_under_aid_rises(iso):
     r = hm.run_country(iso, IHME, NONE, I, P, n_draws=20)
     L, B, T = r["lines"], r["buckets"], r["totals"]
-    assert (L["units_lost"] >= 0).all() and (L["net_loss_usd"] >= -1e-6).all() and (L["deaths_5y"] >= -1e-9).all()
+    assert (L["units_lost"].fillna(0) >= 0).all() and (L["net_loss_usd"] >= -1e-6).all() and (L["deaths_5y"] >= -1e-9).all()
     assert (L["cov_drop_pp"].fillna(0) >= 0).all()
     assert (B["gross_loss_usd"] >= -1e-6).all() and (B["gains_usd"] >= 0).all()
     assert abs(B["gross_loss_usd"].sum() - T["gross"]) <= max(1.0, 1e-9 * T["gross"])

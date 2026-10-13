@@ -50,8 +50,10 @@ def dashboard_values(iso, scen, resp):
         if x["need"] == x["need"] and x["need"] > 0 and x["cov0"] == x["cov0"]:
             out[(ln, "cov_before")] = x["cov0"]
             out[(ln, "cov_after")] = max(x["cov0"] - x["cov_drop_pp"] / 100, 0)
-    for c in ms._per_million_cards(r, P, iso):
+    for c in ms._per_million_cards(iso, P.to_json(orient="split"), True, iso):
         b = c["bucket"]
+        if c["people_n"] is None:                       # no aid for this disease
+            continue
         people = float(c["people_n"].replace(",", ""))
         deaths = float(c["deaths"].replace(",", ""))
         out[(f"card_{b}", "people")] = people

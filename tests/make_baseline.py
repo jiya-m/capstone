@@ -23,6 +23,11 @@ Atlas Project, and malaria treatment costs US$14 a case, so entries with malaria
 model (later mechanisms off); outside the lives-first response only malaria lines, the totals and the malaria path were
 allowed to change, and that is checked:  python tests/make_baseline.py --malaria
 
+HIV (audit I-09, I-27 PMTCT part): HIV testing and care money left the ART line (kappa of it still counts toward ART),
+PMTCT costs US$250 a woman including her ART, and PMTCT women are outside the ART line's people covered, so entries
+with HIV results were refreshed (later mechanisms off); outside lives first only HIV lines, the totals and the HIV path
+were allowed to change, and that is checked:  python tests/make_baseline.py --hiv
+
 Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
 Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
     python tests/make_baseline.py --gains-only"""
@@ -116,6 +121,40 @@ def _close(a, b):
     return abs(a - b) <= 1e-6 * max(1.0, abs(a), abs(b))
 
 
+def refresh_hiv():
+    """I-09 / I-27 PMTCT: HIV testing and care money is its own line (kappa of it counts toward ART), PMTCT costs
+    US$250 a woman including her ART, and PMTCT women are outside the ART line's people covered. Replace the entries
+    whose results changed, with the current model and the later mechanisms off. Outside the lives-first response, only
+    HIV lines (and the totals and HIV path that include them) may change; that is checked here."""
+    _refresh("hiv_", "HIV")
+
+
+def _refresh(prefix, label):
+    I, P = hm.load_inputs(), hm.load_params()
+    P.loc[NEW_MECHANISMS, ["central", "low", "high"]] = 0.0
+    p = Path(__file__).parent / "baseline_sudden.json"
+    out = json.loads(p.read_text())
+    done, other = [], []
+    for key in list(out):
+        iso, preset, fk = key.split("|")
+        sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
+        new = snapshot(hm.run_country(iso, sc, hm.Fiscal(*FISCALS[fk]), I, P, n_draws=N_DRAWS))
+        old = out[key]
+        moved = [l for l, cols in old["lines"].items() if any(not _close(new["lines"][l][c], v) for c, v in cols.items())]
+        if not moved and all(_close(new["totals"][k], v) for k, v in old["totals"].items()):
+            continue
+        outside = [l for l in moved if not l.startswith(prefix)]
+        if outside and fk != "max_lives":
+            raise SystemExit(f"{key}: non-{label} lines changed outside lives first: {outside}")
+        if outside:
+            other.append(key)
+        out[key] = new
+        done.append(key)
+    p.write_text(json.dumps(out))
+    print(f"refreshed {len(done)} of {len(out)} entries; {len(other)} (lives first) also moved non-{label} lines: "
+          f"{other}")
+
+
 def refresh_malaria():
     """I-06 / I-11 / I-27 (malaria): malaria coverage, cases and death trend now come from the Malaria Atlas Project,
     bednets and spraying have separate coverages, and malaria treatment costs US$14 a case. Replace the entries whose
@@ -154,5 +193,7 @@ if __name__ == "__main__":
         refresh_gains()
     elif "--malaria" in sys.argv:
         refresh_malaria()
+    elif "--hiv" in sys.argv:
+        refresh_hiv()
     else:
         main()

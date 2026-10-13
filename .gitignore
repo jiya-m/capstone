@@ -25,3 +25,8 @@ audit/before_malaria.csv
 audit/after_malaria.csv
 audit/before_malaria_fu.csv
 audit/after_malaria_fu.csv
+audit/checks_results_quick.csv
+audit/checks_summary_quick.csv
+audit/checks_summary_quick.md
+audit/before_hiv.csv
+audit/after_hiv.csv

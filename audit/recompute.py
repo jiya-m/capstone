@@ -17,7 +17,7 @@ SCENARIOS = ["Full US exit", "America First MOUs"]
 RESPONSES = {"none": 0.0, "custom25": 0.25}
 
 BUCKET_LINES = {
-    "HIV": ["hiv_art", "hiv_pmtct", "hiv_prev", "hiv_ovc", "hiv_unspec", "hiv_hss"],
+    "HIV": ["hiv_art", "hiv_care_ct", "hiv_pmtct", "hiv_prev", "hiv_ovc", "hiv_unspec", "hiv_hss"],
     "TB": ["tb_ds", "tb_dr", "tb_unspec", "tb_hss"],
     "Malaria": ["mal_itn", "mal_irs", "mal_cm", "mal_unspec", "mal_hss"],
     "Immunization": ["imm"],
@@ -27,6 +27,7 @@ DIRECT = ["hiv_art", "hiv_pmtct", "hiv_prev", "hiv_ovc", "tb_ds", "tb_dr",
           "mal_itn", "mal_irs", "mal_cm", "imm"]
 BUCKET_DIRECT = {b: [l for l in ls if l in DIRECT] for b, ls in BUCKET_LINES.items()}
 LINE_BUCKET = {l: b for b, ls in BUCKET_LINES.items() for l in ls}
+CARE = "hiv_care_ct"            # METHOD.md (I-09): no units; kappa x its pool counts toward hiv_art
 DIRECT_CHANNELS = {"Bilateral agency", "NGOs", "Gates direct", "Other"}
 
 US = "United States"
@@ -86,7 +87,9 @@ def us_direct_cut(iso, scen):
     return MOU_DEFAULT if x is None else x
 
 
-def row_cut(iso, scen, src, chan):
+def row_cut(iso, scen, src, chan, line=None):
+    if isinstance(scen, tuple):                      # ("uniform", bucket, cut): the per-US$1M cards (I-04)
+        return scen[2] if LINE_BUCKET.get(line) == scen[1] else 0.0
     if src != US:
         x = 0.0
     else:
@@ -101,6 +104,7 @@ def row_cut(iso, scen, src, chan):
 _gl = dah.groupby("line")["usd"].sum()
 GLOBAL_MIX = {}
 for b, ls in BUCKET_DIRECT.items():
+    ls = ls + ([CARE] if b == "HIV" else [])
     tot = sum(_gl.get(l, 0.0) for l in ls)
     for l in ls:
         GLOBAL_MIX[l] = _gl.get(l, 0.0) / tot if tot else 1 / len(ls)
@@ -111,14 +115,19 @@ def effective(amounts, base):
     k = P["hss_kappa"]
     eff, nonserv = {}, {}
     for b, dls in BUCKET_DIRECT.items():
-        bsum = sum(base[l] for l in dls)
+        known = dls + ([CARE] if b == "HIV" else [])
+        bsum = sum(base[l] for l in known)
         unspec = amounts.get(f"{b_prefix(b)}_unspec", 0.0) if b != "Immunization" else 0.0
         hss = amounts.get(f"{b_prefix(b)}_hss", 0.0) if b != "Immunization" else 0.0
+        mix = {l: (base[l] / bsum if bsum else GLOBAL_MIX[l]) for l in known}
         for l in dls:
-            mix = base[l] / bsum if bsum else GLOBAL_MIX[l]
-            eff[l] = amounts[l] + (unspec + k * hss) * mix
+            eff[l] = amounts[l] + (unspec + k * hss) * mix[l]
+        m_c = 0.0
+        if b == "HIV":                       # testing & care: kappa of its pool is service money, the rest is not
+            pool = amounts[CARE] + (unspec + hss) * mix[CARE]
+            eff[CARE], nonserv[CARE], m_c = k * pool, (1 - k) * pool, mix[CARE]
         if b != "Immunization":
-            nonserv[b] = (1 - k) * hss
+            nonserv[b] = (1 - k) * hss * (1 - m_c)
     return eff, nonserv
 
 
@@ -260,7 +269,7 @@ def run(iso, scen, resp_share):
     resp = "none" if resp_share == 0 else "custom25"
 
     d = dah[dah.iso3 == iso].copy()
-    d["cut"] = [row_cut(iso, scen, s, c) for s, c in zip(d.src_grp, d.chan_grp)]
+    d["cut"] = [row_cut(iso, scen, s, c, l) for s, c, l in zip(d.src_grp, d.chan_grp, d.line)]
     d["loss"] = d.usd * d.cut
     base = {l: float(d.loc[d.line == l, "usd"].sum()) for l in ALL_LINES}
     gross = {l: float(d.loc[d.line == l, "loss"].sum()) for l in ALL_LINES}
@@ -280,8 +289,8 @@ def run(iso, scen, resp_share):
     R = min(resp_share * G, cap, G) if resp_share > 0 else 0.0
     pos = [v for v in eff.values() if v > 0] + [v for v in nonserv.values() if v > 0]
     S = sum(pos)
-    repl = {l: (R * eff[l] / S if (eff[l] > 0 and S > 0) else 0.0) for l in DIRECT}
-    net = {l: eff[l] - repl[l] for l in DIRECT}
+    repl = {l: (R * eff[l] / S if (eff[l] > 0 and S > 0) else 0.0) for l in DIRECT + [CARE]}
+    net = {l: eff[l] - repl[l] for l in DIRECT + [CARE]}
 
     out("TOTAL", "aid_at_risk", G)
     out("TOTAL", "replaced", R)
@@ -300,18 +309,25 @@ def run(iso, scen, resp_share):
         if nc["mal_irs"][1] is None or implied > nc["mal_irs"][1]:
             irs_implied = implied
             nc["mal_irs"] = (par0, irs_implied)
+    pm_need, pm_cov = nc["hiv_pmtct"]
+    pm_covered = pm_need * pm_cov if (pm_need is not None and pm_cov is not None) else 0.0
     for l in DIRECT:
         need, cov = nc[l]
         covered = None if (need is None or cov is None) else cov * need
+        if l == "hiv_art" and covered is not None:          # PMTCT women's ART is paid from PMTCT money (I-27)
+            covered = max(covered - pm_covered, 0.0)
+        n_l, b_l = net[l], eff_base[l]
+        if l == "hiv_art":                                   # testing & care money counts toward ART (I-09)
+            n_l, b_l = net[l] + net[CARE], eff_base[l] + eff_base[CARE]
         if covered is None:
-            raw = net[l] / cost[l]
-        elif eff_base[l] / cost[l] > covered:
-            raw = covered * net[l] / eff_base[l]
+            raw = n_l / cost[l]
+        elif eff_base[l] / cost[l] > covered:                # judged on ART's own money
+            raw = min(covered, eff_base[l] / cost[l]) * n_l / b_l
         else:
-            raw = net[l] / cost[l]
+            raw = n_l / cost[l]
         u = raw * (1 - cont)
         if covered is not None:
-            u = float(np.clip(u, -(1 - cov) * need, cov * need))
+            u = float(np.clip(u, -(1 - cov) * need, covered))
         units[l] = u
     # bednets and spraying are each capped at their own people covered (no shared pool since I-11)
 
@@ -402,26 +418,23 @@ def run(iso, scen, resp_share):
     out("TOTAL", "after_2030_total", sum(after.values()))
     out("TOTAL", "hiv_infections_5y", infections_5y)
 
-    # ---- cards
-    cards = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_itn", "Immunization": "imm"}
-    for b, l in cards.items():
-        people = 1e6 / cost[l] * (1 - cont)
-        need = nc[l][0]
-        drop = people / need * 100 if need else np.nan
-        if l == "hiv_art":
-            dpu = sum(haz)
-            dth = dpu * people
-        elif l == "tb_ds":
-            dth = dcfr * (0.7 + 4) * people
-        elif l == "imm":
-            dth = sum(lv[t] * w for t, w in enumerate([0.4, 0.75, 0.95, 1, 1])) * people
-        else:
-            v, _, _ = malaria_split(iso, 1e6 / cost[l], 0.0, 0.0, irs_implied)
-            dth = sum(v * RAMP["mal_itn"][t] * (1 + mtr) ** t for t in range(5)) * (1 - cont)
-        out(f"card_{b}", "people", people)
-        out(f"card_{b}", "cov_drop_pp", drop)
-        out(f"card_{b}", "deaths_5y", dth)
-        out(f"card_{b}", "aid_per_death", 5e6 / dth if dth else np.nan)
+    # ---- cards (METHOD.md section 6, I-04): this same calculation for a US$1M-a-year uniform cut to one disease
+    if not isinstance(scen, tuple):
+        cards = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_itn", "Immunization": "imm"}
+        for b, l in cards.items():
+            bb = float(d.loc[d.line.map(LINE_BUCKET) == b, "usd"].sum())
+            if bb <= 0:
+                continue
+            cut = min(1.0, 1e6 / bb)
+            r = {(ln, m): v for _, _, _, ln, m, v in run(iso, ("uniform", b, cut), 0.0)}
+            k = 1e6 / (cut * bb)
+            dth = sum(r.get((x, "deaths_5y"), 0.0) for x in DIRECT if LINE_BUCKET[x] == b) * k
+            people = r[(l, "units_lost")] * k
+            need = nc[l][0]
+            out(f"card_{b}", "people", people)
+            out(f"card_{b}", "cov_drop_pp", people / need * 100 if need else np.nan)
+            out(f"card_{b}", "deaths_5y", dth)
+            out(f"card_{b}", "aid_per_death", 5e6 / dth if dth else np.nan)
     return rows
 
 

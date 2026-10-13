@@ -140,6 +140,28 @@ st.caption("In these lines, baseline donor aid ÷ cost per person is more than t
            "the service are then scaled by the share of donor money lost, instead of aid lost ÷ cost per person.")
 
 # --------------------------------------------------------------------------- #
+# People on ART that donor money pays for: model vs PEPFAR's reported figure (audit I-09)
+# --------------------------------------------------------------------------- #
+@st.cache_data(show_spinner=False)
+def _on_art(ptab_json: str) -> pd.DataFrame:
+    import io
+    return hm.donor_funded_on_art(I, pd.read_json(io.StringIO(ptab_json), orient="split"))
+
+
+th.section_header("medication", "People on ART Paid for by Donors: Model vs PEPFAR")
+_art = _on_art(ptab_json)
+st.markdown(th.pills_html([
+    ("Model: Donor-Funded People on ART", ms.num(_art["donor_funded_on_art"].sum()), "",
+     f"all donors, {len(_art)} dashboard countries"),
+    ("PEPFAR: People on ART It Supports", ms.num(hm.PEPFAR_ON_ART), "", "PEPFAR's reported figure"),
+], large=True), unsafe_allow_html=True)
+st.caption(ms._esc(
+    "Model = for each country, the smaller of the people on ART (outside PMTCT) and donor HIV treatment money ÷ cost per "
+    "patient-year, added up. It counts full-cost equivalents. PEPFAR counts everyone on ART at sites it supports, "
+    "including people whose drugs the government or the Global Fund buys, so its figure is larger by design. HIV "
+    "testing and care money is not counted here; in the model, " + ms.care_ct_note()[0].lower() + ms.care_ct_note()[1:]))
+
+# --------------------------------------------------------------------------- #
 # Malaria inputs: Malaria Atlas Project 2025 vs the values used before (audit I-11)
 # --------------------------------------------------------------------------- #
 th.section_header("coronavirus", "Malaria Inputs: Malaria Atlas Project 2025 vs Previous Sources")

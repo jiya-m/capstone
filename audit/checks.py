@@ -1,7 +1,8 @@
 """
 Automated checks for the dashboard audit (Step 4). Run from the repo root:
 
-    .venv/bin/python audit/checks.py
+    .venv/bin/python audit/checks.py            # full run (same as --full): every country, ~10 minutes
+    .venv/bin/python audit/checks.py --quick    # development: 9 countries, fewer draws; writes *_quick outputs only
 
 Runs the model for every country x every donor preset x every government response and checks the invariants listed
 in AUDIT.md; also runs global checks (precomputed files, monotonicity, zero cut, data reconciliation for Sections 1-3).
@@ -33,6 +34,11 @@ CI, LINES = I["ci"], I["lines"]
 PC = hm.draw_params(P, 0)
 KAPPA = float(PC["hss_kappa"][0])
 COUNTRIES = [c for c in CI.index if c in set(LINES.iso3)]
+QUICK = "--quick" in sys.argv
+if QUICK:
+    COUNTRIES = [c for c in ("KEN", "NGA", "MOZ", "UGA", "ZAF", "ZMB", "MWI", "HND", "IRQ") if c in COUNTRIES]
+DRAWS = 50 if QUICK else 400
+SUFFIX = "_quick" if QUICK else ""
 PRESETS = list(scn.PRESETS)
 RESPONSES = {
     "none": scn.DEFAULT_FISCAL,
@@ -138,8 +144,10 @@ def per_run(iso, preset, resp, res, fiscal_t, opts):
     disp.update({f"C.{k}": v for k, v in C["after_parts"].items()})
     disp["C.after_2030"] = C["after_2030"]
     for r in show.itertuples():
+        linked = r.line in hm.LINKED          # HIV testing & care: no units or cost of its own (shown as "-"; I-09)
         for k in ("base_usd", "net_loss_usd", "unit_cost", "units_lost", "deaths_5y", "deaths_5y_lo", "deaths_5y_hi"):
-            disp[f"L.{r.line}.{k}"] = getattr(r, k)
+            if not (linked and k in ("unit_cost", "units_lost")):
+                disp[f"L.{r.line}.{k}"] = getattr(r, k)
         if r.need == r.need and r.need > 0:
             disp[f"L.{r.line}.cov0"] = r.cov0
             disp[f"L.{r.line}.cov_drop_pp"] = r.cov_drop_pp
@@ -188,7 +196,8 @@ def per_run(iso, preset, resp, res, fiscal_t, opts):
     trip += [(f"L.{r.line}", r.deaths_5y_lo, r.deaths_5y, r.deaths_5y_hi) for r in show.itertuples()]
     trip += [(f"L.{r.line}.inf", r.infections_5y_lo, r.infections_5y, r.infections_5y_hi) for r in show.itertuples()
              if r.infections_5y_hi > 0]
-    trip += [(f"L.{r.line}.units", r.units_lost_lo, r.units_lost, r.units_lost_hi) for r in show.itertuples()]
+    trip += [(f"L.{r.line}.units", r.units_lost_lo, r.units_lost, r.units_lost_hi) for r in show.itertuples()
+             if r.line not in hm.LINKED]
     for name, lo, c, hi in trip:
         if not (lo - 1e-6 <= c <= hi + 1e-6):
             rbad.append(f"{name}: {lo:.1f} <= {c:.1f} <= {hi:.1f}")
@@ -213,14 +222,18 @@ def per_run(iso, preset, resp, res, fiscal_t, opts):
     pth = res["path"]
     rec(iso, preset, resp, "path_chart_sums_to_headline", close(pth.values.sum(), T["deaths_5y"], 1e-9, 1e-6) and
         close(pth.iloc[0].sum(), T["deaths_y1"], 1e-9, 1e-6), pth.values.sum() - T["deaths_5y"])
-    # kappa / unspecified spreading conserves money: direct-line effective losses + non-service systems money = bucket
+    # kappa / unspecified spreading conserves money: line losses (direct lines, plus linked lines in full) + the
+    # non-service systems money = bucket. Linked lines (HIV testing & care) take their share of systems money by the
+    # country's mix, so only (1 - kappa) x the rest of the systems money is outside the lines (I-09)
     cells = res["cells"]
     kb = []
     for b in ("HIV", "TB", "Malaria"):
         hss = cells.loc[cells["line"] == hm.HSS[b], "loss"].sum()
+        known = cells[cells["line"].isin(hm.DIRECT[b] + hm.LINKED_IN[b])].groupby("line")["usd"].sum()
+        m_link = known.reindex(hm.LINKED_IN[b]).fillna(0).sum() / known.sum() if known.sum() > 0 else 0.0
         direct = L.loc[L["bucket"] == b, "gross_loss_usd"].sum()
         bucket = Bx.loc[b, "gross_loss_usd"]
-        if not close(direct + (1 - KAPPA) * hss, bucket, 1e-6, 1.0):
+        if not close(direct + (1 - KAPPA) * hss * (1 - m_link), bucket, 1e-6, 1.0):
             kb.append(f"{b}: direct {direct:.0f} + (1-k)hss {(1 - KAPPA) * hss:.0f} vs bucket {bucket:.0f}")
     rec(iso, preset, resp, "unspec_and_kappa_conserve_money", not kb, len(kb), "; ".join(kb))
     # 1-(1-a)(1-b) applied once, exactly as documented
@@ -263,7 +276,7 @@ def main():
                 if preset == "America First MOUs" and iso not in sc.us_direct_path_by_country:
                     continue                                   # group A only (I-02/I-03/I-08)
                 gov_add = gov_add_for(iso) if resp == "gradual" else None
-                res = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=400, gov_add_usd=gov_add)
+                res = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=DRAWS, gov_add_usd=gov_add)
                 per_run(iso, preset, resp, res, ft, opts)
                 rc = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=0, gov_add_usd=gov_add)
                 displayed_equals_central(iso, preset, resp, res, rc)
@@ -308,8 +321,11 @@ def main():
     for preset in scn.PRECOMPUTED_PRESETS:
         path = scn.precomputed_path(hm.MODEL_DIR, preset)
         old = pd.read_csv(path).set_index("iso3")
-        new = hm.run_all(scn.build_scenario(preset, scn.default_opts(preset, CI), CI), hm.Fiscal(*scn.DEFAULT_FISCAL), I,
-                         P, n_draws=scn.ALL_COUNTRY_DRAWS).set_index("iso3")
+        if QUICK:                                      # the full run_all comparison runs in --full only
+            new = pd.DataFrame(columns=old.columns, index=pd.Index([], name="iso3"))
+        else:
+            new = hm.run_all(scn.build_scenario(preset, scn.default_opts(preset, CI), CI), hm.Fiscal(*scn.DEFAULT_FISCAL),
+                             I, P, n_draws=scn.ALL_COUNTRY_DRAWS).set_index("iso3")
         for iso in new.index:
             cols = [c for c in new.columns if c in old.columns]
             d = {c: abs(new.loc[iso, c] - old.loc[iso, c]) / max(1.0, abs(new.loc[iso, c])) for c in cols
@@ -329,6 +345,29 @@ def main():
             rec(iso, preset, "none", "dashboard_country_equals_all_countries_row", ok,
                 r["totals"]["deaths_5y"] - old.loc[iso, "deaths_5y"])
     print(f"precomputed checks done in {time.time() - t0:.0f}s")
+
+    # ---------------- I-04: per-US$1M cards = the full model for a US$1M uniform cut to the disease ----------------
+    import model_section as ms
+    pj = P.to_json(orient="split")
+    for iso in COUNTRIES:
+        cards = {c["bucket"]: c for c in ms._per_million_cards(iso, pj, scn.DEFAULT_MORTALITY_TREND, iso)}
+        for b in hm.BUCKETS:
+            aid = float(LINES.loc[(LINES.iso3 == iso) & (LINES.bucket == b), "usd"].sum())
+            c = cards[b]
+            if aid <= 0:
+                rec(iso, b, "", "card_says_no_aid_when_none", c["people_n"] is None and "No " in c["no_deaths"], aid)
+                continue
+            cut = min(1.0, 1e6 / aid)
+            r = hm.run_country(iso, hm.uniform_scenario(b, cut), hm.Fiscal(), I, P, n_draws=0,
+                               mortality_trend=scn.DEFAULT_MORTALITY_TREND)
+            Bx = r["buckets"].set_index("bucket")
+            lost = float(Bx.loc[b, "gross_loss_usd"])
+            want = float(Bx.loc[b, "deaths_5y"]) * 1e6 / lost
+            shown = float(c["deaths"].replace(",", "")) if c["deaths"] else 0.0
+            ok = abs(shown - want) <= max(0.01 * want, 0.5) and (cut == 1.0 or abs(lost - 1e6) < 1.0)
+            rec(iso, b, "", "card_deaths_equal_full_model_1M_uniform_cut", ok, shown - want,
+                f"card {shown:.0f}, model {want:.1f}, aid lost {lost:,.0f} of {aid:,.0f}")
+    print(f"card checks done in {time.time() - t0:.0f}s")
 
     # ---------------- monotonic in the size of the cut, and zero cut ----------------
     for preset in PRESETS:
@@ -511,13 +550,13 @@ def main():
                 "general" in str(g["coverage"].iloc[0]).lower(), "", f"COFOG coverage: {g['coverage'].iloc[0]}")
 
     out = pd.DataFrame(rows)
-    out.to_csv(OUT / "checks_results.csv", index=False)
+    out.to_csv(OUT / f"checks_results{SUFFIX}.csv", index=False)
     summ = (out.groupby("check")["pass"].agg(runs="size", passed="sum").assign(failed=lambda d: d.runs - d.passed)
             .sort_values("failed", ascending=False))
-    summ.to_csv(OUT / "checks_summary.csv")
+    summ.to_csv(OUT / f"checks_summary{SUFFIX}.csv")
     lines_md = ["| Check | Runs | Passed | Failed |", "|---|---|---|---|"]
     lines_md += [f"| {k} | {r.runs} | {r.passed} | {r.failed} |" for k, r in summ.iterrows()]
-    (OUT / "checks_summary.md").write_text("\n".join(lines_md) + "\n")
+    (OUT / f"checks_summary{SUFFIX}.md").write_text("\n".join(lines_md) + "\n")
     print(summ.to_string())
     print(f"done in {time.time() - t0:.0f}s; {len(out)} rows")
 

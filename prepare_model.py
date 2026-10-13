@@ -90,7 +90,9 @@ def channel_group(c: str) -> str:
 
 # service line -> (bucket, IHME program-area columns)
 LINES = {
-    "hiv_art":   ("HIV", ["hiv_treat", "hiv_care", "hiv_ct"]),
+    "hiv_art":   ("HIV", ["hiv_treat"]),                     # treatment only (audit I-09)
+    "hiv_care_ct": ("HIV", ["hiv_care", "hiv_ct"]),          # care & support, counselling & testing: no units of its
+                                                             # own; hss_kappa of it counts toward ART (health_model)
     "hiv_pmtct": ("HIV", ["hiv_pmtct"]),
     "hiv_prev":  ("HIV", ["hiv_prev"]),
     "hiv_ovc":   ("HIV", ["hiv_ovc"]),

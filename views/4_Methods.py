@@ -226,7 +226,7 @@ with tabs[1]:
     | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems), of which a share kappa (`hss_kappa`, an assumption) is counted as lost services |
     | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range = 2.5th to 97.5th percentile of the Monte Carlo draws |
     | New HIV Infections, 5 Years | Infections from people off ART, mothers without PMTCT, and lost prevention |
-    | Every US$1 Million Lost | People losing the service per $1M = $1M ÷ cost per person x (1 - continuity); coverage drop = that ÷ people in need; extra deaths = deaths per dollar x $1M x (1 - continuity); "about $X of aid lost per life lost (based on US$1M a year for 5 years)" = $5M (five years of $1M) ÷ those deaths, which equals $1M ÷ the average extra deaths per year |
+    | What Every US$1 Million Cut Does, by Disease | Each card runs the full model for a US$1M-a-year loss to one disease, spread across all its service lines (including HIV testing and care, unspecified and systems money) in proportion to current aid: no government replacement, sudden cut, every mechanism included (caps, TB spread, malaria rebound, deaths from new HIV infections). People losing the service and the coverage drop are for the main service (HIV: ART; TB: TB treatment; malaria: bednets; immunization: routine vaccines); extra deaths are for the whole disease, 2026-2030. Where a disease's aid is under US$1M a year, all of it is cut and the results are scaled to US$1M. "About $X of aid lost per life lost (based on US$1M a year for 5 years)" = $5M (five years of $1M) ÷ those deaths, which equals $1M ÷ the average extra deaths per year |
     | What Each Service Loses | Per service line: baseline aid, aid lost after replacement, cost per person, people losing the service, coverage before and after, extra deaths (range) |
     | Extra Deaths as More Aid Is Cut | Solid line: every donor cuts this bucket by the same share, 0-100% in 5% steps, same random draws at every step; band = 95% range. Dashed line: this scenario's own cuts scaled from 0% to 100% of their size |
     | Extra Deaths Each Year | Central estimate by year and bucket |
@@ -250,7 +250,8 @@ with tabs[2]:
 
     | Service line | Bucket | IHME program-area columns |
     |---|---|---|
-    | HIV treatment | HIV | `hiv_treat`, `hiv_care`, `hiv_ct` (testing) |
+    | HIV treatment (ART) | HIV | `hiv_treat` |
+    | HIV testing & care | HIV | `hiv_care` (care and support), `hiv_ct` (counselling and testing); no patients of its own: a share κ of its lost money counts as lost ART care (below) |
     | Prevention of mother-to-child transmission | HIV | `hiv_pmtct` |
     | HIV prevention | HIV | `hiv_prev` |
     | Orphans & vulnerable children | HIV | `hiv_ovc` |
@@ -285,6 +286,14 @@ with tabs[2]:
     proportion to the country's own mix (or the global mix if it has none). Of systems money (labs, staff,
     monitoring), a share κ = {pct('hss_kappa')} is assumed to cut services; the rest is lost without a modelled
     service effect.
+
+    **HIV testing and care.** IHME's "HIV - Care and Support" and "HIV - Counseling and Testing" money is its own line,
+    HIV Testing & Care, not ART. It pays for diagnosis and keeping people in care rather than for drugs, so it has no
+    patients of its own; cutting it means fewer people diagnosed and retained, so fewer on ART. It is treated exactly
+    like systems money: {ms.care_ct_note()} That part adds to the money lost on HIV treatment (so it adds people
+    losing ART); the rest is lost without a modelled effect. Whether ART donor money buys more than everyone covered is
+    judged on treatment money only. Across the dashboard countries this line is a median of 41% of the former HIV
+    treatment money (13% in South Africa to 60% in Guyana).
     """)
     st.latex(r"\text{effective loss}_{\ell} = \text{direct loss}_{\ell} + (\text{unspecified} + \kappa \times \text{systems}) \times \text{mix}_{\ell}")
     md("""
@@ -359,7 +368,7 @@ with tabs[2]:
     | Service | Formula | Central value / source |
     |---|---|---|
     | HIV treatment | site cost x multiplier ÷ (1 - above-service share) | Site cost per patient-year (Rosen et al. 2021, 2018-2020 US$, inflated to 2023 US$ with US CPI-U): Malawi ${UC[('art_site_cost', 'MWI')]:.2f}, Zambia ${UC[('art_site_cost', 'ZMB')]:.2f}, Lesotho ${UC[('art_site_cost', 'LSO')]:.2f}, Uganda ${UC[('art_site_cost', 'UGA')]:.2f}, Zimbabwe ${UC[('art_site_cost', 'ZWE')]:.2f}; elsewhere ${UC[('art_site_default', 'arv')]:.2f} (ARVs + labs) + ${UC[('art_site_default', 'non_arv')]:.2f} x (GDP per person ÷ $1,000)^{C['uc_scale_elast']:g} (staff). Above-service share {pct('asd_share')} (PEPFAR expenditure analysis) |
-    | PMTCT | per HIV+ pregnant woman | ${C['uc_pmtct']:,.0f} (*assumption*), incremental to the mother's ART |
+    | PMTCT | per woman per year, including her ART | ${C['uc_pmtct']:,.0f} (range ${PRM.loc['uc_pmtct', 'low']:.0f}-${PRM.loc['uc_pmtct', 'high']:.0f}) per HIV+ pregnant woman under Option B+: her ART, testing, infant prophylaxis and infant diagnosis. *Health Policy and Planning* 2016;31(8):1133 review of Option B+ cost-effectiveness analyses (annual cost per woman: Gopalappa $114, Ishikawa $170, Ciaranello $179, Fasawe $194, Kuznik $470), median about $250 in 2023 US$ (CPI-U); ARV prices have since fallen, so this is conservative |
     | HIV prevention | $ per infection averted = ${C['cpia_ref']:,.0f} x (1 ÷ incidence per 1,000)^0.5 | *Assumption*; incidence clipped to 0.05-10 per 1,000 |
     | Orphans & vulnerable children | per child-year | ${C['uc_ovc']:,.0f} (*assumption*); no mortality effect |
     | TB treatment | income-group cost x multiplier ÷ (1 - above-service share) | Laurence, Griffiths & Vassall 2015: low income $332, lower-middle $351, upper-middle $1,081 (2014 US$ x 1.287) |
@@ -403,7 +412,10 @@ with tabs[2]:
     """)
     st.latex(r"\text{deaths}_{y}=\text{people off ART}\times h_y\times m,\qquad h=(0.012,\,0.028,\,0.038,\,0.045,\,0.050)")
     md(f"""
-    **Mother-to-child transmission.** Deaths per mother losing PMTCT = transmission averted
+    **Mother-to-child transmission.** The PMTCT cost includes the mother's ART, so women on PMTCT are counted once:
+    PMTCT money pays for them, they are taken out of the people the HIV treatment line's money can pay for or lose
+    (people on ART minus women covered by PMTCT), and their own deaths are not added (conservative). IHME's program
+    areas are separate columns, so no dollar is in both lines. Deaths per mother losing PMTCT = transmission averted
     {rng_txt('pmtct_vt_reduction')} (WHO: 15-45% without, under 5% with) x death by age 2 if infected
     {rng_txt('pmtct_infant_mort')} (Newell et al. 2004).
 

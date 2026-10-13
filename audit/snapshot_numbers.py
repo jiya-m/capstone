@@ -71,7 +71,7 @@ def flatten(res, P, iso, I, cut_path, sc, ft):
     hb = hm.health_budget(iso, I)
     for k in ("share_pct", "gov_spend_usd", "room_pct", "p90_rise_pp"):
         d[f"HB.{k}"] = hb[k]
-    for c in ms._per_million_cards(res, P, iso):
+    for c in ms._per_million_cards(iso, P.to_json(orient="split"), True, iso):
         d[f"card.{c['bucket']}.people"] = c["people_n"]
         d[f"card.{c['bucket']}.cov"] = c["cov_n"]
         d[f"card.{c['bucket']}.deaths"] = c["deaths"]
