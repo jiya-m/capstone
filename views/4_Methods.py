@@ -510,7 +510,7 @@ with tabs[2]:
     **Health's share of government spending** has one definition everywhere on the dashboard (the fiscal panel, the
     budget-increase sliders, the break-even rise and every points-to-dollars conversion): (1) the World Bank's
     `SH.XPD.GHED.GE.ZS` (WHO Global Health Expenditure Database), latest available year, shown as "Health Share of
-    Government Spending, {year}"; (2) where the World Bank has no figure, IHME government health spending ÷ IMF World
+    Government Spending, {{year}}"; (2) where the World Bank has no figure, IHME government health spending ÷ IMF World
     Economic Outlook general-government expenditure for the same year, shown with "(estimated)"; (3) "n/a" if
     neither exists. No other government response applies with the budget-increase option.
 
