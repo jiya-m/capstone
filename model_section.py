@@ -54,7 +54,8 @@ PRESET_SHORT = {
                                        "this country's mix.",
     "OECD-reported 2025 aid cuts": "Each donor's 2025 aid cut (US -57%, Germany -17%, France -11%, UK -11%, Japan -6%) "
                                    "applied to its health aid.",
-    "Global Fund & Gavi shortfalls": "All donors: Global Fund -28% and Gavi -24% (replenishment shortfalls).",
+    "Global Fund & Gavi shortfalls": "All donors' money through Gavi and the Global Fund falls by the share set "
+                                     "below, against each fund's 2021-23 disbursements.",
     "Combined retreat": "Full US Exit plus the OECD-reported 2025 cuts for every other donor.",
     "Custom": "Set the cuts yourself by donor and by channel.",
 }
@@ -283,8 +284,40 @@ def _resp_label(fiscal_t) -> str:
 # --------------------------------------------------------------------------- #
 # Sidebar controls
 # --------------------------------------------------------------------------- #
+# Global Fund & Gavi Shortfalls sliders (audit I-07): reference marks shown under each slider, and the tooltip
+SHORTFALL_SLIDERS = {
+    "gavi_cut": ("Gavi Funding Cut", scn.GAVI_CUT_DEFAULT,
+                 ["~15%: fall vs 2021-23 spending (our estimate)", "24%: gap vs Gavi's US$11.9B target"],
+                 "Cut on every donor's money through Gavi, against Gavi's 2021-23 disbursements (the model baseline). "
+                 "Gavi 6.0 raised more than US$9B for 2026-2030 (including leftover COVID funds and earlier pledges) "
+                 "against a US$11.9B target; the US made no new contribution. That is about US$1.75B a year in 2023 "
+                 "US$, about 15% below Gavi's 2021-23 spending excluding COVID (US$2.06B a year in IHME's data; our "
+                 "estimate). Sources: Gavi press release (June 2025), Devex, Donor Tracker (2026)."),
+    "gf_cut": ("Global Fund Funding Cut", scn.GF_CUT_DEFAULT,
+               ["15%: allocation cut in MOU countries (KFF, Jun 2026)", "~20%: pledges vs previous replenishment",
+                "~24%: median cut in allocation letters (Aidspan)", "30%: gap vs US$18B target"],
+               "Cut on every donor's money through the Global Fund, against its 2021-23 disbursements (the model "
+               "baseline). Eighth Replenishment final total US$12.64B (Global Fund Board, Feb 2026) vs a US$18B target "
+               "and US$15.7B in the Seventh; 2026-2028 country allocations US$10.78B. KFF (Jun 2026) finds allocations "
+               "in MOU countries down 15% vs the original GC7 allocations (range 5% Niger to 53% Guatemala); Aidspan's "
+               "median is about -24%. All nominal; real cuts are somewhat deeper."),
+}
+
+
+def _shortfall_sliders(key) -> dict:
+    """The two Global Fund & Gavi Shortfalls sliders, each with its reference marks underneath."""
+    out = {}
+    for k, (label, default, marks, tip) in SHORTFALL_SLIDERS.items():
+        out[k] = int(st.slider(f"{label} (%)", 0, 50, default, 1, key=f"{key}_{k}", help=_esc(tip)))
+        st.markdown(f"<div style='font-size:11px;line-height:1.35;color:{MUTED};margin:-0.6rem 0 0.5rem'>"
+                    + "<br>".join(html.escape(m) for m in marks) + "</div>", unsafe_allow_html=True)
+    return out
+
+
 def _preset_options(preset, ci, iso3, country_name, key):
     opts = scn.default_opts(preset, ci)
+    if preset == scn.SHORTFALLS:
+        opts.update(_shortfall_sliders(key))
     if preset == "Custom":
         with st.expander("Cuts by Donor and Channel", expanded=True):
             ed = pd.DataFrame({"Donor": hm.SOURCE_GROUPS,
@@ -538,6 +571,25 @@ SCENARIO_PHRASE = {
     "Combined retreat": "If the U.S. exits and other donors cut too",
     "Custom": "Under this scenario",
 }
+
+
+def scenario_title(preset: str, opts: dict | None = None) -> str:
+    """The preset's name for captions and kickers, with the chosen cuts for Global Fund & Gavi Shortfalls."""
+    return title_case(preset) + (f" · {scn.shortfall_label(opts)}" if preset == scn.SHORTFALLS else "")
+
+
+def scenario_phrase(preset: str, opts: dict | None = None) -> str:
+    """Opening of the headline, e.g. 'If Gavi funding falls 15% and Global Fund funding 20%'."""
+    if preset == scn.SHORTFALLS:
+        g, f = scn.shortfall_cuts(opts)
+        if g and f:
+            return f"If Gavi funding falls {g}% and Global Fund funding {f}%"
+        if g or f:
+            return f"If {'Gavi' if g else 'Global Fund'} funding falls {g or f}%"
+        return "If Gavi and Global Fund funding hold steady"
+    return SCENARIO_PHRASE.get(preset, "Under this scenario")
+
+
 CAUSE_PHRASE = {"HIV": "people losing HIV treatment and prevention", "TB": "untreated tuberculosis",
                 "Malaria": "lost malaria nets and treatment", "Immunization": "missed childhood vaccinations"}
 # "People Losing Care Each Year": every service line except HIV prevention (its unit is infections averted)
@@ -600,7 +652,7 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
     e = html.escape
     path_lbl = "Sudden Cut" if ctl.get("shape", paths_ui.SUDDEN) == paths_ui.SUDDEN else title_case(ctl["shape"])
     kicker = (f"America First MOUs · Follows MOU Schedule · {response_kicker(ctl['fiscal_t'])}" if ctl["preset"] == MOU
-              else f"Funding-Cut Scenario · {title_case(ctl['preset'])} · {path_lbl} · {response_kicker(ctl['fiscal_t'])}")
+              else f"Funding-Cut Scenario · {scenario_title(ctl['preset'], ctl.get('opts'))} · {path_lbl} · {response_kicker(ctl['fiscal_t'])}")
     # the controls sit in the scenario bar just below; the link jumps there (same cached run as Section 4)
     kick_html = (f"<div class='ed-kicker-row'><div class='ed-kicker'>{e(kicker)}</div>"
                  f"<a class='ed-jump' href='#change-scenario' target='_self'>Change Scenario ↓</a></div>")
@@ -611,7 +663,7 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
                 f"<p class='ed-dek'>{e(dek)}</p></div>")
     res = run_ctl(iso3, sk, ctl)
     T, B, L = res["totals"], res["buckets"].set_index("bucket"), res["lines"].set_index("line")
-    phrase = SCENARIO_PHRASE.get(ctl["preset"], "Under this scenario")
+    phrase = scenario_phrase(ctl["preset"], ctl.get("opts"))
     d5 = T["deaths_5y"]
     if T["gross"] <= 1e4:
         head = f"{phrase}, {country_name} would lose almost no aid for HIV, TB, malaria or vaccines"
@@ -658,7 +710,7 @@ def render_model_section(iso3: str, country_name: str, imf: dict | None, ctl: di
     I = _inputs()
     ci = I["ci"]
     th.section_header("monitor_heart", f"How Aid Cuts Translate into Coverage and Lives in {country_name}", help=INTRO)
-    st.caption(_esc(f"{title_case(ctl['preset'])} · {_resp_label(ctl['fiscal_t'])}. Change the scenario at the top "
+    st.caption(_esc(f"{scenario_title(ctl['preset'], ctl.get('opts'))} · {_resp_label(ctl['fiscal_t'])}. Change the scenario at the top "
                     "of the page."))
     if iso3 not in ci.index or iso3 not in set(I["lines"].iso3):
         st.info(f"{country_name} has no recorded HIV, TB, malaria or vaccine aid in 2021-2023, so there is nothing to "
@@ -703,7 +755,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
         st.download_button(
             "Download Country Brief", icon=":material/download:",
             data=_brief_html(country_name, preset, _resp_label(fiscal_t), items, cards,
-                             [cov_fig, path_fig]).encode("utf-8"),
+                             [cov_fig, path_fig], ctl.get("opts")).encode("utf-8"),
             file_name=f"{country_name.replace(' ', '_')}_funding_cut_brief.html", mime="text/html", key="m_brief",
             help="A one-page HTML summary of this scenario. Open it in a browser and print to PDF.")
 
@@ -870,13 +922,13 @@ def _comparison(iso3, country_name, ctl, res_a, items_a):
                  cut_path=None if c["preset"] == MOU else ctl.get("cut_path"))
     st.subheader("Scenario A vs Scenario B")
     a, b = st.columns(2, gap="large")
-    for col, tag, preset, fiscal_t, items in ((a, "A", ctl["preset"], ctl["fiscal_t"], items_a),
-                                              (b, "B", c["preset"], c["fiscal_t"],
-                                               _headline_items(res_b, ctl["ptab"], deaths_basis_text(
-                                                   c["preset"], None if c["preset"] == MOU else ctl.get("cut_path"),
-                                                   country_name)))):
+    for col, tag, preset, opts, fiscal_t, items in ((a, "A", ctl["preset"], ctl.get("opts"), ctl["fiscal_t"], items_a),
+                                                    (b, "B", c["preset"], c["opts"], c["fiscal_t"],
+                                                     _headline_items(res_b, ctl["ptab"], deaths_basis_text(
+                                                         c["preset"], None if c["preset"] == MOU else ctl.get("cut_path"),
+                                                         country_name)))):
         with col:
-            st.markdown(_esc(f"**Scenario {tag}:** {title_case(preset)} · {_resp_label(fiscal_t)}"))
+            st.markdown(_esc(f"**Scenario {tag}:** {scenario_title(preset, opts)} · {_resp_label(fiscal_t)}"))
             _stat_grid(items, 2)
     da, db = res_a["totals"]["deaths_5y"], res_b["totals"]["deaths_5y"]
     diff = da - db
@@ -1392,8 +1444,12 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_
 # Across all countries
 # --------------------------------------------------------------------------- #
 def _all_country_results(sk, ctl) -> pd.DataFrame:
-    """Precomputed file when the settings are the defaults it was built with; otherwise run live."""
+    """Precomputed file when the settings are the defaults it was built with; otherwise run live. Global Fund & Gavi
+    Shortfalls always uses its default cuts here (the sliders apply to the country view)."""
     preset, ptab = ctl["preset"], ctl["ptab"]
+    if preset == scn.SHORTFALLS:
+        ci = _inputs()["ci"]
+        sk = scn.scenario_key(scn.build_scenario(preset, scn.default_opts(preset, ci), ci))
     path = scn.precomputed_path(hm.MODEL_DIR, preset)
     if (preset in scn.PRECOMPUTED_PRESETS and path.exists() and ctl["fiscal_t"] == scn.DEFAULT_FISCAL
             and ctl["trend"] == scn.DEFAULT_MORTALITY_TREND):
@@ -1420,8 +1476,12 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
         st.info("No country loses aid in this scenario.")
         return A
     is_mou = ctl["preset"] == MOU
-    st.caption(_esc(f"{title_case(ctl['preset'])} · {_resp_label(ctl['fiscal_t'])}"
-                    + ("" if ctl["trend"] else " · Death Rates Held Constant")))
+    shortfalls = ctl["preset"] == scn.SHORTFALLS
+    st.caption(_esc(f"{scenario_title(ctl['preset'], None if shortfalls else ctl.get('opts'))} · "
+                    f"{_resp_label(ctl['fiscal_t'])}" + ("" if ctl["trend"] else " · Death Rates Held Constant")))
+    if shortfalls and scn.shortfall_cuts(ctl.get("opts")) != scn.shortfall_cuts(None):
+        st.caption(_esc(f"This page uses the default cuts ({scn.shortfall_label(None)}). Your setting "
+                        f"({scn.shortfall_label(ctl.get('opts'))}) applies to the country Dashboard only."))
     if is_mou:
         st.subheader(f"MOU Countries With Funding Data ({len(A)})",
                      help="America First MOUs is modelled only where the country has signed an MOU (KFF tracker) and "
@@ -1639,7 +1699,7 @@ def _published_estimates(A: pd.DataFrame, I, ptab):
 # --------------------------------------------------------------------------- #
 # Country brief (self-contained HTML; prints cleanly to PDF from the browser)
 # --------------------------------------------------------------------------- #
-def _brief_html(country_name, preset, resp_label, items, cards, figs) -> str:
+def _brief_html(country_name, preset, resp_label, items, cards, figs, opts=None) -> str:
     e = html.escape
     stats = "".join(f"<div class='stat'><div class='lbl'>{e(lbl)}</div><div class='val'>{e(val)}</div>"
                     f"<div class='sub'>{e(sub or '')}</div></div>" for lbl, val, sub, _ in items)
@@ -1683,8 +1743,8 @@ def _brief_html(country_name, preset, resp_label, items, cards, figs) -> str:
   @media print {{ body {{ margin: 0 auto; }} h2 {{ break-after: avoid; }} }}
 </style></head><body>
 <h1>{e(country_name)}: What a Funding Cut Does</h1>
-<div class="meta"><b>Donor Scenario:</b> {e(title_case(preset))}<br><b>Government Response:</b> {e(resp_label)}</div>
-<p class="meta">{e(PRESETS[preset])}</p>
+<div class="meta"><b>Donor Scenario:</b> {e(scenario_title(preset, opts))}<br><b>Government Response:</b> {e(resp_label)}</div>
+<p class="meta">{e(scn.preset_description(preset, opts))}</p>
 <h2>The Headline</h2><div class="grid">{stats}</div>
 <h2>Every US$1 Million Lost, by Bucket</h2><div class="cards">{card_html}</div>
 <h2>Coverage and Deaths</h2>{''.join(charts)}

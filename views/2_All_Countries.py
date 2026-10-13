@@ -30,5 +30,5 @@ trend = ctx.get("trend", scn.DEFAULT_MORTALITY_TREND)
 opts = ctx["opts"] if ctx.get("preset") == preset and ctx.get("opts") else scn.default_opts(preset, I["ci"])
 ptab = pd.read_json(io.StringIO(ptab_json), orient="split")
 sk = scn.scenario_key(scn.build_scenario(preset, opts, I["ci"]))
-ctl = {"preset": preset, "ptab": ptab, "ptab_json": ptab_json, "fiscal_t": fiscal_t, "trend": trend}
+ctl = {"preset": preset, "opts": opts, "ptab": ptab, "ptab_json": ptab_json, "fiscal_t": fiscal_t, "trend": trend}
 ms.cross_country(sk, ctl, st.session_state.get("sel_iso3", "KEN"), ALLOWED_COUNTRIES)

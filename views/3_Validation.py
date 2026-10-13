@@ -15,7 +15,6 @@ import model_section as ms
 import scenarios as scn
 from country_lists import dropdown_countries
 from model_section import chart, num, rng, title_case
-from scenarios import PRESETS
 
 METHOD_COLORS = {"Unit-Cost Model": th.GRAPE, "Poisson Regression": th.BLUE, "Lancet Rate Ratios": th.TEAL}
 CATEGORIES = ["HIV", "TB", "Malaria", "Immunization", "Maternal"]
@@ -46,7 +45,7 @@ opts = ctx["opts"] if preset == ctx.get("preset") and "opts" in ctx else scn.def
 country_name = names[iso3]
 st.session_state["model_ctx"] = {**ctx, "iso3": iso3, "country_name": country_name, "preset": preset, "opts": opts,
                                  "fiscal_t": fiscal_t, "ptab_json": ptab_json, "trend": trend}
-st.caption(ms._esc(PRESETS[preset]) + f" Government response ({ms._resp_label(fiscal_t)}), model parameters and the "
+st.caption(ms._esc(scn.preset_description(preset, opts)) + f" Government response ({ms._resp_label(fiscal_t)}), model parameters and the "
            "death-rate setting follow the dashboard.")
 
 # --------------------------------------------------------------------------- #
@@ -141,7 +140,7 @@ st.caption("In these lines, baseline donor aid ÷ cost per person is more than t
            "the service are then scaled by the share of donor money lost, instead of aid lost ÷ cost per person.")
 
 th.section_header("compare_arrows", f"Three Ways to Estimate the Same Cut: {country_name}")
-st.caption(f"{title_case(preset)} · {ms._resp_label(fiscal_t)}" + ("" if trend else " · Death Rates Held Constant"))
+st.caption(f"{ms.scenario_title(preset, opts)} · {ms._resp_label(fiscal_t)}" + ("" if trend else " · Death Rates Held Constant"))
 
 if iso3 not in I["ci"].index or iso3 not in set(I["lines"].iso3):
     st.info(f"{country_name} has no recorded HIV, TB, malaria or vaccine aid in 2021-2023, so there is nothing to model.")

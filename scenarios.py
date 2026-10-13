@@ -35,12 +35,18 @@ PRESETS = {
         "Each donor's 2025 change in total ODA (OECD preliminary data, Apr 2026) applied to its health aid: US -57%, "
         "Germany -17.4%, France -10.9%, UK -10.8%, Japan -5.6%; others unchanged."),
     "Global Fund & Gavi shortfalls": (
-        "Channel shock for all donors: Global Fund -28% (8th replenishment US$11.34B vs US$15.7B for the 7th) and "
-        "Gavi -24% (about US$9B raised vs a US$11.9B 2026-30 target)."),
+        "Channel shock for all donors: every donor's money through Gavi and through the Global Fund falls by the share "
+        "you set (default Gavi -15%, Global Fund -20%), against each fund's 2021-23 disbursements (the model "
+        "baseline). The sliders' tooltips give the sources for each value."),
     "Combined retreat": "'Full US Exit' for the US plus the OECD-reported 2025 cuts for all other donors.",
     "Custom": "Set cuts yourself by donor and by channel (cuts combine multiplicatively: 1 - (1-donor cut)(1-channel cut)).",
 }
 PRECOMPUTED_PRESETS = [p for p in PRESETS if p != "Custom"]
+
+# Global Fund & Gavi Shortfalls (audit I-07): user-set cuts on each fund's 2021-23 disbursements, from every donor
+SHORTFALLS = "Global Fund & Gavi shortfalls"
+GAVI_CUT_DEFAULT = 15     # % fall vs 2021-23 Gavi spending excluding COVID (our estimate; see Methods)
+GF_CUT_DEFAULT = 20       # % fall in Global Fund pledges vs the previous replenishment (US$12.64B vs US$15.7B)
 
 # Fiscal settings the precomputed all-country files use:
 # (mode, theta, cap to fiscal space, allocation, ceiling) = No Government Replacement, pro-rata, 75th-percentile ceiling
@@ -107,7 +113,28 @@ def mou_schedule_text(ci: pd.DataFrame, iso3: str, country_name: str) -> str:
             + ". Cuts compare MOU amounts (nominal US$, as written in the MOU) with the 2021-2025 reference.")
 
 
+def shortfall_cuts(opts: dict) -> tuple:
+    """(Gavi cut %, Global Fund cut %) for the Global Fund & Gavi Shortfalls preset; the defaults when not set."""
+    opts = opts or {}
+    return int(opts.get("gavi_cut", GAVI_CUT_DEFAULT)), int(opts.get("gf_cut", GF_CUT_DEFAULT))
+
+
+def shortfall_label(opts: dict) -> str:
+    """'Gavi −15% · Global Fund −20%'."""
+    g, f = shortfall_cuts(opts)
+    return f"Gavi −{g}% · Global Fund −{f}%"
+
+
+def preset_description(preset: str, opts: dict | None = None) -> str:
+    """The preset's description, with the chosen Gavi and Global Fund cuts for the shortfalls preset."""
+    if preset == SHORTFALLS:
+        return PRESETS[preset] + f" Selected: {shortfall_label(opts)}."
+    return PRESETS[preset]
+
+
 def default_opts(preset: str, ci: pd.DataFrame) -> dict:
+    if preset == SHORTFALLS:
+        return {"gavi_cut": GAVI_CUT_DEFAULT, "gf_cut": GF_CUT_DEFAULT}
     if preset == "Custom":
         return {"custom_direct": {s: (100 if s == "United States" else 0) for s in hm.SOURCE_GROUPS},
                 "custom_multi": {s: 0 for s in hm.SOURCE_GROUPS}, "custom_chan": {}}
@@ -134,8 +161,10 @@ def build_scenario(preset: str, opts: dict, ci: pd.DataFrame) -> hm.Scenario:
                 continue
             sc.src_direct[s] = v
             sc.src_multi[s] = v
-    if preset == "Global Fund & Gavi shortfalls":
-        sc.chan = {"Global Fund": 0.28, "Gavi": 0.24}
+    if preset == SHORTFALLS:
+        # a channel cut for all source donors; this preset has no US multilateral exit, so nothing is counted twice
+        g, f = shortfall_cuts(opts)
+        sc.chan = {"Global Fund": f / 100, "Gavi": g / 100}
     if preset == "Custom":
         sc.src_direct = {s: v / 100 for s, v in opts["custom_direct"].items()}
         sc.src_multi = {s: v / 100 for s, v in opts["custom_multi"].items()}

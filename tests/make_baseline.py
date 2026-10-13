@@ -14,6 +14,10 @@ entry's line infections_5y was replaced by the central run. For the 90 non-MOU e
 5eb6111, n_draws=0) and the current model (later mechanisms off) give identical central infections (max difference 0),
 so only that statistic changed; all other fields are as before.
 
+Global Fund & Gavi Shortfalls (audit I-07): the preset's cuts are now user-set (default Gavi 15%, Global Fund 20%). Its
+entries keep the original 5eb6111 values, made with the old fixed cuts (Gavi 24%, Global Fund 28%), and the tests pass
+those cuts explicitly (baseline_opts), so the lock against the original model still holds.
+
 Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
 Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
     python tests/make_baseline.py --gains-only"""
@@ -32,7 +36,13 @@ FISCALS = {"none": scn.DEFAULT_FISCAL, "custom25": ("custom", 0.25, True, "pro_r
            "max_lives": ("max", 0.0, True, "lives_first", "p75")}
 N_DRAWS = 100
 MOU = "America First MOUs"
+LEGACY_OPTS = {"Global Fund & Gavi shortfalls": {"gavi_cut": 24, "gf_cut": 28}}   # cuts the baseline was made with
 NEW_MECHANISMS = ["tb_secondary", "mal_resurgence", "hiv_inf_death_untreated", "hiv_inf_death_treated"]  # 0 = off
+
+
+def baseline_opts(preset, ci):
+    """The scenario options the baseline entries were made with."""
+    return LEGACY_OPTS.get(preset) or scn.default_opts(preset, ci)
 
 
 def snapshot(res):
@@ -51,7 +61,7 @@ def main():
         for preset in scn.PRESETS:
             if preset == MOU and hasattr(scn, "mou_group") and scn.mou_group(I["ci"], iso) != "A":
                 continue
-            sc = scn.build_scenario(preset, scn.default_opts(preset, I["ci"]), I["ci"])
+            sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
             for fk, ft in FISCALS.items():
                 out[f"{iso}|{preset}|{fk}"] = snapshot(hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=N_DRAWS))
     p = Path(__file__).parent / "baseline_sudden.json"
@@ -86,7 +96,7 @@ def refresh_gains():
     done = []
     for key in list(out):
         iso, preset, fk = key.split("|")
-        sc = scn.build_scenario(preset, scn.default_opts(preset, I["ci"]), I["ci"])
+        sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
         r = hm.run_country(iso, sc, hm.Fiscal(*FISCALS[fk]), I, P, n_draws=N_DRAWS)
         if r["totals"]["gains"] > 0:
             out[key] = snapshot(r)

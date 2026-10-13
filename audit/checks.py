@@ -89,7 +89,7 @@ def expected_cut(preset, iso, src, chan, bucket, opts):
         if not (preset == "Combined retreat" and src == "United States"):
             a = OECD[src]
     if preset == "Global Fund & Gavi shortfalls":
-        ch = {"Global Fund": 0.28, "Gavi": 0.24}
+        ch = {"Global Fund": 0.20, "Gavi": 0.15}      # documented defaults (I-07); the sliders change them
     if preset == "Custom":
         a = (opts["custom_direct"][src] if direct else opts["custom_multi"][src]) / 100
     a = pair.get((src, chan), a)

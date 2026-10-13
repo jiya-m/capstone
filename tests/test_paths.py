@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 logging.disable(logging.WARNING)
 import health_model as hm  # noqa: E402
 import scenarios as scn  # noqa: E402
-from make_baseline import COUNTRIES, FISCALS, N_DRAWS, snapshot  # noqa: E402
+from make_baseline import COUNTRIES, FISCALS, N_DRAWS, baseline_opts, snapshot  # noqa: E402
 
 I, P = hm.load_inputs(), hm.load_params()
 NEW_MECHANISMS = ["tb_secondary", "mal_resurgence", "hiv_inf_death_untreated", "hiv_inf_death_treated"]  # at 0 they switch off
@@ -22,7 +22,7 @@ NONE = hm.Fiscal(*scn.DEFAULT_FISCAL)
 
 
 def run(iso, preset="Full US exit", fiscal=NONE, **kw):
-    sc = scn.build_scenario(preset, scn.default_opts(preset, I["ci"]), I["ci"])
+    sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
     return hm.run_country(iso, sc, fiscal, I, P, n_draws=N_DRAWS, **kw)
 
 
@@ -36,7 +36,7 @@ def close(a, b):
 @pytest.mark.parametrize("key", sorted(BASE))
 def test_default_path_reproduces_original(key):
     iso, preset, fk = key.split("|")
-    sc = scn.build_scenario(preset, scn.default_opts(preset, I["ci"]), I["ci"])
+    sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
     for kw in ({}, {"cut_path": [1] * 5, "gov_add_usd": [0] * 5}):        # implicit and explicit defaults
         got = snapshot(hm.run_country(iso, sc, hm.Fiscal(*FISCALS[fk]), I, P0, n_draws=N_DRAWS, **kw))
         exp = BASE[key]
