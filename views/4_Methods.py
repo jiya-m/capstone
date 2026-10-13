@@ -578,6 +578,9 @@ with tabs[3]:
     | Country classifications | World Bank (Gapminder mirror) | Income group | Header; TB costs |
     | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules; MOU status | America First MOUs scenario; header |
     | Gavi financial data | Gavi, FY2021-25 | Disbursements | Cost per child immunized |
+
+    Section 1 uses IHME's health spending database and Section 2 its DAH database; aid totals agree within 2% for 624 of
+    630 country-years, with small differences in a few small countries.
     """)
     th.section_header("table_chart", "World Development Indicators Used")
     md("""
