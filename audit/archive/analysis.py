@@ -20,14 +20,14 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT))
 logging.disable(logging.WARNING)
 
 import health_model as hm  # noqa: E402
 import scenarios as scn  # noqa: E402
 
-OUT = ROOT / "audit"
+OUT = ROOT / "audit"            # its outputs live in audit/ (referenced by AUDIT.md)
 I, P = hm.load_inputs(), hm.load_params()
 CI, LINES = I["ci"], I["lines"]
 PC = hm.draw_params(P, 0)
@@ -313,8 +313,7 @@ def regression_claims():
 
 def main():
     if not hasattr(scn, "mou_cuts"):
-        sys.exit("analysis.py records the audit of commit 4cbb7ff; the MOU functions it tests were replaced in the "
-                 "I-02/I-03/I-08 fix. Run it at that commit.")
+        sys.exit("Archived: this script belongs to commit 4cbb7ff (see audit/archive/README.md). Run it there.")
     fallbacks()
     print("fallbacks done")
     df = outliers()

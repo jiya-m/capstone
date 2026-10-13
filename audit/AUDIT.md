@@ -10,7 +10,7 @@ changed. Everything in this folder can be re-run from the repo root:
 | `recompute.py`, `recompute_results.csv`, `recompute_notes.md` | Step 3: independent recalculation, written by a separate agent that never opened the model code |
 | `compare_recompute.py`, `recompute_compare.csv` | Step 3: the independent values next to the dashboard's own functions |
 | `checks.py`, `checks_results.csv`, `checks_summary.csv/.md` | Step 4: 38,505 automated checks, every country x every preset x every government response |
-| `analysis.py`, `fallbacks.csv`, `outliers.csv`, `sensitivity.csv`, `analysis.json` | Steps 2, 5 and 6 evidence: fallback counts, outlier metrics, parameter sensitivity, card and path tests, benchmarks |
+| `archive/analysis.py` (runs at commit 4cbb7ff; see `archive/README.md`), `fallbacks.csv`, `outliers.csv`, `sensitivity.csv`, `analysis.json` | Steps 2, 5 and 6 evidence: fallback counts, outlier metrics, parameter sensitivity, card and path tests, benchmarks |
 
 ---
 
@@ -33,7 +33,7 @@ The problems are upstream of the arithmetic and in a few labels:
 - the per-US$1M cards;
 - several labels that claim more than the math does.
 
-**Issues by severity:** Critical 4, Major 7, Minor 7, Cosmetic 7 (25 in total, full log in section 5). **Fixed: I-01** (see `I-01.md`); **I-02, I-03, I-08** (see `I-02_I-03_I-08.md`).
+**Issues by severity:** Critical 4, Major 7, Minor 7, Cosmetic 7 (25 in total, full log in section 5). **Fixed: I-01** (see `I-01.md`); **I-02, I-03, I-08** (see `I-02_I-03_I-08.md`); **I-05** (see `I-05.md`).
 
 **The five that matter most**
 
@@ -48,7 +48,7 @@ The problems are upstream of the arithmetic and in a few labels:
 3. **I-03 (Fixed): The "America First MOUs" preset held one year's cut (2028) for all five years.**
    - It is described as following "the 2026-2030 MOU schedules", which it does not.
    - Ethiopia gets an 8% cut although its schedule averages 24% and reaches 49% in 2030.
-4. **I-05: "New HIV Infections" shows a different statistic from every other number.**
+4. **I-05 (Fixed): "New HIV Infections" showed a different statistic from every other number.**
    - It is the median of the 400 draws, while every death figure is the central run.
    - The two differ by up to 10% (Nigeria +10%, Kenya +8%).
 5. **I-06 and I-07: two scenario premises are out of date or not supported by their source.**
@@ -423,7 +423,7 @@ Effect is on the headline numbers (Extra Deaths 2026-2030, Aid at Risk) unless s
 | I-01 | Critical, **Fixed** | Model aid baseline (`dah_lines.csv`) was larger than IHME's bucket totals for the same years. **Cause: IHME's elim_ch double-counting flag was not applied.** | `prepare_model.py:255-263` (filter now applied right after reading the raw file) | 50 of 70 above +5%; all presets | Was: HIV +7.0%, TB +3.2%, malaria +5.8%, immunization +15.3%; Somalia 1.87x. Now: bucket totals within 0.1% of IHME; every country x bucket within 0.5% or US$50K (IHME rounding). Details: `I-01.md` | Done: filter added; model_data, all precomputed results and the test baseline regenerated and committed; two checks added | Full US exit deaths 2026-2030: 2.28M to 2.15M (-5.7%); Kenya -4.1%, Nigeria -6.7%, Ethiopia -9.2%, Somalia -32.7%. IHME 2025 preset +17% (US bilateral HIV now falls 39% in 2025 instead of rising 12.5%) |
 | I-02 | Critical, **Fixed** | "MOU Schedule" path rescales each year's cut so the deepest year = the 2028 cut | `scenarios.py:mou_cut_path` + `model_section.py:415-418` (scenario built at `mou_year` 2028) | 14 of 16 MOU countries (BWA, SSD unaffected); America First MOUs + MOU Schedule path | `analysis.json` mou_path: Kenya 7,621 vs 21,832 deaths 5y; Nigeria 38.8K vs 65.9K; Ethiopia 7.7K vs 17.9K | When the path is MOU Schedule, build the scenario at the deepest-cut year (or pass yearly cuts directly) so year t's US cut = the schedule's year t | Deaths x1.0-2.9 for the 14 countries under that path |
 | I-03 | Critical, **Fixed** | America First MOUs holds the 2028 cut for all of 2026-2030 but is described as following the 2026-2030 schedules | `scenarios.py:20-34, 56-78`; `model_section.py:49-51, 288-300` | 16 MOU countries; 54 others get the 36% average | `analysis.json` mou_preset: Ethiopia 8.3% used vs 23.6% average (48.9% in 2030); Kenya 16.1% vs 19.7% (60.3%); Burundi 47% vs 52% | Default this preset to the MOU Schedule path (after fixing I-02), or relabel it "the cut in <year>, held for five years" | Ethiopia x about 2.8, Kenya x about 1.2 if the schedule average is used |
-| I-05 | Critical | New HIV Infections (pill, All Countries sum) is the median of the draws; every other headline is the central run | `health_model.py:707, 729`; shown at `model_section.py:762`, `:1259` | All countries, all scenarios | `compare_recompute.py`: shown/central = Nigeria 1.10, Kenya 1.08, Honduras 1.07, Mozambique 1.00 | Report the central run (as for deaths), keep the percentile range | -10% to +1% on the infections pill |
+| I-05 | Critical, **Fixed** (see `I-05.md`) | New HIV Infections (pill, All Countries sum) is the median of the draws; every other headline is the central run | `health_model.py:707, 729`; shown at `model_section.py:762`, `:1259` | All countries, all scenarios | `compare_recompute.py`: shown/central = Nigeria 1.10, Kenya 1.08, Honduras 1.07, Mozambique 1.00 | Report the central run (as for deaths), keep the percentile range | -10% to +1% on the infections pill |
 | I-04 | Major | Per-US$1M cards price only the main service, ignore proportional scaling and caps, and leave out TB spread, malaria rebound and HIV infection deaths; titled "by Bucket" | `model_section.py:804-826`, `health_model.py:501-510` | All countries; worst where ART uses proportional scaling (29 countries) | `analysis.json` cards_vs_model: HIV 1.19-2.83x the model, TB 1.12-1.43x, malaria 0.75-1.31x | Compute the cards by running the model for a US$1M loss on the bucket's actual mix (or on the main line through the same scaling), and title them accordingly | Cards fall by up to 65% (Honduras HIV) |
 | I-06 | Major | Malaria deaths trend uses 2010-2019; WHO deaths are flat or rising since 2015 in many countries; 13 of 46 malaria countries sit at the -8% clip | `prepare_model.py:368-370`, `who_inputs.py:apply` (trend), `health_model.py:308-315` | Malaria countries | Ethiopia: trend -8%, deaths 5.7K (2019) to 22.4K (2024); malaria deaths with trend off: Ethiopia +20%, Burkina Faso +19%, Uganda +13%, Mozambique +7% | Fit 2015-2024 (or hold flat) for malaria; keep 2010-2019 only for under-5 mortality, where declines continue | Malaria bucket +7% to +20% in affected countries; total about +0.9% |
 | I-07 | Major | "Gavi -24%" is the shortfall against Gavi's 2026-30 target, not a fall from the previous cycle (US$8.8B for 2021-25, now over US$9B pledged) | `scenarios.py:28-30, 77-78`, `model_section.py:56` | Global Fund & Gavi shortfalls preset | Gavi and press sources (section 2.2) | Drop the Gavi channel cut or base it on actual disbursement changes; relabel as "shortfall vs target" | Immunization deaths in that preset (169K) largely unsupported; the preset's total 1.01M would drop about 16% |

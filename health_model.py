@@ -727,7 +727,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         return d, inf, after
 
     deaths, infections, after_parts = lives(P, units)
-    deathsc, _, afterc_parts = lives(Pc, unitsc)
+    deathsc, infectionsc, afterc_parts = lives(Pc, unitsc)
     after = sum(after_parts.values())
     afterc = {k: float(np.ravel(v)[0]) for k, v in afterc_parts.items()}
     deathsc = {l: v for l, v in deathsc.items() if l in pudc or l.startswith("mal_")}
@@ -766,8 +766,10 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             "deaths_y1": float(deathsc[l][0, 0]) if l in deathsc else 0.0,
             "deaths_y1_lo": q(d1, 2.5), "deaths_y1_hi": q(d1, 97.5),
             "deaths_5y": float(deathsc[l].sum()) if l in deathsc else 0.0,
-            "deaths_5y_med": q(d5, 50), "deaths_5y_lo": q(d5, 2.5), "deaths_5y_hi": q(d5, 97.5),
-            "infections_5y": q(inf5, 50), "infections_5y_lo": q(inf5, 2.5), "infections_5y_hi": q(inf5, 97.5),
+            "deaths_5y_lo": q(d5, 2.5), "deaths_5y_hi": q(d5, 97.5),
+            # central run, like deaths; the range is the 2.5th-97.5th percentile of the draws
+            "infections_5y": float(np.asarray(infectionsc[l]).sum()) if l in infectionsc else 0.0,
+            "infections_5y_lo": q(inf5, 2.5), "infections_5y_hi": q(inf5, 97.5),
         })
     tab = pd.DataFrame(recs)
 
@@ -789,7 +791,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                      "net_loss_usd": b_net, "deaths_y1": float(sum(deathsc[l][0, 0] for l in lb if l in deathsc)),
                      "deaths_5y": dc5, "deaths_5y_lo": q(d5, 2.5), "deaths_5y_hi": q(d5, 97.5),
                      "deaths_y1_lo": q(d1, 2.5), "deaths_y1_hi": q(d1, 97.5),
-                     "infections_5y": q(inf5, 50), "infections_5y_lo": q(inf5, 2.5), "infections_5y_hi": q(inf5, 97.5),
+                     "infections_5y": float(sum(np.asarray(infectionsc[l]).sum() for l in lb if l in infectionsc))
+                     if b == "HIV" else 0.0,
+                     "infections_5y_lo": q(inf5, 2.5), "infections_5y_hi": q(inf5, 97.5),
                      "deaths_per_musd": dc5 / 5 / (b_net / 1e6) if b_net > 1e4 else np.nan})
     bsum = pd.DataFrame(bsum)
 

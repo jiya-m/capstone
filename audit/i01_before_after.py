@@ -19,6 +19,8 @@ logging.disable(logging.WARNING)
 import health_model as hm  # noqa: E402
 import scenarios as scn  # noqa: E402
 
+if len(sys.argv) < 2:
+    sys.exit("usage: .venv/bin/python audit/i01_before_after.py <folder with the pre-fix model_data files>")
 BEFORE = Path(sys.argv[1])
 AFTER = hm.MODEL_DIR
 SIX = ["KEN", "NGA", "ETH", "SOM", "HND", "MOZ"]

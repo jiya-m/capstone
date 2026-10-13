@@ -100,6 +100,28 @@ def expected_cut(preset, iso, src, chan, bucket, opts):
 # --------------------------------------------------------------------------- #
 # Per-run checks
 # --------------------------------------------------------------------------- #
+def displayed_equals_central(iso, preset, resp, res, rc):
+    """I-05: every displayed number is the central run. rc = the same run with n_draws=0 (every draw = central)."""
+    T, Tc = res["totals"], rc["totals"]
+    pairs = {f"T.{k}": (T[k], Tc[k]) for k in ("gross", "replaced", "net", "deaths_5y", "deaths_y1")}
+    pairs["C.after_2030"] = (res["committed"]["after_2030"], rc["committed"]["after_2030"])
+    pairs["C.committed"] = (res["committed"]["deaths"], rc["committed"]["deaths"])
+    B, Bc = res["buckets"].set_index("bucket"), rc["buckets"].set_index("bucket")
+    for b in hm.BUCKETS:
+        for k in ("deaths_5y", "deaths_y1", "gross_loss_usd", "net_loss_usd", "infections_5y"):
+            pairs[f"B.{b}.{k}"] = (B.loc[b, k], Bc.loc[b, k])
+    L, Lc = res["lines"].set_index("line"), rc["lines"].set_index("line")
+    for ln in hm.ALL_DIRECT:
+        for k in ("units_lost", "cov_drop_pp", "deaths_5y", "deaths_y1", "infections_5y", "net_loss_usd"):
+            a, b = L.loc[ln, k], Lc.loc[ln, k]
+            if a == a or b == b:
+                pairs[f"L.{ln}.{k}"] = (a, b)
+    pairs.update({f"path.{b}.{t}": (res["path"][b].iloc[t], rc["path"][b].iloc[t]) for b in hm.BUCKETS for t in range(5)})
+    bad = [f"{k}: shown {a:.4g} vs central {b:.4g}" for k, (a, b) in pairs.items()
+           if not (a == b or close(float(a), float(b), 1e-9, 1e-6))]
+    rec(iso, preset, resp, "displayed_value_equals_central_run", not bad, len(bad), "; ".join(bad[:5]))
+
+
 def per_run(iso, preset, resp, res, fiscal_t, opts):
     T, L, B, C, F = res["totals"], res["lines"], res["buckets"], res["committed"], res["fiscal"]
     Lx = L.set_index("line")
@@ -164,6 +186,9 @@ def per_run(iso, preset, resp, res, fiscal_t, opts):
              Bx.loc["HIV", "infections_5y_hi"])]
     trip += [(f"B.{b}", Bx.loc[b, "deaths_5y_lo"], Bx.loc[b, "deaths_5y"], Bx.loc[b, "deaths_5y_hi"]) for b in hm.BUCKETS]
     trip += [(f"L.{r.line}", r.deaths_5y_lo, r.deaths_5y, r.deaths_5y_hi) for r in show.itertuples()]
+    trip += [(f"L.{r.line}.inf", r.infections_5y_lo, r.infections_5y, r.infections_5y_hi) for r in show.itertuples()
+             if r.infections_5y_hi > 0]
+    trip += [(f"L.{r.line}.units", r.units_lost_lo, r.units_lost, r.units_lost_hi) for r in show.itertuples()]
     for name, lo, c, hi in trip:
         if not (lo - 1e-6 <= c <= hi + 1e-6):
             rbad.append(f"{name}: {lo:.1f} <= {c:.1f} <= {hi:.1f}")
@@ -240,6 +265,8 @@ def main():
                 gov_add = gov_add_for(iso) if resp == "gradual" else None
                 res = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=400, gov_add_usd=gov_add)
                 per_run(iso, preset, resp, res, ft, opts)
+                rc = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=0, gov_add_usd=gov_add)
+                displayed_equals_central(iso, preset, resp, res, rc)
     print(f"per-run checks done in {time.time() - t0:.0f}s")
 
     # ---------------- precomputed files vs a fresh run ----------------

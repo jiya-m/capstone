@@ -86,7 +86,7 @@ row(P, H, "Replaced by Government + 'X% of the loss'", f"{MS}:_headline_items", 
 row(P, H, "Net Loss to Services ('per year')", f"{MS}:_headline_items", "totals.net = mean(G_t - replaced_t)", "US$", "per year", C23, "includes non-service systems money, see I-12")
 row(P, H, "Further Deaths, 2031-2035 (+range, tooltip parts)", f"{MS}:_headline_items", "committed.after_2030, after_2030_lo/hi", "deaths", "5-year total 2031-2035")
 row(P, H, "Extra Deaths Over 5 Years (+range)", f"{MS}:_headline_items", "totals.deaths_5y (central), lo/hi percentiles", "deaths", "5-year total 2026-2030")
-row(P, H, "New HIV Infections, 5 Years (+range)", f"{MS}:_headline_items", "buckets HIV infections_5y = MEDIAN of 400 draws (not central)", "infections", "5-year total 2026-2030", NA, "see I-05")
+row(P, H, "New HIV Infections, 5 Years (+range)", f"{MS}:_headline_items", "buckets HIV infections_5y = central run (was the median of the draws until I-05); range = 2.5th-97.5th percentiles", "infections", "5-year total 2026-2030", NA, "I-05 fixed")
 row(P, H, "Sentence: 'Government backfill of $X a year averts about N deaths ... ($Y per death averted)'", f"{MS}:_country_results (l.637)", "res0 deaths - res deaths; replaced x 5 / saved", "US$ / deaths", "per year / 5-year", C23)
 H = "Section 4: Every US$1 Million Lost (cards)"
 for b, ln in (("HIV", "hiv_art"), ("TB", "tb_ds"), ("Malaria", "mal_itn"), ("Immunization", "imm")):
@@ -130,8 +130,8 @@ H = "Pills"
 row(P, H, "Aid Lost per Year, N of 71 Countries (+ Net of Backfill)", f"{MS}:cross_country (l.1247)", "sum of precomputed gross_loss_usd / net_loss_usd (countries with gross > 0)", "US$", "per year", C23)
 row(P, H, "Further Deaths, 2031-2035 (+range)", f"{MS}:cross_country", "sum of deaths_after_2030 and of country lo/hi", "deaths", "5-year total 2031-2035")
 row(P, H, "Extra Deaths Over 5 Years (+range)", f"{MS}:cross_country", "sum of deaths_5y; sum of country 2.5th/97.5th percentiles", "deaths", "5-year total")
-row(P, H, "New HIV Infections, 5 Years", f"{MS}:cross_country", "sum of country MEDIAN infections", "infections", "5-year total")
-row(P, "Map", "Extra Deaths per 100,000 People (color), hover deaths, aid lost, % of GHES", f"{MS}:_world_map (l.1343)", "deaths_5y / sp_pop_totl x 1e5; gross_loss_usd; loss_pct_ghes", "deaths per 100,000 / US$ / %", "5-year total / per year", C23)
+row(P, H, "New HIV Infections, 5 Years", f"{MS}:cross_country", "sum of each country's central-run infections (I-05)", "infections", "5-year total")
+row(P, "Map", "Extra Deaths per 100,000 People (color), hover deaths, aid lost, % of GHES", f"{MS}:_world_map (l.1343)", "deaths_5y / sp_pop_totl x 1e5; gross_loss_usd; loss_pct_ghes; hiv_infections_5y (central)", "deaths per 100,000 / US$ / % / infections", "5-year total / per year", C23)
 row(P, "Scatter", "Budget Exposure vs. Deaths (x: aid lost % of GHES; y: deaths per 100,000; size: net loss)", f"{MS}:cross_country", "loss_pct_ghes x 100; deaths_per_100k; net_loss_usd", "% / per 100,000", "per year / 5-year", C23)
 row(P, "Top 15", "Most Extra Deaths, 5 Years (stacked by bucket) and rank note", f"{MS}:cross_country", "deaths_5y_<bucket>", "deaths", "5-year total")
 

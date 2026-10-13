@@ -7,7 +7,12 @@ America First MOUs is the exception (audit I-02/I-03): the preset was redefined 
 year by year, only for countries with a signed MOU and schedule data, so the old model cannot produce it. Its entries
 (KEN, NGA, MOZ; HND and IRQ cannot run it) are written by the current model with the later mechanisms switched off,
 as test (a) runs it:  python tests/make_baseline.py --mou-only
-They lock the schedule-driven results against unintended changes; tests/test_mou.py checks the schedule itself."""
+They lock the schedule-driven results against unintended changes; tests/test_mou.py checks the schedule itself.
+
+New HIV infections (audit I-05): the dashboard now shows the central run, not the median of the draws, so every
+entry's line infections_5y was replaced by the central run. For the 90 non-MOU entries the original model (commit
+5eb6111, n_draws=0) and the current model (later mechanisms off) give identical central infections (max difference 0),
+so only that statistic changed; all other fields are as before."""
 import json
 import logging
 import sys

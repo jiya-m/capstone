@@ -35,9 +35,9 @@ def dashboard_values(iso, scen, resp):
     out = {("TOTAL", "aid_at_risk"): T["gross"], ("TOTAL", "replaced"): T["replaced"], ("TOTAL", "net_loss"): T["net"],
            ("TOTAL", "baseline_aid"): T["base"], ("TOTAL", "deaths_y1"): T["deaths_y1"],
            ("TOTAL", "deaths_5y"): T["deaths_5y"], ("TOTAL", "after_2030_total"): C["after_2030"],
-           # the dashboard shows the MEDIAN of 400 draws for infections; the central run is the like-for-like number
+           # the dashboard showed the median of the draws for infections until I-05; it now shows the central run
            ("TOTAL", "hiv_infections_5y"): rc["buckets"].set_index("bucket").loc["HIV", "infections_5y"],
-           ("TOTAL", "hiv_infections_5y_SHOWN_median"): r["buckets"].set_index("bucket").loc["HIV", "infections_5y"]}
+           ("TOTAL", "hiv_infections_5y_SHOWN"): r["buckets"].set_index("bucket").loc["HIV", "infections_5y"]}
     for k, v in C["after_parts"].items():
         out[(f"after_{k}", "deaths")] = v
     for ln in hm.ALL_DIRECT:
@@ -65,6 +65,10 @@ def main():
     rc = pd.read_csv(ROOT / "audit" / "recompute_results.csv")
     rows = []
     for (iso, scen, resp), g in rc.groupby(["iso3", "scenario", "response"]):
+        if scen == "America First MOUs":
+            # redefined after the independent recalculation (I-02/I-03/I-08: yearly schedules, group A only), so the
+            # recomputation's version of it no longer describes the model; tests/test_mou.py checks the new preset
+            continue
         dv = dashboard_values(iso, scen, resp)
         indep = {(r.line, r.metric): r.value for r in g.itertuples()}
         for key in sorted(set(dv) | set(indep)):
@@ -84,7 +88,7 @@ def main():
     shown = df[df["metric"].str.contains("SHOWN")].merge(
         df[(df["line"] == "TOTAL") & (df["metric"] == "hiv_infections_5y")],
         on=["iso3", "scenario", "response"], suffixes=("_shown", "_central"))
-    print("\nNew HIV infections: shown (median of draws) vs central run")
+    print("\nNew HIV infections: shown on the dashboard vs central run (equal since the I-05 fix)")
     print(shown[["iso3", "scenario", "response", "dashboard_shown", "dashboard_central"]].assign(
         pct=lambda d: (d.dashboard_shown / d.dashboard_central - 1) * 100).round(1).to_string())
 

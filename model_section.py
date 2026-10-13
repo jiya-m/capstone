@@ -763,6 +763,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
         chart(_dose_fig(dr, bsel, cur_cut, B.loc[bsel], path))
     with d2:
         chart(path_fig, labels=True)
+    if preset == MOU:
+        st.caption("The scenario-path line isn't shown for MOU schedules, which vary year by year rather than scaling "
+                   "one cut.")
     st.markdown(th.source_html(SRC_MODEL, "The solid line cuts every donor and service by the same share. The dashed "
                                "line is this scenario's actual cut, which can run higher or lower because it falls on "
                                "specific services (for example, US money is concentrated in HIV treatment, where each "
@@ -1280,6 +1283,10 @@ def _all_country_results(sk, ctl) -> pd.DataFrame:
     return _run_all(sk, ctl["fiscal_t"], ctl["ptab_json"], ctl["trend"])
 
 
+ALL_RANGE_TIP = ("Totals add up each country's central estimate. The range adds up each country's own "
+                 "2.5th-97.5th percentile range, which overstates the width of the range for the total.")
+
+
 def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
     """The All Countries page: totals, map, exposure scatter and the 15 hardest-hit countries."""
     A = _all_country_results(sk, ctl).copy()
@@ -1305,14 +1312,15 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
          "HIV, TB, malaria and vaccine aid removed by the scenario", f"Net of Backfill {money(tot['net_loss_usd'])}"),
         ("Further Deaths, 2031-2035", num(tot["deaths_after_2030"]),
          "Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031: people still off HIV "
-         "treatment, new HIV infections, children who missed vaccines and TB spread by untreated patients",
+         "treatment, new HIV infections, children who missed vaccines and TB spread by untreated patients. "
+         + ALL_RANGE_TIP,
          "Range " + rng(tot["deaths_after_2030_lo"], tot["deaths_after_2030_hi"]))
         if "deaths_after_2030" in tot else
         ("Extra Deaths, Year 1", num(tot["deaths_y1"]), "Deaths build up over the five years", ""),
-        ("Extra Deaths Over 5 Years", num(tot["deaths_5y"]),
-         "Totals add up country results; the range adds country 2.5th and 97.5th percentiles, so it is wider than a "
-         "jointly simulated interval.", "Range " + rng(tot["deaths_5y_lo"], tot["deaths_5y_hi"])),
-        ("New HIV Infections, 5 Years", num(tot["hiv_infections_5y"]), "From lost HIV prevention and treatment", ""),
+        ("Extra Deaths Over 5 Years", num(tot["deaths_5y"]), ALL_RANGE_TIP,
+         "Range " + rng(tot["deaths_5y_lo"], tot["deaths_5y_hi"])),
+        ("New HIV Infections, 5 Years", num(tot["hiv_infections_5y"]),
+         "From lost HIV prevention and treatment. Totals add up each country's central estimate.", ""),
     ], large=True), unsafe_allow_html=True)
     A["deaths_per_100k"] = A["deaths_5y"] / A["pop"] * 1e5
     A["loss_pct_ghes_pct"] = A["loss_pct_ghes"] * 100
@@ -1410,9 +1418,11 @@ def _world_map(A: pd.DataFrame, iso3: str, world: bool = False, groups: dict | N
                                                   font=dict(size=12, color=MUTED)),
                       thickness=10, len=0.45, x=0.5, xanchor="center", y=0, yanchor="top", ypad=0,
                       tickfont=dict(size=11, color=MUTED), outlinewidth=0),
-        customdata=np.c_[A["name"], A["gross_loss_usd"].map(money), A["deaths_5y"].map(num), pct],
+        customdata=np.c_[A["name"], A["gross_loss_usd"].map(money), A["deaths_5y"].map(num), pct,
+                         A["hiv_infections_5y"].map(num) if "hiv_infections_5y" in A else ["n/a"] * len(A)],
         hovertemplate="<b>%{customdata[0]}</b><br>%{customdata[2]} extra deaths over 5 years "
-                      "(%{z:,.0f} per 100,000)<br>aid lost: %{customdata[1]} a year<br>"
+                      "(%{z:,.0f} per 100,000)<br>%{customdata[4]} new HIV infections over 5 years<br>"
+                      "aid lost: %{customdata[1]} a year<br>"
                       "= %{customdata[3]} of government health spending<extra></extra>"))
     if groups:
         for g, col, txt in ((scn.MOU_GROUP_B, th.blend(th.MUTED, 0.45), "MOU signed; no funding data"),
