@@ -12,7 +12,11 @@ They lock the schedule-driven results against unintended changes; tests/test_mou
 New HIV infections (audit I-05): the dashboard now shows the central run, not the median of the draws, so every
 entry's line infections_5y was replaced by the central run. For the 90 non-MOU entries the original model (commit
 5eb6111, n_draws=0) and the current model (later mechanisms off) give identical central infections (max difference 0),
-so only that statistic changed; all other fields are as before."""
+so only that statistic changed; all other fields are as before.
+
+Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
+Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
+    python tests/make_baseline.py --gains-only"""
 import json
 import logging
 import sys
@@ -71,5 +75,30 @@ def refresh_mou():
     print(f"saved {len(out)} runs to {p} ({sum(k.split('|')[1] == MOU for k in out)} America First MOUs)")
 
 
+def refresh_gains():
+    """I-15: a service line whose aid rises now counts as no loss (gains aren't modelled), where the original model
+    counted gains as negative people losing services and negative deaths. Replace only the entries where some line's
+    aid rises (IHME 2025 preliminary estimates for NGA and HND), with the current model and the later mechanisms off."""
+    I, P = hm.load_inputs(), hm.load_params()
+    P.loc[NEW_MECHANISMS, ["central", "low", "high"]] = 0.0
+    p = Path(__file__).parent / "baseline_sudden.json"
+    out = json.loads(p.read_text())
+    done = []
+    for key in list(out):
+        iso, preset, fk = key.split("|")
+        sc = scn.build_scenario(preset, scn.default_opts(preset, I["ci"]), I["ci"])
+        r = hm.run_country(iso, sc, hm.Fiscal(*FISCALS[fk]), I, P, n_draws=N_DRAWS)
+        if r["totals"]["gains"] > 0:
+            out[key] = snapshot(r)
+            done.append(key)
+    p.write_text(json.dumps(out))
+    print(f"refreshed {len(done)} entries with aid rises: {done}")
+
+
 if __name__ == "__main__":
-    refresh_mou() if "--mou-only" in sys.argv else main()
+    if "--mou-only" in sys.argv:
+        refresh_mou()
+    elif "--gains-only" in sys.argv:
+        refresh_gains()
+    else:
+        main()

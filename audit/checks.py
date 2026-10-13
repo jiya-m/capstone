@@ -269,6 +269,41 @@ def main():
                 displayed_equals_central(iso, preset, resp, res, rc)
     print(f"per-run checks done in {time.time() - t0:.0f}s")
 
+    # ---------------- I-13 and I-15: every country x preset x response x funding path ----------------
+    import model_section as ms
+    paths = [s_ for s_ in scn.PATH_SHAPES if s_ != "Custom"]
+    for preset in PRESETS:
+        opts = scn.default_opts(preset, CI)
+        sc = scn.build_scenario(preset, opts, CI)
+        for path in (["MOU schedule"] if sc.mou_only else paths):
+            cut = None if path in ("MOU schedule", "Sudden (default)") else tuple(scn.path_shape(path))
+            for resp, ft in RESPONSES.items():
+                for iso in COUNTRIES:
+                    if sc.mou_only and iso not in sc.us_direct_path_by_country:
+                        continue
+                    gov_add = gov_add_for(iso) if resp == "gradual" else None
+                    r = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=20, cut_path=cut, gov_add_usd=gov_add)
+                    T, L = r["totals"], r["lines"]
+                    tag = f"{resp} | {path}"
+                    avg, y30, _ = ms.fiscal_gap_values(r)
+                    ok = close(avg["left"], T["net"], 1e-9, 1e-6) and close(avg["gap"], avg["filled"] + avg["left"],
+                                                                             1e-9, 1e-6) \
+                        and close(y30["gap"], y30["filled"] + y30["left"], 1e-9, 1e-6)
+                    rec(iso, preset, tag, "fiscal_gap_left_equals_headline_net_and_gap_equals_filled_plus_left", ok,
+                        avg["left"] - T["net"], f"gap {avg['gap']:.0f} filled {avg['filled']:.0f} left {avg['left']:.0f}")
+                    show = L[(L["base_usd"] > 0) | (L["net_loss_usd"] != 0)]
+                    rws = ms._service_rows(show)
+                    care, _ = ms.care_breakdown(L.set_index("line"))
+                    ppl = rws.loc[rws["line"] != "hiv_prev", "units_lost"].sum()
+                    ok = close(care, ppl, 1e-9, 0.5) and close(rws["deaths_5y"].sum(), T["deaths_5y"], 1e-9, 1e-6)
+                    rec(iso, preset, tag, "headline_people_and_deaths_equal_table_totals", ok, care - ppl,
+                        f"hero people {care:.0f} table {ppl:.0f}; deaths {T['deaths_5y']:.1f} table "
+                        f"{rws['deaths_5y'].sum():.1f}")
+                    neg = [f"{x.line}" for x in L.itertuples() if x.units_lost < -1e-9 or
+                           (x.cov_drop_pp == x.cov_drop_pp and x.cov_drop_pp < -1e-9)]
+                    rec(iso, preset, tag, "no_negative_people_or_coverage_drop", not neg, len(neg), "; ".join(neg))
+    print(f"path checks done in {time.time() - t0:.0f}s")
+
     # ---------------- precomputed files vs a fresh run ----------------
     for preset in scn.PRECOMPUTED_PRESETS:
         path = scn.precomputed_path(hm.MODEL_DIR, preset)

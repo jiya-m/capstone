@@ -104,14 +104,37 @@ def load_params(path: Path = PARAMS_FILE) -> pd.DataFrame:
     return pd.read_csv(path).set_index("param")
 
 
+def validate_params(ptab: pd.DataFrame) -> list:
+    """Problems that make a parameter table unusable (shown inline in the app, which then keeps the previous valid
+    table): low above high, or central outside [low, high]. Empty list = valid."""
+    out = []
+    for p, r in ptab.iterrows():
+        try:
+            c, lo, hi = float(r["central"]), float(r["low"]), float(r["high"])
+        except (TypeError, ValueError):
+            out.append(f"{p}: low, central and high must be numbers")
+            continue
+        if not all(np.isfinite([c, lo, hi])):
+            out.append(f"{p}: low, central and high must be numbers")
+        elif lo > hi:
+            out.append(f"{p}: low ({lo:g}) is above high ({hi:g})")
+        elif not lo <= c <= hi:
+            out.append(f"{p}: central ({c:g}) is outside low-high ({lo:g} to {hi:g})")
+    return out
+
+
 def draw_params(ptab: pd.DataFrame, n: int, seed: int = 7) -> dict:
-    """n == 0 -> central values only (arrays of length 1)."""
+    """n == 0 -> central values only (arrays of length 1). A parameter with low == high (or low == central == high) is
+    a constant: n copies of its central value, with no triangular draw (I-16)."""
     rng = np.random.default_rng(seed)
     out = {}
     for p, r in ptab.iterrows():
         c, lo, hi = float(r["central"]), float(r["low"]), float(r["high"])
-        if n == 0 or hi <= lo:
+        if n == 0:
             out[p] = np.array([c])
+        elif hi <= lo:
+            rng.triangular(0.0, 0.5, 1.0, size=n)          # skip its draws so the other parameters' draws don't shift
+            out[p] = np.full(n, c)
         else:
             lo, hi = min(lo, c), max(hi, c)
             out[p] = rng.triangular(lo, c, hi, size=n) if hi > lo else np.full(n, c)
@@ -207,6 +230,7 @@ def fiscal_space(row: pd.Series, effort: str = "p75") -> dict:
     """Backfill capacity per year = GHES x (strong-year growth - typical growth) x debt-stress factor.
     effort 'p75' = a strong year (75th percentile of real GHES growth, 2001-23); 'p90' = the best years (90th)."""
     ghes = _v(row, "ghes_2023")
+    hs = health_share(row.name if isinstance(row.name, str) else "")      # health share of government spending
     med, p90 = _v(row, "ghes_growth_median", 0.0), _v(row, "ghes_growth_p90", 0.0)
     p75 = _v(row, "ghes_growth_p75", 0.0)
     top = p90 if effort == "p90" else p75
@@ -221,7 +245,8 @@ def fiscal_space(row: pd.Series, effort: str = "p75") -> dict:
             "interest_pct_revenue": intr, "stress_factor": stress,
             "capacity": (ghes * surge * stress) if not np.isnan(ghes) else 0.0,
             "gdp": gdp, "revenue": gdp * rev_pct / 100 if not np.isnan(rev_pct) else np.nan, "revenue_pct_gdp": rev_pct,
-            "debt_pct_gdp": _v(row, "gc_dod_totl_gd_zs"), "ghes_pct_gov_spend": _v(row, "sh_xpd_ghed_ge_zs"),
+            "debt_pct_gdp": _v(row, "gc_dod_totl_gd_zs"), "ghes_pct_gov_spend": hs["share_pct"],
+            "ghes_pct_gov_spend_year": hs["year"], "ghes_pct_gov_spend_estimated": hs["estimated"],
             "ghes_pct_gdp": _v(row, "ghes_pct_gdp_2023"), "ghes_pc": _v(row, "ghes_pc_2023")}
 
 
@@ -493,11 +518,16 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     gross_t = [pd.Series(usd * cut_m[:, t], index=cells.index).groupby(cells["line"]).sum() for t in range(N_YEARS)]
     gross_full_t = [pd.Series(usd * cut_y[:, t], index=cells.index).groupby(cells["line"]).sum()
                     for t in range(N_YEARS)]
+    # a service line whose aid rises counts as no loss: gains aren't modelled (I-15); the rise is kept for the notes
+    gains_t = [(-g).clip(lower=0) for g in gross_t]
+    gross_t = [g.clip(lower=0) for g in gross_t]
+    gross_full_t = [g.clip(lower=0) for g in gross_full_t]
     cells["cut"] = cut_m.mean(axis=1) if len(cells) else []          # average yearly cut (shown in charts)
     cells["loss"] = cells["usd"] * cells["cut"]
 
     base = cells.groupby("line")["usd"].sum()
-    gross = cells.groupby("line")["loss"].sum()                       # average yearly loss by line
+    gross = (sum(gross_t) / N_YEARS) if len(cells) else pd.Series(dtype=float)   # average yearly loss by line, >= 0
+    gains = (sum(gains_t) / N_YEARS) if len(cells) else pd.Series(dtype=float)   # average yearly rise by line
     P = draw_params(ptab, n_draws, seed)
     Pc = draw_params(ptab, 0)
     n = len(P["uc_imm"])
@@ -617,10 +647,12 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             u = _units_lost(net_t[t][l], eff_base[l], uc[l], covered) * (1 - P["continuity"])
             uc0 = _units_lost(netc_t[t][l], effc_base[l], ucc[l], covered) * (1 - Pc["continuity"])
             if l in ep["need_cov"] and not np.isnan(need) and not np.isnan(cov):
-                hi, lo = cov * need, -(1 - cov) * need
+                hi = cov * need
                 capped[l] = capped[l] or bool(np.ravel(uc0)[0] > hi)
-                u, uc0 = np.clip(u, lo, hi), np.clip(uc0, lo, hi)
-            units[l][:, t], unitsc[l][:, t] = u, uc0
+                u, uc0 = np.minimum(u, hi), np.minimum(uc0, hi)
+            # never negative: aid rises count as no loss (I-15), so this only removes floating-point noise when the
+            # government replaces a line in full
+            units[l][:, t], unitsc[l][:, t] = np.maximum(u, 0.0), np.maximum(uc0, 0.0)
     # vector control shares one coverage pool
     par, cvc = ep["need_cov"]["mal_itn"]
     if not np.isnan(par):
@@ -786,8 +818,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         b_rep = float(np.mean([sum(np.asarray(repc_t[t][l]).ravel()[0] for l in lb)
                                + float(np.asarray(repnc_t[t].get(b, 0.0)).ravel()[0]) for t in years]))
         b_net = b_gross - b_rep
+        b_gain = float(gains.reindex(bl).sum()) if bl else 0.0
         dc5 = float(sum(deathsc[l].sum() for l in lb if l in deathsc))
-        bsum.append({"bucket": b, "base_usd": b_base, "gross_loss_usd": b_gross, "replaced_usd": b_rep,
+        bsum.append({"bucket": b, "base_usd": b_base, "gross_loss_usd": b_gross, "replaced_usd": b_rep, "gains_usd": b_gain,
                      "net_loss_usd": b_net, "deaths_y1": float(sum(deathsc[l][0, 0] for l in lb if l in deathsc)),
                      "deaths_5y": dc5, "deaths_5y_lo": q(d5, 2.5), "deaths_5y_hi": q(d5, 97.5),
                      "deaths_y1_lo": q(d1, 2.5), "deaths_y1_hi": q(d1, 97.5),
@@ -825,7 +858,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                          "after_parts": afterc},
            "totals": {"base": float(base.sum()), "gross": float(G_t.mean()), "replaced": float(budget_t.mean()),
                       "net": float((G_t - budget_t).mean()), "gross_full": G,
-                      "gains": float(np.mean([-np.clip(g, None, 0).sum() for g in gross_full_t])) if len(cells) else 0.0,
+                      "gains": float(gains.sum()) if len(cells) else 0.0,
                       "deaths_5y": d5c, "deaths_5y_lo": q(tot5, 2.5), "deaths_5y_hi": q(tot5, 97.5),
                       "deaths_y1": float(sum(deathsc[l][0, 0] for l in deathsc))}}
     if keep_draws:
@@ -922,46 +955,64 @@ def _share_history() -> pd.DataFrame:
     return _share_history.cache
 
 
-def imf_gov_spending_2023(iso3: str) -> float:
-    """Total general-government spending in 2023, US$ (IMF World Economic Outlook: expenditure % of GDP x GDP), the
-    same source as Section 3. NaN when the IMF has no 2023 figure."""
-    cache = imf_gov_spending_2023.__dict__.setdefault("cache", {})
-    if iso3 not in cache:
-        f = HERE / "macro_data" / f"{iso3}.csv"
-        v = np.nan
-        if f.exists():
-            m = pd.read_csv(f)
-            r = m[m.year == 2023]
-            if len(r):
-                pct, gdp = r["gov_expenditure_pct_gdp"].iloc[0], r["gdp_usd_bn_2023"].iloc[0]
-                if pct == pct and gdp == gdp and pct > 0 and gdp > 0:
-                    v = pct / 100 * gdp * 1e9
-        cache[iso3] = v
-    return cache[iso3]
+def _series(path: Path, value) -> pd.Series:
+    """year -> value from one of the per-country files (empty when the file is missing)."""
+    if not path.exists():
+        return pd.Series(dtype=float)
+    d = pd.read_csv(path)
+    return pd.Series(value(d).to_numpy(dtype=float), index=d["year"].to_numpy()).dropna()
+
+
+def health_share(iso3: str) -> dict:
+    """Health's share of government spending (%), one definition for the whole dashboard (audit I-14):
+      1. World Bank WDI SH.XPD.GHED.GE.ZS (WHO Global Health Expenditure Database), latest available year;
+      2. if missing: IHME government health spending / IMF WEO general-government expenditure, same year (estimated);
+      3. otherwise NaN ('n/a').
+    Returns share_pct, year, estimated (bool) and source."""
+    cache = health_share.__dict__.setdefault("cache", {})
+    if iso3 in cache:
+        return cache[iso3]
+    h = _share_history()
+    h = h[h.iso3 == iso3].sort_values("year")
+    if len(h):
+        out = {"share_pct": float(h["share"].iloc[-1]), "year": int(h["year"].iloc[-1]), "estimated": False,
+               "source": "World Bank WDI SH.XPD.GHED.GE.ZS (WHO GHED)"}
+    else:
+        # observed years only: IHME rows not flagged as projected, IMF years not flagged as estimates
+        ghes = _series(HERE / "spending_data" / f"{iso3}.csv",
+                       lambda d: (d["ghes_total_mean"] * 1e3).where(d.get("projected", 0) == 0))
+        gov = _series(HERE / "macro_data" / f"{iso3}.csv",
+                      lambda d: (d["gov_expenditure_pct_gdp"] / 100 * d["gdp_usd_bn_2023"] * 1e9)
+                      .where(~d.get("gdp_is_estimate", pd.Series(False, index=d.index)).astype(bool)))
+        both = sorted(set(ghes.index) & set(gov[gov > 0].index))
+        if both:
+            y = both[-1]
+            out = {"share_pct": float(ghes[y] / gov[y] * 100), "year": int(y), "estimated": True,
+                   "source": "IHME government health spending / IMF WEO general-government expenditure"}
+        else:
+            out = {"share_pct": np.nan, "year": None, "estimated": False, "source": None}
+    cache[iso3] = out
+    return out
 
 
 def health_budget(iso3: str, inputs: dict) -> dict:
-    """Health's share of government spending today (%), total government spending (US$, IMF WEO 2023; the share is
-    government health spending 2023 / that total), the room to the Abuja 15% ceiling, and the fastest sustained rise
-    in the country's history (90th percentile of its 2001-2023 yearly changes in the World Bank share, percentage
-    points). Without a usable IMF figure, total spending falls back to government health spending / the World Bank share."""
+    """Health's share of government spending today (health_share: World Bank, else IHME / IMF), total government
+    spending implied by it (government health spending 2023 / share, US$), the room to the Abuja 15% ceiling, and the
+    fastest sustained rise in the country's history (90th percentile of its yearly changes in the World Bank share,
+    percentage points). Every 'points of the budget' to dollars conversion uses gov_spend_usd from here."""
     row = inputs["ci"].loc[iso3] if iso3 in inputs["ci"].index else pd.Series(dtype=float)
-    wdi, ghes = _v(row, "sh_xpd_ghed_ge_zs"), _v(row, "ghes_2023")
-    gov = imf_gov_spending_2023(iso3)
-    imf_share = ghes / gov * 100 if gov == gov and not np.isnan(ghes) else np.nan
-    # use the IMF total unless it disagrees with the World Bank share by more than 2x (e.g. Venezuela's 2023 figures)
-    if imf_share == imf_share and (np.isnan(wdi) or 0.5 <= imf_share / wdi <= 2):
-        share, source = imf_share, "IMF WEO"
-    else:
-        share, source = wdi, "World Bank"
-        gov = ghes / (wdi / 100) if wdi and wdi > 0 and not np.isnan(ghes) else np.nan
+    ghes = _v(row, "ghes_2023")
+    hs = health_share(iso3)
+    share = hs["share_pct"]
+    gov = ghes / (share / 100) if share == share and share > 0 and not np.isnan(ghes) else np.nan
     h = _share_history()
     h = h[(h.iso3 == iso3) & h.year.between(2000, 2023)].sort_values("year")
     ch = h["share"].diff()[h["year"].diff() == 1].dropna()
     p90 = float(ch.quantile(0.9)) if len(ch) >= 5 else np.nan
     room = max(ABUJA_CEILING - share, 0.0) if not np.isnan(share) else np.nan
-    return {"share_pct": share, "gov_spend_usd": gov, "ceiling_pct": ABUJA_CEILING, "room_pct": room,
-            "p90_rise_pp": p90, "ghes_usd": ghes, "gov_source": source}
+    return {"share_pct": share, "share_year": hs["year"], "share_estimated": hs["estimated"],
+            "gov_spend_usd": gov, "ceiling_pct": ABUJA_CEILING, "room_pct": room,
+            "p90_rise_pp": p90, "ghes_usd": ghes, "gov_source": hs["source"]}
 
 
 def _money_by_year(iso3, scenario, fiscal, inputs, cut_path):

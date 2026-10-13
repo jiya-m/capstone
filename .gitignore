@@ -13,3 +13,6 @@ __pycache__/
 # Large audit snapshots (regenerate with audit/snapshot_numbers.py)
 audit/before_cosmetic.csv
 audit/after_cosmetic.csv
+audit/before_minor.csv
+audit/after_minor.csv
+audit/minor_diff_summary.csv

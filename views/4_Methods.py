@@ -223,7 +223,7 @@ with tabs[1]:
     | What Each Service Loses | Per service line: baseline aid, aid lost after replacement, cost per person, people losing the service, coverage before and after, extra deaths (range) |
     | Extra Deaths as More Aid Is Cut | Solid line: every donor cuts this bucket by the same share, 0-100% in 5% steps, same random draws at every step; band = 95% range. Dashed line: this scenario's own cuts scaled from 0% to 100% of their size |
     | Extra Deaths Each Year | Central estimate by year and bucket |
-    | Can {{Country}} Fill the Gap? | See *The Model, Step 2*; Aid Lost as % of Government Health Spending = gross loss ÷ government health spending in 2023; as % of revenue = gross loss ÷ (GDP x revenue % of GDP, World Bank WDI) |
+    | Can {{Country}} Fill the Gap? | From the same run as the headline, as averages per year over 2026-2030 (2030 underneath when it differs): Gap Before Government Steps In = aid lost (gross); Filled by the Government = the chosen response plus any gradual budget increase; Gap Left After Government Response = the difference (= Net Aid Lost). The dashed line is backfill capacity (fiscal space), see *The Model, Step 2*. Aid Lost as % of Government Health Spending = average yearly gross loss ÷ government health spending in 2023; as % of revenue = that loss ÷ (GDP x revenue % of GDP, World Bank WDI). Health share of government spending: see *Gradual budget increase* |
     | All Countries | Totals add up country results; deaths per 100,000 = 5-year deaths ÷ population x 100,000; budget exposure = gross loss ÷ government health spending |
     """)
 
@@ -287,7 +287,7 @@ with tabs[2]:
     |---|---|---|
     | Full US Exit | US direct aid -100%; US contributions through WHO, Gavi and UNFPA -100%; US Global Fund pledge -23% (US$6.0B to US$4.6B) | US announcements (WHO exit effective Jan 2026; Gavi June 2025); Global Fund 8th replenishment, Nov 2025 |
     | America First MOUs | Only for countries with a signed MOU (KFF) **and** 2026-2030 US funding values in the team's sheet (16 countries). US direct aid follows the country's own schedule year by year: cut in year t = 1 - US funding in t ÷ 2021-25 reference, used exactly as written (never rescaled); a funding increase counts as a 0% cut; a schedule that eases later is followed as written (people return to care); where the schedule ends in 2028 (Botswana, South Sudan) the 2028 cut is held through 2030. US multilateral exits as above. Countries that signed without funding data list the scenario as unavailable; countries without an MOU don't offer it | KFF tracker (status); team's MOU / co-financing sheet (schedules) |
-    | IHME 2025 Preliminary Estimates | Each source x channel x disease cell changes by IHME's 2025 preliminary total ÷ its 2021-23 average (global ratio applied to the country's mix; cells under US$20M a year use the source x disease ratio; clipped to 0-1.5) | IHME DAH database, 2025 preliminary estimates |
+    | IHME 2025 Preliminary Estimates | Each source x channel x disease cell changes by IHME's 2025 preliminary total ÷ its 2021-23 average (global ratio applied to the country's mix; cells under US$20M a year use the source x disease ratio; clipped to 0-1.5) | IHME DAH database, 2025 preliminary estimates Where a service line's aid rises, it counts as no loss (gains aren't modelled); the table notes the rise under that disease |
     | OECD-Reported 2025 Aid Cuts | Each donor's 2025 change in total aid applied to its health aid: US -57%, Germany -17.4%, France -10.9%, UK -10.8%, Japan -5.6% | OECD preliminary 2025 ODA data, April 2026 |
     | Global Fund & Gavi Shortfalls | Every donor's money through the Global Fund -28% (US$11.34B vs US$15.7B) and Gavi -24% (about US$9B vs US$11.9B target) | Replenishment outcomes |
     | Combined Retreat | Full US Exit plus the OECD cuts for every other donor | As above |
@@ -505,11 +505,14 @@ with tabs[2]:
     **Gradual budget increase.** The government raises health's share of its total spending by a number of
     percentage points each year (cumulative): Steady p·t; Fast start 5p·(1 - (1 - t/5)²); Slow start 5p·(t/5)², never
     past the Abuja target of 15%. Extra money A(t) = points(t) ÷ 100 x total government spending, where total
-    government spending = general-government expenditure in 2023 (IMF World Economic Outlook: expenditure % of GDP x
-    GDP, the same source as Section 3). Health's share today = government health spending (IHME, 2023) ÷ that total.
-    If the IMF figure is missing or implies a share more than twice or less than half the World Bank's
-    (`SH.XPD.GHED.GE.ZS`; e.g. Venezuela), the World Bank share is used instead and total spending = government
-    health spending ÷ that share. No other government response applies with this option.
+    government spending = government health spending (IHME, 2023) ÷ health's share of government spending.
+
+    **Health's share of government spending** has one definition everywhere on the dashboard (the fiscal panel, the
+    budget-increase sliders, the break-even rise and every points-to-dollars conversion): (1) the World Bank's
+    `SH.XPD.GHED.GE.ZS` (WHO Global Health Expenditure Database), latest available year, shown as "Health Share of
+    Government Spending, {year}"; (2) where the World Bank has no figure, IHME government health spending ÷ IMF World
+    Economic Outlook general-government expenditure for the same year, shown with "(estimated)"; (3) "n/a" if
+    neither exists. No other government response applies with the budget-increase option.
 
     **Which services are tracked how.**
 
@@ -608,7 +611,7 @@ with tabs[3]:
     | `GC.REV.XGRT.GD.ZS` | Revenue excluding grants (% of GDP) | Aid lost as % of revenue |
     | `GC.DOD.TOTL.GD.ZS` | Central government debt (% of GDP) | Fiscal panel |
     | `GC.XPN.INTP.RV.ZS` | Interest payments (% of revenue) | Debt-stress factor |
-    | `SH.XPD.GHED.GE.ZS` | Government health spending (% of government spending) | Fastest historical rise in health's share (benchmark under the sliders); fallback for health's share when IMF data are missing |
+    | `SH.XPD.GHED.GE.ZS` | Government health spending (% of government spending) | Health's share of government spending (first choice, latest year); fastest historical rise in that share (benchmark under the sliders) |
     | `SP.DYN.CDRT.IN`, `SH.MMR.DTHS` | Crude death rate; maternal deaths | Validation page |
     """)
     th.section_header("menu_book", "Published Studies Behind the Parameters")

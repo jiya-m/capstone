@@ -458,6 +458,14 @@ def _controls(iso3, country_name, I) -> dict:
                                                                    for c in ("label", "central", "low", "high", "unit",
                                                                              "status", "source")}}, width=900)
             ptab = ptab.set_index("param")
+            problems = hm.validate_params(ptab)
+            if problems:                     # keep the previous valid table instead of running (or crashing) on it
+                st.caption(_esc("Not applied: " + "; ".join(problems[:3]) + (" ..." if len(problems) > 3 else "")
+                                + ". Using the last valid values."))
+                prev = st.session_state.get("last_valid_ptab_json")
+                ptab = pd.read_json(io.StringIO(prev), orient="split") if prev else _default_params()
+            else:
+                st.session_state["last_valid_ptab_json"] = ptab.to_json(orient="split")
 
         # ---- when the funding path or the response is not the default, the box expands: chart + year sliders ----
         expanded = (shape not in (paths_ui.SUDDEN, MOU_SHAPE)) or mode == "gradual"
@@ -546,7 +554,7 @@ def care_breakdown(L: pd.DataFrame) -> tuple:
     except HIV prevention, whose unit is infections averted, and orphan support, which has no modelled effect)."""
     u = L["units_lost"].reindex(list(CARE_LABELS)).fillna(0).clip(lower=0)
     parts = sorted(((float(v), CARE_LABELS[k]) for k, v in u.items() if v >= 0.5), reverse=True)
-    return float(sum(v for v, _ in parts)), parts
+    return float(u.sum()), parts         # the total counts every line, as the table does (I-15); the list skips < 0.5
 
 
 def response_kicker(fiscal_t) -> str:
@@ -667,12 +675,10 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     res0 = run_ctl(iso3, sk, ctl, fiscal_t=scn.DEFAULT_FISCAL, gov_add=None) if mode != "none" else res
     T, B, L = res["totals"], res["buckets"].set_index("bucket"), res["lines"]
 
-    if T.get("gains", 0) > 1e5:
-        st.info(_esc(f"Some aid increases in this scenario (+{money(T['gains'])} a year); those gains count as coverage "
-                     "and lives gained and partly offset the losses below."))
     if T["gross"] <= 0 and T["base"] > 0:
-        st.success(_esc(f"Under '{preset}' {country_name} loses no HIV, TB, malaria or vaccine aid "
-                        f"(net change {money(-T['gross'])})."))
+        st.success(_esc(f"Under '{preset}' {country_name} loses no HIV, TB, malaria or vaccine aid"
+                        + (f" (aid rises by {money(T['gains'])} a year; gains aren't modelled)." if T.get("gains", 0) >= 0.5
+                           else ".")))
 
     show = L[(L["base_usd"] > 0) | (L["net_loss_usd"] != 0)].copy()
     rows = _service_rows(show)
@@ -737,7 +743,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                  "assumed to cut services. Bednets and spraying protect the same population at risk, so they share one "
                  "row. Deaths ranges are 95% intervals.")
     st.subheader("What Each Service Loses", help=" ".join(notes))
-    st.html(_service_table_html(rows, country_name, T))
+    st.html(_service_table_html(rows, country_name, T, {b: float(B.loc[b, "gains_usd"]) for b in hm.BUCKETS}))
     ovc = show[show["line"] == "hiv_ovc"]
     st.caption(_esc("Other Aid is money the model does not link to deaths: support for orphans and vulnerable children"
                     + (f" ({money(ovc['net_loss_usd'].sum())} a year lost)" if len(ovc) else "")
@@ -782,7 +788,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                 unsafe_allow_html=True)
 
     # ------------------------------ fiscal space ------------------------------ #
-    _fiscal_panel(res, country_name, imf)
+    _fiscal_panel(res, country_name, imf, fiscal_t)
     return res
 
 
@@ -1064,8 +1070,16 @@ def _service_rows(show: pd.DataFrame) -> pd.DataFrame:
 
 
 def _pts(v: float) -> str:
-    """Coverage drop as text: one decimal below 10 points, whole points above."""
-    return f"−{v:.1f} pts" if v < 10 else f"−{v:.0f} pts"
+    """Coverage change as text, from a drop in points (positive = coverage falls): '−6.6 pts', '−12 pts'; a negative
+    drop is a rise, '+6.6 pts' (never '−-'). One decimal below 10 points, whole points above."""
+    sign = "−" if v > 0 else "+" if v < 0 else ""
+    a = abs(v)
+    return f"{sign}{a:.1f} pts" if a < 10 else f"{sign}{a:.0f} pts"
+
+
+def gains_note(bucket: str, gain: float) -> str:
+    """I-15: one note per disease whose aid rises."""
+    return f"Aid to {BUCKET_WORD[bucket]} rises by {money(gain)} in this scenario; gains aren't modelled."
 
 
 DISEASE_WORD = {"HIV": "HIV", "TB": "TB", "Malaria": "malaria", "Immunization": "vaccine-preventable"}
@@ -1077,7 +1091,8 @@ def cov_pair(c0: float, c1: float) -> str:
     return f"{f.format(c0)} → {f.format(c1)}"
 
 
-def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | None = None) -> str:
+def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | None = None,
+                        gains: dict | None = None) -> str:
     """'What Each Service Loses': NYT-style HTML table, grouped by disease, with a Total row. With the run's totals T,
     an Other Aid row (orphan support and systems money not modelled as services) makes the money columns add up to
     the headline figures, and the Total deaths range is the run's own 95% interval."""
@@ -1091,6 +1106,7 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
     for r in rows.itertuples():
         col = BUCKET_COLORS[r.bucket]
         if prev is not None and r.bucket != prev:
+            body += _gain_rows(prev, gains)
             body.append("<tr class='gap'><td colspan='7'></td></tr>")
         prev = r.bucket
         service = (f"<td class='svc' style='border-left:3px solid {col}'><span class='dot' style='background:{col}'>"
@@ -1116,6 +1132,8 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
                  f"<span class='big'>{e(r.cost_big)}</span><br>"
                  f"{grey(e(r.cost_unit).replace('per infection averted', 'per infection<br>averted'))}", people, cov, deaths]
         body.append("<tr>" + service + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
+    if prev is not None:
+        body += _gain_rows(prev, gains)
     # Other Aid: money with no modelled effect on deaths, so the money columns add up to the headline figures
     base_tot, net_tot = rows["base_usd"].sum(), rows["net_loss_usd"].sum()
     d_lo, d_hi = rows["deaths_5y_lo"].sum(), rows["deaths_5y_hi"].sum()
@@ -1137,6 +1155,15 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
     return ("<div class='ed-nyt-wrap'><table class='ed-nyt'><colgroup><col style='width:26%'>"
             + "<col style='width:12.3%'>" * 6 + "</colgroup><thead><tr>" + th_html + "</tr></thead><tbody>"
             + "".join(body) + "</tbody></table></div>").replace("$", "&#36;")
+
+
+def _gain_rows(bucket, gains) -> list:
+    """The 'aid rises' note under a disease's rows in the service table (I-15)."""
+    g = (gains or {}).get(bucket, 0.0)
+    if g < 0.5:
+        return []
+    return [f"<tr><td colspan='7' class='svc' style='border-left:3px solid {BUCKET_COLORS[bucket]}'>"
+            f"<span class='sub'>{html.escape(gains_note(bucket, g))}</span></td></tr>"]
 
 
 def _coverage_fig(rows: pd.DataFrame):
@@ -1234,80 +1261,131 @@ def pct_smart(frac: float) -> str:
     return f"{v:.1f}%" if v < 1 else f"{v:,.0f}%"
 
 
-ABSORB_SHARE = 0.10        # a gap under 10% of a strong year's replacement capacity counts as easily absorbed
-TINY_GAP_SHARE = 0.05      # under 5% of the largest bar, the gap chart can't be read: show pills instead
+def fiscal_gap_values(res) -> tuple:
+    """I-13: (average per year 2026-2030, 2030, show the 2030 line) for the three gap numbers, from the same run as the
+    headline: gap before the government steps in = aid lost (gross); filled = the chosen response plus any gradual
+    budget money; left = the difference (= the headline's net aid lost)."""
+    T, Y = res["totals"], res["years"].set_index("year")
+    avg = {"gap": float(T["gross"]), "filled": float(T["replaced"]), "left": float(T["net"])}
+    y30 = {"gap": float(Y.loc[2030, "aid_lost_usd"]), "filled": float(Y.loc[2030, "replaced_usd"]),
+           "left": float(Y.loc[2030, "gap_usd"])}
+    show = any(abs(avg[k] - y30[k]) > max(0.5, 1e-6 * abs(avg[k])) for k in avg)
+    return avg, y30, show
 
 
-def _fiscal_sentence(F: dict, country_name: str) -> str:
-    """One sentence from the data: how big the gap is against the health budget, and what a strong year would cover."""
-    G, ghes, cap = F["gross_loss"], F["ghes"], F["capacity"]
-    if not G or G <= 0:
+def _response_phrase_short(fiscal_t) -> str:
+    mode, theta = fiscal_t[0], fiscal_t[1]
+    return {"none": NO_REPLACEMENT, "historical": NO_REPLACEMENT, "custom": f"a {theta:.0%} replacement",
+            "max": "replacement up to fiscal space", "gradual": "a gradual budget increase"}.get(mode, "this response")
+
+
+def _fiscal_sentence(res, F: dict, country_name: str, fiscal_t) -> str:
+    avg, _, _ = fiscal_gap_values(res)
+    if avg["gap"] <= 0:
         return "No aid is lost in this scenario, so there is no gap to fill."
-    share = pct_smart(G / ghes) if ghes else "n/a"
-    if cap and cap > 0 and G < ABSORB_SHARE * cap:
-        return (f"{country_name}'s health budget could absorb this gap: it equals {share} of government health "
-                f"spending, and a strong budget year alone would cover it {cap / G:,.0f} times over.")
-    out = f"Replacing the lost aid would take a {share} increase in government health spending. " if ghes else ""
-    pts = (F["ghes_growth_top"] - max(F["ghes_growth_median"], 0)) * 100
+    out = (f"{country_name} loses about {money_words(avg['gap'])}/yr in aid; under {_response_phrase_short(fiscal_t)} "
+           f"the government fills {money_words(avg['filled'])}, leaving {money_words(avg['left'])}/yr unfilled.")
+    cap = F["capacity"]
     year = "its best years" if F["effort"] == "p90" else "a strong year"
-    if pd.isna(pts) or pts <= 0 or not cap or cap <= 0:
-        return out + f"{country_name}'s health budget does not grow faster than usual even in {year}, so it has no room " \
-                     "to fill the gap."
-    pts_txt = f"{pts:.0f}" if pts >= 1 else f"{pts:.1f}"
-    out += f"In {year} {country_name}'s health budget grows about {pts_txt}% faster than in a typical year, which "
-    out += f"would cover the whole {money(G)} gap." if cap >= G else f"would cover {money(cap)} of the {money(G)} gap."
+    out += (f" In {year} the health budget could add about {money_words(cap)}/yr for these programs (fiscal space)."
+            if cap and cap > 0 else f" The health budget does not grow faster than usual even in {year}, so there is "
+                                    "no fiscal space to fill the gap.")
     return out
 
 
-def _fiscal_panel(res: dict, country_name: str, imf: dict):
+def health_share_pill(F) -> tuple:
+    """(label, value, tooltip, note) for health's share of government spending (one definition: health_share)."""
+    v, y, est = F.get("ghes_pct_gov_spend"), F.get("ghes_pct_gov_spend_year"), F.get("ghes_pct_gov_spend_estimated")
+    if v is None or pd.isna(v):
+        return ("Health Share of Government Spending", "n/a", "No World Bank figure and no IHME / IMF data to estimate it.",
+                "Abuja Target: 15%")
+    if est:
+        return (f"Health Share of Government Spending, {y} (estimated)", f"{v:.1f}%",
+                "World Bank figure not available; estimated from IHME and IMF data.", "Abuja Target: 15%")
+    return (f"Health Share of Government Spending, {y}", f"{v:.1f}%",
+            "Government health spending ÷ all government spending (World Bank WDI, WHO Global Health Expenditure "
+            "Database).", "Abuja Target: 15%")
+
+
+def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_FISCAL):
     F = res["fiscal"]
     stress = (f" High interest costs shrink it: interest takes {F['interest_pct_revenue']:.0f}% of revenue, so the "
               f"debt-stress factor is {F['stress_factor']:.2f} (1 at 10% or less, falling to 0.25 at 40%)."
               if not pd.isna(F["interest_pct_revenue"]) else "")
     st.subheader(f"Can {country_name} Fill the Gap?",
-                 help=_esc("Replacement capacity = government health spending x (strong-year growth minus typical growth) "
-                           "x a debt-stress factor." + stress + " Growth rates are real (constant 2023 US$) from IHME, "
-                           "2001-2023; interest and revenue are World Bank WDI, latest year (IMF data fill gaps)."))
+                 help=_esc("All three numbers come from the same run as the headline, as averages per year over "
+                           "2026-2030 (2030 shown underneath when it differs). Backfill capacity (fiscal space) = "
+                           "government health spending x (strong-year growth minus typical growth) x a debt-stress "
+                           "factor." + stress + " Growth rates are real (constant 2023 US$) from IHME, 2001-2023; "
+                           "interest and revenue are World Bank WDI, latest year (IMF data fill gaps)."))
+    avg, y30, show30 = fiscal_gap_values(res)
     rev = F["revenue"]
     if (pd.isna(rev) or not rev) and imf.get("revenue_pct_gdp") and F["gdp"]:
         rev = imf["revenue_pct_gdp"] / 100 * F["gdp"]
-    G = F["gross_loss"]
+    G = avg["gap"]
     st.markdown(th.pills_html([
         ("Government Health Spending (2023)", money(F["ghes"]),
          "IHME, constant 2023 US$",
          f"${F['ghes_pc']:,.0f} per person · {F['ghes_pct_gdp']:.1f}% of GDP" if not pd.isna(F["ghes_pc"]) else ""),
         ("Aid Lost as % of Government Health Spending", pct_smart(G / F["ghes"]) if F["ghes"] else "n/a",
-         "Gross aid lost per year ÷ government health spending, 2023", ""),
+         "Aid lost per year (gross, average 2026-2030) ÷ government health spending, 2023", ""),
         ("Aid Lost as % of Government Revenue", pct_smart(G / rev) if rev and not pd.isna(rev) else "n/a",
-         "Gross aid lost per year ÷ total government revenue", ""),
-        ("Health Share of Government Spending",
-         f"{F['ghes_pct_gov_spend']:.1f}%" if not pd.isna(F["ghes_pct_gov_spend"]) else "n/a",
-         "Government health spending ÷ all government spending", "Abuja Target: 15%"),
+         "Aid lost per year (gross, average 2026-2030) ÷ total government revenue", ""),
+        health_share_pill(F),
     ], large=True), unsafe_allow_html=True)
-    st.markdown(_esc(_fiscal_sentence(F, country_name)))
-    typical = F["ghes"] * max(F["ghes_growth_median"], 0)
-    bars = [(title_case(lbl), v, c) for lbl, v, c in (
-            ("Aid lost", G, LOSS),
-            ("Budget can absorb", F["capacity"], BACKFILL),
-            ("Replaced here", F["replacement"], th.tint(BACKFILL, 0.55)),
-            ("Typical yearly growth", typical, th.OTHER))]
-    biggest = max(b[1] for b in bars)
-    if biggest > 0 and G < TINY_GAP_SHARE * biggest:       # bars can't be compared: show the four values instead
-        tips = ["Gross aid lost per year", "Replacement capacity: what a strong budget year could add for these programs",
-                "What the government replaces in this scenario", "One year of typical growth in government health "
-                "spending"]
-        st.markdown(th.pills_html([(lbl, money(v), tip) for (lbl, v, _), tip in zip(bars, tips)]),
-                    unsafe_allow_html=True)
+    none_selected = avg["filled"] <= 0.5 and fiscal_t[0] in ("none", "historical")
+    sub = lambda k: (f"2030: {money(y30[k])}" if show30 else "")
+    st.markdown(th.pills_html([
+        ("Gap Before Government Steps In", money(avg["gap"]),
+         "Aid lost per year (gross), average 2026-2030.", sub("gap")),
+        ("Filled by the Government", "0" if none_selected else money(avg["filled"]),
+         "Replacement under the chosen response plus any gradual budget increase, average per year 2026-2030.",
+         "No Government Replacement selected" if none_selected else sub("filled")),
+        ("Gap Left After Government Response", money(avg["left"]),
+         "Gap before the government steps in minus what it fills, average per year 2026-2030 (= Net Aid Lost).",
+         sub("left")),
+    ], large=True), unsafe_allow_html=True)
+    st.markdown(_esc(_fiscal_sentence(res, F, country_name, fiscal_t)))
+    if G <= 0:
         return
-    fig = go.Figure(go.Bar(y=[b[0] for b in bars][::-1], x=[b[1] for b in bars][::-1], orientation="h",
-                           marker=dict(color=[b[2] for b in bars][::-1]),
-                           text=[money(b[1]) for b in bars][::-1], textposition="outside", cliponaxis=False,
-                           textfont=dict(color=INK), hovertemplate="%{y}: %{text}<extra></extra>"))
-    _layout(fig, h=300, title=_title(th.title_sub("The Gap vs. the Budget", "US$ per year")),
-            xaxis=dict(range=[0, biggest * 1.25], nticks=4),   # values are printed on the bars; a few ticks suffice
-            margin=dict(l=10, r=80, t=50, b=10))
-    chart(fig, source="IHME government health spending and its real growth, 2001-2023; World Bank WDI (interest "
-                      "and revenue); model estimates.")
+    views = [("Average per Year, 2026-2030", avg)] + ([("2030", y30)] if show30 else [])
+    cap = float(F["capacity"] or 0.0)
+    gmax = max(v["gap"] for _, v in views)
+    on_scale = 0 < cap <= 4 * gmax                            # a capacity far beyond the gap would squash the bars
+    xmax = max(gmax, cap if on_scale else 0.0) * 1.22
+    fig = go.Figure()
+    names = [n for n, _ in views][::-1]
+    vals = [v for _, v in views][::-1]
+    fig.add_trace(go.Bar(y=names, x=[v["gap"] for v in vals], orientation="h", width=0.62, name="Gap",
+                         marker=dict(color=th.tint(LOSS, 0.18)), hoverinfo="skip", showlegend=False))
+    fig.add_trace(go.Bar(y=names, x=[v["filled"] for v in vals], base=[0] * len(vals), orientation="h", width=0.42,
+                         name="Filled by the government", marker=dict(color=th.BLUE),
+                         text=[money(v["filled"]) if v["filled"] > 0.02 * xmax else "" for v in vals],
+                         textposition="inside", insidetextanchor="middle", textfont=dict(color="white"),
+                         customdata=[money(v["filled"]) for v in vals],
+                         hovertemplate="%{y}: filled by the government %{customdata}<extra></extra>"))
+    fig.add_trace(go.Bar(y=names, x=[v["left"] for v in vals], base=[v["filled"] for v in vals], orientation="h",
+                         width=0.42, name="Gap left", marker=dict(color=LOSS),
+                         text=[money(v["left"]) if v["left"] > 0.02 * xmax else "" for v in vals],
+                         textposition="inside", insidetextanchor="middle", textfont=dict(color="white"),
+                         customdata=[money(v["left"]) for v in vals],
+                         hovertemplate="%{y}: gap left %{customdata}<extra></extra>"))
+    fig.add_trace(go.Scatter(y=names, x=[v["gap"] for v in vals], mode="text", showlegend=False, hoverinfo="skip",
+                             text=["  " + money(v["gap"]) + " gap" for v in vals], textposition="middle right",
+                             textfont=dict(color=INK), cliponaxis=False))
+    if on_scale:
+        fig.add_vline(x=cap, line=dict(color=INK, width=1.5, dash="dash"))
+        fig.add_annotation(x=cap, y=1.0, yref="paper", text=f"Backfill Capacity (Fiscal Space): {money(cap)}",
+                           showarrow=False, xanchor="left", yanchor="top", xshift=5, font=dict(size=11, color=INK),
+                           bgcolor=th.tint(th.SURFACE, 0.85))
+    fig.update_layout(barmode="overlay", bargap=0.35, legend=dict(orientation="h", y=-0.18, x=0))
+    _layout(fig, h=190 + 70 * len(views),
+            title=_title(th.title_sub("The Gap and the Government Response", "US$ per year")),
+            xaxis=dict(range=[0, xmax], nticks=4), yaxis=dict(type="category"), margin=dict(l=10, r=90, t=70, b=10))
+    note = (None if on_scale or cap <= 0 else
+            f"Backfill capacity (fiscal space), {money(cap)} a year, is off the scale of this chart.")
+    chart(fig, source="Model estimates; IHME government health spending and its real growth, 2001-2023; World Bank "
+                      "WDI (interest and revenue).", note=note)
 
 
 # --------------------------------------------------------------------------- #

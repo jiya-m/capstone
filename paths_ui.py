@@ -236,9 +236,10 @@ def outcome_panel(country_name, shape, response_phrase, res, base_committed, bre
     """Benchmark line, four pills, one sentence and the caption."""
     share, p90 = budget["share_pct"], budget["p90_rise_pp"]
     if share == share:
-        st.caption(f"{country_name} today: health is {share:.1f}% of government spending; fastest sustained rise in "
+        when = f"{budget.get('share_year')}" + (", estimated from IHME and IMF data" if budget.get("share_estimated") else "")
+        st.caption(f"{country_name}: health is {share:.1f}% of government spending ({when}); fastest sustained rise in "
                    f"its history: {p90:.1f} points a year (90th percentile of its 2001-2023 yearly changes)."
-                   if p90 == p90 else f"{country_name} today: health is {share:.1f}% of government spending.")
+                   if p90 == p90 else f"{country_name}: health is {share:.1f}% of government spending ({when}).")
     T, C = res["totals"], res["committed"]
     avoided = base_committed - C["deaths"]
     be = ("Not reachable by 15%" if break_even is None else "None needed" if break_even <= 1e-9
