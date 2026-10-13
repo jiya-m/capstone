@@ -4,7 +4,9 @@
 | section3_spending_mix_is_general_government | 46 | 16 | 30 |
 | section1_dah_equals_section2_dah_same_year | 630 | 624 | 6 |
 | aid_at_risk_is_per_year_not_5yr_total | 1744 | 1744 | 0 |
-| replaced_le_fiscal_capacity | 872 | 872 | 0 |
+| range_lo_le_central_le_hi | 1744 | 1744 | 0 |
+| percent_scale_sh_hiv_artc_zs | 1 | 1 | 0 |
+| percent_scale_sh_hiv_pmtc_zs | 1 | 1 | 0 |
 | percent_scale_sh_imm_idpt | 1 | 1 | 0 |
 | percent_scale_sh_mlr_nets_zs | 1 | 1 | 0 |
 | percent_scale_sh_mlr_tret_zs | 1 | 1 | 0 |
@@ -12,10 +14,10 @@
 | percent_scale_sh_xpd_ghed_ge_zs | 1 | 1 | 0 |
 | precomputed_csv_has_all_columns | 6 | 6 | 0 |
 | precomputed_csv_matches_fresh_run | 366 | 366 | 0 |
-| range_lo_le_central_le_hi | 1744 | 1744 | 0 |
-| section1_components_sum_to_total | 71 | 71 | 0 |
 | section1_2023_matches_raw_IHME_file | 71 | 71 | 0 |
-| percent_scale_sh_hiv_artc_zs | 1 | 1 | 0 |
+| replaced_le_fiscal_capacity | 872 | 872 | 0 |
+| coverage_in_0_1_and_after_le_before | 1744 | 1744 | 0 |
+| section1_components_sum_to_total | 71 | 71 | 0 |
 | section3_cofog_shares_sum_to_100 | 46 | 46 | 0 |
 | section3_revenue_items_sum_to_file_total | 71 | 71 | 0 |
 | section3_weo_spending_minus_revenue_equals_borrowing | 71 | 71 | 0 |
@@ -23,10 +25,10 @@
 | unit_costs_inside_parameter_range | 71 | 71 | 0 |
 | unspec_and_kappa_conserve_money | 1744 | 1744 | 0 |
 | year1_le_5year | 1744 | 1744 | 0 |
-| percent_scale_sh_hiv_pmtc_zs | 1 | 1 | 0 |
 | people_losing_le_people_covered | 1744 | 1744 | 0 |
-| coverage_in_0_1_and_after_le_before | 1744 | 1744 | 0 |
 | path_chart_sums_to_headline | 1744 | 1744 | 0 |
+| no_negative_people_or_coverage_drop | 8464 | 8464 | 0 |
+| fraction_scale_mal_itn_cov | 1 | 1 | 0 |
 | coverage_is_fraction_not_percent | 1744 | 1744 | 0 |
 | cut_formula_matches_documented_scenario | 1744 | 1744 | 0 |
 | dashboard_country_equals_all_countries_row | 28 | 28 | 0 |
@@ -35,7 +37,10 @@
 | displayed_nonnegative | 1744 | 1744 | 0 |
 | displayed_value_equals_central_run | 1744 | 1744 | 0 |
 | fiscal_gap_left_equals_headline_net_and_gap_equals_filled_plus_left | 8464 | 8464 | 0 |
+| fraction_scale_mal_cm_cov | 1 | 1 | 0 |
+| fraction_scale_mal_irs_cov | 1 | 1 | 0 |
 | gdp_constant2023_equals_nominal_in_2023 | 71 | 71 | 0 |
+| no_line_in_two_buckets | 1 | 1 | 0 |
 | headline_people_and_deaths_equal_table_totals | 8464 | 8464 | 0 |
 | health_share_in_0_100 | 71 | 71 | 0 |
 | hero_people_equals_table_people | 1744 | 1744 | 0 |
@@ -46,6 +51,4 @@
 | more_cut_never_fewer_deaths | 872 | 872 | 0 |
 | more_cut_never_less_net_loss | 872 | 872 | 0 |
 | net_le_gross_le_base_and_replaced_le_gross | 1744 | 1744 | 0 |
-| no_line_in_two_buckets | 1 | 1 | 0 |
-| no_negative_people_or_coverage_drop | 8464 | 8464 | 0 |
 | zero_cut_gives_zero | 872 | 872 | 0 |

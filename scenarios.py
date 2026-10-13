@@ -51,7 +51,7 @@ GF_CUT_DEFAULT = 20       # % fall in Global Fund pledges vs the previous replen
 # Fiscal settings the precomputed all-country files use:
 # (mode, theta, cap to fiscal space, allocation, ceiling) = No Government Replacement, pro-rata, 75th-percentile ceiling
 DEFAULT_FISCAL = ("none", 0.0, True, "pro_rata", "p75")
-DEFAULT_MORTALITY_TREND = True     # "Account for Already-Falling Death Rates" on
+DEFAULT_MORTALITY_TREND = True     # "Account for Already-Changing Death Rates" on
 ALL_COUNTRY_DRAWS = 400       # same as the single-country view, so a country's row matches its own page
 
 

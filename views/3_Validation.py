@@ -139,6 +139,38 @@ st.caption("In these lines, baseline donor aid ÷ cost per person is more than t
            "excess pays for things other than the service itself (systems, campaigns, newer products). People losing "
            "the service are then scaled by the share of donor money lost, instead of aid lost ÷ cost per person.")
 
+# --------------------------------------------------------------------------- #
+# Malaria inputs: Malaria Atlas Project 2025 vs the values used before (audit I-11)
+# --------------------------------------------------------------------------- #
+th.section_header("coronavirus", "Malaria Inputs: Malaria Atlas Project 2025 vs Previous Sources")
+_ci = I["ci"]
+_iso_model = [c for c in _ci.index if c in set(_ln.iso3)]
+_mc = _ci.loc[_iso_model]
+_d0 = _mc["malaria_deaths"].sum()
+_dy = pd.to_numeric(_mc["malaria_deaths_year"], errors="coerce").dropna().astype(int)
+st.markdown(th.pills_html([
+    ("Baseline Malaria Deaths, Dashboard Countries", f"{_d0:,.0f}", "",
+     f"WHO estimates, mostly {_dy.mode()[0]}; {len(_mc[_mc['malaria_deaths'] > 0])} countries with malaria deaths"),
+    ("WHO Global Malaria Deaths, 2024", f"{ms.WHO_MALARIA_DEATHS_2024:,}", "", "World Malaria Report 2025"),
+    ("Share Covered by the Dashboard", f"{_d0 / ms.WHO_MALARIA_DEATHS_2024:.0%}", "",
+     "the dashboard models a subset of countries"),
+], large=True), unsafe_allow_html=True)
+_cmp = ms.malaria_input_comparison(_mc, names)
+st.dataframe(_cmp.set_index("Country"), **ms.WIDE)
+st.caption(ms._esc(
+    "Treatment now = MAP effective treatment per 100 malaria cases, 2025; before = the latest household survey of "
+    "children with fever given antimalarials, used only where incidence was at least 50 per 1,000 at risk. Bednets "
+    "now = MAP ITN use, 2025, or a household survey from 2015 on; before = WHO/MAP modelled use or the latest survey "
+    "of any year. Cases now = MAP P. falciparum + P. vivax clinical cases, 2025; before = WHO World Malaria Report "
+    f"estimates. ⚑ = cases differ by more than 30% ({_cmp['Cases: Change'].str.contains('⚑').sum()} of {len(_cmp)} "
+    "countries). Source: Malaria Atlas Project (data.malariaatlas.org), downloaded 13 October 2026; WHO World "
+    "Malaria Report 2025."))
+
+th.section_header("event", "Data Years")
+st.table(ms.data_years_table(_ci, _iso_model))
+st.caption("Year = the most common year across the dashboard countries (range in brackets). Countries by source: "
+           "how many countries use each source; the rest use a fallback that is flagged in Methods.")
+
 th.section_header("compare_arrows", f"Three Ways to Estimate the Same Cut: {country_name}")
 st.caption(f"{ms.scenario_title(preset, opts)} · {ms._resp_label(fiscal_t)}" + ("" if trend else " · Death Rates Held Constant"))
 

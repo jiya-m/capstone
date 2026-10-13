@@ -18,6 +18,11 @@ Global Fund & Gavi Shortfalls (audit I-07): the preset's cuts are now user-set (
 entries keep the original 5eb6111 values, made with the old fixed cuts (Gavi 24%, Global Fund 28%), and the tests pass
 those cuts explicitly (baseline_opts), so the lock against the original model still holds.
 
+Malaria (audit I-06, I-11, I-27 malaria part): malaria coverage, cases and the death trend now come from the Malaria
+Atlas Project, and malaria treatment costs US$14 a case, so entries with malaria results were refreshed with the current
+model (later mechanisms off); outside the lives-first response only malaria lines, the totals and the malaria path were
+allowed to change, and that is checked:  python tests/make_baseline.py --malaria
+
 Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
 Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
     python tests/make_baseline.py --gains-only"""
@@ -105,10 +110,49 @@ def refresh_gains():
     print(f"refreshed {len(done)} entries with aid rises: {done}")
 
 
+def _close(a, b):
+    if a is None or b is None:
+        return a is None and b is None
+    return abs(a - b) <= 1e-6 * max(1.0, abs(a), abs(b))
+
+
+def refresh_malaria():
+    """I-06 / I-11 / I-27 (malaria): malaria coverage, cases and death trend now come from the Malaria Atlas Project,
+    bednets and spraying have separate coverages, and malaria treatment costs US$14 a case. Replace the entries whose
+    results changed, with the current model and the later mechanisms off. Outside the lives-first response, only
+    malaria lines (and the totals and malaria path that include them) may change; that is checked here. Under lives
+    first, malaria's deaths per dollar set the order in which the government refills lines, so other lines can move."""
+    I, P = hm.load_inputs(), hm.load_params()
+    P.loc[NEW_MECHANISMS, ["central", "low", "high"]] = 0.0
+    p = Path(__file__).parent / "baseline_sudden.json"
+    out = json.loads(p.read_text())
+    done, other = [], []
+    for key in list(out):
+        iso, preset, fk = key.split("|")
+        sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
+        new = snapshot(hm.run_country(iso, sc, hm.Fiscal(*FISCALS[fk]), I, P, n_draws=N_DRAWS))
+        old = out[key]
+        moved = [l for l, cols in old["lines"].items() if any(not _close(new["lines"][l][c], v) for c, v in cols.items())]
+        if not moved and all(_close(new["totals"][k], v) for k, v in old["totals"].items()):
+            continue
+        non_mal = [l for l in moved if not l.startswith("mal_")]
+        if non_mal and fk != "max_lives":
+            raise SystemExit(f"{key}: non-malaria lines changed outside lives first: {non_mal}")
+        if non_mal:
+            other.append(key)
+        out[key] = new
+        done.append(key)
+    p.write_text(json.dumps(out))
+    print(f"refreshed {len(done)} of {len(out)} entries; {len(other)} (lives first) also moved non-malaria lines: "
+          f"{other}")
+
+
 if __name__ == "__main__":
     if "--mou-only" in sys.argv:
         refresh_mou()
     elif "--gains-only" in sys.argv:
         refresh_gains()
+    elif "--malaria" in sys.argv:
+        refresh_malaria()
     else:
         main()

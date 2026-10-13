@@ -115,8 +115,15 @@ with tabs[0]:
     | Aid baseline the model cuts | average of 2021, 2022 and 2023 (smooths lumpy bednet campaigns and Gavi tranches) |
     | Model horizon | five years after the cut, 2026-2030 |
     | Fiscal-space growth rates | 2001-2023 |
-    | Mortality trends | 2010-2019 (before COVID-19) |
+    | Mortality trends | under-5 mortality 2010-2019 (before COVID-19); malaria: MAP *P. falciparum* cases 2015-2025 |
+    | Malaria coverage and cases | Malaria Atlas Project 2025 (treatment, bednets, spraying, cases) |
     """)
+    th.section_header("event", "Data Years")
+    md("""
+    The model applies each input's latest year to 2026-2030 without projecting it forward. The years differ by
+    input: aid is the 2021-2023 average (IHME's last recipient-level years), while coverage is from 2024-2025.
+    """)
+    st.table(ms.data_years_table(I["ci"], sorted(set(I["lines"].iso3))))
 
 # =========================================================================== #
 # DASHBOARD SECTIONS
@@ -359,12 +366,14 @@ with tabs[2]:
     | Drug-resistant TB | as above | $1,568 / $8,125 / $6,800 by income group (same study) |
     | Bednets | per person-year of net use | ${C['uc_itn']:.2f} (GiveWell: $4-6 per net, 1.8 people per net, ~2 years, ~63% used) |
     | Indoor spraying | per person-year protected | ${C['uc_irs']:.2f} (PMI Mali 2012-14, $6.08-7.40 in 2014 US$ x 1.287) |
-    | Malaria testing & treatment | per confirmed case treated | ${C['uc_mal_cm']:.2f} (*assumption*: ACT + tests + delivery) |
+    | Malaria testing & treatment | per case treated (diagnosis + treatment) | ${C['uc_mal_cm']:.0f} (range ${PRM.loc['uc_mal_cm', 'low']:.0f}-${PRM.loc['uc_mal_cm', 'high']:.0f}): White et al. 2011, *Malaria Journal* 10:337, median financial cost per uncomplicated case treated $5.84 + diagnosis $4.32 (2009 US$) x 1.42 (US CPI-U to 2023). ACT and RDT prices have fallen since, so current costs may be lower |
     | Routine immunization | full cost per child immunized (vaccines + delivery) | ${C['uc_imm']:.0f}: delivery $45.6 per infant (Lydon et al. 2014, 2016-20) + vaccines $41.3 (MSF The Right Shot 2015, low end), both in 2023 US$; range $38 (Brenzel 2015, Gavi-country plans) to $104 (MSF high end). Check: donor vaccine aid per immunized child has a median of $40, below the full cost, as expected when governments co-finance |
 
     **People in need and current coverage.** HIV and malaria figures are the current WHO / UNAIDS estimates from
     the WHO Global Health Observatory (people living with HIV, ART and PMTCT coverage: UNAIDS 2025 round; malaria
-    deaths, cases and population at risk: World Malaria Report, 2024). Where WHO publishes no estimate for a country
+    deaths and population at risk: World Malaria Report, 2024). Malaria coverage (treatment, bednets, spraying) and
+    cases are Malaria Atlas Project 2025 values (data.malariaatlas.org, downloaded 13 October 2026; built by
+    `malaria_inputs.py`). Where WHO publishes no estimate for a country
     the older derived value is kept and flagged in `country_inputs.csv` (column `<input>_source`); this applies to
     people living with HIV in Côte d'Ivoire, Guatemala, Iraq, Jordan and Nicaragua. The download and patch are done by
     `who_inputs.py`.
@@ -375,8 +384,9 @@ with tabs[2]:
     | PMTCT | Pregnant women living with HIV, 2025 = women receiving ARVs (GHO `HIV_0000000016`) ÷ PMTCT coverage (GHO `HIV_0000000020`, which the GHO catalogue names "number of pregnant women living with HIV" but which holds coverage in %); where coverage is top-coded at 100%, the larger of that and births x prevalence x 1.15 | PMTCT coverage, 2025 (UNAIDS/WHO) |
     | TB treatment | TB incidence, all forms, 2024 (WHO Global TB Report, via Gapminder) | TB treatment coverage, 2024, WDI `SH.TBS.DTEC.ZS` (WHO) |
     | Drug-resistant TB | 4% of TB incidence | 45% (*assumption*) |
-    | Bednets / spraying | Population at risk, 2024 = WHO estimated cases ÷ incidence per 1,000 at risk (GHO `MALARIA_EST_CASES`, `MALARIA_EST_INCIDENCE`) | Whole-population ITN use, 2024, modelled by WHO / Malaria Atlas Project (GHO `MALARIA_ITN_USE`, 31 African countries); elsewhere the latest household survey of children under 5 sleeping under a net (WDI `SH.MLR.NETS.ZS`); {C['mal_itn_default_use']:.0%} if neither exists |
-    | Malaria testing & treatment | Malaria cases, 2024 (WHO estimate, GHO `MALARIA_EST_CASES`) | Children with fever receiving antimalarials, latest household survey (WDI `SH.MLR.TRET.ZS`; WHO publishes no modelled series), used only where malaria incidence is at least {hm.MAL_CM_MIN_INCIDENCE} cases per 1,000 at risk; otherwise {C['mal_cm_default_cov']:.0%} (where malaria is rare, most fevers are not malaria, so the survey is near zero for that reason and does not measure coverage of malaria cases). Reported treatment courses ÷ estimated cases were checked but are not used: they exceed 100% in some countries (e.g. Kenya, Mozambique) and are far below survey values in others |
+    | Bednets | Population at risk, 2024 = WHO estimated cases ÷ incidence per 1,000 at risk (GHO `MALARIA_EST_CASES`, `MALARIA_EST_INCIDENCE`) | ITN use (share of people sleeping under a net), 2025, Malaria Atlas Project (31 African countries); elsewhere a household survey of children under 5 sleeping under a net (WDI `SH.MLR.NETS.ZS`) only if from 2015 or later; otherwise {C['mal_itn_default_use']:.0%} (*assumption*) |
+    | Indoor spraying | Population at risk (as above) | Household IRS coverage, 2025, Malaria Atlas Project (modelled for Africa only; 0 in every year elsewhere, read as no estimate). Without a MAP estimate, coverage = the people donor IRS money pays for ÷ population at risk, so a cut removes the spraying it bought. MAP counts households sprayed; the model applies that share to people at risk, at a cost per person protected |
+    | Malaria testing & treatment | Malaria cases needing treatment, 2025 = Malaria Atlas Project *P. falciparum* + *P. vivax* clinical cases (61 countries); elsewhere the WHO estimate (GHO `MALARIA_EST_CASES`) | Effective treatment per 100 malaria cases, 2025, Malaria Atlas Project: the share of cases that receive an effective antimalarial. How much that treatment reduces deaths is a separate step, E_c below (as in the Lives Saved Tool). Where MAP has no value: the latest fever-treatment survey (WDI `SH.MLR.TRET.ZS`) where malaria incidence is at least {hm.MAL_CM_MIN_INCIDENCE} per 1,000 at risk, else {C['mal_cm_default_cov']:.0%} (*assumption*); none of the dashboard's malaria countries needs this |
     | Routine immunization | Births = crude birth rate x population (WDI) | DTP3 coverage, WDI `SH.IMM.IDPT` |
 
     Where nobody is counted as in need (for example malaria treatment in Iraq), coverage cannot be calculated and the
@@ -421,10 +431,15 @@ with tabs[2]:
     st.latex(r"D_1=D_0\times\frac{1-E_v C_{v,1}}{1-E_v C_{v,0}}\times\frac{1-E_c C_{c,1}}{1-E_c C_{c,0}}")
     md(f"""
     - D₀ = all-age malaria deaths, 2024, as estimated in WHO's World Malaria Report (GHO `MALARIA_EST_DEATHS`). Its
-      trend is the country's 2010-2019 trend in the same WHO series.
+      trend is set from Malaria Atlas Project *P. falciparum* clinical cases (no MAP mortality series exists, and
+      *P. falciparum* causes nearly all malaria deaths): see *Already-falling death rates* below.
+    - Vector control is one intervention: C_v = 1 - (1 - bednet use) x (1 - spraying coverage). Bednet use and
+      spraying coverage each fall by their own people losing the service ÷ population at risk, and the
+      vector-control deaths are split between them by how much each one's fall lowers C_v.
     - E_v = {rng_txt('mal_vc_eff')}, the reduction in deaths at full vector-control coverage (Eisele et al. 2010);
       E_c = {rng_txt('mal_cm_eff')} for case management (Thwing et al. 2011).
-    - C₀ = current coverage; C₁ = C₀ - people losing the service ÷ people in need.
+    - C₀ = current coverage; C₁ = C₀ - people losing the service ÷ people in need. C_c is the share of malaria
+      cases that receive an effective drug (MAP), so E_c applies to treated cases only.
     - Because the formula is multiplicative, each extra point of coverage lost costs slightly more lives.
     - **Rebound.** Once bednets and spraying stop, malaria transmission recovers over several seasons rather than
       returning at once to its old level (Cohen et al. 2012, *Malaria Journal* 11:122, review of 75 resurgence
@@ -456,11 +471,17 @@ with tabs[2]:
     row above for a sudden cut. Deaths of cohorts missed in 2027-2030 that fall in 2031-2034 are counted in *Further
     deaths, 2031-2035* (under-5 mortality keeps its trend), so a vaccine cut late in the period is not undercounted.
 
-    **Already-falling death rates** (on by default). Baseline malaria deaths and under-5 mortality were falling
-    before any cut, so in year y they are multiplied by (1 + trend)^(y-1). Each country's trend is its average annual
-    change over 2010-2019 from a log-linear fit (at least 5 years of data), clipped to -8% to +2% a year; countries
-    without data get the median; if still missing, -0.9% a year (Cavalcanti et al. 2025, Lancet, appendix 10.2). TB
-    and HIV effects are per patient and unchanged.
+    **Already-changing death rates** (on by default). Baseline deaths are multiplied in year y by (1 + trend)^(y-1).
+    - **Under-5 mortality** (vaccines): the country's average annual change over 2010-2019 from a log-linear fit (at
+      least 5 years of data), clipped to -8% to +2% a year; countries without data get the median; if still missing,
+      -0.9% a year (Cavalcanti et al. 2025, Lancet, appendix 10.2). Under-5 mortality kept falling after 2019.
+    - **Malaria**: malaria has not kept falling. WHO's World Malaria Report 2025: "Between 2015 and 2024, malaria case
+      incidence increased by 8.5%; in 2024 there were an estimated 610,000 malaria deaths, 12,000 more than in 2023,
+      with Ethiopia among the largest increases." So each country's trend is the annual change in Malaria Atlas
+      Project *P. falciparum* clinical cases over 2015-2025 (log-linear fit, at least 5 years), clipped to ±5% a
+      year; 0 where MAP has no data. 19 of the 46 malaria countries reach the clip (10 at +5%, including Ethiopia,
+      Madagascar and Zambia; 9 at -5%, including India and Bangladesh).
+    - TB and HIV effects are per patient and unchanged.
 
     **New HIV infections.** HIV prevention turns money into infections averted, and people off ART transmit HIV
     (see *Funding Paths*). Deaths from these adult infections are counted in the year they happen, up to 2035. Without
@@ -584,6 +605,8 @@ with tabs[3]:
     | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules (nominal US$, as written in the MOU) | America First MOUs scenario |
     | KFF Tracker: America First MOU Bilateral Global Health Agreements | KFF, data as of 8 October 2026 | Countries with a signed MOU (36), agreement date, US funding | Header MOU status; which countries can run America First MOUs |
     | Gavi financial data | Gavi, FY2021-25 | Disbursements | Cost per child immunized |
+    | Malaria Atlas Project national unit data | MAP (data.malariaatlas.org), downloaded 13 October 2026 | Effective treatment per 100 cases; ITN use; household IRS coverage; *P. falciparum* and *P. vivax* clinical cases (2000-2025) | Malaria coverage and cases (2025); malaria death trend (*P. falciparum* cases 2015-2025) |
+    | World Malaria Report 2025 | WHO | 610,000 malaria deaths in 2024; case incidence trend 2015-2024 | Validation page; malaria trend rationale |
 
     Section 1 uses IHME's health spending database and Section 2 its DAH database; aid totals agree within 2% for 624 of
     630 country-years, with small differences in a few small countries.
@@ -601,8 +624,8 @@ with tabs[3]:
     | `SH.HIV.PMTC.ZS` | PMTCT coverage (%) | Fallback for PMTCT coverage |
     | `SH.TBS.DTEC.ZS` | TB treatment coverage (%) | TB coverage |
     | `SH.MLR.INCD.P3` | Malaria incidence per 1,000 at risk | Whether fever-treatment surveys measure malaria treatment; fallback for malaria cases |
-    | `SH.MLR.NETS.ZS` | Children under 5 sleeping under nets (%) | Vector-control coverage where WHO has no modelled ITN use |
-    | `SH.MLR.TRET.ZS` | Children with fever receiving antimalarials (%) | Malaria treatment coverage |
+    | `SH.MLR.NETS.ZS` | Children under 5 sleeping under nets (%) | Bednet use where MAP has no estimate, only if surveyed in 2015 or later |
+    | `SH.MLR.TRET.ZS` | Children with fever receiving antimalarials (%) | Malaria treatment coverage only where MAP has no estimate |
     | `SH.IMM.IDPT` | DTP3 immunization (%) | Immunization coverage |
     | `SH.DYN.MORT` | Under-5 mortality per 1,000 | Vaccine effect scaling; trend |
     | `SH.DTH.MORT` | Under-5 deaths | Poisson regression (Validation) |
@@ -650,8 +673,8 @@ with tabs[4]:
     Fixed structural assumptions (not in the parameter table):
 
     - Drug-resistant TB is 4% of TB incidence, with 45% treatment coverage.
-    - Malaria population at risk is 95% of the population in sub-Saharan Africa and 35% elsewhere; under-5s are 76%
-      of malaria deaths in sub-Saharan Africa and 40% elsewhere.
+    - Malaria population at risk is 95% of the population in sub-Saharan Africa and 35% elsewhere where WHO publishes
+      no estimate; under-5s are 76% of malaria deaths in sub-Saharan Africa and 40% elsewhere.
     - HIV prevalence among pregnant women is 15% above the all-adult rate.
     - A cut is sustained for all five years, and no other funder steps in except the government response chosen.
     - The 2021-2023 average is the "before" level for every country.
@@ -668,8 +691,9 @@ with tabs[4]:
     - **No re-allocation by other donors** beyond the government response.
     - **Post-2023 aid is not observed by recipient.** IHME's 2024-2025 estimates have no country split, so the model's
       baseline is 2021-2023.
-    - **Survey data can be old.** Malaria coverage comes from household surveys; where none exist, defaults are used
-      and flagged.
+    - **Malaria coverage is modelled.** Treatment, bednet and spraying coverage are Malaria Atlas Project 2025
+      estimates (MAP's 2025 values repeat 2024 for treatment and bednets). Outside MAP's bednet countries, surveys
+      from 2015 on or a default are used and flagged with the source and year next to each value.
     - **Program-area tags are partial** (most TB aid is untagged), so unspecified money is spread over the known mix.
     - **The regressions are associations, not causes.** Aid goes where deaths are high, which can hide or reverse a
       protective effect (see the Validation page).

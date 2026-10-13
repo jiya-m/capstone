@@ -74,8 +74,9 @@ eff_l and nonserv_b). net_l = eff_l - replaced_l. **Net loss** (headline) = G - 
 | hiv_pmtct | `hiv_pos_pregnancies` | `sh_hiv_pmtc_zs`, or ART coverage if missing |
 | tb_ds | `all_forms_of_tb_incidence_estimated` | `sh_tbs_dtec_zs` |
 | tb_dr | 0.04 x TB incidence | 0.45 |
-| mal_itn, mal_irs | `malaria_pop_at_risk` | `sh_mlr_nets_zs`; if missing, `mal_itn_default_use` |
-| mal_cm | `malaria_cases` | `sh_mlr_tret_zs`, but only if `sh_mlr_incd_p3` >= 50; otherwise (or if missing) `mal_cm_default_cov` |
+| mal_itn | `malaria_pop_at_risk` | `mal_itn_cov` (MAP ITN use 2025, or a survey from 2015 on); if missing, `mal_itn_default_use` |
+| mal_irs | `malaria_pop_at_risk` | `mal_irs_cov` (MAP household IRS coverage 2025, Africa); if missing, eff_base_irs / cost_irs / par (clipped to 1) |
+| mal_cm | `malaria_cases` (MAP Pf + Pv clinical cases 2025 where MAP has them) | `mal_cm_cov` (MAP effective treatment 2025); if missing, `mal_cm_default_cov` |
 | imm | `births` | `sh_imm_idpt` |
 | hiv_prev, hiv_ovc | none | none |
 
@@ -95,8 +96,7 @@ sc = (max(gdp, 200) / 1000) ^ uc_scale_elast. CPI factors to 2023: 2018 -> x 304
 - else if eff_base_l / cost > covered (donor money buys more than everyone covered): raw = covered x net_l / eff_base_l;
 - else raw = net_l / cost.
 units = raw x (1 - continuity). If need and coverage exist, clip units to [-(1 - coverage) x need, coverage x need].
-**Bednets and spraying share one pool**: if itn + irs units exceed (bednet use x population at risk), scale both down
-proportionally to that limit.
+Bednets and spraying each have their own coverage, so each is clipped to its own coverage x par (no shared pool).
 **Coverage after** = coverage now - units / need (shown as coverage before -> after and the drop in percentage points).
 For a sudden cut the units are the same in every year.
 
@@ -122,12 +122,15 @@ malaria treatment 1, 1, 1, 1, 1.
   0.05: deaths in year t = sum over s <= t of units_s x weight_(t-s) x level_t. (For a sudden cut this equals units x
   level_t x 0.4, 0.75, 0.95, 1, 1.)
 - **Malaria** (Lives Saved Tool form), D0 = `malaria_deaths` (none if missing or 0), par = population at risk,
-  cases = `malaria_cases`, Ev = mal_vc_eff, Ec = mal_cm_eff, cv0 = bednet use, cc0 = malaria treatment coverage.
-  cv1 = clip(cv0 - (itn + irs units) / par, 0, 1); cc1 = clip(cc0 - cm units / cases, 0, 1).
+  cases = `malaria_cases`, Ev = mal_vc_eff, Ec = mal_cm_eff, n0 = bednet use, r0 = spraying coverage,
+  cc0 = malaria treatment coverage. n1 = clip(n0 - itn units / par, 0, 1); r1 = clip(r0 - irs units / par, 0, 1);
+  vc(n, r) = 1 - (1 - n)(1 - r); cv0 = vc(n0, r0), cv1 = vc(n1, r1); cc1 = clip(cc0 - cm units / cases, 0, 1).
   rv = (1 - Ev cv1)/(1 - Ev cv0); rc = (1 - Ec cc1)/(1 - Ec cc0); total = D0 (rv rc - 1); dv = D0 (rv - 1);
   dc = D0 (rc - 1). Vector share = total x |dv| / (|dv| + |dc|), treatment share = total x |dc| / (|dv| + |dc|).
-  The vector share splits between itn and irs by their units (half each if both are 0).
-  Year t: each part x ramp_t x (1 + `trend_malaria_deaths`)^(t-1) (trend -0.009 if missing), and bednets and spraying
+  The vector share splits between itn and irs in proportion to cv0 - vc(n1, r0) and cv0 - vc(n0, r1) (half each if
+  both are 0).
+  Year t: each part x ramp_t x (1 + `trend_malaria_deaths`)^(t-1) (MAP P. falciparum cases 2015-2025, clipped to
+  +/-5%; 0 without MAP data), and bednets and spraying
   also x (1 + mal_resurgence)^(t-1).
 - **HIV treatment** hazard by years off ART (1..5) = art_hazard_mult x (0.012, 0.028, 0.038, 0.045, 0.05).
   A sudden cut is one group of size U (the units) off ART from 2026: deaths_t = U x hazard_t. Infections per year from

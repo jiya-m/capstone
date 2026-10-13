@@ -38,7 +38,6 @@ GHO = {
     "MALARIA_EST_INCIDENCE": "estimated malaria incidence per 1,000 population at risk (World Malaria Report)",
     "MALARIA_ITN_USE": "population in malaria-endemic areas who slept under an ITN the previous night (%), modelled",
 }
-TREND_YEARS, TREND_CLIP = (2010, 2019), (-0.08, 0.02)    # same window and clip as prepare_model.py
 
 
 def download():
@@ -61,16 +60,6 @@ def series(code: str) -> pd.DataFrame:
 def latest(code: str, index) -> tuple[pd.Series, pd.Series]:
     d = series(code).sort_values("year").groupby("iso3").tail(1).set_index("iso3")
     return d["value"].reindex(index), d["year"].reindex(index)
-
-
-def annual_trend(d: pd.DataFrame, index) -> pd.Series:
-    """Average annual % change over TREND_YEARS from a log-linear fit (at least 5 positive years), clipped; countries
-    without usable data get the median (as prepare_model.annual_trend)."""
-    d = d[d.year.between(*TREND_YEARS) & (d.value > 0)]
-    out = {iso: float(np.expm1(np.polyfit(g["year"], np.log(g["value"]), 1)[0]))
-           for iso, g in d.groupby("iso3") if len(g) >= 5}
-    t = pd.Series(out, dtype=float).reindex(index).clip(*TREND_CLIP)
-    return t.fillna(t.median())
 
 
 def _put(ci, col, value, year, source, fallback_source):
@@ -118,9 +107,9 @@ def apply(ci: pd.DataFrame) -> pd.DataFrame:
     itn, yi = latest("MALARIA_ITN_USE", idx)
     _put(ci, "sh_mlr_nets_zs", itn, yi, "WHO/Malaria Atlas Project modelled ITN use, whole population",
          "latest household survey: children under 5 sleeping under an ITN (World Bank WDI)")
-    tr = series("MALARIA_EST_DEATHS")
-    ci["trend_malaria_deaths"] = annual_trend(tr[tr.iso3.isin(idx)], idx)
-    return ci
+    # malaria coverage, cases and the baseline death trend come from the Malaria Atlas Project (audit I-06 / I-11)
+    import malaria_inputs
+    return malaria_inputs.apply(ci)
 
 
 def main():

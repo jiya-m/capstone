@@ -164,18 +164,21 @@ def need_cov(iso):
     pm = pct(g(iso, "sh_hiv_pmtc_zs"))
     tbi = g(iso, "all_forms_of_tb_incidence_estimated")
     par = g(iso, "malaria_pop_at_risk")
-    nets = pct(g(iso, "sh_mlr_nets_zs"))
+    # METHOD.md (I-11): MAP 2025 coverage columns built by malaria_inputs.py; defaults where missing. Spraying without a
+    # MAP estimate is None here and set from donor IRS money in the run (people it pays for / people at risk).
+    nets = g(iso, "mal_itn_cov")
     if nets is None:
         nets = P["mal_itn_default_use"]
-    incd = g(iso, "sh_mlr_incd_p3")
-    tret = pct(g(iso, "sh_mlr_tret_zs"))
-    cm = tret if (incd is not None and incd >= 50 and tret is not None) else P["mal_cm_default_cov"]
+    irs = g(iso, "mal_irs_cov")
+    cm = g(iso, "mal_cm_cov")
+    if cm is None:
+        cm = P["mal_cm_default_cov"]
     return {
         "hiv_art": (plhiv, art),
         "hiv_pmtct": (g(iso, "hiv_pos_pregnancies"), pm if pm is not None else art),
         "tb_ds": (tbi, pct(g(iso, "sh_tbs_dtec_zs"))),
         "tb_dr": (None if tbi is None else 0.04 * tbi, 0.45),
-        "mal_itn": (par, nets), "mal_irs": (par, nets),
+        "mal_itn": (par, nets), "mal_irs": (par, irs),
         "mal_cm": (g(iso, "malaria_cases"), cm),
         "imm": (g(iso, "births"), pct(g(iso, "sh_imm_idpt"))),
         "hiv_prev": (None, None), "hiv_ovc": (None, None),
@@ -207,16 +210,21 @@ def imm_levels(iso, n=8):
     return lv  # index 0 = 2026
 
 
-def malaria_split(iso, itn, irs, cm):
-    """Returns (vector_total, treatment_total, itn_share_of_vector) annual base deaths, or zeros."""
+def malaria_split(iso, itn, irs, cm, irs0=None):
+    """Returns (vector_total, treatment_total, itn_share_of_vector) annual base deaths, or zeros. Vector-control
+    coverage = 1 - (1 - ITN use)(1 - IRS coverage); each falls by its own units lost / people at risk."""
     D0 = g(iso, "malaria_deaths")
     if not D0:
         return 0.0, 0.0, 0.5
     nc = need_cov(iso)
-    par, cv0 = nc["mal_itn"]
+    par, n0 = nc["mal_itn"]
+    r0 = nc["mal_irs"][1] if nc["mal_irs"][1] is not None else (irs0 or 0.0)
     cases, cc0 = nc["mal_cm"]
     Ev, Ec = P["mal_vc_eff"], P["mal_cm_eff"]
-    cv1 = float(np.clip(cv0 - (itn + irs) / par, 0, 1)) if par else cv0
+    n1 = float(np.clip(n0 - itn / par, 0, 1)) if par else n0
+    r1 = float(np.clip(r0 - irs / par, 0, 1)) if par else r0
+    vc = lambda a, b: 1 - (1 - a) * (1 - b)  # noqa: E731
+    cv0, cv1 = vc(n0, r0), vc(n1, r1)
     cc1 = float(np.clip(cc0 - cm / cases, 0, 1)) if cases else cc0
     rv = (1 - Ev * cv1) / (1 - Ev * cv0)
     rc = (1 - Ec * cc1) / (1 - Ec * cc0)
@@ -226,7 +234,8 @@ def malaria_split(iso, itn, irs, cm):
     if den == 0:
         return 0.0, 0.0, 0.5
     vec, trt = total * abs(dv) / den, total * abs(dc) / den
-    s = 0.5 if (itn + irs) == 0 else itn / (itn + irs)
+    d_itn, d_irs = cv0 - vc(n1, r0), cv0 - vc(n0, r1)
+    s = 0.5 if (d_itn + d_irs) <= 0 else d_itn / (d_itn + d_irs)
     return vec, trt, s
 
 
@@ -284,6 +293,11 @@ def run(iso, scen, resp_share):
     nc = need_cov(iso)
     cont = P["continuity"]
     units = {}
+    par0 = nc["mal_irs"][0]
+    irs_implied = None
+    if nc["mal_irs"][1] is None and par0:                  # no MAP spraying estimate: what donor IRS money pays for
+        irs_implied = min(eff_base["mal_irs"] / cost["mal_irs"] / par0, 1.0)
+        nc["mal_irs"] = (par0, irs_implied)
     for l in DIRECT:
         need, cov = nc[l]
         covered = None if (need is None or cov is None) else cov * need
@@ -297,14 +311,7 @@ def run(iso, scen, resp_share):
         if covered is not None:
             u = float(np.clip(u, -(1 - cov) * need, cov * need))
         units[l] = u
-    par, cv0 = nc["mal_itn"]
-    if par is not None:
-        lim = cv0 * par
-        tot = units["mal_itn"] + units["mal_irs"]
-        if tot > lim and tot > 0:
-            f = lim / tot
-            units["mal_itn"] *= f
-            units["mal_irs"] *= f
+    # bednets and spraying are each capped at their own people covered (no shared pool since I-11)
 
     # ---- lives
     deaths = {l: [0.0] * 5 for l in DIRECT}
@@ -341,7 +348,7 @@ def run(iso, scen, resp_share):
             after["imm"] += dt
 
     # Malaria
-    vec, trt, s_itn = malaria_split(iso, units["mal_itn"], units["mal_irs"], units["mal_cm"])
+    vec, trt, s_itn = malaria_split(iso, units["mal_itn"], units["mal_irs"], units["mal_cm"], irs_implied)
     mtr = mal_trend(iso)
     for t in range(5):
         tf = (1 + mtr) ** t
@@ -407,7 +414,7 @@ def run(iso, scen, resp_share):
         elif l == "imm":
             dth = sum(lv[t] * w for t, w in enumerate([0.4, 0.75, 0.95, 1, 1])) * people
         else:
-            v, _, _ = malaria_split(iso, 1e6 / cost[l], 0.0, 0.0)
+            v, _, _ = malaria_split(iso, 1e6 / cost[l], 0.0, 0.0, irs_implied)
             dth = sum(v * RAMP["mal_itn"][t] * (1 + mtr) ** t for t in range(5)) * (1 - cont)
         out(f"card_{b}", "people", people)
         out(f"card_{b}", "cov_drop_pp", drop)

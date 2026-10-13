@@ -454,12 +454,13 @@ def _controls(iso3, country_name, I) -> dict:
                                          "(usually TB treatment, vaccines, ART) before anything else.")]
             cap = st.checkbox("Cap Replacement at Fiscal Space", value=True, key="m_cap",
                               disabled=(mode in ("none", "max")))
-            trend = st.toggle("Account for Already-Falling Death Rates", key="m_trend",
-                              help="Baseline malaria deaths and under-5 mortality keep falling at each country's "
-                                   "2010-2019 rate during the five years, so the same lost service costs fewer lives in "
-                                   "later years. Where a country has no usable trend, -0.9% a year is used (Cavalcanti "
-                                   "et al. 2025, Lancet, appendix 10.2). TB and HIV treatment effects are per patient "
-                                   "and unchanged.")
+            trend = st.toggle("Account for Already-Changing Death Rates", key="m_trend",
+                              help="Under-5 mortality keeps falling at each country's 2010-2019 rate (-0.9% a year "
+                                   "where there is no usable trend; Cavalcanti et al. 2025, Lancet, appendix 10.2). "
+                                   "Baseline malaria deaths follow the country's 2015-2025 trend in P. falciparum "
+                                   "cases (Malaria Atlas Project), within ±5% a year: rising in many countries, as WHO's "
+                                   "World Malaria Report 2025 finds. TB and HIV treatment effects are per patient and "
+                                   "unchanged.")
             st.divider()
             cmp = None
             if st.toggle("Compare with a Second Scenario", value=False, key="m_compare"):
@@ -803,8 +804,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                     "monitoring) assumed not to cut services. With it, the totals match Aid at Risk and Net Aid Lost "
                     "Services above. The deaths range is for the total, so it is narrower than adding the rows' ranges."))
     if cov_fig is not None:
-        chart(cov_fig, source="Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), WHO/Malaria Atlas "
-                              "Project 2024 or latest survey (bednets), latest survey (malaria treatment), WUENIC (DTP3).")
+        chart(cov_fig, source="Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), Malaria Atlas "
+                              "Project 2025 (malaria treatment, bednets, spraying; source shown on each bar), WUENIC "
+                              "(DTP3).")
 
     # ------------------------------ dose response + path ------------------------------ #
     st.subheader("How the Damage Scales",
@@ -949,7 +951,7 @@ def _comparison(iso3, country_name, ctl, res_a, items_a):
 
 CARD_FOOT_TIP = ("Total aid lost over 5 years ($5M) divided by extra deaths over the same 5 years; this equals $1M "
                  "divided by the average extra deaths per year.")
-CARD_SERVICE = {"HIV": "HIV Treatment", "TB": "TB Treatment", "Malaria": "Bednets & Spraying",
+CARD_SERVICE = {"HIV": "HIV Treatment", "TB": "TB Treatment", "Malaria": "Bednets",
                 "Immunization": "Routine Immunization"}
 NO_DEATHS_REASON = {"Malaria": " (very low transmission)"}
 
@@ -1084,34 +1086,23 @@ LINE_SHORT = {"hiv_art": ("HIV Treatment", "ART, testing, care"),
               "hiv_ovc": ("Orphans & Vulnerable Children", "support"),
               "tb_ds": ("TB Treatment", "case finding & treatment"),
               "tb_dr": ("Drug-Resistant TB", "second-line treatment"),
-              "mal_vec": ("Bednets & Spraying", "nets and indoor residual spraying"),
-              "mal_itn": ("Bednets", "bednets & other vector control"),
+              "mal_itn": ("Bednets", "insecticide-treated nets & other vector control"),
               "mal_irs": ("Indoor Spraying", "indoor residual spraying"),
               "mal_cm": ("Malaria Treatment", "testing & treatment"),
               "imm": ("Routine Immunization", "vaccines + delivery")}
 
 
 def _service_rows(show: pd.DataFrame) -> pd.DataFrame:
-    """Lines as shown to readers: bednets and indoor spraying merged (same population at risk, so their coverage drops
-    add up; ranges are added, which slightly widens them), and support for orphans and vulnerable children dropped
-    (it has no modelled effect on deaths). Adds the short name, the cost text and whether coverage can be shown
-    (it can't when nobody is in need, e.g. malaria treatment in Iraq: the drop would be 0 / 0)."""
+    """Lines as shown to readers: support for orphans and vulnerable children dropped (it has no modelled effect on
+    deaths). Bednets and indoor spraying are separate rows, each with its own coverage (MAP ITN use and MAP household
+    IRS coverage). Adds the short name, the cost text, the coverage source and whether coverage can be shown (it can't
+    when nobody is in need, e.g. malaria treatment in Iraq: the drop would be 0 / 0)."""
     d = show[show["line"] != "hiv_ovc"].copy()
     d["cost_big"] = d["unit_cost"].map(money)
     d["cost_unit"] = [f"per {hm.UNIT_SINGULAR[r.line]}" for r in d.itertuples()]
-    if {"mal_itn", "mal_irs"} <= set(d["line"]):
-        itn, irs = d[d["line"] == "mal_itn"].iloc[0], d[d["line"] == "mal_irs"].iloc[0]
-        row = itn.copy()
-        for c in SUM_COLS:
-            row[c] = np.nansum([itn[c], irs[c]])
-        row["line"], row["label"] = "mal_vec", "Bednets & spraying"
-        row["capped"] = bool(itn["capped"] or irs["capped"])
-        row["cost_big"] = f"{money(itn['unit_cost'])} / {money(irs['unit_cost'])}"
-        row["cost_unit"] = "per person-year"
-        d = d[~d["line"].isin(["mal_itn", "mal_irs"])]
-        d = pd.concat([d, row.to_frame().T]).sort_index()
-        for c in SUM_COLS + ["need", "cov0", "unit_cost"]:
-            d[c] = pd.to_numeric(d[c])
+    if "cov_source" not in d:
+        d["cov_source"] = ""
+    d["cov_source"] = d["cov_source"].fillna("")
     d["name"] = d["line"].map(lambda l: LINE_SHORT.get(l, (l, ""))[0])
     d["detail"] = d["line"].map(lambda l: LINE_SHORT.get(l, ("", ""))[1])
     d["cov_ok"] = (d["need"] > 0) & d["cov0"].notna() & np.isfinite(d["cov_drop_pp"].astype(float))
@@ -1164,7 +1155,8 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
         service = (f"<td class='svc' style='border-left:3px solid {col}'><span class='dot' style='background:{col}'>"
                    f"</span><b>{e(r.name)}</b><br>{grey(e(r.detail))}</td>")
         if r.cov_ok:
-            cov = f"{cov_pair(r.cov0, r.after)}<br><span class='drop'>{_pts(r.drop)}</span>"
+            src = f"<br>{grey(e('(' + r.cov_source + ')'))}" if r.cov_source else ""
+            cov = f"{cov_pair(r.cov0, r.after)}{src}<br><span class='drop'>{_pts(r.drop)}</span>"
         elif r.line == "hiv_prev":
             cov = "<span class='nm'>No Single<br>Target Group</span>"
         else:
@@ -1225,8 +1217,8 @@ def _coverage_fig(rows: pd.DataFrame):
         return None
     d = d.sort_values("drop")                      # plotly draws the first row at the bottom
     # the row label carries the coverage before -> after, so the bar end only needs the drop (fits on a phone)
-    labels = [f"<b>{n}</b><br><span style='color:{MUTED}'>{cov_pair(c0, a)}</span>"
-              for n, c0, a in zip(d["name"], d["cov0"], d["after"])]
+    labels = [f"<b>{n}</b><br><span style='color:{MUTED}'>{cov_pair(c0, a)}{f' ({src})' if src else ''}</span>"
+              for n, c0, a, src in zip(d["name"], d["cov0"], d["after"], d["cov_source"])]
     text = [f"  {_pts(v)}" for v in d["drop"]]
     xmax = float(d["drop"].max())
     fig = go.Figure(go.Bar(y=labels, x=_visible(list(d["drop"]), xmax * 1.35), orientation="h",
@@ -1438,6 +1430,95 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_
             f"Backfill capacity (fiscal space), {money(cap)} a year, is off the scale of this chart.")
     chart(fig, source="Model estimates; IHME government health spending and its real growth, 2001-2023; World Bank "
                       "WDI (interest and revenue).", note=note)
+
+
+# --------------------------------------------------------------------------- #
+# Data years (audit I-17) and the malaria input checks (I-11), shared by the Methods and Validation pages
+# --------------------------------------------------------------------------- #
+WHO_MALARIA_DEATHS_2024 = 610_000      # WHO World Malaria Report 2025: estimated malaria deaths worldwide in 2024
+DATA_YEARS = [   # (input, column holding each country's year or None, fixed years, source, column holding the source)
+    ("Aid baseline (what a scenario cuts)", None, "2021-2023 average", "IHME DAH database", None),
+    ("Government health spending", None, "2023", "IHME health spending database", None),
+    ("Health share of government spending", "sh_xpd_ghed_ge_zs_year", None, "World Bank WDI (WHO GHED)", None),
+    ("People living with HIV", "plhiv_year", None, "UNAIDS / WHO", "plhiv_source"),
+    ("ART coverage", "sh_hiv_artc_zs_year", None, "UNAIDS / WHO", "sh_hiv_artc_zs_source"),
+    ("PMTCT coverage", "sh_hiv_pmtc_zs_year", None, "UNAIDS / WHO", "sh_hiv_pmtc_zs_source"),
+    ("TB incidence", "all_forms_of_tb_incidence_estimated_year", None, "WHO Global TB Report (via Gapminder)", None),
+    ("TB treatment coverage", "sh_tbs_dtec_zs_year", None, "WHO (World Bank WDI)", None),
+    ("Malaria deaths (baseline)", "malaria_deaths_year", None, "WHO World Malaria Report", "malaria_deaths_source"),
+    ("Malaria population at risk", "malaria_pop_at_risk_year", None, "WHO World Malaria Report",
+     "malaria_pop_at_risk_source"),
+    ("Malaria cases needing treatment", "malaria_cases_year", None, "MAP P. falciparum + P. vivax clinical cases",
+     "malaria_cases_source"),
+    ("Malaria treatment coverage", "mal_cm_cov_year", None, "MAP effective treatment (per 100 cases)",
+     "mal_cm_cov_source"),
+    ("Bednet use", "mal_itn_cov_year", None, "MAP ITN use", "mal_itn_cov_source"),
+    ("Indoor spraying coverage", "mal_irs_cov_year", None, "MAP household IRS coverage", "mal_irs_cov_source"),
+    ("Malaria death trend", None, "2015-2025", "MAP P. falciparum clinical cases (fitted trend, ±5% a year)", None),
+    ("DTP3 coverage", "sh_imm_idpt_year", None, "WHO / UNICEF (World Bank WDI)", None),
+    ("Under-5 mortality", "sh_dyn_mort_year", None, "UN IGME (World Bank WDI)", None),
+    ("Under-5 mortality trend", None, "2010-2019", "UN IGME (World Bank WDI)", None),
+    ("Population and births", "sp_pop_totl_year", None, "World Bank WDI", None),
+]
+
+
+def _source_kind(s) -> str:
+    s = str(s) if isinstance(s, str) else ""
+    for key, kind in (("MAP", "MAP"), ("WHO", "WHO"), ("UNAIDS", "UNAIDS"), ("survey", "survey"),
+                      ("World Bank", "World Bank"), ("default", "default"), ("no MAP", "no estimate"),
+                      ("derived", "derived"), ("assumption", "assumed")):
+        if s.startswith(key) or (key == "World Bank" and "World Bank" in s):
+            return kind
+    return "other" if s else "n/a"
+
+
+def data_years_table(ci: pd.DataFrame, isos) -> pd.DataFrame:
+    """One row per model input: years used (most common, with the range) and how many countries use each source."""
+    d = ci.loc[[c for c in isos if c in ci.index]]
+    rows = []
+    for name, ycol, fixed, src, scol in DATA_YEARS:
+        if fixed:
+            years = fixed
+        else:
+            y = pd.to_numeric(d.get(ycol, pd.Series(dtype=float)), errors="coerce").dropna().astype(int)
+            years = ("n/a" if y.empty else str(y.mode()[0]) if y.min() == y.max()
+                     else f"{y.mode()[0]} (range {y.min()}-{y.max()})")
+        if scol and scol in d:
+            k = d[scol].map(_source_kind).value_counts()
+            used = " · ".join(f"{n} {v}" for n, v in k.items())
+        else:
+            used = f"all {len(d)}"
+        rows.append({"Input": name, "Year": years, "Source": src, "Countries by source": used})
+    return pd.DataFrame(rows).set_index("Input")
+
+
+def malaria_input_comparison(ci: pd.DataFrame, names: dict) -> pd.DataFrame:
+    """Malaria countries (baseline deaths > 0): MAP 2025 vs the values the model used before (I-11)."""
+    d = ci[(ci["malaria_deaths"] > 0)].copy()
+    pct = lambda v: "n/a" if pd.isna(v) else f"{v:.0%}"  # noqa: E731
+    yr = lambda v: "" if pd.isna(v) else f" ({int(v)})"  # noqa: E731
+    P = _default_params()["central"]
+    dcm, ditn = float(P["mal_cm_default_cov"]), float(P["mal_itn_default_use"])
+    old_cases, new_cases = d["malaria_cases_prev"], d["malaria_cases"]
+    change = (new_cases / old_cases - 1).where(old_cases > 0)
+    # what the model used before: the fever-treatment survey only where incidence >= 50 per 1,000, else the default;
+    # bednets: the WHO/MAP modelled series or the latest survey (any year), else the default
+    tret_ok = d["sh_mlr_tret_zs"].notna() & (d["sh_mlr_incd_p3"] >= hm.MAL_CM_MIN_INCIDENCE)
+    out = pd.DataFrame({
+        "Country": [names.get(c, c) for c in d.index],
+        "Treatment: Before": [pct(v / 100) + yr(y) if ok else f"{dcm:.0%} (default)" for v, y, ok in
+                              zip(d["sh_mlr_tret_zs"], d["sh_mlr_tret_zs_year"], tret_ok)],
+        "Treatment: Now": [pct(dcm if pd.isna(v) else v) + f" ({hm.coverage_source(r, 'mal_cm')})"
+                           for v, (_, r) in zip(d["mal_cm_cov"], d.iterrows())],
+        "Bednets: Before": [f"{ditn:.0%} (default)" if pd.isna(v) else pct(v / 100) + yr(y) for v, y in
+                            zip(d["sh_mlr_nets_zs"], d["sh_mlr_nets_zs_year"])],
+        "Bednets: Now": [pct(ditn if pd.isna(v) else v) + f" ({hm.coverage_source(r, 'mal_itn')})"
+                         for v, (_, r) in zip(d["mal_itn_cov"], d.iterrows())],
+        "Cases: Before": [num(v) for v in old_cases],
+        "Cases: MAP 2025": [num(v) for v in new_cases],
+        "Cases: Change": ["n/a" if pd.isna(v) else f"{v:+.0%}" + (" ⚑" if abs(v) > 0.30 else "") for v in change],
+    }, index=d.index)
+    return out.sort_values("Country")
 
 
 # --------------------------------------------------------------------------- #

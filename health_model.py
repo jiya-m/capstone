@@ -27,6 +27,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from malaria_inputs import MAL_CM_MIN_INCIDENCE  # noqa: F401  (cited on the Methods page)
+
 log = logging.getLogger("health_model")
 HERE = Path(__file__).parent
 MODEL_DIR = HERE / "model_data"
@@ -57,8 +59,9 @@ UNIT_SINGULAR = {"hiv_art": "patient-year", "hiv_pmtct": "woman", "hiv_prev": "i
                  "mal_irs": "person-year", "mal_cm": "case", "imm": "child"}
 COVERAGE_LABELS = {"hiv_art": "ART coverage (% of PLHIV)", "hiv_pmtct": "PMTCT coverage",
                    "tb_ds": "TB treatment coverage", "tb_dr": "DR-TB treatment coverage (assumed 45%)",
-                   "mal_itn": "Bednet use (vector-control coverage)", "mal_irs": "Vector-control coverage",
-                   "mal_cm": "Malaria treatment coverage", "imm": "DTP3 coverage"}
+                   "mal_itn": "Bednet use (people sleeping under a net)",
+                   "mal_irs": "Indoor spraying coverage (households sprayed)",
+                   "mal_cm": "Effective malaria treatment (% of cases)", "imm": "DTP3 coverage"}
 
 SOURCE_GROUPS = ["United States", "United Kingdom", "Germany", "France", "Japan", "Canada", "Netherlands", "Nordics",
                  "Other DAC governments", "Gates Foundation", "Other private", "Development-bank lending",
@@ -81,7 +84,6 @@ ART_INFECT_LAG = np.array([0.5, 1, 1, 1, 1])
 POST_YEARS = 5                  # deaths set in motion are counted in 2031-2035, with funding back from 2031
 HIV_WEIBULL_SHAPE = 2.25        # survival after HIV infection without ART (Todd et al. 2007; UNAIDS Spectrum)
 DR_TB_SHARE, DR_TB_COV = 0.04, 0.45
-MAL_CM_MIN_INCIDENCE = 50       # malaria cases per 1,000 at risk needed to read fever treatment as case coverage
 _EXCESS_LOGGED: set = set()     # (iso3, line) pairs already logged as "donor money exceeds the service cost"
 
 
@@ -254,14 +256,10 @@ def epi(row: pd.Series, P: dict) -> dict:
     """Population in need and baseline coverage for each direct line."""
     pop = _v(row, "sp_pop_totl")
     inc_hiv = _v(row, "sh_hiv_incd_tl") / pop * 1000 if pop else np.nan
-    itn = _v(row, "sh_mlr_nets_zs") / 100
-    # "% of under-5 fevers given antimalarials" measures coverage of malaria cases only where most fevers are malaria;
-    # where malaria is rare it is near zero for that reason, so the default coverage is used instead
-    cm = _v(row, "sh_mlr_tret_zs") / 100
-    mal_inc = _v(row, "sh_mlr_incd_p3")
-    cm_low_malaria = not np.isnan(cm) and not (mal_inc >= MAL_CM_MIN_INCIDENCE)
-    if cm_low_malaria:
-        cm = np.nan
+    # malaria coverage (malaria_inputs.py, audit I-11): MAP 2025 where MAP has a value; otherwise a survey (treatment:
+    # only where malaria is common; bednets: only from 2015 on) or NaN = the default. Spraying without a MAP estimate is
+    # NaN here and set in run_country to the coverage donor IRS money pays for.
+    itn, irs, cm = _v(row, "mal_itn_cov"), _v(row, "mal_irs_cov"), _v(row, "mal_cm_cov")
     art = _v(row, "sh_hiv_artc_zs") / 100
     pm = _v(row, "sh_hiv_pmtc_zs") / 100
     e = {
@@ -270,19 +268,29 @@ def epi(row: pd.Series, P: dict) -> dict:
         "tb_ds": (_v(row, "all_forms_of_tb_incidence_estimated"), _v(row, "sh_tbs_dtec_zs") / 100),
         "tb_dr": (_v(row, "all_forms_of_tb_incidence_estimated") * DR_TB_SHARE, DR_TB_COV),
         "mal_itn": (_v(row, "malaria_pop_at_risk"), itn),
-        "mal_irs": (_v(row, "malaria_pop_at_risk"), itn),
+        "mal_irs": (_v(row, "malaria_pop_at_risk"), irs),
         "mal_cm": (_v(row, "malaria_cases"), cm),
         "imm": (_v(row, "births"), _v(row, "sh_imm_idpt") / 100),
     }
     flags = []
     if np.isnan(itn):
-        flags.append("bednet use not surveyed: default assumed")
-    if cm_low_malaria:
-        flags.append("malaria is rare here, so the fever-treatment survey does not measure malaria treatment: "
-                     "default coverage assumed")
-    elif np.isnan(cm):
-        flags.append("malaria treatment coverage not surveyed: default assumed")
-    return {"need_cov": e, "hiv_incidence_per_1000": inc_hiv, "flags": flags, "art_cov": art}
+        flags.append("bednet use: no MAP estimate or survey since 2015, default assumed")
+    if np.isnan(cm):
+        flags.append("malaria treatment coverage: no MAP estimate or usable survey, default assumed")
+    return {"need_cov": e, "hiv_incidence_per_1000": inc_hiv, "flags": flags, "art_cov": art,
+            "cov_source": {l: coverage_source(row, l) for l in ("mal_itn", "mal_irs", "mal_cm")}}
+
+
+def coverage_source(row: pd.Series, line: str) -> str:
+    """Short source tag for a malaria line's baseline coverage, e.g. 'MAP 2025', 'survey 2018', 'assumed'."""
+    col = {"mal_itn": "mal_itn_cov", "mal_irs": "mal_irs_cov", "mal_cm": "mal_cm_cov"}[line]
+    src, yr = row.get(f"{col}_source"), row.get(f"{col}_year")
+    yr = f" {int(yr)}" if isinstance(yr, (int, float, np.integer, np.floating)) and not np.isnan(yr) else ""
+    if isinstance(src, str) and src.startswith("MAP"):
+        return src
+    if src == "survey":
+        return f"survey{yr}"
+    return "implied by donor spending" if line == "mal_irs" else "assumed"
 
 
 UC_REF_FILE = HERE / "unit_cost_reference.csv"
@@ -353,8 +361,9 @@ TREND_COLUMNS = {"u5": "trend_u5mr", "malaria": "trend_malaria_deaths", "tb": "t
 
 
 def mortality_trend_factors(row: pd.Series, kind: str, use: bool = True) -> np.ndarray:
-    """(1 + annual trend)^(year - 1) for years 1..5: baseline deaths keep falling (or rising) as they did in 2010-2019.
-    kind: 'u5' (under-5 mortality rate) or 'malaria' (child malaria deaths). Ones when switched off."""
+    """(1 + annual trend)^(year - 1) for years 1..5: baseline deaths keep falling (or rising) on the country's trend
+    (under-5 mortality: 2010-2019; malaria: MAP P. falciparum cases 2015-2025, malaria_inputs.py).
+    kind: 'u5' (under-5 mortality rate) or 'malaria' (all-age malaria deaths). Ones when switched off."""
     if not use:
         return np.ones(N_YEARS)
     t = _v(row, TREND_COLUMNS[kind])
@@ -457,32 +466,46 @@ def hiv_death_timing(median: np.ndarray, n_years: int) -> np.ndarray:
 
 def malaria_levels(row, P, units, need_cov) -> dict:
     """Lives Saved Tool structure: D1 = D0 * prod_i (1 - E_i C_i1) / (1 - E_i C_i0), for one year's units lost.
-    Returns the yearly extra deaths per line (arrays n) at baseline D0, before ramp-up and the mortality trend."""
+    Vector control is one intervention whose coverage combines bednets and spraying: C_vc = 1 - (1 - ITN use) x
+    (1 - IRS coverage), each reduced by its own people losing the service / people at risk. Treatment coverage is the
+    share of malaria cases that get an effective drug (MAP); mal_cm_eff is how much that reduces deaths (separate steps,
+    as in the Lives Saved Tool). Returns the yearly extra deaths per line (arrays n) at baseline D0, before ramp-up and
+    the mortality trend."""
     D0 = _v(row, "malaria_deaths")
     n = len(P["mal_vc_eff"])
     if np.isnan(D0) or D0 <= 0:
         return {k: np.zeros(n) for k in ("mal_itn", "mal_irs", "mal_cm")}
-    par, cvc0 = need_cov["mal_itn"]
+    par, itn0 = need_cov["mal_itn"]
+    _, irs0 = need_cov["mal_irs"]
     cases, ccm0 = need_cov["mal_cm"]
-    cvc0 = P["mal_itn_default_use"] if np.isnan(cvc0) else np.full(n, cvc0)
+    itn0 = P["mal_itn_default_use"] if np.isnan(itn0) else np.full(n, itn0)
+    irs0 = np.zeros(n) if np.isnan(irs0) else np.full(n, irs0)
     ccm0 = P["mal_cm_default_cov"] if np.isnan(ccm0) else np.full(n, ccm0)
     Ev, Ec = P["mal_vc_eff"], P["mal_cm_eff"]
-    u_vc = units["mal_itn"] + units["mal_irs"]
-    cvc1 = np.clip(cvc0 - (u_vc / par if par and not np.isnan(par) else 0), 0, 1)
+    ok_par = bool(par) and not np.isnan(par)
+    itn1 = np.clip(itn0 - (units["mal_itn"] / par if ok_par else 0), 0, 1)
+    irs1 = np.clip(irs0 - (units["mal_irs"] / par if ok_par else 0), 0, 1)
     ccm1 = np.clip(ccm0 - (units["mal_cm"] / cases if cases and not np.isnan(cases) else 0), 0, 1)
+
+    def vc(i, r):
+        return 1 - (1 - i) * (1 - r)
+    cvc0, cvc1 = vc(itn0, irs0), vc(itn1, irs1)
     rv = (1 - Ev * cvc1) / (1 - Ev * cvc0)
     rc = (1 - Ec * ccm1) / (1 - Ec * ccm0)
     total = D0 * (rv * rc - 1)
     dv, dc = D0 * (rv - 1), D0 * (rc - 1)
     denom = np.where(np.abs(dv) + np.abs(dc) > 0, np.abs(dv) + np.abs(dc), 1)
     dv_s, dc_s = total * np.abs(dv) / denom, total * np.abs(dc) / denom
-    sh_itn = np.where(np.abs(u_vc) > 0, units["mal_itn"] / np.where(u_vc == 0, 1, u_vc), 0.5)
+    # vector-control deaths split by each line's own fall in combined coverage (the other line held at baseline)
+    d_itn, d_irs = cvc0 - vc(itn1, irs0), cvc0 - vc(itn0, irs1)
+    tot = d_itn + d_irs
+    sh_itn = np.where(tot > 0, d_itn / np.where(tot > 0, tot, 1), 0.5)
     return {"mal_itn": dv_s * sh_itn, "mal_irs": dv_s * (1 - sh_itn), "mal_cm": dc_s}
 
 
 def malaria_deaths(row, P, units, need_cov, trend: bool = True) -> dict:
     """Per-line yearly malaria deaths (n x 5) for a cut in force since year 1: levels x LAG x mortality trend.
-    trend: baseline malaria deaths D0 follow the country's 2010-2019 trend in years 1..5."""
+    trend: baseline malaria deaths D0 follow the country's 2015-2025 P. falciparum case trend in years 1..5."""
     lv = malaria_levels(row, P, units, need_cov)
     f = mortality_trend_factors(row, "malaria", trend)          # D0 x (1 + trend)^(year - 1)
     return {l: np.outer(v, LAG[l] * f) for l, v in lv.items()}
@@ -570,6 +593,12 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     ep = epi(row, Pc)
     ucc = unit_costs(row, Pc)
+    # spraying without a MAP estimate (MAP models IRS for Africa only): coverage = the people donor IRS money pays for /
+    # people at risk, so losing that money removes the spraying it bought
+    par, irs = ep["need_cov"]["mal_irs"]
+    if np.isnan(irs) and par and not np.isnan(par):
+        bought = float(np.asarray(effc_base["mal_irs"]).ravel()[0]) / float(ucc["mal_irs"][0])
+        ep["need_cov"]["mal_irs"] = (par, float(np.clip(bought / par, 0, 1)))
     pudc = per_unit_deaths(row, Pc, ep["art_cov"], mortality_trend)
 
     # deaths per $ (central) for "lives first" ranking; malaria via a small marginal LiST calculation
@@ -627,7 +656,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     capped, excess = {}, {}
     for l in ALL_DIRECT:
         need, cov = ep["need_cov"].get(l, (np.nan, np.nan))
-        if l in ("mal_itn", "mal_irs") and np.isnan(cov):
+        if l == "mal_itn" and np.isnan(cov):
             cov = Pc["mal_itn_default_use"][0]
         if l == "mal_cm" and np.isnan(cov):
             cov = Pc["mal_cm_default_cov"][0]
@@ -637,7 +666,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         # the people covered. When aid buys less than full coverage this equals net loss / cost per person.
         covered = cov * need if (l in ep["need_cov"] and not np.isnan(need) and not np.isnan(cov)) else np.nan
         b0 = float(np.asarray(effc_base[l]).ravel()[0])
-        excess[l] = bool(not np.isnan(covered) and b0 / float(ucc[l][0]) > covered)
+        excess[l] = bool(not np.isnan(covered) and b0 / float(ucc[l][0]) > covered * (1 + 1e-9))   # tolerance: ties
         if excess[l] and (iso3, l) not in _EXCESS_LOGGED:
             _EXCESS_LOGGED.add((iso3, l))
             log.warning("%s %s: donor aid ($%.0f) buys %.0f units at $%.0f each, more than the %.0f people covered; "
@@ -653,14 +682,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             # never negative: aid rises count as no loss (I-15), so this only removes floating-point noise when the
             # government replaces a line in full
             units[l][:, t], unitsc[l][:, t] = np.maximum(u, 0.0), np.maximum(uc0, 0.0)
-    # vector control shares one coverage pool
-    par, cvc = ep["need_cov"]["mal_itn"]
-    if not np.isnan(par):
-        cvc = Pc["mal_itn_default_use"][0] if np.isnan(cvc) else cvc
-        for U in (units, unitsc):
-            tot = U["mal_itn"] + U["mal_irs"]
-            scale = np.where(tot > cvc * par, cvc * par / np.where(tot == 0, 1, tot), 1.0)
-            U["mal_itn"], U["mal_irs"] = U["mal_itn"] * scale, U["mal_irs"] * scale
+    # bednets and spraying each have their own coverage now (MAP ITN use, MAP IRS coverage), so each line is capped at
+    # its own people covered above; their combined effect is computed in malaria_levels
 
     # ---- 4. lives ----
     # ramp-up (LAG) is indexed by how long the cut has been in force, not by calendar year
@@ -778,7 +801,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         d1 = deaths[l][:, 0]
         inf5 = infections[l].sum(axis=1) if l in infections else np.zeros(n)
         cov_used = cov
-        if l in ("mal_itn", "mal_irs") and np.isnan(cov):
+        if l == "mal_itn" and np.isnan(cov):
             cov_used = Pc["mal_itn_default_use"][0]
         if l == "mal_cm" and np.isnan(cov):
             cov_used = Pc["mal_cm_default_cov"][0]
@@ -789,7 +812,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             "base_usd": float(np.asarray(effc_base[l]).ravel()[0]),
             "gross_loss_usd": mean_c(effc_t, l), "replaced_usd": mean_c(repc_t, l), "net_loss_usd": mean_c(netc_t, l),
             "unit_cost": float(ucc[l][0]), "unit_label": UNIT_LABELS[l],
-            "need": need, "cov0": cov_used,
+            "need": need, "cov0": cov_used, "cov_source": ep["cov_source"].get(l, ""),
             "donor_share_of_coverage": donor_units / (cov_used * need) if (need and cov_used and not np.isnan(need)) else np.nan,
             "units_lost": uc_mean, "units_lost_lo": q(u_mean, 2.5), "units_lost_hi": q(u_mean, 97.5),
             "cov_drop_pp": uc_mean / need * 100 if (need and not np.isnan(need)) else np.nan,

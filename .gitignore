@@ -21,3 +21,5 @@ audit/after_i07.csv
 
 # raw downloads: never committed (offline inputs to prepare_model.py, add_constant_dollars.py and audit/checks.py)
 datasets/
+audit/before_malaria.csv
+audit/after_malaria.csv

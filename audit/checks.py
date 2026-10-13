@@ -407,6 +407,11 @@ def main():
         v = CI[c].dropna()
         rec("ALL", "", "", f"percent_scale_{c}", bool(((v >= 0) & (v <= 100)).all() and v.median() > 1),
             float(v.max()), f"min {v.min():.2f} median {v.median():.1f} max {v.max():.1f}; n>100: {(v > 100).sum()}")
+    # malaria coverage from MAP (I-11) is stored as a fraction in 0-1
+    for c in ("mal_cm_cov", "mal_itn_cov", "mal_irs_cov"):
+        v = CI[c].dropna()
+        rec("ALL", "", "", f"fraction_scale_{c}", bool(((v >= 0) & (v <= 1)).all()), float(v.max()),
+            f"min {v.min():.3f} median {v.median():.3f} max {v.max():.3f}; {CI[c + '_source'].value_counts().to_dict()}")
     for iso in CI.index:
         hb = hm.health_budget(iso, I)
         s = hb["share_pct"]
