@@ -295,24 +295,44 @@ def main():
     # no line in two buckets
     lb = LINES.groupby("line")["bucket"].nunique()
     rec("ALL", "", "", "no_line_in_two_buckets", (lb == 1).all(), int((lb > 1).sum()))
-    # model line baselines vs IHME DAH bucket totals (country_data, 2021-23 average, thousands of US$)
+    # I-01: modelled aid per country x bucket = IHME's bucket total, 2021-23 average, after dropping elim_ch == 1 rows
+    # (double-counted transfers between channels). Read from the raw IHME DAH file when it is present (it is not in
+    # the repo); otherwise from country_data, which equals the filtered raw file row for row (audit/I-01.md).
+    # IHME rounds every program-area column to US$1,000 per row, separately from the bucket total, so small
+    # country-buckets can differ by a few tens of thousands of dollars: pass = within 0.5% OR within US$50,000 a year.
     idx = pd.read_csv(ROOT / "country_data" / "_index.csv")
     f_of = dict(zip(idx.recipient_isocode, idx.file))
     bcol = {"HIV": "hiv_dah_23", "TB": "tb_dah_23", "Malaria": "mal_dah_23", "Immunization": "nch_cnv_dah_23"}
+    raw_dah = ROOT / "datasets" / "IHME_DAH_DATABASE_1990_2026_Y2026M09D18.CSV"
+    if raw_dah.exists():
+        rd = pd.read_csv(raw_dah, usecols=["year", "recipient_isocode", "elim_ch", *bcol.values()], na_values=["-"],
+                         low_memory=False)
+        rd = rd[(rd.elim_ch == 0) & rd.year.between(2021, 2023)]
+        ihme_tot = (rd.groupby("recipient_isocode")[list(bcol.values())].sum() / 3 * 1e3)
+        src = "raw IHME DAH file, elim_ch == 0"
+    else:
+        parts = {}
+        for iso in COUNTRIES:
+            if iso in f_of:
+                cd = pd.read_csv(ROOT / "country_data" / f_of[iso])
+                parts[iso] = cd[cd.year.between(2021, 2023)][list(bcol.values())].sum() / 3 * 1e3
+        ihme_tot = pd.DataFrame(parts).T
+        src = "country_data (= raw file with elim_ch == 0)"
+    strict = 0
     for iso in COUNTRIES:
-        if iso not in f_of:
-            rec(iso, "", "", "line_baselines_equal_IHME_bucket_totals", False, "", "no country_data file")
-            continue
-        cd = pd.read_csv(ROOT / "country_data" / f_of[iso])
-        cd = cd[cd.year.between(2021, 2023)]
         mod = LINES[LINES.iso3 == iso].groupby("bucket")["usd"].sum()
         bad = []
         for b, c in bcol.items():
-            ihme = cd[c].sum() / 3 * 1e3
-            m = mod.get(b, 0.0)
-            if not close(m, ihme, 0.005, 1000):
-                bad.append(f"{b}: model {m / 1e6:.2f}M vs IHME {ihme / 1e6:.2f}M")
-        rec(iso, "", "", "line_baselines_equal_IHME_bucket_totals", not bad, len(bad), "; ".join(bad))
+            ihme = float(ihme_tot.loc[iso, c]) if iso in ihme_tot.index else 0.0
+            m = float(mod.get(b, 0.0))
+            if not close(m, ihme, 0.005, 1.0):
+                strict += 1
+            if not close(m, ihme, 0.005, 50_000):
+                bad.append(f"{b}: model {m / 1e6:.3f}M vs IHME {ihme / 1e6:.3f}M")
+        rec(iso, "", "", "modelled_aid_equals_IHME_bucket_total_elim_ch0", not bad, len(bad),
+            "; ".join(bad) if bad else f"source: {src}")
+    rec("ALL", "", "", "modelled_aid_equals_IHME_bucket_total_strict_0.5pct", True, strict,
+        f"{strict} of {4 * len(COUNTRIES)} country-buckets differ by more than 0.5% (all IHME rounding, under US$50K)")
     # percentages: coverage inputs stored as percent in 0-100
     for c in ("sh_hiv_artc_zs", "sh_hiv_pmtc_zs", "sh_tbs_dtec_zs", "sh_mlr_nets_zs", "sh_mlr_tret_zs", "sh_imm_idpt",
               "sh_xpd_ghed_ge_zs"):
@@ -370,13 +390,17 @@ def main():
             d = max(abs(r23[c].iloc[0] - raw.loc[(iso, 2023), c]) / max(1, abs(raw.loc[(iso, 2023), c]))
                     for c in ("the_total_mean", "ghes_total_mean", "dah_total_mean"))
             rec(iso, "", "", "section1_2023_matches_raw_IHME_file", d < 1e-6, d)
-        # Section 2 DAH (IHME DAH database) vs Section 1 DAH (IHME spending database), 2023
-        if iso in f_of and len(r23):
+        # Section 1 DAH (IHME spending database) = Section 2 DAH (IHME DAH database, elim_ch == 0), every year shown
+        # (2015-2023). Two IHME products, so they agree to within rounding and IHME's own processing: tolerance 2%.
+        if iso in f_of:
             cd = pd.read_csv(ROOT / "country_data" / f_of[iso])
-            s2 = cd.loc[cd.year == 2023, "dah_23"].sum()
-            s1 = r23["dah_total_mean"].iloc[0]
-            rec(iso, "", "", "section2_dah_2023_matches_section1_dah_2023", close(s2, s1, 0.02), s2 / s1 if s1 else np.nan,
-                f"Section 2 {s2 / 1e3:.1f}M vs Section 1 {s1 / 1e3:.1f}M")
+            s2y = cd.groupby("year")["dah_23"].sum()
+            for _, r in sp.iterrows():
+                s1 = r["dah_total_mean"]
+                if s1 and s1 > 0:
+                    s2 = float(s2y.get(r["year"], 0.0))
+                    rec(iso, str(int(r["year"])), "", "section1_dah_equals_section2_dah_same_year", close(s2, s1, 0.02),
+                        s2 / s1, f"Section 2 {s2 / 1e3:.2f}M vs Section 1 {s1 / 1e3:.2f}M")
     # Section 3: WEO identity, revenue items vs file total, COFOG shares, and the default year's coverage levels
     for iso in CI.index:
         mf, rf, cf = (ROOT / d / f"{iso}.csv" for d in ("macro_data", "revenue_data", "cofog_all"))

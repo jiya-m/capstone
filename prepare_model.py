@@ -252,9 +252,16 @@ def main(a):
 
     # ---------------- DAH ---------------- #
     print("reading DAH ...")
-    need = ["year", "source", "channel", "recipient_isocode", "wb_regioncode", "dah_23", "nch_dah_23"] + list(BUCKET_TOTAL_COL.values())
+    need = ["year", "source", "channel", "recipient_isocode", "wb_regioncode", "elim_ch", "dah_23", "nch_dah_23"] + \
+        list(BUCKET_TOTAL_COL.values())
     need += sorted({f"{c}_dah_23" for _, cs in LINES.values() for c in cs})
     dah = pd.read_csv(a.dah, usecols=lambda c: c in need, na_values=["-"], low_memory=False)
+    # IHME records transfers between channels twice (e.g. a bilateral agency's money disbursed through a multilateral);
+    # elim_ch = 1 marks the copy to drop before summing (DAH user guide pp. 3-4; IHME's example code starts with
+    # dah_db[elim_ch == 0]). Everything below, including the IHME 2025 global totals and the panel, uses this filter.
+    n_all = len(dah)
+    dah = dah[dah["elim_ch"] == 0].drop(columns="elim_ch")
+    print(f"  dropped {n_all - len(dah):,} of {n_all:,} rows flagged elim_ch = 1 (double-counted transfers)")
     num = [c for c in dah.columns if c.endswith("_dah_23")]
     dah[num] = dah[num].fillna(0.0)
     dah["src_grp"] = dah["source"].map(source_group)
