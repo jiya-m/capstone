@@ -9,3 +9,7 @@ __pycache__/
 *.pyc
 .DS_Store
 ~$*
+
+# Large audit snapshots (regenerate with audit/snapshot_numbers.py)
+audit/before_cosmetic.csv
+audit/after_cosmetic.csv

@@ -40,8 +40,9 @@ FIRST_YEAR = 2026                    # year 1 after the cut
 MAIN_LINE = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_itn", "Immunization": "imm"}
 BUCKET_WORD = {"HIV": "HIV", "TB": "TB", "Malaria": "malaria", "Immunization": "immunization"}
 
-# "Historical behaviour" is not offered: the estimated historical response is no backfilling, the same as "none"
-GOV_MODES = {"No backfill (historical norm)": "none", "Replace a set share": "custom",
+# The estimated historical response (theta) is no replacement, the same as "none", so it isn't offered separately
+NO_REPLACEMENT = "No Government Replacement"
+GOV_MODES = {NO_REPLACEMENT: "none", "Replace a set share": "custom",
              "As much as fiscal space allows": "max", "Gradual budget increase": "gradual"}
 SRC_MODEL = "Model estimates from IHME aid data (2021-23 average), WHO, UNAIDS and World Bank data; see Methods."
 SHOW_BRIEF = False                   # the Download Country Brief button (code kept for later)
@@ -271,7 +272,7 @@ def _title(text):
 
 def _resp_label(fiscal_t) -> str:
     mode, theta, _, alloc, ceiling = fiscal_t
-    lbl = {"none": "No backfill", "historical": "Historical behaviour", "custom": f"Government replaces {theta:.0%}",
+    lbl = {"none": NO_REPLACEMENT, "historical": NO_REPLACEMENT, "custom": f"Government replaces {theta:.0%}",
            "max": "As much as fiscal space allows", "gradual": "Gradual budget increase"}[mode]
     if mode not in ("none", "gradual"):
         lbl += (", lives first" if alloc == "lives_first" else ", pro-rata")
@@ -346,6 +347,15 @@ def donor_scenario_select(ci, iso3, country_name, widget_key, label="Donor Scena
     return preset, group, note
 
 
+def backfill_regression_text(reg) -> str:
+    """'Across N countries, first-last, governments did not replace falling aid (theta per $1, 95% CI lo to hi).'
+    Every value comes from regressions.json (fiscal_replacement)."""
+    r = reg["fiscal_replacement"]
+    th_c, th_lo, th_hi = hm.theta_historical(reg)
+    return (f"Across {r['n_countries']} countries, {r['years'][0]}-{r['years'][1]}, governments did not replace falling "
+            f"aid ({th_c:+.2f} per $1, 95% CI {th_lo:+.2f} to {th_hi:+.2f}).")
+
+
 def _controls(iso3, country_name, I) -> dict:
     """Slim scenario bar under the story headline: scenario | government response | Advanced (popover)."""
     ci = I["ci"]
@@ -354,7 +364,6 @@ def _controls(iso3, country_name, I) -> dict:
         st.session_state["m_trend"] = ctx.get("trend", scn.DEFAULT_MORTALITY_TREND)
     if st.session_state.get("m_mode") not in GOV_MODES:          # e.g. an option from an older version of the page
         st.session_state["m_mode"] = list(GOV_MODES)[0]
-    th_c, th_lo, th_hi = hm.theta_historical(I["reg"])
     with st.container(key="model_controls"):
         st.markdown("<div id='change-scenario' class='ed-kicker' style='margin:0'>Change the Scenario</div>",
                     unsafe_allow_html=True)
@@ -384,9 +393,8 @@ def _controls(iso3, country_name, I) -> dict:
         with c3:
             mode = GOV_MODES[st.selectbox(
                 "Government Response", list(GOV_MODES), key="m_mode", format_func=title_case,
-                help=_esc(f"How much of the lost aid the government replaces from its own budget. No Backfill is the "
-                          f"historical norm: across 97 countries, 2001-2023, governments did not replace falling aid "
-                          f"({th_c:+.2f} per $1, 95% CI {th_lo:+.2f} to {th_hi:+.2f})."))]
+                help=_esc("How much of the lost aid the government replaces from its own budget. "
+                          + backfill_regression_text(I["reg"])))]
             theta = 0.0
             if mode == "custom":
                 theta = st.slider("Share of Lost Aid Replaced (%)", 0, 100, 25, 5, key="m_theta") / 100
@@ -544,10 +552,10 @@ def care_breakdown(L: pd.DataFrame) -> tuple:
 def response_kicker(fiscal_t) -> str:
     mode, theta = fiscal_t[0], fiscal_t[1]
     capped = len(fiscal_t) > 2 and fiscal_t[2]
-    return {"none": "No Government Replacement",
+    return {"none": NO_REPLACEMENT,
             "custom": f"Government Replaces {'Up to ' if capped else ''}{theta:.0%}",
             "max": "Government Replaces What Its Budget Allows", "gradual": "Gradual Budget Increase",
-            "historical": "No Government Replacement"}.get(mode, _resp_label(fiscal_t))
+            "historical": NO_REPLACEMENT}.get(mode, _resp_label(fiscal_t))
 SPELLED = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
 
 
@@ -655,7 +663,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     preset, fiscal_t, ptab, ptab_json, mode = ctl["preset"], ctl["fiscal_t"], ctl["ptab"], ctl["ptab_json"], ctl["mode"]
     trend = ctl["trend"]
     res = run_ctl(iso3, sk, ctl)
-    # the same funding path with no government money, for "backfill averts N deaths"
+    # the same funding path with no government money, for "replacement averts N deaths"
     res0 = run_ctl(iso3, sk, ctl, fiscal_t=scn.DEFAULT_FISCAL, gov_add=None) if mode != "none" else res
     T, B, L = res["totals"], res["buckets"].set_index("bucket"), res["lines"]
 
@@ -671,7 +679,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     cov_fig = _coverage_fig(rows)
     path_fig = _path_fig(res)
     cards = _per_million_cards(res, ptab, country_name)
-    items = _headline_items(res)
+    items = _headline_items(res, ptab, deaths_basis_text(preset, ctl.get("cut_path"), country_name))
 
     # ------------------------------ headline ------------------------------ #
     if ctl["cmp"]:
@@ -681,8 +689,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
         _stat_grid(items, 3)
     if mode != "none" and T["replaced"] > 0:
         saved = res0["totals"]["deaths_5y"] - T["deaths_5y"]
-        st.markdown(_esc(f"Government backfill of {money(T['replaced'])} a year averts about **{num(saved)} deaths over "
-                         f"5 years** compared with no backfill ({money(T['replaced'] * 5 / max(saved, 1))} per death "
+        st.markdown(_esc(f"Government replacement of {money(T['replaced'])} a year averts about **{num(saved)} deaths "
+                         f"over 5 years** compared with no government replacement "
+                         f"({money(T['replaced'] * 5 / max(saved, 1))} per death "
                          "averted)."))
     if SHOW_BRIEF:
         st.download_button(
@@ -733,7 +742,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     st.caption(_esc("Other Aid is money the model does not link to deaths: support for orphans and vulnerable children"
                     + (f" ({money(ovc['net_loss_usd'].sum())} a year lost)" if len(ovc) else "")
                     + f" and the {1 - float(ptab.loc['hss_kappa', 'central']):.0%} of lost systems money (labs, staff, "
-                    "monitoring) assumed not to cut services. With it, the totals match Aid at Risk and Net Loss to "
+                    "monitoring) assumed not to cut services. With it, the totals match Aid at Risk and Net Aid Lost "
                     "Services above. The deaths range is for the total, so it is narrower than adding the rows' ranges."))
     if cov_fig is not None:
         chart(cov_fig, source="Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), WHO/Malaria Atlas "
@@ -742,7 +751,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     # ------------------------------ dose response + path ------------------------------ #
     st.subheader("How the Damage Scales",
                  help="Left: a uniform cut across all donors to one bucket, with the chosen government response; it "
-                      "flattens once everyone whose service donors pay for has lost it, and bends where backfill runs "
+                      "flattens once everyone whose service donors pay for has lost it, and bends where replacement runs "
                       "out of fiscal space. Right: deaths after losing HIV treatment rise from about 1% to 5% a year, "
                       "unvaccinated birth cohorts add up, and nets already hanging protect for about a year.")
     bsel = st.radio("Bucket (Left Chart Only)", hm.BUCKETS, horizontal=True, key="m_dose_b",
@@ -794,7 +803,36 @@ def after_2030_help(C) -> str:
             + (": " + "; ".join(bits) if bits else "") + ". Range = 95% interval.")
 
 
-def _headline_items(res) -> list:
+HSS_LINES = list(hm.HSS.values())
+
+
+def net_aid_note(res, ptab) -> tuple:
+    """(sub-line, tooltip) for Net Aid Lost. The sub-line shows the health-systems money inside it (yearly HSS aid lost,
+    after replacement in proportion) and is hidden when that is 0; kappa and its range come from hss_kappa in the
+    parameters (model_params.csv unless edited in the app)."""
+    k, lo, hi = (float(ptab.loc["hss_kappa", c]) for c in ("central", "low", "high"))
+    cells, T = res["cells"], res["totals"]
+    hss = float(np.clip(cells.loc[cells["line"].isin(HSS_LINES), "loss"].sum(), 0, None)) if len(cells) else 0.0
+    hss_net = hss * (T["net"] / T["gross"]) if T["gross"] > 0 else 0.0
+    sub = (f"incl. {money(hss_net)} health-systems money, {k:.0%} counted as lost services (assumption)"
+           if hss_net >= 0.5 else "per year")
+    tip = ("Aid lost minus what the government replaces, per year. Health-systems money (labs, staff, data systems) "
+           f"supports services indirectly. We assume {k:.0%} of it translates into lost services; the uncertainty runs "
+           f"vary this from {lo:.0%} to {hi:.0%}.")
+    return sub, tip
+
+
+def deaths_basis_text(preset: str, cut_path, country_name: str = "") -> str:
+    """What the 5-year deaths assume about the funding path (I-19)."""
+    if preset == MOU:
+        return f"Follows {country_name}'s MOU schedule, 2026-2030."
+    if cut_path is not None:
+        return "Follows the chosen phase-out path, 2026-2030."
+    return "Assumes the cut is sustained for five years."
+
+
+def _headline_items(res, ptab=None, basis: str = "Assumes the cut is sustained for five years.") -> list:
+    ptab = _default_params() if ptab is None else ptab
     T, B = res["totals"], res["buckets"].set_index("bucket")
     items = [
         ("Aid at Risk (per Year)", money(T["gross"]),
@@ -803,12 +841,12 @@ def _headline_items(res) -> list:
         ("Replaced by Government", money(T["replaced"]),
          f"{T['replaced'] / T['gross']:.0%} of the loss" if T["gross"] > 0 else None,
          "Set by the government response in the sidebar, limited by fiscal space."),
-        ("Net Loss to Services", money(T["net"]), "per year", "Aid lost minus what the government replaces."),
+        ("Net Aid Lost", money(T["net"]), *net_aid_note(res, ptab)),
         ("Further Deaths, 2031-2035", num(res["committed"]["after_2030"]),
          "range " + rng(res["committed"]["after_2030_lo"], res["committed"]["after_2030_hi"]),
          after_2030_help(res["committed"])),
         ("Extra Deaths Over 5 Years", num(T["deaths_5y"]), "range " + rng(T["deaths_5y_lo"], T["deaths_5y_hi"]),
-         "Assumes the cut is sustained for five years. Range = 95% interval."),
+         f"{basis} Range = 95% interval."),
         ("New HIV Infections, 5 Years", num(B.loc["HIV", "infections_5y"]),
          "range " + rng(B.loc["HIV", "infections_5y_lo"], B.loc["HIV", "infections_5y_hi"]),
          "Lives-first triage refills treatment and vaccines first and HIV prevention last, so new infections can stay "
@@ -827,7 +865,10 @@ def _comparison(iso3, country_name, ctl, res_a, items_a):
     st.subheader("Scenario A vs Scenario B")
     a, b = st.columns(2, gap="large")
     for col, tag, preset, fiscal_t, items in ((a, "A", ctl["preset"], ctl["fiscal_t"], items_a),
-                                              (b, "B", c["preset"], c["fiscal_t"], _headline_items(res_b))):
+                                              (b, "B", c["preset"], c["fiscal_t"],
+                                               _headline_items(res_b, ctl["ptab"], deaths_basis_text(
+                                                   c["preset"], None if c["preset"] == MOU else ctl.get("cut_path"),
+                                                   country_name)))):
         with col:
             st.markdown(_esc(f"**Scenario {tag}:** {title_case(preset)} · {_resp_label(fiscal_t)}"))
             _stat_grid(items, 2)
@@ -848,6 +889,8 @@ def _comparison(iso3, country_name, ctl, res_a, items_a):
     chart(fig, source=SRC_MODEL)
 
 
+CARD_FOOT_TIP = ("Total aid lost over 5 years ($5M) divided by extra deaths over the same 5 years; this equals $1M "
+                 "divided by the average extra deaths per year.")
 CARD_SERVICE = {"HIV": "HIV Treatment", "TB": "TB Treatment", "Malaria": "Bednets & Spraying",
                 "Immunization": "Routine Immunization"}
 NO_DEATHS_REASON = {"Malaria": " (very low transmission)"}
@@ -873,8 +916,10 @@ def _per_million_cards(res, ptab, country_name: str = "") -> list:
                     "deaths": f"{d_per:,.0f}",
                     "no_deaths": (f"No {BUCKET_WORD[b]} deaths modelled in {country_name}{NO_DEATHS_REASON.get(b, '')}"
                                   if no_deaths else ""),
-                    "foot": title_case(f"Cost {money(uc)} per {hm.UNIT_SINGULAR[line]}"
-                                       + ("" if no_deaths else f" · {money(5e6 / d_per)} of aid per death"))})
+                    "foot": f"Cost {money(uc)} per {hm.UNIT_SINGULAR[line]}"
+                            + ("" if no_deaths else f" · About {money(5e6 / d_per)} of aid lost per life lost "
+                                                    "(based on US$1M a year for 5 years)"),
+                    "foot_tip": "" if no_deaths else CARD_FOOT_TIP})
     return out
 
 
@@ -889,7 +934,8 @@ def _card_html(c) -> str:
     return (f"<div class='ed-card' style='border-top-color:{c['color']}'>"
             f"<div class='t'>{e(c['bucket'])}</div><div class='s1'>{e(c['service'])}</div>"
             f"<div class='s'>{e(c['unit'])}</div>{big}"
-            f"<div class='foot'>{e(c['foot'])}</div></div>").replace("$", "&#36;")
+            f"<div class='foot' title='{e(c.get('foot_tip', ''), quote=True)}'>{e(c['foot'])}</div></div>"
+            ).replace("$", "&#36;")
 
 
 def _cards_html(cards) -> str:
@@ -1188,7 +1234,7 @@ def pct_smart(frac: float) -> str:
     return f"{v:.1f}%" if v < 1 else f"{v:,.0f}%"
 
 
-ABSORB_SHARE = 0.10        # a gap under 10% of a strong year's backfill capacity counts as easily absorbed
+ABSORB_SHARE = 0.10        # a gap under 10% of a strong year's replacement capacity counts as easily absorbed
 TINY_GAP_SHARE = 0.05      # under 5% of the largest bar, the gap chart can't be read: show pills instead
 
 
@@ -1219,7 +1265,7 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict):
               f"debt-stress factor is {F['stress_factor']:.2f} (1 at 10% or less, falling to 0.25 at 40%)."
               if not pd.isna(F["interest_pct_revenue"]) else "")
     st.subheader(f"Can {country_name} Fill the Gap?",
-                 help=_esc("Backfill capacity = government health spending x (strong-year growth minus typical growth) "
+                 help=_esc("Replacement capacity = government health spending x (strong-year growth minus typical growth) "
                            "x a debt-stress factor." + stress + " Growth rates are real (constant 2023 US$) from IHME, "
                            "2001-2023; interest and revenue are World Bank WDI, latest year (IMF data fill gaps)."))
     rev = F["revenue"]
@@ -1247,7 +1293,7 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict):
             ("Typical yearly growth", typical, th.OTHER))]
     biggest = max(b[1] for b in bars)
     if biggest > 0 and G < TINY_GAP_SHARE * biggest:       # bars can't be compared: show the four values instead
-        tips = ["Gross aid lost per year", "Backfill capacity: what a strong budget year could add for these programs",
+        tips = ["Gross aid lost per year", "Replacement capacity: what a strong budget year could add for these programs",
                 "What the government replaces in this scenario", "One year of typical growth in government health "
                 "spending"]
         st.markdown(th.pills_html([(lbl, money(v), tip) for (lbl, v, _), tip in zip(bars, tips)]),
@@ -1309,7 +1355,7 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
     st.markdown(th.pills_html([
         (f"Aid Lost per Year, MOU Countries With Funding Data ({len(A)})" if is_mou
          else f"Aid Lost per Year, {len(A)} of {len(names)} Countries", money(tot["gross_loss_usd"]),
-         "HIV, TB, malaria and vaccine aid removed by the scenario", f"Net of Backfill {money(tot['net_loss_usd'])}"),
+         "HIV, TB, malaria and vaccine aid removed by the scenario", f"Net Aid Lost {money(tot['net_loss_usd'])}"),
         ("Further Deaths, 2031-2035", num(tot["deaths_after_2030"]),
          "Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031: people still off HIV "
          "treatment, new HIV infections, children who missed vaccines and TB spread by untreated patients. "
@@ -1343,7 +1389,7 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
                                  customdata=np.c_[other["name"], other["net_loss_usd"].map(money), other["deaths_5y"].map(num)],
                                  hovertemplate="<b>%{customdata[0]}</b><br>aid loss = %{x:.0f}% of government health "
                                                "spending<br>%{y:,.0f} deaths per 100,000 over 5 years "
-                                               "(%{customdata[2]})<br>net loss %{customdata[1]} a year<extra></extra>",
+                                               "(%{customdata[2]})<br>net aid lost %{customdata[1]} a year<extra></extra>",
                                  name="Countries"))
         me = d[d["iso3"] == iso3]
         if len(me):

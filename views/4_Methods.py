@@ -86,7 +86,10 @@ with tabs[0]:
     """)
     th.section_header("payments", "Units and Currency")
     md(f"""
-    **Every dollar figure is in constant 2023 US dollars**, the unit IHME uses for its aid and health-spending data.
+    **Every dollar figure is in constant 2023 US dollars (except MOU amounts)**, the unit IHME uses for its aid and
+    health-spending data. MOU cut percentages compare each year's MOU amount with the 2021-2025 reference in the same
+    nominal dollars; the rest of the dashboard uses constant 2023 US$. MOU amounts are nominal US$, as written in the
+    MOU, and future years are not converted.
     IHME's constant dollars remove each country's own inflation and convert at 2023 exchange rates, so a country
     whose currency collapsed (for example Nigeria in 2023-24) does not appear to shrink.
 
@@ -213,10 +216,10 @@ with tabs[1]:
     |---|---|
     | Aid at Risk (per Year) | Yearly HIV, TB, malaria and vaccine aid removed by the scenario (gross loss), out of the 2021-2023 average |
     | Replaced by Government | The government's replacement, set by the response chosen, capped by fiscal space |
-    | Net Loss to Services | Aid at risk minus what is replaced |
+    | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems), of which a share kappa (`hss_kappa`, an assumption) is counted as lost services |
     | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range = 2.5th to 97.5th percentile of the Monte Carlo draws |
     | New HIV Infections, 5 Years | Infections from people off ART, mothers without PMTCT, and lost prevention |
-    | Every US$1 Million Lost | People losing the service per $1M = $1M ÷ cost per person x (1 - continuity); coverage drop = that ÷ people in need; extra deaths = deaths per dollar x $1M x (1 - continuity); "aid per death" = $5M (five years of $1M) ÷ those deaths |
+    | Every US$1 Million Lost | People losing the service per $1M = $1M ÷ cost per person x (1 - continuity); coverage drop = that ÷ people in need; extra deaths = deaths per dollar x $1M x (1 - continuity); "about $X of aid lost per life lost (based on US$1M a year for 5 years)" = $5M (five years of $1M) ÷ those deaths, which equals $1M ÷ the average extra deaths per year |
     | What Each Service Loses | Per service line: baseline aid, aid lost after replacement, cost per person, people losing the service, coverage before and after, extra deaths (range) |
     | Extra Deaths as More Aid Is Cut | Solid line: every donor cuts this bucket by the same share, 0-100% in 5% steps, same random draws at every step; band = 95% range. Dashed line: this scenario's own cuts scaled from 0% to 100% of their size |
     | Extra Deaths Each Year | Central estimate by year and bucket |
@@ -295,7 +298,7 @@ with tabs[2]:
     md("""
     The gross loss G is the sum of all positive cell losses. The government wants to replace:
 
-    - **No Backfill (Historical Norm):** nothing.
+    - **No Government Replacement:** nothing.
     - **Replace a Set Share:** a share θ chosen by the user, θ x G.
     - **As Much as Fiscal Space Allows:** all of G.
 
@@ -312,7 +315,7 @@ with tabs[2]:
     """)
     st.latex(r"s=\operatorname{clip}\!\Big(1-\frac{\text{interest \% of revenue}-10}{40},\ 0.25,\ 1\Big)")
     md(f"""
-    **Why no backfill is the historical norm.** A two-way fixed-effects regression across {REG['fiscal_replacement']['n_countries']}
+    **Why No Government Replacement is the default.** A two-way fixed-effects regression across {REG['fiscal_replacement']['n_countries']}
     countries ({REG['fiscal_replacement']['years'][0]}-{REG['fiscal_replacement']['years'][1]},
     {REG['fiscal_replacement']['n_obs']:,} country-years) relates the yearly change in government health spending
     per person to falls (this year and last) and rises in aid per person, controlling for GDP growth. The implied
@@ -575,7 +578,7 @@ with tabs[3]:
     | Systema Globalis | Gapminder (WHO estimates) | TB incidence and deaths (HIV-negative and HIV-positive); child (1-59 months) malaria, measles and pneumonia deaths (WHO/MCEE) | TB inputs; Validation page regressions |
     | HIV share of deaths | Gapminder fasttrack (IHME GBD) | HIV deaths as % of all deaths | Validation page (Lancet rate ratios) |
     | Country classifications | World Bank (Gapminder mirror) | Income group | Header; TB costs |
-    | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules | America First MOUs scenario |
+    | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules (nominal US$, as written in the MOU) | America First MOUs scenario |
     | KFF Tracker: America First MOU Bilateral Global Health Agreements | KFF, data as of 8 October 2026 | Countries with a signed MOU (36), agreement date, US funding | Header MOU status; which countries can run America First MOUs |
     | Gavi financial data | Gavi, FY2021-25 | Disbursements | Cost per child immunized |
 

@@ -43,7 +43,7 @@ PRESETS = {
 PRECOMPUTED_PRESETS = [p for p in PRESETS if p != "Custom"]
 
 # Fiscal settings the precomputed all-country files use:
-# (mode, theta, cap to fiscal space, allocation, ceiling) = No backfill, pro-rata, 75th-percentile ceiling
+# (mode, theta, cap to fiscal space, allocation, ceiling) = No Government Replacement, pro-rata, 75th-percentile ceiling
 DEFAULT_FISCAL = ("none", 0.0, True, "pro_rata", "p75")
 DEFAULT_MORTALITY_TREND = True     # "Account for Already-Falling Death Rates" on
 ALL_COUNTRY_DRAWS = 400       # same as the single-country view, so a country's row matches its own page
@@ -102,8 +102,9 @@ def mou_schedule_text(ci: pd.DataFrame, iso3: str, country_name: str) -> str:
     parts = [f"{c:.0%}" for c in cuts]
     parts[0] += f" ({YEARS[0]})"
     parts[-1] += f" ({YEARS[-1]})"
-    return f"US bilateral aid cut: {', '.join(parts)}, per {country_name}'s MOU" + \
-        (f". Schedule ends {end}; {end} level held through {YEARS[-1]}." if end < YEARS[-1] else ".")
+    return (f"US bilateral aid cut: {', '.join(parts)}, per {country_name}'s MOU"
+            + (f". Schedule ends {end}; {end} level held through {YEARS[-1]}" if end < YEARS[-1] else "")
+            + ". Cuts compare MOU amounts (nominal US$, as written in the MOU) with the 2021-2025 reference.")
 
 
 def default_opts(preset: str, ci: pd.DataFrame) -> dict:

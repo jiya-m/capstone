@@ -68,7 +68,7 @@ for p in scn.PRECOMPUTED_PRESETS:
 st.subheader(f"Model: Extra Deaths Over 5 Years, All {len(next(iter(all_country.values()), []))} Countries",
              help="America First MOUs covers only the countries with a signed MOU and schedule data.")
 st.table(pd.DataFrame(rows).set_index("Scenario"))
-st.caption("Read from the precomputed results: no government backfill, death rates already falling, default "
+st.caption("Read from the precomputed results: No Government Replacement, death rates already falling, default "
            "parameters. Ranges add country 2.5th and 97.5th percentiles.")
 
 us = all_country.get("Full US exit")
@@ -88,7 +88,7 @@ if us is not None:
          "Closest Model Figure": f"Full US Exit: {num(us['deaths_5y'].sum())} over 5 years (four diseases)"},
         {"Source": "UNAIDS 2025 (Goals model)",
          "What It Measures": "Extra AIDS deaths if PEPFAR ends, 2025-2029",
-         "Published": "4.2M",
+         "Published": "More than 4 million",
          "Closest Model Figure": f"Full US Exit, HIV: {num(us['deaths_5y_HIV'].sum())} over 5 years"},
         {"Source": "Optima (Burnet Institute; ten Brink et al. 2025, Lancet HIV)",
          "What It Measures": "Extra HIV deaths from international HIV funding cuts plus PEPFAR ending, 2025-2030",
@@ -226,7 +226,7 @@ if len(lp):
     r = lp.iloc[0]
     notes.append(f"US-source health aid in {country_name} falls from US\\${r.us_aid_pc_before:,.2f} to "
                  f"US\\${r.us_aid_pc_after:,.2f} per person in this scenario ({r.us_cut_share:.0%} of US money in the "
-                 "modelled programs, net of any government backfill).")
+                 "modelled programs, net of any government replacement).")
 row = I["ci"].loc[iso3]
 if not pd.isna(row.get("hiv_deaths_est", np.nan)):
     notes.append(f"HIV baseline deaths ({num(row['hiv_deaths_est'])} a year) = IHME's HIV share of all deaths in "

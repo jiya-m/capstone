@@ -302,7 +302,7 @@ _items = [
 ]
 with hdr_left:
     st.markdown(f"<div class='ed-country'>{html.escape(country_name)}"
-                "<span class='ed-units'>All dollar figures in constant 2023 US$</span></div>" + th.pills_html(_items),
+                "<span class='ed-units'>All dollar figures in constant 2023 US$ (except MOU amounts)</span></div>" + th.pills_html(_items),
                 unsafe_allow_html=True)
 
 # ---- story lede: headline, summary and three big numbers from the model, with the scenario bar under it ---- #

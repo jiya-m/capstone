@@ -517,7 +517,7 @@ def section_header(icon: str, title: str, help: str | None = None, rule: bool = 
 
 def pills_html(items, cols: int | None = None, large: bool = False) -> str:
     """The one pill component. items: (label, value, tooltip[, small note under the value]). Every pill in a row has
-    the same width and height. A note that only repeats the value (e.g. 'Net of Backfill $4.26B' when nothing is
+    the same width and height. A note that only repeats the value (e.g. 'Net Aid Lost $4.26B' when nothing is
     replaced) is dropped. large=True: big serif values, for stats inside the page."""
     e = html.escape
     cells = []
