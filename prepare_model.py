@@ -76,10 +76,14 @@ SOURCE_GROUPS = {
 
 
 def source_group(s: str) -> str:
+    """IHME DAH source code -> the dashboard's donor group (e.g. 'United_States' -> 'United States'); unlisted sources
+    are 'Other DAC governments'."""
     return SOURCE_GROUPS.get(s, "Other DAC governments")
 
 
 def channel_group(c: str) -> str:
+    """IHME DAH channel code -> the dashboard's channel group (bilateral agency, NGOs, Global Fund, Gavi, WHO, UNICEF,
+    ...). Direct channels are cut by a donor's bilateral cut; the rest are multilateral."""
     if c.startswith("BIL_"):
         return "Bilateral agency"
     return {"NGO": "NGOs", "INTLNGO": "NGOs", "US_FOUND": "NGOs", "GATES": "Gates direct", "GFATM": "Global Fund",
@@ -145,7 +149,8 @@ TREND_CLIP = (-0.08, 0.02)          # annual % change, clipped
 def build_mou_signed(path: Path) -> pd.DataFrame:
     """Signed America First MOUs from KFF's tracker table -> model_data/mou_signed.csv
     (iso3, country, agreement_date, us_funding_total, source, note). The 'Total' row is dropped; a date KFF gives as
-    text (Madagascar: '12/22/25 or 12/23/25') is stored as its first date with the original text in note."""
+    text (Madagascar: '12/22/25 or 12/23/25') is stored as its first date with the original text in note.
+    Feeds: the header MOU status and the America First MOUs scenario."""
     from country_lists import ALLOWED_COUNTRIES
     k = pd.read_excel(path)
     k = k[k["Country Name"].astype(str).str.strip().str.lower() != "total"].copy()
@@ -171,6 +176,8 @@ def build_mou_signed(path: Path) -> pd.DataFrame:
 
 
 def download_ext():
+    """Download the World Bank WDI and Gapminder series in the WDI and SG lists, the World Bank country entities and the
+    IHME HIV death share into ext_data/ (Gapminder's GitHub mirrors)."""
     import urllib.request
     (EXT / "wdi").mkdir(parents=True, exist_ok=True)
     (EXT / "sg").mkdir(parents=True, exist_ok=True)
@@ -184,6 +191,7 @@ def download_ext():
 
 
 def read_ext(name: str) -> pd.DataFrame:
+    """One downloaded series from ext_data/wdi or ext_data/sg as columns iso3, year, value."""
     p = EXT / "wdi" / f"{name}.csv"
     if not p.exists():
         p = EXT / "sg" / f"ddf--datapoints--{name}--by--geo--time.csv"
@@ -195,19 +203,22 @@ def read_ext(name: str) -> pd.DataFrame:
 
 
 def latest(name: str, max_year: int = 2024, min_year: int = 2010) -> pd.DataFrame:
-    """Most recent value per country in [min_year, max_year] -> columns name, name_year."""
+    """Most recent value per country in [min_year, max_year] -> columns name, name_year.
+    Feeds: country_inputs.csv (one value and year per indicator)."""
     d = read_ext(name)
     d = d[(d.year <= max_year) & (d.year >= min_year)].sort_values("year").groupby("iso3").tail(1)
     return d.set_index("iso3").rename(columns={"value": name, "year": f"{name}_year"})
 
 
 def series(name: str) -> pd.DataFrame:
-    """Full country-year series (iso3, year, value) from ext_data."""
+    """Full country-year series (iso3, year, value) from ext_data.
+    Feeds: mortality trends and the regression panel."""
     return read_ext(name)
 
 
 def tb_deaths_series() -> pd.DataFrame:
-    """All TB deaths = HIV-negative + HIV-positive TB deaths, by country-year."""
+    """All TB deaths = HIV-negative + HIV-positive TB deaths, by country-year.
+    Feeds: the TB Poisson regression (Validation page)."""
     a = series("all_forms_of_tb_number_of_deaths_estimated").set_index(["iso3", "year"])["value"]
     b = series("tb_hivplus_number_of_deaths_estimated").set_index(["iso3", "year"])["value"]
     return pd.concat([a, b], axis=1).sum(axis=1, min_count=1).rename("value").reset_index()
@@ -215,7 +226,8 @@ def tb_deaths_series() -> pd.DataFrame:
 
 def annual_trend(d: pd.DataFrame, index) -> pd.Series:
     """Average annual % change over TREND_YEARS from a log-linear fit (at least 5 positive years), clipped to
-    TREND_CLIP; countries with no usable data get the median across countries."""
+    TREND_CLIP; countries with no usable data get the median across countries.
+    Feeds: the death-rate trends in country_inputs.csv (under-5 mortality, TB)."""
     d = d[d.year.between(*TREND_YEARS) & (d.value > 0)]
     out = {}
     for iso, g in d.groupby("iso3"):
@@ -229,7 +241,8 @@ def annual_trend(d: pd.DataFrame, index) -> pd.Series:
 # Poisson fixed-effects death regressions (Cavalcanti et al. 2025, Lancet, appendix section 4.1)
 # --------------------------------------------------------------------------- #
 def poisson_fe(df: pd.DataFrame, y: str, x: str, exposure: str, controls=("ln_gdp_pc", "ln_ghes_pc")) -> dict:
-    """Poisson GLM with country and year fixed effects, log(exposure) offset, SEs clustered by country."""
+    """Poisson GLM with country and year fixed effects, log(exposure) offset, SEs clustered by country.
+    Feeds: regressions.json (Poisson death regressions on the Validation page)."""
     import statsmodels.api as sm
     import statsmodels.formula.api as smf
     cols = ["iso3", "year", y, x, exposure, *controls]
@@ -248,6 +261,10 @@ def poisson_fe(df: pd.DataFrame, y: str, x: str, exposure: str, controls=("ln_gd
 # Fixed-effects regression (two-way within transformation, country-clustered SEs) - no statsmodels needed
 # --------------------------------------------------------------------------- #
 def twoway_fe(df: pd.DataFrame, y: str, xs: list, unit="iso3", time="year") -> dict:
+    """Linear regression of y on xs with country and year fixed effects (iterative demeaning) and country-clustered
+    standard errors. Returns coefficients, standard errors, observations, countries, years and within-R2
+    (regressions.json). Feeds the fiscal-response estimate (theta) and the coverage regressions on the Validation
+    page."""
     d = df[[unit, time, y] + xs].replace([np.inf, -np.inf], np.nan).dropna().copy()
     cols = [y] + xs
     # iterative demeaning (handles unbalanced panels)
@@ -280,6 +297,9 @@ def twoway_fe(df: pd.DataFrame, y: str, xs: list, unit="iso3", time="year") -> d
 
 # --------------------------------------------------------------------------- #
 def main(a):
+    """Full rebuild of model_data/ from the raw files in datasets/ (paths in `a`): aid baseline by service line
+    (dah_lines.csv), IHME 2025 ratios, country inputs (WDI, WHO, MAP, IMF), signed MOUs, country profile, regression
+    panel and regressions.json."""
     OUT.mkdir(exist_ok=True)
     if a.download:
         download_ext()
@@ -540,6 +560,9 @@ def main(a):
 # All-country results for each preset (loaded instantly by the app when its settings are the defaults)
 # --------------------------------------------------------------------------- #
 def precompute_all():
+    """Run every preset (except Custom) for all dashboard countries with the default settings (no government
+    replacement, death-rate trend on, 400 draws) and save model_data/all_countries_<preset>.csv, which the All
+    Countries page loads."""
     import health_model as hm
     import scenarios as scn
 

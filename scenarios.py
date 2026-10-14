@@ -64,7 +64,8 @@ NO_MOU_DATA = "MOU signed; no funding data available."
 
 
 def mou_signed(path=None) -> pd.DataFrame:
-    """Signed America First MOUs (KFF tracker), built by prepare_model.py."""
+    """Signed America First MOUs (KFF tracker), built by prepare_model.py.
+    Feeds: the header MOU status and which countries can run America First MOUs."""
     p = MOU_SIGNED_FILE if path is None else path
     return pd.read_csv(p) if p.exists() else pd.DataFrame(columns=["iso3", "country", "agreement_date"])
 
@@ -72,7 +73,8 @@ def mou_signed(path=None) -> pd.DataFrame:
 def mou_schedule(ci: pd.DataFrame, iso3: str):
     """(yearly cuts 2026-2030, last year with schedule data) from the team's MOU sheet, or (None, None) without a
     schedule. Cut = 1 - US funding that year / 2021-25 reference, used as written: never rescaled; a funding increase
-    is a 0% cut; years after the schedule ends hold its last year's cut."""
+    is a 0% cut; years after the schedule ends hold its last year's cut.
+    Feeds: the America First MOUs scenario and its schedule chart."""
     if iso3 not in ci.index:
         return None, None
     r = ci.loc[iso3]
@@ -89,7 +91,8 @@ def mou_schedule(ci: pd.DataFrame, iso3: str):
 
 
 def mou_group(ci: pd.DataFrame, iso3: str, signed=None) -> str:
-    """A = signed MOU with a schedule; B = signed, no schedule; C = no signed MOU."""
+    """A = signed MOU with a schedule; B = signed, no schedule; C = no signed MOU.
+    Feeds: whether America First MOUs is offered for a country."""
     signed = set(mou_signed()["iso3"]) if signed is None else set(signed)
     if iso3 not in signed:
         return MOU_GROUP_C
@@ -97,11 +100,14 @@ def mou_group(ci: pd.DataFrame, iso3: str, signed=None) -> str:
 
 
 def mou_groups(ci: pd.DataFrame, isos, signed=None) -> dict:
+    """MOU group (A, B or C, see mou_group) for each country in isos."""
     signed = set(mou_signed()["iso3"]) if signed is None else set(signed)
     return {c: mou_group(ci, c, signed) for c in isos}
 
 
 def mou_schedule_text(ci: pd.DataFrame, iso3: str, country_name: str) -> str:
+    """The caption under the America First MOUs scenario: the country's yearly US bilateral cuts 2026-2030 from its MOU
+    (shares), or 'MOU signed; no funding data available.'"""
     cuts, end = mou_schedule(ci, iso3)
     if cuts is None:
         return NO_MOU_DATA
@@ -114,25 +120,30 @@ def mou_schedule_text(ci: pd.DataFrame, iso3: str, country_name: str) -> str:
 
 
 def shortfall_cuts(opts: dict) -> tuple:
-    """(Gavi cut %, Global Fund cut %) for the Global Fund & Gavi Shortfalls preset; the defaults when not set."""
+    """(Gavi cut %, Global Fund cut %) for the Global Fund & Gavi Shortfalls preset; the defaults when not set.
+    Feeds: build_scenario and the scenario labels."""
     opts = opts or {}
     return int(opts.get("gavi_cut", GAVI_CUT_DEFAULT)), int(opts.get("gf_cut", GF_CUT_DEFAULT))
 
 
 def shortfall_label(opts: dict) -> str:
-    """'Gavi −15% · Global Fund −20%'."""
+    """'Gavi −15% · Global Fund −20%'.
+    Feeds: the kicker, captions and the scenario description."""
     g, f = shortfall_cuts(opts)
     return f"Gavi −{g}% · Global Fund −{f}%"
 
 
 def preset_description(preset: str, opts: dict | None = None) -> str:
-    """The preset's description, with the chosen Gavi and Global Fund cuts for the shortfalls preset."""
+    """The preset's description, with the chosen Gavi and Global Fund cuts for the shortfalls preset.
+    Feeds: the Donor Scenario tooltip and the Validation caption."""
     if preset == SHORTFALLS:
         return PRESETS[preset] + f" Selected: {shortfall_label(opts)}."
     return PRESETS[preset]
 
 
 def default_opts(preset: str, ci: pd.DataFrame) -> dict:
+    """The options a preset starts with: Gavi 15% / Global Fund 20% for the shortfalls preset, US 100% for Custom, none
+    otherwise."""
     if preset == SHORTFALLS:
         return {"gavi_cut": GAVI_CUT_DEFAULT, "gf_cut": GF_CUT_DEFAULT}
     if preset == "Custom":
@@ -142,6 +153,9 @@ def default_opts(preset: str, ci: pd.DataFrame) -> dict:
 
 
 def build_scenario(preset: str, opts: dict, ci: pd.DataFrame) -> hm.Scenario:
+    """Turn a donor preset and its options into a health_model.Scenario: which donors' bilateral and multilateral money
+    is cut, by how much (shares 0-1), pair and channel cuts, MOU schedules, or IHME's 2025 ratios. Feeds every model
+    run for the chosen preset."""
     sc = hm.Scenario(name=preset)
     if preset in ("Full US exit", "Combined retreat"):
         sc.src_direct["United States"] = 1.0
@@ -173,6 +187,7 @@ def build_scenario(preset: str, opts: dict, ci: pd.DataFrame) -> hm.Scenario:
 
 
 def scenario_key(sc: hm.Scenario) -> str:
+    """The scenario as a JSON string, used as the cache key for model runs."""
     d = {k: v for k, v in sc.__dict__.items()}
     d["pair"] = {f"{a}|{b}": v for (a, b), v in sc.pair.items()}
     d["us_direct_path_by_country"] = {k: [float(x) for x in v] for k, v in sc.us_direct_path_by_country.items()}
@@ -180,16 +195,19 @@ def scenario_key(sc: hm.Scenario) -> str:
 
 
 def scenario_from_key(key: str) -> hm.Scenario:
+    """The scenario back from scenario_key's JSON string."""
     d = json.loads(key)
     d["pair"] = {tuple(k.split("|")): v for k, v in d["pair"].items()}
     return hm.Scenario(**d)
 
 
 def preset_slug(preset: str) -> str:
+    """The preset name with non-alphanumerics replaced by '_', for file names."""
     return re.sub(r"[^A-Za-z0-9]+", "_", preset).strip("_")
 
 
 def precomputed_path(model_dir, preset: str):
+    """model_data/all_countries_<preset>.csv for a preset (the All Countries page's file)."""
     return model_dir / f"all_countries_{preset_slug(preset)}.csv"
 
 
@@ -205,7 +223,8 @@ S_CURVE_STEEPNESS = 1.5          # logistic slope around the midpoint year (year
 
 def path_shape(name: str) -> list:
     """Share of the full cut in force in years t = 1..5 (N = 5): linear t/5; front-loaded 1-(1-t/5)^2; back-loaded
-    (t/5)^2; S-curve a logistic with midpoint year 3, rescaled so year 5 = 1."""
+    (t/5)^2; S-curve a logistic with midpoint year 3, rescaled so year 5 = 1.
+    Feeds: the funding-path choice (share of the cut in force each year)."""
     t = np.arange(1, 6) / 5
     if name == "Linear phase-out":
         v = t
@@ -223,7 +242,8 @@ def path_shape(name: str) -> list:
 
 def gov_shape(name: str, points_per_year: float, ceiling: float) -> list:
     """Extra percentage points of the government budget going to health in years 1..5 (cumulative): Steady p*t;
-    Fast start 5p * (1-(1-t/5)^2); Slow start 5p * (t/5)^2; never above the room left to the Abuja ceiling."""
+    Fast start 5p * (1-(1-t/5)^2); Slow start 5p * (t/5)^2; never above the room left to the Abuja ceiling.
+    Feeds: the Gradual Budget Increase shapes."""
     t = np.arange(1, 6) / 5
     p = max(float(points_per_year), 0.0)
     v = {"Fast start": 5 * p * (1 - (1 - t) ** 2), "Slow start": 5 * p * t ** 2}.get(name, p * np.arange(1, 6))

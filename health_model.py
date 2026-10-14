@@ -90,6 +90,11 @@ _EXCESS_LOGGED: set = set()     # (iso3, line) pairs already logged as "donor mo
 # Inputs
 # --------------------------------------------------------------------------- #
 def load_inputs(model_dir: Path = MODEL_DIR) -> dict:
+    """Read the model inputs from model_data/: dah_lines.csv (baseline aid, US$ a year, by country x donor group x
+    channel x service line), country_inputs.csv (one row per country: people in need, coverage, deaths, fiscal data),
+    ihme_trend.csv (IHME's 2025 / 2021-23 aid ratios) and regressions.json. Returns a dict with those tables, the
+    global mix of each disease's service lines (fallback for spreading unspecified money) and the IHME trend as a
+    lookup. Feeds every model run."""
     lines = pd.read_csv(model_dir / "dah_lines.csv")
     ci = pd.read_csv(model_dir / "country_inputs.csv").set_index("iso3")
     trend = pd.read_csv(model_dir / "ihme_trend.csv")
@@ -102,12 +107,16 @@ def load_inputs(model_dir: Path = MODEL_DIR) -> dict:
 
 
 def load_params(path: Path = PARAMS_FILE) -> pd.DataFrame:
+    """Read model_params.csv: one row per parameter with central, low and high values (units in its 'unit' column),
+    status (sourced / assumption) and source. Feeds every model run, the Methods parameter table and the parameter
+    editor."""
     return pd.read_csv(path).set_index("param")
 
 
 def validate_params(ptab: pd.DataFrame) -> list:
     """Problems that make a parameter table unusable (shown inline in the app, which then keeps the previous valid
-    table): low above high, or central outside [low, high]. Empty list = valid."""
+    table): low above high, or central outside [low, high]. Empty list = valid.
+    Feeds: the inline message in the parameter editor."""
     out = []
     for p, r in ptab.iterrows():
         try:
@@ -126,7 +135,8 @@ def validate_params(ptab: pd.DataFrame) -> list:
 
 def draw_params(ptab: pd.DataFrame, n: int, seed: int = 7) -> dict:
     """n == 0 -> central values only (arrays of length 1). A parameter with low == high (or low == central == high) is
-    a constant: n copies of its central value, with no triangular draw (I-16)."""
+    a constant: n copies of its central value, with no triangular draw (I-16).
+    Feeds: every model run (the central run and the 95% ranges)."""
     rng = np.random.default_rng(seed)
     out = {}
     for p, r in ptab.iterrows():
@@ -143,7 +153,8 @@ def draw_params(ptab: pd.DataFrame, n: int, seed: int = 7) -> dict:
 
 
 def theta_historical(reg: dict) -> tuple:
-    """Replacement rate implied by the fiscal regression: -(b_fall + b_fall_lag) with a 95% CI (independence approx)."""
+    """Replacement rate implied by the fiscal regression: -(b_fall + b_fall_lag) with a 95% CI (independence approx).
+    Feeds: the Government Response help text and the Methods page (replacement per US$1 lost)."""
     r = reg["fiscal_replacement"]
     b = r["coef"]["d_dah_pc_fall"] + r["coef"]["d_dah_pc_fall_l1"]
     se = float(np.hypot(r["se"]["d_dah_pc_fall"], r["se"]["d_dah_pc_fall_l1"]))
@@ -168,6 +179,10 @@ class Scenario:
     scale: float = 1.0                                  # multiplies every cut (the scenario's own path, 0 -> 1)
 
     def cuts(self, cells: pd.DataFrame, iso3: str, trend_map: dict) -> np.ndarray:
+        """The scenario's cut (share 0-1) on each aid cell (donor group x channel x disease) of one country. IHME trend:
+        1 - IHME's 2025 / 2021-23 ratio. Otherwise the donor cut (bilateral or via multilaterals), overridden by a
+        donor x channel pair cut, combined with a channel cut for all donors as 1 - (1 - donor cut)(1 - channel cut);
+        then x scale. Feeds Aid at Risk and everything after it."""
         out = np.zeros(len(cells))
         for i, (s, c, b) in enumerate(zip(cells["src_grp"], cells["chan_grp"], cells["bucket"])):
             if self.bucket_only and b != self.bucket_only:
@@ -201,6 +216,8 @@ class Scenario:
 
 
 def uniform_scenario(bucket: str, cut: float) -> Scenario:
+    """A scenario that cuts one disease by the same share for every donor and channel. bucket: 'HIV', 'TB', 'Malaria' or
+    'Immunization'; cut: share 0-1. Used by the per-US$1M cards and the 'Extra deaths as more aid is cut' chart."""
     sc = Scenario(name=f"{bucket} -{cut:.0%}", bucket_only=bucket)
     sc.src_direct = {s: cut for s in SOURCE_GROUPS}
     sc.src_multi = {s: cut for s in SOURCE_GROUPS}
@@ -212,7 +229,8 @@ def per_million_card(iso3: str, bucket: str, inputs: dict, ptab: pd.DataFrame, m
     disease's aid lines in proportion to current aid (a uniform cut, every donor and channel), no government
     replacement, sudden path, every mechanism included (caps, TB spread, malaria rebound, HIV infection deaths).
     Returns None when the country has no aid for the disease. Where the disease's aid is under US$1M a year, the whole
-    of it is cut and the results are scaled up to US$1M (flag 'scaled')."""
+    of it is cut and the results are scaled up to US$1M (flag 'scaled').
+    Feeds: the four 'What Every US$1 Million Cut Does' cards."""
     L = inputs["lines"]
     base = float(L.loc[(L.iso3 == iso3) & (L.bucket == bucket), "usd"].sum())
     if base <= 0:
@@ -243,28 +261,34 @@ class Fiscal:
 # Country helpers
 # --------------------------------------------------------------------------- #
 def _v(row, k, default=np.nan):
+    """A value from a country row as a float, or `default` when it is missing or NaN."""
     x = row.get(k, default)
     return default if x is None or (isinstance(x, float) and np.isnan(x)) else float(x)
 
 
 def fiscal_space(row: pd.Series, effort: str = "p75") -> dict:
     """Backfill capacity per year = GHES x (strong-year growth - typical growth) x debt-stress factor.
-    effort 'p75' = a strong year (75th percentile of real GHES growth, 2001-23); 'p90' = the best years (90th)."""
+    effort 'p75' = a strong year (75th percentile of real GHES growth, 2001-23); 'p90' = the best years (90th).
+    Inputs: a country row (GHES 2023 in US$, growth rates as shares, interest as % of revenue). Feeds: Backfill
+    Capacity (fiscal space) in the fiscal panel, and the cap on 'Replace a Set Share' and 'As Much as Fiscal Space
+    Allows'."""
     ghes = _v(row, "ghes_2023")
     hs = health_share(row.name if isinstance(row.name, str) else "")      # health share of government spending
     med, p90 = _v(row, "ghes_growth_median", 0.0), _v(row, "ghes_growth_p90", 0.0)
     p75 = _v(row, "ghes_growth_p75", 0.0)
     top = p90 if effort == "p90" else p75
+    # surge = how much faster than usual GHES can grow in a strong year (a share of GHES a year, never negative)
     surge = max(0.0, top - max(med, 0.0))
     # interest % of revenue (fiscal_inputs.py, audit I-26): the more recent of World Bank and IMF WEO, else the
     # income-group median (estimated); never a silent default of 1
     intr = _v(row, "interest_pct_revenue")
     if np.isnan(intr):
         raise ValueError(f"{row.name}: no interest-to-revenue value (run fiscal_inputs.py)")
+    # debt stress: 1 when interest takes <= 10% of revenue, falling linearly to 0.25 at >= 40%
     stress = float(np.clip(1 - (intr - 10) / 40, 0.25, 1.0))
     pop, gdp_pc = _v(row, "sp_pop_totl"), _v(row, "gdp_pc")
     rev_pct = _v(row, "gc_rev_xgrt_gd_zs")
-    gdp = pop * gdp_pc if not (np.isnan(pop) or np.isnan(gdp_pc)) else np.nan
+    gdp = pop * gdp_pc if not (np.isnan(pop) or np.isnan(gdp_pc)) else np.nan     # US$ (for revenue in US$)
     return {"ghes": ghes, "ghes_growth_median": med, "ghes_growth_p90": p90, "ghes_growth_p75": p75,
             "ghes_growth_top": top, "effort": effort, "surge_rate": surge,
             "interest_pct_revenue": intr, "stress_factor": stress,
@@ -279,7 +303,9 @@ def fiscal_space(row: pd.Series, effort: str = "p75") -> dict:
 
 
 def epi(row: pd.Series, P: dict) -> dict:
-    """Population in need and baseline coverage for each direct line."""
+    """Population in need and baseline coverage for each direct line.
+    Returns need_cov: line -> (people in need, coverage 0-1 or NaN for the default), flags, ART coverage and source
+    tags for malaria coverage. Feeds: people losing a service, coverage before -> after, deaths."""
     pop = _v(row, "sp_pop_totl")
     inc_hiv = _v(row, "sh_hiv_incd_tl") / pop * 1000 if pop else np.nan
     # malaria coverage (malaria_inputs.py, audit I-11): MAP 2025 where MAP has a value; otherwise a survey (treatment:
@@ -308,7 +334,8 @@ def epi(row: pd.Series, P: dict) -> dict:
 
 
 def coverage_source(row: pd.Series, line: str) -> str:
-    """Short source tag for a malaria line's baseline coverage, e.g. 'MAP 2025', 'survey 2018', 'assumed'."""
+    """Short source tag for a malaria line's baseline coverage, e.g. 'MAP 2025', 'survey 2018', 'assumed'.
+    Feeds: the source tag next to each malaria coverage value in the service table."""
     col = {"mal_itn": "mal_itn_cov", "mal_irs": "mal_irs_cov", "mal_cm": "mal_cm_cov"}[line]
     src, yr = row.get(f"{col}_source"), row.get(f"{col}_year")
     yr = f" {int(yr)}" if isinstance(yr, (int, float, np.integer, np.floating)) and not np.isnan(yr) else ""
@@ -329,13 +356,15 @@ PRICE_YEAR = 2023
 
 
 def inflate(value: float, cost_year: int) -> float:
-    """A study cost in cost_year US$ -> 2023 US$ (US CPI-U)."""
+    """A study cost in cost_year US$ -> 2023 US$ (US CPI-U).
+    Feeds: unit costs taken from studies (ART site costs, malaria treatment, IRS)."""
     return value * CPI_U[PRICE_YEAR] / CPI_U[int(cost_year)]
 
 
 def _uc_ref() -> dict:
     """Sourced unit-cost reference values (country ART studies, income-group TB costs), in 2023 US$: each value is
-    inflated from its cost_year (ART site costs are 2018-2020 US$; TB rows are already 2023 US$)."""
+    inflated from its cost_year (ART site costs are 2018-2020 US$; TB rows are already 2023 US$).
+    Feeds: unit_costs."""
     if not hasattr(_uc_ref, "cache"):
         r = pd.read_csv(UC_REF_FILE)
         _uc_ref.cache = {(k, key): inflate(float(v), y)
@@ -344,6 +373,8 @@ def _uc_ref() -> dict:
 
 
 def income_group(row: pd.Series) -> str:
+    """World Bank income group of a country row ('low_income', 'lower_middle_income', 'upper_middle_income'); without
+    one, a rough guess from GDP per person (US$). Used for TB unit costs and the country header."""
     g = row.get("income_group") if hasattr(row, "get") else None
     if isinstance(g, str) and g:
         return g
@@ -352,19 +383,23 @@ def income_group(row: pd.Series) -> str:
 
 
 def unit_costs(row: pd.Series, P: dict) -> dict:
-    """Donor cost per unit of service. Site/provider costs from studies are grossed up for above-service spending."""
+    """Donor cost per unit of service. Site/provider costs from studies are grossed up for above-service spending.
+    Returns line -> US$ per unit (2023 US$, arrays over draws). Feeds: Cost per Person and people losing a service."""
     ref = _uc_ref()
     iso = row.name if isinstance(row.name, str) else ""
     markup = 1.0 / (1.0 - P["asd_share"])                # site cost -> full donor program cost
     g = _v(row, "gdp_pc", 1000.0)
+    # staff and delivery costs scale with income: (GDP per person / US$1,000)^elasticity, GDP floored at US$200
     sc = (max(g, 200.0) / 1000.0) ** P["uc_scale_elast"]
     art_site = ref.get(("art_site_cost", iso))
-    if art_site is None:
+    if art_site is None:                                  # no country study: ARVs + income-scaled non-ARV costs
         art_site = ref[("art_site_default", "arv")] + ref[("art_site_default", "non_arv")] * sc
     ig = income_group(row)
     ig_key = ig if ig in ("low_income", "lower_middle_income", "upper_middle_income") else "upper_middle_income"
     tb_ds = ref[("tb_ds_cost", ig_key)]
     tb_dr = ref[("tb_dr_cost", ig_key)]
+    # HIV incidence per 1,000 people (0.3 if missing, clipped to 0.05-10): prevention costs more per infection averted
+    # where infections are rare
     inc = _v(row, "sh_hiv_incd_tl") / _v(row, "sp_pop_totl") * 1000
     inc = 0.3 if np.isnan(inc) else float(np.clip(inc, 0.05, 10))
     one = np.ones_like(P["uc_imm"])
@@ -391,7 +426,8 @@ TREND_COLUMNS = {"u5": "trend_u5mr", "malaria": "trend_malaria_deaths", "tb": "t
 def mortality_trend_factors(row: pd.Series, kind: str, use: bool = True) -> np.ndarray:
     """(1 + annual trend)^(year - 1) for years 1..5: baseline deaths keep falling (or rising) on the country's trend
     (under-5 mortality: 2010-2019; malaria: MAP P. falciparum cases 2015-2025, malaria_inputs.py).
-    kind: 'u5' (under-5 mortality rate) or 'malaria' (all-age malaria deaths). Ones when switched off."""
+    kind: 'u5' (under-5 mortality rate) or 'malaria' (all-age malaria deaths). Ones when switched off.
+    Feeds: deaths from vaccines and malaria in each year 2026-2030."""
     if not use:
         return np.ones(N_YEARS)
     t = _v(row, TREND_COLUMNS[kind])
@@ -402,7 +438,8 @@ def mortality_trend_factors(row: pd.Series, kind: str, use: bool = True) -> np.n
 def _units_lost(net, base, unit_cost, covered, cap_base=None):
     """Units of service lost (before continuity): donor-funded units x share of donor money lost. cap_base: the money
     that pays for the service itself, used to test whether donor money buys more than everyone covered (for ART, the
-    treatment money only, not the testing and care money that also counts toward it; audit I-09)."""
+    treatment money only, not the testing and care money that also counts toward it; audit I-09).
+    Feeds: People Losing Service (units, people or patient-years a year)."""
     net, base, unit_cost = np.asarray(net, dtype=float), np.asarray(base, dtype=float), np.asarray(unit_cost, dtype=float)
     cap_base = base if cap_base is None else np.asarray(cap_base, dtype=float)
     plain = net / unit_cost
@@ -416,7 +453,8 @@ def _units_lost(net, base, unit_cost, covered, cap_base=None):
 def per_unit_levels(row: pd.Series, P: dict, art_cov: float, trend: bool = True) -> dict:
     """Deaths per unit of service lost once the full effect has built up, by CALENDAR year 1..5 (arrays n x 5),
     for the lines handled year by year (PMTCT, TB, vaccines). The ramp-up (LAG) is applied separately, by how long the
-    cut has been in force. trend: vaccine deaths scale with the country's falling under-5 mortality."""
+    cut has been in force. trend: vaccine deaths scale with the country's falling under-5 mortality.
+    Feeds: deaths for PMTCT, TB and vaccines."""
     n = len(P["uc_imm"])
     h = _v(row, "tb_hiv_share", 0.0)
     a = 0.0 if np.isnan(art_cov) else art_cov
@@ -436,7 +474,8 @@ def per_unit_levels(row: pd.Series, P: dict, art_cov: float, trend: bool = True)
 
 def per_unit_deaths(row: pd.Series, P: dict, art_cov: float, trend: bool = True) -> dict:
     """Deaths per unit of service lost, by year 1..5 of a cut in force since year 1 (arrays n x 5). Malaria is
-    handled separately (LiST). = per_unit_levels x LAG, plus the ART hazard ramp."""
+    handled separately (LiST). = per_unit_levels x LAG, plus the ART hazard ramp.
+    Feeds: the 'lives first' ranking and per-line deaths."""
     lv = per_unit_levels(row, P, art_cov, trend)
     out = {l: v * (LAG[l] if LAG.get(l) is not None else 1.0) for l, v in lv.items()}
     out["hiv_art"] = np.outer(P["art_hazard_mult"], ART_HAZARD)
@@ -451,7 +490,8 @@ def art_cohorts(stock: np.ndarray, hazard_by_age: np.ndarray, transmission: np.n
     hazard of the calendar year, as before.
     After 2030 funding is back: people still off care return at `reengage` a year (mid-year average), and those who
     have not yet returned keep their risk. Returns (deaths n x 5, infections n x 5, deaths n x POST, infections
-    n x POST, people still off care n x POST) for 2026-2030 and 2031-2035."""
+    n x POST, people still off care n x POST) for 2026-2030 and 2031-2035.
+    Feeds: HIV treatment deaths and new infections from people off ART, 2026-2035."""
     n = stock.shape[0]
     pos, neg = np.clip(stock, 0, None), np.clip(stock, None, 0)
     deaths, infections = np.zeros((n, N_YEARS)), np.zeros((n, N_YEARS))
@@ -488,7 +528,8 @@ def art_cohorts(stock: np.ndarray, hazard_by_age: np.ndarray, transmission: np.n
 def hiv_death_timing(median: np.ndarray, n_years: int) -> np.ndarray:
     """Share of the eventual HIV deaths among people infected (mid-year) in year 0 that happen in years 0..n_years-1
     after infection, without treatment: Weibull survival with shape HIV_WEIBULL_SHAPE and the given median (years).
-    Returns n x n_years."""
+    Returns n x n_years.
+    Feeds: deaths from new HIV infections (2026-2030 and 2031-2035)."""
     lam = np.asarray(median, dtype=float)[:, None] / np.log(2) ** (1 / HIV_WEIBULL_SHAPE)
     k = np.arange(n_years)[None, :]
     F = lambda t: 1 - np.exp(-(np.maximum(t, 0) / lam) ** HIV_WEIBULL_SHAPE)
@@ -501,7 +542,8 @@ def malaria_levels(row, P, units, need_cov) -> dict:
     (1 - IRS coverage), each reduced by its own people losing the service / people at risk. Treatment coverage is the
     share of malaria cases that get an effective drug (MAP); mal_cm_eff is how much that reduces deaths (separate steps,
     as in the Lives Saved Tool). Returns the yearly extra deaths per line (arrays n) at baseline D0, before ramp-up and
-    the mortality trend."""
+    the mortality trend.
+    Feeds: malaria deaths by line (bednets, spraying, treatment)."""
     D0 = _v(row, "malaria_deaths")
     n = len(P["mal_vc_eff"])
     if np.isnan(D0) or D0 <= 0:
@@ -519,6 +561,7 @@ def malaria_levels(row, P, units, need_cov) -> dict:
     ccm1 = np.clip(ccm0 - (units["mal_cm"] / cases if cases and not np.isnan(cases) else 0), 0, 1)
 
     def vc(i, r):
+        """Combined vector-control coverage: 1 - (1 - bednet use)(1 - spraying coverage), all shares 0-1."""
         return 1 - (1 - i) * (1 - r)
     cvc0, cvc1 = vc(itn0, irs0), vc(itn1, irs1)
     rv = (1 - Ev * cvc1) / (1 - Ev * cvc0)
@@ -536,7 +579,8 @@ def malaria_levels(row, P, units, need_cov) -> dict:
 
 def malaria_deaths(row, P, units, need_cov, trend: bool = True) -> dict:
     """Per-line yearly malaria deaths (n x 5) for a cut in force since year 1: levels x LAG x mortality trend.
-    trend: baseline malaria deaths D0 follow the country's 2015-2025 P. falciparum case trend in years 1..5."""
+    trend: baseline malaria deaths D0 follow the country's 2015-2025 P. falciparum case trend in years 1..5.
+    Feeds: malaria deaths in the service table and headline."""
     lv = malaria_levels(row, P, units, need_cov)
     f = mortality_trend_factors(row, "malaria", trend)          # D0 x (1 + trend)^(year - 1)
     return {l: np.outer(v, LAG[l] * f) for l, v in lv.items()}
@@ -546,6 +590,8 @@ def malaria_deaths(row, P, units, need_cov, trend: bool = True) -> dict:
 # Core
 # --------------------------------------------------------------------------- #
 def _path(x, default) -> np.ndarray:
+    """A funding path or government-money path as an array of 5 values (2026-2030); `default` repeated when None. Raises
+    an error for any other length."""
     v = np.full(N_YEARS, float(default)) if x is None else np.asarray(x, dtype=float).ravel()
     if v.size != N_YEARS:
         raise ValueError(f"a year path needs {N_YEARS} values (2026-2030), got {v.size}")
@@ -557,7 +603,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                 cut_path=None, gov_add_usd=None) -> dict:
     """The full model for one country. cut_path: share of the scenario's full cut in force in each year 2026-2030
     (default all 1 = a sudden cut). gov_add_usd: extra government health money in each year (default 0), on top of
-    the government response in `fiscal`. With the defaults the results are the same as the original sudden-cut model."""
+    the government response in `fiscal`. With the defaults the results are the same as the original sudden-cut model.
+    Feeds: every Section 4 number for the selected country (headline, The Numbers, service table, charts, fiscal
+    panel) and each row of the All Countries page."""
     cut_path = np.clip(_path(cut_path, 1.0), 0.0, 1.0)
     gov_add = np.clip(_path(gov_add_usd, 0.0), 0.0, None)
     ci, lines = inputs["ci"], inputs["lines"]
@@ -620,6 +668,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     G = float(max(np.clip(g, 0, None).sum() for g in gross_full_t)) if len(cells) else 0.0
 
     def response(g):
+        """The government's replacement in one year for an aid loss g (US$): none / gradual 0, a set share theta x g, or
+        all of g; capped at fiscal capacity when the cap is on (always for 'as much as fiscal space allows'). Returns
+        (replacement, amount wanted), US$."""
         want = {"none": 0.0, "gradual": 0.0, "custom": fiscal.theta * g, "max": g}[fiscal.mode]
         r = min(want, fs["capacity"]) if (fiscal.cap_to_space or fiscal.mode == "max") else want
         return max(r, 0.0), want
@@ -646,6 +697,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     # deaths per $ (central) for "lives first" ranking; malaria via a small marginal LiST calculation
     def deaths_per_dollar(l):
+        """Deaths over 5 years per US$ lost on one service line (central parameters), used to rank lines for the 'lives
+        first' allocation. Malaria uses a small Lives Saved Tool calculation for US$1M."""
         if l in pudc:
             return float(pudc[l].sum() / ucc[l][0])
         if l.startswith("mal_"):
@@ -827,6 +880,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         timing = hiv_death_timing(Px["hiv_survival_median"], H)
 
         def infection_deaths(new_inf):                                    # n x H infections -> n x H deaths
+            """Deaths from new HIV infections: each year's infections (draws x years) spread over the following years by
+            the Weibull survival curve (hiv_death_timing) and scaled by each year's death risk at that year's ART
+            coverage. Returns draws x years of deaths."""
             out = np.zeros((nx, H))
             for s_ in range(H):
                 for t in range(s_, H):
@@ -848,9 +904,11 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     # ---- assemble (money and people are averages over the 5 years: equal to the yearly values for a sudden cut) ----
     def q(a, p):
+        """The p-th percentile of the draws (or the single value when there is one draw)."""
         return float(np.percentile(a, p)) if np.size(a) > 1 else float(np.asarray(a).ravel()[0])
 
     def mean_c(seq, l):
+        """The central run's value of line l, averaged over the 5 years (US$ or people)."""
         return float(np.mean([np.asarray(x[l]).ravel()[0] for x in seq]))
 
     recs = []
@@ -978,6 +1036,10 @@ STAT_SPECS = {   # bucket -> (regression key, regressor, need column, line whose
 
 
 def statistical_crosscheck(res: dict, inputs: dict, ptab: pd.DataFrame) -> pd.DataFrame:
+    """Validation page, 'Poisson regression' method: the coverage drop implied by the panel regressions (coverage on
+    log(1 + aid per person in need)) for the run's net aid loss, turned into deaths with the model's own deaths per
+    person. res: a run_country result. Returns one row per disease (HIV, TB, immunization): coverage drop (percentage
+    points) and deaths over 5 years with a 95% range."""
     ci = inputs["ci"]
     row = ci.loc[res["iso3"]]
     Pc = draw_params(ptab, 0)
@@ -1014,6 +1076,9 @@ def statistical_crosscheck(res: dict, inputs: dict, ptab: pd.DataFrame) -> pd.Da
 # Batch helpers
 # --------------------------------------------------------------------------- #
 def dose_response(iso3, bucket, fiscal, inputs, ptab, grid=None, n_draws=120, mortality_trend=True):
+    """The 'Extra deaths as more aid is cut' chart: run the model for one disease cut by 0%, 10%, ... 100% (all donors).
+    Returns one row per cut: net aid lost (US$ a year), deaths over 5 years with range, and the main service's
+    coverage drop (percentage points)."""
     grid = np.linspace(0, 1, 11) if grid is None else grid
     rows = []
     for g in grid:
@@ -1033,7 +1098,8 @@ PEPFAR_ON_ART = 20.6e6           # people on ART that PEPFAR reports supporting 
 
 def donor_funded_on_art(inputs, ptab) -> pd.DataFrame:
     """People on ART that donor treatment money pays for now, per country (central): min(people on ART outside PMTCT,
-    ART money / cost per patient-year)."""
+    ART money / cost per patient-year).
+    Feeds: the Validation page comparison with PEPFAR."""
     rows = []
     for c in [c for c in inputs["ci"].index if c in set(inputs["lines"].iso3)]:
         L = run_country(c, Scenario(), Fiscal(), inputs, ptab, n_draws=0)["lines"].set_index("line")
@@ -1043,7 +1109,8 @@ def donor_funded_on_art(inputs, ptab) -> pd.DataFrame:
 
 def donor_cost_excess(inputs, ptab) -> pd.DataFrame:
     """Country-lines where baseline donor aid / cost per person exceeds the people currently covered (the excess
-    pays for things other than the service; units lost are scaled proportionally there)."""
+    pays for things other than the service; units lost are scaled proportionally there).
+    Feeds: the Validation page count of lines where donor money exceeds the service cost."""
     rows = []
     for c in [c for c in inputs["ci"].index if c in set(inputs["lines"].iso3)]:
         L = run_country(c, Scenario(), Fiscal(), inputs, ptab, n_draws=0)["lines"]
@@ -1061,6 +1128,8 @@ HEALTH_SHARE_FILE = HERE / "ext_data" / "wdi" / "sh_xpd_ghed_ge_zs.csv"
 
 
 def _share_history() -> pd.DataFrame:
+    """World Bank WDI SH.XPD.GHED.GE.ZS (health's share of government spending, %), every country-year, read once and
+    cached. Feeds health_share and the 'fastest historical rise' benchmark."""
     if not hasattr(_share_history, "cache"):
         d = pd.read_csv(HEALTH_SHARE_FILE)
         d.columns = ["iso3", "year", "share"]
@@ -1070,7 +1139,8 @@ def _share_history() -> pd.DataFrame:
 
 
 def _series(path: Path, value) -> pd.Series:
-    """year -> value from one of the per-country files (empty when the file is missing)."""
+    """year -> value from one of the per-country files (empty when the file is missing).
+    Feeds: health_share's estimated fallback."""
     if not path.exists():
         return pd.Series(dtype=float)
     d = pd.read_csv(path)
@@ -1082,7 +1152,8 @@ def health_share(iso3: str) -> dict:
       1. World Bank WDI SH.XPD.GHED.GE.ZS (WHO Global Health Expenditure Database), latest available year;
       2. if missing: IHME government health spending / IMF WEO general-government expenditure, same year (estimated);
       3. otherwise NaN ('n/a').
-    Returns share_pct, year, estimated (bool) and source."""
+    Returns share_pct, year, estimated (bool) and source.
+    Feeds: the Health Share pill, the path panel caption, the room to 15%, and the points-to-dollars conversion."""
     cache = health_share.__dict__.setdefault("cache", {})
     if iso3 in cache:
         return cache[iso3]
@@ -1113,7 +1184,8 @@ def health_budget(iso3: str, inputs: dict) -> dict:
     """Health's share of government spending today (health_share: World Bank, else IHME / IMF), total government
     spending implied by it (government health spending 2023 / share, US$), the room to the Abuja 15% ceiling, and the
     fastest sustained rise in the country's history (90th percentile of its yearly changes in the World Bank share,
-    percentage points). Every 'points of the budget' to dollars conversion uses gov_spend_usd from here."""
+    percentage points). Every 'points of the budget' to dollars conversion uses gov_spend_usd from here.
+    Feeds: the Gradual Budget Increase sliders, break-even and the path panel."""
     row = inputs["ci"].loc[iso3] if iso3 in inputs["ci"].index else pd.Series(dtype=float)
     ghes = _v(row, "ghes_2023")
     hs = health_share(iso3)
@@ -1130,7 +1202,8 @@ def health_budget(iso3: str, inputs: dict) -> dict:
 
 
 def _money_by_year(iso3, scenario, fiscal, inputs, cut_path):
-    """Aid lost and the existing government response in each year 2026-2030 (US$), without running the full model."""
+    """Aid lost and the existing government response in each year 2026-2030 (US$), without running the full model.
+    Feeds: break_even_share."""
     ci, lines = inputs["ci"], inputs["lines"]
     row = ci.loc[iso3] if iso3 in ci.index else pd.Series(dtype=float)
     cells = lines[lines.iso3 == iso3].copy()
@@ -1151,7 +1224,8 @@ def _money_by_year(iso3, scenario, fiscal, inputs, cut_path):
 
 
 def gov_add_from_points(points, gov_spend_usd: float) -> np.ndarray:
-    """Extra government health money (US$) from extra percentage points of the government budget, year by year."""
+    """Extra government health money (US$) from extra percentage points of the government budget, year by year.
+    Feeds: Gradual Budget Increase money (US$ a year)."""
     return np.clip(_path(points, 0.0), 0, None) / 100 * (gov_spend_usd if gov_spend_usd == gov_spend_usd else 0.0)
 
 
@@ -1159,7 +1233,8 @@ def break_even_share(iso3, scenario, fiscal, inputs, cut_path=None, tol: float =
     """Smallest constant yearly increase s in health's share of government spending (percentage points per year,
     cumulative: s in 2026, 2s in 2027, ...) that keeps the net gap <= 0 in every year of the cut path, on top of the
     government response in `fiscal`; capped so the share never passes the Abuja 15% target. Found by bisection.
-    Returns 0.0 if there is no gap, None if it can't be reached by 15% (or the budget data are missing)."""
+    Returns 0.0 if there is no gap, None if it can't be reached by 15% (or the budget data are missing).
+    Feeds: the break-even line in the funding-path panel."""
     hb = health_budget(iso3, inputs)
     G_t, R_t = _money_by_year(iso3, scenario, fiscal, inputs, cut_path)
     gap = G_t - R_t
@@ -1170,6 +1245,8 @@ def break_even_share(iso3, scenario, fiscal, inputs, cut_path=None, tol: float =
     steps = np.arange(1, N_YEARS + 1)
 
     def keeps_up(s):
+        """True if raising health's budget share by s points a year (cumulative) gives at least the aid gap in every
+        year."""
         return bool((gov_add_from_points(s * steps, hb["gov_spend_usd"]) >= gap - 1e-6).all())
 
     hi = hb["room_pct"] / N_YEARS                    # fastest steady rise that still ends at or below 15%
@@ -1183,6 +1260,9 @@ def break_even_share(iso3, scenario, fiscal, inputs, cut_path=None, tol: float =
 
 
 def run_all(scenario, fiscal, inputs, ptab, n_draws=80, countries=None, mortality_trend=True):
+    """Run the model for every dashboard country (or `countries`) and return one row per country: aid (US$ a year),
+    deaths 2026-2030 with range, deaths 2031-2035, deaths and net loss by disease, new HIV infections, fiscal
+    capacity. Feeds the All Countries page and the precomputed model_data/all_countries_<preset>.csv files."""
     countries = countries or [c for c in inputs["ci"].index if c in set(inputs["lines"].iso3)]
     if scenario.mou_only:                              # America First MOUs: only countries with an MOU schedule
         countries = [c for c in countries if c in scenario.us_direct_path_by_country]
@@ -1222,7 +1302,8 @@ def poisson_projection(res: dict, inputs: dict) -> pd.DataFrame:
     """deaths_after = deaths_now x exp(beta x (x_after - x_before)), x = log(1 + aid per person), using the net cut
     (after government backfill). Extra deaths over 5 years = 5 x the yearly change; range from beta +/- 1.96 SE.
     TB and malaria use the bucket's own aid; under-5 deaths use all vaccine + child health aid per birth, cut by the
-    net immunization loss. Malaria is estimated on child deaths and applied proportionally to all-age deaths."""
+    net immunization loss. Malaria is estimated on child deaths and applied proportionally to all-age deaths.
+    Feeds: the Validation page 'Poisson regression' estimates."""
     row = inputs["ci"].loc[res["iso3"]]
     B = res["buckets"].set_index("bucket")
     out = []
@@ -1253,7 +1334,8 @@ LANCET_BASELINE = {"HIV": "hiv_deaths_est", "Malaria": "malaria_deaths", "Matern
 
 def lancet_log_rr(bucket: str, funding_pc: float) -> float:
     """Log rate ratio at a given US health aid per capita: interpolated in log funding between the published points,
-    linear in funding from 0 up to the first point, and held flat above the last one."""
+    linear in funding from 0 up to the first point, and held flat above the last one.
+    Feeds: lancet_projection."""
     lr = np.log(LANCET_RR[bucket])
     if funding_pc <= 0:
         return 0.0
@@ -1264,7 +1346,8 @@ def lancet_log_rr(bucket: str, funding_pc: float) -> float:
 
 def lancet_projection(res: dict, inputs: dict) -> pd.DataFrame:
     """Apply the published rate ratios to the country's US-source health aid per capita before and after the cut.
-    The US cut is the share of US money lost in the modelled cells, net of government backfill in proportion."""
+    The US cut is the share of US money lost in the modelled cells, net of government backfill in proportion.
+    Feeds: the Validation page 'Lancet rate ratios' estimates."""
     row = inputs["ci"].loc[res["iso3"]]
     pop, us_base = _v(row, "sp_pop_totl"), _v(row, "us_health_aid_base")
     cells, T = res["cells"], res["totals"]
