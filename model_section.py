@@ -50,7 +50,8 @@ SHOW_BRIEF = False                   # the Download Country Brief button (code k
 PRESET_SHORT = {
     "Full US exit": "All US health aid ends, including WHO, Gavi and UNFPA; the US Global Fund pledge falls 23%.",
     "America First MOUs": "US bilateral aid follows this country's signed MOU year by year, 2026-2030; US multilateral "
-                          "exits as in Full US Exit.",
+                          "exits as in Full US Exit. The partner government's co-financing commitments are not "
+                          "modelled.",
     "IHME 2025 preliminary estimates": "IHME's preliminary 2025 change for every donor, channel and disease, applied to "
                                        "this country's mix.",
     "OECD-reported 2025 aid cuts": "Each donor's 2025 aid cut (US -57%, Germany -17%, France -11%, UK -11%, Japan -6%) "
@@ -528,8 +529,9 @@ def _controls(iso3, country_name, I) -> dict:
 # Main
 # --------------------------------------------------------------------------- #
 INTRO = ("A four-step model for HIV, TB, malaria and immunization: the donor scenario removes aid; the government "
-         "can replace part of it, limited by fiscal space; money not replaced ÷ cost per person = people who lose a "
-         "service; and each lost service x its effect on mortality = extra deaths. Ranges are the range across parameter "
+         "can replace part of it, limited by fiscal space; money not replaced ÷ cost per person = people-equivalents of "
+         "service lost (the service the lost money would have paid for, not a headcount); and each lost service x its "
+         "effect on mortality = extra deaths. Ranges are the range across parameter "
          "values (2.5th-97.5th percentile of 400 Monte Carlo draws). " + RANGE_TIP)
 
 
@@ -636,6 +638,16 @@ def round_words(x: float) -> str:
     return SPELLED.get(int(round(x)), f"{x:,.0f}")
 
 
+def approx_words(x: float) -> str:
+    """A model estimate for a headline, rounded to two significant figures (logic review L-48: no precise counts):
+    126,146 -> '130,000'; 1,969,304 -> '2.0 million'; 8,433 -> '8,400'; 312 -> '310'."""
+    if x >= 1e6:
+        return f"{x / 1e6:,.1f} million"
+    if x >= 100:
+        return f"{round(x, -int(np.floor(np.log10(x))) + 1):,.0f}"
+    return round_words(x)
+
+
 def money_words(x: float) -> str:
     """Money for running text, NYT style: '$291 million', '$4.9 million', '$650,000', '$1.2 billion'."""
     a = abs(x)
@@ -680,19 +692,23 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
         head = f"{phrase}, {country_name} would lose {money_words(T['gross'])} a year in health aid"
         dek = f"The model finds almost no extra deaths: {country_name} records very few deaths from these diseases."
     else:
-        head = f"{phrase}, {country_name} could see about {round_words(d5)} more deaths by 2030"
+        # claims C1 (logic review): a model estimate, rounded, for 2026-2030, and only if nothing replaces the money
         if T["replaced"] > 0 and T["gross"] > 0:
-            head += f", even if the government replaces {T['replaced'] / T['gross']:.0%} of the lost aid"
+            head = (f"{phrase}, the model estimates about {approx_words(d5)} more deaths in {country_name} in "
+                    f"2026-2030, even if the government replaces {T['replaced'] / T['gross']:.0%} of the lost aid")
+        else:
+            head = (f"{phrase}, with nothing to replace the money, the model estimates about {approx_words(d5)} more "
+                    f"deaths in {country_name} in 2026-2030")
         top = B["deaths_5y"].idxmax()
         share = B.loc[top, "deaths_5y"] / d5 if d5 > 0 else 0
-        dek = (f"{'Most' if share >= 0.5 else 'The largest share'} would come from {CAUSE_PHRASE[top]}"
-               f" ({share:.0%}). ")
+        # claim C3: the direction is robust, the exact share is not (logic review L-01), so no percentage
+        dek = f"{'Most' if share >= 0.5 else 'The largest share'} would come from {CAUSE_PHRASE[top]}. "
         if T["replaced"] > 0:
             dek += (f"The government could replace {money_words(T['replaced'])} of the {money_words(T['gross'])} "
                     "lost each year; the rest is lost to services.")
         else:
-            dek += (f"About {money_words(T['gross'])} a year would be lost, and historically governments have not "
-                    "replaced falling aid.")
+            dek += (f"About {money_words(T['gross'])} a year would be lost. In past aid declines (2001-2023), "
+                    "governments on average did not increase their own health spending to compensate.")
     care, parts = care_breakdown(L)
     breakdown = " · ".join(f"{num(v)} {lbl}" for v, lbl in parts[:3]) + (" + others" if len(parts) > 3 else "")
     nums = [
@@ -996,7 +1012,7 @@ def _per_million_cards(iso3: str, ptab_json: str, trend: bool, country_name: str
                     "deaths": f"{d:,.0f}",
                     "no_deaths": (f"No {word} deaths modelled in {country_name}{NO_DEATHS_REASON.get(b, '')}"
                                   if no_deaths else ""),
-                    "foot": spread + ("" if no_deaths else f" · About {money(5e6 / d)} of aid lost per life lost "
+                    "foot": spread + ("" if no_deaths else f" · Model estimate: about {money(5e6 / d)} of aid lost per life lost "
                                                          "(based on US$1M a year for 5 years)"),
                     "foot_tip": "" if no_deaths else CARD_FOOT_TIP})
     return out
@@ -1632,6 +1648,9 @@ def _all_country_results(sk, ctl) -> pd.DataFrame:
     return _run_all(sk, ctl["fiscal_t"], ctl["ptab_json"], ctl["trend"])
 
 
+# claim C7 / L-03: what share of the aid the dashboard's countries cover (IHME DAH 2021-23, elim_ch == 0; logic review)
+SCOPE_NOTE = ("The 71 dashboard countries receive about 72% of the HIV, TB, malaria and vaccine aid that IHME assigns "
+              "to a country (2021-23); aid coded to global or unallocated programs (about 18% more) is not included.")
 ALL_RANGE_TIP = ("Totals add up each country's central estimate. The range is the " + RANGE_LABEL + ": the "
                  "2.5th-97.5th percentile of the all-country total over the 400 draws (the same draws in every "
                  "country). " + RANGE_TIP)
@@ -1666,7 +1685,8 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
     st.markdown(th.pills_html([
         (f"Aid Lost per Year, MOU Countries With Funding Data ({len(A)})" if is_mou
          else f"Aid Lost per Year, {len(A)} of {len(names)} Countries", money(tot["gross_loss_usd"]),
-         "HIV, TB, malaria and vaccine aid removed by the scenario", f"Net Aid Lost {money(tot['net_loss_usd'])}"),
+         "HIV, TB, malaria and vaccine aid removed by the scenario. " + SCOPE_NOTE,
+         f"Net Aid Lost {money(tot['net_loss_usd'])}"),
         ("Further Deaths, 2031-2035", num(tot["deaths_after_2030"]),
          "Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031: people still off HIV "
          "treatment, new HIV infections, children who missed vaccines and TB spread by untreated patients. "
@@ -1810,8 +1830,8 @@ def _crosscheck_summary(res, I, ptab, country_name) -> str:
     s1 = (f"Panel regressions across up to {max(r['n_countries'] for r in regs)} countries (2005-2023, with country and "
           "year fixed effects) relate HIV treatment coverage, TB treatment coverage and DTP3 vaccine coverage to aid per "
           "person in need.")
-    s3 = ("They are a lower bound for a sudden cut, because aid historically moved gradually and other funders filled "
-          "gaps, so the truth for 2026-2030 most likely lies between the two approaches.")
+    s3 = ("They describe how coverage moved with aid in the past, when changes were gradual and other funders often "
+          "filled gaps, so they likely understate the effect of a sudden cut.")
     if res is None:
         return f"{s1} {s3}"
     xc = hm.statistical_crosscheck(res, I, ptab)
@@ -1866,7 +1886,10 @@ def _published_estimates(A: pd.DataFrame, I, ptab):
     st.table(tbl.set_index("Study"))
     st.markdown("The published studies cover more causes, programs, countries or years than this model, which counts "
                 "only HIV, TB, malaria and vaccine aid in the countries on this dashboard, so its totals should come "
-                "in below the Cavalcanti figure and within or below the ten Brink range for comparable scenarios.")
+                "in below the Cavalcanti figure and within or below the ten Brink range for comparable scenarios. "
+                "The HIV comparison depends on how lost ART money is turned into people who stop treatment (each "
+                "unit is the treatment the lost money would have paid for, not a headcount), which is under review, "
+                "so agreement with ten Brink et al. should not be read as validation.")
 
 
 # --------------------------------------------------------------------------- #

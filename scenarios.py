@@ -26,7 +26,8 @@ PRESETS = {
         "US bilateral aid follows the country's signed America First MOU year by year, 2026-2030: the cut in each year "
         "is 1 - US funding that year ÷ the 2021-25 reference, from the team's MOU sheet, used exactly as written "
         "(a funding increase counts as no cut). Only for the countries that have signed an MOU (KFF tracker) and "
-        "have schedule data. US multilateral exits as in 'Full US Exit'."),
+        "have schedule data. US multilateral exits as in 'Full US Exit'. The partner government's co-financing "
+        "commitments in the MOU are not modelled (choose a government response to add them)."),
     "IHME 2025 preliminary estimates": (
         "Data-driven: applies IHME's own 2025 preliminary DAH estimates relative to 2021-23, separately for every "
         "source x channel x disease cell (IHME has no recipient-level split after 2023, so the global change is applied "
