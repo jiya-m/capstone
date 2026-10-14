@@ -309,6 +309,21 @@ One value for every line, as before (the TB private-sector notification variable
 WHO notifications file, so the per-country TB continuity of IMP-16 cannot be built; a per-line continuity is a
 structural change outside this batch).
 
+## First full check and the fix (item 1 follow-up)
+
+`audit/checks.py --full` after item 7: 59 checks, 76,501 rows, **36 failures**, all `deaths_le_people_affected` for
+the TB treatment line in El Salvador and Nicaragua under the Custom preset (every response and funding path): deaths
+0.01 against 0 people affected. Traced by running El Salvador under Custom in a worktree at each item's commit: it
+passed at `cd42746` and failed from item 1 (`4f9f0c0`) on. Cause: under Custom the cut donor's TB money in those two
+countries is on the drug-resistant line and on systems money; before item 1 the systems money gave the
+drug-susceptible line a small lost amount, after it that line has no lost patients, while the drug-resistant line
+still loses 0.06 patients a year, and the model attributed every secondary TB case (from both lines' lost patients) to
+the drug-susceptible line's deaths. Fix within item 1's scope: secondary cases are now attributed to the line whose
+lost patients generated them (`health_model.lives`, SPEC.md section 6 TB spread). TB totals, the headline and the
+precomputed files are unchanged (max relative change in `model_data/all_countries_*.csv` below 1e-12); no baseline
+entry moved (the five test countries have no drug-resistant units under the baseline presets). The quick harness
+does not cover El Salvador or Nicaragua, which is why `--quick` passed after item 1.
+
 ## Gates summary
 
 | Item | Gate | Result |

@@ -1026,16 +1026,20 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         ok_tb = not (np.isnan(tb_need) or np.isnan(tb_cov) or tb_need <= 0)
         cov_t = [np.clip(tb_cov - U["tb_ds"][:, t] / tb_need, 0, 1) if ok_tb else np.full(nx, 0.0) for t in years]
         after["tb"] = np.zeros(nx)
-        for s_ in years:
-            sec = (U["tb_ds"][:, s_] + U["tb_dr"][:, s_]) * Px["tb_secondary"]
-            for k, share in enumerate(TB_ARRIVAL, start=1):
-                t = s_ + k
-                c = cov_t[min(t, N_YEARS - 1)]
-                dd = sec * share * (c * cfr_t + (1 - c) * cfr_u)
-                if t < N_YEARS:
-                    d["tb_ds"][:, t] += dd
-                else:
-                    after["tb"] += dd
+        # secondary deaths belong to the line whose lost patients generated them (tb_ds or tb_dr), so each line's
+        # deaths stay within its own people affected (Batch 3+4: with systems money no longer converted, a line can
+        # have no lost patients while the other TB line has some)
+        for src in ("tb_ds", "tb_dr"):
+            for s_ in years:
+                sec = U[src][:, s_] * Px["tb_secondary"]
+                for k, share in enumerate(TB_ARRIVAL, start=1):
+                    t = s_ + k
+                    c = cov_t[min(t, N_YEARS - 1)]
+                    dd = sec * share * (c * cfr_t + (1 - c) * cfr_u)
+                    if t < N_YEARS:
+                        d[src][:, t] += dd
+                    else:
+                        after["tb"] += dd
         # HIV treatment cohorts (2026-2030, and those still off care in 2031-2035)
         hz, trans, reengage, unsup = hiv_art_params(row, Px)
         d["hiv_art"], inf["hiv_art"], post_d, post_i, off_post = art_cohorts(U["hiv_art"], hz, trans, reengage, unsup)

@@ -351,8 +351,9 @@ trends are indexed by calendar t.
       cfr_u = (1 - h) tb_cfr_untreated_neg + h [tb_cfr_untreated_pos (1 - a) + tb_cfr_untreated_pos_art a]
       cfr_t = (1 - h) tb_cfr_treated_neg + h tb_cfr_treated_pos (1 - 0.3a)
 
-- Arrivals in 2027-2030 add to tb_ds deaths in that year (no LAG). Arrivals in 2031-2032 count in further deaths
-  (part "tb").
+- Arrivals in 2027-2030 add to the deaths of the line whose lost patients generated them (tb_ds for cases from
+  units_tb_ds, tb_dr for cases from units_tb_dr; Batch 3+4) in that year (no LAG). Arrivals in 2031-2032 count in
+  further deaths (part "tb").
 
 **Vaccines.** (After 2030 the level is level_4 x the trend, without a new clip: a country on the 0.3 floor can fall
 below it.)
