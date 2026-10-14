@@ -425,7 +425,7 @@ TREND_COLUMNS = {"u5": "trend_u5mr", "malaria": "trend_malaria_deaths", "tb": "t
 
 def mortality_trend_factors(row: pd.Series, kind: str, use: bool = True) -> np.ndarray:
     """(1 + annual trend)^(year - 1) for years 1..5: baseline deaths keep falling (or rising) on the country's trend
-    (under-5 mortality: 2010-2019; malaria: MAP P. falciparum cases 2015-2025, malaria_inputs.py).
+    (under-5 mortality: 2010-2019; malaria: WHO estimated malaria deaths 2015-2024, malaria_inputs.py).
     kind: 'u5' (under-5 mortality rate) or 'malaria' (all-age malaria deaths). Ones when switched off.
     Feeds: deaths from vaccines and malaria in each year 2026-2030."""
     if not use:
@@ -604,7 +604,7 @@ def malaria_levels(row, P, units, need_cov) -> dict:
 
 def malaria_deaths(row, P, units, need_cov, trend: bool = True) -> dict:
     """Per-line yearly malaria deaths (n x 5) for a cut in force since year 1: levels x LAG x mortality trend.
-    trend: baseline malaria deaths D0 follow the country's 2015-2025 P. falciparum case trend in years 1..5.
+    trend: baseline malaria deaths D0 follow the country's 2015-2024 WHO malaria death trend in years 1..5.
     Feeds: malaria deaths in the service table and headline."""
     lv = malaria_levels(row, P, units, need_cov)
     f = mortality_trend_factors(row, "malaria", trend)          # D0 x (1 + trend)^(year - 1)

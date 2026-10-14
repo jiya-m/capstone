@@ -466,9 +466,9 @@ def _controls(iso3, country_name, I) -> dict:
             trend = st.toggle("Account for Already-Changing Death Rates", key="m_trend",
                               help="Under-5 mortality keeps falling at each country's 2010-2019 rate (-0.9% a year "
                                    "where there is no usable trend; Cavalcanti et al. 2025, Lancet, appendix 10.2). "
-                                   "Baseline malaria deaths follow the country's 2015-2025 trend in P. falciparum "
-                                   "cases (Malaria Atlas Project), within ±5% a year: rising in many countries, as WHO's "
-                                   "World Malaria Report 2025 finds. TB and HIV treatment effects are per patient and "
+                                   "Baseline malaria deaths follow the country's 2015-2024 trend in WHO's estimated "
+                                   "malaria deaths, within ±5% a year (the ±5% limit is an assumption). The rebound "
+                                   "after bednets and spraying stop is a separate assumption. TB and HIV treatment effects are per patient and "
                                    "unchanged.")
             st.divider()
             cmp = None
@@ -1588,7 +1588,8 @@ DATA_YEARS = [   # (input, column holding each country's year or None, fixed yea
      "mal_cm_cov_source"),
     ("Bednet use", "mal_itn_cov_year", None, "MAP ITN use", "mal_itn_cov_source"),
     ("Indoor spraying coverage", "mal_irs_cov_year", None, "MAP household IRS coverage", "mal_irs_cov_source"),
-    ("Malaria death trend", None, "2015-2025", "MAP P. falciparum clinical cases (fitted trend, ±5% a year)", None),
+    ("Malaria death trend", None, "2015-2024", "WHO estimated malaria deaths (fitted trend, ±5% a year: an assumption)",
+     None),
     ("DTP3 coverage", "sh_imm_idpt_year", None, "WHO / UNICEF (World Bank WDI)", None),
     ("Under-5 mortality", "sh_dyn_mort_year", None, "UN IGME (World Bank WDI)", None),
     ("Under-5 mortality trend", None, "2010-2019", "UN IGME (World Bank WDI)", None),

@@ -110,16 +110,18 @@ def test_each_vector_line_capped_at_its_own_coverage():
 
 
 # ---------------- I-06: malaria death trend ----------------
-def test_trend_is_map_pf_cases_2015_2025_clipped():
-    d = mi.load("pf_cases")
-    g = d[(d.iso3 == "KEN") & d.year.between(2015, 2025) & (d.value > 0)]
+def test_trend_is_who_malaria_deaths_2015_2024_clipped():
+    """L-25: the trend is fitted to WHO estimated malaria deaths (2015 to the latest year), not MAP P. falciparum cases."""
+    d = pd.read_csv(mi.WHO_DEATHS_FILE)
+    g = d[(d.iso3 == "KEN") & d.year.between(2015, int(d.year.max())) & (d.value > 0)]
     fit = float(np.expm1(np.polyfit(g["year"], np.log(g["value"]), 1)[0]))
     assert CI.loc["KEN", "trend_malaria_deaths"] == pytest.approx(fit)
-    assert CI.loc["ETH", "trend_malaria_deaths"] == 0.05 and CI.loc["ETH", "trend_malaria_deaths_fit"] > 0.05
+    assert CI.loc["MDG", "trend_malaria_deaths"] == 0.05 and CI.loc["MDG", "trend_malaria_deaths_fit"] > 0.05
     assert CI["trend_malaria_deaths"].between(-0.05, 0.05).all()
-    assert (CI.loc[["EGY", "JOR", "LBY"], "trend_malaria_deaths"] == 0).all()        # no MAP data: 0
+    assert (CI.loc[["EGY", "JOR", "LBY"], "trend_malaria_deaths"] == 0).all()        # no WHO death series: 0
+    assert CI.loc["KEN", "trend_malaria_deaths_source"] == "WHO estimated malaria deaths, 2015-2024"
     clipped = CI.loc[MAL, "trend_malaria_deaths_fit"].abs() > 0.05
-    assert int(clipped.sum()) == 19
+    assert int(clipped.sum()) == 12
 
 
 def test_under5_trend_unchanged():
@@ -147,7 +149,7 @@ def test_data_years_lists_malaria_as_map_2025():
     for name in ("Malaria cases needing treatment", "Malaria treatment coverage", "Bednet use",
                  "Indoor spraying coverage"):
         assert t.loc[name, "Year"].startswith("2025") and "MAP" in t.loc[name, "Source"]
-    assert t.loc["Malaria death trend", "Year"] == "2015-2025"
+    assert t.loc["Malaria death trend", "Year"] == "2015-2024" and "WHO" in t.loc["Malaria death trend", "Source"]
 
 
 def test_apply_is_idempotent():

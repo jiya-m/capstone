@@ -52,7 +52,7 @@ Country columns used (`country_inputs.csv`):
 | births | `births` | |
 | DTP3 % | `sh_imm_idpt` | |
 | U5MR | `sh_dyn_mort` | 50 if missing |
-| trends | `trend_u5mr`, `trend_malaria_deaths` | yearly change (shares); -0.009 if missing |
+| trends | `trend_u5mr`, `trend_malaria_deaths` | yearly change (shares); -0.009 if missing. `trend_u5mr`: UN IGME under-5 mortality 2010-2019. `trend_malaria_deaths`: WHO estimated malaria deaths (GHO `MALARIA_EST_DEATHS`) 2015-2024, log-linear fit (at least 5 positive years), clipped to ±5% a year (the clip is an assumption); 0 where WHO has no series (built by `malaria_inputs.py`) |
 | GDP per person | `gdp_pc` | 1,000 if missing |
 | income group | `income_group` | `low_income`, `lower_middle_income`, `upper_middle_income` |
 | GHES | `ghes_2023` | government health spending, US$ |

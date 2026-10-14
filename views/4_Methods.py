@@ -115,7 +115,7 @@ with tabs[0]:
     | Aid baseline the model cuts | average of 2021, 2022 and 2023 (smooths lumpy bednet campaigns and Gavi tranches) |
     | Model horizon | five years after the cut, 2026-2030 |
     | Fiscal-space growth rates | 2001-2023 |
-    | Mortality trends | under-5 mortality 2010-2019 (before COVID-19); malaria: MAP *P. falciparum* cases 2015-2025 |
+    | Mortality trends | under-5 mortality 2010-2019 (before COVID-19); malaria: WHO estimated malaria deaths 2015-2024 |
     | Malaria coverage and cases | Malaria Atlas Project 2025 (treatment, bednets, spraying, cases) |
     """)
     th.section_header("event", "Data Years")
@@ -461,8 +461,8 @@ with tabs[2]:
     st.latex(r"D_1=D_0\times\frac{1-E_v C_{v,1}}{1-E_v C_{v,0}}\times\frac{1-E_c C_{c,1}}{1-E_c C_{c,0}}")
     md(f"""
     - D₀ = all-age malaria deaths, 2024, as estimated in WHO's World Malaria Report (GHO `MALARIA_EST_DEATHS`). Its
-      trend is set from Malaria Atlas Project *P. falciparum* clinical cases (no MAP mortality series exists, and
-      *P. falciparum* causes nearly all malaria deaths): see *Already-falling death rates* below.
+      trend is the country's 2015-2024 trend in the same WHO death series: see *Already-falling death rates*
+      below.
     - Vector control is one intervention: C_v = 1 - (1 - bednet use) x (1 - spraying coverage). Bednet use and
       spraying coverage each fall by their own people losing the service ÷ population at risk, and the
       vector-control deaths are split between them by how much each one's fall lowers C_v.
@@ -514,10 +514,13 @@ with tabs[2]:
       -0.9% a year (Cavalcanti et al. 2025, Lancet, appendix 10.2). Under-5 mortality kept falling after 2019.
     - **Malaria**: malaria has not kept falling. WHO's World Malaria Report 2025: "Between 2015 and 2024, malaria case
       incidence increased by 8.5%; in 2024 there were an estimated 610,000 malaria deaths, 12,000 more than in 2023,
-      with Ethiopia among the largest increases." So each country's trend is the annual change in Malaria Atlas
-      Project *P. falciparum* clinical cases over 2015-2025 (log-linear fit, at least 5 years), clipped to ±5% a
-      year; 0 where MAP has no data. 19 of the 46 malaria countries reach the clip (10 at +5%, including Ethiopia,
-      Madagascar and Zambia; 9 at -5%, including India and Bangladesh).
+      with Ethiopia among the largest increases." So each country's trend is the annual change in WHO's estimated
+      malaria deaths over 2015-2024 (World Malaria Report, GHO `MALARIA_EST_DEATHS`; log-linear fit, at least 5
+      years), clipped to ±5% a year; 0 where WHO has no series. The ±5% clip is an *assumption* (no published source),
+      which keeps short, noisy series from projecting far. 12 of the 46 malaria countries reach it (4 at +5%:
+      Madagascar, Pakistan, Djibouti, Bolivia; 8 at -5%, including India, Indonesia and Bangladesh).
+    - The malaria rebound after vector control stops (`mal_resurgence`, see Step 4) is a separate *assumption*,
+      applied only to deaths from lost bednets and spraying, on top of this baseline trend.
     - TB and HIV effects are per patient and unchanged.
 
     **New HIV infections.** HIV prevention turns money into infections averted, and people off ART transmit HIV

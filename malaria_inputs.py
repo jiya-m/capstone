@@ -13,7 +13,8 @@ with <column>_year and <column>_source:
     mal_itn_cov   bednet coverage = MAP ITN "Use" (people sleeping under a net, 0-1)
     mal_irs_cov   spraying coverage = MAP IRS "Coverage" (households sprayed, 0-1)
     malaria_cases MAP P. falciparum + P. vivax clinical cases (MAP countries; others keep the WHO estimate)
-    trend_malaria_deaths  annual trend of MAP P. falciparum clinical cases 2015-2025, clipped to +/-5% a year
+    trend_malaria_deaths  annual trend of WHO estimated malaria deaths (GHO MALARIA_EST_DEATHS, ext_data/gho/),
+                          2015 to the latest year, clipped to +/-5% a year (the clip is an assumption)
 """
 from __future__ import annotations
 
@@ -39,7 +40,9 @@ RAW = {                                 # processed name -> (raw file, metrics k
     "incidence_prevalence": ("MAP_national_incidence_prevalence_2026-10-13.csv",
                              ["Incidence Rate", "Infection Prevalence"]),
 }
-TREND_YEARS, TREND_CLIP = (2015, 2025), (-0.05, 0.05)
+TREND_START = 2015                      # malaria death trend: WHO deaths from 2015 to the latest year in the file
+TREND_CLIP = (-0.05, 0.05)              # assumption (no source): keeps a short noisy series from extrapolating far
+WHO_DEATHS_FILE = HERE / "ext_data" / "gho" / "MALARIA_EST_DEATHS.csv"   # written by who_inputs.py --download
 ITN_SURVEY_MIN_YEAR = 2015              # outside MAP's ITN countries, a household survey counts only from 2015
 MAL_CM_MIN_INCIDENCE = 50               # non-MAP countries: fever-treatment surveys count only where malaria is common
 
@@ -70,14 +73,17 @@ def irs_modelled(d: pd.DataFrame) -> set:
     return set(d.loc[d["value"] > 0, "iso3"])
 
 
-def pf_trend(index) -> tuple[pd.Series, pd.Series]:
-    """Annual % change of MAP P. falciparum clinical cases, log-linear fit over TREND_YEARS (at least 5 positive years),
-    clipped to TREND_CLIP. Returns (trend, unclipped fit); countries without MAP Pf data get 0."""
-    d = load("pf_cases")
-    d = d[d.year.between(*TREND_YEARS) & (d.value > 0)]
+def death_trend(index) -> tuple[pd.Series, pd.Series, tuple]:
+    """Annual % change of WHO estimated malaria deaths (World Malaria Report, GHO MALARIA_EST_DEATHS), log-linear fit
+    from TREND_START to the latest year in the file (at least 5 positive years), clipped to TREND_CLIP (logic review
+    L-25: the deaths themselves, not the P. falciparum case trend used before). Returns (trend, unclipped fit, years);
+    countries without a usable WHO series get 0."""
+    d = pd.read_csv(WHO_DEATHS_FILE)
+    years = (TREND_START, int(d["year"].max()))
+    d = d[d.year.between(*years) & (d.value > 0)]
     fit = pd.Series({iso: float(np.expm1(np.polyfit(g["year"], np.log(g["value"]), 1)[0]))
                      for iso, g in d.groupby("iso3") if len(g) >= 5}, dtype=float).reindex(index)
-    return fit.clip(*TREND_CLIP).fillna(0.0), fit
+    return fit.clip(*TREND_CLIP).fillna(0.0), fit, years
 
 
 def _wdi_latest(code: str) -> pd.DataFrame:
@@ -133,12 +139,12 @@ def apply(ci: pd.DataFrame) -> pd.DataFrame:
     ci["mal_irs_cov_year"] = np.where(have, MAP_YEAR, np.nan)
     ci["mal_irs_cov_source"] = np.where(have, tag, "no MAP estimate")
 
-    # I-06: baseline malaria death trend = trend of P. falciparum clinical cases 2015-2025
-    t, fit = pf_trend(idx)
+    # L-25: baseline malaria death trend = trend of WHO estimated malaria deaths, 2015 to the latest year
+    t, fit, yrs = death_trend(idx)
     ci["trend_malaria_deaths"] = t
     ci["trend_malaria_deaths_fit"] = fit
-    ci["trend_malaria_deaths_source"] = np.where(fit.notna(), f"MAP P. falciparum clinical cases, "
-                                                 f"{TREND_YEARS[0]}-{TREND_YEARS[1]}", "no MAP data: 0")
+    ci["trend_malaria_deaths_source"] = np.where(fit.notna(), f"WHO estimated malaria deaths, {yrs[0]}-{yrs[1]}",
+                                                 "no WHO death series: 0")
     return ci
 
 
