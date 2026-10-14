@@ -13,6 +13,12 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import streamlit as st
 
+# Every model range is the 2.5th-97.5th percentile of 400 parameter draws (logic review IMP-10 / L-02): name it for what
+# it is, with the same tooltip everywhere
+RANGE_LABEL = "range across parameter values"
+RANGE_TIP = ("Reflects uncertainty in model parameters only; uncertainty in the data and in the model's structure is "
+             "larger and not included.")
+
 # --------------------------------------------------------------------------- #
 # UI colors
 # --------------------------------------------------------------------------- #

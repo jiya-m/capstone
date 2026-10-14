@@ -58,17 +58,18 @@ for p in scn.PRECOMPUTED_PRESETS:
     path = scn.precomputed_path(hm.MODEL_DIR, p)
     if not path.exists():
         continue
-    A = pd.read_csv(path)
+    A = scn.load_precomputed(hm.MODEL_DIR, p)
     all_country[p] = A
     rows.append({"Scenario": title_case(p) + (f" ({len(A)} MOU Countries With Funding Data)" if p == ms.MOU else ""),
                  **{b: num(A[f"deaths_5y_{b}"].sum()) for b in hm.BUCKETS},
                  "All Four": num(A["deaths_5y"].sum()),
-                 "Range": rng(A["deaths_5y_lo"].sum(), A["deaths_5y_hi"].sum())})
+                 "Range Across Parameter Values": rng(*hm.total_range(A, "deaths_5y"))})
 st.subheader(f"Model: Extra Deaths Over 5 Years, All {len(next(iter(all_country.values()), []))} Countries",
              help="America First MOUs covers only the countries with a signed MOU and schedule data.")
 st.table(pd.DataFrame(rows).set_index("Scenario"))
 st.caption("Read from the precomputed results: No Government Replacement, death rates already falling, default "
-           "parameters. Ranges add country 2.5th and 97.5th percentiles.")
+           "parameters. Range across parameter values = 2.5th-97.5th percentile of the all-country total over the 400 "
+           "draws. " + ms.RANGE_TIP)
 
 us = all_country.get("Full US exit")
 if us is not None:
@@ -287,8 +288,9 @@ tbl = pd.DataFrame({
     **{m: [(f"{num(vals[c][0])}" + (f" ({rng(vals[c][1], vals[c][2])})" if not np.isnan(vals[c][1]) else ""))
            if c in vals else "Not Covered" for c in CATEGORIES] for m, vals in est.items()},
 })
-notes = ["Ranges: 95% intervals (unit-cost model: parameter uncertainty; Poisson regression: the coefficient's standard "
-         "error). The Lancet ratios are point estimates."]
+notes = ["Ranges: for the unit-cost model, the range across parameter values (" + ms.RANGE_TIP[0].lower()
+         + ms.RANGE_TIP[1:-1] + "); for the Poisson regression, a 95% confidence interval from the coefficient's "
+         "standard error. The Lancet ratios are point estimates."]
 if len(lp):
     r = lp.iloc[0]
     notes.append(f"US-source health aid in {country_name} falls from US\\${r.us_aid_pc_before:,.2f} to "
@@ -304,7 +306,9 @@ notes.append("The Poisson regression applies the change in child malaria deaths 
              "immunization bucket.")
 st.subheader("Estimates by Method", help=" ".join(notes))
 st.table(tbl.set_index("Bucket"))
-st.caption("Ranges are 95% intervals; the Lancet ratios are point estimates.")
+st.caption("Ranges: unit-cost model = range across parameter values (parameter uncertainty only; data and model "
+           "structure not included); Poisson regression = 95% confidence interval; the Lancet ratios are point "
+           "estimates.")
 
 # --------------------------------------------------------------------------- #
 # C. How each method works

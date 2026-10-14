@@ -44,6 +44,7 @@ BUCKET_WORD = {"HIV": "HIV", "TB": "TB", "Malaria": "malaria", "Immunization": "
 NO_REPLACEMENT = "No Government Replacement"
 GOV_MODES = {NO_REPLACEMENT: "none", "Replace a set share": "custom",
              "As much as fiscal space allows": "max", "Gradual budget increase": "gradual"}
+RANGE_LABEL, RANGE_TIP = th.RANGE_LABEL, th.RANGE_TIP
 SRC_MODEL = "Model estimates from IHME aid data (2021-23 average), WHO, UNAIDS and World Bank data; see Methods."
 SHOW_BRIEF = False                   # the Download Country Brief button (code kept for later)
 PRESET_SHORT = {
@@ -130,8 +131,10 @@ def _run_all(sc_key, fiscal_t, ptab_json, trend=True):
 
 
 @st.cache_data(show_spinner=False)
-def _precomputed(path: str, _mtime: float) -> pd.DataFrame:
-    return pd.read_csv(path)
+def _precomputed(preset: str, _mtime: float) -> pd.DataFrame:
+    """A precomputed All Countries file with its per-draw totals attached (scenarios.load_precomputed); _mtime only
+    invalidates the cache when the file changes."""
+    return scn.load_precomputed(hm.MODEL_DIR, preset)
 
 
 # --------------------------------------------------------------------------- #
@@ -526,8 +529,8 @@ def _controls(iso3, country_name, I) -> dict:
 # --------------------------------------------------------------------------- #
 INTRO = ("A four-step model for HIV, TB, malaria and immunization: the donor scenario removes aid; the government "
          "can replace part of it, limited by fiscal space; money not replaced ÷ cost per person = people who lose a "
-         "service; and each lost service x its effect on mortality = extra deaths. Ranges are 95% intervals from 400 "
-         "Monte Carlo draws.")
+         "service; and each lost service x its effect on mortality = extra deaths. Ranges are the range across parameter "
+         "values (2.5th-97.5th percentile of 400 Monte Carlo draws). " + RANGE_TIP)
 
 
 def scenario_bar(iso3: str, country_name: str):
@@ -798,7 +801,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                  f"{float(ptab.loc['hss_kappa', 'central']):.0%} of lost systems money (labs, staff, monitoring) is "
                  "assumed to cut services. HIV Testing & Care has no patients of its own: " + care_ct_note()
                  + " Bednets and spraying have their own coverage; together they set vector-control coverage. "
-                 "Deaths ranges are 95% intervals.")
+                 "Deaths ranges: " + RANGE_LABEL + ". " + RANGE_TIP)
     st.subheader("What Each Service Loses", help=" ".join(notes))
     st.html(_service_table_html(rows, country_name, T, {b: float(B.loc[b, "gains_usd"]) for b in hm.BUCKETS}))
     ovc = show[show["line"] == "hiv_ovc"]
@@ -842,7 +845,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     st.markdown(th.source_html(SRC_MODEL, "The solid line cuts every donor and service by the same share. The dashed "
                                "line is this scenario's actual cut, which can run higher or lower because it falls on "
                                "specific services (for example, US money is concentrated in HIV treatment, where each "
-                               "dollar saves more lives). The shaded band is the 95% uncertainty range for the even cut."),
+                               "dollar saves more lives). The shaded band is the " + RANGE_LABEL + " for the even cut. " + RANGE_TIP),
                 unsafe_allow_html=True)
 
     # ------------------------------ fiscal space ------------------------------ #
@@ -864,7 +867,7 @@ def after_2030_help(C) -> str:
             if k in AFTER_2030_PARTS and v >= 0.5]
     return ("Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031 (people off HIV "
             "treatment return gradually)"
-            + (": " + "; ".join(bits) if bits else "") + ". Range = 95% interval.")
+            + (": " + "; ".join(bits) if bits else "") + ". Range: " + RANGE_LABEL + ". " + RANGE_TIP)
 
 
 HSS_LINES = list(hm.HSS.values())
@@ -910,11 +913,11 @@ def _headline_items(res, ptab=None, basis: str = "Assumes the cut is sustained f
          "range " + rng(res["committed"]["after_2030_lo"], res["committed"]["after_2030_hi"]),
          after_2030_help(res["committed"])),
         ("Extra Deaths Over 5 Years", num(T["deaths_5y"]), "range " + rng(T["deaths_5y_lo"], T["deaths_5y_hi"]),
-         f"{basis} Range = 95% interval."),
+         f"{basis} Range: {RANGE_LABEL}. {RANGE_TIP}"),
         ("New HIV Infections, 5 Years", num(B.loc["HIV", "infections_5y"]),
          "range " + rng(B.loc["HIV", "infections_5y_lo"], B.loc["HIV", "infections_5y_hi"]),
          "Lives-first triage refills treatment and vaccines first and HIV prevention last, so new infections can stay "
-         "high even when deaths fall. Range = 95% interval."),
+         "high even when deaths fall. Range: " + RANGE_LABEL + ". " + RANGE_TIP),
     ]
     return [(title_case(lbl), val, title_case(sub), hlp) for lbl, val, sub, hlp in items]
 
@@ -1177,7 +1180,7 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
                         gains: dict | None = None) -> str:
     """'What Each Service Loses': NYT-style HTML table, grouped by disease, with a Total row. With the run's totals T,
     an Other Aid row (orphan support and systems money not modelled as services) makes the money columns add up to
-    the headline figures, and the Total deaths range is the run's own 95% interval."""
+    the headline figures, and the Total deaths range is the run's own range across parameter values."""
     e = html.escape
     grey = lambda t: f"<span class='sub'>{t}</span>"
     nm = f"<span class='nm'>{e('Not Modelled')}</span>"
@@ -1284,13 +1287,13 @@ def _coverage_fig(rows: pd.DataFrame):
 
 
 def _dose_fig(dr: pd.DataFrame, bucket: str, cur_cut: float, bb: pd.Series, path: pd.DataFrame | None = None):
-    """Even cut across all donors (solid, with its 95% band) and this scenario's own path (dashed, ending at the dot)."""
+    """Even cut across all donors (solid, with its band across parameter values) and this scenario's own path (dashed, ending at the dot)."""
     col = BUCKET_COLORS[bucket]
     x = dr["cut"] * 100
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=list(x) + list(x[::-1]), y=list(dr["hi"]) + list(dr["lo"][::-1]), fill="toself",
                              fillcolor=th.tint(col, 0.15), line=dict(width=0), hoverinfo="skip",
-                             name="95% Uncertainty Range", legendrank=3))
+                             name="Range Across Parameter Values", legendrank=3))
     fig.add_trace(go.Scatter(x=x, y=dr["deaths_5y"], mode="lines", line=dict(color=col, width=2),
                              name="Even Cut Across All Donors", legendrank=1,
                              customdata=np.c_[dr["net_loss_usd"].map(money), dr["cov_drop_pp"].fillna(0)],
@@ -1320,7 +1323,7 @@ def _dose_fig(dr: pd.DataFrame, bucket: str, cur_cut: float, bb: pd.Series, path
     if y_end > 0:
         fig.add_annotation(x=100, y=y_end, text="<b>Even cut,<br>all donors</b>", showarrow=False, xanchor="right",
                            yanchor="top", yshift=-6, font=dict(size=12, color=col), align="right")
-        fig.add_annotation(x=85, y=mid85 + (hi85 - mid85) * 0.35, text="95% range", showarrow=False,
+        fig.add_annotation(x=85, y=mid85 + (hi85 - mid85) * 0.35, text="Range across<br>parameter values", showarrow=False,
                            font=dict(size=11, color=MUTED))
     _layout(fig, h=420, title=_title("Extra Deaths as More Aid Is Cut"), showlegend=False,
             # x starts a little left of 0 so the "0%" tick does not sit on top of the y-axis "0"
@@ -1625,12 +1628,13 @@ def _all_country_results(sk, ctl) -> pd.DataFrame:
         same_params = ptab[["central", "low", "high"]].astype(float).reindex(p0.index).equals(
             p0[["central", "low", "high"]].astype(float))
         if sk == default_sk and same_params:
-            return _precomputed(str(path), path.stat().st_mtime)
+            return _precomputed(preset, path.stat().st_mtime)
     return _run_all(sk, ctl["fiscal_t"], ctl["ptab_json"], ctl["trend"])
 
 
-ALL_RANGE_TIP = ("Totals add up each country's central estimate. The range adds up each country's own "
-                 "2.5th-97.5th percentile range, which overstates the width of the range for the total.")
+ALL_RANGE_TIP = ("Totals add up each country's central estimate. The range is the " + RANGE_LABEL + ": the "
+                 "2.5th-97.5th percentile of the all-country total over the 400 draws (the same draws in every "
+                 "country). " + RANGE_TIP)
 
 
 def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
@@ -1653,9 +1657,12 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
                      help="America First MOUs is modelled only where the country has signed an MOU (KFF tracker) and "
                           "the team's sheet has its 2026-2030 US funding schedule. On the map, countries that signed "
                           "without funding data are light grey; countries without an MOU are lighter grey.")
-    after_cols = [c for c in ("deaths_after_2030", "deaths_after_2030_lo", "deaths_after_2030_hi") if c in A]
-    tot = A[["gross_loss_usd", "net_loss_usd", "deaths_y1", "deaths_5y", "deaths_5y_lo", "deaths_5y_hi",
-             "hiv_infections_5y"] + after_cols].sum()
+    after_cols = [c for c in ("deaths_after_2030",) if c in A]
+    tot = A[["gross_loss_usd", "net_loss_usd", "deaths_y1", "deaths_5y", "hiv_infections_5y"] + after_cols].sum()
+    # ranges from the per-draw totals over all countries (IMP-10), not the sum of country percentiles
+    tot["deaths_5y_lo"], tot["deaths_5y_hi"] = hm.total_range(A, "deaths_5y")
+    if after_cols:
+        tot["deaths_after_2030_lo"], tot["deaths_after_2030_hi"] = hm.total_range(A, "deaths_after_2030")
     st.markdown(th.pills_html([
         (f"Aid Lost per Year, MOU Countries With Funding Data ({len(A)})" if is_mou
          else f"Aid Lost per Year, {len(A)} of {len(names)} Countries", money(tot["gross_loss_usd"]),
@@ -1845,7 +1852,7 @@ def _published_estimates(A: pd.DataFrame, I, ptab):
          "What It Covers": "USAID defunding; all causes and all programs; 133 countries; 2025-2030",
          "Published": "More than 14M additional deaths by 2030",
          "This Model (Current Scenario)": f"{num(A['deaths_5y'].sum())} extra deaths over 5 years "
-                                          f"(range {rng(A['deaths_5y_lo'].sum(), A['deaths_5y_hi'].sum())}), {n} countries"},
+                                          f"({RANGE_LABEL} {rng(*hm.total_range(A, 'deaths_5y'))}), {n} countries"},
         {"Study": "ten Brink et al., Lancet HIV 2025",
          "What It Covers": "HIV only; 24% cut by the top 5 donors plus PEPFAR ending; all low- and middle-income "
                            "countries; 2025-2030",
@@ -1915,7 +1922,8 @@ def _brief_html(country_name, preset, resp_label, items, cards, figs, opts=None)
 <h2>What Every US$1 Million Cut Does, by Disease</h2><div class="cards">{card_html}</div>
 <h2>Coverage and Deaths</h2>{''.join(charts)}
 <div class="foot">Generated {_dt.date.today():%d %B %Y} from the Health Financing dashboard. Sources: IHME Development
-Assistance for Health and health spending; World Bank WDI; WHO and UNAIDS series via Gapminder. Ranges are 95% intervals
-from 400 Monte Carlo draws. Scenario estimates, not forecasts.</div>
+Assistance for Health and health spending; World Bank WDI; WHO and UNAIDS series via Gapminder. Ranges are the range across
+parameter values (400 Monte Carlo draws); they exclude uncertainty in the data and in the model's structure, which is
+larger. Scenario estimates, not forecasts.</div>
 </body></html>"""
 

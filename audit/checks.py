@@ -352,6 +352,20 @@ def main():
             rec(iso, preset, "none", "precomputed_csv_matches_fresh_run", d[worst] < 1e-6, d[worst], worst)
         missing = set(new.columns) - set(old.columns)
         rec("ALL", preset, "none", "precomputed_csv_has_all_columns", not missing, len(missing), ", ".join(missing))
+        # draw totals (IMP-10): present, 400 draws, equal to a fresh run (--full), and the range brackets the total
+        A = scn.load_precomputed(hm.MODEL_DIR, preset)
+        dt = A.attrs.get("draw_totals")
+        rec("ALL", preset, "none", "precomputed_draw_totals_present",
+            dt is not None and len(dt["deaths_5y"]) == scn.ALL_COUNTRY_DRAWS, 0 if dt is None else len(dt["deaths_5y"]))
+        if dt is not None:
+            lo, hi = hm.total_range(A, "deaths_5y")
+            rec("ALL", preset, "none", "all_country_range_brackets_total", lo <= A["deaths_5y"].sum() <= hi,
+                f"{lo:,.0f} <= {A['deaths_5y'].sum():,.0f} <= {hi:,.0f}")
+            if not QUICK:
+                fresh = new.attrs.get("draw_totals")
+                f_, o_ = np.asarray(fresh["deaths_5y"]), np.asarray(dt["deaths_5y"])
+                dd = float(np.max(np.abs(f_ - o_) / np.maximum(1.0, np.abs(f_))))
+                rec("ALL", preset, "none", "precomputed_draw_totals_match_fresh_run", dd < 1e-6, dd)
         # also the dashboard's own country run == the All Countries row
         for iso in ("KEN", "NGA", "MOZ", "HND", "IRQ"):
             if iso not in old.index:                   # America First MOUs: group A countries only

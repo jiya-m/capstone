@@ -1020,6 +1020,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                       "gains": float(gains.sum()) if len(cells) else 0.0,
                       "deaths_5y": d5c, "deaths_5y_lo": q(tot5, 2.5), "deaths_5y_hi": q(tot5, 97.5),
                       "deaths_y1": float(sum(deathsc[l][0, 0] for l in deathsc))}}
+    # per-draw totals (n,), so the All Countries range can be taken from the sum over countries (logic review IMP-10)
+    out["draw_totals"] = {"deaths_5y": tot5, "after_2030": np.asarray(after, dtype=float) * np.ones(n)}
     if keep_draws:
         out["draws"] = {"deaths": deaths, "units": units}
     return out
@@ -1267,8 +1269,11 @@ def run_all(scenario, fiscal, inputs, ptab, n_draws=80, countries=None, mortalit
     if scenario.mou_only:                              # America First MOUs: only countries with an MOU schedule
         countries = [c for c in countries if c in scenario.us_direct_path_by_country]
     recs = []
+    d5_tot, after_tot = 0.0, 0.0
     for c in countries:
         r = run_country(c, scenario, fiscal, inputs, ptab, n_draws=n_draws, mortality_trend=mortality_trend)
+        d5_tot = d5_tot + r["draw_totals"]["deaths_5y"]
+        after_tot = after_tot + r["draw_totals"]["after_2030"]
         row = inputs["ci"].loc[c]
         t = r["totals"]
         rec = {"iso3": c, "pop": _v(row, "sp_pop_totl"), "base_usd": t["base"], "gross_loss_usd": t["gross"],
@@ -1283,7 +1288,26 @@ def run_all(scenario, fiscal, inputs, ptab, n_draws=80, countries=None, mortalit
             rec[f"net_loss_{bb['bucket']}"] = bb["net_loss_usd"]
         rec["hiv_infections_5y"] = float(r["buckets"].set_index("bucket").loc["HIV", "infections_5y"])
         recs.append(rec)
-    return pd.DataFrame(recs)
+    out = pd.DataFrame(recs)
+    # draw-by-draw totals over all countries: the All Countries range is their 2.5th-97.5th percentile (IMP-10)
+    # stored as tuples: pandas compares attrs when it combines frames, and arrays or frames can't be compared that way
+    ones = np.ones(max(n_draws, 1))
+    out.attrs["draw_totals"] = {"deaths_5y": tuple(float(x) for x in np.ravel(d5_tot) * ones),
+                                "deaths_after_2030": tuple(float(x) for x in np.ravel(after_tot) * ones)}
+    return out
+
+
+def total_range(results: pd.DataFrame, col: str = "deaths_5y") -> tuple:
+    """(2.5th, 97.5th) percentile over the draws of the total of `col` over all countries in `results` (a run_all table
+    or a precomputed file loaded with scenarios.load_precomputed). The draws are the same in every country, so the
+    total of each draw is a draw of the total. Countries with no aid loss add 0 in every draw, so a table filtered to
+    countries with a loss has the same range. Returns (nan, nan) when the draw totals are not available.
+    Feeds: the range of every All Countries total and of the Validation comparison rows."""
+    d = results.attrs.get("draw_totals")
+    if d is None or col not in d or len(d[col]) < 2:
+        return np.nan, np.nan
+    v = np.asarray(d[col], dtype=float)
+    return float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))
 
 
 # --------------------------------------------------------------------------- #

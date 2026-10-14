@@ -246,7 +246,7 @@ def outcome_panel(country_name, shape, response_phrase, res, base_committed, bre
           else f"+{break_even:.1f} points a year")
     st.markdown(th.pills_html([
         ("Extra Deaths 2026-2030", num(max(T["deaths_5y"], 0.0)) if T["deaths_5y"] > -0.5 else num(T["deaths_5y"]),
-         "Central estimate; range = 95% interval",
+         "Central estimate; range across parameter values. " + th.RANGE_TIP,
          f"Range {rng(T['deaths_5y_lo'], T['deaths_5y_hi'])}"),
         ("Further Deaths, 2031-2035, Set in Motion by 2030", num(max(C["after_2030"], 0.0)),
          after_help(C), f"Range {rng(C['after_2030_lo'], C['after_2030_hi'])}"),

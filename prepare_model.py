@@ -22,6 +22,7 @@ Writes ./model_data/:
     all_countries_<preset>.csv   health_model.run_all for every preset except Custom, with the default government
                                  response (no backfill, pro-rata, 75th-percentile ceiling) and default parameters;
                                  the app loads these instantly when its settings match
+    all_countries_<preset>_draws.csv   the all-country total in each of the 400 draws (the All Countries range)
 
 Everything is in constant 2023 US$ unless noted. IHME DAH values are in thousands of US$.
 """
@@ -574,6 +575,7 @@ def precompute_all():
                          mortality_trend=scn.DEFAULT_MORTALITY_TREND)
         path = scn.precomputed_path(OUT, preset)
         res.to_csv(path, index=False)
+        pd.DataFrame(res.attrs["draw_totals"]).rename_axis("draw").to_csv(scn.precomputed_draws_path(OUT, preset))
         print(f"  {path.name}: {len(res)} countries, {res['deaths_5y'].sum():,.0f} extra deaths over 5 years")
 
 

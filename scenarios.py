@@ -211,6 +211,23 @@ def precomputed_path(model_dir, preset: str):
     return model_dir / f"all_countries_{preset_slug(preset)}.csv"
 
 
+def precomputed_draws_path(model_dir, preset: str):
+    """model_data/all_countries_<preset>_draws.csv: the total over all countries in each of the 400 draws (deaths
+    2026-2030 and 2031-2035), from which the All Countries range is taken (logic review IMP-10)."""
+    return model_dir / f"all_countries_{preset_slug(preset)}_draws.csv"
+
+
+def load_precomputed(model_dir, preset: str) -> pd.DataFrame:
+    """A precomputed All Countries file, with its draw totals attached as attrs['draw_totals'] (see
+    health_model.total_range). Feeds the All Countries page, the Validation page and the audit snapshot."""
+    A = pd.read_csv(precomputed_path(model_dir, preset))
+    dp = precomputed_draws_path(model_dir, preset)
+    if dp.exists():
+        d = pd.read_csv(dp)
+        A.attrs["draw_totals"] = {c: tuple(float(x) for x in d[c]) for c in d.columns if c != "draw"}
+    return A
+
+
 # --------------------------------------------------------------------------- #
 # How funding changes over 2026-2030 (share of the scenario's full cut in force each year) and the shape of a gradual
 # government budget increase (extra percentage points of the government budget going to health, cumulative)

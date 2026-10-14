@@ -102,9 +102,12 @@ def snapshot(out_path):
                     rows.append(d)
         print(f"  {preset}: {len(rows)} rows so far", flush=True)
     for preset in scn.PRECOMPUTED_PRESETS:
-        A = pd.read_csv(scn.precomputed_path(hm.MODEL_DIR, preset))
+        A = scn.load_precomputed(hm.MODEL_DIR, preset)
         d = {"key": f"ALL|{preset}"}
         d.update({f"sum.{c}": A[c].sum() for c in A.columns if c != "iso3"})
+        # the displayed All Countries ranges: percentiles of the all-country total over the draws (IMP-10)
+        for c in ("deaths_5y", "deaths_after_2030"):
+            d[f"range.{c}_lo"], d[f"range.{c}_hi"] = hm.total_range(A, c)
         d["n_countries"] = len(A)
         rows.append(d)
     df = pd.DataFrame(rows).set_index("key")

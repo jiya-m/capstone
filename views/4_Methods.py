@@ -232,11 +232,11 @@ with tabs[1]:
     | Aid at Risk (per Year) | Yearly HIV, TB, malaria and vaccine aid removed by the scenario (gross loss), out of the 2021-2023 average |
     | Replaced by Government | The government's replacement, set by the response chosen, capped by fiscal space |
     | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems), of which a share kappa (`hss_kappa`, an assumption) is counted as lost services |
-    | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range = 2.5th to 97.5th percentile of the Monte Carlo draws |
+    | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range across parameter values = 2.5th to 97.5th percentile of the Monte Carlo draws (parameter uncertainty only; uncertainty in the data and in the model's structure is larger and not included) |
     | New HIV Infections, 5 Years | Infections from people off ART, mothers without PMTCT, and lost prevention |
     | What Every US$1 Million Cut Does, by Disease | Each card runs the full model for a US$1M-a-year loss to one disease, spread across all its service lines (including HIV testing and care, unspecified and systems money) in proportion to current aid: no government replacement, sudden cut, every mechanism included (caps, TB spread, malaria rebound, deaths from new HIV infections). People losing the service and the coverage drop are for the main service (HIV: ART; TB: TB treatment; malaria: bednets; immunization: routine vaccines); extra deaths are for the whole disease, 2026-2030. Where a disease's aid is under US$1M a year, all of it is cut and the results are scaled to US$1M. "About $X of aid lost per life lost (based on US$1M a year for 5 years)" = $5M (five years of $1M) ÷ those deaths, which equals $1M ÷ the average extra deaths per year |
     | What Each Service Loses | Per service line: baseline aid, aid lost after replacement, cost per person, people losing the service per year (average over 2026-2030), with the 5-year total of people affected underneath (the yearly numbers added up, following the funding path; for HIV treatment, mostly the same people stay off ART each year, so no total is added), coverage before and after, and extra deaths, 5-year total (range) |
-    | Extra Deaths as More Aid Is Cut | Solid line: every donor cuts this bucket by the same share, 0-100% in 5% steps, same random draws at every step; band = 95% range. Dashed line: this scenario's own cuts scaled from 0% to 100% of their size |
+    | Extra Deaths as More Aid Is Cut | Solid line: every donor cuts this bucket by the same share, 0-100% in 5% steps, same random draws at every step; band = range across parameter values. Dashed line: this scenario's own cuts scaled from 0% to 100% of their size |
     | Extra Deaths Each Year | Central estimate by year and bucket |
     | Can {{Country}} Fill the Gap? | From the same run as the headline, as averages per year over 2026-2030 (2030 underneath when it differs): Gap Before Government Steps In = aid lost (gross); Filled by the Government = the chosen response plus any gradual budget increase; Gap Left After Government Response = the difference (= Net Aid Lost). The dashed line is backfill capacity (fiscal space), see *The Model, Step 2*. Aid Lost as % of Government Health Spending = average yearly gross loss ÷ government health spending in 2023; as % of revenue = that loss ÷ (GDP x revenue % of GDP, World Bank WDI). Health share of government spending: see *Gradual budget increase* |
     | All Countries | Totals add up country results; deaths per 100,000 = 5-year deaths ÷ population x 100,000; budget exposure = gross loss ÷ government health spending |
@@ -604,8 +604,12 @@ with tabs[2]:
     Every parameter in the *Parameters* tab is drawn from a triangular distribution (low, central, high), 400 times
     per country with a fixed random seed (7), so results are reproducible and every chart uses the same draws.
     Headline numbers are the **central** run (every parameter at its central value); ranges are the 2.5th and 97.5th
-    percentiles of the 400 draws. All-country ranges add the country percentiles, which makes them wider than a jointly
-    simulated interval. Parameters can be edited under Advanced to test sensitivity.
+    percentiles of the 400 draws, called the **range across parameter values**. All-country ranges are the 2.5th and
+    97.5th percentiles of the all-country total in each draw (the draws are the same in every country).
+    These ranges reflect uncertainty in model parameters only. Uncertainty in the data (aid amounts, people in need,
+    coverage, baseline deaths) and in the model's structure (for example, whether lost money means people stopping
+    treatment entirely) is larger and not included, so the ranges are not confidence intervals. Parameters can be
+    edited under Advanced to test sensitivity.
     """)
 
 # =========================================================================== #

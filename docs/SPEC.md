@@ -422,9 +422,14 @@ the order of `model_params.csv`.
 **Each displayed range** is the 2.5th-97.5th percentile of the draws for that quantity. The point value is the central
 run, not the median.
 
+**Name.** These ranges are called "range across parameter values". They reflect uncertainty in model parameters only;
+uncertainty in the data and in the model's structure is larger and not included. They are not confidence intervals.
+
 **All Countries totals:**
 - Totals add up each country's central value.
-- The range adds up each country's 2.5th and 97.5th percentiles.
+- The range is the 2.5th and 97.5th percentile, over the 400 draws, of the all-country total in each draw. Because
+  the draws are identical in every country, the total of draw i over countries is draw i of the total. Countries
+  with no aid loss contribute 0 in every draw. (Adding up country percentiles, as before, overstates the width.)
 
 ## 10. Precomputed All Countries files
 
@@ -432,3 +437,7 @@ run, not the median.
 - every preset except Custom;
 - no government response, sudden path, trends on, 400 draws;
 - one row per country, with the columns written by `health_model.run_all`.
+
+`model_data/all_countries_<preset>_draws.csv`: one row per draw (`draw` 0-399), with the all-country total of
+`deaths_5y` (2026-2030) and `deaths_after_2030` (2031-2035) in that draw. The All Countries and Validation ranges come
+from these.
