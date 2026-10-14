@@ -385,7 +385,7 @@ with tabs[2]:
 
     | Service | Formula | Central value / source |
     |---|---|---|
-    | HIV treatment | site cost x multiplier ÷ (1 - above-service share) | Site cost per patient-year (Rosen et al. 2021, 2018-2020 US$, inflated to 2023 US$ with US CPI-U): Malawi ${UC[('art_site_cost', 'MWI')]:.2f}, Zambia ${UC[('art_site_cost', 'ZMB')]:.2f}, Lesotho ${UC[('art_site_cost', 'LSO')]:.2f}, Uganda ${UC[('art_site_cost', 'UGA')]:.2f}, Zimbabwe ${UC[('art_site_cost', 'ZWE')]:.2f}; elsewhere ${UC[('art_site_default', 'arv')]:.2f} (ARVs + labs) + ${UC[('art_site_default', 'non_arv')]:.2f} x (GDP per person ÷ $1,000)^{C['uc_scale_elast']:g} (staff). Above-service share {pct('asd_share')} (PEPFAR expenditure analysis) |
+    | HIV treatment | site cost x multiplier ÷ (1 - above-service share) | Site cost per patient-year (Rosen et al. 2021, 2018-2020 US$, inflated to 2023 US$ with US CPI-U): Malawi ${UC[('art_site_cost', 'MWI')]:.2f}, Zambia ${UC[('art_site_cost', 'ZMB')]:.2f}, Lesotho ${UC[('art_site_cost', 'LSO')]:.2f}, Uganda ${UC[('art_site_cost', 'UGA')]:.2f}, Zimbabwe ${UC[('art_site_cost', 'ZWE')]:.2f}; elsewhere ${UC[('art_site_default', 'arv')]:.2f} (ARVs + labs) + ${UC[('art_site_default', 'non_arv')]:.2f} x (GDP per person ÷ $1,000)^{C['uc_scale_elast']:g} (staff). Above-service share {pct('asd_share')} (KFF 2025: non-service delivery 47% of PEPFAR spending, 2018-2023) |
     | PMTCT | per woman per year, including her ART | ${C['uc_pmtct']:,.0f} (range ${PRM.loc['uc_pmtct', 'low']:.0f}-${PRM.loc['uc_pmtct', 'high']:.0f}) per HIV+ pregnant woman under Option B+: her ART, testing, infant prophylaxis and infant diagnosis. *Health Policy and Planning* 2016;31(8):1133 review of Option B+ cost-effectiveness analyses (annual cost per woman: Gopalappa $114, Ishikawa $170, Ciaranello $179, Fasawe $194, Kuznik $470), median about $250 in 2023 US$ (CPI-U); ARV prices have since fallen, so this is conservative |
     | HIV prevention | $ per infection averted = ${C['cpia_ref']:,.0f} x (1 ÷ incidence per 1,000)^0.5 | *Assumption*; incidence clipped to 0.05-10 per 1,000 |
     | Orphans & vulnerable children | per child-year | ${C['uc_ovc']:,.0f} (*assumption*); no mortality effect |
@@ -689,7 +689,8 @@ with tabs[3]:
     th.section_header("menu_book", "Published Studies Behind the Parameters")
     md("""
     - Rosen S et al. 2021, *Gates Open Research* 5:177 (cost of HIV treatment delivery, five countries).
-    - Results for Development, PEPFAR expenditure analysis (above-service-delivery spending, 45%).
+    - KFF 2025, *Which PEPFAR Investments Drive HIV Outcomes?* (Gaba, Razavi, Kates & Nandakumar): non-service
+      delivery was 47% of PEPFAR spending in 22 countries, 2018-2023 (basis of the above-service share, 0.45).
     - Laurence YV, Griffiths UK, Vassall A 2015, *PharmacoEconomics* (TB treatment costs by income group).
     - GiveWell insecticide-treated net cost-effectiveness analysis; PMI Africa IRS project costs (*Malaria Journal* 2018).
     - Gavi progress reports (future deaths averted per child immunized).
