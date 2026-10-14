@@ -177,6 +177,9 @@ over countries. Before the batch: 2,055,422 deaths; 5,303,707 people who stop AR
 line, El Salvador and Nicaragua under Custom), traced to item 1 and fixed by attributing secondary TB deaths to the
 line whose lost patients generated them (totals unchanged; `batch34_evidence.md`, "First full check").
 
+**Final full check** (after the fix and Phase 3, commit `225e532`): `audit/checks.py --full`, 59 checks, 76,501
+rows, **0 failures, 6 known warnings** (Section 1 vs Section 2 DAH); 357 tests pass.
+
 **Combined effect of the batch** (all countries, Full US Exit, central): 2,055,422 to 1,379,963 deaths 2026-2030
 (-32.9%); HIV 1,096,151 to 669,366 (-39%), TB 472,436 to 463,973 (-2%; -41% after items 1-2, +91% in item 5, -12%
 in item 6), malaria 369,425 to 143,889 (-61%), vaccines 117,411 to 102,735 (-12%); further deaths 2031-2035 1,092,054
