@@ -48,6 +48,30 @@ def rng_txt(p: str, fmt: str = "{:g}") -> str:
     return f"{fmt.format(float(r['central']))} ({fmt.format(float(r['low']))} to {fmt.format(float(r['high']))})"
 
 
+def _u5_share_table() -> pd.DataFrame:
+    """Under-5 share of malaria deaths by WHO region (World Malaria Report 2025, model_params.csv) with the rule and the
+    modelled countries that use it (country_inputs.csv: who_region, malaria_u5_share_rule)."""
+    ci = I["ci"]
+    ci = ci[ci.index.isin(set(I["lines"].iso3))]
+    names = dropdown_countries()
+    rows = []
+    for reg, label in (("AFR", "African"), ("AMR", "Americas"), ("EMR", "Eastern Mediterranean"),
+                       ("SEA", "South-East Asia"), ("WPR", "Western Pacific"), ("EUR", "European")):
+        c = ci[ci["who_region"] == reg]
+        if not len(c):
+            continue
+        par = f"mal_u5_share_{reg.lower()}"
+        with_d = c[c["malaria_deaths"].fillna(0) > 0]
+        rows.append({"WHO Region": label,
+                     "Under-5 Share": (f"{PRM.loc[par, 'central']:.1%} ({PRM.loc[par, 'low']:.1%}-{PRM.loc[par, 'high']:.1%})"
+                                       if par in PRM.index else "none"),
+                     "Rule": c["malaria_u5_share_rule"].iloc[0].split(":")[0],
+                     "Source": (PRM.loc[par, "source"].split(":")[0] if par in PRM.index
+                                else "No WMR regional or global figure (no malaria deaths)"),
+                     "Countries With Malaria Deaths": ", ".join(sorted(names.get(i, i) for i in with_d.index)) or "none"})
+    return pd.DataFrame(rows).set_index("WHO Region")
+
+
 def pct(p: str) -> str:
     return rng_txt(p, "{:.0%}")
 
@@ -476,9 +500,14 @@ with tabs[2]:
       al. 2011).
     - Both are effect sizes for children aged 1-59 months. They apply in full to under-5 malaria deaths and are
       scaled by {rng_txt('mal_adult_effect_frac')} (`mal_adult_effect_frac`, an assumption: no published adult
-      effect was found) for deaths at age 5 and over. The under-5 share of each country's malaria deaths is WHO/MCEE
-      child malaria deaths (2021) ÷ WHO all-age deaths, capped at 1 (0.76 in sub-Saharan Africa and 0.40 elsewhere
-      where the child series is missing). The formula runs once for each age group and the two are added.
+      effect was found) for deaths at age 5 and over. The formula runs once for each age group and the two are added.
+    - **Under-5 share of malaria deaths.** The share stated in WHO's *World Malaria Report 2025* for the country's WHO
+      region (rule a; table below), with its range across parameter values. The report gives no European Region or
+      global figure, so a rule-b fallback to a global share is not available; the countries with no WMR figure
+      (European Region) have no malaria deaths, so the share has no effect there. The earlier rule, WHO/MCEE child
+      malaria deaths (2021) ÷ WHO all-age deaths (2024), divided two estimation methods and years and gave implausible
+      values (Nigeria 0.98, Kenya 0.19, Ethiopia 0.11). It is kept only as a sensitivity switch,
+      `mal_u5_use_country_series` (off).
     - C₀ = current coverage; C₁ = C₀ - people losing the service ÷ people in need. C_c is the share of malaria
       cases that receive an effective drug (MAP), so E_c applies to treated cases only.
     - Because the formula is multiplicative, each extra point of coverage lost costs slightly more lives.
@@ -487,7 +516,9 @@ with tabs[2]:
       events). Deaths from lost vector control are multiplied by (1 + r)^(years since the cut started), with r =
       {rng_txt('mal_resurgence')} a year (*assumption*; the direction is documented, the speed varies widely). Lost
       malaria treatment is not affected.
-
+    """)
+    st.table(_u5_share_table())
+    md(f"""
     **Routine immunization.** Future deaths averted per child immunized at under-5 mortality of 50 per 1,000 =
     {rng_txt('imm_deaths_per_child_ref')} (Gavi: 20.6M deaths averted ÷ 1.2B children; 1.7M ÷ 72M in 2024), times the
     share that would occur before age 5, {rng_txt('imm_u5_share')} (Li et al. 2021: hepatitis B and HPV deaths come in

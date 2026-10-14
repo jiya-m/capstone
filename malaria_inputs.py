@@ -13,6 +13,8 @@ with <column>_year and <column>_source:
     mal_itn_cov   bednet coverage = MAP ITN "Use" (people sleeping under a net, 0-1)
     mal_irs_cov   spraying coverage = MAP IRS "Coverage" (households sprayed, 0-1)
     malaria_cases MAP P. falciparum + P. vivax clinical cases (MAP countries; others keep the WHO estimate)
+    who_region, malaria_u5_share_rule, malaria_u5_share_param  WHO region (ext_data/who_regions.csv) and which World
+                          Malaria Report 2025 under-5 share applies (the value is in model_params.csv)
     trend_malaria_deaths  annual trend of WHO estimated malaria deaths (GHO MALARIA_EST_DEATHS, ext_data/gho/),
                           2015 to the latest year, clipped to +/-5% a year (the clip is an assumption)
 """
@@ -43,6 +45,11 @@ RAW = {                                 # processed name -> (raw file, metrics k
 TREND_START = 2015                      # malaria death trend: WHO deaths from 2015 to the latest year in the file
 TREND_CLIP = (-0.05, 0.05)              # assumption (no source): keeps a short noisy series from extrapolating far
 WHO_DEATHS_FILE = HERE / "ext_data" / "gho" / "MALARIA_EST_DEATHS.csv"   # written by who_inputs.py --download
+WHO_REGIONS_FILE = HERE / "ext_data" / "who_regions.csv"   # WHO region of each country (WHO TB data, g_whoregion)
+# WHO regions for which the World Malaria Report 2025 states the share of malaria deaths in children under 5
+# (model_params.csv mal_u5_share_<region>); there is no European Region or global figure in the report
+WMR_U5_REGIONS = {"AFR": "mal_u5_share_afr", "AMR": "mal_u5_share_amr", "EMR": "mal_u5_share_emr",
+                  "SEA": "mal_u5_share_sea", "WPR": "mal_u5_share_wpr"}
 ITN_SURVEY_MIN_YEAR = 2015              # outside MAP's ITN countries, a household survey counts only from 2015
 MAL_CM_MIN_INCIDENCE = 50               # non-MAP countries: fever-treatment surveys count only where malaria is common
 
@@ -145,6 +152,14 @@ def apply(ci: pd.DataFrame) -> pd.DataFrame:
     ci["trend_malaria_deaths_fit"] = fit
     ci["trend_malaria_deaths_source"] = np.where(fit.notna(), f"WHO estimated malaria deaths, {yrs[0]}-{yrs[1]}",
                                                  "no WHO death series: 0")
+    # under-5 share of malaria deaths (logic review IMP-05 follow-up): the World Malaria Report 2025 share for the
+    # country's WHO region. Rule a = WMR regional figure; no WMR figure (European Region: no malaria deaths, and the
+    # report gives no global share) = none
+    reg = pd.read_csv(WHO_REGIONS_FILE).set_index("iso3")["who_region"].reindex(idx)
+    ci["who_region"] = reg
+    ci["malaria_u5_share_rule"] = np.where(reg.isin(list(WMR_U5_REGIONS)), "a: WMR 2025 regional share",
+                                           "none: no WMR regional or global figure (no malaria deaths)")
+    ci["malaria_u5_share_param"] = reg.map(WMR_U5_REGIONS)
     return ci
 
 

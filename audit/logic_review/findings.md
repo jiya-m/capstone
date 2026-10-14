@@ -61,7 +61,37 @@ Mozambique and India). L-01 (Critical) is unchanged and still dominates the unce
 - Each refresh checks that, outside the lives-first response, only that disease's lines, the totals and its path
   moved. The labels-only items changed no baseline value.
 
-**New caveat from IMP-05.** The under-5 share of malaria deaths comes from the WHO/MCEE child series (2021) ÷ WHO
+**IMP-05 follow-up: under-5 share from the World Malaria Report (14 October 2026).**
+
+**Why.** The caveat below was a concept mismatch: numerator and denominator came from different estimation methods and
+years.
+
+**What changed.** The under-5 share is now WHO's own regional share from the World Malaria Report 2025:
+
+| WHO region | Quote and page | Share used |
+|---|---|---|
+| African | "Just over 75% of all deaths in the region are of children aged under 5 years" (p. 20) | 0.75 (0.70-0.80) |
+| Americas | "less than 25%" (p. 24) | 0.20 (0.15-0.25; WHO gives only a bound) |
+| Eastern Mediterranean | "36.4% of all deaths" (p. 28) | 0.364 (±5 points) |
+| South-East Asia | "Just under a quarter" (pp. 31-32) | 0.25 (±5 points) |
+| Western Pacific | "40.0%" (p. 35) | 0.40 (±5 points) |
+
+- The report gives no European Region or global under-5 share, so rule b (global share) is unavailable.
+- All 46 countries with malaria deaths use rule a (100% of model malaria deaths). The 4 European Region countries have
+  no malaria deaths and no share.
+- The old country series is kept behind `mal_u5_use_country_series` (off).
+
+**Effect on malaria deaths, Full US Exit:** 349,644 → 369,425 (+5.7%); all deaths 1,945,605 → 1,965,386 (+1.0%).
+
+| Country | Before | After |
+|---|---|---|
+| Kenya | 9,714 | 17,822 |
+| Ethiopia | 3,651 | 6,304 |
+| Nigeria | 73,422 | 63,164 |
+| Mozambique | 13,955 | 12,521 |
+| India | 202 | 204 |
+
+**New caveat from IMP-05 (resolved by the follow-up above).** The under-5 share of malaria deaths comes from the WHO/MCEE child series (2021) ÷ WHO
 all-age deaths (2024). It varies widely and in places disagrees with WHO's regional figure (75% under 5 in the African
 Region): Nigeria 0.98, Mozambique 0.90, Kenya 0.19, Ethiopia 0.11. So country malaria results moved in different
 directions: Kenya -40%, India -30%, Nigeria +10%, Mozambique +8%. A WHO country series of under-5 malaria deaths would

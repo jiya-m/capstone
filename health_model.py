@@ -545,20 +545,36 @@ def hiv_death_timing(median: np.ndarray, n_years: int) -> np.ndarray:
 
 
 # under-5 share of malaria deaths where the country's child series is missing: WHO World Malaria Report regional shares
-# (the same values prepare_model.py uses to derive missing all-age deaths)
+# (the same values prepare_model.py uses to derive missing all-age deaths). Used only by the sensitivity switch.
 MALARIA_U5_SHARE_FALLBACK = {True: 0.76, False: 0.40}
 
 
-def malaria_u5_share(row) -> float:
-    """Share of the country's malaria deaths that are in children under 5 (1-59 months): WHO/MCEE child malaria deaths
-    (`malaria_deaths_in_children_1_59_months_total_deaths`, 2021) / WHO all-age malaria deaths, clipped to 0-1; the
-    regional share (0.76 sub-Saharan Africa, 0.40 elsewhere) where either is missing (logic review L-04).
-    Feeds: malaria deaths (the Lives Saved Tool effects are child effect sizes)."""
+def malaria_u5_share_country_series(row) -> float:
+    """The previous rule, kept as a sensitivity check (mal_u5_use_country_series = 1): WHO/MCEE child malaria deaths
+    (`malaria_deaths_in_children_1_59_months_total_deaths`, 2021) / WHO all-age malaria deaths (2024), clipped to 0-1;
+    0.76 (sub-Saharan Africa) / 0.40 where either is missing. It divides two estimation methods and years, which gives
+    implausible values (Nigeria 0.98, Kenya 0.19, Ethiopia 0.11), so it is off by default."""
     d0, child = _v(row, "malaria_deaths"), _v(row, "malaria_deaths_in_children_1_59_months_total_deaths")
     if np.isnan(d0) or d0 <= 0 or np.isnan(child):
         ssa = row.get("is_ssa", False)
         return MALARIA_U5_SHARE_FALLBACK[isinstance(ssa, (bool, np.bool_)) and bool(ssa)]
     return float(np.clip(child / d0, 0.0, 1.0))
+
+
+def malaria_u5_share(row, P) -> np.ndarray:
+    """Share of the country's malaria deaths that are in children under 5 (arrays over draws): the World Malaria Report
+    2025 share for the country's WHO region (`malaria_u5_share_param` in country_inputs.csv names the parameter,
+    mal_u5_share_<region>; rule a). Countries with no WMR figure (European Region: no malaria deaths, no global figure
+    in the report) get 0, which has no effect because their malaria deaths are 0. mal_u5_use_country_series = 1
+    switches to the old country series (sensitivity check).
+    Feeds: malaria deaths (the Lives Saved Tool effects are child effect sizes)."""
+    n = len(P["mal_vc_eff"])
+    if float(np.ravel(P["mal_u5_use_country_series"])[0]) >= 0.5:
+        return np.full(n, malaria_u5_share_country_series(row))
+    par = row.get("malaria_u5_share_param")
+    if isinstance(par, str) and par in P:
+        return np.asarray(P[par], dtype=float) * np.ones(n)
+    return np.zeros(n)
 
 
 def malaria_levels(row, P, units, need_cov) -> dict:
@@ -584,7 +600,7 @@ def malaria_levels(row, P, units, need_cov) -> dict:
     # deaths at age 5 and over they are scaled by mal_adult_effect_frac (no published adult effect size)
     Ev, Ec = P["mal_vc_eff"], P["mal_cm_eff"]
     fa = P["mal_adult_effect_frac"]
-    s_u5 = malaria_u5_share(row)
+    s_u5 = malaria_u5_share(row, P)
     ok_par = bool(par) and not np.isnan(par)
     itn1 = np.clip(itn0 - (units["mal_itn"] / par if ok_par else 0), 0, 1)
     irs1 = np.clip(irs0 - (units["mal_irs"] / par if ok_par else 0), 0, 1)

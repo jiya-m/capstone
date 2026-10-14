@@ -83,7 +83,7 @@ def test_combined_vector_control_formula():
     Ev, D0 = Pc["mal_vc_eff"][0], row["malaria_deaths"]
     c0, c1 = 1 - (1 - itn0) * (1 - irs0), 1 - (1 - (itn0 - 0.1)) * (1 - irs0)
     # L-04: full child effect on under-5 deaths, x mal_adult_effect_frac on deaths at 5 and over
-    s, f = hm.malaria_u5_share(row), Pc["mal_adult_effect_frac"][0]
+    s, f = hm.malaria_u5_share(row, Pc)[0], Pc["mal_adult_effect_frac"][0]
     want = (D0 * s * ((1 - Ev * c1) / (1 - Ev * c0) - 1)
             + D0 * (1 - s) * ((1 - f * Ev * c1) / (1 - f * Ev * c0) - 1))
     assert got["mal_itn"][0] == pytest.approx(want)
@@ -160,14 +160,27 @@ def test_apply_is_idempotent():
 
 
 def test_malaria_u5_share_and_adult_fraction():
-    """L-04: under-5 share from the child series (clipped to 0-1, regional fallback); with the adult fraction at 1 the
+    """IMP-05 follow-up: the under-5 share is the World Malaria Report 2025 share for the country's WHO region (rule a);
+    the old country child-death series is behind mal_u5_use_country_series (off). With the adult fraction at 1 the
     age split gives back the all-age formula, and at 0 only under-5 deaths respond."""
     row = CI.loc["NGA"].copy()
-    s = hm.malaria_u5_share(row)
-    assert s == pytest.approx(min(1.0, row["malaria_deaths_in_children_1_59_months_total_deaths"] / row["malaria_deaths"]))
+    Pc0 = hm.draw_params(P, 0)
+    assert CI.loc["NGA", "who_region"] == "AFR" and CI.loc["NGA", "malaria_u5_share_rule"].startswith("a")
+    assert hm.malaria_u5_share(row, Pc0)[0] == 0.75
+    for iso, want in (("KEN", 0.75), ("ETH", 0.75), ("MOZ", 0.75), ("IND", 0.25), ("PAK", 0.364), ("PNG", 0.40)):
+        if iso in CI.index:
+            assert hm.malaria_u5_share(CI.loc[iso], Pc0)[0] == pytest.approx(want), iso
+    # countries with no WMR figure (European Region) have no malaria deaths
+    none = CI[CI["malaria_u5_share_rule"].str.startswith("none")]
+    assert (none["malaria_deaths"].fillna(0) == 0).all()
+    # the old country series is still there behind the switch
+    on = dict(Pc0, mal_u5_use_country_series=np.ones(1))
+    assert hm.malaria_u5_share(row, on)[0] == pytest.approx(
+        min(1.0, row["malaria_deaths_in_children_1_59_months_total_deaths"] / row["malaria_deaths"]))
     no_child = row.copy()
     no_child["malaria_deaths_in_children_1_59_months_total_deaths"] = np.nan
-    assert hm.malaria_u5_share(no_child) == 0.76
+    assert hm.malaria_u5_share(no_child, on)[0] == 0.76
+    s = hm.malaria_u5_share(row, Pc0)[0]
     P1 = P.copy()
     Pc = hm.draw_params(P1, 0)
     nc = hm.epi(row, Pc)["need_cov"]

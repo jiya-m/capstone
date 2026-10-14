@@ -47,7 +47,8 @@ Country columns used (`country_inputs.csv`):
 | malaria cases | `malaria_cases` | |
 | D0 (malaria deaths, all ages) | `malaria_deaths` | |
 | child malaria deaths, 1-59 months | `malaria_deaths_in_children_1_59_months_total_deaths` | WHO/MCEE, 2021; for the under-5 share |
-| sub-Saharan Africa | `is_ssa` | True / False |
+| sub-Saharan Africa | `is_ssa` | True / False (sensitivity switch only) |
+| WHO region; under-5 rule | `who_region`, `malaria_u5_share_rule`, `malaria_u5_share_param` | from `ext_data/who_regions.csv` (WHO TB data `g_whoregion`), written by `malaria_inputs.py` |
 | bednet use, spraying, treatment coverage | `mal_itn_cov`, `mal_irs_cov`, `mal_cm_cov` | shares 0-1 (not percentages); NaN = see section 5 |
 | births | `births` | |
 | DTP3 % | `sh_imm_idpt` | |
@@ -373,8 +374,12 @@ below it.)
   - m1 = clip(m0 - units_cm / cases, 0, 1).
   - Where PAR or cases are missing or 0, the subtracted term is 0.
 - **Combined vector control:** vc(i, r) = 1 - (1 - i)(1 - r); cv0 = vc(n0, r0), cv1 = vc(n1, r1).
-- **Age groups** (L-04): s = clip(`malaria_deaths_in_children_1_59_months_total_deaths` / D0, 0, 1); if the child
-  value or D0 is missing, s = 0.76 where `is_ssa` is True, else 0.40 (a child value of 0 is not missing: s = 0). Under-5 deaths Du = D0 s use Ev = mal_vc_eff and
+- **Age groups** (L-04): s = the World Malaria Report 2025 under-5 share for the country's WHO region: the parameter
+  named in `malaria_u5_share_param` (`mal_u5_share_afr` 0.75, `_amr` 0.20, `_emr` 0.364, `_sea` 0.25, `_wpr` 0.40,
+  each drawn over its low-high range). Countries with no WMR figure (`malaria_u5_share_rule` = none: European Region,
+  no malaria deaths) get s = 0. Sensitivity switch `mal_u5_use_country_series` = 1 (default 0) restores the old rule:
+  s = clip(`malaria_deaths_in_children_1_59_months_total_deaths` / D0, 0, 1); if the child value or D0 is missing,
+  s = 0.76 where `is_ssa` is True, else 0.40 (a child value of 0 is not missing: s = 0). Under-5 deaths Du = D0 s use Ev = mal_vc_eff and
   Ec = mal_cm_eff; deaths at 5 and over Da = D0 (1 - s) use Ev x mal_adult_effect_frac and Ec x
   mal_adult_effect_frac.
 - **Ratios**, for each group g with its (D_g, Ev_g, Ec_g): rv_g = (1 - Ev_g cv1) / (1 - Ev_g cv0);
