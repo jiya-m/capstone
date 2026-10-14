@@ -59,3 +59,33 @@ buys. **Caveat on (b):** where the Global Fund grant funds little treatment, its
 treatment share of national spending: South Africa (0.11; ART is domestically financed), Dominican Republic (0.03),
 Eswatini (0.13), Namibia (0.03), Niger (0.19), Mali (0.33) give (b) of US$29-80, below the price of the drugs. The
 item 2 floor (first-line drugs plus viral load) catches these; the mismatch is recorded with the rule.
+
+## Item 2: the rule now used (one commit)
+
+**Rule.** ART cost per patient-year = the lower of (a) the GHCC-based full cost and (b) the observed treatment
+spending per person on ART (item 1); where (b) is unavailable (27 countries), (a) x the WHO-region median of (b)/(a)
+(AFR 0.50, EUR 0.92, WPR 0.89, EMR 0.68, AMR 1.66 so (a) itself; SEA has none, so the overall median 0.54). Floor:
+first-line drugs plus one viral load test a year = "a first-line HIV treatment for under US$45 per person, per year"
+(Global Fund news release, "Global Fund agreements substantially reduce the price of first-line HIV treatment to below
+US$45 a year", 30 August 2023; TLD) + viral load at the "global access price from Roche of US$9.40 per test" (CHAI,
+Case Study: Viral Load Access, 2015; 2015 US$ x 304.702 / 237.017 = 12.08) = **US$57.08** (2023 US$; one test a year
+per WHO's routine monitoring schedule, an assumption about frequency). Gate US$50-600 on the final value (no country
+touches it). Reason: concept match, the model needs what a dollar of lost treatment money pays for per patient.
+Implementation: `country_inputs.csv` `art_cost_full` (+ `_lo`, `_hi`, `_source`), written by `batch34_inputs.py
+--art-full` from `batch4b_art_check.csv`; `health_model.unit_costs` uses it without applying the markup again.
+
+**Result** (2023 US$ per patient-year): median 274 (57-400). From observed spending: 43 countries, of which the
+GHCC-based value was the lower in 8 (Nigeria 400 vs 569, Azerbaijan, Kyrgyzstan, Mongolia, Guyana, Haiti, Liberia,
+Madagascar); floored: South Africa (35 -> 57) and the Dominican Republic (51 -> 57), where the Global Fund treatment
+share (0.11, 0.03) understates the national treatment share. Kenya 308 (was 644), Uganda 314 (675), Mozambique 227
+(400), Malawi 199 (274), Zimbabwe 129 (400), Eswatini 80 (463), India 216 (400, regional ratio).
+
+**Monte Carlo range.** `uc_art_mult` keeps 0.68-1.38: below 1 the draw scales the value down (the spread of the cost
+studies, Batch 3+4); above 1 it moves the value toward `art_cost_full_hi` = the higher of (a) and (b) capped at 600,
+reaching it at 1.38 (Kenya 308 -> 600, Mozambique 227 -> 400, South Africa 57 -> 400). The central therefore sits
+inside the displayed range.
+
+**Effect** (Full US Exit, all countries, central): deaths 2026-30 1,379,963 -> 1,648,665 (+19.5%); HIV deaths
+669,366 -> 938,069 (+40%); HIV infections 2.80M -> 3.79M; people who stop ART 3,184,530 -> 4,563,706 (+43%); TB,
+malaria and vaccines unchanged. HIV baseline only rebuilt (83 entries; 13 lives-first entries also moved other lines
+through the refill order). `--quick`: 0 failures, 6 known warnings.

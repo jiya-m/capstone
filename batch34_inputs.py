@@ -6,6 +6,7 @@ from the evidence tables in audit/logic_review/ (which are built from the raw da
     python batch34_inputs.py --art        # item 4 (IMP-03): site-level ART cost per patient-year by country (GHCC, Rosen 2021)
     python batch34_inputs.py --tb         # item 5 (IMP-11): TB course costs (DS, DR) and the MDR/RR share and enrolment
     python batch34_inputs.py --donor      # item 6 (IMP-04): external (donor) share of disease spending, for the cap rule
+    python batch34_inputs.py --art-full   # Batch 4b item 2 (L-50): ART cost per patient-year = min(GHCC-based, observed spending), floored and gated
 
 Columns written (all with a `_source` column saying whether the value is the country's own or a fallback):
   unspec_<disease>_{treatment,prevention,testing,rssh,pm}   shares of unspecified money by purpose (sum to 1)
@@ -65,6 +66,14 @@ def apply_tb(ci: pd.DataFrame) -> pd.DataFrame:
     return ci
 
 
+def apply_art_full(ci: pd.DataFrame) -> pd.DataFrame:
+    t = pd.read_csv(EV / "batch4b_art_check.csv").set_index("iso3").reindex(ci.index)
+    ci["art_cost_full"], ci["art_cost_full_lo"], ci["art_cost_full_hi"] = t.final_cost, t.final_lo, t.final_hi
+    ci["art_cost_full_source"] = t.final_source
+    ci["art_cost_full_year"] = 2023
+    return ci
+
+
 def apply_donor(ci: pd.DataFrame) -> pd.DataFrame:
     t = pd.read_csv(EV / "batch34_donor_share.csv").set_index("iso3").reindex(ci.index)
     for b, tag in (("HIV", "hiv"), ("TB", "tb"), ("Malaria", "malaria"), ("Immunization", "imm")):
@@ -85,6 +94,8 @@ def main():
         ci, done = apply_tb(ci), done + ["tb"]
     if "--donor" in sys.argv:
         ci, done = apply_donor(ci), done + ["donor"]
+    if "--art-full" in sys.argv:
+        ci, done = apply_art_full(ci), done + ["art-full"]
     if not done:
         raise SystemExit(__doc__)
     ci.copy().reset_index().to_csv(CI_PATH, index=False)

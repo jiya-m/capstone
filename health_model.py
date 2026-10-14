@@ -94,6 +94,7 @@ ART_TRANSMISSION_FALLBACK = 0.118   # UNAIDS 2025 median rate across the dashboa
 ART_INFECT_LAG = np.array([0.5, 1, 1, 1, 1])
 POST_YEARS = 5                  # deaths set in motion are counted in 2031-2035, with funding back from 2031
 HIV_WEIBULL_SHAPE = 2.25        # survival after HIV infection without ART (Todd et al. 2007; UNAIDS Spectrum)
+ART_MULT_UP = 0.38              # uc_art_mult high (1.38) minus 1: maps the draw's upper half onto art_cost_full_hi (Batch 4b)
 DR_TB_SHARE, DR_TB_COV = 0.04, 0.45     # fallbacks only: countries use WHO's RR-TB share and enrolment (IMP-11)
 # how unspecified money (IHME program area not reported) is split by purpose (Batch 3+4, L-43): the country's Global
 # Fund module shares in country_inputs.csv (unspec_<disease>_<purpose>; batch34_inputs.py). Treatment and prevention
@@ -454,8 +455,21 @@ def unit_costs(row: pd.Series, P: dict) -> dict:
     inc = _v(row, "sh_hiv_incd_tl") / _v(row, "sp_pop_totl") * 1000
     inc = 0.3 if np.isnan(inc) else float(np.clip(inc, 0.05, 10))
     one = np.ones_like(P["uc_imm"])
+    # Batch 4b (L-50): the ART cost per patient-year the model uses is the lower of the GHCC-based full cost (site cost
+    # x markup) and the observed HIV treatment spending per person on ART (Optima Table B2 or WHO GHED x the Global
+    # Fund treatment share / UNAIDS people on ART), floored at first-line drugs plus a viral load test and gated to
+    # US$50-600 (country_inputs.csv art_cost_full; audit/batch4b_art_check.py). Draws: uc_art_mult below 1 scales the
+    # value down (study spread); above 1 it moves toward art_cost_full_hi (the higher of the two measures, within the
+    # gate), reaching it at the parameter's high value
+    art_full = _v(row, "art_cost_full")
+    if np.isnan(art_full):
+        hiv_art = art_site * P["uc_art_mult"] * markup
+    else:
+        hi_ = _v(row, "art_cost_full_hi", art_full)
+        m = np.asarray(P["uc_art_mult"], dtype=float)
+        hiv_art = np.where(m > 1.0, art_full * (1.0 + (m - 1.0) * (hi_ / art_full - 1.0) / ART_MULT_UP), art_full * m)
     return {
-        "hiv_art": art_site * P["uc_art_mult"] * markup,
+        "hiv_art": hiv_art,
         "hiv_pmtct": P["uc_pmtct"] * one,
         "hiv_prev": P["cpia_ref"] * (1.0 / inc) ** 0.5,          # $ per infection averted
         "hiv_ovc": P["uc_ovc"] * one,

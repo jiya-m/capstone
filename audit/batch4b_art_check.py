@@ -14,6 +14,14 @@ Observed treatment spending per person on ART = total HIV spending x treatment-a
       `Data value`, same year as the spending (datasets/UNAIDS_2026).
 Nominal US$ of the spending year are put in 2023 US$ with the US CPI-U annual averages (BLS: 2015 237.017, 2016 240.007,
 2017 245.120, then health_model.CPI_U). The model's full cost = site cost x 1 / (1 - asd_share) x uc_art_mult.
+Item 2 rule (columns final_cost, final_lo, final_hi, final_source): ART cost per patient-year = the lower of (a) the
+GHCC-based full cost and (b) the observed treatment spending per person on ART; where (b) is unavailable, (a) x the
+median (b)/(a) ratio of the model countries in the same WHO region (the overall median if the region has none);
+floor = first-line drugs plus one viral load test a year (TLD "under US$45 per person, per year", Global Fund news
+release 30 August 2023; viral load "global access price from Roche of US$9.40 per test", CHAI, Case Study: Viral Load
+Access, 2015; 9.40 in 2015 US$ x CPI-U to 2023 = 12.08; floor 57.08 in 2023 US$); gate US$50-600 on the final value.
+Range: lo = the final value, hi = the higher of (a) and (b) capped at 600 (the draws also run below the central through
+uc_art_mult's lower end, 0.68, from the spread of the cost studies).
 Writes audit/logic_review/batch4b_art_check.csv.
 """
 from __future__ import annotations
@@ -108,6 +116,38 @@ def main():
         rows.append(r)
     t = pd.DataFrame(rows).set_index("iso3")
     t["who_region"] = ci.who_region.reindex(t.index)
+    # ---- item 2 rule ----
+    FLOOR = 45.0 + inflate(9.40, 2015)
+    ratio_ba = (t.observed_treat_spend_pp_2023 / t.full_cost_now)
+    reg_med = ratio_ba.groupby(t.who_region).median()
+    all_med = float(ratio_ba.median())
+    for iso in t.index:
+        a_ = float(t.loc[iso, "full_cost_now"])
+        b_ = t.loc[iso, "observed_treat_spend_pp_2023"]
+        if pd.notna(b_):
+            cand, src = float(b_), f"min(GHCC-based {a_:.0f}, observed {float(b_):.0f} from {t.loc[iso, 'spend_source']})"
+        else:
+            rr = reg_med.get(t.loc[iso, "who_region"], np.nan)
+            lab = f"WHO region {t.loc[iso, 'who_region']}"
+            if pd.isna(rr):
+                rr, lab = all_med, "all model countries"
+            cand, src = a_ * float(rr), f"no observed spending: GHCC-based {a_:.0f} x median observed/GHCC ratio {float(rr):.2f} ({lab})"
+        v = min(a_, cand)
+        note = ""
+        if v < FLOOR:
+            note = f"; floored at drugs + viral load {FLOOR:.0f}"
+            v = FLOOR
+        v = float(np.clip(v, 50.0, 600.0))
+        if v == 600.0 or v == 50.0:
+            note += "; gate 50-600 applied"
+        t.loc[iso, "final_cost"] = v
+        t.loc[iso, "final_lo"] = v
+        t.loc[iso, "final_hi"] = float(np.clip(max(a_, cand), v, 600.0))
+        t.loc[iso, "final_source"] = src + note
+    t["floor_usd"] = FLOOR
+    print(f"\nitem 2: floor {FLOOR:.2f}; final cost median {t.final_cost.median():.0f} (min {t.final_cost.min():.0f}, max {t.final_cost.max():.0f}); "
+          f"floored: {list(t.index[t.final_source.str.contains('floored')])}; from observed: {int(t.final_source.str.startswith('min(').sum())}; "
+          f"GHCC lower than observed: {int(((t.final_cost == t.full_cost_now) & t.final_source.str.startswith('min(')).sum())}")
     t.to_csv(OUT)
     pd.set_option("display.width", 250)
     print(f"countries: {len(t)}; own study {int(t.own_study.sum())}; site gate fails {int((~t.gate_site_50_600).sum())}; "

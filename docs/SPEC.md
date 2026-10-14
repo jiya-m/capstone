@@ -55,6 +55,7 @@ Country columns used (`country_inputs.csv`):
 | DTP3 % | `sh_imm_idpt` | |
 | U5MR | `sh_dyn_mort` | 50 if missing |
 | ART site cost | `art_site_cost` (`_lo`, `_hi`, `_source`, `_year`) | US$ per patient-year at site level, 2023 US$ (`batch34_inputs.py --art`; `audit/batch34_art_costs.py`) |
+| ART cost per patient-year used | `art_cost_full` (`_lo`, `_hi`, `_source`, `_year`) | 2023 US$: min(GHCC-based full cost, observed treatment spending per person on ART), floored at 57 and gated 50-600 (`batch34_inputs.py --art-full`; `audit/batch4b_art_check.py`) |
 | TB course costs | `tb_ds_cost`, `tb_dr_cost` (`_lo`, `_hi`, `_source`), `tb_cost_year` | US$ per treatment course, provider, 2023 US$ (`batch34_inputs.py --tb`; `audit/batch34_tb_costs.py`) |
 | RR-TB share and enrolment | `tb_rr_share`, `tb_rr_cov` (`tb_rr_source`) | WHO 2024: RR-TB incidence / all-forms incidence; RR patients started on treatment / RR incidence, capped at 1 |
 | external share of disease spending | `donor_share_<hiv|tb|malaria|imm>` (`_source`, `_year`) | 0-1: GHED external funding on the disease / spending on it (HIV dis11, malaria dis13, immunization hc62); TB: WHO TB financing, funding received from the Global Fund, USAID and other grants / all received (2024; 2025 expected funding if missing); WHO-region median where missing (`batch34_inputs.py --donor`; `audit/batch34_donor_share.py`) |
@@ -271,10 +272,16 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
 **Unit cost** (central run unless drawn):
 - markup = 1 / (1 - asd_share).
 - sc = (max(gdp_pc, 200) / 1000) ^ uc_scale_elast.
-- **hiv_art:** `art_site_cost` from `country_inputs.csv` (2023 US$; Batch 3+4, IMP-03: GHCC and Rosen 2021 records,
-  or the WHO-region / income-group median of the countries with records) x uc_art_mult x markup. Only if that
-  column is missing: (art_site_cost[country] from `unit_cost_reference.csv` inflated from its cost_year by CPI-U to
-  2023), or, if the country has none, (arv default + non_arv default x sc) inflated from 2018.
+- **hiv_art:** `art_cost_full` from `country_inputs.csv` (2023 US$; Batch 4b, L-50): the lower of (a) the
+  GHCC-based full cost = `art_site_cost` x markup (Batch 3+4, IMP-03) and (b) observed HIV treatment spending per
+  person on ART (total HIV spending from Optima Table B2 or GHED x the Global Fund treatment share
+  `unspec_hiv_treatment` / UNAIDS people on ART, same year, 2023 US$); where (b) is missing, (a) x the WHO-region
+  median of (b)/(a); floored at US$57 (first-line drugs + one viral load test) and clipped to 50-600. Draw: with
+  m = uc_art_mult, cost = art_cost_full x m if m <= 1, else art_cost_full x (1 + (m - 1) x (art_cost_full_hi /
+  art_cost_full - 1) / 0.38), where art_cost_full_hi = the higher of (a) and (b), clipped to [art_cost_full, 600];
+  no markup is applied again. Only if `art_cost_full` is missing: `art_site_cost` x uc_art_mult x markup; and if that
+  is missing too, (art_site_cost[country] from `unit_cost_reference.csv` inflated from its cost_year by CPI-U to
+  2023), or (arv default + non_arv default x sc) inflated from 2018.
 - **hiv_pmtct** = uc_pmtct (includes the mother's ART). **hiv_ovc** = uc_ovc.
 - **hiv_prev** = cpia_ref x (1 / inc)^0.5, with inc = new HIV infections / population x 1000, clipped to 0.05-10.
   inc = 0.3 if either input is missing. Unit: infection averted.

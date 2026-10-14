@@ -195,11 +195,15 @@ cost, US$400-675, is above total HIV spending per person on ART in Kenya, Uganda
 Africa), by the money that now buys no people (systems, programme management, the non-treatment shares of
 unspecified money, half of testing and care), by continuity and the cap, and by the 23% Global Fund cut. Not tuned.
 
-**New open finding L-50 (Major, Medium confidence).** The ART full cost per patient-year (site cost x 1 / (1 -
-asd_share)) exceeds the country's total HIV spending per person on ART in 5 of the 15 Optima countries. The GHCC
-economic site costs (overheads, OI care, 2015-2016 prices) and the PEPFAR-wide 47% non-service share (L-26) cannot
-both be right there; PEPFAR Expenditure Analysis per patient (DR-01) would settle the level. Until then, the number
-of people who stop ART is a lower bound in those countries.
+**L-50 (Major; ✅ done in Batch 4b, 14 October 2026).** The ART full cost per patient-year (site cost x 1 / (1 -
+asd_share)) exceeded the country's total HIV spending per person on ART in 5 of the 15 Optima countries; the item D
+gate had been applied to the site-level value, so Kenya (644) and Uganda (675) passed it. Batch 4b: the cost used is
+now the lower of the GHCC-based full cost and observed treatment spending per person on ART (Optima Table B2 or GHED
+x the Global Fund treatment share / UNAIDS people on ART; the regional median ratio where unavailable), floored at
+first-line drugs plus a viral load test (US$57) and gated to 50-600: median US$274 (Kenya 308, Uganda 314, Mozambique
+227, Zimbabwe 129). Caveat: where the Global Fund funds little treatment (South Africa, Dominican Republic, Eswatini,
+Namibia) the Global Fund share understates the treatment share and the floor binds; PEPFAR Expenditure Analysis per
+patient (DR-01) would still settle the level. `batch4b_evidence.md` items 1-2.
 
 ## Summary
 
