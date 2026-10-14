@@ -33,11 +33,15 @@ I, P = hm.load_inputs(), hm.load_params()
 CI, LINES = I["ci"], I["lines"]
 PC = hm.draw_params(P, 0)
 KAPPA = float(PC["hss_kappa"][0])
+SIGMA = float(PC["hss_service_share"][0])
 COUNTRIES = [c for c in CI.index if c in set(LINES.iso3)]
 QUICK = "--quick" in sys.argv
 if QUICK:
     COUNTRIES = [c for c in ("KEN", "NGA", "MOZ", "UGA", "ZAF", "ZMB", "MWI", "HND", "IRQ") if c in COUNTRIES]
-DRAWS = 50 if QUICK else 400
+# quick mode: 100 draws (was 50). With 50 draws the 97.5th percentile of a skewed parameter set (malaria costs and
+# effects have centrals near one end of their ranges) can fall below the central run once hss_kappa's wide draw range
+# no longer applies to systems money (Batch 3+4, L-05); the dashboard's 400 draws and 100 draws keep the central inside
+DRAWS = 100 if QUICK else 400
 SUFFIX = "_quick" if QUICK else ""
 PRESETS = list(scn.PRESETS)
 RESPONSES = {
@@ -238,19 +242,17 @@ def per_run(iso, preset, resp, res, fiscal_t, opts):
     pth = res["path"]
     rec(iso, preset, resp, "path_chart_sums_to_headline", close(pth.values.sum(), T["deaths_5y"], 1e-9, 1e-6) and
         close(pth.iloc[0].sum(), T["deaths_y1"], 1e-9, 1e-6), pth.values.sum() - T["deaths_5y"])
-    # kappa / unspecified spreading conserves money: line losses (direct lines, plus linked lines in full) + the
-    # non-service systems money = bucket. Linked lines (HIV testing & care) take their share of systems money by the
-    # country's mix, so only (1 - kappa) x the rest of the systems money is outside the lines (I-09)
+    # unspecified spreading conserves money: line losses (direct lines, plus linked lines in full) + the non-service
+    # systems money = bucket. Batch 3+4 (L-05): only sigma = hss_service_share of systems money is spread as service
+    # money, so (1 - sigma) x the systems money is outside the lines (SPEC.md section 3)
     cells = res["cells"]
     kb = []
     for b in ("HIV", "TB", "Malaria"):
         hss = cells.loc[cells["line"] == hm.HSS[b], "loss"].sum()
-        known = cells[cells["line"].isin(hm.DIRECT[b] + hm.LINKED_IN[b])].groupby("line")["usd"].sum()
-        m_link = known.reindex(hm.LINKED_IN[b]).fillna(0).sum() / known.sum() if known.sum() > 0 else 0.0
         direct = L.loc[L["bucket"] == b, "gross_loss_usd"].sum()
         bucket = Bx.loc[b, "gross_loss_usd"]
-        if not close(direct + (1 - KAPPA) * hss * (1 - m_link), bucket, 1e-6, 1.0):
-            kb.append(f"{b}: direct {direct:.0f} + (1-k)hss {(1 - KAPPA) * hss:.0f} vs bucket {bucket:.0f}")
+        if not close(direct + (1 - SIGMA) * hss, bucket, 1e-6, 1.0):
+            kb.append(f"{b}: direct {direct:.0f} + (1-sigma)hss {(1 - SIGMA) * hss:.0f} vs bucket {bucket:.0f}")
     rec(iso, preset, resp, "unspec_and_kappa_conserve_money", not kb, len(kb), "; ".join(kb))
     # 1-(1-a)(1-b) applied once, exactly as documented
     exp = np.array([expected_cut(preset, iso, s, c, b, opts) for s, c, b in

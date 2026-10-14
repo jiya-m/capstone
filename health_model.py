@@ -4,8 +4,9 @@ Funding shock -> fiscal response -> coverage -> lives.
 A country-level model for HIV, TB, malaria and immunization:
 
   1. MONEY     baseline aid (IHME DAH, avg 2021-23) by source x channel x service line; a donor scenario sets the
-               fraction cut in every cell; unreported program areas are spread over the bucket's known mix and a
-               share (kappa) of lost systems money (labs, HR, M&E) is assumed to translate into lost services.
+               fraction cut in every cell; unreported program areas are spread over the bucket's known mix; systems
+               money (labs, HR, M&E) is above-site money already priced into the marked-up unit costs, so it is lost
+               without a modelled service effect (hss_service_share, default 0; logic review L-05).
   2. FISCAL    the government can backfill part of the loss; the replacement rate is a policy choice (default from
                the panel regression) capped by fiscal space = GHES x (best-year minus typical GHES growth) x debt-stress.
   3. COVERAGE  net money lost / unit cost = people who lose a service; divided by the population in need it gives
@@ -43,7 +44,7 @@ HSS = {"HIV": "hiv_hss", "TB": "tb_hss", "Malaria": "mal_hss"}
 ALL_DIRECT = [l for b in BUCKETS for l in DIRECT[b]]
 LINE_BUCKET = {l: b for b in BUCKETS for l in DIRECT[b]}
 # money lines with no units of their own (audit I-09): hss_kappa of their lost money counts as lost service on the
-# target line, like health-systems money; the rest is non-service money
+# target line; the rest is non-service money
 LINKED = {"hiv_care_ct": "hiv_art"}
 LINKED_IN = {b: [l for l, t in LINKED.items() if LINE_BUCKET[t] == b] for b in BUCKETS}
 MONEY_LINES = ALL_DIRECT + list(LINKED)
@@ -729,10 +730,12 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     n = len(P["uc_imm"])
 
     # ---- 1. money: effective loss by direct line (per draw because kappa is uncertain) ----
-    def effective(series, kappa):
-        """Money by line after spreading unspecified and systems money over the known mix. Linked lines (HIV testing
-        and care) keep kappa x their pool as service money (it counts toward the target line's units) and put the rest
-        in nonservice[line]; nonservice[bucket] is the systems money that does not cut services."""
+    def effective(series, kappa, sigma):
+        """Money by line after spreading unspecified money over the known mix. Systems money (HSS: supply chain, human
+        resources, information systems) is above-site money that the marked-up unit costs already price into every
+        patient, so only sigma = hss_service_share of it (default 0) is spread as service money; the rest is
+        nonservice[bucket] (logic review L-05). Linked lines (HIV testing and care) keep kappa x their pool as service
+        money (it counts toward the target line's units) and put the rest in nonservice[line]."""
         eff, nonservice = {}, {}
         for b in BUCKETS:
             known = DIRECT[b] + LINKED_IN[b]
@@ -742,17 +745,15 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             u = series.get(UNSPEC.get(b, ""), 0.0)
             s = series.get(HSS.get(b, ""), 0.0)
             for l in DIRECT[b]:
-                eff[l] = d[l] + (u + kappa * s) * mix.get(l, 0.0)
-            m_link = 0.0
+                eff[l] = d[l] + (u + sigma * s) * mix.get(l, 0.0)
             for l in LINKED_IN[b]:
-                pool = d[l] + (u + s) * mix.get(l, 0.0)        # its own money + its share of unspecified and systems
+                pool = d[l] + (u + sigma * s) * mix.get(l, 0.0)    # its own money + its share of unspecified money
                 eff[l], nonservice[l] = kappa * pool, (1 - kappa) * pool
-                m_link += mix.get(l, 0.0)
-            nonservice[b] = (1 - kappa) * s * (1 - m_link)
+            nonservice[b] = (1 - sigma) * s
         return eff, nonservice
 
-    eff_base, _ = effective(base, P["hss_kappa"])
-    effc_base, nsc_base = effective(base, Pc["hss_kappa"])
+    eff_base, _ = effective(base, P["hss_kappa"], P["hss_service_share"])
+    effc_base, nsc_base = effective(base, Pc["hss_kappa"], Pc["hss_service_share"])
 
     # ---- 2. fiscal response, year by year ----
     # aid lost in year t = full scenario loss x cut_path(t); the government response in `fiscal` applies to that year's
@@ -830,8 +831,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     years = range(N_YEARS)
     effc_t, repc_t, repnc_t, net_t, netc_t, nsc_t_all = [], [], [], [], [], []
     for t in years:
-        e_t, ns_t = effective(gross_t[t], P["hss_kappa"])
-        ec_t, nsc_t = effective(gross_t[t], Pc["hss_kappa"])
+        e_t, ns_t = effective(gross_t[t], P["hss_kappa"], P["hss_service_share"])
+        ec_t, nsc_t = effective(gross_t[t], Pc["hss_kappa"], Pc["hss_service_share"])
         r, _ = allocate(e_t, ns_t, budget_t[t])
         rc, rnc = allocate(ec_t, nsc_t, budget_t[t])
         effc_t.append(ec_t)

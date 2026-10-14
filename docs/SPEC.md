@@ -158,14 +158,19 @@ G[l,t].
 
 ## 3. Money by service line (effective loss)
 
-For bucket b and any money series X (baseline, or year t's G), with kappa = `hss_kappa`:
+For bucket b and any money series X (baseline, or year t's G), with kappa = `hss_kappa` and sigma =
+`hss_service_share` (central 0):
 - mix_l = base_l / sum_{K_b} base. Here base is the country's raw baseline by line. If that sum is 0, the global mix
   is used: each known line's share of the bucket's known-line baseline summed over all countries in `dah_lines`.
 - U = X[b_unspec], S = X[b_hss] (0 if absent; Immunization has neither).
-- For each direct line l of b: E[l] = X[l] + (U + kappa x S) x mix_l.
-- For the linked line `hiv_care_ct`: pool = X[care] + (U + S) x mix_care. E[care] = kappa x pool;
+- For each direct line l of b: E[l] = X[l] + (U + sigma x S) x mix_l.
+- For the linked line `hiv_care_ct`: pool = X[care] + (U + sigma x S) x mix_care. E[care] = kappa x pool;
   nonservice[care] = (1 - kappa) x pool.
-- nonservice[b] = (1 - kappa) x S x (1 - mix_care), with mix_care = 0 outside HIV.
+- nonservice[b] = (1 - sigma) x S.
+
+Systems money (S) is above-site money that the marked-up unit costs (section 5) already price into every patient,
+so it is not converted into service units (Batch 3+4, logic review L-05; sigma is a constant in the draws; sigma > 0
+is a sensitivity case set by hand).
 
 Money is conserved: sum of E over K_b plus nonservice = X[direct] + X[care] + U + S.
 

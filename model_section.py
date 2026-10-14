@@ -854,9 +854,8 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     notes += [f"{f[0].upper() + f[1:]}." for f in res["flags"]]
     notes.append("HIV prevention turns money into infections averted; deaths from those infections are counted in the "
                  "year they happen (few before 2031). Program money with no "
-                 "reported purpose is spread over each bucket's known mix, and "
-                 f"{float(ptab.loc['hss_kappa', 'central']):.0%} of lost systems money (labs, staff, monitoring) is "
-                 "assumed to cut services. HIV Testing & Care has no patients of its own: " + care_ct_note()
+                 "reported purpose is spread over each bucket's known mix; "
+                 + systems_note(ptab) + " HIV Testing & Care has no patients of its own: " + care_ct_note()
                  + " Bednets and spraying have their own coverage; together they set vector-control coverage. "
                  "Deaths ranges: " + RANGE_LABEL + ". " + RANGE_TIP)
     st.subheader("What Each Service Loses", help=" ".join(notes))
@@ -864,8 +863,8 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     ovc = show[show["line"] == "hiv_ovc"]
     st.caption(_esc("Other Aid is money the model does not link to deaths: support for orphans and vulnerable children"
                     + (f" ({money(ovc['net_loss_usd'].sum())} a year lost)" if len(ovc) else "")
-                    + f" and the {1 - float(ptab.loc['hss_kappa', 'central']):.0%} of lost systems money (labs, staff, "
-                    "monitoring) assumed not to cut services. With it, the totals match Aid at Risk and Net Aid Lost "
+                    + f" and the {1 - float(ptab.loc['hss_service_share', 'central']):.0%} of lost systems money (labs, "
+                    "staff, monitoring, supply chain) that does not cut services. With it, the totals match Aid at Risk and Net Aid Lost "
                     "Services above. The deaths range is for the total, so it is narrower than adding the rows' ranges."))
     if cov_fig is not None:
         chart(cov_fig, source="Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), Malaria Atlas "
@@ -947,18 +946,27 @@ HSS_LINES = list(hm.HSS.values())
 
 def net_aid_note(res, ptab) -> tuple:
     """(sub-line, tooltip) for Net Aid Lost. The sub-line shows the health-systems money inside it (yearly HSS aid lost,
-    after replacement in proportion) and is hidden when that is 0; kappa and its range come from hss_kappa in the
-    parameters (model_params.csv unless edited in the app)."""
-    k, lo, hi = (float(ptab.loc["hss_kappa", c]) for c in ("central", "low", "high"))
+    after replacement in proportion) and is hidden when that is 0; the share counted as lost services and its range
+    come from hss_service_share in the parameters (model_params.csv unless edited in the app)."""
+    k, lo, hi = (float(ptab.loc["hss_service_share", c]) for c in ("central", "low", "high"))
     cells, T = res["cells"], res["totals"]
     hss = float(np.clip(cells.loc[cells["line"].isin(HSS_LINES), "loss"].sum(), 0, None)) if len(cells) else 0.0
     hss_net = hss * (T["net"] / T["gross"]) if T["gross"] > 0 else 0.0
     sub = (f"incl. {money(hss_net)} health-systems money, {k:.0%} counted as lost services (assumption)"
            if hss_net >= 0.5 else "per year")
-    tip = ("Aid lost minus what the government replaces, per year. Health-systems money (labs, staff, data systems) "
-           f"supports services indirectly. We assume {k:.0%} of it translates into lost services; the uncertainty runs "
-           f"vary this from {lo:.0%} to {hi:.0%}.")
+    tip = ("Aid lost minus what the government replaces, per year. Health-systems money (labs, staff, data systems, "
+           "supply chain) is above-site money that the cost per patient already includes, so it is not converted "
+           f"into patients again: {k:.0%} of it is counted as lost services"
+           + (f"; the uncertainty runs vary this from {lo:.0%} to {hi:.0%}" if hi > lo else
+              " (a structural assumption held constant in the uncertainty runs)") + " (logic review L-05).")
     return sub, tip
+
+
+def systems_note(ptab) -> str:
+    """How systems money enters the model (logic review L-05, Batch 3+4); value from hss_service_share."""
+    k = float(ptab.loc["hss_service_share", "central"])
+    return (f"{k:.0%} of lost systems money (labs, staff, monitoring, supply chain) is counted as lost services: it is "
+            "above-site money that the cost per patient already includes (assumption, logic review L-05).")
 
 
 def deaths_basis_text(preset: str, cut_path, country_name: str = "") -> str:

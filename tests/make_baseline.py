@@ -48,6 +48,13 @@ the country's UNAIDS rate per person with unsuppressed viral load (median 0.12, 
 generation of infections, and art_reengage is 0.35 (was 0.5). Entries with HIV results were refreshed with --hiv (84 of
 99; outside lives first only HIV lines, the totals and the HIV path moved, and no lives-first entry moved other lines).
 
+Batch 3+4 (logic review L-05, L-43, IMP-03, IMP-11, IMP-04, IMP-16): the money-to-people conversion changed in every
+disease (systems money no longer converted to services; unspecified money split by Global Fund module shares; country
+ART and TB unit costs; the donor-funded cap; continuity 0.30). Entries whose results changed were refreshed one item at
+a time with  python tests/make_baseline.py --batch34 <buckets>  (buckets: the diseases the item intentionally changes,
+e.g. "HIV,TB,Malaria" or "all"); it refuses to run if a line outside those buckets moved outside lives first, and
+lists what moved.
+
 Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
 Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
     python tests/make_baseline.py --gains-only"""
@@ -183,6 +190,37 @@ def _refresh(prefix, label):
           f"{other}")
 
 
+def refresh_batch34(buckets: str):
+    """Batch 3+4: refresh every entry whose results changed, allowing only lines of the named buckets ("all" = every
+    bucket) to move outside the lives-first response; prints the lines that moved per bucket."""
+    allowed = hm.BUCKETS if buckets == "all" else [b.strip() for b in buckets.split(",")]
+    I, P = hm.load_inputs(), hm.load_params()
+    P.loc[NEW_MECHANISMS, ["central", "low", "high"]] = 0.0
+    p = Path(__file__).parent / "baseline_sudden.json"
+    out = json.loads(p.read_text())
+    done, other, moved_lines = [], [], {}
+    for key in list(out):
+        iso, preset, fk = key.split("|")
+        sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
+        new = snapshot(hm.run_country(iso, sc, hm.Fiscal(*FISCALS[fk]), I, P, n_draws=N_DRAWS))
+        old = out[key]
+        moved = [l for l, cols in old["lines"].items() if any(not _close(new["lines"][l][c], v) for c, v in cols.items())]
+        if not moved and all(_close(new["totals"][k], v) for k, v in old["totals"].items()):
+            continue
+        outside = [l for l in moved if hm.FULL_LINE_BUCKET.get(l) not in allowed]
+        if outside and fk != "max_lives":
+            raise SystemExit(f"{key}: lines outside {allowed} changed outside lives first: {outside}")
+        if outside:
+            other.append(key)
+        for l in moved:
+            moved_lines[l] = moved_lines.get(l, 0) + 1
+        out[key] = new
+        done.append(key)
+    p.write_text(json.dumps(out))
+    print(f"refreshed {len(done)} of {len(out)} entries; lines moved (entries): {moved_lines}; "
+          f"{len(other)} lives-first entries also moved lines outside {allowed}: {other}")
+
+
 def refresh_fiscal():
     """I-26: interest as % of revenue now comes from the more recent of World Bank and IMF WEO (no silent default), so
     the debt-stress factor and fiscal capacity changed. Only runs with a government response can change; entries with
@@ -253,5 +291,7 @@ if __name__ == "__main__":
         refresh_tb()
     elif "--fiscal" in sys.argv:
         refresh_fiscal()
+    elif "--batch34" in sys.argv:
+        refresh_batch34(sys.argv[sys.argv.index("--batch34") + 1])
     else:
         main()

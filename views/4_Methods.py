@@ -256,7 +256,7 @@ with tabs[1]:
     | Aid at Risk (per Year) | Yearly HIV, TB, malaria and vaccine aid removed by the scenario (gross loss), out of the 2021-2023 average |
     | Treatment Lost Each Year; Prevention Lost Each Year (top of the Dashboard) | Treatment = HIV treatment, PMTCT, TB treatment and malaria treatment; prevention = bednet use, indoor spraying and childhood vaccination. Each counts the service the lost money would have paid for in a year (money lost ÷ cost per person). For HIV treatment this is patient-years of ART the lost money would have paid for, not a headcount of people who stop treatment |
     | Replaced by Government | The government's replacement, set by the response chosen, capped by fiscal space |
-    | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems), of which a share kappa (`hss_kappa`, an assumption) is counted as lost services |
+    | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems, supply chain), which is above-site money already priced into the cost per patient, so it is not converted into lost services (`hss_service_share` = 0, a structural assumption held constant in the uncertainty runs; logic review L-05) |
     | Further Deaths, 2031-2035 (Assumption-Driven) | Mostly set by an assumption with no published source: how fast people who stopped HIV treatment return once funding is back in 2031 (`art_reengage`, central 50% a year). Shown with the range from re-running the central estimate at 75% and 25% a year (for Full US Exit, all countries: about 300K to 850K against 495K central), next to the range across parameter values |
     | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range across parameter values = 2.5th to 97.5th percentile of the Monte Carlo draws (parameter uncertainty only; uncertainty in the data and in the model's structure is larger and not included) |
     | New HIV Infections, 5 Years | Infections from people who stop ART (and one further generation from the people they infect), mothers without PMTCT, and lost prevention |
@@ -317,19 +317,26 @@ with tabs[2]:
     st.latex(r"\text{cut}_c = 1-(1-\text{donor cut})\,(1-\text{channel cut}),\qquad \text{loss}_c = \text{baseline}_c \times \text{cut}_c")
     md(f"""
     **Money with no reported purpose.** Aid tagged "unspecified" is spread over the bucket's known service lines in
-    proportion to the country's own mix (or the global mix if it has none). Of systems money (labs, staff,
-    monitoring), a share κ = {pct('hss_kappa')} is assumed to cut services; the rest is lost without a modelled
-    service effect.
+    proportion to the country's own mix (or the global mix if it has none).
+
+    **Systems money** (labs, staff, monitoring, supply chain: IHME's `*_hss_*` program areas) is above-site money.
+    The cost per patient for HIV and TB treatment is a site cost divided by (1 - above-service share), which already
+    prices that money into every patient, so converting it into patients a second time counted it twice (logic
+    review L-05). A share σ = {pct('hss_service_share')} of lost systems money is counted as lost services (a
+    structural assumption held constant in the uncertainty runs; the earlier rule converted 50% and can be run as a
+    sensitivity case through the parameter editor); the rest is lost without a modelled service effect.
 
     **HIV testing and care.** IHME's "HIV - Care and Support" and "HIV - Counseling and Testing" money is its own line,
     HIV Testing & Care, not ART. It pays for diagnosis and keeping people in care rather than for drugs, so it has no
-    patients of its own; cutting it means fewer people diagnosed and retained, so fewer on ART. It is treated exactly
-    like systems money: {ms.care_ct_note()} That part adds to the money lost on HIV treatment (so it adds people
+    patients of its own; cutting it means fewer people diagnosed and retained, so fewer on ART. {ms.care_ct_note()}
+    This is a proxy: the money funds a flow of diagnoses and retention, not a stock of patients, and a
+    flow-of-initiations treatment is not implemented (no evidence on the cost per new initiation; logic review L-27,
+    IMP-02, `audit/logic_review/batch34_evidence.md`). That part adds to the money lost on HIV treatment (so it adds people
     losing ART); the rest is lost without a modelled effect. Whether ART donor money buys more than everyone covered is
     judged on treatment money only. Across the dashboard countries this line is a median of 41% of the former HIV
     treatment money (13% in South Africa to 60% in Guyana).
     """)
-    st.latex(r"\text{effective loss}_{\ell} = \text{direct loss}_{\ell} + (\text{unspecified} + \kappa \times \text{systems}) \times \text{mix}_{\ell}")
+    st.latex(r"\text{effective loss}_{\ell} = \text{direct loss}_{\ell} + (\text{unspecified} + \sigma \times \text{systems}) \times \text{mix}_{\ell},\qquad \sigma = 0")
     md("""
     **Donor scenarios (presets).**
 

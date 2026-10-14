@@ -156,6 +156,17 @@ line moved, including under lives first). Snapshot `audit/before_batch2.csv` vs 
 ranges built from them, further deaths and the HIV US$1M card; no money, people, coverage, fiscal, TB, malaria or
 vaccine value changed. Commits: evidence `c625037`, implementation `49767e9`.
 
+## Batch 3+4: money-to-people conversion, unit costs, cap rule, TB costs, continuity (14 October 2026)
+
+Evidence, decisions and gates: `batch34_evidence.md`; scripts `audit/batch34_*.py`. Before snapshot:
+`audit/before_batch34.csv` (local). Headline = all countries, US Bilateral Exit + Multilateral Withdrawals, central
+run, no response, sudden cut, 2026-2030 deaths; ART = people who stop ART (full-cost equivalents, per year), summed
+over countries. Before the batch: 2,055,422 deaths; 5,303,707 people who stop ART.
+
+| Item | Status | Commit | Headline after | People who stop ART after | What changed |
+|---|---|---|---|---|---|
+| 1. L-05 overhead | ✅ done | (this commit) | 1,798,648 (-12.5%) | 4,938,369 (-6.9%) | Systems money is no longer converted into service units: `hss_service_share` = 0 (range 0-0.25, assumption) replaces kappa for HSS money; `hss_kappa` keeps its I-09 role for testing-and-care money only. Fully loaded unit costs (site x 1/(1 - asd_share)) stay. TB fell most (-26%: 17% of its effective treatment money was kappa x HSS), malaria -15%, HIV -7%, vaccines unchanged. The money-conservation check in `audit/checks.py` now tests the new formula (SPEC.md section 3) |
+
 ## Summary
 
 | Area | Result |

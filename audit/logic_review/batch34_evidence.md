@@ -52,10 +52,21 @@ disease, so HSS money is non-service money that is lost without a modelled servi
 program area is implementing-partner money that includes the partner's own management, so the markup belongs on it;
 HSS money is a separate above-site purpose; converting both counts above-site money twice. Option (i) (site-level
 costs plus kappa x HSS at site cost) would instead let a dollar of supply-chain money buy a patient-year of ARVs,
-which is the wrong concept. `hss_kappa` keeps its role for testing-and-care money (point 3) and is renamed in the
-text, not in the file, to avoid breaking the parameter table; a new parameter `hss_service_share` (central 0, range
-0-0.25, assumption) holds the share of lost systems money that still cuts services, so the old behaviour is a
-sensitivity case rather than a deleted branch. Expected effect: -8.5% of effective HIV treatment money, -17% TB, -14%
+which is the wrong concept. `hss_kappa` keeps its role for testing-and-care money (point 3) and is relabelled in the
+parameter file; a new parameter `hss_service_share` (central 0, assumption) holds the share of lost systems money
+that still cuts services, so the old behaviour (0.5) is a sensitivity case rather than a deleted branch. It is held
+constant in the draws (low = high = 0) rather than drawn over 0-0.25 as first tried: a one-sided range above a
+central of 0 made every draw convert more systems money than the central run, which put the central run outside the
+displayed 2.5-97.5% range in Kenya's malaria result under the Global Fund & Gavi preset (`audit/checks.py --quick`:
+3 failures of `range_lo_le_central_le_hi`); the structural alternative is run by setting the parameter, like
+`hiv_legacy_art_params`. With the constant, `--quick` then failed the same check in Kenya malaria under every preset
+(15 rows): the quick harness used 50 draws, and the malaria parameters (`uc_mal_cm` 14 in 4-47, `uc_itn` 2.2 in
+1.4-3.5, `mal_vc_eff` 0.55 in 0.40-0.61, `mal_cm_eff` 0.97 in 0.82-0.99) all have centrals near the end of their
+range that gives more deaths, so in a 50-draw sample no draw exceeded the central once kappa's wide range (which had
+supplied the upward variation) no longer applied to systems money. With the 400 draws the dashboard uses, Kenya's
+malaria range is 5,906-18,311 around a central of 14,509 (passes); with 100 or 150 draws every bucket range in the
+nine quick countries x all presets passes. The quick harness's draw count was raised from 50 to 100 (a harness
+setting, not an invariant; the invariant and its tolerance are unchanged). Expected effect: -8.5% of effective HIV treatment money, -17% TB, -14%
 malaria (table above), so about -5% to -8% of deaths (the red team measured kappa = 0 on everything at -20%).
 
 ## B. L-43: splitting unspecified money with Global Fund module shares
