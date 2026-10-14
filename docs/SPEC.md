@@ -196,7 +196,7 @@ amounts: the linked testing-and-care money has its own row, although its kappa s
 **Allocation of B_t** over the year's positive effective losses E_t[l] (every money line: direct and `hiv_care_ct`)
 and the positive nonservice amounts, each as a separate amount (nonservice[care], and nonservice[b] for each bucket):
 - **Pro rata:** each amount gets B_t x amount / (sum of all positive amounts).
-- **Lives first:**
+- **Lives first** (shown as "Hypothetical best case (triage)"; an optimisation rule, not observed behaviour):
   - Money lines are refilled in descending order of central deaths per US$ (dpd), each up to its own loss, until
     B_t runs out.
   - What is left goes to the nonservice amounts in proportion, each up to its own amount.

@@ -353,8 +353,10 @@ with tabs[2]:
     replacement rate is θ = -(b_fall + b_fall,lag) = {TH_C:+.2f} per $1 (95% CI {TH_LO:+.2f} to {TH_HI:+.2f}):
     governments did not, on average, replace falling aid.
 
-    **Where replacement money goes.** *Pro-rata*: in proportion to each service's loss. *Lives first*: service lines
-    are refilled in order of deaths averted per dollar (usually TB treatment, vaccines and HIV treatment first).
+    **Where replacement money goes.** *Pro-rata*: in proportion to each service's loss. *Hypothetical best case
+    (triage)*: service lines are refilled in order of the model's own deaths averted per dollar (usually TB treatment,
+    vaccines and HIV treatment first). This is an optimisation rule showing the most a given budget could save, not a
+    description of how governments are known to allocate money.
     """)
 
     th.section_header("groups", "Step 3: Coverage (Who Loses a Service)")

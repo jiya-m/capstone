@@ -63,7 +63,9 @@ PRESET_SHORT = {
     "Custom": "Set the cuts yourself by donor and by channel.",
 }
 CEILINGS = {"Strong year (75th percentile growth)": "p75", "Best years (90th percentile growth)": "p90"}
-ALLOCS = {"Pro-rata to what was cut": "pro_rata", "Lives first (triage)": "lives_first"}
+# L-30: refilling in order of the model's own deaths per dollar is an optimisation rule, not observed behaviour
+LIVES_FIRST = "Hypothetical best case (triage)"
+ALLOCS = {"Pro-rata to what was cut": "pro_rata", LIVES_FIRST: "lives_first"}
 
 
 # --------------------------------------------------------------------------- #
@@ -281,7 +283,7 @@ def _resp_label(fiscal_t) -> str:
     lbl = {"none": NO_REPLACEMENT, "custom": f"Government replaces {theta:.0%}",
            "max": "As much as fiscal space allows", "gradual": "Gradual budget increase"}[mode]
     if mode not in ("none", "gradual"):
-        lbl += (", lives first" if alloc == "lives_first" else ", pro-rata")
+        lbl += (", hypothetical best case (triage)" if alloc == "lives_first" else ", pro-rata")
         lbl += (", best-years ceiling" if ceiling == "p90" else "")
     return title_case(lbl)
 
@@ -456,7 +458,8 @@ def _controls(iso3, country_name, I) -> dict:
                                              "debt-stress factor, every year.")]
             alloc = ALLOCS[st.radio("Where Replacement Money Goes", list(ALLOCS), key="m_alloc",
                                     disabled=(mode == "none"), format_func=title_case,
-                                    help="Lives first refills the services that avert the most deaths per dollar first "
+                                    help="Hypothetical best case: an optimisation rule, not how governments are known to "
+                                         "behave. It refills the services that avert the most deaths per dollar first "
                                          "(usually TB treatment, vaccines, ART) before anything else.")]
             cap = st.checkbox("Cap Replacement at Fiscal Space", value=True, key="m_cap",
                               disabled=(mode in ("none", "max")))
@@ -485,7 +488,7 @@ def _controls(iso3, country_name, I) -> dict:
                 theta_b = st.slider("Share of Lost Aid Replaced (B, %)", 0, 100, 25, 5, key="mb_theta") / 100 \
                     if mode_b == "custom" else 0.0
                 alloc_b = ALLOCS[st.radio("Where Replacement Money Goes (B)", list(ALLOCS),
-                                          index=list(ALLOCS).index("Lives first (triage)"), key="mb_alloc",
+                                          index=list(ALLOCS).index(LIVES_FIRST), key="mb_alloc",
                                           format_func=title_case, disabled=(mode_b == "none"))]
                 st.caption("Scenario B uses Scenario A's fiscal-space ceiling and model parameters.")
                 cmp = {"preset": preset_b, "opts": opts_b, "fiscal_t": (mode_b, theta_b, True, alloc_b, ceiling)}
@@ -966,7 +969,7 @@ def _headline_items(res, ptab=None, basis: str = "Assumes the cut is sustained f
          f"{basis} Range: {RANGE_LABEL}. {RANGE_TIP}"),
         ("New HIV Infections, 5 Years", num(B.loc["HIV", "infections_5y"]),
          "range " + rng(B.loc["HIV", "infections_5y_lo"], B.loc["HIV", "infections_5y_hi"]),
-         "Lives-first triage refills treatment and vaccines first and HIV prevention last, so new infections can stay "
+         "The hypothetical best case (triage) refills treatment and vaccines first and HIV prevention last, so new infections can stay "
          "high even when deaths fall. Range: " + RANGE_LABEL + ". " + RANGE_TIP),
     ]
     return [(title_case(lbl), val, title_case(sub), hlp) for lbl, val, sub, hlp in items]
