@@ -177,7 +177,8 @@ For bucket b and any money series X (baseline, or year t's G), with kappa = `hss
   - HIV: add[care] += U x s_test. TB and malaria: add[target] += kappa x U x s_test.
 - For each direct line l of b: E[l] = X[l] + add[l].
 - For the linked line `hiv_care_ct`: pool = X[care] + add[care]. E[care] = kappa x pool;
-  nonservice[care] = (1 - kappa) x pool.
+  nonservice[care] = (1 - kappa) x pool. (A proxy: the money funds a flow of diagnoses and retention, not a stock
+  of patients; a flow-of-initiations treatment is not implemented, IMP-02c, `audit/logic_review/batch34_evidence.md` C.)
 - nonservice[b] = (1 - sigma) x S' + U x s_pm + (U x s_prev if P_b is empty) + ((1 - kappa) x U x s_test if b has
   no linked line).
 - `hiv_ovc` receives no unspecified money.
