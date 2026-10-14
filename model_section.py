@@ -598,10 +598,21 @@ def scenario_phrase(preset: str, opts: dict | None = None) -> str:
 
 CAUSE_PHRASE = {"HIV": "people losing HIV treatment and prevention", "TB": "untreated tuberculosis",
                 "Malaria": "lost malaria nets and treatment", "Immunization": "missed childhood vaccinations"}
-# "People Losing Care Each Year": every service line except HIV prevention (its unit is infections averted)
-CARE_LABELS = {"mal_itn": "bednet users", "mal_irs": "people under indoor spraying", "hiv_art": "on HIV treatment",
+# Treatment and Prevention Lost Each Year (L-40): every service line except HIV prevention (its unit is infections
+# averted)
+CARE_LABELS = {"mal_itn": "bednet users", "mal_irs": "people under indoor spraying", "hiv_art": "HIV treatment*",
                "mal_cm": "malaria patients", "imm": "children unvaccinated",
                "hiv_pmtct": "HIV+ pregnant women", "tb_ds": "TB patients", "tb_dr": "drug-resistant TB patients"}
+# L-40: the hero shows treatment and prevention separately; units are what the lost money would have paid for
+TREATMENT_LINES = ["hiv_art", "hiv_pmtct", "tb_ds", "tb_dr", "mal_cm"]
+PREVENTION_LINES = ["mal_itn", "mal_irs", "imm"]
+ART_UNIT_NOTE = ("HIV treatment is counted as the treatment the lost money would have paid for (lost ART money ÷ cost "
+                 "per patient-year), not a headcount of people who stop treatment.")
+TREATMENT_TIP = ("Treatment the lost money would have paid for, each year the cut lasts, under the selected scenario "
+                 "and government response: HIV treatment (ART), HIV+ pregnant women (PMTCT), TB patients and malaria "
+                 "patients treated. " + ART_UNIT_NOTE)
+PREVENTION_TIP = ("Prevention the lost money would have paid for, each year the cut lasts: people sleeping under a "
+                  "bednet (person-years of net use), people protected by indoor spraying and children vaccinated.")
 CARE_TIP = ("People who lose a service in each year the cut lasts, under the selected scenario and government "
             "response. Bednet users and vaccinated children are prevention; HIV and TB patients are treatment.")
 
@@ -613,6 +624,18 @@ def care_breakdown(L: pd.DataFrame) -> tuple:
     u = L["units_lost"].reindex(list(CARE_LABELS)).fillna(0).clip(lower=0)
     parts = sorted(((float(v), CARE_LABELS[k]) for k, v in u.items() if v >= 0.5), reverse=True)
     return float(u.sum()), parts         # the total counts every line, as the table does (I-15); the list skips < 0.5
+
+
+def care_split(L: pd.DataFrame) -> dict:
+    """{'treatment': (total, parts), 'prevention': (total, parts)}: care_breakdown split into treatment (ART, PMTCT, TB,
+    malaria treatment) and prevention (bednets, spraying, vaccines), largest parts first (L-40).
+    Feeds: the two People Losing ... Each Year numbers at the top of the Dashboard."""
+    u = L["units_lost"].reindex(list(CARE_LABELS)).fillna(0).clip(lower=0)
+    out = {}
+    for k, lines in (("treatment", TREATMENT_LINES), ("prevention", PREVENTION_LINES)):
+        parts = sorted(((float(u[l]), CARE_LABELS[l]) for l in lines if u[l] >= 0.5), reverse=True)
+        out[k] = (float(u.reindex(lines).sum()), parts)
+    return out
 
 
 def response_kicker(fiscal_t) -> str:
@@ -709,12 +732,19 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
         else:
             dek += (f"About {money_words(T['gross'])} a year would be lost. In past aid declines (2001-2023), "
                     "governments on average did not increase their own health spending to compensate.")
-    care, parts = care_breakdown(L)
-    breakdown = " · ".join(f"{num(v)} {lbl}" for v, lbl in parts[:3]) + (" + others" if len(parts) > 3 else "")
+    split = care_split(L)
+
+    def brk(parts):
+        """'452K HIV treatment* · 466K malaria patients' (top 2, then '+ others')."""
+        return (" · ".join(f"{num(v)} {lbl}" for v, lbl in parts[:2]) + (" + others" if len(parts) > 2 else "")) or "none"
+    tr, pv = split["treatment"], split["prevention"]
+    tr_note = brk(tr[1]) + (" · *paid-for treatment, not a headcount" if any(l == CARE_LABELS["hiv_art"] for _, l in tr[1])
+                            else "")
     nums = [
         (money(T["gross"]), "Health Aid Lost Each Year",
          f"{T['gross'] / T['base']:.0%} of aid for these four diseases" if T["base"] else "", False, ""),
-        (num(care) if care >= 1 else "0", "People Losing Care Each Year", breakdown or "none", False, CARE_TIP),
+        (num(tr[0]) if tr[0] >= 1 else "0", "Treatment Lost Each Year", tr_note, False, TREATMENT_TIP),
+        (num(pv[0]) if pv[0] >= 1 else "0", "Prevention Lost Each Year", brk(pv[1]), False, PREVENTION_TIP),
         (num(d5), f"Extra Deaths, {FIRST_YEAR}-{FIRST_YEAR + 4}",
          f"range {rng(T['deaths_5y_lo'], T['deaths_5y_hi'])}"
          + (f" · +{num(res['committed']['after_2030'])} more in 2031-2035" if res["committed"]["after_2030"] >= 0.5
@@ -1239,7 +1269,8 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
         people = num(r.units_lost) if r.units_lost > 0 or r.cov_ok else nm
         if r.units_lost > 0:                    # 5-year total under the yearly number (ART: mostly the same people)
             five = getattr(r, "units_lost_5y", np.nan)
-            people += "<br>" + grey("mostly the same people each year" if r.line == "hiv_art" else
+            people += "<br>" + grey("treatment the lost money would have paid for; mostly the same people each year"
+                                    if r.line == "hiv_art" else
                                     f"{num(five)} over 5 years" if five == five else "")
         cells = [money(r.base_usd), money(r.net_loss_usd),
                  f"<span class='big'>{e(r.cost_big)}</span><br>"

@@ -269,8 +269,9 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
 - 5-year total = sum_t units.
 - Coverage drop (points) = mean_t units / need x 100 (for hiv_art the need is PLHIV).
 - Coverage after = coverage - that.
-- People Losing Care Each Year (hero) = sum of the per-year means over hiv_art, hiv_pmtct, tb_ds, tb_dr, mal_itn,
-  mal_irs, mal_cm, imm.
+- Treatment Lost Each Year (top of the Dashboard) = sum of the per-year means over hiv_art, hiv_pmtct, tb_ds, tb_dr,
+  mal_cm. Prevention Lost Each Year = the same over mal_itn, mal_irs, imm. Both count the service the lost money
+  would have paid for: for hiv_art, patient-years of treatment, not a headcount of people who stop treatment.
 
 ## 6. Deaths and infections
 

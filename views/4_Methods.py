@@ -230,6 +230,7 @@ with tabs[1]:
     | Output | Definition |
     |---|---|
     | Aid at Risk (per Year) | Yearly HIV, TB, malaria and vaccine aid removed by the scenario (gross loss), out of the 2021-2023 average |
+    | Treatment Lost Each Year; Prevention Lost Each Year (top of the Dashboard) | Treatment = HIV treatment, PMTCT, TB treatment and malaria treatment; prevention = bednet use, indoor spraying and childhood vaccination. Each counts the service the lost money would have paid for in a year (money lost ÷ cost per person). For HIV treatment this is patient-years of ART the lost money would have paid for, not a headcount of people who stop treatment |
     | Replaced by Government | The government's replacement, set by the response chosen, capped by fiscal space |
     | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems), of which a share kappa (`hss_kappa`, an assumption) is counted as lost services |
     | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range across parameter values = 2.5th to 97.5th percentile of the Monte Carlo draws (parameter uncertainty only; uncertainty in the data and in the model's structure is larger and not included) |

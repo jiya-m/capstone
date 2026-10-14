@@ -454,7 +454,7 @@ hr {{ border-color: {RULE} !important; }}
 .ed-headline {{ font-family: {SERIF}; font-size: 42px; line-height: 1.12; font-weight: 600; color: {INK};
                 letter-spacing: -0.015em; margin: 0 0 14px; }}
 .ed-dek {{ font-family: {SANS}; font-size: 19px; line-height: 1.5; color: #4A4458; margin: 0 0 26px; }}
-.ed-bignums {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid {INK};
+.ed-bignums {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid {INK};
                border-bottom: 1px solid {RULE}; margin: 0 0 18px; }}
 .ed-bignum {{ padding: 14px 18px 16px 0; }}
 .ed-bignum + .ed-bignum {{ border-left: 1px solid {RULE}; padding-left: 18px; }}
