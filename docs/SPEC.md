@@ -295,7 +295,8 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
   - If covered is NaN: raw = n / cost.
   - Else, if tb / cost > pool (donor money would buy more than the donor-funded pool): raw = pool x n / b.
   - Else: raw = **n / cost**. (This is the usual case. There is no further scaling here.)
-- units = raw x (1 - continuity).
+- units = raw x (1 - continuity). continuity = 0.15 (0-0.30; assumption; Batch 3+4 IMP-16 found only indirect
+  evidence, recorded with 0.30 as a sensitivity value).
 - If need and coverage both exist, units = min(units, cap), with cap = covered for hiv_art and coverage x need
   otherwise.
 - units = max(units, 0).

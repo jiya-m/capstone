@@ -427,8 +427,15 @@ with tabs[2]:
     labelled as such. The Validation page counts the lines where this happens.
     """)
     md(f"""
-    - **Continuity** = {pct('continuity')}: the share of people who keep their service anyway (absorbed by government
-      facilities or cheaper delivery). *Assumption.*
+    - **Continuity** = {pct('continuity')} (range {PRM.loc['continuity', 'low']:.0%}-{PRM.loc['continuity', 'high']:.0%}):
+      the share of people who keep their service anyway (absorbed by government facilities, other donors or cheaper
+      delivery). *Assumption.* The 2025 US cuts give only indirect evidence, all under partial withdrawals with
+      commodities still flowing: people on PEPFAR-supported ART "remained relatively stable" at 20.3M in FY2025 Q4
+      vs 20.4M a year earlier (KFF, April 2026); at four defunded key-population NGOs in Uganda and Zimbabwe
+      treatment fell "by 22% to 32%" (Cust & Chabata 2026, *Lancet Global Health*); TB treatment was "the least
+      affected" service in WHO's 17-country survey (Global TB Report 2025). None measures the share of patients who
+      keep the same service after its funding is withdrawn, so the value stays an assumption; 0.30 is a sensitivity
+      value (`audit/logic_review/batch34_evidence.md`, G).
     - The result is **capped** at the people currently covered (coverage x people in need), so a cut can never remove
       more people than are on a service. Bednets and spraying share one cap (the population at risk).
     - **Coverage drop** (percentage points) = people losing the service ÷ people in need x 100.

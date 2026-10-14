@@ -224,6 +224,12 @@ batch's scope, which was treatment costs). `batch34_evidence.md` E.
 
 ### IMP-16. Country-specific continuity (Do before presenting)
 
+**Status: ◐ partly done (Batch 3+4 item 7, 14 October 2026).** The 2025 evidence (KFF FY2025 Q4; Cust & Chabata 2026;
+WHO Global TB Report 2025) was reviewed and quoted; none measures the share of patients who keep the same service after
+its funding is withdrawn, so `continuity` stays 0.15 (range 0-0.30) with 0.30 as a sensitivity value. Country TB
+continuity needs the private-sector notification share, which the 2026 WHO file does not carry; PEPFAR TX_ML (DR-07)
+was not available. `batch34_evidence.md` G.
+
 - **Addresses:** L-14. Continuity has the second-largest swing (+18.0% / -23.8%).
 - **What to do:**
   - TB: continuity = private-sector share of notifications (WHO), plus public capacity.

@@ -288,12 +288,26 @@ commodities and the Global Fund flowing) and the horizon is one year, while the 
 for five years. The observed continuity (ART 0.68-1.0, testing 0.36-0.41, TB treatment near 1, TB case finding
 about 0.86) is therefore an upper bound for the model's parameter, which also covers prevention lines.
 
-**Decision.** `continuity` central **0.30**, range **0.10-0.50**, status "sourced (indirect)": below every observed
-treatment value because the model's scenario also removes the commodities, above the old 0.15 assumption because
-every 2025 observation shows most treatment continuing without the lost money; the high end is the gate's 0.5. One
-value for every line, as before (the TB private-sector notification variable (`priv_new_dx`) is not in the 2026 WHO
-notifications file, so the per-country TB continuity of IMP-16 cannot be built; a per-line continuity is a
-structural change outside this batch). Gate G passes (0 <= 0.30 <= 0.5).
+**Decision (rule set by the user on 14 October 2026: apply 0.30 only if a source directly measures the share of
+patients who keep receiving the same service after donor funding for it is withdrawn, in a low- or middle-income
+country; otherwise keep 0.15 as a labelled assumption with range 0-0.30 and record 0.30 as a sensitivity value).**
+
+What each source measures, with its exact wording:
+
+| Source | Exact wording | What it measures | Meets the rule? |
+|---|---|---|---|
+| Cust & Chabata 2026, *Lancet Global Health* (LSE press release, 2026) | "Prevention fell by roughly 37% to 63%, PrEP by 43% to 72%, treatment by 22% to 32% and testing by 59% to 64%." "The study used routine monthly and quarterly service data between January 2023 and March 2026 to track" services at "nongovernmental organisations that serve key populations" "whose US-sourced funding was cut and never restored." "Even treatment services declined after the waiver took effect"; the waiver "should have protected HIV treatment." | Service volumes delivered by four key-population NGOs in Uganda and Zimbabwe (LMIC) against their 2024 averages, during a year in which a humanitarian waiver was meant to keep treatment funded. It does not measure what happened to the NGOs' patients (whether those no longer served there received ART elsewhere), and the funding for treatment was not cleanly withdrawn. | No: service volume at the defunded organisation, not the share of patients retained on the service; partial withdrawal |
+| Kates, Rouw & Nandakumar, KFF, April 2026 | People on PEPFAR-supported ART "remained relatively stable in FY 2025 Q4 compared to FY 2024 Q4" (20.3M vs 20.4M); the year saw "a temporary stop work order and eventual limits to what services could be continued" and "the cancellation of numerous PEPFAR awards". | The PEPFAR-wide stock of people on supported treatment under a partial cut with waivers; general absorption, not the fate of patients whose funding was withdrawn. | No: partial cut, programme-wide aggregate |
+| WHO Global Tuberculosis Report 2025, "Impact of 2025 funding cuts" | "TB treatment appeared to be the least affected, with only three countries reporting a moderate impact"; notifications fell "14%" in Uganda and "about 6%" in Zambia in the first half of 2025. | A 17-country survey of national programmes on service disruption (qualitative severity), and case-notification changes; not a share of patients retained. | No: different outcome |
+| UNAIDS situation report, March 2025 | 46% of people living with HIV in one East African country reported treatment disruptions. | Self-reported disruption during the freeze, not retention after withdrawal. | No |
+
+None meets the rule. `continuity` therefore **stays 0.15, a labelled assumption, with the range changed from 0-0.35
+to 0-0.30** (the batch rule). **Sensitivity value: 0.30**, which is what the observations above would imply after
+allowing for the model's scenario also removing the commodities (observed treatment continuity 0.68-1.0 under partial
+withdrawal; testing 0.36-0.41; TB case finding about 0.86), with its sources as listed. Gate G passes (0.15 in 0-0.5).
+One value for every line, as before (the TB private-sector notification variable (`priv_new_dx`) is not in the 2026
+WHO notifications file, so the per-country TB continuity of IMP-16 cannot be built; a per-line continuity is a
+structural change outside this batch).
 
 ## Gates summary
 
@@ -303,5 +317,5 @@ structural change outside this batch). Gate G passes (0 <= 0.30 <= 0.5).
 | B | shares sum to 1; treatment share 0.05-0.95 or stated reason | met; 6 lines outside with reasons |
 | D | site cost US$50-600 | met after fallback (South Africa listed) |
 | E | DS 100-3,000, DR 1,000-30,000; WHO cross-check within x3 for at least half | met (Ethiopia DR listed; 35 of 60 = 58%) |
-| G | 0 <= continuity <= 0.5 | met (0.30) |
+| G | 0 <= continuity <= 0.5 | met (0.15 kept; 0.30 recorded as a sensitivity value) |
 | C | evidence for the flow formulation | **BLOCKED** (no cost per initiation; the flow raises, not lowers, the count) |
