@@ -754,7 +754,8 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
         (num(pv[0]) if pv[0] >= 1 else "0", "Prevention Lost Each Year", brk(pv[1]), False, PREVENTION_TIP),
         (num(d5), f"Extra Deaths, {FIRST_YEAR}-{FIRST_YEAR + 4}",
          f"range {rng(T['deaths_5y_lo'], T['deaths_5y_hi'])}"
-         + (f" · +{num(res['committed']['after_2030'])} more in 2031-2035" if res["committed"]["after_2030"] >= 0.5
+         + (f" · +{num(res['committed']['after_2030'])} more in 2031-2035 (assumption-driven)"
+            if res["committed"]["after_2030"] >= 0.5
             else ""), True, after_2030_help(res["committed"])),
     ]
     big = "".join(f"<div class='ed-bignum' title='{e(tip, quote=True)}'><div class='v{' hl' if hl else ''}'>{e(v)}</div>"
@@ -918,9 +919,24 @@ def after_2030_help(C) -> str:
     parts = C.get("after_parts", {})
     bits = [f"{AFTER_2030_PARTS[k]} {num(v)}" for k, v in sorted(parts.items(), key=lambda kv: -kv[1])
             if k in AFTER_2030_PARTS and v >= 0.5]
-    return ("Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031 (people off HIV "
-            "treatment return gradually)"
+    return (REENGAGE_TIP + " Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031 (people "
+            "off HIV treatment return gradually)"
             + (": " + "; ".join(bits) if bits else "") + ". Range: " + RANGE_LABEL + ". " + RANGE_TIP)
+
+
+REENGAGE_TIP = ("Assumption-driven: most of these deaths depend on how fast people who stopped HIV treatment return "
+                "once funding is back in 2031 (art_reengage, an assumption with no published source; central 50% a "
+                "year).")
+
+
+def reengage_range_text(C) -> str:
+    """'20K to 67K if 75% to 25% of people off HIV treatment return each year after 2030': deaths in 2031-2035 across
+    the art_reengage range, everything else central (L-33). Empty if the run has no such range."""
+    if "after_2030_reengage" not in C:
+        return ""
+    mn, mx = C["after_2030_reengage"]
+    lo_v, hi_v = C["reengage_values"]
+    return f"{rng(mn, mx)} if {hi_v:.0%} to {lo_v:.0%} of people off HIV treatment return each year after 2030"
 
 
 HSS_LINES = list(hm.HSS.values())
@@ -962,8 +978,9 @@ def _headline_items(res, ptab=None, basis: str = "Assumes the cut is sustained f
          f"{T['replaced'] / T['gross']:.0%} of the loss" if T["gross"] > 0 else None,
          "Set by the government response in the sidebar, limited by fiscal space."),
         ("Net Aid Lost", money(T["net"]), *net_aid_note(res, ptab)),
-        ("Further Deaths, 2031-2035", num(res["committed"]["after_2030"]),
-         "range " + rng(res["committed"]["after_2030_lo"], res["committed"]["after_2030_hi"]),
+        ("Further Deaths, 2031-2035 (Assumption-Driven)", num(res["committed"]["after_2030"]),
+         "range " + rng(res["committed"]["after_2030_lo"], res["committed"]["after_2030_hi"]) + " · "
+         + reengage_range_text(res["committed"]),
          after_2030_help(res["committed"])),
         ("Extra Deaths Over 5 Years", num(T["deaths_5y"]), "range " + rng(T["deaths_5y_lo"], T["deaths_5y_hi"]),
          f"{basis} Range: {RANGE_LABEL}. {RANGE_TIP}"),
@@ -1714,22 +1731,27 @@ def cross_country(sk, ctl, iso3, names) -> pd.DataFrame:
                      help="America First MOUs is modelled only where the country has signed an MOU (KFF tracker) and "
                           "the team's sheet has its 2026-2030 US funding schedule. On the map, countries that signed "
                           "without funding data are light grey; countries without an MOU are lighter grey.")
-    after_cols = [c for c in ("deaths_after_2030",) if c in A]
+    after_cols = [c for c in ("deaths_after_2030", "deaths_after_2030_reengage_min", "deaths_after_2030_reengage_max")
+                  if c in A]
     tot = A[["gross_loss_usd", "net_loss_usd", "deaths_y1", "deaths_5y", "hiv_infections_5y"] + after_cols].sum()
     # ranges from the per-draw totals over all countries (IMP-10), not the sum of country percentiles
     tot["deaths_5y_lo"], tot["deaths_5y_hi"] = hm.total_range(A, "deaths_5y")
-    if after_cols:
+    if "deaths_after_2030" in after_cols:
         tot["deaths_after_2030_lo"], tot["deaths_after_2030_hi"] = hm.total_range(A, "deaths_after_2030")
     st.markdown(th.pills_html([
         (f"Aid Lost per Year, MOU Countries With Funding Data ({len(A)})" if is_mou
          else f"Aid Lost per Year, {len(A)} of {len(names)} Countries", money(tot["gross_loss_usd"]),
          "HIV, TB, malaria and vaccine aid removed by the scenario. " + SCOPE_NOTE,
          f"Net Aid Lost {money(tot['net_loss_usd'])}"),
-        ("Further Deaths, 2031-2035", num(tot["deaths_after_2030"]),
-         "Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031: people still off HIV "
-         "treatment, new HIV infections, children who missed vaccines and TB spread by untreated patients. "
-         + ALL_RANGE_TIP,
-         "Range " + rng(tot["deaths_after_2030_lo"], tot["deaths_after_2030_hi"]))
+        ("Further Deaths, 2031-2035 (Assumption-Driven)", num(tot["deaths_after_2030"]),
+         REENGAGE_TIP + " Deaths in 2031-2035 caused by the 2026-2030 losses, with funding back from 2031: people "
+         "still off HIV treatment, new HIV infections, children who missed vaccines and TB spread by untreated "
+         "patients. " + ALL_RANGE_TIP,
+         "Range " + rng(tot["deaths_after_2030_lo"], tot["deaths_after_2030_hi"])
+         + (f"; {rng(tot['deaths_after_2030_reengage_min'], tot['deaths_after_2030_reengage_max'])} across "
+            f"return-to-care {float(ctl['ptab'].loc['art_reengage', 'low']):.0%}-"
+            f"{float(ctl['ptab'].loc['art_reengage', 'high']):.0%} a year"
+            if "deaths_after_2030_reengage_min" in tot else ""))
         if "deaths_after_2030" in tot else
         ("Extra Deaths, Year 1", num(tot["deaths_y1"]), "Deaths build up over the five years", ""),
         ("Extra Deaths Over 5 Years", num(tot["deaths_5y"]), ALL_RANGE_TIP,

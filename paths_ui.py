@@ -248,8 +248,10 @@ def outcome_panel(country_name, shape, response_phrase, res, base_committed, bre
         ("Extra Deaths 2026-2030", num(max(T["deaths_5y"], 0.0)) if T["deaths_5y"] > -0.5 else num(T["deaths_5y"]),
          "Central estimate; range across parameter values. " + th.RANGE_TIP,
          f"Range {rng(T['deaths_5y_lo'], T['deaths_5y_hi'])}"),
-        ("Further Deaths, 2031-2035, Set in Motion by 2030", num(max(C["after_2030"], 0.0)),
-         after_help(C), f"Range {rng(C['after_2030_lo'], C['after_2030_hi'])}"),
+        ("Further Deaths, 2031-2035, Set in Motion by 2030 (Assumption-Driven)", num(max(C["after_2030"], 0.0)),
+         after_help(C), f"Range {rng(C['after_2030_lo'], C['after_2030_hi'])}"
+         + (f"; {rng(*C['after_2030_reengage'])} across return-to-care {C['reengage_values'][0]:.0%}-"
+            f"{C['reengage_values'][1]:.0%} a year" if "after_2030_reengage" in C else "")),
         ("Deaths Avoided vs Sudden Cut With No Response", num(max(avoided, 0)) if avoided >= -0.5 else f"−{num(-avoided)}",
          "Committed basis: deaths in 2026-2035 caused by the 2026-2030 losses", f"of {num(base_committed)}"),
         ("Break-Even Budget Increase", be, "Smallest steady yearly rise in health's share of government spending that "

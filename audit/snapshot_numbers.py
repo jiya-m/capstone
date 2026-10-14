@@ -49,6 +49,8 @@ def flatten(res, P, iso, I, cut_path, sc, ft):
         d[f"C.{k}"] = res["committed"][k]
     for k, v in res["committed"]["after_parts"].items():
         d[f"C.part.{k}"] = v
+    # L-33: 2031-2035 deaths at art_reengage high and low (shown under Further Deaths)
+    d["C.after_2030_reengage_min"], d["C.after_2030_reengage_max"] = res["committed"]["after_2030_reengage"]
     for r in res["buckets"].itertuples():
         for k in ("base_usd", "gross_loss_usd", "replaced_usd", "net_loss_usd", "deaths_y1", "deaths_5y", "deaths_5y_lo",
                   "deaths_5y_hi", "infections_5y", "infections_5y_lo", "infections_5y_hi", "deaths_per_musd"):

@@ -383,6 +383,10 @@ below it.)
 
 **Totals.**
 - Extra Deaths 2026-2030 = sum over direct lines and years of deaths.
+- **Further deaths across the return-to-care assumption** (L-33): the central run's further deaths recomputed with
+  art_reengage at its high value (fewest deaths) and its low value (most deaths), every other parameter central.
+  Shown under Further Deaths, labelled assumption-driven. All Countries: the sum over countries (exact, because the
+  same value applies in every country). Precomputed columns `deaths_after_2030_reengage_min` / `_max`.
 - Year 1 = 2026.
 - Further deaths 2031-2035 = sum of the parts:
   - hiv_art: deaths among people still off ART;

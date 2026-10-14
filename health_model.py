@@ -898,6 +898,12 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     deaths, infections, after_parts = lives(P, units)
     deathsc, infectionsc, afterc_parts = lives(Pc, unitsc)
+    # L-33: deaths in 2031-2035 depend mostly on the assumed return-to-care rate after 2030. Central run with
+    # art_reengage at its low and high values (everything else central): more re-engagement, fewer deaths.
+    reengage_after = []
+    for v in (float(ptab.loc["art_reengage", "high"]), float(ptab.loc["art_reengage", "low"])):
+        Pv = {k: (np.full_like(x, v) if k == "art_reengage" else x) for k, x in Pc.items()}
+        reengage_after.append(float(sum(np.ravel(a)[0] for a in lives(Pv, unitsc)[2].values())))
     after = sum(after_parts.values())
     afterc = {k: float(np.ravel(v)[0]) for k, v in afterc_parts.items()}
     deathsc = {l: v for l, v in deathsc.items() if l in pudc or l.startswith("mal_")}
@@ -1014,7 +1020,11 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
            "committed": {"deaths": d5c + sum(afterc.values()), "deaths_lo": q(committed, 2.5),
                          "deaths_hi": q(committed, 97.5), "after_2030": sum(afterc.values()),
                          "after_2030_lo": q(after, 2.5), "after_2030_hi": q(after, 97.5),
-                         "after_parts": afterc},
+                         "after_parts": afterc,
+                         # (at art_reengage high, at art_reengage low): the range across the return-to-care assumption
+                         "after_2030_reengage": tuple(reengage_after),
+                         "reengage_values": (float(ptab.loc["art_reengage", "low"]),
+                                             float(ptab.loc["art_reengage", "high"]))},
            "totals": {"base": float(base.sum()), "gross": float(G_t.mean()), "replaced": float(budget_t.mean()),
                       "net": float((G_t - budget_t).mean()), "gross_full": G,
                       "gains": float(gains.sum()) if len(cells) else 0.0,
@@ -1282,7 +1292,9 @@ def run_all(scenario, fiscal, inputs, ptab, n_draws=80, countries=None, mortalit
                "loss_pct_ghes": t["gross"] / r["fiscal"]["ghes"] if r["fiscal"]["ghes"] else np.nan,
                "capacity_usd": r["fiscal"]["capacity"], "deaths_after_2030": r["committed"]["after_2030"],
                "deaths_after_2030_lo": r["committed"]["after_2030_lo"],
-               "deaths_after_2030_hi": r["committed"]["after_2030_hi"]}
+               "deaths_after_2030_hi": r["committed"]["after_2030_hi"],
+               "deaths_after_2030_reengage_min": r["committed"]["after_2030_reengage"][0],
+               "deaths_after_2030_reengage_max": r["committed"]["after_2030_reengage"][1]}
         for _, bb in r["buckets"].iterrows():
             rec[f"deaths_5y_{bb['bucket']}"] = bb["deaths_5y"]
             rec[f"net_loss_{bb['bucket']}"] = bb["net_loss_usd"]
