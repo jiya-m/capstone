@@ -8,8 +8,7 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `.gitattributes` | 0 KB | config | Streamlit / Codespaces / git configuration |
 | `.gitignore` | 1 KB | config | Streamlit / Codespaces / git configuration |
 | `.streamlit/config.toml` | 1 KB | config | Streamlit / Codespaces / git configuration |
-| `README.md` | 2 KB | docs | documentation |
-| `README_MODEL.md` | 7 KB | docs | documentation |
+| `README.md` | 9 KB | docs | documentation |
 | `add_constant_dollars.py` | 3 KB | offline (code) | audit/test/prep script, run by hand |
 | `app.py` | 1 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `audit/AUDIT.md` | 45 KB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
@@ -109,16 +108,16 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `ext_data/wdi/sp_pop_1564_to.csv` | 0.23 MB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/wdi/sp_pop_totl.csv` | 0.24 MB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, who_inputs.py, audit/archive/analysis.py, audit/make_inventory.py, audit/recompute.py |
 | `fiscal_inputs.py` | 7 KB | offline (code) | audit/test/prep script, run by hand |
-| `health_model.py` | 77 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
+| `health_model.py` | 84 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `macro_data/ (72 files)` | 0.27 MB | runtime (data) | folder read by: views/1_Dashboard.py, health_model.py; offline: fiscal_inputs.py, add_constant_dollars.py, audit/checks.py, tests/test_minor.py |
 | `macro_data/weo_fiscal/weo_balances.csv` | 0.45 MB | offline (data) | folder read by: -; offline: fiscal_inputs.py |
 | `malaria_inputs.py` | 9 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
-| `model_data/all_countries_America_First_MOUs.csv` | 7 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
-| `model_data/all_countries_Combined_retreat.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
-| `model_data/all_countries_Full_US_exit.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
-| `model_data/all_countries_Global_Fund_Gavi_shortfalls.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
-| `model_data/all_countries_IHME_2025_preliminary_estimates.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
-| `model_data/all_countries_OECD_reported_2025_aid_cuts.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
+| `model_data/all_countries_America_First_MOUs.csv` | 7 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, health_model.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
+| `model_data/all_countries_Combined_retreat.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, health_model.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
+| `model_data/all_countries_Full_US_exit.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, health_model.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
+| `model_data/all_countries_Global_Fund_Gavi_shortfalls.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, health_model.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
+| `model_data/all_countries_IHME_2025_preliminary_estimates.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, health_model.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
+| `model_data/all_countries_OECD_reported_2025_aid_cuts.csv` | 28 KB | runtime (data) | read by: views/3_Validation.py, model_section.py, health_model.py, scenarios.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/i01_before_after.py, audit/make_inventory.py, audit/snapshot_numbers.py, tests/test_i07.py, tests/test_mou.py |
 | `model_data/country_inputs.csv` | 0.12 MB | runtime (data) | read by: views/4_Methods.py, health_model.py, malaria_inputs.py; offline: prepare_model.py, who_inputs.py, fiscal_inputs.py, audit/recompute.py, tests/make_baseline.py |
 | `model_data/country_profile.csv` | 4 KB | runtime (data) | read by: views/1_Dashboard.py; offline: prepare_model.py, audit/make_inventory.py, tests/test_mou.py |
 | `model_data/dah_lines.csv` | 2.21 MB | runtime (data) | read by: health_model.py; offline: prepare_model.py, audit/recompute.py |
@@ -129,10 +128,10 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `model_params.csv` | 10 KB | runtime (data) | read by: model_section.py, health_model.py |
 | `model_section.py` | 0.12 MB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `paths_ui.py` | 16 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
-| `prepare_model.py` | 37 KB | offline (code) | audit/test/prep script, run by hand |
+| `prepare_model.py` | 39 KB | offline (code) | audit/test/prep script, run by hand |
 | `requirements.txt` | 0 KB | config | Streamlit / Codespaces / git configuration |
 | `revenue_data/ (71 files)` | 1.77 MB | runtime (data) | folder read by: views/1_Dashboard.py; offline: audit/checks.py |
-| `scenarios.py` | 11 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
+| `scenarios.py` | 13 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `spending_data/ (72 files)` | 0.31 MB | runtime (data) | folder read by: views/1_Dashboard.py, health_model.py; offline: add_constant_dollars.py, audit/checks.py, audit/make_inventory.py, tests/test_minor.py |
 | `tests/baseline_sudden.json` | 0.43 MB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
 | `tests/make_baseline.py` | 12 KB | offline (code) | audit/test/prep script, run by hand |
