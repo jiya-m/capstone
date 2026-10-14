@@ -217,6 +217,9 @@ snapshot `audit/before_batch4b.csv` (local). Headline = all countries, Full US E
 | 3 Explain malaria -61% | ✅ done, one fix | `7342148` | 1,695,601 (+2.8%) | Item 6's cap drove it (-48% of the item-2 level), items 1-2 the rest; systems and management shares match the Global Fund malaria mix by construction. Concept mismatch found and fixed: the all-source malaria spending share (household treatment spending 35% at the median, 87% in Nigeria) gave donor-funded nets a pool of 3% of people covered in Nigeria; bednets and spraying now use the external share of public malaria spending (median 0.56). Malaria deaths 143,889 -> 190,824. Malaria baseline only rebuilt (84 entries) |
 | 4 Explain TB | ✅ done | (docs) | no change | The +91% in Batch 3+4 item 5 is the lower course costs (old costs restored: 265,626 vs 463,973); the country RR shares and enrolment are worth -2,000 deaths |
 
+**Checks after Batch 4b.** `audit/checks.py --full`: 59 checks, 76,501 rows, 0 failures, 6 known warnings; 357 tests
+pass; `--quick` 0 failures after each item.
+
 **Open finding L-51 (Minor, Medium confidence).** The donor-funded pool for HIV and immunization still uses the
 external share of all-source spending; GHED's HIV total is "HIV/AIDS and other STDs" with a private share of 67% in
 Nigeria, 49% in Guinea and 44% in Senegal, so the public-spending share (Nigeria 0.55 vs 0.18) would raise the ART
