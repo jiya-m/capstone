@@ -54,6 +54,7 @@ Country columns used (`country_inputs.csv`):
 | births | `births` | |
 | DTP3 % | `sh_imm_idpt` | |
 | U5MR | `sh_dyn_mort` | 50 if missing |
+| split of unspecified money | `unspec_<hiv|tb|malaria>_<treatment|prevention|testing|rssh|pm>` (`_source`) | shares 0-1 summing to 1 per disease: Global Fund grant budgets by module, GC7 (`batch34_inputs.py --shares`; `audit/batch34_gf_shares.py`); WHO-region median where the country has no grant |
 | trends | `trend_u5mr`, `trend_malaria_deaths` | yearly change (shares); -0.009 if missing. `trend_u5mr`: UN IGME under-5 mortality 2010-2019. `trend_malaria_deaths`: WHO estimated malaria deaths (GHO `MALARIA_EST_DEATHS`) 2015-2024, log-linear fit (at least 5 positive years), clipped to ±5% a year (the clip is an assumption); 0 where WHO has no series (built by `malaria_inputs.py`) |
 | GDP per person | `gdp_pc` | 1,000 if missing |
 | income group | `income_group` | `low_income`, `lower_middle_income`, `upper_middle_income` |
@@ -163,10 +164,23 @@ For bucket b and any money series X (baseline, or year t's G), with kappa = `hss
 - mix_l = base_l / sum_{K_b} base. Here base is the country's raw baseline by line. If that sum is 0, the global mix
   is used: each known line's share of the bucket's known-line baseline summed over all countries in `dah_lines`.
 - U = X[b_unspec], S = X[b_hss] (0 if absent; Immunization has neither).
-- For each direct line l of b: E[l] = X[l] + (U + sigma x S) x mix_l.
-- For the linked line `hiv_care_ct`: pool = X[care] + (U + sigma x S) x mix_care. E[care] = kappa x pool;
+- **Split of U by purpose** (L-43): shares s_treat, s_prev, s_test, s_rssh, s_pm from `country_inputs.csv`
+  (`unspec_<hiv|tb|malaria>_<treatment|prevention|testing|rssh|pm>`, summing to 1; if any is missing, the median of
+  the countries' shares, renormalised). Treatment lines T_b: HIV `hiv_art`; TB `tb_ds`, `tb_dr`; malaria `mal_cm`.
+  Prevention lines P_b: HIV `hiv_prev`, `hiv_pmtct`; malaria `mal_itn`, `mal_irs`; TB none. Testing target: HIV the
+  linked line `hiv_care_ct`; TB `tb_ds`; malaria `mal_cm`.
+  - mix_{l|T} = base_l / sum over T_b of base (the global mix among those lines if the sum is 0); mix_{l|P} the same
+    over P_b.
+  - S' = S + U x s_rssh (systems money including the systems share of U).
+  - add[l] = sigma x S' x mix_l for every known line; plus U x s_treat x mix_{l|T} for l in T_b; plus
+    U x s_prev x mix_{l|P} for l in P_b.
+  - HIV: add[care] += U x s_test. TB and malaria: add[target] += kappa x U x s_test.
+- For each direct line l of b: E[l] = X[l] + add[l].
+- For the linked line `hiv_care_ct`: pool = X[care] + add[care]. E[care] = kappa x pool;
   nonservice[care] = (1 - kappa) x pool.
-- nonservice[b] = (1 - sigma) x S.
+- nonservice[b] = (1 - sigma) x S' + U x s_pm + (U x s_prev if P_b is empty) + ((1 - kappa) x U x s_test if b has
+  no linked line).
+- `hiv_ovc` receives no unspecified money.
 
 Systems money (S) is above-site money that the marked-up unit costs (section 5) already price into every patient,
 so it is not converted into service units (Batch 3+4, logic review L-05; sigma is a constant in the draws; sigma > 0

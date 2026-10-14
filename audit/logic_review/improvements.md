@@ -41,8 +41,8 @@ Nothing here has been implemented.
 ### IMP-02. Fix the money-to-services conversion: spread unspecified money over services and systems, and remove the double count of above-site costs (Do before presenting)
 
 **Status: ◐ partly done (Batch 3+4, 14 October 2026).** (b) one treatment of above-site costs: done, option (ii)
-(item 1, L-05: systems money not converted, `hss_service_share` = 0). (a) unspecified money spread by purpose: done
-through item 2 (L-43, Global Fund module shares). (c) testing-and-care as a flow of initiations: **BLOCKED** (no cost
+(item 1, L-05: systems money not converted, `hss_service_share` = 0, commit `4f9f0c0`). (a) unspecified money
+spread by purpose: done through item 2 (L-43, Global Fund module shares). (c) testing-and-care as a flow of initiations: **BLOCKED** (no cost
 per initiation; the flow formulation triples the count rather than lowering it; `batch34_evidence.md` C).
 
 - **Addresses:** L-43, L-05, L-27. `hss_kappa` swing -10.1% / +16.2%; `asd_share` +17.8% / -12.2%.

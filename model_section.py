@@ -854,7 +854,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     notes += [f"{f[0].upper() + f[1:]}." for f in res["flags"]]
     notes.append("HIV prevention turns money into infections averted; deaths from those infections are counted in the "
                  "year they happen (few before 2031). Program money with no "
-                 "reported purpose is spread over each bucket's known mix; "
+                 "reported purpose is split by purpose with the country's Global Fund grant mix (treatment, "
+                 "prevention, testing, systems, programme management); only the treatment share counts as people on "
+                 "treatment; "
                  + systems_note(ptab) + " HIV Testing & Care has no patients of its own: " + care_ct_note()
                  + " Bednets and spraying have their own coverage; together they set vector-control coverage. "
                  "Deaths ranges: " + RANGE_LABEL + ". " + RANGE_TIP)

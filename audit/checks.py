@@ -242,17 +242,26 @@ def per_run(iso, preset, resp, res, fiscal_t, opts):
     pth = res["path"]
     rec(iso, preset, resp, "path_chart_sums_to_headline", close(pth.values.sum(), T["deaths_5y"], 1e-9, 1e-6) and
         close(pth.iloc[0].sum(), T["deaths_y1"], 1e-9, 1e-6), pth.values.sum() - T["deaths_5y"])
-    # unspecified spreading conserves money: line losses (direct lines, plus linked lines in full) + the non-service
-    # systems money = bucket. Batch 3+4 (L-05): only sigma = hss_service_share of systems money is spread as service
-    # money, so (1 - sigma) x the systems money is outside the lines (SPEC.md section 3)
+    # unspecified splitting conserves money: line losses (direct lines, plus linked lines in full) + the non-service
+    # money = bucket. Batch 3+4 (L-05, L-43; SPEC.md section 3): non-service = (1 - sigma) x (HSS + systems share of
+    # unspecified) + programme-management share of unspecified + prevention share where the bucket has no prevention
+    # line (TB) + (1 - kappa) x testing share where it has no linked line (TB, malaria)
     cells = res["cells"]
     kb = []
     for b in ("HIV", "TB", "Malaria"):
         hss = cells.loc[cells["line"] == hm.HSS[b], "loss"].sum()
+        unspec = cells.loc[cells["line"] == hm.UNSPEC[b], "loss"].sum()
+        tag = hm.UNSPEC_TAG[b]
+        sh = {c: float(CI.loc[iso, f"unspec_{tag}_{c}"]) for c in ("treatment", "prevention", "testing", "rssh", "pm")}
+        ns = (1 - SIGMA) * (hss + unspec * sh["rssh"]) + unspec * sh["pm"]
+        if not hm.UNSPEC_PREV.get(b):
+            ns += unspec * sh["prevention"]
+        if not hm.LINKED_IN[b]:
+            ns += (1 - KAPPA) * unspec * sh["testing"]
         direct = L.loc[L["bucket"] == b, "gross_loss_usd"].sum()
         bucket = Bx.loc[b, "gross_loss_usd"]
-        if not close(direct + (1 - SIGMA) * hss, bucket, 1e-6, 1.0):
-            kb.append(f"{b}: direct {direct:.0f} + (1-sigma)hss {(1 - SIGMA) * hss:.0f} vs bucket {bucket:.0f}")
+        if not close(direct + ns, bucket, 1e-6, 1.0):
+            kb.append(f"{b}: direct {direct:.0f} + non-service {ns:.0f} vs bucket {bucket:.0f}")
     rec(iso, preset, resp, "unspec_and_kappa_conserve_money", not kb, len(kb), "; ".join(kb))
     # 1-(1-a)(1-b) applied once, exactly as documented
     exp = np.array([expected_cut(preset, iso, s, c, b, opts) for s, c, b in

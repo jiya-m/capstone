@@ -4,7 +4,8 @@ Funding shock -> fiscal response -> coverage -> lives.
 A country-level model for HIV, TB, malaria and immunization:
 
   1. MONEY     baseline aid (IHME DAH, avg 2021-23) by source x channel x service line; a donor scenario sets the
-               fraction cut in every cell; unreported program areas are spread over the bucket's known mix; systems
+               fraction cut in every cell; unreported program areas are split by purpose with the country's Global
+               Fund module shares (treatment, prevention, testing, systems, programme management; L-43); systems
                money (labs, HR, M&E) is above-site money already priced into the marked-up unit costs, so it is lost
                without a modelled service effect (hss_service_share, default 0; logic review L-05).
   2. FISCAL    the government can backfill part of the loss; the replacement rate is a policy choice (default from
@@ -94,6 +95,14 @@ ART_INFECT_LAG = np.array([0.5, 1, 1, 1, 1])
 POST_YEARS = 5                  # deaths set in motion are counted in 2031-2035, with funding back from 2031
 HIV_WEIBULL_SHAPE = 2.25        # survival after HIV infection without ART (Todd et al. 2007; UNAIDS Spectrum)
 DR_TB_SHARE, DR_TB_COV = 0.04, 0.45
+# how unspecified money (IHME program area not reported) is split by purpose (Batch 3+4, L-43): the country's Global
+# Fund module shares in country_inputs.csv (unspec_<disease>_<purpose>; batch34_inputs.py). Treatment and prevention
+# shares go to those lines by the country's mix; the testing share is treated like HIV testing-and-care money (kappa
+# of it counts toward the treatment line); the systems share joins HSS money; programme management is non-service
+UNSPEC_TAG = {"HIV": "hiv", "TB": "tb", "Malaria": "malaria"}
+UNSPEC_TREAT = {"HIV": ["hiv_art"], "TB": ["tb_ds", "tb_dr"], "Malaria": ["mal_cm"]}
+UNSPEC_PREV = {"HIV": ["hiv_prev", "hiv_pmtct"], "TB": [], "Malaria": ["mal_itn", "mal_irs"]}
+UNSPEC_TEST_TARGET = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_cm"}
 _EXCESS_LOGGED: set = set()     # (iso3, line) pairs already logged as "donor money exceeds the service cost"
 
 
@@ -113,7 +122,17 @@ def load_inputs(model_dir: Path = MODEL_DIR) -> dict:
     # global mix of each bucket's known (direct) lines -> fallback for allocating unreported program areas
     gm = lines[lines.line.isin(MONEY_LINES)].groupby(["bucket", "line"])["usd"].sum()
     gmix = {b: (gm[b] / gm[b].sum()).reindex(DIRECT[b] + LINKED_IN[b]).fillna(0).to_dict() for b in BUCKETS}
-    return {"lines": lines, "ci": ci, "trend": trend, "reg": reg, "global_mix": gmix,
+    # fallback split of unspecified money by purpose (L-43): the median of the countries' shares, renormalised
+    ush = {}
+    for b, tag in UNSPEC_TAG.items():
+        cols = {c: f"unspec_{tag}_{c}" for c in ("treatment", "prevention", "testing", "rssh", "pm")}
+        if all(c in ci.columns for c in cols.values()):
+            med = {c: float(ci[col].median()) for c, col in cols.items()}
+        else:
+            med = {"treatment": 1.0, "prevention": 0.0, "testing": 0.0, "rssh": 0.0, "pm": 0.0}
+        tot = sum(med.values()) or 1.0
+        ush[b] = {c: v / tot for c, v in med.items()}
+    return {"lines": lines, "ci": ci, "trend": trend, "reg": reg, "global_mix": gmix, "unspec_shares": ush,
             "trend_map": trend.set_index(["src_grp", "chan_grp", "bucket"])["ratio"].to_dict()}
 
 
@@ -730,12 +749,33 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     n = len(P["uc_imm"])
 
     # ---- 1. money: effective loss by direct line (per draw because kappa is uncertain) ----
+    def unspec_shares(b):
+        """The country's split of unspecified money by purpose (L-43): treatment, prevention, testing, systems,
+        programme management; from country_inputs.csv (Global Fund module shares, or a regional median), else the
+        global median of the model countries."""
+        tag = UNSPEC_TAG[b]
+        cols = [f"unspec_{tag}_{c}" for c in ("treatment", "prevention", "testing", "rssh", "pm")]
+        v = np.array([_v(row, c) for c in cols])
+        if np.isnan(v).any() or v.sum() <= 0:
+            v = np.array([inputs["unspec_shares"][b][c] for c in ("treatment", "prevention", "testing", "rssh", "pm")])
+        return v / v.sum()
+
+    def sub_mix(lines_, mix):
+        m = pd.Series({l: mix.get(l, 0.0) for l in lines_})
+        if m.sum() <= 0:
+            m = pd.Series({l: inputs["global_mix"][LINE_BUCKET[l]].get(l, 0.0) for l in lines_})
+        return m / m.sum() if m.sum() > 0 else m
+
     def effective(series, kappa, sigma):
-        """Money by line after spreading unspecified money over the known mix. Systems money (HSS: supply chain, human
-        resources, information systems) is above-site money that the marked-up unit costs already price into every
-        patient, so only sigma = hss_service_share of it (default 0) is spread as service money; the rest is
-        nonservice[bucket] (logic review L-05). Linked lines (HIV testing and care) keep kappa x their pool as service
-        money (it counts toward the target line's units) and put the rest in nonservice[line]."""
+        """Money by line after splitting unspecified money by purpose (L-43) and treating systems money as above-site
+        money (L-05). Unspecified money U: U x treatment share to the treatment lines by the country's mix, U x
+        prevention share to the prevention lines by mix (TB has none: non-service), U x testing share to the
+        testing-and-care pool (HIV: the linked line; TB and malaria: kappa of it counts toward the treatment line, the
+        rest is non-service), U x systems share joins HSS money, U x programme-management share is non-service.
+        Systems money (HSS plus that share) is above-site money that the marked-up unit costs already price into every
+        patient, so only sigma = hss_service_share of it (default 0) is spread as service money by the full mix; the
+        rest is nonservice[bucket]. Linked lines (HIV testing and care) keep kappa x their pool as service money (it
+        counts toward the target line's units) and put the rest in nonservice[line]."""
         eff, nonservice = {}, {}
         for b in BUCKETS:
             known = DIRECT[b] + LINKED_IN[b]
@@ -744,12 +784,33 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             mix = (bmix / bmix.sum()) if bmix.sum() > 0 else pd.Series(inputs["global_mix"][b])
             u = series.get(UNSPEC.get(b, ""), 0.0)
             s = series.get(HSS.get(b, ""), 0.0)
+            if b in UNSPEC_TAG:
+                sh_t, sh_p, sh_x, sh_r, sh_m = unspec_shares(b)
+            else:
+                sh_t, sh_p, sh_x, sh_r, sh_m = 1.0, 0.0, 0.0, 0.0, 0.0
+            s_all = s + u * sh_r                                  # systems money incl. the systems share of unspecified
+            add = {l: sigma * s_all * mix.get(l, 0.0) for l in known}
+            tm = sub_mix(UNSPEC_TREAT.get(b, DIRECT[b]), mix)
+            for l, w in tm.items():
+                add[l] += u * sh_t * w
+            ns_extra = u * sh_m
+            if UNSPEC_PREV.get(b):
+                pm_ = sub_mix(UNSPEC_PREV[b], mix)
+                for l, w in pm_.items():
+                    add[l] += u * sh_p * w
+            else:
+                ns_extra += u * sh_p
+            if LINKED_IN[b]:
+                add[LINKED_IN[b][0]] += u * sh_x                   # into the testing-and-care pool (kappa applies below)
+            elif b in UNSPEC_TEST_TARGET:
+                add[UNSPEC_TEST_TARGET[b]] += kappa * u * sh_x
+                ns_extra = ns_extra + (1 - kappa) * u * sh_x
             for l in DIRECT[b]:
-                eff[l] = d[l] + (u + sigma * s) * mix.get(l, 0.0)
+                eff[l] = d[l] + add[l]
             for l in LINKED_IN[b]:
-                pool = d[l] + (u + sigma * s) * mix.get(l, 0.0)    # its own money + its share of unspecified money
+                pool = d[l] + add[l]                                # its own money + its share of unspecified money
                 eff[l], nonservice[l] = kappa * pool, (1 - kappa) * pool
-            nonservice[b] = (1 - sigma) * s
+            nonservice[b] = (1 - sigma) * s_all + ns_extra
         return eff, nonservice
 
     eff_base, _ = effective(base, P["hss_kappa"], P["hss_service_share"])

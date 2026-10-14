@@ -316,8 +316,19 @@ with tabs[2]:
     """)
     st.latex(r"\text{cut}_c = 1-(1-\text{donor cut})\,(1-\text{channel cut}),\qquad \text{loss}_c = \text{baseline}_c \times \text{cut}_c")
     md(f"""
-    **Money with no reported purpose.** Aid tagged "unspecified" is spread over the bucket's known service lines in
-    proportion to the country's own mix (or the global mix if it has none).
+    **Money with no reported purpose.** Aid tagged "unspecified" (IHME's `*_other` program areas: 16% of HIV aid,
+    46% of TB aid and 27% of malaria aid in the model countries) is split by purpose using the country's Global Fund
+    grant budgets by module (Grant Cycle 7, 2023-2025; `datasets/GlobalFund`; `audit/batch34_gf_shares.py`): the
+    treatment share goes to the treatment lines (ART; TB treatment and DR-TB; malaria testing and treatment) in
+    proportion to the country's mix, the prevention share to the prevention lines (HIV prevention and PMTCT;
+    bednets and spraying), the testing share to testing and care (HIV: that line; TB and malaria: treated the same
+    way, κ of it counting toward treatment), the systems share joins systems money and the programme-management
+    share is lost without a modelled service effect. Only the treatment share becomes people on treatment. Median
+    shares across the model countries: HIV treatment 35%, prevention 23%, testing 6%, systems 11%, management 22%;
+    TB 49 / 1 / 21 / 10 / 17%; malaria 22 / 48 / 0 / 14 / 15%. Countries without a Global Fund grant for a disease
+    (38 of 210 country-disease lines) use the median of the model countries in their WHO region. Before this change
+    the money was spread over the known service lines by mix, which sent 45% (HIV), 77% (TB) and 40% (malaria) of it
+    to treatment (logic review L-43).
 
     **Systems money** (labs, staff, monitoring, supply chain: IHME's `*_hss_*` program areas) is above-site money.
     The cost per patient for HIV and TB treatment is a site cost divided by (1 - above-service share), which already
@@ -336,7 +347,9 @@ with tabs[2]:
     judged on treatment money only. Across the dashboard countries this line is a median of 41% of the former HIV
     treatment money (13% in South Africa to 60% in Guyana).
     """)
-    st.latex(r"\text{effective loss}_{\ell} = \text{direct loss}_{\ell} + (\text{unspecified} + \sigma \times \text{systems}) \times \text{mix}_{\ell},\qquad \sigma = 0")
+    st.latex(r"\text{effective loss}_{\ell} = \text{direct loss}_{\ell} + \text{unspecified} \times s_{p(\ell)} \times \text{mix}_{\ell \mid p(\ell)} + \sigma \times \text{systems} \times \text{mix}_{\ell},\qquad \sigma = 0")
+    md("where s_p is the share of unspecified money for the purpose p of line ℓ (treatment or prevention) and "
+       "mix_{ℓ|p} is the line's share of the country's baseline aid among the lines of that purpose.")
     md("""
     **Donor scenarios (presets).**
 
@@ -797,7 +810,8 @@ with tabs[4]:
     - **Malaria coverage is modelled.** Treatment, bednet and spraying coverage are Malaria Atlas Project 2025
       estimates (MAP's 2025 values repeat 2024 for treatment and bednets). Outside MAP's bednet countries, surveys
       from 2015 on or a default are used and flagged with the source and year next to each value.
-    - **Program-area tags are partial** (most TB aid is untagged), so unspecified money is spread over the known mix.
+    - **Program-area tags are partial** (most TB aid is untagged), so unspecified money is split by purpose with the
+      country's Global Fund grant mix, an assumption that unclassified donor money looks like the Global Fund's.
     - **The regressions are associations, not causes.** Aid goes where deaths are high, which can hide or reverse a
       protective effect (see the Validation page).
     - **Treat results as scenario estimates, not forecasts.**
