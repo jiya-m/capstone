@@ -317,7 +317,8 @@ def epi(row: pd.Series, P: dict) -> dict:
     e = {
         "hiv_art": (_v(row, "plhiv"), art),
         "hiv_pmtct": (_v(row, "hiv_pos_pregnancies"), pm if not np.isnan(pm) else art),
-        "tb_ds": (_v(row, "all_forms_of_tb_incidence_estimated"), _v(row, "sh_tbs_dtec_zs") / 100),
+        # notified / estimated incidence can exceed 100% by definition (WDI); capped at 100% and flagged (L-12)
+        "tb_ds": (_v(row, "all_forms_of_tb_incidence_estimated"), min(_v(row, "sh_tbs_dtec_zs") / 100, 1.0)),
         "tb_dr": (_v(row, "all_forms_of_tb_incidence_estimated") * DR_TB_SHARE, DR_TB_COV),
         "mal_itn": (_v(row, "malaria_pop_at_risk"), itn),
         "mal_irs": (_v(row, "malaria_pop_at_risk"), irs),
@@ -325,6 +326,9 @@ def epi(row: pd.Series, P: dict) -> dict:
         "imm": (_v(row, "births"), _v(row, "sh_imm_idpt") / 100),
     }
     flags = []
+    if _v(row, "sh_tbs_dtec_zs") > 100:
+        flags.append(f"TB case detection rate is {_v(row, 'sh_tbs_dtec_zs'):.0f}% (notifications above WHO's incidence "
+                     "estimate); capped at 100%")
     if np.isnan(itn):
         flags.append("bednet use: no MAP estimate or survey since 2015, default assumed")
     if np.isnan(cm):
@@ -420,7 +424,10 @@ def unit_costs(row: pd.Series, P: dict) -> dict:
 AID_BASE_YEARS = (2021, 2023)    # aid baseline = average of these years (prepare_model.py uses the same constant)
 GHES_YEAR = 2023                 # government health spending year (column ghes_2023)
 FALLBACK_MORTALITY_TREND = -0.009    # %/yr decline in baseline mortality (Cavalcanti et al. 2025, Lancet, appendix 10.2)
-TREND_COLUMNS = {"u5": "trend_u5mr", "malaria": "trend_malaria_deaths", "tb": "trend_tb_deaths"}
+# Baseline death-rate trends apply where deaths are modelled as a share of a baseline level (malaria deaths, under-5
+# mortality for vaccines). TB and HIV deaths are per patient (case fatality of an untreated vs a treated patient; the
+# ART hazard), which a national death trend does not change, so their counterfactual is flat (logic review L-10).
+TREND_COLUMNS = {"u5": "trend_u5mr", "malaria": "trend_malaria_deaths"}
 
 
 def mortality_trend_factors(row: pd.Series, kind: str, use: bool = True) -> np.ndarray:
@@ -458,7 +465,8 @@ def per_unit_levels(row: pd.Series, P: dict, art_cov: float, trend: bool = True)
     n = len(P["uc_imm"])
     h = _v(row, "tb_hiv_share", 0.0)
     a = 0.0 if np.isnan(art_cov) else art_cov
-    cfr_up = P["tb_cfr_untreated_pos"] * (1 - 0.3 * a)     # untreated HIV+ TB: lower when on ART (0.78 -> 0.49)
+    # untreated HIV+ TB: WHO Table 5 off ART (0.78) and on ART for a year or more (0.49), blended by ART coverage (L-13)
+    cfr_up = P["tb_cfr_untreated_pos"] * (1 - a) + P["tb_cfr_untreated_pos_art"] * a
     cfr_tp = P["tb_cfr_treated_pos"] * (1 - 0.3 * a)
     dcfr = (1 - h) * (P["tb_cfr_untreated_neg"] - P["tb_cfr_treated_neg"]) + h * (cfr_up - cfr_tp)
     u5 = _v(row, "sh_dyn_mort", 50.0) * mortality_trend_factors(row, "u5", trend)       # per year 1..5
@@ -862,7 +870,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         # coverage; cases arriving after 2030 are set in motion by the cut
         h = _v(row, "tb_hiv_share", 0.0)
         a_ = 0.0 if np.isnan(ep["art_cov"]) else ep["art_cov"]
-        cfr_u = (1 - h) * Px["tb_cfr_untreated_neg"] + h * Px["tb_cfr_untreated_pos"] * (1 - 0.3 * a_)
+        cfr_u = (1 - h) * Px["tb_cfr_untreated_neg"] + h * (Px["tb_cfr_untreated_pos"] * (1 - a_)
+                                                            + Px["tb_cfr_untreated_pos_art"] * a_)
         cfr_t = (1 - h) * Px["tb_cfr_treated_neg"] + h * Px["tb_cfr_treated_pos"] * (1 - 0.3 * a_)
         ok_tb = not (np.isnan(tb_need) or np.isnan(tb_cov) or tb_need <= 0)
         cov_t = [np.clip(tb_cov - U["tb_ds"][:, t] / tb_need, 0, 1) if ok_tb else np.full(nx, 0.0) for t in years]

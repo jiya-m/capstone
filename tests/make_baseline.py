@@ -34,6 +34,10 @@ malaria) instead of 0.82. Entries with malaria results were refreshed again with
 malaria lines, the totals and the malaria path moved outside lives first (63 of 99 entries refreshed; 2 under lives
 first also moved other lines, through the refill order).
 
+TB (logic review L-13, L-12, L-10): untreated HIV+ TB case fatality follows WHO Table 5 (0.78 off ART, 0.49 on ART,
+weighted by ART coverage) instead of 0.62 x (1 - 0.3a); the detection rate is capped at 100%; the unused TB death
+trend was removed. Entries with TB results were refreshed:  python tests/make_baseline.py --tb
+
 Interest (audit I-26): the debt-stress factor now uses the more recent of World Bank and IMF WEO interest-to-revenue,
 so fiscal capacity changed; entries with a government response were refreshed, and entries with no response were
 checked to be unchanged:  python tests/make_baseline.py --fiscal
@@ -139,6 +143,14 @@ def refresh_hiv():
     _refresh("hiv_", "HIV")
 
 
+def refresh_tb():
+    """L-13 / L-12: untreated HIV+ TB case fatality is now WHO Table 5's 0.78 off ART and 0.49 on ART, weighted by ART
+    coverage, and the TB detection rate is capped at 100%. Replace the entries whose results changed, with the current
+    model and the later mechanisms off. Outside the lives-first response, only TB lines (and the totals and TB path
+    that include them) may change; that is checked here."""
+    _refresh("tb_", "TB")
+
+
 def _refresh(prefix, label):
     I, P = hm.load_inputs(), hm.load_params()
     P.loc[NEW_MECHANISMS, ["central", "low", "high"]] = 0.0
@@ -231,6 +243,8 @@ if __name__ == "__main__":
         refresh_malaria()
     elif "--hiv" in sys.argv:
         refresh_hiv()
+    elif "--tb" in sys.argv:
+        refresh_tb()
     elif "--fiscal" in sys.argv:
         refresh_fiscal()
     else:

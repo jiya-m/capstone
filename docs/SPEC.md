@@ -41,7 +41,7 @@ Country columns used (`country_inputs.csv`):
 | new HIV infections | `sh_hiv_incd_tl` | number a year |
 | population | `sp_pop_totl` | |
 | TB incidence | `all_forms_of_tb_incidence_estimated` | number a year (not `sh_tbs_incd`, which is per 100,000) |
-| TB detection % | `sh_tbs_dtec_zs` | |
+| TB detection % | `sh_tbs_dtec_zs` | capped at 100 (flagged when above) |
 | h (TB-HIV share) | `tb_hiv_share` | 0 if missing |
 | malaria population at risk (PAR) | `malaria_pop_at_risk` | |
 | malaria cases | `malaria_cases` | |
@@ -284,7 +284,8 @@ files and every audit run use it on). When it is off, every trend factor below i
 t >= first, dur_t = t - first; otherwise dur_t = 0. LAG and the malaria rebound are indexed by dur_t. Mortality
 trends are indexed by calendar t.
 
-**Trend factors.**
+**Trend factors.** Only malaria deaths and vaccine deaths have a baseline trend. TB and HIV deaths are per patient
+(case fatality of an untreated vs a treated patient; the ART hazard), so their counterfactual is flat (L-10).
 - f_u5,t = (1 + trend_u5mr)^t.
 - f_mal,t = (1 + trend_malaria_deaths)^t.
 - Both use -0.009 if the trend is missing, and equal 1 when the "already-changing death rates" switch is off.
@@ -294,7 +295,8 @@ trends are indexed by calendar t.
 - hiv_pmtct: pmtct_vt_reduction x pmtct_infant_mort.
 - tb_ds:
 
-      dCFR = (1 - h)(tb_cfr_untreated_neg - tb_cfr_treated_neg) + h (tb_cfr_untreated_pos - tb_cfr_treated_pos)(1 - 0.3a)
+      dCFR = (1 - h)(tb_cfr_untreated_neg - tb_cfr_treated_neg)
+             + h [tb_cfr_untreated_pos (1 - a) + tb_cfr_untreated_pos_art a - tb_cfr_treated_pos (1 - 0.3a)]
 
 - tb_dr: tb_dr_dcfr.
 - imm: level_t = imm_deaths_per_child_ref x imm_u5_share x clip(U5MR x f_u5,t / 50, 0.3, 2.5).
@@ -308,7 +310,7 @@ trends are indexed by calendar t.
   missing). A case arriving in year t uses c_t, the coverage of its **arrival** year; arrivals after 2030 use c_4.
 - An arriving case dies with probability c x cfr_t + (1 - c) x cfr_u, where:
 
-      cfr_u = (1 - h) tb_cfr_untreated_neg + h tb_cfr_untreated_pos (1 - 0.3a)
+      cfr_u = (1 - h) tb_cfr_untreated_neg + h [tb_cfr_untreated_pos (1 - a) + tb_cfr_untreated_pos_art a]
       cfr_t = (1 - h) tb_cfr_treated_neg + h tb_cfr_treated_pos (1 - 0.3a)
 
 - Arrivals in 2027-2030 add to tb_ds deaths in that year (no LAG). Arrivals in 2031-2032 count in further deaths

@@ -228,7 +228,8 @@ def tb_deaths_series() -> pd.DataFrame:
 def annual_trend(d: pd.DataFrame, index) -> pd.Series:
     """Average annual % change over TREND_YEARS from a log-linear fit (at least 5 positive years), clipped to
     TREND_CLIP; countries with no usable data get the median across countries.
-    Feeds: the death-rate trends in country_inputs.csv (under-5 mortality, TB)."""
+    Feeds: the death-rate trends in country_inputs.csv (under-5 mortality; the malaria trend set here is replaced by
+    malaria_inputs.py). No TB trend: TB deaths are per patient (logic review L-10)."""
     d = d[d.year.between(*TREND_YEARS) & (d.value > 0)]
     out = {}
     for iso, g in d.groupby("iso3"):
@@ -431,7 +432,6 @@ def main(a):
     # baseline mortality trends, 2010-2019 (annual % change; log-linear fit; clipped; median where missing)
     ci["trend_u5mr"] = annual_trend(series("sh_dyn_mort"), ci.index)
     ci["trend_malaria_deaths"] = annual_trend(series("malaria_deaths_in_children_1_59_months_total_deaths"), ci.index)
-    ci["trend_tb_deaths"] = annual_trend(tb_deaths_series(), ci.index)
 
     # baselines for the Lancet rate-ratio benchmark: HIV deaths = IHME HIV share of deaths (2019) x all deaths
     ci = ci.join(latest("sp_dyn_cdrt_in")).join(latest("sh_mmr_dths"))

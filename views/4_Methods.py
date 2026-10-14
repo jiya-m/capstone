@@ -438,13 +438,17 @@ with tabs[2]:
     {rng_txt('pmtct_infant_mort')} (Newell et al. 2004).
 
     **TB.** Deaths per patient untreated = case fatality untreated - case fatality treated, weighted by the share of
-    TB patients with HIV (h, WHO TB/HIV incidence ÷ TB incidence) and lowered for those on ART (a = ART coverage):
+    TB patients with HIV (h, WHO TB/HIV incidence ÷ TB incidence), with the HIV-positive values depending on ART
+    (a = ART coverage):
     """)
-    st.latex(r"\Delta\text{CFR}=(1-h)\,(0.43-0.03)+h\,(0.62-0.06)\,(1-0.3a)")
+    st.latex(r"\Delta\text{CFR}=(1-h)\,(0.43-0.03)+h\,\big[0.78\,(1-a)+0.49\,a-0.06\,(1-0.3a)\big]")
     md(f"""
     with untreated / treated case fatality {rng_txt('tb_cfr_untreated_neg')} / {rng_txt('tb_cfr_treated_neg')}
-    (HIV-negative) and {rng_txt('tb_cfr_untreated_pos')} / {rng_txt('tb_cfr_treated_pos')} (HIV-positive), from WHO's
-    TB burden estimation methods. Drug-resistant TB: {rng_txt('tb_dr_dcfr')} deaths averted per patient treated
+    (HIV-negative; WHO TB burden estimation methods, Table 4). For HIV-positive people, untreated case fatality is
+    {rng_txt('tb_cfr_untreated_pos')} off ART and {rng_txt('tb_cfr_untreated_pos_art')} on ART for a year or more
+    (WHO Table 5), weighted by ART coverage; treated, {rng_txt('tb_cfr_treated_pos')} x (1 - 0.3a). The TB case
+    detection rate (notifications ÷ WHO's incidence estimate) is capped at 100%. TB and HIV deaths are per patient,
+    so they have no baseline death-rate trend. Drug-resistant TB: {rng_txt('tb_dr_dcfr')} deaths averted per patient treated
     (*assumption*).
 
     **TB spread.** Each untreated TB patient (drug-sensitive or drug-resistant) causes {rng_txt('tb_secondary')}
