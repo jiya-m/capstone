@@ -129,6 +129,7 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `model_section.py` | 0.12 MB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `paths_ui.py` | 16 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `prepare_model.py` | 39 KB | offline (code) | audit/test/prep script, run by hand |
+| `requirements-dev.txt` | 0 KB | config | Streamlit / Codespaces / git configuration |
 | `requirements.txt` | 0 KB | config | Streamlit / Codespaces / git configuration |
 | `revenue_data/ (71 files)` | 1.77 MB | runtime (data) | folder read by: views/1_Dashboard.py; offline: audit/checks.py |
 | `scenarios.py` | 13 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
