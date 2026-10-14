@@ -55,6 +55,8 @@ Country columns used (`country_inputs.csv`):
 | DTP3 % | `sh_imm_idpt` | |
 | U5MR | `sh_dyn_mort` | 50 if missing |
 | ART site cost | `art_site_cost` (`_lo`, `_hi`, `_source`, `_year`) | US$ per patient-year at site level, 2023 US$ (`batch34_inputs.py --art`; `audit/batch34_art_costs.py`) |
+| TB course costs | `tb_ds_cost`, `tb_dr_cost` (`_lo`, `_hi`, `_source`), `tb_cost_year` | US$ per treatment course, provider, 2023 US$ (`batch34_inputs.py --tb`; `audit/batch34_tb_costs.py`) |
+| RR-TB share and enrolment | `tb_rr_share`, `tb_rr_cov` (`tb_rr_source`) | WHO 2024: RR-TB incidence / all-forms incidence; RR patients started on treatment / RR incidence, capped at 1 |
 | split of unspecified money | `unspec_<hiv|tb|malaria>_<treatment|prevention|testing|rssh|pm>` (`_source`) | shares 0-1 summing to 1 per disease: Global Fund grant budgets by module, GC7 (`batch34_inputs.py --shares`; `audit/batch34_gf_shares.py`); WHO-region median where the country has no grant |
 | trends | `trend_u5mr`, `trend_malaria_deaths` | yearly change (shares); -0.009 if missing. `trend_u5mr`: UN IGME under-5 mortality 2010-2019. `trend_malaria_deaths`: WHO estimated malaria deaths (GHO `MALARIA_EST_DEATHS`) 2015-2024, log-linear fit (at least 5 positive years), clipped to ±5% a year (the clip is an assumption); 0 where WHO has no series (built by `malaria_inputs.py`) |
 | GDP per person | `gdp_pc` | 1,000 if missing |
@@ -76,8 +78,8 @@ Country columns used (`country_inputs.csv`):
 
 | Constant | Value |
 |---|---|
-| DR_TB_SHARE | 0.04 |
-| DR_TB_COV | 0.45 |
+| DR_TB_SHARE | 0.04 (fallback only: `tb_rr_share` is used where present) |
+| DR_TB_COV | 0.45 (fallback only: `tb_rr_cov` is used where present) |
 | ART_HAZARD (excess deaths per person-year by years since stopping ART 1..10) | 0.013, 0.025, 0.037, 0.049, 0.060, 0.068, 0.072, 0.073, 0.071, 0.067 (Batch 2: CD4-stage cohort calculation, `audit/batch2_cohort.py`) |
 | ART_HAZARD_LEGACY (years 1..5; the year-5 value after that; only when hiv_legacy_art_params = 1) | 0.012, 0.028, 0.038, 0.045, 0.050 |
 | ART_REENGAGE_LEGACY (only when hiv_legacy_art_params = 1) | 0.5 |
@@ -248,7 +250,7 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
 | hiv_art | PLHIV | ART % |
 | hiv_pmtct | HIV+ pregnancies | PMTCT % (ART % if missing) |
 | tb_ds | TB incidence | TB detection % |
-| tb_dr | DR_TB_SHARE x TB incidence | DR_TB_COV |
+| tb_dr | `tb_rr_share` x TB incidence (DR_TB_SHARE if missing) | `tb_rr_cov` (DR_TB_COV if missing) |
 | mal_itn | PAR | `mal_itn_cov`; if NaN, `mal_itn_default_use` |
 | mal_irs | PAR | see below |
 | mal_cm | malaria cases | `mal_cm_cov`; if NaN, `mal_cm_default_cov` |
@@ -275,9 +277,11 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
 - **hiv_pmtct** = uc_pmtct (includes the mother's ART). **hiv_ovc** = uc_ovc.
 - **hiv_prev** = cpia_ref x (1 / inc)^0.5, with inc = new HIV infections / population x 1000, clipped to 0.05-10.
   inc = 0.3 if either input is missing. Unit: infection averted.
-- **tb_ds, tb_dr** = tb_ds_cost or tb_dr_cost for the income group x uc_tb_mult x markup. An income group other than
-  low or lower-middle uses upper-middle; a missing group is guessed from GDP per person (< 1,150 low, < 4,500
-  lower-middle, else upper-middle). These values are already 2023 US$.
+- **tb_ds, tb_dr** = `tb_ds_cost`, `tb_dr_cost` from `country_inputs.csv` (2023 US$; Batch 3+4, IMP-11: Value TB
+  and GHCC course costs, or the income-group median pooled with Laurence et al. 2015) x uc_tb_mult x markup. Only if
+  a column is missing: tb_ds_cost or tb_dr_cost for the income group from `unit_cost_reference.csv`. An income group
+  other than low or lower-middle uses upper-middle; a missing group is guessed from GDP per person (< 1,150 low,
+  < 4,500 lower-middle, else upper-middle). These values are already 2023 US$.
 - **mal_itn** = uc_itn; **mal_irs** = uc_irs; **mal_cm** = uc_mal_cm; **imm** = uc_imm.
 
 **Units lost** in year t, for each direct line:

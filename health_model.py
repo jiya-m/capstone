@@ -94,7 +94,7 @@ ART_TRANSMISSION_FALLBACK = 0.118   # UNAIDS 2025 median rate across the dashboa
 ART_INFECT_LAG = np.array([0.5, 1, 1, 1, 1])
 POST_YEARS = 5                  # deaths set in motion are counted in 2031-2035, with funding back from 2031
 HIV_WEIBULL_SHAPE = 2.25        # survival after HIV infection without ART (Todd et al. 2007; UNAIDS Spectrum)
-DR_TB_SHARE, DR_TB_COV = 0.04, 0.45
+DR_TB_SHARE, DR_TB_COV = 0.04, 0.45     # fallbacks only: countries use WHO's RR-TB share and enrolment (IMP-11)
 # how unspecified money (IHME program area not reported) is split by purpose (Batch 3+4, L-43): the country's Global
 # Fund module shares in country_inputs.csv (unspec_<disease>_<purpose>; batch34_inputs.py). Treatment and prevention
 # shares go to those lines by the country's mix; the testing share is treated like HIV testing-and-care money (kappa
@@ -349,7 +349,10 @@ def epi(row: pd.Series, P: dict) -> dict:
         "hiv_pmtct": (_v(row, "hiv_pos_pregnancies"), pm if not np.isnan(pm) else art),
         # notified / estimated incidence can exceed 100% by definition (WDI); capped at 100% and flagged (L-12)
         "tb_ds": (_v(row, "all_forms_of_tb_incidence_estimated"), min(_v(row, "sh_tbs_dtec_zs") / 100, 1.0)),
-        "tb_dr": (_v(row, "all_forms_of_tb_incidence_estimated") * DR_TB_SHARE, DR_TB_COV),
+        # Batch 3+4 (IMP-11): the country's RR-TB share of incidence and RR treatment enrolment (WHO 2024,
+        # tb_rr_share, tb_rr_cov in country_inputs.csv); the global constants where a country has none
+        "tb_dr": (_v(row, "all_forms_of_tb_incidence_estimated") * _v(row, "tb_rr_share", DR_TB_SHARE),
+                  _v(row, "tb_rr_cov", DR_TB_COV)),
         "mal_itn": (_v(row, "malaria_pop_at_risk"), itn),
         "mal_irs": (_v(row, "malaria_pop_at_risk"), irs),
         "mal_cm": (_v(row, "malaria_cases"), cm),
@@ -436,8 +439,14 @@ def unit_costs(row: pd.Series, P: dict) -> dict:
         art_site = ref[("art_site_default", "arv")] + ref[("art_site_default", "non_arv")] * sc
     ig = income_group(row)
     ig_key = ig if ig in ("low_income", "lower_middle_income", "upper_middle_income") else "upper_middle_income"
-    tb_ds = ref[("tb_ds_cost", ig_key)]
-    tb_dr = ref[("tb_dr_cost", ig_key)]
+    # Batch 3+4 (IMP-11): the country's provider cost per treatment course from country_inputs.csv (Value TB and GHCC
+    # studies; income-group median pooled with Laurence et al. 2015 where the country has no study; 2023 US$;
+    # batch34_inputs.py --tb). The income-group rows of unit_cost_reference.csv are the fallback if the column is missing
+    tb_ds, tb_dr = _v(row, "tb_ds_cost"), _v(row, "tb_dr_cost")
+    if np.isnan(tb_ds):
+        tb_ds = ref[("tb_ds_cost", ig_key)]
+    if np.isnan(tb_dr):
+        tb_dr = ref[("tb_dr_cost", ig_key)]
     # HIV incidence per 1,000 people (0.3 if missing, clipped to 0.05-10): prevention costs more per infection averted
     # where infections are rare
     inc = _v(row, "sh_hiv_incd_tl") / _v(row, "sp_pop_totl") * 1000

@@ -160,6 +160,11 @@ shares). PEPFAR Expenditure Analysis per patient (DR-01) was not available. `bat
 
 ### IMP-11. TB timing and inputs (Do before presenting)
 
+**Status: ◐ partly done (Batch 3+4 item 5, 14 October 2026).** Country MDR/RR-TB shares and enrolment (WHO 2024)
+and country treatment costs (Value TB, GHCC) are in; the WHO Table 5 blend was done earlier (L-13). Not done: spreading
+the untreated case fatality over about 3 years and secondary cases over 2-5 years (L-15; timing was outside the
+batch's scope, which was treatment costs). `batch34_evidence.md` E.
+
 - **Addresses:** L-13, L-15, L-16, `DR_TB_SHARE`, `DR_TB_COV`, `tb_secondary` timing.
 - **What to do:**
   - Spread each untreated cohort's case fatality over about 3 years (WHO: "mean duration of untreated disease ...
