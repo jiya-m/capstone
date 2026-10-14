@@ -21,7 +21,8 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `audit/I-10.md` | 4 KB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
 | `audit/I-13_I-14_I-15_I-16.md` | 10 KB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
 | `audit/I-26_I-17.md` | 10 KB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
-| `audit/METHOD.md` | 13 KB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
+| `audit/METHOD.md` | 1 KB | docs | redirect to `docs/SPEC.md` |
+| `docs/SPEC.md` | 20 KB | docs | the model specification (matches the code) |
 | `audit/analysis.json` | 18 KB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
 | `audit/archive/README.md` | 1 KB | offline (audit/test output or reference) | written or read by audit/ or tests/ scripts |
 | `audit/archive/analysis.py` | 18 KB | offline (code) | audit/test/prep script, run by hand |

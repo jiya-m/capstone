@@ -143,5 +143,6 @@ python add_constant_dollars.py
   fatality, the Lives Saved Tool for malaria, and deaths averted per child vaccinated.
 - **Uncertainty.** Every parameter is drawn 400 times from a triangular distribution.
 
-The Methods page has every formula, source and assumption; `audit/METHOD.md` is the compact specification that
-`audit/recompute.py` reimplements independently.
+The Methods page has every formula, source and assumption. `docs/SPEC.md` is the compact specification: it matches
+the code, and `audit/logic_review/reproduction/repro.py` reimplements it independently (`audit/recompute.py` is the
+earlier independent recalculation, built from the specification's previous version).
