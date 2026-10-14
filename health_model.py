@@ -886,6 +886,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             "need": need, "cov0": cov_used, "cov_source": ep["cov_source"].get(l, ""),
             "donor_share_of_coverage": donor_units / (cov_used * need) if (need and cov_used and not np.isnan(need)) else np.nan,
             "units_lost": uc_mean, "units_lost_lo": q(u_mean, 2.5), "units_lost_hi": q(u_mean, 97.5),
+            # people affected over 2026-2030 = the yearly values added up (follows the funding path), and the peak
+            # year (for ART, mostly the same people stay off treatment, so the peak is the number of people)
+            "units_lost_5y": float(unitsc[l].sum()), "units_lost_peak": float(unitsc[l].max()),
             "cov_drop_pp": uc_mean / need * 100 if (need and not np.isnan(need)) else np.nan,
             "capped": capped.get(l, False),
             "donor_exceeds_cost": excess.get(l, False),
@@ -908,7 +911,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                      "base_usd": full(effc_base, nsc_base), "gross_loss_usd": g_full, "replaced_usd": r_full,
                      "net_loss_usd": g_full - r_full, "unit_cost": np.nan, "unit_label": "", "need": np.nan,
                      "cov0": np.nan, "cov_source": "", "donor_share_of_coverage": np.nan, "units_lost": np.nan,
-                     "units_lost_lo": np.nan, "units_lost_hi": np.nan, "cov_drop_pp": np.nan, "capped": False,
+                     "units_lost_lo": np.nan, "units_lost_hi": np.nan, "units_lost_5y": np.nan,
+                     "units_lost_peak": np.nan, "cov_drop_pp": np.nan, "capped": False,
                      "donor_exceeds_cost": False, "donor_funded_units": np.nan, "deaths_y1": 0.0, "deaths_y1_lo": 0.0, "deaths_y1_hi": 0.0,
                      "deaths_5y": 0.0, "deaths_5y_lo": 0.0, "deaths_5y_hi": 0.0, "infections_5y": 0.0,
                      "infections_5y_lo": 0.0, "infections_5y_hi": 0.0})

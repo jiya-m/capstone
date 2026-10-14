@@ -34,3 +34,5 @@ audit/before_fiscal.csv
 audit/after_fiscal.csv
 audit/before_s3.csv
 audit/after_s3.csv
+audit/before_labels.csv
+audit/after_labels.csv

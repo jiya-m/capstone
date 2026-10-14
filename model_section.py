@@ -1184,7 +1184,8 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
     grey = lambda t: f"<span class='sub'>{t}</span>"
     nm = f"<span class='nm'>{e('Not Modelled')}</span>"
     head = [("Service", ""), ("Donor Aid Now", "per year"), ("Aid Lost", "per year, after government replacement"),
-            ("Cost per Person", ""), ("People Losing Service", ""), ("Coverage", ""), ("Extra Deaths", "5 years")]
+            ("Cost per Person", ""), ("People Losing Service, per Year", ""), ("Coverage", ""),
+            ("Extra Deaths, 5 Years Total", "")]
     th_html = "".join(f"<th>{e(h)}" + (f"<br>{grey(e(s))}" if s else "") + "</th>" for h, s in head)
     body, prev = [], None
     for r in rows.itertuples():
@@ -1219,6 +1220,10 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
         else:
             deaths = f"<b>{num(r.deaths_5y)}</b><br>{grey(rng(r.deaths_5y_lo, r.deaths_5y_hi))}"
         people = num(r.units_lost) if r.units_lost > 0 or r.cov_ok else nm
+        if r.units_lost > 0:                    # 5-year total under the yearly number (ART: mostly the same people)
+            five = getattr(r, "units_lost_5y", np.nan)
+            people += "<br>" + grey("mostly the same people each year" if r.line == "hiv_art" else
+                                    f"{num(five)} over 5 years" if five == five else "")
         cells = [money(r.base_usd), money(r.net_loss_usd),
                  f"<span class='big'>{e(r.cost_big)}</span><br>"
                  f"{grey(e(r.cost_unit).replace('per infection averted', 'per infection<br>averted'))}", people, cov, deaths]

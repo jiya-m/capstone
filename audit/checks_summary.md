@@ -7,6 +7,7 @@
 | coverage_is_fraction_not_percent | 1744 | 1744 | 0 | 0 |
 | cut_formula_matches_documented_scenario | 1744 | 1744 | 0 | 0 |
 | dashboard_country_equals_all_countries_row | 28 | 28 | 0 | 0 |
+| deaths_le_people_affected | 10208 | 10208 | 0 | 0 |
 | deaths_nonnegative | 1744 | 1744 | 0 | 0 |
 | displayed_finite | 1744 | 1744 | 0 | 0 |
 | displayed_nonnegative | 1744 | 1744 | 0 | 0 |

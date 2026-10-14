@@ -130,6 +130,20 @@ def displayed_equals_central(iso, preset, resp, res, rc):
     rec(iso, preset, resp, "displayed_value_equals_central_run", not bad, len(bad), "; ".join(bad[:5]))
 
 
+def deaths_vs_people(iso, preset, tag, L):
+    """Every service line: 5-year deaths never exceed the 5-year total of people affected; for ART, never the peak
+    number of people off treatment (mostly the same people each year)."""
+    bad = []
+    for r in L.itertuples():
+        if r.line in hm.LINKED or not (r.deaths_5y > 1e-9):
+            continue
+        cap = r.units_lost_peak if r.line == "hiv_art" else r.units_lost_5y
+        if not (r.deaths_5y <= cap * (1 + 1e-9) + 1e-6):
+            bad.append(f"{r.line}: deaths {r.deaths_5y:.1f} > {'peak' if r.line == 'hiv_art' else '5-year'} people "
+                       f"{cap:.1f}")
+    rec(iso, preset, tag, "deaths_le_people_affected", not bad, len(bad), "; ".join(bad[:4]))
+
+
 def per_run(iso, preset, resp, res, fiscal_t, opts):
     T, L, B, C, F = res["totals"], res["lines"], res["buckets"], res["committed"], res["fiscal"]
     Lx = L.set_index("line")
@@ -280,6 +294,7 @@ def main():
                 gov_add = gov_add_for(iso) if resp == "gradual" else None
                 res = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=DRAWS, gov_add_usd=gov_add)
                 per_run(iso, preset, resp, res, ft, opts)
+                deaths_vs_people(iso, preset, resp, res["lines"])
                 rc = hm.run_country(iso, sc, hm.Fiscal(*ft), I, P, n_draws=0, gov_add_usd=gov_add)
                 displayed_equals_central(iso, preset, resp, res, rc)
     print(f"per-run checks done in {time.time() - t0:.0f}s")
@@ -317,6 +332,7 @@ def main():
                     neg = [f"{x.line}" for x in L.itertuples() if x.units_lost < -1e-9 or
                            (x.cov_drop_pp == x.cov_drop_pp and x.cov_drop_pp < -1e-9)]
                     rec(iso, preset, tag, "no_negative_people_or_coverage_drop", not neg, len(neg), "; ".join(neg))
+                    deaths_vs_people(iso, preset, tag, L)
     print(f"path checks done in {time.time() - t0:.0f}s")
 
     # ---------------- precomputed files vs a fresh run ----------------
