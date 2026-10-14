@@ -4,7 +4,7 @@ deaths by disease, HIV infections and further deaths for every precomputed prese
 Mozambique, South Africa, Uganda and India, from model_data/all_countries_<preset>.csv at commit cd42746 (before the
 batch) and in the working tree (after). Central run, no government response, sudden cut, trends on.
 
-    .venv/bin/python audit/logic_review/batch34_before_after.py > audit/logic_review/batch34_before_after.md
+    .venv/bin/python audit/logic_review/batch34_before_after.py [before_commit] > audit/logic_review/batch34_before_after.md
 """
 import io
 import subprocess
@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 import scenarios as scn  # noqa: E402
 
-BEFORE = "cd42746"
+BEFORE = sys.argv[1] if len(sys.argv) > 1 else "cd42746"
 COLS = ["deaths_5y_HIV", "deaths_5y_TB", "deaths_5y_Malaria", "deaths_5y_Immunization", "deaths_5y", "deaths_after_2030",
         "hiv_infections_5y"]
 NAMES = ["HIV deaths", "TB", "Malaria", "Immunization", "All deaths, 2026-30", "Further deaths, 2031-35", "HIV infections"]

@@ -6,7 +6,7 @@ who stop ART under US Bilateral Exit + Multilateral Withdrawals before the batch
 after (a central run of the working tree), with the model's ART full cost per patient-year, the external HIV share used
 by the cap, and Optima's total HIV spending per person on ART.
 
-    .venv/bin/python audit/logic_review/batch34_reconcile.py
+    .venv/bin/python audit/logic_review/batch34_reconcile.py [before_snapshot.csv] [output_tag]
 
 Writes audit/logic_review/batch34_reconcile.csv and prints the markdown table.
 """
@@ -44,7 +44,9 @@ PRESET = "Full US exit"
 def main():
     I, P = hm.load_inputs(), hm.load_params()
     ci = I["ci"]
-    before = pd.read_csv(ROOT / "audit" / "before_batch34.csv", usecols=["key", "L.hiv_art.units_lost", "L.hiv_art.need",
+    before_file = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "audit" / "before_batch34.csv"
+    tag = sys.argv[2] if len(sys.argv) > 2 else "batch34"
+    before = pd.read_csv(before_file, usecols=["key", "L.hiv_art.units_lost", "L.hiv_art.need",
                                                                         "L.hiv_art.cov0", "L.hiv_art.unit_cost"])
     k = before.key.str.split("|", expand=True)
     before = before[(k[1] == PRESET) & (k[2] == "none") & (k[3] == "Sudden (default)")].copy()
@@ -69,7 +71,7 @@ def main():
             "donor_exceeds_pool": bool(L["donor_exceeds_cost"]),
         })
     t = pd.DataFrame(rows).set_index("iso3")
-    t.to_csv(ROOT / "audit" / "logic_review" / "batch34_reconcile.csv")
+    t.to_csv(ROOT / "audit" / "logic_review" / f"{tag}_reconcile.csv")
     pd.set_option("display.width", 250)
     print("| Country | GAM year | People on ART (outside PMTCT) | PEPFAR share of HIV spending | All international share | Model share who stop: before | after | ART full cost/yr: before | after | Cap: external HIV share | Optima HIV spending per person on ART | Donor ART aid exceeds the pool |")
     print("|---|---|---|---|---|---|---|---|---|---|---|---|")

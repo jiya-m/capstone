@@ -205,6 +205,27 @@ first-line drugs plus a viral load test (US$57) and gated to 50-600: median US$2
 Namibia) the Global Fund share understates the treatment share and the floor binds; PEPFAR Expenditure Analysis per
 patient (DR-01) would still settle the level. `batch4b_evidence.md` items 1-2.
 
+## Batch 4b: ART unit cost consistency, malaria and TB explanations (14 October 2026)
+
+Evidence: `batch4b_evidence.md`; scripts `audit/batch4b_art_check.py`, `audit/batch4b_malaria_decomp.py`; before
+snapshot `audit/before_batch4b.csv` (local). Headline = all countries, Full US Exit, central, 2026-30 deaths.
+
+| Item | Status | Commit | Headline after | What changed |
+|---|---|---|---|---|
+| 1 Diagnose the ART cost | ✅ done | `6b652b1` | 1,379,963 (no change) | The item D gate had been applied to the site-level value, so Kenya (644 full) and Uganda (675) passed; observed treatment spending per person on ART (Optima Table B2 or GHED x Global Fund treatment share / UNAIDS people on ART) is available for 43 countries; the GHCC-based full cost is 1.85 times it at the median and above it in 35 of 43 |
+| 2 Fix the ART cost (L-50) | ✅ done | `d30ecab` | 1,648,665 (+19.5%) | Cost per patient-year = the lower of the GHCC-based full cost and observed treatment spending per person on ART (regional median ratio where unavailable), floored at drugs plus viral load (US$57; Global Fund 30 August 2023; CHAI 2015) and gated to US$50-600: median US$274. HIV deaths 669,366 -> 938,069; people who stop ART 3.18M -> 4.56M. HIV baseline only rebuilt (83 entries; 13 lives-first entries moved other lines) |
+| 3 Explain malaria -61% | ✅ done, one fix | `7342148` | 1,695,601 (+2.8%) | Item 6's cap drove it (-48% of the item-2 level), items 1-2 the rest; systems and management shares match the Global Fund malaria mix by construction. Concept mismatch found and fixed: the all-source malaria spending share (household treatment spending 35% at the median, 87% in Nigeria) gave donor-funded nets a pool of 3% of people covered in Nigeria; bednets and spraying now use the external share of public malaria spending (median 0.56). Malaria deaths 143,889 -> 190,824. Malaria baseline only rebuilt (84 entries) |
+| 4 Explain TB | ✅ done | (docs) | no change | The +91% in Batch 3+4 item 5 is the lower course costs (old costs restored: 265,626 vs 463,973); the country RR shares and enrolment are worth -2,000 deaths |
+
+**Open finding L-51 (Minor, Medium confidence).** The donor-funded pool for HIV and immunization still uses the
+external share of all-source spending; GHED's HIV total is "HIV/AIDS and other STDs" with a private share of 67% in
+Nigeria, 49% in Guinea and 44% in Senegal, so the public-spending share (Nigeria 0.55 vs 0.18) would raise the ART
+pool there. Not changed in Batch 4b (malaria scope).
+
+**Updated reconciliation (15 Optima countries):** the model's share of people on ART who stop under Full US Exit is
+21% (weighted) after Batch 4b (13% after Batch 3+4, 21% before it), against PEPFAR's 39% share of HIV spending and
+53% for all international funding; `batch4b_evidence.md`.
+
 ## Summary
 
 | Area | Result |
