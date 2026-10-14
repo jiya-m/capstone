@@ -36,3 +36,5 @@ audit/before_s3.csv
 audit/after_s3.csv
 audit/before_labels.csv
 audit/after_labels.csv
+audit/before_cleanup.csv
+audit/after_cleanup.csv

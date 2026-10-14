@@ -116,6 +116,8 @@ BUCKET_TOTAL_COL = {"HIV": "hiv_dah_23", "TB": "tb_dah_23", "Malaria": "mal_dah_
 # --------------------------------------------------------------------------- #
 # External series (WDI / WHO / UNAIDS / UN IGME via Gapminder's GitHub mirrors)
 # --------------------------------------------------------------------------- #
+# Only these lists are downloaded (download_ext). Series no longer used are kept in ext_data/reference/ and are not in
+# these lists, so a download never puts them back in ext_data/wdi/ or ext_data/sg/.
 WDI = ["sh_dyn_aids_zs", "sh_hiv_artc_zs", "sh_hiv_incd_tl", "sh_hiv_0014", "sh_hiv_pmtc_zs", "sh_tbs_incd",
        "sh_tbs_dtec_zs", "sh_tbs_cure_zs", "sh_mlr_incd_p3", "sh_mlr_nets_zs", "sh_mlr_tret_zs", "sh_imm_idpt",
        "sh_imm_meas", "sh_dyn_mort", "sh_dth_mort", "sp_dyn_cbrt_in", "sp_pop_totl", "sp_pop_1564_to", "sp_pop_0014_to",
