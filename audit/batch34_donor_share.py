@@ -12,6 +12,10 @@ Sources (latest year with data per country):
       2024: (rcvd_tot_gf + rcvd_tot_usaid + rcvd_tot_grnt) / rcvd_tot_sources); if missing, the 2025 budget file's
       expected funding (cf_tot_gf + cf_tot_usaid + cf_tot_grnt) / cf_tot_sources. GHED dis12 as a comparison column.
   Immunization: GHED hc62_ext / hc62 (external funding on immunization programmes / spending on immunization).
+  Malaria prevention lines (bednets, spraying; Batch 4b item 3): the external share of PUBLIC malaria spending,
+      dis13_ext_usd / (dis13_ext_usd + dis13_gghed_usd), because campaign nets and spraying are financed by donors and
+      governments while GHED's all-source malaria total is dominated by household spending on treatment (private share
+      median 35%, Nigeria 87%), which made the pool for donor-funded nets 3% of people covered in Nigeria.
 Countries without a value: the median of the model countries with data in the same WHO region (at least 3), else the
 overall median. Concept note: a spending share is not the share of covered people whose service is donor-funded;
 it is the closest external measure (red-team point 9) and is applied with that label.
@@ -40,7 +44,8 @@ def main():
     ci = pd.read_csv(ROOT / "model_data" / "country_inputs.csv").set_index("iso3")
     d = pd.read_excel(GHED, sheet_name="Data",
                       usecols=["code", "year", "ext", "dis11", "dis12", "dis13", "dis11_ext_ext", "dis12_ext_ext",
-                               "dis13_ext_ext", "hc62", "hc62_ext"])
+                               "dis13_ext_ext", "hc62", "hc62_ext", "dis13_ext_usd", "dis13_gghed_usd", "dis13_pvtd_usd",
+                               "dis13_usd"])
     d = d[d.code.isin(iso_all)]
     t = pd.DataFrame(index=iso_all)
     t["who_region"] = ci.who_region.reindex(iso_all)
@@ -50,6 +55,14 @@ def main():
         s["sh"] = (s.ext * s[dis + "_ext_ext"] / 100 / s[dis]).clip(0, 1)
         la = latest(s)
         t[f"{b}_share"], t[f"{b}_year"] = la.sh.reindex(iso_all), la.year.reindex(iso_all)
+    s = d.dropna(subset=["dis13_ext_usd"]).copy()
+    s["pub"] = s.dis13_ext_usd + s.dis13_gghed_usd.fillna(0)
+    s = s[s.pub > 0]
+    s["sh"] = (s.dis13_ext_usd / s.pub).clip(0, 1)
+    s["priv"] = (s.dis13_pvtd_usd / s.dis13_usd).where(s.dis13_usd > 0)
+    la = latest(s)
+    t["Malaria_prev_share"], t["Malaria_prev_year"] = la.sh.reindex(iso_all), la.year.reindex(iso_all)
+    t["Malaria_private_share"] = la.priv.reindex(iso_all)
     s = d.dropna(subset=["hc62", "hc62_ext"])
     s = s[s.hc62 > 0].copy()
     s["sh"] = (s.hc62_ext / s.hc62).clip(0, 1)
@@ -67,10 +80,10 @@ def main():
     miss = t.TB_share.isna() & lb.sh.reindex(iso_all).notna()
     t.loc[miss, "TB_share"], t.loc[miss, "TB_year"], t.loc[miss, "TB_source"] = lb.sh.reindex(iso_all)[miss], lb.year.reindex(iso_all)[miss], "WHO TB expected funding (budget file)"
     t.loc[t.TB_share.isna(), "TB_source"] = ""
-    for b in ("HIV", "Malaria", "Immunization"):
+    for b in ("HIV", "Malaria", "Malaria_prev", "Immunization"):
         t[f"{b}_source"] = np.where(t[f"{b}_share"].notna(), "WHO GHED", "")
     # fallbacks
-    for b in ("HIV", "TB", "Malaria", "Immunization"):
+    for b in ("HIV", "TB", "Malaria", "Malaria_prev", "Immunization"):
         have = t[t[f"{b}_share"].notna()]
         for iso in t.index[t[f"{b}_share"].isna()]:
             pool = have[have.who_region == t.loc[iso, "who_region"]]
@@ -82,7 +95,7 @@ def main():
     t.index.name = "iso3"
     t.reset_index().to_csv(OUT, index=False)
     pd.set_option("display.width", 250)
-    for b in ("HIV", "TB", "Malaria", "Immunization"):
+    for b in ("HIV", "TB", "Malaria", "Malaria_prev", "Immunization"):
         own = t[f"{b}_source"].str.startswith("WHO")
         print(f"{b}: own value {int(own.sum())} of {len(t)} (years {int(t[f'{b}_year'].min())}-{int(t[f'{b}_year'].max())}); "
               f"median {t.loc[own, f'{b}_share'].median():.2f}, IQR {t.loc[own, f'{b}_share'].quantile(.25):.2f}-{t.loc[own, f'{b}_share'].quantile(.75):.2f}")

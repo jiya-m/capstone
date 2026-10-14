@@ -15,6 +15,7 @@ Columns written (all with a `_source` column saying whether the value is the cou
   tb_dr_cost, tb_dr_cost_lo, tb_dr_cost_hi                   2023 US$ per drug-resistant course
   tb_rr_share, tb_rr_cov                                     RR-TB incidence / all-forms incidence; RR enrolment / RR incidence (WHO 2024)
   donor_share_{hiv,tb,malaria,imm}                           external share of spending on the disease (0-1)
+  donor_share_malaria_prev                                   external share of public malaria spending (bednets, spraying; Batch 4b item 3)
 Called on its own after the evidence tables change; prepare_model.py (full rebuild) does not rebuild these columns.
 """
 from __future__ import annotations
@@ -76,7 +77,7 @@ def apply_art_full(ci: pd.DataFrame) -> pd.DataFrame:
 
 def apply_donor(ci: pd.DataFrame) -> pd.DataFrame:
     t = pd.read_csv(EV / "batch34_donor_share.csv").set_index("iso3").reindex(ci.index)
-    for b, tag in (("HIV", "hiv"), ("TB", "tb"), ("Malaria", "malaria"), ("Immunization", "imm")):
+    for b, tag in (("HIV", "hiv"), ("TB", "tb"), ("Malaria", "malaria"), ("Malaria_prev", "malaria_prev"), ("Immunization", "imm")):
         ci[f"donor_share_{tag}"] = t[f"{b}_share"]
         ci[f"donor_share_{tag}_source"] = t[f"{b}_source"]
         ci[f"donor_share_{tag}_year"] = t[f"{b}_year"]

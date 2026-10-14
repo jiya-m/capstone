@@ -101,8 +101,12 @@ DR_TB_SHARE, DR_TB_COV = 0.04, 0.45     # fallbacks only: countries use WHO's RR
 # shares go to those lines by the country's mix; the testing share is treated like HIV testing-and-care money (kappa
 # of it counts toward the treatment line); the systems share joins HSS money; programme management is non-service
 UNSPEC_TAG = {"HIV": "hiv", "TB": "tb", "Malaria": "malaria"}
-# external (donor) share of the country's spending on each disease: country_inputs.csv donor_share_<tag> (IMP-04)
+# external (donor) share of the country's spending on each disease: country_inputs.csv donor_share_<tag> (IMP-04).
+# Bednets and spraying use the external share of PUBLIC malaria spending (Batch 4b item 3): campaign nets and spraying
+# are financed by donors and governments, while GHED's all-source malaria total is mostly household spending on
+# treatment, which left donor-funded nets a pool of 3% of people covered in Nigeria
 DONOR_SHARE_TAG = {"HIV": "hiv", "TB": "tb", "Malaria": "malaria", "Immunization": "imm"}
+DONOR_SHARE_LINE = {"mal_itn": "malaria_prev", "mal_irs": "malaria_prev"}
 UNSPEC_TREAT = {"HIV": ["hiv_art"], "TB": ["tb_ds", "tb_dr"], "Malaria": ["mal_cm"]}
 UNSPEC_PREV = {"HIV": ["hiv_prev", "hiv_pmtct"], "TB": [], "Malaria": ["mal_itn", "mal_irs"]}
 UNSPEC_TEST_TARGET = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_cm"}
@@ -962,7 +966,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             covered = max(covered - pmtct_covered, 0.0)
         # the donor-funded pool is at most the external share of the country's spending on the disease x the people
         # covered (Batch 3+4, IMP-04 / L-44; GHED and WHO TB financing; 1 if the country has no value)
-        dsh = _v(row, f"donor_share_{DONOR_SHARE_TAG[LINE_BUCKET[l]]}", 1.0)
+        dsh = _v(row, f"donor_share_{DONOR_SHARE_LINE.get(l, DONOR_SHARE_TAG[LINE_BUCKET[l]])}", 1.0)
+        if np.isnan(dsh) and l in DONOR_SHARE_LINE:
+            dsh = _v(row, f"donor_share_{DONOR_SHARE_TAG[LINE_BUCKET[l]]}", 1.0)
         dsh = 1.0 if np.isnan(dsh) else float(np.clip(dsh, 0.0, 1.0))
         donor_share[l] = dsh
         b0 = float(np.asarray(effc_base[l]).ravel()[0])
