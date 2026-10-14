@@ -14,8 +14,9 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from country_lists import ALLOWED_COUNTRIES
-import theme as th
+import budget_section as bs
 import model_section as ms
+import theme as th
 from model_section import chart, pill_row, render_model_section, title_case
 
 # Full-width kwarg differs by Streamlit version (older: use_container_width, 1.50+: width="stretch")
@@ -588,26 +589,6 @@ else:
 # =========================================================================== #
 th.section_header("account_balance", f"Revenue and Spending in {country_name}")
 
-SUM_TOL = 0.5          # percentage points: how far a side's items may be from its total before a warning is logged
-
-
-def _spending_shares(g: pd.DataFrame, where: str) -> pd.Series:
-    """COFOG shares of outlays (label -> %), checked and rescaled to sum to 100. Interest is its own box, so if the
-    shares overshoot 100 by about the interest share, interest is also inside General public services and is taken out
-    of it; any other mismatch is rescaled proportionally. Both are logged."""
-    sh = g.groupby("label", sort=False)["pct_outlays"].sum()
-    tot = float(sh.sum())
-    if abs(tot - 100) > SUM_TOL:
-        intr, gps = sh.get("Interest on public debt", 0.0), sh.get("General public services", 0.0)
-        if intr > 0 and gps >= intr and abs((tot - 100) - intr) <= SUM_TOL:
-            log.warning("%s: COFOG shares sum to %.1f%%; interest (%.1f%%) is counted twice, removing it from general "
-                        "public services", where, tot, intr)
-            sh["General public services"] = gps - intr
-        else:
-            log.warning("%s: COFOG shares sum to %.1f%%, not 100%%; rescaling", where, tot)
-    return sh * 100 / sh.sum()
-
-
 def _budget_section():
     iso = crow["iso3"]
     rev = load_revenue(iso) if REVENUE_DIR.exists() else None
@@ -627,7 +608,7 @@ def _budget_section():
         yr4 = st.selectbox("Year", years_all, index=years_all.index(default_y), key=f"c4_year_{iso}")
     where = f"{iso} {int(yr4)}"
 
-    # ---- WEO (general government) sizes both sides; GDP (constant 2023 US$) turns % of GDP into dollars ----
+    # ---- WEO (general government) totals; GDP (constant 2023 US$) turns % of GDP into dollars ----
     gdp_m, debt_pct, R_w, E_w, NL_w = None, None, None, None, None
     if mac is not None:
         _r = mac[mac["year"] == yr4]
@@ -637,8 +618,7 @@ def _budget_section():
             gdp_m = _f(GDP_COL) * 1e3 if _f(GDP_COL) else None
             debt_pct, R_w, E_w, NL_w = (_f("gov_gross_debt_pct_gdp"), _f("gov_revenue_pct_gdp"),
                                         _f("gov_expenditure_pct_gdp"), _f("gov_net_lending_pct_gdp"))
-    weo = R_w is not None and E_w is not None
-    if weo and NL_w is not None and abs((E_w - R_w) + NL_w) > SUM_TOL:
+    if R_w is not None and E_w is not None and NL_w is not None and abs((E_w - R_w) + NL_w) > bs.SUM_TOL:
         log.warning("%s: WEO expenditure - revenue (%.2f) differs from -net lending (%.2f)", where, E_w - R_w, -NL_w)
 
     def _amt(pct_gdp):
@@ -647,27 +627,18 @@ def _budget_section():
 
     rg = rev[rev["year"] == yr4] if rev is not None else None
     g = spd[spd["year"] == yr4] if spd is not None else None
-    has_rev_mix = rg is not None and not rg.empty
-    has_spd_mix = g is not None and not g.empty
-
-    # ---- side totals (% of GDP) ----
-    if weo:
-        R, T = R_w, E_w
-    else:                       # fallback: each IMF file's own total (they can cover different levels of government)
-        R = float(rg["pct_gdp"].sum()) if has_rev_mix else None
-        T = None
-        if has_spd_mix:
-            if "total_pct_gdp" in g.columns and g["total_pct_gdp"].notna().any():
-                T = float(g["total_pct_gdp"].dropna().iloc[0])
-            else:
-                _both = g[g["pct_gdp"].notna() & (g["pct_outlays"] > 0)]
-                T = float((100 * _both["pct_gdp"] / _both["pct_outlays"]).median()) if len(_both) else None
-    has_rev, has_spd = R is not None, T is not None
-    if not (has_rev or has_spd):
+    # each side: a general-government breakdown scaled to the WEO total, or a central-government breakdown at its own
+    # size plus a grey box for the other levels of government (audit I-10)
+    bx = bs.budget_boxes(rg, g, R_w, E_w, where)
+    rside, sside, gap, weo = bx["rev"], bx["spd"], bx["gap"], bx["weo"]
+    if rside is None and sside is None:
         st.info(f"No IMF revenue or spending data for {country_name} in {int(yr4)}.")
         return
-    can_compare = has_rev and has_spd
-    gap = (T - R) if can_compare else 0.0           # = -WEO net lending when sized from WEO
+    can_compare = rside is not None and sside is not None
+    R = rside["total"] if rside else None
+    T = sside["total"] if sside else None
+    R_pill = R_w if weo else R
+    T_pill = E_w if weo else T
 
     ids, labels, parents, values, colors_, texts, hov = [], [], [], [], [], [], []
 
@@ -679,74 +650,67 @@ def _budget_section():
         hov.append(" | ".join(x for x in (amt, f"{value:.1f}% of GDP", f"{share:.1f}% of this side" if share is not None else "", hover) if x))
 
     node("root", "Government budget", "", 0.0, th.RULE)
-    leaf_sum = {"rev": 0.0, "spd": 0.0}             # what each side's boxes add up to, checked below
-
     no_mix = f" (no breakdown available for {int(yr4)})"
-    # ----- revenue side: WEO total, mix from the revenue file rescaled to it (+ borrowing) -----
-    if has_rev and not has_rev_mix and gap <= 0.05:          # a single item: one box, no empty parent bar
-        node("rev", "Revenue" + no_mix, "root", R, th.OTHER, "the IMF revenue file has no breakdown for this year", R)
-        leaf_sum["rev"] += R
-    elif has_rev:
+    lvl = lambda sd: f" ({sd['level']})" if sd and sd["level"] else ""  # noqa: E731
+    other_hover = ("the IMF WEO general-government total minus the central-government figures: states, provinces, "
+                   "local governments and social security funds, with no breakdown in the IMF data")
+
+    # ----- revenue side (+ borrowing) -----
+    if rside is not None:
         rev_side = R + max(gap, 0.0)
-        node("rev", "Money In: revenue + borrowing" if gap > 0.05 else "Money In: revenue", "root", rev_side,
-             th.blend(th.BLUE, 0.12), f"Revenue alone: {_amt(R) + ' = ' if gdp_m else ''}{R:.1f}% of GDP", rev_side)
-        if has_rev_mix:
-            items = rg.groupby(["label", "group"], sort=False)["pct_gdp"].sum().reset_index()
-            mix_tot = float(items["pct_gdp"].sum())
-            if "total_pct_gdp" in rg.columns and rg["total_pct_gdp"].notna().any() and \
-                    abs(mix_tot - float(rg["total_pct_gdp"].dropna().iloc[0])) > SUM_TOL:
-                log.warning("%s: revenue items sum to %.2f%% of GDP, file total is %.2f%%", where, mix_tot,
-                            float(rg["total_pct_gdp"].dropna().iloc[0]))
-            items["v"] = items["pct_gdp"] * (R / mix_tot) if mix_tot > 0 else 0.0
-            for _, r in items.iterrows():              # taxes sit directly on the revenue side, in blues
-                is_tax = r["group"] == "Taxes"
-                node(f"rev:{r['label']}", r["label"], "rev", r["v"],
-                     REV_TAX_COLORS.get(r["label"], th.blend(th.BLUE, 0.6)) if is_tax else REV_GROUP_COLORS.get(r["group"], th.OTHER),
-                     "not broken out by the IMF" if r["group"] == "Unclassified" else "", rev_side)
-                leaf_sum["rev"] += r["v"]
+        if rside["items"] is None and gap <= 0.05:             # a single item: one box, no empty parent bar
+            node("rev", "Revenue" + no_mix, "root", R, th.OTHER, "the IMF revenue file has no breakdown for this year", R)
         else:
-            node("rev:all", "Revenue" + no_mix, "rev", R, th.OTHER, "the IMF revenue file has no breakdown for this year", rev_side)
-            leaf_sum["rev"] += R
-        if gap > 0.05:
-            node("rev:debt", "Borrowing (spending beyond revenue)", "rev", gap, BORROWING_COLOR,
-                 "Spending exceeded revenue by this much; financed by new borrowing or drawing down reserves", rev_side)
-            leaf_sum["rev"] += gap
+            node("rev", ("Money In: Revenue" + lvl(rside)) + (" + Borrowing" if gap > 0.05 else ""), "root", rev_side,
+                 th.blend(th.BLUE, 0.12), f"Revenue alone: {_amt(R) + ' = ' if gdp_m else ''}{R:.1f}% of GDP", rev_side)
+            if rside["items"] is not None:
+                for _, r in rside["items"].iterrows():          # taxes sit directly on the revenue side, in blues
+                    is_tax = r["group"] == "Taxes"
+                    node(f"rev:{r['label']}", r["label"], "rev", r["v"],
+                         REV_TAX_COLORS.get(r["label"], th.blend(th.BLUE, 0.6)) if is_tax else REV_GROUP_COLORS.get(r["group"], th.OTHER),
+                         "not broken out by the IMF" if r["group"] == "Unclassified" else "", rev_side)
+                if rside["other"] > 0:
+                    node("rev:other", bs.OTHER_LEVELS, "rev", rside["other"], th.RULE, other_hover, rev_side)
+            else:
+                node("rev:all", "Revenue" + no_mix, "rev", R, th.OTHER, "the IMF revenue file has no breakdown for this year", rev_side)
+            if gap > 0.05:
+                node("rev:debt", "Borrowing (spending beyond revenue)", "rev", gap, BORROWING_COLOR,
+                     "Spending exceeded revenue by this much; financed by new borrowing or drawing down reserves", rev_side)
 
-    # ----- spending side: WEO total, mix from COFOG rescaled to it (+ surplus) -----
+    # ----- spending side (+ surplus) -----
     health_pct = None
-    if has_spd and not has_spd_mix and gap >= -0.05:         # a single item: one box, no empty parent bar
-        node("spd", "Spending" + no_mix, "root", T, th.OTHER, "no IMF spending-by-function data for this year", T)
-        leaf_sum["spd"] += T
-    elif has_spd:
+    if sside is not None:
         spd_side = T + max(-gap, 0.0)
-        node("spd", "Money out: spending + surplus" if gap < -0.05 else "Money out: spending", "root", spd_side,
-             th.blend(th.MUTED, 0.12), f"Spending alone: {_amt(T) + ' = ' if gdp_m else ''}{T:.1f}% of GDP", spd_side)
-        if has_spd_mix:
-            sh = _spending_shares(g, where)
-            grp = g.groupby("label", sort=False)["group"].first()
-            hl = [l for l in sh.index if grp[l] == "Health"]
-            if hl:
-                health_pct = float(sh[hl].sum()) / 100 * T
-                node("spd:Health", "Health", "spd", health_pct, th.ROSE, side_total=spd_side)
-            for lab, v in sh.items():
-                is_h = grp[lab] == "Health"
-                node(f"spd:{lab}", lab, "spd:Health" if is_h else "spd", v / 100 * T,
-                     th.OTHER if grp[lab] == "Unclassified" else (HEALTH_REDS.get(lab, th.ROSE) if is_h else OTHER_FUNCS.get(lab, th.OTHER)),
-                     "not reported by the IMF for this country-year" if grp[lab] == "Unclassified" else
-                     ("debt interest, split out of general public services" if lab == "Interest on public debt" else ""), spd_side)
-                leaf_sum["spd"] += v / 100 * T
+        if sside["items"] is None and gap >= -0.05:            # a single item: one box, no empty parent bar
+            node("spd", "Spending" + no_mix, "root", T, th.OTHER, "no IMF spending-by-function data for this year", T)
         else:
-            node("spd:all", "Spending" + no_mix, "spd", T, th.OTHER, "no IMF spending-by-function data for this year", spd_side)
-            leaf_sum["spd"] += T
-        if gap < -0.05:
-            node("spd:surplus", "Surplus (revenue not spent)", "spd", -gap, th.blend(th.TEAL, 0.45),
-                 "Revenue exceeded spending by this much (saved or used to pay down debt)", spd_side)
-            leaf_sum["spd"] += -gap
+            node("spd", ("Money Out: Spending" + lvl(sside)) + (" + Surplus" if gap < -0.05 else ""), "root", spd_side,
+                 th.blend(th.MUTED, 0.12), f"Spending alone: {_amt(T) + ' = ' if gdp_m else ''}{T:.1f}% of GDP", spd_side)
+            if sside["items"] is not None:
+                it = sside["items"]
+                hl = it[it["group"] == "Health"]
+                if len(hl):
+                    health_pct = float(hl["v"].sum())
+                    node("spd:Health", "Health", "spd", health_pct, th.ROSE, side_total=spd_side)
+                for _, r in it.iterrows():
+                    lab, is_h = r["label"], r["group"] == "Health"
+                    node(f"spd:{lab}", lab, "spd:Health" if is_h else "spd", r["v"],
+                         th.OTHER if r["group"] == "Unclassified" else (HEALTH_REDS.get(lab, th.ROSE) if is_h else OTHER_FUNCS.get(lab, th.OTHER)),
+                         "not reported by the IMF for this country-year" if r["group"] == "Unclassified" else
+                         ("debt interest, split out of general public services" if lab == "Interest on public debt" else ""), spd_side)
+                if sside["other"] > 0:
+                    node("spd:other", bs.OTHER_LEVELS, "spd", sside["other"], th.RULE, other_hover, spd_side)
+            else:
+                node("spd:all", "Spending" + no_mix, "spd", T, th.OTHER, "no IMF spending-by-function data for this year", spd_side)
+            if gap < -0.05:
+                node("spd:surplus", "Surplus (revenue not spent)", "spd", -gap, th.blend(th.TEAL, 0.45),
+                     "Revenue exceeded spending by this much (saved or used to pay down debt)", spd_side)
 
-    # every side's boxes must add up to that side's total
-    for side_id, side_tot in (("rev", R + max(gap, 0.0) if has_rev else None), ("spd", T + max(-gap, 0.0) if has_spd else None)):
-        if side_tot is not None and abs(leaf_sum[side_id] - side_tot) > 0.01:
-            log.warning("%s: %s boxes add up to %.2f%% of GDP, side total is %.2f%%", where, side_id, leaf_sum[side_id], side_tot)
+    # every side's boxes must add up to that side's total (audit/checks.py checks this for every country-year)
+    for name, sd in (("revenue", rside), ("spending", sside)):
+        if sd is not None and abs(bs.side_box_sum(sd) - sd["total"]) > 0.01:
+            log.warning("%s: %s boxes add up to %.2f%% of GDP, side total is %.2f%%", where, name, bs.side_box_sum(sd),
+                        sd["total"])
 
     # parents hold (slightly more than) the sum of their children, computed bottom-up so branchvalues="total" always validates
     acc = {}
@@ -763,25 +727,27 @@ def _budget_section():
     fig4.update_layout(title=dict(text=f"Government Revenue and Spending, {int(yr4)}"), height=720,
                        margin=dict(l=0, r=0, t=50, b=0),
                        uniformtext=dict(minsize=11, mode="hide"))     # boxes too small for text: hover only
-    chart(fig4, source="IMF World Economic Outlook (totals); IMF World Revenue Longitudinal Data (revenue mix); IMF "
-                       "Government Finance Statistics, COFOG (spending mix); constant 2023 US$.")
+    chart(fig4, source="IMF World Economic Outlook (general-government totals); IMF World Revenue Longitudinal Data "
+                       "(revenue mix); IMF Government Finance Statistics, COFOG (spending mix); constant 2023 US$.")
 
-    # ---------------- headline numbers ----------------
+    # ---------------- headline numbers (IMF WEO, general government) ----------------
     mix = []
-    if has_rev_mix:
-        mix.append(f"revenue mix: IMF revenue data ({rg['coverage'].iloc[0].lower()})")
-    if has_spd_mix:
-        mix.append(f"spending mix: IMF COFOG ({g['coverage'].iloc[0].lower()})")
+    if rside is not None and rside["level"]:
+        mix.append(f"revenue breakdown: IMF revenue data, {rside['level'].lower()}"
+                   + (" at its own size" if rside["level"] == "Central Government" and weo else ""))
+    if sside is not None and sside["level"]:
+        mix.append(f"spending breakdown: IMF COFOG, {sside['level'].lower()}"
+                   + (" at its own size" if sside["level"] == "Central Government" and weo else ""))
     size = ("Totals: IMF World Economic Outlook, general government" if weo else
             "Totals: the IMF revenue and spending files (WEO totals missing for this year)")
     _basis = f"{size}; {'; '.join(mix)}." + (" Dollar amounts = share of GDP x GDP in constant 2023 US$." if gdp_m else "")
     def _v(pct):
         return _amt(pct) if gdp_m else f"{pct:.1f}% of GDP"
     pills = []
-    if has_rev:
-        pills.append((f"Revenue, {int(yr4)}", _v(R), f"{R:.1f}% of GDP", _basis))
-    if has_spd:
-        pills.append((f"Spending, {int(yr4)}", _v(T), f"{T:.1f}% of GDP", _basis))
+    if R_pill is not None:
+        pills.append((f"Revenue, {int(yr4)}", _v(R_pill), f"{R_pill:.1f}% of GDP", _basis))
+    if T_pill is not None:
+        pills.append((f"Spending, {int(yr4)}", _v(T_pill), f"{T_pill:.1f}% of GDP", _basis))
     if can_compare:
         gap_src = ("IMF WEO net borrowing, general government." if weo else "Spending file minus revenue file; they can "
                    "cover different levels of government, so treat it as a rough indication.")
@@ -791,12 +757,19 @@ def _budget_section():
                       "IMF World Economic Outlook; the stock of debt outstanding."))
     pill_row(pills)
 
+    if bx["caption"]:
+        st.caption(bx["caption"])
+    for sd in (rside, sside):
+        if sd is not None and sd["note"]:
+            st.caption(sd["note"])
+    if any(sd is not None and sd["other"] > 0 for sd in (rside, sside)):
+        st.caption("Grey box: the rest of the IMF WEO general-government total (states, provinces, local governments, "
+                   "social security funds), which the central-government breakdown does not cover.")
     if can_compare and gap > 0.05:
-        st.caption(f"Both sides are drawn to the same scale; the dark purple box is borrowing: {_v(gap)} "
-                   f"({gap:.1f}% of GDP)." if gdp_m else
-                   f"Both sides are drawn to the same scale; the dark purple box is borrowing: {gap:.1f}% of GDP.")
+        st.caption(f"The dark purple box is borrowing: {_v(gap)} ({gap:.1f}% of GDP)." if gdp_m else
+                   f"The dark purple box is borrowing: {gap:.1f}% of GDP.")
     elif can_compare and gap < -0.05:
-        st.caption(f"Both sides are drawn to the same scale; the green box is the surplus: {_v(-gap)}.")
+        st.caption(f"The green box is the surplus: {_v(-gap)}.")
     if not weo:
         st.caption("The IMF World Economic Outlook has no general-government totals for this year, so each side is "
                    "sized from its own IMF file, and the two can cover different levels of government.")

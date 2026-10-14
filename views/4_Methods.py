@@ -204,9 +204,17 @@ with tabs[1]:
        of government (general government). Revenue = `gov_revenue_pct_gdp`; spending = `gov_expenditure_pct_gdp`.
     2. Borrowing (deficit) = spending - revenue, which equals minus the WEO net lending figure. It is drawn on the
        revenue side (dark purple), so both sides are the same size. A surplus is drawn on the spending side.
-    3. The revenue and COFOG files supply only the **mix** inside each side: each item's share of its file's total is
-       applied to the WEO total. (The two files often cover different levels of government, for example central
-       government for revenue and general government for spending, so their own totals are not comparable.)
+    3. Each side's breakdown depends on the level of government the IMF file covers that year (the side's label
+       says which):
+       - **General government** (same level as the WEO): the breakdown is used and scaled to the WEO total, which only
+         reconciles the small differences between the two IMF sources.
+       - **Central government**: the breakdown is shown at its own size and is never stretched to the
+         general-government total. One grey box, "Other Levels of Government (no breakdown)", holds the rest of the
+         WEO total (states, provinces, local governments, social security funds).
+       - If the central total is larger than the WEO total, the central breakdown is shown alone, with a short note.
+       If the two sides come from different levels of government, a caption says so. The pills always show the WEO
+       general-government revenue, spending and borrowing. `audit/checks.py` checks that each side's boxes add up to
+       its WEO total, grey box included.
     4. Interest on public debt is its own box and is not also counted inside General Public Services. If the COFOG
        shares add to more than 100%, the app rescales them to 100% and logs a warning.
     5. Dollar amounts = share of GDP x GDP in constant 2023 US$.

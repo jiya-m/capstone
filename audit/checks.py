@@ -49,8 +49,10 @@ RESPONSES = {
 rows: list[dict] = []
 
 
-def rec(iso, preset, resp, check, ok, value="", detail=""):
+def rec(iso, preset, resp, check, ok, value="", detail="", warning=False):
+    """warning=True: the check passes but is reported as a warning (a known, tolerated difference)."""
     rows.append({"iso3": iso, "preset": preset, "response": resp, "check": check, "pass": bool(ok),
+                 "warning": bool(warning and ok),
                  "value": value if isinstance(value, str) else f"{value:.6g}" if value == value else "nan",
                  "detail": detail})
 
@@ -511,8 +513,11 @@ def main():
                 s1 = r["dah_total_mean"]
                 if s1 and s1 > 0:
                     s2 = float(s2y.get(r["year"], 0.0))
-                    rec(iso, str(int(r["year"])), "", "section1_dah_equals_section2_dah_same_year", close(s2, s1, 0.02),
-                        s2 / s1, f"Section 2 {s2 / 1e3:.2f}M vs Section 1 {s1 / 1e3:.2f}M")
+                    # within 2%: pass; 2-5%: pass with a warning (IHME's two products round and process differently
+                    # in a few small countries); over 5%: fail
+                    rec(iso, str(int(r["year"])), "", "section1_dah_equals_section2_dah_same_year", close(s2, s1, 0.05),
+                        s2 / s1, f"Section 2 {s2 / 1e3:.2f}M vs Section 1 {s1 / 1e3:.2f}M",
+                        warning=not close(s2, s1, 0.02))
     # Section 3: WEO identity, revenue items vs file total, COFOG shares, and the default year's coverage levels
     for iso in CI.index:
         mf, rf, cf = (ROOT / d / f"{iso}.csv" for d in ("macro_data", "revenue_data", "cofog_all"))
@@ -540,22 +545,65 @@ def main():
             if g["total_pct_gdp"].notna().any():
                 d = g["pct_gdp"].sum() - g["total_pct_gdp"].dropna().iloc[0]
                 rec(iso, str(y), "", "section3_revenue_items_sum_to_file_total", abs(d) <= 0.5, d, g["coverage"].iloc[0])
-            rec(iso, str(y), "", "section3_revenue_mix_is_general_government",
-                "general" in str(g["coverage"].iloc[0]).lower(), "", f"revenue file coverage: {g['coverage'].iloc[0]}")
+
         if spd is not None and y in sy:
             g = spd[spd.year == y]
             s = g["pct_outlays"].sum()
             rec(iso, str(y), "", "section3_cofog_shares_sum_to_100", abs(s - 100) <= 0.5, s)
-            rec(iso, str(y), "", "section3_spending_mix_is_general_government",
-                "general" in str(g["coverage"].iloc[0]).lower(), "", f"COFOG coverage: {g['coverage'].iloc[0]}")
+
+
+    # Section 3 (I-10): every country-year with a breakdown, each side's boxes (items + the grey "other levels" box)
+    # add up to that side's IMF WEO general-government total; a central-government breakdown is never rescaled; where
+    # the central total is above WEO, it is shown alone (total = the central total) with a note
+    import budget_section as bs
+    levels = {"rev": {}, "spd": {}}
+    for iso in CI.index:
+        mf, rf, cf = (ROOT / d / f"{iso}.csv" for d in ("macro_data", "revenue_data", "cofog_all"))
+        if not mf.exists():
+            continue
+        mac = pd.read_csv(mf).set_index("year")
+        rev = pd.read_csv(rf) if rf.exists() else None
+        spd = pd.read_csv(cf) if cf.exists() else None
+        years = sorted(set(rev.year if rev is not None else []) | set(spd.year if spd is not None else []))
+        for y in years:
+            R_w = mac.at[y, "gov_revenue_pct_gdp"] if y in mac.index else np.nan
+            E_w = mac.at[y, "gov_expenditure_pct_gdp"] if y in mac.index else np.nan
+            if pd.isna(R_w) or pd.isna(E_w):
+                continue
+            rg = rev[rev.year == y] if rev is not None else None
+            g = spd[spd.year == y] if spd is not None else None
+            bx = bs.budget_boxes(rg, g, float(R_w), float(E_w), f"{iso} {y}")
+            for k, weo_t, raw in (("rev", float(R_w), rg), ("spd", float(E_w), g)):
+                sd = bx[k]
+                if sd is None or raw is None or raw.empty:
+                    continue
+                levels[k].setdefault(iso, {})[y] = sd["level"]
+                boxes = bs.side_box_sum(sd)
+                want = sd["total"] if sd["note"] else weo_t
+                # 0.01 points of GDP: the grey box is left out when under 0.005 (rounding between the two IMF files)
+                ok = abs(boxes - want) <= 0.01 and (sd["note"] is None or sd["total"] > weo_t)
+                rec(iso, str(y), k, "section3_side_boxes_sum_to_weo_total", ok, boxes - want,
+                    f"{sd['level']}: boxes {boxes:.2f}% of GDP (grey {sd['other']:.2f}), WEO {weo_t:.2f}%"
+                    + ("; central above WEO, shown alone" if sd["note"] else ""))
+                if sd["level"] == "Central Government" and sd["items"] is not None:
+                    own = sd["items"]["pct_gdp"].sum()
+                    rec(iso, str(y), k, "section3_central_breakdown_not_rescaled",
+                        abs(sd["items"]["v"].sum() - own) <= 1e-9, sd["items"]["v"].sum() - own)
+    for k, name in (("rev", "revenue"), ("spd", "spending")):
+        latest = {iso: ys[max(ys)] for iso, ys in levels[k].items()}
+        n_g = sum(v == "General Government" for v in latest.values())
+        n_c = sum(v == "Central Government" for v in latest.values())
+        rec("ALL", "", k, f"section3_{name}_breakdown_levels", True, n_g,
+            f"latest year: general government {n_g}, central government {n_c} countries")
 
     out = pd.DataFrame(rows)
     out.to_csv(OUT / f"checks_results{SUFFIX}.csv", index=False)
-    summ = (out.groupby("check")["pass"].agg(runs="size", passed="sum").assign(failed=lambda d: d.runs - d.passed)
-            .sort_values("failed", ascending=False))
+    summ = (out.groupby("check").agg(runs=("pass", "size"), passed=("pass", "sum"), warnings=("warning", "sum"))
+            .assign(failed=lambda d: d.runs - d.passed)[["runs", "passed", "failed", "warnings"]]
+            .sort_values(["failed", "warnings"], ascending=False))
     summ.to_csv(OUT / f"checks_summary{SUFFIX}.csv")
-    lines_md = ["| Check | Runs | Passed | Failed |", "|---|---|---|---|"]
-    lines_md += [f"| {k} | {r.runs} | {r.passed} | {r.failed} |" for k, r in summ.iterrows()]
+    lines_md = ["| Check | Runs | Passed | Failed | Warnings |", "|---|---|---|---|---|"]
+    lines_md += [f"| {k} | {r.runs} | {r.passed} | {r.failed} | {r.warnings} |" for k, r in summ.iterrows()]
     (OUT / f"checks_summary{SUFFIX}.md").write_text("\n".join(lines_md) + "\n")
     print(summ.to_string())
     print(f"done in {time.time() - t0:.0f}s; {len(out)} rows")
