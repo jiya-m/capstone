@@ -149,6 +149,13 @@ scenario 5 also drops initiations to zero and counts six years (2025-2030).
 keeps rising to year 8 instead of staying at 5%). TB, malaria and vaccine deaths unchanged. Every preset and the
 five focus countries: `batch2_before_after.md`.
 
+**Checks after Batch 2.** `audit/checks.py --full`: 59 checks, 76,501 rows, 0 failures, 6 known warnings (Section 1 vs
+Section 2 DAH). 357 tests pass; `tests/baseline_sudden.json` refreshed with `--hiv` (84 of 99 entries; no non-HIV
+line moved, including under lives first). Snapshot `audit/before_batch2.csv` vs `audit/after_batch2.csv` (local):
+287,674 of 3,227,070 values changed, all on the HIV treatment line, the HIV bucket, the HIV path, the totals and
+ranges built from them, further deaths and the HIV US$1M card; no money, people, coverage, fiscal, TB, malaria or
+vaccine value changed. Commits: evidence `c625037`, implementation `49767e9`.
+
 ## Summary
 
 | Area | Result |
