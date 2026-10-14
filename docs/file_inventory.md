@@ -51,12 +51,9 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `audit/snapshot_numbers.py` | 7 KB | offline (code) | audit/test/prep script, run by hand |
 | `budget_section.py` | 7 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `cofog_all/ (46 files)` | 0.92 MB | runtime (data) | folder read by: views/1_Dashboard.py; offline: audit/checks.py |
-| `cofog_data/ (20 files)` | 39 KB | unused | folder read by: - |
 | `country_data/ (72 files)` | 83.53 MB | runtime (data) | folder read by: views/1_Dashboard.py; offline: audit/checks.py |
-| `country_inputs.csv` | 83 KB | unused | stale copy (2026-10-07); every read and write uses model_data/country_inputs.csv |
 | `country_lists.py` | 2 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
-| `dah_lines.csv` | 2.66 MB | unused | stale copy (2026-10-07); every read and write uses model_data/dah_lines.csv |
-| `data_notes.txt` | 0 KB | unused | empty file |
+| `docs/file_inventory.md` | 23 KB | docs | documentation |
 | `ext_data/gho/HIV_0000000001.csv` | 0.12 MB | runtime (data) | read by: views/4_Methods.py; offline: who_inputs.py |
 | `ext_data/gho/HIV_0000000016.csv` | 31 KB | runtime (data) | read by: views/4_Methods.py; offline: who_inputs.py |
 | `ext_data/gho/HIV_0000000020.csv` | 34 KB | runtime (data) | read by: views/4_Methods.py; offline: who_inputs.py |
@@ -72,20 +69,14 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `ext_data/map/pf_cases.csv` | 0.28 MB | runtime (data) | read by: views/3_Validation.py, malaria_inputs.py; offline: tests/test_malaria.py |
 | `ext_data/map/pv_cases.csv` | 0.27 MB | runtime (data) | read by: views/3_Validation.py, malaria_inputs.py; offline: tests/test_malaria.py |
 | `ext_data/map/treatment.csv` | 0.34 MB | runtime (data) | read by: views/3_Validation.py, views/4_Methods.py, model_section.py, health_model.py, malaria_inputs.py; offline: prepare_model.py, audit/archive/analysis.py, audit/checks.py, audit/make_inventory.py, audit/recompute.py, tests/make_baseline.py, tests/test_malaria.py, tests/test_paths.py |
+| `ext_data/reference/README.md/ (0 files)` | 5 KB | reference (not used by code) | kept as benchmarks / cross-checks; see ext_data/reference/README.md |
+| `ext_data/reference/sg/ (9 files)` | 0.92 MB | reference (not used by code) | kept as benchmarks / cross-checks; see ext_data/reference/README.md |
+| `ext_data/reference/wdi/ (7 files)` | 0.74 MB | reference (not used by code) | kept as benchmarks / cross-checks; see ext_data/reference/README.md |
 | `ext_data/sg/ddf--datapoints--all_forms_of_tb_incidence_estimated--by--geo--time.csv` | 73 KB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, audit/recompute.py |
 | `ext_data/sg/ddf--datapoints--all_forms_of_tb_number_of_deaths_estimated--by--geo--time.csv` | 69 KB | offline (data) | read by: -; offline: prepare_model.py |
-| `ext_data/sg/ddf--datapoints--all_forms_of_tb_treatment_coverage_percent--by--geo--time.csv` | 60 KB | unused | read by: - |
-| `ext_data/sg/ddf--datapoints--annual_hiv_deaths_number_all_ages--by--geo--time.csv` | 42 KB | unused | read by: - |
-| `ext_data/sg/ddf--datapoints--hiv_deaths_in_children_1_59_months_total_deaths--by--geo--time.csv` | 67 KB | unused | read by: - |
 | `ext_data/sg/ddf--datapoints--malaria_deaths_in_children_1_59_months_total_deaths--by--geo--time.csv` | 54 KB | offline (data) | read by: -; offline: prepare_model.py |
-| `ext_data/sg/ddf--datapoints--malaria_number_of_cases_reported--by--geo--time.csv` | 24 KB | unused | read by: - |
-| `ext_data/sg/ddf--datapoints--malaria_number_of_deaths_reported--by--geo--time.csv` | 10 KB | unused | read by: - |
 | `ext_data/sg/ddf--datapoints--measles_deaths_in_children_1_59_months_total_deaths--by--geo--time.csv` | 60 KB | offline (data) | read by: -; offline: prepare_model.py |
-| `ext_data/sg/ddf--datapoints--meningitis_deaths_in_children_1_59_months_total_deaths--by--geo--time.csv` | 75 KB | unused | read by: - |
-| `ext_data/sg/ddf--datapoints--newly_hiv_infected_number_all_ages--by--geo--time.csv` | 48 KB | unused | read by: - |
-| `ext_data/sg/ddf--datapoints--number_of_child_deaths--by--geo--time.csv` | 0.59 MB | unused | read by: - |
 | `ext_data/sg/ddf--datapoints--people_living_with_hiv_number_all_ages--by--geo--time.csv` | 49 KB | offline (data) | read by: -; offline: prepare_model.py |
-| `ext_data/sg/ddf--datapoints--pertussis_deaths_in_children_1_59_months_total_deaths--by--geo--time.csv` | 2 KB | unused | read by: - |
 | `ext_data/sg/ddf--datapoints--pneumonia_deaths_in_children_1_59_months_total_deaths--by--geo--time.csv` | 79 KB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/sg/ddf--datapoints--tb_hivplus_incidence_estimated--by--geo--time.csv` | 57 KB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/sg/ddf--datapoints--tb_hivplus_number_of_deaths_estimated--by--geo--time.csv` | 56 KB | offline (data) | read by: -; offline: prepare_model.py |
@@ -94,18 +85,13 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `ext_data/wdi/gc_rev_xgrt_gd_zs.csv` | 83 KB | runtime (data) | read by: health_model.py; offline: prepare_model.py |
 | `ext_data/wdi/gc_xpn_intp_rv_zs.csv` | 77 KB | offline (data) | read by: -; offline: prepare_model.py, fiscal_inputs.py, audit/archive/analysis.py, tests/test_fiscal.py |
 | `ext_data/wdi/gc_xpn_totl_gd_zs.csv` | 79 KB | offline (data) | read by: -; offline: prepare_model.py |
-| `ext_data/wdi/ny_gdp_pcap_cd.csv` | 0.23 MB | unused | read by: - |
-| `ext_data/wdi/sh_dth_comm_zs.csv` | 19 KB | unused | read by: - |
-| `ext_data/wdi/sh_dth_imrt.csv` | 0.16 MB | unused | read by: - |
 | `ext_data/wdi/sh_dth_mort.csv` | 0.16 MB | runtime (data) | read by: health_model.py; offline: prepare_model.py |
 | `ext_data/wdi/sh_dyn_aids_zs.csv` | 68 KB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/wdi/sh_dyn_mort.csv` | 0.16 MB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, audit/archive/analysis.py, audit/recompute.py |
-| `ext_data/wdi/sh_dyn_nmrt.csv` | 0.14 MB | unused | read by: - |
 | `ext_data/wdi/sh_hiv_0014.csv` | 43 KB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/wdi/sh_hiv_artc_zs.csv` | 41 KB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, who_inputs.py, audit/archive/analysis.py, audit/checks.py, audit/recompute.py |
 | `ext_data/wdi/sh_hiv_incd_tl.csv` | 70 KB | runtime (data) | read by: health_model.py; offline: prepare_model.py, audit/archive/analysis.py, audit/recompute.py |
 | `ext_data/wdi/sh_hiv_pmtc_zs.csv` | 24 KB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, who_inputs.py, audit/archive/analysis.py, audit/checks.py, audit/recompute.py |
-| `ext_data/wdi/sh_imm_hepb.csv` | 56 KB | unused | read by: - |
 | `ext_data/wdi/sh_imm_idpt.csv` | 97 KB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, audit/checks.py, audit/recompute.py |
 | `ext_data/wdi/sh_imm_meas.csv` | 95 KB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/wdi/sh_mlr_incd_p3.csv` | 38 KB | runtime (data) | read by: model_section.py, malaria_inputs.py; offline: prepare_model.py, audit/archive/analysis.py |
@@ -116,8 +102,6 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `ext_data/wdi/sh_tbs_dtec_zs.csv` | 60 KB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, audit/checks.py, audit/recompute.py |
 | `ext_data/wdi/sh_tbs_incd.csv` | 65 KB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/wdi/sh_uhc_sci.csv` | 56 KB | offline (data) | read by: -; offline: prepare_model.py |
-| `ext_data/wdi/sh_uhc_sci_id.csv` | 56 KB | unused | read by: - |
-| `ext_data/wdi/sh_xpd_ghed_gd_zs.csv` | 77 KB | unused | read by: - |
 | `ext_data/wdi/sh_xpd_ghed_ge_zs.csv` | 79 KB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, audit/checks.py, audit/make_inventory.py |
 | `ext_data/wdi/sp_dyn_cbrt_in.csv` | 0.21 MB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/wdi/sp_dyn_cdrt_in.csv` | 0.21 MB | offline (data) | read by: -; offline: prepare_model.py |
@@ -125,8 +109,7 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `ext_data/wdi/sp_pop_1564_to.csv` | 0.23 MB | offline (data) | read by: -; offline: prepare_model.py |
 | `ext_data/wdi/sp_pop_totl.csv` | 0.24 MB | runtime (data) | read by: model_section.py, health_model.py; offline: prepare_model.py, who_inputs.py, audit/archive/analysis.py, audit/make_inventory.py, audit/recompute.py |
 | `fiscal_inputs.py` | 7 KB | offline (code) | audit/test/prep script, run by hand |
-| `health_model.py` | 78 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
-| `ihme_trend.csv` | 38 KB | unused | stale copy (2026-10-07); every read and write uses model_data/ihme_trend.csv |
+| `health_model.py` | 77 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `macro_data/ (72 files)` | 0.27 MB | runtime (data) | folder read by: views/1_Dashboard.py, health_model.py; offline: fiscal_inputs.py, add_constant_dollars.py, audit/checks.py, tests/test_minor.py |
 | `macro_data/weo_fiscal/weo_balances.csv` | 0.45 MB | offline (data) | folder read by: -; offline: fiscal_inputs.py |
 | `malaria_inputs.py` | 9 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
@@ -145,15 +128,8 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `model_data/regressions.json` | 5 KB | runtime (data) | read by: views/4_Methods.py, model_section.py, health_model.py; offline: prepare_model.py, audit/make_inventory.py |
 | `model_params.csv` | 10 KB | runtime (data) | read by: model_section.py, health_model.py |
 | `model_section.py` | 0.12 MB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
-| `panel.csv` | 0.89 MB | unused | stale copy (2026-10-07); every read and write uses model_data/panel.csv |
 | `paths_ui.py` | 16 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
-| `prepare_model.py` | 36 KB | offline (code) | audit/test/prep script, run by hand |
-| `prior_dashboard_versions/kenya_health_data.csv` | 6 KB | unused | earlier dashboard versions; no code imports or reads them |
-| `prior_dashboard_versions/version_1.py` | 25 KB | unused | earlier dashboard versions; no code imports or reads them |
-| `prior_dashboard_versions/version_2.py` | 20 KB | unused | earlier dashboard versions; no code imports or reads them |
-| `prior_dashboard_versions/version_3.py` | 31 KB | unused | earlier dashboard versions; no code imports or reads them |
-| `prior_dashboard_versions/version_4.py` | 41 KB | unused | earlier dashboard versions; no code imports or reads them |
-| `regressions.json` | 3 KB | unused | stale copy (2026-10-07); every read and write uses model_data/regressions.json |
+| `prepare_model.py` | 37 KB | offline (code) | audit/test/prep script, run by hand |
 | `requirements.txt` | 0 KB | config | Streamlit / Codespaces / git configuration |
 | `revenue_data/ (71 files)` | 1.77 MB | runtime (data) | folder read by: views/1_Dashboard.py; offline: audit/checks.py |
 | `scenarios.py` | 11 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
@@ -175,3 +151,18 @@ Every tracked file, whether it is used when the app runs, only by offline script
 | `views/3_Validation.py` | 22 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `views/4_Methods.py` | 66 KB | runtime (code) | imported by app.py / views/ (directly or through model_section, health_model) |
 | `who_inputs.py` | 7 KB | offline (code) | audit/test/prep script, run by hand |
+
+## Folder structure and data flow
+
+Files stay where they are (moving them would break imports or the paths quoted on the Methods page and in `audit/`);
+this is how the folders fit together.
+
+| Stage | Where | What |
+|---|---|---|
+| 1. Raw downloads (untracked) | `datasets/` | IHME DAH, health spending, expected spending and GDP; MAP; KFF tracker; team MOU sheet; Gavi financials; IMF WoRLD and WEO; WHO World Malaria Report. Never committed; see README for where to get each. |
+| 2. Preparation scripts | `prepare_model.py`, `who_inputs.py`, `malaria_inputs.py`, `fiscal_inputs.py`, `add_constant_dollars.py` (repo root) | Read `datasets/` and the processed series below, write `model_data/`. `prepare_model.py` calls `who_inputs.apply()`, which calls `malaria_inputs.apply()` and `fiscal_inputs.apply()`. |
+| 3. Processed inputs (tracked) | `ext_data/` (WDI, WHO GHO, Gapminder, MAP series; `reference/` = unused series), `macro_data/` (IMF WEO by country; `weo_fiscal/` balances), `spending_data/`, `country_data/`, `revenue_data/`, `cofog_all/` (Sections 1-3 of the dashboard), `model_params.csv`, `unit_cost_reference.csv` | Inputs that the app and the model read. |
+| 4. Model inputs and precomputed results | `model_data/` | `country_inputs.csv`, `dah_lines.csv`, `ihme_trend.csv`, `panel.csv`, `regressions.json`, `mou_signed.csv`, `country_profile.csv`, `all_countries_<preset>.csv`. |
+| 5. Model | `health_model.py` (money -> government response -> coverage -> deaths), `scenarios.py` (donor presets, funding paths), `budget_section.py` (Section 3 boxes) | Pure Python, no Streamlit. |
+| 6. Display | `app.py` (navigation), `views/` (the four pages), `model_section.py` (Section 4 and shared widgets), `paths_ui.py`, `theme.py`, `country_lists.py` | Streamlit. |
+| Checks | `tests/` (pytest), `audit/` (audit report, checks, independent recompute, snapshots) | Run by hand; see README. |
