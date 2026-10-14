@@ -56,11 +56,11 @@ LINE_LABELS = {
     "mal_itn": "Bednets & other vector control", "mal_irs": "Indoor residual spraying",
     "mal_cm": "Malaria testing & treatment", "imm": "Routine immunization (vaccines + delivery)",
 }
-UNIT_LABELS = {"hiv_art": "people on ART", "hiv_pmtct": "HIV+ pregnant women", "hiv_prev": "infections averted",
+UNIT_LABELS = {"hiv_art": "people who stop ART (full-cost equivalents)", "hiv_pmtct": "HIV+ pregnant women", "hiv_prev": "infections averted",
                "hiv_ovc": "children supported", "tb_ds": "TB patients treated", "tb_dr": "DR-TB patients treated",
                "mal_itn": "people sleeping under nets", "mal_irs": "people protected by spraying",
                "mal_cm": "malaria cases treated", "imm": "children immunized"}
-UNIT_SINGULAR = {"hiv_art": "patient-year", "hiv_pmtct": "woman", "hiv_prev": "infection averted",
+UNIT_SINGULAR = {"hiv_art": "patient-year of ART", "hiv_pmtct": "woman", "hiv_prev": "infection averted",
                  "hiv_ovc": "child-year", "tb_ds": "patient", "tb_dr": "patient", "mal_itn": "person-year",
                  "mal_irs": "person-year", "mal_cm": "case", "imm": "child"}
 
@@ -78,7 +78,17 @@ LAG = {
     "mal_itn": np.array([0.5, 1, 1, 1, 1]), "mal_irs": np.array([0.8, 1, 1, 1, 1]), "mal_cm": np.ones(5),
     "imm": np.array([0.4, 0.75, 0.95, 1, 1]),
 }
-ART_HAZARD = np.array([0.012, 0.028, 0.038, 0.045, 0.05])  # excess deaths per person-year off ART, by year since loss
+# L-01 (Batch 2): excess deaths per person-year after stopping ART, by years since stopping (1..10), from a CD4-stage
+# cohort calculation (audit/batch2_cohort.py: untreated CD4 progression and death rates from Optima HIV, ten Brink et
+# al. 2025 appendix Tables A1-A2; starting CD4 of people on ART from ZIMPHIA 2020 Table 10.1), minus deaths had they
+# stayed on suppressive ART. Years 1-5 are 2026-2030; years 6-10 apply after 2030 to people still off care. Scaled by
+# art_hazard_mult. The model treats every full-cost equivalent as a person who actually stops ART.
+ART_HAZARD = np.array([0.013, 0.025, 0.037, 0.049, 0.060, 0.068, 0.072, 0.073, 0.071, 0.067])
+# the values before Batch 2, used only when hiv_legacy_art_params = 1 (sensitivity check): a 5-year ramp whose year-5
+# value applied after 2030, one transmission rate for every country and a 50% a year return to care after 2030
+ART_HAZARD_LEGACY = np.array([0.012, 0.028, 0.038, 0.045, 0.05])
+ART_REENGAGE_LEGACY = 0.5
+ART_TRANSMISSION_FALLBACK = 0.118   # UNAIDS 2025 median rate across the dashboard countries, if a country has none
 ART_INFECT_LAG = np.array([0.5, 1, 1, 1, 1])
 POST_YEARS = 5                  # deaths set in motion are counted in 2031-2035, with funding back from 2031
 HIV_WEIBULL_SHAPE = 2.25        # survival after HIV infection without ART (Todd et al. 2007; UNAIDS Spectrum)
@@ -486,21 +496,41 @@ def per_unit_deaths(row: pd.Series, P: dict, art_cov: float, trend: bool = True)
     Feeds: the 'lives first' ranking and per-line deaths."""
     lv = per_unit_levels(row, P, art_cov, trend)
     out = {l: v * (LAG[l] if LAG.get(l) is not None else 1.0) for l, v in lv.items()}
-    out["hiv_art"] = np.outer(P["art_hazard_mult"], ART_HAZARD)
+    out["hiv_art"] = hiv_art_params(row, P)[0][:, :N_YEARS]
     return out
 
 
-def art_cohorts(stock: np.ndarray, hazard_by_age: np.ndarray, transmission: np.ndarray, reengage: np.ndarray):
-    """People off ART tracked as cohorts. stock: (n x 5) people off ART in each year. A rise in the stock is a new
-    cohort with years-since-loss = 1; a fall returns the most recent cohorts to care first. Each cohort's excess death
-    risk follows hazard_by_age (n x 5, by its own years since losing care; the year-5 value after that), and it
-    transmits HIV at `transmission` per person-year (half in its first year). Negative stock (aid gains) uses the
+def hiv_art_params(row, P: dict) -> tuple:
+    """The ART cohort inputs for one country and one set of draws: (hazard n x 10 by years since stopping ART,
+    transmission per person-year n, return-to-care share per year n, mean years newly infected people stay
+    unsuppressed n or None). Transmission = art_transmission_mult x the country's UNAIDS rate of new infections per
+    person with unsuppressed viral load (`art_transmission_rate` in country_inputs.csv; ART_TRANSMISSION_FALLBACK if
+    missing). With hiv_legacy_art_params = 1: the pre-Batch-2 values (ART_HAZARD_LEGACY, art_transmission,
+    ART_REENGAGE_LEGACY, no second generation).
+    Feeds: HIV treatment deaths and infections (art_cohorts) and the lives-first ranking (per_unit_deaths)."""
+    n = len(P["art_hazard_mult"])
+    if float(np.ravel(P["hiv_legacy_art_params"])[0]) >= 0.5:
+        return (np.outer(P["art_hazard_mult"], ART_HAZARD_LEGACY), P["art_transmission"] * np.ones(n),
+                np.full(n, ART_REENGAGE_LEGACY), None)
+    rate = _v(row, "art_transmission_rate", ART_TRANSMISSION_FALLBACK)
+    return (np.outer(P["art_hazard_mult"], ART_HAZARD), P["art_transmission_mult"] * rate,
+            P["art_reengage"] * np.ones(n), P["hiv_new_inf_unsup_years"] * np.ones(n))
+
+
+def art_cohorts(stock: np.ndarray, hazard_by_age: np.ndarray, transmission: np.ndarray, reengage: np.ndarray,
+                unsup_years=None):
+    """People who stop ART tracked as cohorts. stock: (n x 5) people off ART in each year. A rise in the stock is a
+    new cohort with years-since-stopping = 1; a fall returns the most recent cohorts to care first. Each cohort's
+    excess death risk follows hazard_by_age (n x H, by its own years since stopping; the last value after that), and
+    it transmits HIV at `transmission` per person-year (half in its first year). Negative stock (aid gains) uses the
     hazard of the calendar year, as before.
     After 2030 funding is back: people still off care return at `reengage` a year (mid-year average), and those who
-    have not yet returned keep their risk. Returns (deaths n x 5, infections n x 5, deaths n x POST, infections
-    n x POST, people still off care n x POST) for 2026-2030 and 2031-2035.
+    have not yet returned keep their risk. unsup_years (n, or None = off): the people infected by the cohorts are
+    themselves unsuppressed for a mean of that many years (exponential) and transmit at the same rate, one further
+    generation (second-generation infections, Batch 2). Returns (deaths n x 5, infections n x 5, deaths n x POST,
+    infections n x POST, people still off care n x POST) for 2026-2030 and 2031-2035.
     Feeds: HIV treatment deaths and new infections from people off ART, 2026-2035."""
-    n = stock.shape[0]
+    n, H = stock.shape[0], hazard_by_age.shape[1]
     pos, neg = np.clip(stock, 0, None), np.clip(stock, None, 0)
     deaths, infections = np.zeros((n, N_YEARS)), np.zeros((n, N_YEARS))
     cohorts = []                                       # [size (n,), age]
@@ -514,9 +544,9 @@ def art_cohorts(stock: np.ndarray, hazard_by_age: np.ndarray, transmission: np.n
             drop = drop - take
         cohorts.append([np.clip(delta, 0, None), 1])
         for size, age in cohorts:
-            a = min(age, N_YEARS) - 1
+            a = min(age, H) - 1
             deaths[:, t] += size * hazard_by_age[:, a]
-            infections[:, t] += size * transmission * ART_INFECT_LAG[a]
+            infections[:, t] += size * transmission * ART_INFECT_LAG[min(a, N_YEARS - 1)]
         for c in cohorts:
             c[1] += 1
         prev = pos[:, t]
@@ -526,10 +556,25 @@ def art_cohorts(stock: np.ndarray, hazard_by_age: np.ndarray, transmission: np.n
     for size, age in cohorts:                          # still off care at the end of 2030
         for k in range(POST_YEARS):
             stay = size * (1 - reengage) ** (k + 0.5)
-            a = min(age + k, N_YEARS) - 1
+            a = min(age + k, H) - 1
             post_d[:, k] += stay * hazard_by_age[:, a]
-            post_i[:, k] += stay * transmission * ART_INFECT_LAG[a]
+            post_i[:, k] += stay * transmission * ART_INFECT_LAG[min(a, N_YEARS - 1)]
             off[:, k] += stay
+    if unsup_years is not None:
+        # second generation: an infection in mid-year s contributes w[k] unsuppressed person-years in year s + k, with
+        # exponential time to suppression of mean unsup_years; each transmits at the same rate (no third generation)
+        T = N_YEARS + POST_YEARS
+        D = np.asarray(unsup_years, dtype=float)[:, None]
+        edges = np.arange(T + 1) - 0.5
+        cum = D * (1 - np.exp(-np.clip(edges, 0, None) / D))           # integral of exp(-u/D) from 0 to each edge
+        w = cum[:, 1:] - cum[:, :-1]                                      # n x T
+        first = np.hstack([infections, post_i])
+        second = np.zeros_like(first)
+        for s_ in range(T):
+            for t in range(s_, T):
+                second[:, t] += first[:, s_] * w[:, t - s_] * transmission
+        infections = infections + second[:, :N_YEARS]
+        post_i = post_i + second[:, N_YEARS:]
     return deaths, infections, post_d, post_i, off
 
 
@@ -903,9 +948,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                 else:
                     after["tb"] += dd
         # HIV treatment cohorts (2026-2030, and those still off care in 2031-2035)
-        hz = np.outer(Px["art_hazard_mult"], ART_HAZARD)
-        d["hiv_art"], inf["hiv_art"], post_d, post_i, off_post = art_cohorts(
-            U["hiv_art"], hz, Px["art_transmission"], Px["art_reengage"])
+        hz, trans, reengage, unsup = hiv_art_params(row, Px)
+        d["hiv_art"], inf["hiv_art"], post_d, post_i, off_post = art_cohorts(U["hiv_art"], hz, trans, reengage, unsup)
         after["hiv_art"] = post_d.sum(axis=1)
         # malaria: Lives Saved Tool each year; lost vector control rebounds while the loss lasts
         mal = {k: np.zeros((nx, N_YEARS)) for k in ("mal_itn", "mal_irs", "mal_cm")}

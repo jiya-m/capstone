@@ -39,6 +39,7 @@ Country columns used (`country_inputs.csv`):
 | PMTCT % | `sh_hiv_pmtc_zs` | if missing, ART % is used |
 | HIV+ pregnancies | `hiv_pos_pregnancies` | |
 | new HIV infections | `sh_hiv_incd_tl` | number a year |
+| HIV transmission rate per unsuppressed person | `art_transmission_rate` (`_lo`, `_hi`, `_year`, `_source`) | UNAIDS new infections / (PLHIV - suppressed), latest year with all three (`hiv_transmission_inputs.py`); WHO-region median of the dashboard countries where missing |
 | population | `sp_pop_totl` | |
 | TB incidence | `all_forms_of_tb_incidence_estimated` | number a year (not `sh_tbs_incd`, which is per 100,000) |
 | TB detection % | `sh_tbs_dtec_zs` | capped at 100 (flagged when above) |
@@ -75,8 +76,11 @@ Country columns used (`country_inputs.csv`):
 |---|---|
 | DR_TB_SHARE | 0.04 |
 | DR_TB_COV | 0.45 |
-| ART_HAZARD (by years off ART 1..5) | 0.012, 0.028, 0.038, 0.045, 0.050 |
-| ART_INFECT_LAG (by years off ART 1..5) | 0.5, 1, 1, 1, 1 |
+| ART_HAZARD (excess deaths per person-year by years since stopping ART 1..10) | 0.013, 0.025, 0.037, 0.049, 0.060, 0.068, 0.072, 0.073, 0.071, 0.067 (Batch 2: CD4-stage cohort calculation, `audit/batch2_cohort.py`) |
+| ART_HAZARD_LEGACY (years 1..5; the year-5 value after that; only when hiv_legacy_art_params = 1) | 0.012, 0.028, 0.038, 0.045, 0.050 |
+| ART_REENGAGE_LEGACY (only when hiv_legacy_art_params = 1) | 0.5 |
+| ART_TRANSMISSION_FALLBACK (if a country has no `art_transmission_rate`) | 0.118 |
+| ART_INFECT_LAG (by years off ART 1..5; the year-5 value after that) | 0.5, 1, 1, 1, 1 |
 | HIV Weibull shape | 2.25 |
 | POST_YEARS | 5 |
 | CPI-U | 2014: 236.736, 2018: 251.107, 2019: 255.657, 2020: 258.811, 2021: 270.970, 2022: 292.655, 2023: 304.702 |
@@ -205,7 +209,7 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
   - What is left goes to the nonservice amounts in proportion, each up to its own amount.
   - dpd[l] for hiv_pmtct, hiv_prev, hiv_ovc, tb_ds, tb_dr and imm = (sum over d = 0..4 of level_l,d x LAG_l[d]) /
     cost_l. Levels are as in section 6, at the central run, calendar-indexed. hiv_prev and hiv_ovc have level 0.
-  - dpd[hiv_art] = art_hazard_mult x sum(ART_HAZARD) / cost_art.
+  - dpd[hiv_art] = art_hazard_mult x sum(ART_HAZARD[1..5]) / cost_art (ART_HAZARD_LEGACY when hiv_legacy_art_params = 1).
   - dpd for malaria lines = sum over t = 0..4 of (that line's malaria part from section 6, with 1,000,000 / cost_l
     units on that line alone and 0 on the others) x LAG_l[t] x f_mal,t, divided by 1,000,000. This uses calendar t
     and has no rebound factor.
@@ -274,7 +278,9 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
 - Coverage after = coverage - that.
 - Treatment Lost Each Year (top of the Dashboard) = sum of the per-year means over hiv_art, hiv_pmtct, tb_ds, tb_dr,
   mal_cm. Prevention Lost Each Year = the same over mal_itn, mal_irs, imm. Both count the service the lost money
-  would have paid for: for hiv_art, patient-years of treatment, not a headcount of people who stop treatment.
+  would have paid for: for hiv_art, the number of people who stop ART = full-cost equivalents of the lost money
+  (lost ART money / full cost per patient-year); the model treats each as a person who actually stops treatment
+  (Option A, Batch 2). Labelled "people who stop ART" with a tooltip saying so.
 
 ## 6. Deaths and infections
 
@@ -326,25 +332,34 @@ below it.)
   (-0.009 if missing) when the switch is on, else 0, and these deaths count in further deaths (part "imm").
 - For a sudden cut this equals units x level_t x (0.4, 0.75, 0.95, 1, 1).
 
-**HIV treatment** (cohorts):
+**HIV treatment** (cohorts; Batch 2, L-01 / L-41):
+- **Inputs** (hiv_art_params): hazard h[a] = art_hazard_mult x ART_HAZARD[a], a = 1..10 (H = 10); transmission
+  r = art_transmission_mult x art_transmission_rate (country_inputs.csv: UNAIDS new infections / (PLHIV -
+  suppressed); ART_TRANSMISSION_FALLBACK if missing); return rate g = art_reengage; D = hiv_new_inf_unsup_years.
+  With hiv_legacy_art_params = 1: h = art_hazard_mult x ART_HAZARD_LEGACY (H = 5), r = art_transmission,
+  g = ART_REENGAGE_LEGACY, no second generation.
 - **Stock.** stock_t = units_hiv_art,t. Each year, delta = max(stock_t, 0) - max(stock_(t-1), 0) (stock_-1 = 0).
   - A fall (delta < 0) first removes people from the most recent cohorts.
   - A rise adds a new cohort of size delta with age 1.
 - **Each year t, for every cohort** (size, age):
-  - deaths += size x art_hazard_mult x ART_HAZARD[min(age, 5) - 1];
-  - infections += size x art_transmission x ART_INFECT_LAG[min(age, 5) - 1];
+  - deaths += size x h[min(age, H)];
+  - infections += size x r x ART_INFECT_LAG[min(age, 5) - 1];
   - then every cohort's age increases by 1.
-- **Negative stock** (only possible with gains): adds stock_t x hazard[t] and stock_t x art_transmission x
-  ART_INFECT_LAG[t].
-- **After 2030** (funding back): in year k = 0..4, each cohort still off care has size x (1 - art_reengage)^(k + 0.5)
-  people, with age a = min(age_at_end_2030 + k, 5). age_at_end_2030 is the cohort's age after the 2030 increment: a
-  cohort that started in 2026 has age 6, so it uses the year-5 values. It adds deaths (people x art_hazard_mult x ART_HAZARD[a - 1],
-  part "hiv_art") and infections (people x art_transmission x ART_INFECT_LAG[a - 1]).
-- **Sudden cut:** one cohort of size U from 2026, so deaths_t = U x art_hazard_mult x ART_HAZARD[t].
+- **Negative stock** (only possible with gains): adds stock_t x h[t + 1] and stock_t x r x ART_INFECT_LAG[t].
+- **After 2030** (funding back): in year k = 0..4, each cohort still off care has size x (1 - g)^(k + 0.5)
+  people, with age a = min(age_at_end_2030 + k, H). age_at_end_2030 is the cohort's age after the 2030 increment: a
+  cohort that started in 2026 has age 6 in 2031 and 10 in 2035. It adds deaths (people x h[a], part "hiv_art") and
+  infections (people x r x ART_INFECT_LAG[min(a, 5) - 1]).
+- **Second generation** (unless legacy): the people infected above are unsuppressed for an exponential time with
+  mean D and transmit at r. With first_s = the infections above in year s (s = 0..9, 2026-2035), the extra infections
+  in year t are sum over s <= t of first_s x w[t - s] x r, where w[k] = F(k + 0.5) - F(k - 0.5), F(x) = D (1 -
+  exp(-max(x, 0) / D)) (unsuppressed person-years in year s + k from one infection in mid-year s). They add to the
+  off-ART infections of 2026-2030 and 2031-2035 (and so to the deaths from infections below). No third generation.
+- **Sudden cut:** one cohort of size U from 2026, so first-generation deaths_t = U x h[t + 1].
 
 **New HIV infections and their deaths** (10 years, 2026-2035):
 - **Infections:**
-  - from people off ART (above, 2026-2035);
+  - from people off ART (above, first and second generation, 2026-2035);
   - lost prevention = units_hiv_prev,t (2026-2030 only);
   - PMTCT infant infections = units_hiv_pmtct,t x pmtct_vt_reduction. These count as infections but their deaths are
     already in the PMTCT line, so they are not run through the curve.
@@ -404,7 +419,7 @@ below it.)
   not draw percentiles.
 - Year 1 = 2026.
 - Further deaths 2031-2035 = sum of the parts:
-  - hiv_art: deaths among people still off ART;
+  - hiv_art: deaths among people still off ART (hazard by years since stopping, up to 10);
   - hiv_infections: 2031-2035 deaths from all infections (off-ART and lost prevention) in 2026-2035;
   - imm: vaccine cohort deaths after 2030;
   - tb: TB spread cases arriving in 2031-2032.

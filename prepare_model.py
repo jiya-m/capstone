@@ -455,6 +455,8 @@ def main(a):
         ci = ci.join(m.add_prefix("mou_"))
     import who_inputs                    # current WHO / UNAIDS estimates replace the derived HIV and malaria inputs
     ci = who_inputs.apply(ci)
+    import hiv_transmission_inputs       # L-41: UNAIDS new infections per person with unsuppressed viral load
+    ci = hiv_transmission_inputs.apply(ci)
     ci.loc[DASHBOARD_ISO3].reset_index().to_csv(OUT / "country_inputs.csv", index=False)
     print(f"  country_inputs: {len(DASHBOARD_ISO3)} dashboard countries ({len(ISO3)} built for the regressions)")
 

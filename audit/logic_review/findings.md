@@ -97,6 +97,58 @@ Region): Nigeria 0.98, Mozambique 0.90, Kenya 0.19, Ethiopia 0.11. So country ma
 directions: Kenya -40%, India -30%, Nigeria +10%, Mozambique +8%. A WHO country series of under-5 malaria deaths would
 settle it (data request).
 
+## Batch 2: ART death risk and HIV transmission (14 October 2026)
+
+Option A (user decision): "people losing ART" stays the count of people who stop ART (full-cost equivalents of the
+lost money, all donors, all countries); the death risk, re-engagement and transmission now describe people who have
+actually stopped ART. Evidence and sources: `batch2_evidence.md`; scripts `audit/batch2_cohort.py`,
+`audit/batch2_projection.py`.
+
+| Item | Status | What changed |
+|---|---|---|
+| L-01 ✅ | done | `ART_HAZARD` = excess deaths by years since stopping ART, 1-10, from a CD4-stage cohort calculation (Optima Tables A1-A2; ZIMPHIA 2020 starting CD4): 1.3, 2.5, 3.7, 4.9, 6.0% then 6.8-7.3%; 5-year 18.4% (was 17.3%); `art_hazard_mult` 1 (0.65-1.7); years 6-10 replace the flat year-5 value after 2030. The parameter text no longer claims a calibration to PEPFAR totals |
+| L-41 ◐ | partly done | `art_transmission` 0.04 replaced by the country's UNAIDS 2025 rate of new infections per person with unsuppressed viral load (`country_inputs.csv` `art_transmission_rate`, median 0.12; WHO-region median for 14 countries) x `art_transmission_mult` 1 (0.71-1.38); one further generation of infections (`hiv_new_inf_unsup_years` 4, 2.5-5.5, assumption). Infections 1.55M to 4.3M (UNAIDS 6M). The remaining gap to Optima is L-49, not transmission |
+| L-33 follow-up | done | `art_reengage` 0.5 (assumption) to 0.35 (0.17-0.68), sourced indirectly (Kranzer 2010, Kaplan 2017, Mody 2026) |
+| Labels | done | "people who stop ART (full-cost equivalents)" with a tooltip in the service table, the hero, the cards and the Methods page |
+| Sensitivity switch | done | `hiv_legacy_art_params` = 1 restores the old hazard, transmission, re-engagement and no second generation (central results identical to `before_batch2.csv`; ranges differ through the new `art_hazard_mult` range) |
+
+**Open item L-49 (Major, High confidence, from the Batch 2 benchmark): the Optima overlap gap is driven by the
+count of people who stop ART, not by death risk or transmission.** Model 0.57M vs Optima scenario 5 1.37M HIV deaths;
+1.87M vs 5.08M infections (15 overlapping countries, `batch2_optima_compare.csv`). Example: Mozambique 23% of people
+on ART stop in the model vs PEPFAR 66% of HIV spending (Optima appendix Table B2, p. 8). To be addressed in Batches
+3-4 (money conversion, unit costs, continuity, cap rule). Per country (model: Full US Exit, people who stop ART /
+people on ART outside PMTCT, `before_batch2.csv`; Optima Table B2: PEPFAR funding / total expenditure and total
+international funding / total expenditure, most recent GAM year):
+
+| Country | People who stop ART (model) | People on ART | Model share who stop | PEPFAR share of HIV spending | All international share |
+|---|---|---|---|---|---|
+| Azerbaijan | 310 | 9,720 | 3% | 0% | 14% |
+| Cambodia | 4,337 | 72,200 | 6% | 15% | 64% |
+| Côte d'Ivoire | 103,156 | 183,443 | 56% | 56% | 12% (Table B2's "total international" is below its PEPFAR figure; PEPFAR is from COP 2022) |
+| Dominican Republic | 24,451 | 57,200 | 43% | 34% | 42% |
+| Eswatini | 70,040 | 199,500 | 35% | 42% | 59% |
+| Kenya | 451,685 | 1,365,000 | 33% | 26% | 37% |
+| Kyrgyzstan | 2,222 | 7,700 | 29% | 17% | 71% |
+| Malawi | 396,616 | 890,000 | 45% | 60% | 95% |
+| Moldova | 383 | 9,180 | 4% | 0% | 45% |
+| Mongolia | 20 | 294 | 7% | 0% | 52% |
+| Mozambique | 488,713 | 2,100,000 | 23% | 66% | 96% |
+| South Africa | 677,587 | 6,156,000 | 11% | 21% | 24% |
+| Tajikistan | 4,417 | 12,160 | 36% | 0% | 0% |
+| Uganda | 355,770 | 1,275,000 | 28% | 65% | 80% |
+| Zimbabwe | 163,293 | 1,235,000 | 13% | 57% | 89% |
+
+The model's share is below PEPFAR's funding share in the four countries that carry most of Optima's deaths
+(Mozambique, Uganda, Malawi, Zimbabwe), and above it where the US funds little (Tajikistan, Kyrgyzstan, Dominican
+Republic): the full-cost denominator, the non-service share, continuity and the cap rule all act here. Optima's
+scenario 5 also drops initiations to zero and counts six years (2025-2030).
+
+**Headline after Batch 2** (all countries, Full US Exit, central, sudden cut, no response): 2,055,422 deaths
+2026-2030 (was 1,965,386, +4.6%); HIV deaths 1,096,151 (was 1,006,114, +8.9%); HIV infections 4,334,929 (was
+1,552,704, x2.8); further deaths 2031-2035 1,092,054 (was 495,218, x2.2: slower return to care and a death risk that
+keeps rising to year 8 instead of staying at 5%). TB, malaria and vaccine deaths unchanged. Every preset and the
+five focus countries: `batch2_before_after.md`.
+
 ## Summary
 
 | Area | Result |
@@ -127,8 +179,8 @@ settle it (data request).
 
 | ID | Severity | Conf. | Finding and evidence | Effect (tested where possible) | Proposed fix | Needs your data? |
 |---|---|---|---|---|---|---|
-| L-01 | **Critical** | High (concept), Medium (size) | ART death hazard calibrated as 17% x 20.6M PEPFAR-supported patients (`model_params.csv` art_hazard_mult), applied to 5.30M full-cost equivalents (`health_model.py:438-450`, `:856-858`). HIV deaths 1.01M, about a third of Optima's PEPFAR-ending scenario (2.93M) and a quarter of UNAIDS (>4M). See `URGENT.md`. | Consistent readings: +7% to +115% (Brinkhof 20-60% risk; tested: 2.11M / 3.17M / 4.23M); reading B about +130% | IMP-01: pick one reading, calibrate, show both | No (A); DR-01 (B) |
-| L-41 | **Critical** | High (gap), Medium (cause) | HIV infections 1.55M vs Optima 4.43-10.75M and UNAIDS 6M. `art_transmission` was calibrated per supported patient, like L-01. | Reading B: about 3.7M off-ART infections (+140% or more) | IMP-01 | No |
+| L-01 ✅ done (Batch 2, Option A: see the status section) | **Critical** | High (concept), Medium (size) | ART death hazard calibrated as 17% x 20.6M PEPFAR-supported patients (`model_params.csv` art_hazard_mult), applied to 5.30M full-cost equivalents (`health_model.py:438-450`, `:856-858`). HIV deaths 1.01M, about a third of Optima's PEPFAR-ending scenario (2.93M) and a quarter of UNAIDS (>4M). See `URGENT.md`. | Consistent readings: +7% to +115% (Brinkhof 20-60% risk; tested: 2.11M / 3.17M / 4.23M); reading B about +130% | IMP-01: pick one reading, calibrate, show both | No (A); DR-01 (B) |
+| L-41 ◐ partly done (Batch 2: per-country transmission and a second generation; infections 4.3M vs UNAIDS 6M, Optima overlap gap open: L-49) | **Critical** | High (gap), Medium (cause) | HIV infections 1.55M vs Optima 4.43-10.75M and UNAIDS 6M. `art_transmission` was calibrated per supported patient, like L-01. | Reading B: about 3.7M off-ART infections (+140% or more) | IMP-01 | No |
 | L-43 | Major | High (mechanism), Low (size) | Unspecified money is spread to services only. TB: US$700M of US$1,522M (46%) becomes patients; effective TB service money is 3.7x the tagged amount. Tajikistan extra TB deaths are 108% of current TB deaths a year. | Est. -5% to -8% (not run) | IMP-02 | No |
 | L-44 | Major | High (mechanism), Medium (size) | Proportional-cap rule (`_units_lost`, `health_model.py:438-450`) treats all covered people as donor-funded when donor money ÷ cost > covered. 160 of 695 lines (Validation page). | Est. -3% to -5% (red team; not run) | IMP-04 | DR-04 |
 | L-05 | Major | Medium | `hss_kappa` (assumption, no evidence found) converts systems and testing & care money into patients at a cost already marked up by 1/(1-asd): above-site costs counted twice. | Swing -10.1% / +16.2%; kappa = 0 gives -20% (red team) | IMP-02 | No |
@@ -178,10 +230,10 @@ settle it (data request).
 
 ## The 10 most important findings, ranked
 
-1. **L-01 (Critical).** The ART death risk is calibrated per supported patient but applied per full-cost
+1. ✅ **L-01 (Critical; done, Batch 2).** The ART death risk is calibrated per supported patient but applied per full-cost
    equivalent. HIV deaths are about a third of the comparable Optima scenario. Every consistent reading raises the
    headline: +7% to +130%.
-2. **L-41 (Critical).** HIV infections are 3-7x below published estimates, for the same reason.
+2. ◐ **L-41 (Critical; partly done, Batch 2).** HIV infections are 3-7x below published estimates, for the same reason.
 3. **L-43 (Major).** Unspecified disease money (46% of TB aid) is counted entirely as patients' treatment. TB is
    likely overstated, with impossible country results (Tajikistan 108% of current TB deaths).
 4. **L-05 (Major).** Above-site costs are counted twice: markup plus kappa conversion of systems money. This is the

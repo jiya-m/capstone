@@ -158,7 +158,7 @@ st.markdown(th.pills_html([
 ], large=True), unsafe_allow_html=True)
 st.caption(ms._esc(
     "Model = for each country, the smaller of the people on ART (outside PMTCT) and donor HIV treatment money ÷ cost per "
-    "patient-year, added up. It counts full-cost equivalents. PEPFAR counts everyone on ART at sites it supports, "
+    "patient-year, added up. It counts full-cost equivalents, each treated by the model as a person who stops ART. PEPFAR counts everyone on ART at sites it supports, "
     "including people whose drugs the government or the Global Fund buys, so its figure is larger by design. HIV "
     "testing and care money is not counted here; in the model, " + ms.care_ct_note()[0].lower() + ms.care_ct_note()[1:]))
 

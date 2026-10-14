@@ -42,6 +42,12 @@ Interest (audit I-26): the debt-stress factor now uses the more recent of World 
 so fiscal capacity changed; entries with a government response were refreshed, and entries with no response were
 checked to be unchanged:  python tests/make_baseline.py --fiscal
 
+ART death risk and HIV transmission (logic review L-01, L-41, Batch 2): the ART hazard is now the excess death risk by
+years since stopping ART from a CD4-stage cohort calculation (1.3-6.0% in years 1-5, up to 7.3% after), transmission is
+the country's UNAIDS rate per person with unsuppressed viral load (median 0.12, was 0.04 everywhere) with one further
+generation of infections, and art_reengage is 0.35 (was 0.5). Entries with HIV results were refreshed with --hiv (84 of
+99; outside lives first only HIV lines, the totals and the HIV path moved, and no lives-first entry moved other lines).
+
 Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
 Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
     python tests/make_baseline.py --gains-only"""

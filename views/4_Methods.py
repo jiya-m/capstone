@@ -259,7 +259,7 @@ with tabs[1]:
     | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems), of which a share kappa (`hss_kappa`, an assumption) is counted as lost services |
     | Further Deaths, 2031-2035 (Assumption-Driven) | Mostly set by an assumption with no published source: how fast people who stopped HIV treatment return once funding is back in 2031 (`art_reengage`, central 50% a year). Shown with the range from re-running the central estimate at 75% and 25% a year (for Full US Exit, all countries: about 300K to 850K against 495K central), next to the range across parameter values |
     | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range across parameter values = 2.5th to 97.5th percentile of the Monte Carlo draws (parameter uncertainty only; uncertainty in the data and in the model's structure is larger and not included) |
-    | New HIV Infections, 5 Years | Infections from people off ART, mothers without PMTCT, and lost prevention |
+    | New HIV Infections, 5 Years | Infections from people who stop ART (and one further generation from the people they infect), mothers without PMTCT, and lost prevention |
     | What Every US$1 Million Cut Does, by Disease | Each card runs the full model for a US$1M-a-year loss to one disease, spread across all its service lines (including HIV testing and care, unspecified and systems money) in proportion to current aid: no government replacement, sudden cut, every mechanism included (caps, TB spread, malaria rebound, deaths from new HIV infections). People losing the service and the coverage drop are for the main service (HIV: ART; TB: TB treatment; malaria: bednets; immunization: routine vaccines); extra deaths are for the whole disease, 2026-2030. Where a disease's aid is under US$1M a year, all of it is cut and the results are scaled to US$1M. "About $X of aid lost per life lost (based on US$1M a year for 5 years)" = $5M (five years of $1M) ÷ those deaths, which equals $1M ÷ the average extra deaths per year |
     | What Each Service Loses | Per service line: baseline aid, aid lost after replacement, cost per person, people losing the service per year (average over 2026-2030), with the 5-year total of people affected underneath (the yearly numbers added up, following the funding path; for HIV treatment, mostly the same people stay off ART each year, so no total is added), coverage before and after, and extra deaths, 5-year total (range) |
     | Extra Deaths as More Aid Is Cut | Solid line: every donor cuts this bucket by the same share, 0-100% in 5% steps, same random draws at every step; band = range across parameter values. Dashed line: this scenario's own cuts scaled from 0% to 100% of their size |
@@ -447,12 +447,24 @@ with tabs[2]:
     th.section_header("favorite", "Step 4: Lives (Extra Deaths)")
     md("Deaths = people losing a service x deaths per person who loses it, year by year over five years.")
     md(f"""
-    **HIV treatment.** Excess deaths per person-year off ART rise as immunity declines: 1.2%, 2.8%, 3.8%, 4.5% and
-    5.0% in years 1-5, times an uncertain multiplier {rng_txt('art_hazard_mult')}. Calibrated so five-year deaths
-    from losing PEPFAR-supported ART sit between the Optima and UNAIDS estimates. People off ART also transmit HIV:
-    {rng_txt('art_transmission')} new infections per person-year (half in year 1).
+    **HIV treatment.** The people counted are the people who stop ART: the full-cost equivalents of the lost money
+    (lost ART money ÷ full cost per patient-year), each treated as a person who actually stops treatment. Excess
+    deaths per person-year after stopping rise as CD4 falls: 1.3%, 2.5%, 3.7%, 4.9% and 6.0% in years 1-5 (6.8%,
+    7.2%, 7.3%, 7.1%, 6.7% in years 6-10, used after 2030), times an uncertain multiplier
+    {rng_txt('art_hazard_mult')}. These come from a CD4-stage cohort calculation: people start in the CD4
+    distribution of people on ART (ZIMPHIA 2020: median 528 cells/µL, quartiles 366-706), progress at untreated
+    rates and die at untreated stage-specific rates (Optima HIV, ten Brink et al. 2025, appendix Tables A1-A2), minus
+    the deaths they would have had on suppressive ART; 18.4% die over five years (range: women with the lower Optima
+    rates 12%, men with the higher rates 32%). Tracing studies of people lost to follow-up found higher mortality
+    (40% in 2000-07 cohorts, Brinkhof et al. 2009; 24% by 2011, Zürcher et al. 2017), from sicker, earlier
+    populations. People off ART also transmit HIV at the country's rate of new infections per person with
+    unsuppressed viral load (UNAIDS 2025: new infections ÷ (people living with HIV - people with suppressed viral
+    load); median 0.12 a year across the dashboard countries, Kenya 0.07, Mozambique 0.13; half in year 1), times
+    {rng_txt('art_transmission_mult')}. The people they infect are unsuppressed for about
+    {rng_txt('hiv_new_inf_unsup_years')} years on average (*assumption*, from the 2.6-year median time to diagnosis
+    in sub-Saharan Africa, Giguère et al. 2021) and transmit at the same rate: one further generation is counted.
     """)
-    st.latex(r"\text{deaths}_{y}=\text{people off ART}\times h_y\times m,\qquad h=(0.012,\,0.028,\,0.038,\,0.045,\,0.050)")
+    st.latex(r"\text{deaths}_{y}=\text{people who stop ART}\times h_y\times m,\qquad h=(0.013,\,0.025,\,0.037,\,0.049,\,0.060,\,0.068,\,0.072,\,0.073,\,0.071,\,0.067)")
     md(f"""
     **Mother-to-child transmission.** The PMTCT cost includes the mother's ART, so women on PMTCT are counted once:
     PMTCT money pays for them, they are taken out of the people the HIV treatment line's money can pay for or lose
@@ -614,7 +626,7 @@ with tabs[2]:
 
     | Service | Method |
     |---|---|
-    | HIV treatment (and HIV transmission from people off treatment) | **Cohorts.** When the number off ART rises, the increase is a new cohort with 1 year since losing care; when it falls, the most recent cohorts return to care first. Each cohort's death risk follows the ART hazard by its own years since losing care (1.2%, 2.8%, 3.8%, 4.5%, 5.0%), and it transmits HIV at half the full rate in its first year. |
+    | HIV treatment (and HIV transmission from people off treatment) | **Cohorts.** When the number who stop ART rises, the increase is a new cohort with 1 year since stopping; when it falls, the most recent cohorts return to care first. Each cohort's death risk follows the ART hazard by its own years since stopping (1.3%, 2.5%, 3.7%, 4.9%, 6.0%, then up to 7.3%), and it transmits HIV at half the full rate in its first year; the people it infects transmit in turn (one further generation). |
     | Mother-to-child transmission | **Year by year.** Deaths and infections belong to the year the mother and infant miss the service. |
     | TB, malaria (nets, spraying, treatment) | **Year by year.** Deaths in year t depend only on the coverage lost in year t, using the same formulas as for a sudden cut (TB case fatality for that year's untreated cases; the Lives Saved Tool formula for malaria). Each service's ramp-up and the malaria rebound are counted from when the cut started, not from the calendar year. TB spread adds deaths 1-2 years after each untreated year. |
     | Routine immunization | **Birth cohorts.** Each year's missed cohort dies over the following years (40%, 35%, 20%, 5%), including after 2030. |
@@ -629,7 +641,7 @@ with tabs[2]:
 
     | Part | What is counted in 2031-2035 |
     |---|---|
-    | People off HIV treatment | people still off ART at the end of 2030 return to care at {rng_txt('art_reengage')} a year (*assumption*: tracing studies find many but not all people lost to follow-up re-engage within 1-2 years); until they return they keep their excess death risk (by years since losing care, staying at the year-5 rate of 5% a year after that) |
+    | People off HIV treatment | people still off ART at the end of 2030 return to care at {rng_txt('art_reengage')} a year (indirect evidence from people who disengaged while services ran: 42% resumed within 3 years in Cape Town, Kranzer et al. 2010; half returned by 2.5 years in Khayelitsha, Kaplan et al. 2017; 68% returned within 12 months in Zambia, Mody et al. 2026); until they return they keep their excess death risk by years since stopping (rising to 7.3% a year by year 8) |
     | New HIV infections | deaths in 2031-2035 of adults infected in 2026-2035 by people off ART, or because prevention was lost in 2026-2030 (timing as in *New HIV infections* above) |
     | Missed vaccines | the remaining under-5 deaths of birth cohorts missed in 2027-2030 |
     | TB spread | secondary TB cases arriving in 2031-2032 from patients untreated in 2029-2030 |
