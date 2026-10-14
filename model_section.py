@@ -850,7 +850,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     notes = []
     if show["capped"].any():
         notes.append("Where the aid lost would pay for more people than are covered today, the loss is capped at "
-                     "current coverage.")
+                     "current coverage. Where donor aid buys more than the donor-funded pool (people covered x the "
+                     "external share of the country's spending on the disease), the loss is that pool x the share of "
+                     "money lost.")
     notes += [f"{f[0].upper() + f[1:]}." for f in res["flags"]]
     notes.append("HIV prevention turns money into infections averted; deaths from those infections are counted in the "
                  "year they happen (few before 2031). Program money with no "

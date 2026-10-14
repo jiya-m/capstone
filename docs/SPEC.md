@@ -57,6 +57,7 @@ Country columns used (`country_inputs.csv`):
 | ART site cost | `art_site_cost` (`_lo`, `_hi`, `_source`, `_year`) | US$ per patient-year at site level, 2023 US$ (`batch34_inputs.py --art`; `audit/batch34_art_costs.py`) |
 | TB course costs | `tb_ds_cost`, `tb_dr_cost` (`_lo`, `_hi`, `_source`), `tb_cost_year` | US$ per treatment course, provider, 2023 US$ (`batch34_inputs.py --tb`; `audit/batch34_tb_costs.py`) |
 | RR-TB share and enrolment | `tb_rr_share`, `tb_rr_cov` (`tb_rr_source`) | WHO 2024: RR-TB incidence / all-forms incidence; RR patients started on treatment / RR incidence, capped at 1 |
+| external share of disease spending | `donor_share_<hiv|tb|malaria|imm>` (`_source`, `_year`) | 0-1: GHED external funding on the disease / spending on it (HIV dis11, malaria dis13, immunization hc62); TB: WHO TB financing, funding received from the Global Fund, USAID and other grants / all received (2024; 2025 expected funding if missing); WHO-region median where missing (`batch34_inputs.py --donor`; `audit/batch34_donor_share.py`) |
 | split of unspecified money | `unspec_<hiv|tb|malaria>_<treatment|prevention|testing|rssh|pm>` (`_source`) | shares 0-1 summing to 1 per disease: Global Fund grant budgets by module, GC7 (`batch34_inputs.py --shares`; `audit/batch34_gf_shares.py`); WHO-region median where the country has no grant |
 | trends | `trend_u5mr`, `trend_malaria_deaths` | yearly change (shares); -0.009 if missing. `trend_u5mr`: UN IGME under-5 mortality 2010-2019. `trend_malaria_deaths`: WHO estimated malaria deaths (GHO `MALARIA_EST_DEATHS`) 2015-2024, log-linear fit (at least 5 positive years), clipped to ±5% a year (the clip is an assumption); 0 where WHO has no series (built by `malaria_inputs.py`) |
 | GDP per person | `gdp_pc` | 1,000 if missing |
@@ -288,9 +289,11 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
 - **Money.** n = N_t[l], with base b = E_base[l] and test base tb = E_base[l].
   - For hiv_art, n = N_t[hiv_art] + N_t[hiv_care_ct], b = E_base[hiv_art] + E_base[hiv_care_ct], and
     tb = E_base[hiv_art] only.
+- **Donor-funded pool** (Batch 3+4, IMP-04 / L-44): pool = covered x d, with d = `donor_share_<hiv|tb|malaria|imm>`
+  for the line's disease from `country_inputs.csv` (clipped to 0-1; 1 if missing).
 - **Two branches:**
   - If covered is NaN: raw = n / cost.
-  - Else, if tb / cost > covered (donor money would buy more than everyone covered): raw = covered x n / b.
+  - Else, if tb / cost > pool (donor money would buy more than the donor-funded pool): raw = pool x n / b.
   - Else: raw = **n / cost**. (This is the usual case. There is no further scaling here.)
 - units = raw x (1 - continuity).
 - If need and coverage both exist, units = min(units, cap), with cap = covered for hiv_art and coverage x need

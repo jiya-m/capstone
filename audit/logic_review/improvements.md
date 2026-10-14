@@ -80,6 +80,9 @@ shares). PEPFAR Expenditure Analysis per patient (DR-01) was not available. `bat
 
 ### IMP-04. Cap the donor-funded share of covered people (Do before presenting)
 
+**Status: ✅ done (Batch 3+4 item 6, 14 October 2026).** External shares from WHO GHED disease accounts (HIV, malaria,
+immunization) and WHO TB financing; `batch34_evidence.md` F.
+
 - **Addresses:** L-44 (red-team point 9). The proportional-cap rule treats all covered people as donor-funded in 160
   of 695 country-service lines; Tajikistan's extra TB deaths reach 108% of current TB deaths.
 - **What to do:** in the branch where donor money ÷ cost exceeds people covered, cap the donor-funded pool at an

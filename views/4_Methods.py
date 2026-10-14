@@ -407,16 +407,24 @@ with tabs[2]:
     th.section_header("groups", "Step 3: Coverage (Who Loses a Service)")
     md("""
     Donor money pays for a number of people: its baseline aid divided by the cost per person, but never more than the
-    people currently covered. People losing the service are that number times the share of donor money lost:
+    donor-funded pool, which is the people currently covered times the external (donor) share of the country's
+    spending on that disease (`donor_share_*` in `country_inputs.csv`: WHO Global Health Expenditure Database
+    external funding on HIV, malaria and immunization as a share of spending on each, latest year; WHO TB financing
+    data for TB, funding received from the Global Fund, USAID and other grants ÷ all funding received, 2024; a
+    WHO-region median where a country has no value: HIV 40 of 70 countries have their own value, TB 69, malaria 38,
+    immunization 48). People losing the service are that number times the share of donor money lost:
     """)
-    st.latex(r"\text{donor-funded}_{\ell}=\min\!\Big(\text{people covered}_{\ell},\ \frac{\text{aid now}_{\ell}}{\text{cost per person}_{\ell}}\Big)")
+    st.latex(r"\text{donor-funded}_{\ell}=\min\!\Big(\text{people covered}_{\ell}\times\text{external share}_{d(\ell)},\ \frac{\text{aid now}_{\ell}}{\text{cost per person}_{\ell}}\Big)")
     st.latex(r"\text{people losing service}_{\ell}=\text{donor-funded}_{\ell}\times\frac{\text{aid lost}_{\ell}}{\text{aid now}_{\ell}}\times(1-\text{continuity})")
     md("""
-    When donor aid buys less than full coverage (most lines), this is simply aid lost ÷ cost per person. When donor aid
-    is more than the full cost of everyone covered (for example HIV treatment in Honduras, where donor treatment aid is
-    about twice what ART for all patients would cost), the excess is paying for things other than the service itself,
-    so the loss is scaled by the share of money lost instead of running past the people covered. The Validation page
-    counts the lines where this happens.
+    When donor aid buys less than the donor-funded pool (most lines), this is simply aid lost ÷ cost per person. When
+    donor aid is more than the full cost of that pool (for example HIV treatment in Honduras, where donor treatment
+    aid is about twice what ART for all patients would cost), the excess is paying for things other than the service
+    itself, so the loss is the pool times the share of money lost instead of running past the people donors fund.
+    Before Batch 3+4 the pool was everyone covered, which treated every patient as donor-funded in 160 country-lines
+    (logic review L-44). A spending share is not exactly the share of patients whose service donors pay for (donors
+    often buy commodities for everyone while governments pay staff); it is the closest external measure and is
+    labelled as such. The Validation page counts the lines where this happens.
     """)
     md(f"""
     - **Continuity** = {pct('continuity')}: the share of people who keep their service anyway (absorbed by government

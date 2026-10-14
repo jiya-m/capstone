@@ -136,9 +136,11 @@ if len(ex):
     by_line = ex.groupby("line").size().rename(index=lambda l: hm.LINE_LABELS.get(l, l)).sort_values(ascending=False)
     st.table(pd.DataFrame({"Service": [title_case(i) for i in by_line.index], "Countries": by_line.values})
              .set_index("Service"))
-st.caption("In these lines, baseline donor aid ÷ cost per person is more than the people currently covered, so the "
-           "excess pays for things other than the service itself (systems, campaigns, newer products). People losing "
-           "the service are then scaled by the share of donor money lost, instead of aid lost ÷ cost per person.")
+st.caption("In these lines, baseline donor aid ÷ cost per person is more than the donor-funded pool (people currently "
+           "covered x the external share of the country's spending on the disease: WHO GHED for HIV, malaria and "
+           "immunization, WHO TB financing for TB; a regional median where a country has none), so the excess pays for "
+           "things other than the service itself (systems, campaigns, newer products). People losing the service are "
+           "then that pool x the share of donor money lost, instead of aid lost ÷ cost per person (logic review L-44).")
 
 # --------------------------------------------------------------------------- #
 # People on ART that donor money pays for: model vs PEPFAR's reported figure (audit I-09)

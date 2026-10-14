@@ -100,6 +100,8 @@ DR_TB_SHARE, DR_TB_COV = 0.04, 0.45     # fallbacks only: countries use WHO's RR
 # shares go to those lines by the country's mix; the testing share is treated like HIV testing-and-care money (kappa
 # of it counts toward the treatment line); the systems share joins HSS money; programme management is non-service
 UNSPEC_TAG = {"HIV": "hiv", "TB": "tb", "Malaria": "malaria"}
+# external (donor) share of the country's spending on each disease: country_inputs.csv donor_share_<tag> (IMP-04)
+DONOR_SHARE_TAG = {"HIV": "hiv", "TB": "tb", "Malaria": "malaria", "Immunization": "imm"}
 UNSPEC_TREAT = {"HIV": ["hiv_art"], "TB": ["tb_ds", "tb_dr"], "Malaria": ["mal_cm"]}
 UNSPEC_PREV = {"HIV": ["hiv_prev", "hiv_pmtct"], "TB": [], "Malaria": ["mal_itn", "mal_irs"]}
 UNSPEC_TEST_TARGET = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_cm"}
@@ -487,19 +489,23 @@ def mortality_trend_factors(row: pd.Series, kind: str, use: bool = True) -> np.n
     return (1.0 + t) ** np.arange(N_YEARS)
 
 
-def _units_lost(net, base, unit_cost, covered, cap_base=None):
+def _units_lost(net, base, unit_cost, covered, cap_base=None, donor_share=1.0):
     """Units of service lost (before continuity): donor-funded units x share of donor money lost. cap_base: the money
-    that pays for the service itself, used to test whether donor money buys more than everyone covered (for ART, the
-    treatment money only, not the testing and care money that also counts toward it; audit I-09).
+    that pays for the service itself, used to test whether donor money buys more than the donor-funded pool (for ART,
+    the treatment money only, not the testing and care money that also counts toward it; audit I-09). donor_share:
+    the external share of the country's spending on the disease (country_inputs.csv donor_share_*; Batch 3+4, IMP-04 /
+    L-44): the donor-funded pool is at most covered x donor_share, so a line where donor money would buy more than that
+    pool loses pool x share of money lost rather than treating every covered person as donor-funded.
     Feeds: People Losing Service (units, people or patient-years a year)."""
     net, base, unit_cost = np.asarray(net, dtype=float), np.asarray(base, dtype=float), np.asarray(unit_cost, dtype=float)
     cap_base = base if cap_base is None else np.asarray(cap_base, dtype=float)
     plain = net / unit_cost
     if np.isnan(covered):
         return plain
-    funded = np.minimum(covered, cap_base / unit_cost)
+    pool = covered * donor_share
+    funded = np.minimum(pool, cap_base / unit_cost)
     share = np.divide(net, base, out=np.zeros_like(net * base), where=np.abs(base) > 0)
-    return np.where(cap_base / unit_cost > covered, funded * share, plain)
+    return np.where(cap_base / unit_cost > pool, funded * share, plain)
 
 
 def per_unit_levels(row: pd.Series, P: dict, art_cov: float, trend: bool = True) -> dict:
@@ -922,7 +928,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     uc = unit_costs(row, P)
     units = {l: np.zeros((n, N_YEARS)) for l in ALL_DIRECT}           # per draw x year
     unitsc = {l: np.zeros((1, N_YEARS)) for l in ALL_DIRECT}          # central x year
-    capped, excess, funded = {}, {}, {}
+    capped, excess, funded, donor_share = {}, {}, {}, {}
     pm_need, pm_cov = ep["need_cov"]["hiv_pmtct"]
     pmtct_covered = pm_need * pm_cov if not (np.isnan(pm_need) or np.isnan(pm_cov)) else 0.0
     for l in ALL_DIRECT:
@@ -940,13 +946,19 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         # (audit I-27), so they are not part of the people the ART line's money can pay for or lose
         if l == "hiv_art" and not np.isnan(covered):
             covered = max(covered - pmtct_covered, 0.0)
+        # the donor-funded pool is at most the external share of the country's spending on the disease x the people
+        # covered (Batch 3+4, IMP-04 / L-44; GHED and WHO TB financing; 1 if the country has no value)
+        dsh = _v(row, f"donor_share_{DONOR_SHARE_TAG[LINE_BUCKET[l]]}", 1.0)
+        dsh = 1.0 if np.isnan(dsh) else float(np.clip(dsh, 0.0, 1.0))
+        donor_share[l] = dsh
         b0 = float(np.asarray(effc_base[l]).ravel()[0])
-        funded[l] = b0 / float(ucc[l][0]) if np.isnan(covered) else min(covered, b0 / float(ucc[l][0]))
-        excess[l] = bool(not np.isnan(covered) and b0 / float(ucc[l][0]) > covered * (1 + 1e-9))   # tolerance: ties
+        funded[l] = b0 / float(ucc[l][0]) if np.isnan(covered) else min(covered * dsh, b0 / float(ucc[l][0]))
+        excess[l] = bool(not np.isnan(covered) and b0 / float(ucc[l][0]) > covered * dsh * (1 + 1e-9))   # tolerance: ties
         if excess[l] and (iso3, l) not in _EXCESS_LOGGED:
             _EXCESS_LOGGED.add((iso3, l))
-            log.warning("%s %s: donor aid ($%.0f) buys %.0f units at $%.0f each, more than the %.0f people covered; "
-                        "units lost scaled proportionally", iso3, l, b0, b0 / float(ucc[l][0]), float(ucc[l][0]), covered)
+            log.warning("%s %s: donor aid ($%.0f) buys %.0f units at $%.0f each, more than the donor-funded pool of %.0f "
+                        "(%.0f people covered x external share %.2f); units lost scaled proportionally", iso3, l, b0,
+                        b0 / float(ucc[l][0]), float(ucc[l][0]), covered * dsh, covered, dsh)
         capped[l] = False
         # linked money (HIV testing and care -> ART) adds to this line's money lost and its base, but whether donor
         # money buys more than everyone covered is judged on the line's own money only (audit I-09)
@@ -956,8 +968,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             nc_t = netc_t[t][l] + sum(netc_t[t][k] for k in links)
             b_all = eff_base[l] + sum(eff_base[k] for k in links)
             bc_all = effc_base[l] + sum(effc_base[k] for k in links)
-            u = _units_lost(n_t, b_all, uc[l], covered, cap_base=eff_base[l]) * (1 - P["continuity"])
-            uc0 = _units_lost(nc_t, bc_all, ucc[l], covered, cap_base=effc_base[l]) * (1 - Pc["continuity"])
+            u = _units_lost(n_t, b_all, uc[l], covered, cap_base=eff_base[l], donor_share=donor_share[l]) * (1 - P["continuity"])
+            uc0 = _units_lost(nc_t, bc_all, ucc[l], covered, cap_base=effc_base[l], donor_share=donor_share[l]) * (1 - Pc["continuity"])
             if l in ep["need_cov"] and not np.isnan(need) and not np.isnan(cov):
                 hi = covered if l == "hiv_art" else cov * need
                 capped[l] = capped[l] or bool(np.ravel(uc0)[0] > hi)
@@ -1115,6 +1127,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             "cov_drop_pp": uc_mean / need * 100 if (need and not np.isnan(need)) else np.nan,
             "capped": capped.get(l, False),
             "donor_exceeds_cost": excess.get(l, False),
+            "donor_share_ext": donor_share.get(l, np.nan),       # external share of spending on the disease (cap, IMP-04)
             "donor_funded_units": funded.get(l, np.nan),        # people donor money pays for now (central)
             "deaths_y1": float(deathsc[l][0, 0]) if l in deathsc else 0.0,
             "deaths_y1_lo": q(d1, 2.5), "deaths_y1_hi": q(d1, 97.5),
@@ -1136,7 +1149,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                      "cov0": np.nan, "cov_source": "", "donor_share_of_coverage": np.nan, "units_lost": np.nan,
                      "units_lost_lo": np.nan, "units_lost_hi": np.nan, "units_lost_5y": np.nan,
                      "units_lost_peak": np.nan, "cov_drop_pp": np.nan, "capped": False,
-                     "donor_exceeds_cost": False, "donor_funded_units": np.nan, "deaths_y1": 0.0, "deaths_y1_lo": 0.0, "deaths_y1_hi": 0.0,
+                     "donor_exceeds_cost": False, "donor_share_ext": np.nan, "donor_funded_units": np.nan, "deaths_y1": 0.0, "deaths_y1_lo": 0.0, "deaths_y1_hi": 0.0,
                      "deaths_5y": 0.0, "deaths_5y_lo": 0.0, "deaths_5y_hi": 0.0, "infections_5y": 0.0,
                      "infections_5y_lo": 0.0, "infections_5y_hi": 0.0})
     tab = pd.DataFrame(recs)
@@ -1291,15 +1304,17 @@ def donor_funded_on_art(inputs, ptab) -> pd.DataFrame:
 
 
 def donor_cost_excess(inputs, ptab) -> pd.DataFrame:
-    """Country-lines where baseline donor aid / cost per person exceeds the people currently covered (the excess
-    pays for things other than the service; units lost are scaled proportionally there).
+    """Country-lines where baseline donor aid / cost per person exceeds the donor-funded pool (people covered x the
+    external share of spending on the disease; IMP-04): the excess pays for things other than the service, and units
+    lost are scaled proportionally there.
     Feeds: the Validation page count of lines where donor money exceeds the service cost."""
     rows = []
     for c in [c for c in inputs["ci"].index if c in set(inputs["lines"].iso3)]:
         L = run_country(c, Scenario(), Fiscal(), inputs, ptab, n_draws=0)["lines"]
         for r in L[L["donor_exceeds_cost"]].itertuples():
             rows.append({"iso3": c, "line": r.line, "aid_usd": r.base_usd, "unit_cost": r.unit_cost,
-                         "units_aid_buys": r.base_usd / r.unit_cost, "people_covered": r.cov0 * r.need})
+                         "units_aid_buys": r.base_usd / r.unit_cost, "people_covered": r.cov0 * r.need,
+                         "donor_share_ext": r.donor_share_ext, "donor_funded_pool": r.cov0 * r.need * r.donor_share_ext})
     return pd.DataFrame(rows)
 
 
