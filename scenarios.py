@@ -21,17 +21,18 @@ PRESETS = {
     "Full US exit": (
         "All US government health aid through bilateral agencies and NGOs ends; the US leaves WHO (effective Jan 2026), "
         "stops funding Gavi (announced June 2025) and UNFPA; its Global Fund pledge falls 23% (US$6.0B to US$4.6B, "
-        "8th replenishment, Nov 2025). Other donors unchanged."),
+        "8th replenishment, Nov 2025), so the scenario keeps 77% of the US Global Fund pledge. US money through other "
+        "multilaterals (UNICEF, UNAIDS, development banks) is unchanged, and so are other donors."),
     "America First MOUs": (
         "US bilateral aid follows the country's signed America First MOU year by year, 2026-2030: the cut in each year "
         "is 1 - US funding that year ÷ the 2021-25 reference, from the team's MOU sheet, used exactly as written "
         "(a funding increase counts as no cut). Only for the countries that have signed an MOU (KFF tracker) and "
-        "have schedule data. US multilateral exits as in 'Full US Exit'. The partner government's co-financing "
+        "have schedule data. US multilateral exits as in 'US Bilateral Exit + Multilateral Withdrawals'. The partner government's co-financing "
         "commitments in the MOU are not modelled (choose a government response to add them)."),
     "IHME 2025 preliminary estimates": (
-        "Data-driven: applies IHME's own 2025 preliminary DAH estimates relative to 2021-23, separately for every "
-        "source x channel x disease cell (IHME has no recipient-level split after 2023, so the global change is applied "
-        "to each country's mix)."),
+        "Applies IHME's own 2025 preliminary DAH estimates relative to 2021-23, separately for every source x channel "
+        "x disease cell. The country split is not data: IHME has no recipient-level split after 2023, so each "
+        "country's mix gets the global ratios."),
     "OECD-reported 2025 aid cuts": (
         "Each donor's 2025 change in total ODA (OECD preliminary data, Apr 2026) applied to its health aid: US -57%, "
         "Germany -17.4%, France -10.9%, UK -10.8%, Japan -5.6%; others unchanged."),
@@ -39,7 +40,7 @@ PRESETS = {
         "Channel shock for all donors: every donor's money through Gavi and through the Global Fund falls by the share "
         "you set (default Gavi -15%, Global Fund -20%), against each fund's 2021-23 disbursements (the model "
         "baseline). The sliders' tooltips give the sources for each value."),
-    "Combined retreat": "'Full US Exit' for the US plus the OECD-reported 2025 cuts for all other donors.",
+    "Combined retreat": "'US Bilateral Exit + Multilateral Withdrawals' for the US plus the OECD-reported 2025 total-aid cuts for all other donors.",
     "Custom": "Set cuts yourself by donor and by channel (cuts combine multiplicatively: 1 - (1-donor cut)(1-channel cut)).",
 }
 PRECOMPUTED_PRESETS = [p for p in PRESETS if p != "Custom"]
@@ -200,6 +201,16 @@ def scenario_from_key(key: str) -> hm.Scenario:
     d = json.loads(key)
     d["pair"] = {tuple(k.split("|")): v for k, v in d["pair"].items()}
     return hm.Scenario(**d)
+
+
+# Names shown for presets whose internal key (used in file names, cache keys and tests) differs from the label
+# (logic review IMP-14 / L-45, L-28)
+PRESET_DISPLAY = {"Full US exit": "US Bilateral Exit + Multilateral Withdrawals", "OECD-reported 2025 aid cuts": "Total-Aid Cuts (OECD) Applied to Health Aid"}
+
+
+def display_name(preset: str) -> str:
+    """The name shown for a preset (its key unless PRESET_DISPLAY renames it)."""
+    return PRESET_DISPLAY.get(preset, preset)
 
 
 def preset_slug(preset: str) -> str:

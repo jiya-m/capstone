@@ -58,7 +58,7 @@ def test_labels_reflect_the_chosen_values():
     assert ms.scenario_phrase(SF, {"gavi_cut": 10, "gf_cut": 0}) == "If Gavi funding falls 10%"
     assert "Selected: Gavi −15% · Global Fund −20%." in scn.preset_description(SF, opts)
     # other presets are unchanged
-    assert ms.scenario_title("Full US exit", opts) == ms.title_case("Full US exit")
+    assert ms.scenario_title("Full US exit", opts) == ms.title_case("US Bilateral Exit + Multilateral Withdrawals")
     assert ms.scenario_phrase("Full US exit") == ms.SCENARIO_PHRASE["Full US exit"]
 
 

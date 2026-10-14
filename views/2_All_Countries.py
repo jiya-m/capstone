@@ -21,7 +21,7 @@ st.title("All Countries")
 c1, _ = st.columns([1.3, 2])
 with c1:
     preset = th.shared_select("Donor Scenario", list(PRESETS), "ac_preset", "sel_preset", list(PRESETS)[0],
-                              format_func=title_case,
+                              format_func=lambda p: title_case(scn.display_name(p)),
                               help=ms._esc(PRESETS[st.session_state.get("sel_preset", list(PRESETS)[0])]))
 
 fiscal_t = tuple(ctx.get("fiscal_t", scn.DEFAULT_FISCAL))

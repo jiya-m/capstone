@@ -48,17 +48,18 @@ RANGE_LABEL, RANGE_TIP = th.RANGE_LABEL, th.RANGE_TIP
 SRC_MODEL = "Model estimates from IHME aid data (2021-23 average), WHO, UNAIDS and World Bank data; see Methods."
 SHOW_BRIEF = False                   # the Download Country Brief button (code kept for later)
 PRESET_SHORT = {
-    "Full US exit": "All US health aid ends, including WHO, Gavi and UNFPA; the US Global Fund pledge falls 23%.",
+    "Full US exit": "US bilateral health aid ends and the US leaves WHO, Gavi and UNFPA; its Global Fund pledge falls "
+                    "23%, so 77% of it is kept. Other US multilateral money is unchanged.",
     "America First MOUs": "US bilateral aid follows this country's signed MOU year by year, 2026-2030; US multilateral "
-                          "exits as in Full US Exit. The partner government's co-financing commitments are not "
+                          "exits as in US Bilateral Exit + Multilateral Withdrawals. The partner government's co-financing commitments are not "
                           "modelled.",
-    "IHME 2025 preliminary estimates": "IHME's preliminary 2025 change for every donor, channel and disease, applied to "
-                                       "this country's mix.",
-    "OECD-reported 2025 aid cuts": "Each donor's 2025 aid cut (US -57%, Germany -17%, France -11%, UK -11%, Japan -6%) "
-                                   "applied to its health aid.",
+    "IHME 2025 preliminary estimates": "IHME's preliminary 2025 change for every donor, channel and disease. IHME has "
+                                       "no country split for 2025, so this country's mix gets the global ratios.",
+    "OECD-reported 2025 aid cuts": "Each donor's 2025 cut in total aid, all sectors (US -57%, Germany -17%, France -11%, "
+                                   "UK -11%, Japan -6%), applied to its health aid.",
     "Global Fund & Gavi shortfalls": "All donors' money through Gavi and the Global Fund falls by the share set "
                                      "below, against each fund's 2021-23 disbursements.",
-    "Combined retreat": "Full US Exit plus the OECD-reported 2025 cuts for every other donor.",
+    "Combined retreat": "US Bilateral Exit + Multilateral Withdrawals plus the OECD-reported 2025 total-aid cuts for every other donor.",
     "Custom": "Set the cuts yourself by donor and by channel.",
 }
 CEILINGS = {"Strong year (75th percentile growth)": "p75", "Best years (90th percentile growth)": "p90"}
@@ -351,12 +352,13 @@ def preset_choices(ci, iso3) -> tuple:
     opts = [p for p in PRESETS if not (p == MOU and group == scn.MOU_GROUP_C)]
 
     def fmt(p):
-        return title_case(p) + (f" ({scn.NO_MOU_DATA})" if p == MOU and group == scn.MOU_GROUP_B else "")
+        return title_case(scn.display_name(p)) + (f" ({scn.NO_MOU_DATA})" if p == MOU and group == scn.MOU_GROUP_B
+                                                   else "")
     return opts, fmt, group
 
 
 def mou_fallback(ci, iso3, country_name):
-    """If America First MOUs is selected for a country without MOU schedule data, switch to Full US Exit and return the
+    """If America First MOUs is selected for a country without MOU schedule data, switch to US Bilateral Exit + Multilateral Withdrawals and return the
     one-line notice (None otherwise). Call before the Donor Scenario dropdown is drawn."""
     if st.session_state.get("sel_preset") == MOU and scn.mou_group(ci, iso3) != scn.MOU_GROUP_A:
         prev = st.session_state.get("prev_preset")
@@ -364,7 +366,7 @@ def mou_fallback(ci, iso3, country_name):
             st.session_state["sel_preset"] = prev
             return f"America First MOUs: {scn.NO_MOU_DATA}"
         st.session_state["sel_preset"] = "Full US exit"   # switched country while the preset was on
-        return f"{country_name}: no MOU funding data; showing Full US Exit."
+        return f"{country_name}: no MOU funding data; showing US Bilateral Exit + Multilateral Withdrawals."
     return None
 
 
@@ -470,7 +472,8 @@ def _controls(iso3, country_name, I) -> dict:
             if st.toggle("Compare with a Second Scenario", value=False, key="m_compare"):
                 options_b = ["Same as Scenario A"] + [p for p in scn.PRECOMPUTED_PRESETS
                                                       if p != MOU or group == scn.MOU_GROUP_A]
-                pb = st.selectbox("Donor Scenario (B)", options_b, index=0, key="mb_preset", format_func=title_case)
+                pb = st.selectbox("Donor Scenario (B)", options_b, index=0, key="mb_preset",
+                                  format_func=lambda p: title_case(scn.display_name(p)))
                 if pb == "Same as Scenario A":
                     preset_b, opts_b = preset, opts
                 else:
@@ -569,10 +572,10 @@ def response_phrase(ctl) -> str:
 # Story lede: a headline, a short summary and three big numbers, written from the model's results
 # --------------------------------------------------------------------------- #
 SCENARIO_PHRASE = {
-    "Full US exit": "If U.S. health aid ends",
+    "Full US exit": "If U.S. bilateral health aid ends and the U.S. leaves WHO, Gavi and UNFPA",
     "America First MOUs": "If U.S. aid follows the new “America First” health agreements",
     "IHME 2025 preliminary estimates": "If aid follows IHME’s 2025 estimates",
-    "OECD-reported 2025 aid cuts": "If donors’ 2025 aid cuts reach health",
+    "OECD-reported 2025 aid cuts": "If donors cut health aid as much as their total 2025 aid",
     "Global Fund & Gavi shortfalls": "If the Global Fund and Gavi fall short of their targets",
     "Combined retreat": "If the U.S. exits and other donors cut too",
     "Custom": "Under this scenario",
@@ -581,7 +584,8 @@ SCENARIO_PHRASE = {
 
 def scenario_title(preset: str, opts: dict | None = None) -> str:
     """The preset's name for captions and kickers, with the chosen cuts for Global Fund & Gavi Shortfalls."""
-    return title_case(preset) + (f" · {scn.shortfall_label(opts)}" if preset == scn.SHORTFALLS else "")
+    return title_case(scn.display_name(preset)) + (f" · {scn.shortfall_label(opts)}" if preset == scn.SHORTFALLS
+                                                   else "")
 
 
 def scenario_phrase(preset: str, opts: dict | None = None) -> str:

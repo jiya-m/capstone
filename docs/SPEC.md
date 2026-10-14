@@ -107,14 +107,14 @@ For each row of `dah_lines` (donor s, channel c, bucket b):
 
 | Preset | src_direct | src_multi | pair | chan |
 |---|---|---|---|---|
-| Full US Exit | US 1.0 | none | (US, WHO) 1, (US, Gavi) 1, (US, UNFPA) 1, (US, Global Fund) 0.23 | none |
-| America First MOUs | US: country schedule (below) | none | as Full US Exit | none |
+| US Bilateral Exit + Multilateral Withdrawals (key `Full US exit`) | US 1.0 | none | (US, WHO) 1, (US, Gavi) 1, (US, UNFPA) 1, (US, Global Fund) 0.23 | none |
+| America First MOUs | US: country schedule (below) | none | as US Bilateral Exit | none |
 | IHME 2025 | (ratio rule above) | | | |
-| OECD 2025 | US 0.57, Germany 0.174, France 0.109, United Kingdom 0.108, Japan 0.056 | the same values | none | none |
+| Total-Aid Cuts (OECD) Applied to Health Aid (key `OECD-reported 2025 aid cuts`) | US 0.57, Germany 0.174, France 0.109, United Kingdom 0.108, Japan 0.056 | the same values | none | none |
 | Global Fund & Gavi | none | none | none | Global Fund 0.20, Gavi 0.15 (user-set) |
-| Combined | US 1.0; Germany, France, UK, Japan as OECD | Germany, France, UK, Japan as OECD (US 0) | as Full US Exit | none |
+| Combined | US 1.0; Germany, France, UK, Japan as OECD | Germany, France, UK, Japan as OECD (US 0) | as US Bilateral Exit | none |
 
-So under Full US Exit, US money through every other multilateral channel (UNICEF, UNAIDS, development banks, EU
+So under US Bilateral Exit + Multilateral Withdrawals (77% of the US Global Fund pledge kept), US money through every other multilateral channel (UNICEF, UNAIDS, development banks, EU
 institutions) has cut 0.
 
 **IHME ratio** (built by `prepare_model.py`):

@@ -60,7 +60,7 @@ for p in scn.PRECOMPUTED_PRESETS:
         continue
     A = scn.load_precomputed(hm.MODEL_DIR, p)
     all_country[p] = A
-    rows.append({"Scenario": title_case(p) + (f" ({len(A)} MOU Countries With Funding Data)" if p == ms.MOU else ""),
+    rows.append({"Scenario": title_case(scn.display_name(p)) + (f" ({len(A)} MOU Countries With Funding Data)" if p == ms.MOU else ""),
                  **{b: num(A[f"deaths_5y_{b}"].sum()) for b in hm.BUCKETS},
                  "All Four": num(A["deaths_5y"].sum()),
                  "Range Across Parameter Values": rng(*hm.total_range(A, "deaths_5y"))})
@@ -79,21 +79,21 @@ if us is not None:
         {"Source": "Cavalcanti et al. 2025, Lancet",
          "What It Measures": "Deaths averted by USAID programs, 2001-2021, 133 countries",
          "Published": "HIV 25.5M, malaria 8.0M, TB 4.7M, under-5 30.4M (about 1.21M, 0.38M, 0.22M and 1.45M a year)",
-         "Closest Model Figure": f"Full US Exit, extra deaths a year: HIV {num(per_year['HIV'])}, malaria "
+         "Closest Model Figure": f"US Bilateral Exit + Multilateral Withdrawals, extra deaths a year: HIV {num(per_year['HIV'])}, malaria "
                                  f"{num(per_year['Malaria'])}, TB {num(per_year['TB'])}, immunization "
                                  f"{num(per_year['Immunization'])}"},
         {"Source": "Cavalcanti et al. 2025, Lancet",
          "What It Measures": "Extra deaths by 2030 if USAID is defunded, all causes and all USAID sectors",
          "Published": "14.1M",
-         "Closest Model Figure": f"Full US Exit: {num(us['deaths_5y'].sum())} over 5 years (four diseases)"},
+         "Closest Model Figure": f"US Bilateral Exit + Multilateral Withdrawals: {num(us['deaths_5y'].sum())} over 5 years (four diseases)"},
         {"Source": "UNAIDS 2025 (Goals model)",
          "What It Measures": "Extra AIDS deaths if PEPFAR ends, 2025-2029",
          "Published": "More than 4 million",
-         "Closest Model Figure": f"Full US Exit, HIV: {num(us['deaths_5y_HIV'].sum())} over 5 years"},
+         "Closest Model Figure": f"US Bilateral Exit + Multilateral Withdrawals, HIV: {num(us['deaths_5y_HIV'].sum())} over 5 years"},
         {"Source": "Optima (Burnet Institute; ten Brink et al. 2025, Lancet HIV)",
          "What It Measures": "Extra HIV deaths from international HIV funding cuts plus PEPFAR ending, 2025-2030",
          "Published": "0.8M to 2.9M",
-         "Closest Model Figure": f"Full US Exit, HIV: {num(us['deaths_5y_HIV'].sum())} over 5 years"},
+         "Closest Model Figure": f"US Bilateral Exit + Multilateral Withdrawals, HIV: {num(us['deaths_5y_HIV'].sum())} over 5 years"},
         {"Source": "Gavi",
          "What It Measures": "Future deaths averted per child immunised, since 2000",
          "Published": "About 0.017 (20.6M deaths / 1.2B children)",
@@ -103,7 +103,7 @@ if us is not None:
         "The scopes differ, so the model should come in below most of these figures. The Cavalcanti totals cover all "
         "causes of death and every USAID sector, while the model covers four diseases and only the aid that pays for "
         "HIV, TB, malaria and vaccine services. Cavalcanti, UNAIDS and Optima look at US (or USAID, or PEPFAR) money "
-        "only; the 'Full US Exit' scenario is the closest match, but the model also tracks every other donor. The "
+        "only; the 'US Bilateral Exit + Multilateral Withdrawals' scenario is the closest match, but the model also tracks every other donor. The "
         "USAID figures are deaths averted over 21 years of programs, so they are compared per year. Gavi's figure is "
         "lifetime deaths averted per child; the model's is the same quantity at each country's current under-5 "
         "mortality."))
