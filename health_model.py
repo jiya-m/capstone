@@ -425,7 +425,13 @@ def unit_costs(row: pd.Series, P: dict) -> dict:
     g = _v(row, "gdp_pc", 1000.0)
     # staff and delivery costs scale with income: (GDP per person / US$1,000)^elasticity, GDP floored at US$200
     sc = (max(g, 200.0) / 1000.0) ** P["uc_scale_elast"]
-    art_site = ref.get(("art_site_cost", iso))
+    # Batch 3+4 (IMP-03): the country's site cost per patient-year from country_inputs.csv (GHCC Unit Cost Study
+    # Repository pooled with Rosen et al. 2021; 2023 US$; a regional or income-group median where the country has no
+    # eligible study; batch34_inputs.py --art). The older rule (Rosen site costs for five countries, elsewhere ARVs +
+    # income-scaled non-ARV costs) is the fallback only if the column is missing
+    art_site = _v(row, "art_site_cost")
+    if np.isnan(art_site):
+        art_site = ref.get(("art_site_cost", iso))
     if art_site is None:                                  # no country study: ARVs + income-scaled non-ARV costs
         art_site = ref[("art_site_default", "arv")] + ref[("art_site_default", "non_arv")] * sc
     ig = income_group(row)

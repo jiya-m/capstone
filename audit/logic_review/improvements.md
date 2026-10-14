@@ -63,6 +63,10 @@ per initiation; the flow formulation triples the count rather than lowering it; 
 
 ### IMP-03. Country-specific unit costs (Do before presenting)
 
+**Status: ✅ done for ART (Batch 3+4 item 4, 14 October 2026; GHCC UCSR + Rosen 2021, 7 countries with their own
+value, the rest regional or income-group medians) and for TB (item 5; Value TB and GHCC course costs with WHO RR-TB
+shares). PEPFAR Expenditure Analysis per patient (DR-01) was not available. `batch34_evidence.md` D and E.**
+
 - **Addresses:** `uc_art_mult` (-10.6% / +14.5%), `uc_tb_mult` (-8.1% / +11.7%), `uc_scale_elast`, L-16, L-26.
 - **What to do:**
   - Replace the ART default formula (used in 65 countries) and the TB income-group means with country estimates.

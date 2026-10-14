@@ -509,7 +509,7 @@ def main():
         bad = [k for k in uc_c if not (min(uc_lo[k][0], uc_hi[k][0]) - 1e-9 <= uc_c[k][0] <= max(uc_lo[k][0], uc_hi[k][0]) + 1e-9)]
         ig = row.get("income_group")
         rec(iso, "", "", "unit_costs_inside_parameter_range", not bad, len(bad),
-            f"ART {'country study' if iso in art_specific else 'default (ARV median + GDP-scaled staff)'}; "
+            f"ART {row.get('art_site_cost_source', 'country study' if iso in art_specific else 'default (ARV median + GDP-scaled staff)')}; "
             f"TB income group {'World Bank' if isinstance(ig, str) and ig else 'GDP fallback'}: {hm.income_group(row)}"
             + (f"; out of range: {bad}" if bad else ""))
     # currency: constant-2023 GDP equals nominal GDP in 2023

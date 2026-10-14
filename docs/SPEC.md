@@ -54,6 +54,7 @@ Country columns used (`country_inputs.csv`):
 | births | `births` | |
 | DTP3 % | `sh_imm_idpt` | |
 | U5MR | `sh_dyn_mort` | 50 if missing |
+| ART site cost | `art_site_cost` (`_lo`, `_hi`, `_source`, `_year`) | US$ per patient-year at site level, 2023 US$ (`batch34_inputs.py --art`; `audit/batch34_art_costs.py`) |
 | split of unspecified money | `unspec_<hiv|tb|malaria>_<treatment|prevention|testing|rssh|pm>` (`_source`) | shares 0-1 summing to 1 per disease: Global Fund grant budgets by module, GC7 (`batch34_inputs.py --shares`; `audit/batch34_gf_shares.py`); WHO-region median where the country has no grant |
 | trends | `trend_u5mr`, `trend_malaria_deaths` | yearly change (shares); -0.009 if missing. `trend_u5mr`: UN IGME under-5 mortality 2010-2019. `trend_malaria_deaths`: WHO estimated malaria deaths (GHO `MALARIA_EST_DEATHS`) 2015-2024, log-linear fit (at least 5 positive years), clipped to ±5% a year (the clip is an assumption); 0 where WHO has no series (built by `malaria_inputs.py`) |
 | GDP per person | `gdp_pc` | 1,000 if missing |
@@ -267,8 +268,10 @@ and the positive nonservice amounts, each as a separate amount (nonservice[care]
 **Unit cost** (central run unless drawn):
 - markup = 1 / (1 - asd_share).
 - sc = (max(gdp_pc, 200) / 1000) ^ uc_scale_elast.
-- **hiv_art:** (art_site_cost[country] inflated from its cost_year by CPI-U to 2023), or, if the country has none,
-  (arv default + non_arv default x sc) inflated from 2018; then x uc_art_mult x markup.
+- **hiv_art:** `art_site_cost` from `country_inputs.csv` (2023 US$; Batch 3+4, IMP-03: GHCC and Rosen 2021 records,
+  or the WHO-region / income-group median of the countries with records) x uc_art_mult x markup. Only if that
+  column is missing: (art_site_cost[country] from `unit_cost_reference.csv` inflated from its cost_year by CPI-U to
+  2023), or, if the country has none, (arv default + non_arv default x sc) inflated from 2018.
 - **hiv_pmtct** = uc_pmtct (includes the mother's ART). **hiv_ovc** = uc_ovc.
 - **hiv_prev** = cpia_ref x (1 / inc)^0.5, with inc = new HIV infections / population x 1000, clipped to 0.05-10.
   inc = 0.3 if either input is missing. Unit: infection averted.
