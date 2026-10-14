@@ -1,4 +1,5 @@
-"""Independent reproduction of the funding-cut model, built from docs/SPEC.md ONLY (sections 0-7) and the data
+"""Independent reproduction of the funding-cut model, built from docs/SPEC.md ONLY (sections 0-7, plus the
+§6 further-deaths range over art_reengage) and the data
 files it names. No other description of the method and none of the model code was consulted. Central run only
 (every parameter at `central`). Section references (SPEC §n) point to docs/SPEC.md; places where SPEC.md is silent
 or ambiguous are listed in notes.md (a.n).
@@ -13,14 +14,17 @@ from pathlib import Path
 REPO = str(Path(__file__).resolve().parents[3])
 OUT = str(Path(__file__).resolve().parent)
 
-P = pd.read_csv(f"{REPO}/model_params.csv").set_index("param")["central"].astype(float).to_dict()  # SPEC §0
+PARAMS = pd.read_csv(f"{REPO}/model_params.csv").set_index("param")
+P = PARAMS["central"].astype(float).to_dict()  # SPEC §0: central run
+P_LOW = PARAMS["low"].astype(float).to_dict()
+P_HIGH = PARAMS["high"].astype(float).to_dict()
 CI = pd.read_csv(f"{REPO}/model_data/country_inputs.csv").set_index("iso3")
 DAH = pd.read_csv(f"{REPO}/model_data/dah_lines.csv")
 UCR = pd.read_csv(f"{REPO}/unit_cost_reference.csv")
 
 YEARS = 5           # t = 0..4 = 2026..2030 (SPEC §0)
 POST_YEARS = 5      # k = 0..4 = 2031..2035 (SPEC §1 constants)
-TRENDS = True       # "already-changing death rates" switch; SPEC does not give the default for a single run (a.3)
+TRENDS = True       # "already-changing death rates" switch: on by default (SPEC §6 "Death-rate switch")
 
 # ---------------------------------------------------------------- SPEC §1 constants
 DIRECT_CH = {"Bilateral agency", "NGOs", "Gates direct", "Other"}  # SPEC §2
@@ -169,21 +173,21 @@ def epi(r, Eb, uc):
     if isnan(itn):
         itn = P["mal_itn_default_use"]
     irs_map = nz(r["mal_irs_cov"])
-    if isnan(par):
-        irs = np.nan  # "If PAR is missing, the coverage stays NaN" (a.8)
+    if isnan(par) or par <= 0:
+        irs = irs_map  # PAR missing or 0: implied not computed, use mal_irs_cov (NaN if missing) (SPEC §5)
     else:
-        implied = float(np.clip((Eb["mal_irs"] / uc["mal_irs"]) / par, 0, 1)) if par > 0 else np.nan
-        if isnan(irs_map) or (not isnan(implied) and implied > irs_map):
-            irs = implied
-        else:
-            irs = irs_map
+        implied = float(np.clip((Eb["mal_irs"] / uc["mal_irs"]) / par, 0, 1))
+        irs = implied if (isnan(irs_map) or implied > irs_map) else irs_map
     cm = nz(r["mal_cm_cov"])
     if isnan(cm):
         cm = P["mal_cm_default_cov"]
     need = {"hiv_art": nz(r["plhiv"]), "hiv_pmtct": nz(r["hiv_pos_pregnancies"]), "tb_ds": tbinc,
             "tb_dr": DR_TB_SHARE * tbinc, "mal_itn": par, "mal_irs": par, "mal_cm": nz(r["malaria_cases"]),
             "imm": nz(r["births"]), "hiv_prev": np.nan, "hiv_ovc": np.nan}
-    cov = {"hiv_art": art, "hiv_pmtct": pm, "tb_ds": nz(r["sh_tbs_dtec_zs"]) / 100, "tb_dr": DR_TB_COV,
+    tbdet = nz(r["sh_tbs_dtec_zs"])
+    if not isnan(tbdet):
+        tbdet = min(tbdet, 100.0)  # TB detection % capped at 100 (SPEC §1)
+    cov = {"hiv_art": art, "hiv_pmtct": pm, "tb_ds": tbdet / 100, "tb_dr": DR_TB_COV,
            "mal_itn": itn, "mal_irs": irs, "mal_cm": cm, "imm": nz(r["sh_imm_idpt"]) / 100,
            "hiv_prev": np.nan, "hiv_ovc": np.nan}
     covered = {l: cov[l] * need[l] for l in need}
@@ -201,7 +205,9 @@ def weib_F(x):
     return 1 - math.exp(-((max(x, 0) / lam) ** WEIBULL_SHAPE))
 
 
-def run(iso, case):
+def run(iso, case, art_reengage=None):
+    """art_reengage: override for the further-deaths range (SPEC §6 Totals, L-33); None = central."""
+    reengage = P["art_reengage"] if art_reengage is None else art_reengage
     cfg = CASES[case]
     r = CI.loc[iso]
     rows = DAH[DAH.iso3 == iso].copy()
@@ -294,13 +300,15 @@ def run(iso, case):
 
     # TB treatment
     h = nz(r["tb_hiv_share"], 0.0)
+    # HIV-positive untreated CFR is a blend of off-ART and on-ART values by ART coverage a (SPEC §6)
+    cfr_u_pos = P["tb_cfr_untreated_pos"] * (1 - a) + P["tb_cfr_untreated_pos_art"] * a
     dcfr = (1 - h) * (P["tb_cfr_untreated_neg"] - P["tb_cfr_treated_neg"]) + \
-        h * (P["tb_cfr_untreated_pos"] - P["tb_cfr_treated_pos"]) * (1 - 0.3 * a)
+        h * (cfr_u_pos - P["tb_cfr_treated_pos"] * (1 - 0.3 * a))
     for t in range(YEARS):
         D["tb_ds"][t] = units["tb_ds"][t] * dcfr * LAG["tb_ds"][dur[t]]
         D["tb_dr"][t] = units["tb_dr"][t] * P["tb_dr_dcfr"] * LAG["tb_dr"][dur[t]]
     # TB spread
-    cfr_u = (1 - h) * P["tb_cfr_untreated_neg"] + h * P["tb_cfr_untreated_pos"] * (1 - 0.3 * a)
+    cfr_u = (1 - h) * P["tb_cfr_untreated_neg"] + h * cfr_u_pos
     cfr_t = (1 - h) * P["tb_cfr_treated_neg"] + h * P["tb_cfr_treated_pos"] * (1 - 0.3 * a)
     if isnan(need["tb_ds"]) or isnan(cov["tb_ds"]) or need["tb_ds"] <= 0:
         ctb = np.zeros(YEARS)
@@ -326,7 +334,15 @@ def run(iso, case):
     # Malaria (LiST form)
     D0 = nz(r["malaria_deaths"])
     if not isnan(D0) and D0 > 0:
-        Ev, Ec = P["mal_vc_eff"], P["mal_cm_eff"]
+        # Age groups (SPEC §6, L-04): under-5 share s; adults use effects x mal_adult_effect_frac
+        child = nz(r["malaria_deaths_in_children_1_59_months_total_deaths"])
+        if isnan(child):
+            s_u5 = 0.76 if str(r["is_ssa"]).strip().lower() == "true" else 0.40
+        else:
+            s_u5 = float(np.clip(child / D0, 0, 1))
+        fa = P["mal_adult_effect_frac"]
+        groups = [(D0 * s_u5, P["mal_vc_eff"], P["mal_cm_eff"]),
+                  (D0 * (1 - s_u5), P["mal_vc_eff"] * fa, P["mal_cm_eff"] * fa)]
         par, cases = need["mal_itn"], need["mal_cm"]
         n0 = cov["mal_itn"]
         r0 = 0.0 if isnan(cov["mal_irs"]) else cov["mal_irs"]
@@ -340,10 +356,14 @@ def run(iso, case):
             r1 = float(np.clip(r0 - (units["mal_irs"][t] / par if par_ok else 0.0), 0, 1))
             m1 = float(np.clip(m0 - (units["mal_cm"][t] / cases if cases_ok else 0.0), 0, 1))
             cv1 = vc(n1, r1)
-            rv = (1 - Ev * cv1) / (1 - Ev * cv0)
-            rc = (1 - Ec * m1) / (1 - Ec * m0)
-            total = D0 * (rv * rc - 1)
-            dv, dc = abs(D0 * (rv - 1)), abs(D0 * (rc - 1))
+            total = dv = dc = 0.0
+            for Dg, Ev, Ec in groups:
+                rv = (1 - Ev * cv1) / (1 - Ev * cv0)
+                rc = (1 - Ec * m1) / (1 - Ec * m0)
+                total += Dg * (rv * rc - 1)
+                dv += Dg * (rv - 1)
+                dc += Dg * (rc - 1)
+            dv, dc = abs(dv), abs(dc)
             den = dv + dc if (dv + dc) != 0 else 1.0
             vpart, cpart = total * dv / den, total * dc / den
             fi, fr = cv0 - vc(n1, r0), cv0 - vc(n0, r1)
@@ -384,7 +404,7 @@ def run(iso, case):
     off[:YEARS] = units["hiv_art"]
     for k in range(POST_YEARS):
         t = YEARS + k
-        frac = (1 - P["art_reengage"]) ** (k + 0.5)
+        frac = (1 - reengage) ** (k + 0.5)
         dth = inf = still = 0.0
         for sz, age_end in cohorts:
             people = sz * frac
@@ -434,7 +454,7 @@ def run(iso, case):
                 inc_per_1000=inc, art_covered=covered["hiv_art"],
                 conservation=max(abs(sum(E[t].values()) + sum(ns_list[t]) - L[t]) for t in range(YEARS)),
                 deaths_by_line_after2030={l: D[l][YEARS:].sum() for l in OUT_LINES},
-                inf_after2030=INF["hiv_art"][YEARS:].sum())
+                inf_after2030=INF["hiv_art"][YEARS:].sum(), mal_u5_share=locals().get("s_u5", np.nan))
     return out, diag
 
 
@@ -443,10 +463,15 @@ if __name__ == "__main__":
     for iso in ["KEN", "NGA", "IND", "HND", "MOZ"]:
         for case in CASES:
             o, d = run(iso, case)
+            # SPEC §6 Totals (L-33): further deaths with art_reengage at its high value (fewest deaths) and
+            # its low value (most deaths), every other parameter central
+            o["C.after_2030_reengage_min"] = run(iso, case, art_reengage=P_HIGH["art_reengage"])[0]["C.after_2030"]
+            o["C.after_2030_reengage_max"] = run(iso, case, art_reengage=P_LOW["art_reengage"])[0]["C.after_2030"]
             res.append(o); diags[o["key"]] = d
     df = pd.DataFrame(res)
     df.to_csv(f"{OUT}/independent.csv", index=False)
     pd.set_option("display.width", 250)
-    print(df[["key", "T.base", "T.gross", "T.replaced", "T.net", "T.deaths_5y", "C.after_2030"]].round(0).to_string())
+    print(df[["key", "T.base", "T.gross", "T.replaced", "T.net", "T.deaths_5y", "C.after_2030",
+              "C.after_2030_reengage_min", "C.after_2030_reengage_max"]].round(0).to_string())
     for k, d in diags.items():
         print(k, {kk: (round(v, 3) if isinstance(v, float) else v) for kk, v in d.items() if kk != "deaths_by_line_after2030"})

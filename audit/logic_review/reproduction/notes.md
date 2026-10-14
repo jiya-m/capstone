@@ -185,3 +185,98 @@ rule only where SPEC.md states it. Every rule taken from METHOD.md in the earlie
   default of the death-rate switch; nonservice amounts allocated separately; the prevention incidence fallback;
   spraying coverage when PAR is missing; cohort age after 2030; TB arrival-year coverage; infections by line; the four
   further-death parts; ART's own money in the table). In each case the reading taken here was the code's.
+
+## (e) Update to the current SPEC.md
+
+I re-read the whole of the current `docs/SPEC.md` and compared `repro.py` with it section by section. Parameters
+are still read from `model_params.csv`; the new rows `mal_adult_effect_frac` and `tb_cfr_untreated_pos_art` are read
+from it, and the `low` and `high` columns are now loaded too (for the art_reengage range). Countries, cases, the
+output file and the existing columns are unchanged. Two columns were added at the end.
+
+### Changes made to repro.py
+
+1. **Malaria effects by age (§6 "Age groups", L-04).** Malaria deaths are now split into two groups:
+   - under-5 share s = clip(`malaria_deaths_in_children_1_59_months_total_deaths` / D0, 0, 1), or 0.76 (`is_ssa`
+     True) / 0.40 (otherwise) when the child value is missing;
+   - under-5 deaths D0 s use Ev = mal_vc_eff and Ec = mal_cm_eff; deaths at 5+ D0 (1 - s) use both effects x
+     mal_adult_effect_frac;
+   - rv_g and rc_g are computed per group; total, dv and dc are sums over the groups, and the vector/treatment
+     split uses |dv| and |dc| of those sums.
+
+   The under-5 shares here are KEN 0.19, NGA 0.97, IND 0.24, MOZ 0.90 (HND has D0 = 0, so no malaria deaths).
+   No fallback is used for these countries. The new mal_cm_eff central (0.97) is picked up from `model_params.csv`
+   without a code change.
+2. **TB case fatality for HIV-positive untreated patients (§6 tb_ds and TB spread).** This is now the blend
+   cfr_u_pos = tb_cfr_untreated_pos (1 - a) + tb_cfr_untreated_pos_art a. It is used in both places:
+   - dCFR = (1 - h)(untreated_neg - treated_neg) + h [cfr_u_pos - tb_cfr_treated_pos (1 - 0.3a)]. Previously the
+     (1 - 0.3a) factor multiplied the whole HIV-positive difference; now it applies to the treated term only;
+   - cfr_u = (1 - h) untreated_neg + h cfr_u_pos (previously h x untreated_pos x (1 - 0.3a)). cfr_t is unchanged.
+3. **TB detection rate capped at 100 (§1).** The detection % is capped at 100 before it is used as tb_ds coverage,
+   and so also in the TB-spread coverage c_t. No effect here (KEN 81, NGA 79, IND 92, HND 65, MOZ 85).
+4. **Spraying coverage when PAR is missing (§5).** Now: if PAR is missing or 0, the implied value is not computed
+   and the coverage is `mal_irs_cov` (NaN if that is missing too). Previously a missing PAR gave NaN even when
+   `mal_irs_cov` existed (old ambiguity a.8, now resolved by the spec). No effect here: every country has PAR > 0.
+5. **Further deaths across the return-to-care assumption (§6 Totals, L-33).** `run()` takes an optional
+   art_reengage override (used only in the post-2030 off-care fraction; everything downstream of it, including
+   the ART-coverage risk for infection deaths after 2030, is recomputed). Two new columns:
+   - `C.after_2030_reengage_min` = `C.after_2030` with art_reengage at its `high` value (0.75, fewest deaths);
+   - `C.after_2030_reengage_max` = the same with its `low` value (0.25, most deaths).
+
+   Both values come from `model_params.csv`; every other parameter stays central. In every row
+   min < central < max (for example KEN case 1: 20,502 / 37,173 / 67,516).
+6. **Comments.** The death-rate switch comment now cites §6 ("on by default"; old ambiguity a.3 resolved). The
+   docstring mentions the further-deaths range.
+
+Checked and unchanged: §6 trend factors (only malaria and vaccine deaths have a trend; TB and HIV were already
+flat in repro.py), §2 cuts and paths, §3 effective money, §4 response and pro-rata allocation, §5 units and unit
+costs, vaccine timing, HIV cohorts and infection deaths. The malaria death trend input changed in the data only
+(`trend_malaria_deaths`, now from WHO malaria deaths); the code reads it as before.
+
+### Effect on independent.csv (compared with the previous run)
+
+Only these columns changed: `T.deaths_5y`, `C.after_2030`, `L.tb_ds.deaths_5y`, `L.mal_itn.deaths_5y`,
+`L.mal_irs.deaths_5y`, `L.mal_cm.deaths_5y` (plus the two new columns). Money, units, coverage and HIV values are
+identical.
+- TB (change 2): tb_ds deaths rise 1-4% (e.g. MOZ case 1 69.0k -> 71.8k); `C.after_2030` rises slightly through
+  the 2031-32 TB-spread arrivals (MOZ case 1 47,051 -> 47,184).
+- Malaria (change 1 and the new trend data): KEN falls (cm 11.8k -> 7.3k, itn 4.4k -> 2.3k in case 1, since only
+  19% of its deaths are under 5); NGA and MOZ rise (NGA case 1 cm 24.6k -> 33.2k, itn 40.6k -> 39.0k); IND falls.
+  I cannot separate the effect of the age split from that of the new trend data, since I do not have the old data.
+- `T.deaths_5y` case 1: KEN 126.1k -> 120.3k, NGA 217.9k -> 225.2k, IND 19.0k -> 19.0k, HND 1.82k -> 1.83k,
+  MOZ 184.3k -> 188.2k.
+
+### New ambiguities in SPEC.md
+
+24. **§6 "Age groups": "if the child value or D0 is missing".** A child value of 0 with D0 > 0 is not "missing",
+    so I used s = 0 (all deaths at adult effect sizes), not the 0.76 / 0.40 fallback. A missing `is_ssa` is treated
+    as not True (0.40). Neither case occurs here (HND has 0 / 0, but D0 = 0 gives no malaria deaths anyway).
+25. **§6 "Extra deaths" split.** The spec writes dv and dc as sums over groups and then uses |dv| and |dc|. I took
+    the absolute value of the sum (not the sum of absolute values per group). With units >= 0 every term is >= 0,
+    so the two readings agree here.
+26. **§6 Totals, the reengage columns.** The spec names the precomputed columns `deaths_after_2030_reengage_min` /
+    `_max` and lists "high value (fewest deaths)" first and "low value (most deaths)" second, but does not say
+    explicitly which suffix is which. I read `_min` = fewest deaths = art_reengage high, `_max` = most deaths =
+    art_reengage low. The spec also does not say whether the range uses only the `low` and `high` columns or the
+    draw percentiles; "its high value and its low value" reads as the columns, which I used.
+27. **§1 "TB detection % capped at 100 (flagged when above)".** The cap is stated in the column table, so I applied
+    it to the input itself, i.e. to tb_ds coverage and to the TB-spread c_t. The "flag" is not an output here.
+28. **§6 tb_ds dCFR with a = ART %.** The blend uses population ART coverage a as a proxy for "on ART for a year or
+    more" (the parameter label). The spec is explicit, so this is a modelling note rather than a gap.
+
+### What I consulted for this update
+
+Only `docs/SPEC.md`, the data files (`model_data/dah_lines.csv`, `model_data/country_inputs.csv`,
+`model_data/ihme_trend.csv` not needed beyond the earlier header check, `model_params.csv`,
+`unit_cost_reference.csv`) and my own `repro.py`, `notes.md` and previous `independent.csv` (copied to a scratch
+folder to diff old and new outputs). I did not open any model code, `compare.py`, `compare.csv`, any audit script
+or snapshot CSV, `tests/` or `views/`, did not import any model module, and did not use git to look at diffs.
+`compare.py` was not run for this update.
+
+## (f) Result against the dashboard after the "Do now" changes
+
+- **Run:** `.venv/bin/python audit/logic_review/reproduction/compare.py audit/after_do_now.csv`, with the snapshot taken
+  at commit ba496d1 after all eleven changes.
+- **Result:** 1,900 cells compared (the 1,860 before, plus the two return-to-care columns), **1,900 within 0.5%**;
+  largest difference 0.0000%.
+- **SPEC.md clarified afterwards:** ambiguities 24 (a child-death value of 0 gives s = 0) and 26 (`_min` = art_reengage
+  at its high value, `_max` at its low value; the parameter columns, not draw percentiles). The code already did this.

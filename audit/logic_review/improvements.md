@@ -82,6 +82,8 @@ Nothing here has been implemented.
 
 ### IMP-05. Malaria: apply Lives Saved Tool effects to under-5 deaths, and use the LiST treatment effect for uncomplicated cases (Do now)
 
+**Status: ✅ done (c6dd075, 14 October 2026).**
+
 - **Addresses:** L-04 (-4.9%, tested) and L-20 (`mal_cm_eff` at 0.99 gives +4.1%).
 - **Evidence:**
   - Eisele 2010 and Thwing 2011 (children 1-59 months).
@@ -138,6 +140,8 @@ Nothing here has been implemented.
 
 ### IMP-10. All-country range from summed draws, and honest range labels (Do now)
 
+**Status: ✅ done (581c013, 14 October 2026).**
+
 - **Addresses:** L-02.
 - **What to do:**
   - Store per-draw totals in the precomputed files and take the percentile of the sum. Measured: 1.39-2.70M vs the
@@ -177,6 +181,8 @@ Nothing here has been implemented.
 - **Data:** DR-03b.
 
 ### IMP-14. Rename and add presets (Do now)
+
+**Status: ✅ done (752f611 (labels only; no new preset), 14 October 2026).**
 
 - **Addresses:** L-45, L-46, L-28.
 - **What to do:**
@@ -220,6 +226,8 @@ Nothing here has been implemented.
 
 ### IMP-18. Malaria trend from WHO death series (Do now)
 
+**Status: ✅ done (719ff89, 14 October 2026).**
+
 - **Addresses:** L-25.
 - **What to do:** use `MALARIA_EST_DEATHS` 2015-2024 (already in `ext_data/gho`) for the death trend instead of the Pf
   case trend clipped at ±5%. Also keep `mal_resurgence` as a separate, labelled assumption.
@@ -240,6 +248,8 @@ Nothing here has been implemented.
 
 ### IMP-20. One complete, current specification (Do now)
 
+**Status: ✅ done (cff29af, 14 October 2026).**
+
 - **Addresses:** L-36 (METHOD.md contradicts the code on ART units), L-37 (`logic.md` needed 12 items from
   METHOD.md).
 - **What to do:** merge into one spec, keep it beside the code, and test it with the independent reproduction (this
@@ -247,6 +257,8 @@ Nothing here has been implemented.
 - **Effort:** small. **Risk:** none.
 
 ### IMP-21. Claims wording (Do now)
+
+**Status: ✅ done (576a8d8, 14 October 2026).**
 
 - **Addresses:** L-48, L-02, L-40, L-30 and claims C1, C4, C5, C9, C17 (`dashboard.md`).
 - **Effort:** small. **Risk:** none.

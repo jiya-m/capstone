@@ -1,6 +1,7 @@
 check,runs,passed,failed,warnings
 section1_dah_equals_section2_dah_same_year,630,630,0,6
 aid_at_risk_is_per_year_not_5yr_total,1744,1744,0,0
+all_country_range_brackets_total,6,6,0,0
 card_deaths_equal_full_model_1M_uniform_cut,280,280,0,0
 coverage_in_0_1_and_after_le_before,1744,1744,0,0
 coverage_is_fraction_not_percent,1744,1744,0,0
@@ -39,6 +40,8 @@ percent_scale_sh_tbs_dtec_zs,1,1,0,0
 percent_scale_sh_xpd_ghed_ge_zs,1,1,0,0
 precomputed_csv_has_all_columns,6,6,0,0
 precomputed_csv_matches_fresh_run,366,366,0,0
+precomputed_draw_totals_match_fresh_run,6,6,0,0
+precomputed_draw_totals_present,6,6,0,0
 range_lo_le_central_le_hi,1744,1744,0,0
 replaced_le_fiscal_capacity,872,872,0,0
 section1_2023_matches_raw_IHME_file,71,71,0,0

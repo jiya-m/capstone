@@ -374,7 +374,7 @@ below it.)
   - Where PAR or cases are missing or 0, the subtracted term is 0.
 - **Combined vector control:** vc(i, r) = 1 - (1 - i)(1 - r); cv0 = vc(n0, r0), cv1 = vc(n1, r1).
 - **Age groups** (L-04): s = clip(`malaria_deaths_in_children_1_59_months_total_deaths` / D0, 0, 1); if the child
-  value or D0 is missing, s = 0.76 where `is_ssa` is True, else 0.40. Under-5 deaths Du = D0 s use Ev = mal_vc_eff and
+  value or D0 is missing, s = 0.76 where `is_ssa` is True, else 0.40 (a child value of 0 is not missing: s = 0). Under-5 deaths Du = D0 s use Ev = mal_vc_eff and
   Ec = mal_cm_eff; deaths at 5 and over Da = D0 (1 - s) use Ev x mal_adult_effect_frac and Ec x
   mal_adult_effect_frac.
 - **Ratios**, for each group g with its (D_g, Ev_g, Ec_g): rv_g = (1 - Ev_g cv1) / (1 - Ev_g cv0);
@@ -394,7 +394,9 @@ below it.)
 - **Further deaths across the return-to-care assumption** (L-33): the central run's further deaths recomputed with
   art_reengage at its high value (fewest deaths) and its low value (most deaths), every other parameter central.
   Shown under Further Deaths, labelled assumption-driven. All Countries: the sum over countries (exact, because the
-  same value applies in every country). Precomputed columns `deaths_after_2030_reengage_min` / `_max`.
+  same value applies in every country). Precomputed columns `deaths_after_2030_reengage_min` (art_reengage at its
+  `high` column value: fewest deaths) and `_max` (at its `low` value: most deaths); the parameter's low/high columns,
+  not draw percentiles.
 - Year 1 = 2026.
 - Further deaths 2031-2035 = sum of the parts:
   - hiv_art: deaths among people still off ART;

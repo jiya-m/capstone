@@ -22,6 +22,51 @@
 | `coverage.md` | 11. Coverage table |
 | `reproduction/` (independent `repro.py`, `notes.md`, outputs, cell-by-cell comparison), `range_test.py`, `extra_sensitivity.py`, `build_coverage.py` | Evidence and scripts behind Parts 2, 4, 5 and 11 |
 
+## Status after the "Do now" changes (14 October 2026)
+
+The user approved the "Do now" items; they were implemented on `real-modeling-check`, one commit per item. Findings
+and improvements marked ✅ below are done; ◐ partly done. L-01, IMP-02 and anything needing new data were not
+started. Before/after numbers: `do_now_before_after.md`.
+
+| Item | Commit | Addresses | What changed |
+|---|---|---|---|
+| IMP-20 ✅ | `cff29af` | L-36, L-37 | One specification, `docs/SPEC.md`, matching the code. The independent reproduction runs from it alone: 1,860 of 1,860 cells within 0.5% before the model changes, and again after them (`reproduction/notes.md`) |
+| IMP-10 ✅ | `581c013` | L-02 | All Countries range = percentile of the summed draws (Full US Exit 1.39-2.70M, was 1.34-2.81M); "range across parameter values" with the parameter-only tooltip everywhere |
+| IMP-21 ✅ | `576a8d8` | L-48 (and C7 / L-03, C8 / L-47, C14 / L-08 wording) | Claims C1, C2, C3, C6, C7, C8, C9, C10, C14, C17 reworded; headline rounded to two significant figures |
+| L-40 ✅ | `c56214a` | L-40 | Treatment and Prevention shown separately; ART counted as the treatment the lost money would have paid for |
+| IMP-14 ✅ (labels) | `752f611` | L-45, L-46, L-28 (label) | "US Bilateral Exit + Multilateral Withdrawals" (77% of the US Global Fund pledge kept); "Total-Aid Cuts (OECD) Applied to Health Aid"; IHME country split described as global ratios |
+| L-30 ✅ | `8b89420` | L-30 | "Hypothetical best case (triage)" |
+| L-33 ✅ | `f8566e4` | L-33 | Further deaths labelled assumption-driven, with the range across art_reengage 0.25-0.75 (all countries 299K-851K) |
+| IMP-05 ✅ | `c6dd075` | L-04, L-20 | LiST effects in full for under-5 deaths, x mal_adult_effect_frac (0.5, assumption) at 5+; mal_cm_eff 0.97 (0.82-0.99), Thwing 2011. Malaria deaths, Full US Exit, -6.4% |
+| IMP-18 ✅ | `719ff89` | L-25 | Malaria trend from WHO malaria deaths 2015-2024 (±5% clip labelled an assumption). Malaria deaths -3.2% |
+| L-10, L-12, L-13 ✅ | `911fbfe` | L-10, L-12, L-13 | TB trend removed (TB deaths are per patient); detection rate capped at 100%; HIV+ untreated TB CFR = 0.78(1-a) + 0.49a (WHO Table 5). TB deaths +2.7% |
+| L-26 ✅ | `ba496d1` | L-26 | asd_share cited to KFF 2025 (47%); value kept at 0.45 |
+
+**Headline after all changes** (all countries, Full US Exit, central): 1,945,605 deaths 2026-2030 (was 1,969,304,
+-1.2%); range across parameter values 1.37-2.68M (see `do_now_before_after.md` for every preset and for Kenya, Nigeria,
+Mozambique and India). L-01 (Critical) is unchanged and still dominates the uncertainty.
+
+**Checks and test baseline.**
+- `audit/checks.py --full` after all changes: 59 checks, 76,501 rows, 0 failures, 6 known warnings (Section 1 vs
+  Section 2 DAH).
+- The independent reproduction built from `docs/SPEC.md` alone matches 1,900 of 1,900 cells within 0.5%.
+- Snapshot `audit/before_do_now.csv` vs `audit/after_do_now.csv`: 251,222 of 3,159,310 values changed, all deaths on
+  the malaria lines and on TB treatment, plus the totals, ranges and deaths per US$1M built from them. No money,
+  people, coverage or fiscal value changed.
+- `tests/baseline_sudden.json` locks results for 5 countries x every preset x 3 responses, with the later mechanisms
+  switched off. It was refreshed three times, because the model's malaria and TB death formulas changed on purpose:
+  - IMP-05 (`--malaria`, 63 of 99 entries);
+  - IMP-18 (`--malaria`, 63);
+  - L-13 (new `--tb` mode, 54).
+- Each refresh checks that, outside the lives-first response, only that disease's lines, the totals and its path
+  moved. The labels-only items changed no baseline value.
+
+**New caveat from IMP-05.** The under-5 share of malaria deaths comes from the WHO/MCEE child series (2021) ÷ WHO
+all-age deaths (2024). It varies widely and in places disagrees with WHO's regional figure (75% under 5 in the African
+Region): Nigeria 0.98, Mozambique 0.90, Kenya 0.19, Ethiopia 0.11. So country malaria results moved in different
+directions: Kenya -40%, India -30%, Nigeria +10%, Mozambique +8%. A WHO country series of under-5 malaria deaths would
+settle it (data request).
+
 ## Summary
 
 | Area | Result |
@@ -58,22 +103,22 @@
 | L-44 | Major | High (mechanism), Medium (size) | Proportional-cap rule (`_units_lost`, `health_model.py:438-450`) treats all covered people as donor-funded when donor money ÷ cost > covered. 160 of 695 lines (Validation page). | Est. -3% to -5% (red team; not run) | IMP-04 | DR-04 |
 | L-05 | Major | Medium | `hss_kappa` (assumption, no evidence found) converts systems and testing & care money into patients at a cost already marked up by 1/(1-asd): above-site costs counted twice. | Swing -10.1% / +16.2%; kappa = 0 gives -20% (red team) | IMP-02 | No |
 | L-14 | Major | Medium | `continuity` 0.15 is one global value with no source. PEPFAR FY25 ART counts were "stable" after the 2025 cuts (KFF). Large private TB sectors (India: 33% of notifications). | Swing +18.0% / -23.8% | IMP-16 | DR-02, DR-07 |
-| L-04 | Major | High | Malaria effect sizes (Eisele 2010; Thwing 2011) are for children 1-59 months but are applied to all-age deaths. | **-4.9%** (tested: 1,872,379) | IMP-05 | No |
-| L-20 | Major | High | `mal_cm_eff` 0.82 is the severe-malaria effect, applied to effective treatment of all cases. LiST uses 99% for uncomplicated malaria with ACT (Thwing 2011). | +4.1% at 0.99 | IMP-05 | No |
+| L-04 ✅ done (c6dd075) | Major | High | Malaria effect sizes (Eisele 2010; Thwing 2011) are for children 1-59 months but are applied to all-age deaths. | **-4.9%** (tested: 1,872,379) | IMP-05 | No |
+| L-20 ✅ done (c6dd075) | Major | High | `mal_cm_eff` 0.82 is the severe-malaria effect, applied to effective treatment of all cases. LiST uses 99% for uncomplicated malaria with ACT (Thwing 2011). | +4.1% at 0.99 | IMP-05 | No |
 | L-06 | Major | High | Aid baseline 2021-23, but US health aid fell 67% in 2025 (IHME FGH 2025). Coverage is 2024-25, a mix of years. Cuts that began in 2025 start the hazard clock in 2026. IHME has no recipient detail after 2023 (checked). | Aid at Risk overstated for US scenarios (tens of %); deaths relative to 2021-23 service levels | IMP-06 | DR-03 |
-| L-08 | Major (MOU preset) | High | The MOU preset ignores partner co-financing commitments, which are the defining feature of the MOUs (KFF tracker). | MOU preset deaths (360K) overstated wherever co-financing is delivered | IMP-08 | DR-12 |
-| L-28 | Major (OECD preset) | High | OECD total-ODA changes are applied to health aid. IHME health-specific changes differ (UK -39% vs -10.8%; France -33% vs -10.9%). Labelled in the app. | OECD preset: country and donor mix wrong; total direction unknown | IMP-14; use IHME donor x disease ratios | No |
+| L-08 ◐ partly done (576a8d8 (the MOU preset now says co-financing is not modelled; not implemented)) | Major (MOU preset) | High | The MOU preset ignores partner co-financing commitments, which are the defining feature of the MOUs (KFF tracker). | MOU preset deaths (360K) overstated wherever co-financing is delivered | IMP-08 | DR-12 |
+| L-28 ◐ partly done (752f611 (label only: renamed and described as total-aid cuts; the cuts themselves are unchanged)) | Major (OECD preset) | High | OECD total-ODA changes are applied to health aid. IHME health-specific changes differ (UK -39% vs -10.8%; France -33% vs -10.9%). Labelled in the app. | OECD preset: country and donor mix wrong; total direction unknown | IMP-14; use IHME donor x disease ratios | No |
 | L-18 | Major | Medium | Vaccine units are full-schedule children at US$87, but Gavi money buys specific newer vaccines. Losing it rarely means losing DTP3 entirely. | Unknown; see L-42 | IMP-15 | DR-05, DR-09 |
 | L-42 | Major (under) | Medium | Vaccine deaths per dollar are 3-10x below Gavi's own claim (more than a million deaths if the US withdraws about US$1.58B). Part is scope (under-5 vs lifetime). | Vaccines are 6% of deaths; could rise severalfold | IMP-15 | DR-09 |
-| L-33 | Major (2031-35 number) | High | "Further deaths 2031-35" depend mostly on `art_reengage` 0.5, an assumption. Most deaths from new HIV infections fall after 2035. | 2031-35: 298,801 (0.75) to 850,819 (0.25) vs 494,715 | Label as assumption-driven; show the range | No |
-| L-02 | Presentation | High | Ranges are parameter-only but labelled "95% interval" (at least 10 places). The all-country range sums country percentiles: 1.34-2.81M vs the correct 1.39-2.70M. | Range 11% too wide; real uncertainty far larger (L-01) | IMP-09, IMP-10 | No |
-| L-03 | Presentation | High | Country scope: 71.5% of country-coded disease aid. Large recipients missing; no documented selection rule. | Totals understate "all LMICs" | State the scope; IMP-23 | No |
+| L-33 ✅ done (f8566e4) | Major (2031-35 number) | High | "Further deaths 2031-35" depend mostly on `art_reengage` 0.5, an assumption. Most deaths from new HIV infections fall after 2035. | 2031-35: 298,801 (0.75) to 850,819 (0.25) vs 494,715 | Label as assumption-driven; show the range | No |
+| L-02 ✅ done (581c013) | Presentation | High | Ranges are parameter-only but labelled "95% interval" (at least 10 places). The all-country range sums country percentiles: 1.34-2.81M vs the correct 1.39-2.70M. | Range 11% too wide; real uncertainty far larger (L-01) | IMP-09, IMP-10 | No |
+| L-03 ◐ partly done (576a8d8 (scope stated in the All Countries tooltip; no countries added)) | Presentation | High | Country scope: 71.5% of country-coded disease aid. Large recipients missing; no documented selection rule. | Totals understate "all LMICs" | State the scope; IMP-23 | No |
 | L-07 | Minor | High | 8 countries use an under-5 bednet survey for the whole population. 31 use a 50% default, though older surveys show 4-31% (Indonesia, Namibia, Botswana). | about 0 on deaths; credibility | Use the latest survey with decay, or 0 | No |
 | L-09 | Minor | Medium | Gavi -15% default is "our estimate"; Gavi 6.0 has only US$6B in new pledges (Donor Tracker). | Preset only | Keep the label; IMP-13 | No |
-| L-10 | Minor | High | `trend_tb_deaths` is defined (`health_model.py:423`) but never applied. TB and HIV counterfactuals are flat while malaria and vaccines trend. | small | Apply it or remove it, and document | No |
+| L-10 ✅ done (911fbfe) | Minor | High | `trend_tb_deaths` is defined (`health_model.py:423`) but never applied. TB and HIV counterfactuals are flat while malaria and vaccines trend. | small | Apply it or remove it, and document | No |
 | L-11 | Minor | High | `hiv_deaths_est` (Validation, Lancet comparison) uses the GBD-2019 HIV share via Gapminder. Honduras comes out at 85 a year. | Validation page only | Use UNAIDS 2025 deaths | DR-06 |
-| L-12 | Minor | High | TB detection rate can exceed 100% by definition (WDI). None does now; there is no guard. | 0 now | Clip at 1 and flag | No |
-| L-13 | Minor | High | HIV+ TB untreated CFR = 0.62(1-0.3a) approximates WHO Table 5 (0.78 off ART; 0.49 at 1 year or more on ART). | under +1% | 0.78(1-a) + 0.49a | No |
+| L-12 ✅ done (911fbfe) | Minor | High | TB detection rate can exceed 100% by definition (WDI). None does now; there is no guard. | 0 now | Clip at 1 and flag | No |
+| L-13 ✅ done (911fbfe) | Minor | High | HIV+ TB untreated CFR = 0.62(1-0.3a) approximates WHO Table 5 (0.78 off ART; 0.49 at 1 year or more on ART). | under +1% | 0.78(1-a) + 0.49a | No |
 | L-15 | Minor | High | TB: the whole 10-year case fatality is put in the year of loss (WHO: untreated duration about 3 years). Secondary cases all arrive 1-2 years later. | 2026-30 TB deaths overstated by a few %; moved to 2031-35 | IMP-11 | No |
 | L-16 | Minor | High | DR-TB costs from single 2014 studies, pre-BPaLM (GDF US$284 per course), not monotone by income. Global 4% share and 45% coverage, though Central Asia's share is far higher. | about ±0.2% | IMP-03, IMP-11 | DR-02, DR-08 |
 | L-17 | Minor | High | DTP3 2024 via the WDI mirror; WUENIC 2025 was released July 2026. | small | Download WUENIC directly | DR-05 |
@@ -82,7 +127,7 @@
 | L-22 | Minor | Medium | The IRS max() rule credits money-implied spraying where MAP shows none (Nigeria 0% since 2018). | under 0.1% (Nigeria spraying deaths 1,276) | Use MAP where it exists | No |
 | L-23 | Minor | High | MAP vs WHO malaria cases differ by more than 30% in 20 of 46 countries (Pakistan 14.4M vs 3.15M). | -0.5% with WHO cases | Document; show both | No |
 | L-24 | Minor | High | Need (births, PLHIV, incidence) held at the latest year, 2026-2030. | +2% to +5% where caps bind | IMP-17 | DR-10 |
-| L-25 | Minor | Medium | Malaria death trend = Pf case trend clipped ±5% (clip unsourced). It compounds with resurgence in high-trend countries. | -0.8% / +0.1% | IMP-18 | No (on disk) |
+| L-25 ✅ done (719ff89) | Minor | Medium | Malaria death trend = Pf case trend clipped ±5% (clip unsourced). It compounds with resurgence in high-trend countries. | -0.8% / +0.1% | IMP-18 | No (on disk) |
 | L-27 | Minor | Low | Testing & care money (US$760M/yr) is counted as lost ART at kappa; it funds a flow of new initiations, not a stock. | inside L-05 | IMP-02 | No |
 | L-29 | Minor | Medium | Fiscal capacity is one strong year's growth held flat for 5 years, not cumulative. Stress thresholds unsourced. | 0 on default headlines | Cumulative capacity; cite IMF DSF | No |
 | L-31 | Minor | Medium | WEO vintage of `macro_data` is untagged. WDI revenue and debt are central government only, missing for 18 and 41 countries. | display only | Tag the vintage | No |
@@ -91,15 +136,15 @@
 | L-35 | Minor | High | MOU amounts are nominal against a nominal reference, so inflation over 2026-30 is uncounted. Schedules ending 2028 are held flat; increases are counted as 0. | MOU preset understated by about 2-3% a year in real terms | Deflate | No |
 | L-38 | Minor | High | Sections 1-3 per-country files can't be rebuilt (scripts not in the repository). | reproducibility | IMP-12 | No |
 | L-39 | Minor | High | India's TB systems and unspecified money goes mostly to DR-TB (by own-money mix) at US$14,773 per patient. India's TB card: 638 deaths per US$1M vs about 2,000 elsewhere. | India only | Spread by patients or by the WHO DS/DR split | No |
-| L-26 | Presentation | Medium | `asd_share` 45% cited to "PEPFAR 2014", not found. KFF 2025 reports 47%. | none | Fix the citation | No |
-| L-30 | Presentation | High | "Lives first (triage)" is an optimisation rule, not observed behaviour. | none | Label "hypothetical best case" | No |
-| L-36 | Presentation | High | `audit/METHOD.md` gives a different ART-units formula from the code. Kenya: 451.7k (code) vs about 328k (METHOD.md). | documentation | IMP-20 | No |
-| L-37 | Presentation | High | `logic.md` was not enough to reproduce on its own: the independent reproducer needed 12 items from METHOD.md. | documentation | IMP-20 | No |
-| L-40 | Presentation | High | "People Losing Care Each Year" sums full-cost-equivalent ART patients, bednet person-years and malaria episodes as people (Kenya: 4.90M of 6.10M are bednet users). | none | Relabel, or split treatment vs prevention | No |
-| L-45 | Presentation | High | "Full US Exit" keeps 77% of the US Global Fund pledge and ignores signed MOUs. | none | IMP-14 | No |
-| L-46 | Presentation | High | The IHME 2025 preset is called "Data-driven", but the country split is a uniform global ratio. | none | IMP-14 | No |
-| L-47 | Presentation | Medium | The Validation page is framed to pass ("should come in below"). The Optima row shows 0.77-2.93M as comparable, though 2.93M is the PEPFAR-ending scenario. The Gavi row is circular. No TB or malaria benchmark. | none | IMP-19 | No |
-| L-48 | Presentation | High | Headline and Methods claims overstate certainty (claims C1, C4, C5, C9, C17 in `dashboard.md`). | none | IMP-21 | No |
+| L-26 ✅ done (ba496d1) | Presentation | Medium | `asd_share` 45% cited to "PEPFAR 2014", not found. KFF 2025 reports 47%. | none | Fix the citation | No |
+| L-30 ✅ done (8b89420) | Presentation | High | "Lives first (triage)" is an optimisation rule, not observed behaviour. | none | Label "hypothetical best case" | No |
+| L-36 ✅ done (cff29af) | Presentation | High | `audit/METHOD.md` gives a different ART-units formula from the code. Kenya: 451.7k (code) vs about 328k (METHOD.md). | documentation | IMP-20 | No |
+| L-37 ✅ done (cff29af) | Presentation | High | `logic.md` was not enough to reproduce on its own: the independent reproducer needed 12 items from METHOD.md. | documentation | IMP-20 | No |
+| L-40 ✅ done (c56214a) | Presentation | High | "People Losing Care Each Year" sums full-cost-equivalent ART patients, bednet person-years and malaria episodes as people (Kenya: 4.90M of 6.10M are bednet users). | none | Relabel, or split treatment vs prevention | No |
+| L-45 ✅ done (752f611) | Presentation | High | "Full US Exit" keeps 77% of the US Global Fund pledge and ignores signed MOUs. | none | IMP-14 | No |
+| L-46 ✅ done (752f611) | Presentation | High | The IHME 2025 preset is called "Data-driven", but the country split is a uniform global ratio. | none | IMP-14 | No |
+| L-47 ◐ partly done (576a8d8 (Validation note that agreement with ten Brink is not validation; the rest open)) | Presentation | Medium | The Validation page is framed to pass ("should come in below"). The Optima row shows 0.77-2.93M as comparable, though 2.93M is the PEPFAR-ending scenario. The Gavi row is circular. No TB or malaria benchmark. | none | IMP-19 | No |
+| L-48 ✅ done (576a8d8) | Presentation | High | Headline and Methods claims overstate certainty (claims C1, C4, C5, C9, C17 in `dashboard.md`). | none | IMP-21 | No |
 
 ## The 10 most important findings, ranked
 
@@ -116,9 +161,9 @@
 6. **L-44 (Major).** The cap rule treats all covered people as donor-funded in 160 lines.
 7. **L-06 (Major).** The 2021-23 baseline vs cuts that happened in 2025: "Aid at Risk" includes money already gone,
    and the hazard clock starts a year late.
-8. **L-02 (Presentation, high visibility).** "95% interval" describes parameter noise only. The real uncertainty is
+8. ✅ **L-02 (Presentation, high visibility; done 581c013).** "95% interval" describes parameter noise only. The real uncertainty is
    several-fold larger.
-9. **L-04 + L-20 (Major).** Malaria effect sizes: the wrong age group (-4.9%) and the wrong treatment effect (+4.1%).
+9. ✅ **L-04 + L-20 (Major; done c6dd075).** Malaria effect sizes: the wrong age group (-4.9%) and the wrong treatment effect (+4.1%).
 10. **L-42 / L-18 (Major).** The vaccine pathway uses full-schedule costs and effects. It is likely conservative by a
     large factor relative to Gavi and VIMC.
 
@@ -127,9 +172,9 @@
 1. **IMP-01.** Resolve the ART and infection concept; show readings A and B (Do now).
 2. **IMP-02.** Spread unspecified money over services and systems; one treatment of above-site costs (Do before
    presenting).
-3. **IMP-10 + IMP-21.** Honest range labels, all-country range from summed draws, claims wording (Do now).
+3. ✅ **IMP-10 + IMP-21** (done 581c013, 576a8d8). Honest range labels, all-country range from summed draws, claims wording (Do now).
 4. **IMP-04.** Cap the donor-funded share with GHED or PEPFAR data (Do before presenting).
-5. **IMP-05.** Malaria effects on under-5 deaths; LiST treatment effect (Do now).
+5. ✅ **IMP-05** (done c6dd075). Malaria effects on under-5 deaths; LiST treatment effect (Do now).
 6. **IMP-19.** Like-for-like Validation with acceptance bands; add TB, malaria and South Africa benchmarks (Do before
    presenting).
 7. **IMP-06.** 2025 aid baseline option from ForeignAssistance.gov, Global Fund and Gavi data (Do before presenting).
