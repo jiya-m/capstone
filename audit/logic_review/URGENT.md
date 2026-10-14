@@ -71,3 +71,37 @@ Pick one reading and calibrate to it:
 
 Show the result as a range across the two. Update the `model_params.csv` source text, which currently misstates the
 calibration. Needs data from you: no for (A); for (B), PEPFAR site-level patient counts (PEPFAR Panorama / MER).
+
+## L-41. New HIV infections are 2.9-6.9x below every published estimate (same root cause as L-01)
+
+**Severity:** Critical. It is a headline number (the "New HIV Infections, 5 Years" card and the All Countries pill),
+and it moves by more than 10% under any consistent reading.
+**Confidence:** High on the gap; Medium on the cause.
+
+**The model.** Full US Exit, 70 countries, 2026-2030: **1,552,704** new HIV infections
+(`model_data/all_countries_Full_US_exit.csv`, column `hiv_infections_5y`).
+
+**Benchmarks:**
+- Optima (ten Brink et al. 2025, *Lancet HIV*): 4.43-10.75M infections 2025-2030. The upper figure is the
+  PEPFAR-discontinuation scenario (scenario 5, Science Media Centre Spain commentary on the paper).
+- UNAIDS (July 2025): 6M new infections by 2029 if PEPFAR ends.
+
+**Why the model is lower.**
+- Infections = people off ART x `art_transmission` 0.04 a year (half in year 1), plus lost prevention units at
+  US$5,000+ per infection averted (`health_model.py:868-896`).
+- People off ART are 5.30M full-cost equivalents (L-01). `model_params.csv` itself says the 0.04 was set from
+  "UNAIDS 6.6M and Optima 4.4-10.7M extra infections over 5 yrs for 20.6M people". So it was calibrated per supported
+  patient and applied per full-cost equivalent: the same mismatch as L-01.
+
+**Test (arithmetic):**
+
+| Reading | Off-ART infections, 2026-2030 |
+|---|---|
+| As implemented: 5.3M x 0.04 x 4.5 years | about 0.95M |
+| Reading B: 20.6M x 0.04 x 4.5 | about 3.7M (+2.8M; the total rises by about 180%) |
+
+**Proposed fix (not implemented):** resolve together with L-01. Calibrate transmission per person actually off ART
+(Partners PrEP: about 2.2 per 100 person-years in untreated serodiscordant couples). Separately, re-examine
+`cpia_ref` for prevention.
+
+**Needs data from you:** no.
