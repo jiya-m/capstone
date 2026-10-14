@@ -467,7 +467,14 @@ with tabs[2]:
       spraying coverage each fall by their own people losing the service ÷ population at risk, and the
       vector-control deaths are split between them by how much each one's fall lowers C_v.
     - E_v = {rng_txt('mal_vc_eff')}, the reduction in deaths at full vector-control coverage (Eisele et al. 2010);
-      E_c = {rng_txt('mal_cm_eff')} for case management (Thwing et al. 2011).
+      E_c = {rng_txt('mal_cm_eff')} for case management: the effect of ACT treatment of uncomplicated malaria, 97%
+      (86-99%) at 24-59 months and 99% at 1-23 months; the low end is 82%, the effect for severe malaria (Thwing et
+      al. 2011).
+    - Both are effect sizes for children aged 1-59 months. They apply in full to under-5 malaria deaths and are
+      scaled by {rng_txt('mal_adult_effect_frac')} (`mal_adult_effect_frac`, an assumption: no published adult
+      effect was found) for deaths at age 5 and over. The under-5 share of each country's malaria deaths is WHO/MCEE
+      child malaria deaths (2021) ÷ WHO all-age deaths, capped at 1 (0.76 in sub-Saharan Africa and 0.40 elsewhere
+      where the child series is missing). The formula runs once for each age group and the two are added.
     - C₀ = current coverage; C₁ = C₀ - people losing the service ÷ people in need. C_c is the share of malaria
       cases that receive an effective drug (MAP), so E_c applies to treated cases only.
     - Because the formula is multiplicative, each extra point of coverage lost costs slightly more lives.

@@ -28,6 +28,12 @@ PMTCT costs US$250 a woman including her ART, and PMTCT women are outside the AR
 with HIV results were refreshed (later mechanisms off); outside lives first only HIV lines, the totals and the HIV path
 were allowed to change, and that is checked:  python tests/make_baseline.py --hiv
 
+Malaria effect sizes (logic review L-04, L-20): the Lives Saved Tool effects now apply in full to under-5 malaria
+deaths and x mal_adult_effect_frac (0.5) to deaths at 5 and over, and mal_cm_eff is 0.97 (ACT for uncomplicated
+malaria) instead of 0.82. Entries with malaria results were refreshed again with --malaria, which checks that only
+malaria lines, the totals and the malaria path moved outside lives first (63 of 99 entries refreshed; 2 under lives
+first also moved other lines, through the refill order).
+
 Interest (audit I-26): the debt-stress factor now uses the more recent of World Bank and IMF WEO interest-to-revenue,
 so fiscal capacity changed; entries with a government response were refreshed, and entries with no response were
 checked to be unchanged:  python tests/make_baseline.py --fiscal

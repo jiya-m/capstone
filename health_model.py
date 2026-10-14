@@ -536,13 +536,31 @@ def hiv_death_timing(median: np.ndarray, n_years: int) -> np.ndarray:
     return F(k + 0.5) - F(k - 0.5)
 
 
+# under-5 share of malaria deaths where the country's child series is missing: WHO World Malaria Report regional shares
+# (the same values prepare_model.py uses to derive missing all-age deaths)
+MALARIA_U5_SHARE_FALLBACK = {True: 0.76, False: 0.40}
+
+
+def malaria_u5_share(row) -> float:
+    """Share of the country's malaria deaths that are in children under 5 (1-59 months): WHO/MCEE child malaria deaths
+    (`malaria_deaths_in_children_1_59_months_total_deaths`, 2021) / WHO all-age malaria deaths, clipped to 0-1; the
+    regional share (0.76 sub-Saharan Africa, 0.40 elsewhere) where either is missing (logic review L-04).
+    Feeds: malaria deaths (the Lives Saved Tool effects are child effect sizes)."""
+    d0, child = _v(row, "malaria_deaths"), _v(row, "malaria_deaths_in_children_1_59_months_total_deaths")
+    if np.isnan(d0) or d0 <= 0 or np.isnan(child):
+        ssa = row.get("is_ssa", False)
+        return MALARIA_U5_SHARE_FALLBACK[isinstance(ssa, (bool, np.bool_)) and bool(ssa)]
+    return float(np.clip(child / d0, 0.0, 1.0))
+
+
 def malaria_levels(row, P, units, need_cov) -> dict:
     """Lives Saved Tool structure: D1 = D0 * prod_i (1 - E_i C_i1) / (1 - E_i C_i0), for one year's units lost.
     Vector control is one intervention whose coverage combines bednets and spraying: C_vc = 1 - (1 - ITN use) x
     (1 - IRS coverage), each reduced by its own people losing the service / people at risk. Treatment coverage is the
     share of malaria cases that get an effective drug (MAP); mal_cm_eff is how much that reduces deaths (separate steps,
-    as in the Lives Saved Tool). Returns the yearly extra deaths per line (arrays n) at baseline D0, before ramp-up and
-    the mortality trend.
+    as in the Lives Saved Tool). The effects are child effect sizes: D0 is split into under-5 deaths (full effects) and
+    deaths at 5 and over (effects x mal_adult_effect_frac), each with the formula above, and the two are added.
+    Returns the yearly extra deaths per line (arrays n) at baseline D0, before ramp-up and the mortality trend.
     Feeds: malaria deaths by line (bednets, spraying, treatment)."""
     D0 = _v(row, "malaria_deaths")
     n = len(P["mal_vc_eff"])
@@ -554,7 +572,11 @@ def malaria_levels(row, P, units, need_cov) -> dict:
     itn0 = P["mal_itn_default_use"] if np.isnan(itn0) else np.full(n, itn0)
     irs0 = np.zeros(n) if np.isnan(irs0) else np.full(n, irs0)
     ccm0 = P["mal_cm_default_cov"] if np.isnan(ccm0) else np.full(n, ccm0)
+    # L-04 / L-20: the Lives Saved Tool effects are for children 1-59 months. They apply in full to under-5 deaths; for
+    # deaths at age 5 and over they are scaled by mal_adult_effect_frac (no published adult effect size)
     Ev, Ec = P["mal_vc_eff"], P["mal_cm_eff"]
+    fa = P["mal_adult_effect_frac"]
+    s_u5 = malaria_u5_share(row)
     ok_par = bool(par) and not np.isnan(par)
     itn1 = np.clip(itn0 - (units["mal_itn"] / par if ok_par else 0), 0, 1)
     irs1 = np.clip(irs0 - (units["mal_irs"] / par if ok_par else 0), 0, 1)
@@ -564,10 +586,13 @@ def malaria_levels(row, P, units, need_cov) -> dict:
         """Combined vector-control coverage: 1 - (1 - bednet use)(1 - spraying coverage), all shares 0-1."""
         return 1 - (1 - i) * (1 - r)
     cvc0, cvc1 = vc(itn0, irs0), vc(itn1, irs1)
-    rv = (1 - Ev * cvc1) / (1 - Ev * cvc0)
-    rc = (1 - Ec * ccm1) / (1 - Ec * ccm0)
-    total = D0 * (rv * rc - 1)
-    dv, dc = D0 * (rv - 1), D0 * (rc - 1)
+    total = np.zeros(n)
+    dv, dc = np.zeros(n), np.zeros(n)
+    for d_grp, ev, ec in ((D0 * s_u5, Ev, Ec), (D0 * (1 - s_u5), Ev * fa, Ec * fa)):
+        rv = (1 - ev * cvc1) / (1 - ev * cvc0)
+        rc = (1 - ec * ccm1) / (1 - ec * ccm0)
+        total = total + d_grp * (rv * rc - 1)
+        dv, dc = dv + d_grp * (rv - 1), dc + d_grp * (rc - 1)
     denom = np.where(np.abs(dv) + np.abs(dc) > 0, np.abs(dv) + np.abs(dc), 1)
     dv_s, dc_s = total * np.abs(dv) / denom, total * np.abs(dc) / denom
     # vector-control deaths split by each line's own fall in combined coverage (the other line held at baseline)

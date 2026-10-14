@@ -82,7 +82,11 @@ def test_combined_vector_control_formula():
     got = hm.malaria_levels(row, Pc, u, nc)
     Ev, D0 = Pc["mal_vc_eff"][0], row["malaria_deaths"]
     c0, c1 = 1 - (1 - itn0) * (1 - irs0), 1 - (1 - (itn0 - 0.1)) * (1 - irs0)
-    assert got["mal_itn"][0] == pytest.approx(D0 * ((1 - Ev * c1) / (1 - Ev * c0) - 1))
+    # L-04: full child effect on under-5 deaths, x mal_adult_effect_frac on deaths at 5 and over
+    s, f = hm.malaria_u5_share(row), Pc["mal_adult_effect_frac"][0]
+    want = (D0 * s * ((1 - Ev * c1) / (1 - Ev * c0) - 1)
+            + D0 * (1 - s) * ((1 - f * Ev * c1) / (1 - f * Ev * c0) - 1))
+    assert got["mal_itn"][0] == pytest.approx(want)
     assert got["mal_irs"][0] == pytest.approx(0) and got["mal_cm"][0] == pytest.approx(0)
     # where people are also sprayed, losing a net matters less than with nets alone
     alone = dict(nc, mal_irs=(par, 0.0))
@@ -151,3 +155,25 @@ def test_apply_is_idempotent():
     for c in ("mal_cm_cov", "mal_itn_cov", "mal_irs_cov", "malaria_cases", "malaria_cases_prev", "trend_malaria_deaths"):
         a, b = CI[c], again[c]
         assert (((a - b).abs() < 1e-9) | (a.isna() & b.isna())).all(), c
+
+
+def test_malaria_u5_share_and_adult_fraction():
+    """L-04: under-5 share from the child series (clipped to 0-1, regional fallback); with the adult fraction at 1 the
+    age split gives back the all-age formula, and at 0 only under-5 deaths respond."""
+    row = CI.loc["NGA"].copy()
+    s = hm.malaria_u5_share(row)
+    assert s == pytest.approx(min(1.0, row["malaria_deaths_in_children_1_59_months_total_deaths"] / row["malaria_deaths"]))
+    no_child = row.copy()
+    no_child["malaria_deaths_in_children_1_59_months_total_deaths"] = np.nan
+    assert hm.malaria_u5_share(no_child) == 0.76
+    P1 = P.copy()
+    Pc = hm.draw_params(P1, 0)
+    nc = hm.epi(row, Pc)["need_cov"]
+    u = {k: np.zeros(1) for k in ("mal_itn", "mal_irs", "mal_cm")}
+    u["mal_cm"] = np.array([0.1 * nc["mal_cm"][0]])
+    Pc1 = dict(Pc, mal_adult_effect_frac=np.ones(1))
+    m0 = dict(Pc, mal_adult_effect_frac=np.zeros(1))
+    D0, Ec, cm0 = row["malaria_deaths"], Pc["mal_cm_eff"][0], nc["mal_cm"][1]
+    all_age = D0 * ((1 - Ec * (cm0 - 0.1)) / (1 - Ec * cm0) - 1)
+    assert hm.malaria_levels(row, Pc1, u, nc)["mal_cm"][0] == pytest.approx(all_age)
+    assert hm.malaria_levels(row, m0, u, nc)["mal_cm"][0] == pytest.approx(s * all_age)

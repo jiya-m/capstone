@@ -46,6 +46,8 @@ Country columns used (`country_inputs.csv`):
 | malaria population at risk (PAR) | `malaria_pop_at_risk` | |
 | malaria cases | `malaria_cases` | |
 | D0 (malaria deaths, all ages) | `malaria_deaths` | |
+| child malaria deaths, 1-59 months | `malaria_deaths_in_children_1_59_months_total_deaths` | WHO/MCEE, 2021; for the under-5 share |
+| sub-Saharan Africa | `is_ssa` | True / False |
 | bednet use, spraying, treatment coverage | `mal_itn_cov`, `mal_irs_cov`, `mal_cm_cov` | shares 0-1 (not percentages); NaN = see section 5 |
 | births | `births` | |
 | DTP3 % | `sh_imm_idpt` | |
@@ -369,9 +371,13 @@ below it.)
   - m1 = clip(m0 - units_cm / cases, 0, 1).
   - Where PAR or cases are missing or 0, the subtracted term is 0.
 - **Combined vector control:** vc(i, r) = 1 - (1 - i)(1 - r); cv0 = vc(n0, r0), cv1 = vc(n1, r1).
-- **Ratios:** rv = (1 - Ev cv1) / (1 - Ev cv0); rc = (1 - Ec m1) / (1 - Ec m0), with Ev = mal_vc_eff and
-  Ec = mal_cm_eff.
-- **Extra deaths:** total = D0 (rv rc - 1); dv = D0 (rv - 1); dc = D0 (rc - 1).
+- **Age groups** (L-04): s = clip(`malaria_deaths_in_children_1_59_months_total_deaths` / D0, 0, 1); if the child
+  value or D0 is missing, s = 0.76 where `is_ssa` is True, else 0.40. Under-5 deaths Du = D0 s use Ev = mal_vc_eff and
+  Ec = mal_cm_eff; deaths at 5 and over Da = D0 (1 - s) use Ev x mal_adult_effect_frac and Ec x
+  mal_adult_effect_frac.
+- **Ratios**, for each group g with its (D_g, Ev_g, Ec_g): rv_g = (1 - Ev_g cv1) / (1 - Ev_g cv0);
+  rc_g = (1 - Ec_g m1) / (1 - Ec_g m0).
+- **Extra deaths:** total = sum_g D_g (rv_g rc_g - 1); dv = sum_g D_g (rv_g - 1); dc = sum_g D_g (rc_g - 1).
 - **Split:**
   - Vector part = total x |dv| / (|dv| + |dc|); treatment part = total x |dc| / (|dv| + |dc|). If both are 0,
     divide by 1.
