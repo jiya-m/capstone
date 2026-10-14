@@ -63,18 +63,11 @@ UNIT_LABELS = {"hiv_art": "people on ART", "hiv_pmtct": "HIV+ pregnant women", "
 UNIT_SINGULAR = {"hiv_art": "patient-year", "hiv_pmtct": "woman", "hiv_prev": "infection averted",
                  "hiv_ovc": "child-year", "tb_ds": "patient", "tb_dr": "patient", "mal_itn": "person-year",
                  "mal_irs": "person-year", "mal_cm": "case", "imm": "child"}
-COVERAGE_LABELS = {"hiv_art": "ART coverage (% of PLHIV)", "hiv_pmtct": "PMTCT coverage",
-                   "tb_ds": "TB treatment coverage", "tb_dr": "DR-TB treatment coverage (assumed 45%)",
-                   "mal_itn": "Bednet use (people sleeping under a net)",
-                   "mal_irs": "Indoor spraying coverage (households sprayed)",
-                   "mal_cm": "Effective malaria treatment (% of cases)", "imm": "DTP3 coverage"}
 
 SOURCE_GROUPS = ["United States", "United Kingdom", "Germany", "France", "Japan", "Canada", "Netherlands", "Nordics",
                  "Other DAC governments", "Gates Foundation", "Other private", "Development-bank lending",
                  "Non-DAC governments", "Other / unallocable"]
 DIRECT_CHANNELS = {"Bilateral agency", "NGOs", "Gates direct", "Other"}
-MULTI_CHANNELS = ["Global Fund", "Gavi", "WHO", "UNICEF", "UNFPA", "UNAIDS", "Unitaid", "Development banks",
-                  "EU institutions", "CEPI"]
 
 N_YEARS = 5
 # how quickly the full annual effect appears after a sustained cut (year 1..5)
@@ -167,7 +160,6 @@ class Scenario:
     src_multi: dict = field(default_factory=dict)       # source group -> cut on its contributions via multilaterals
     pair: dict = field(default_factory=dict)            # (source group, channel group) -> cut (overrides the above)
     chan: dict = field(default_factory=dict)            # channel group -> cut for ALL sources (replenishment shortfall)
-    us_direct_by_country: dict = field(default_factory=dict)   # iso3 -> cut on US direct channels (one value)
     # iso3 -> 5 cuts (2026-2030) on US direct channels, used as written (America First MOU schedules)
     us_direct_path_by_country: dict = field(default_factory=dict)
     mou_only: bool = False                              # only countries in us_direct_path_by_country can be run
@@ -185,8 +177,6 @@ class Scenario:
                 continue
             direct = c in DIRECT_CHANNELS
             x = self.src_direct.get(s, 0.0) if direct else self.src_multi.get(s, 0.0)
-            if direct and s == "United States" and iso3 in self.us_direct_by_country:
-                x = self.us_direct_by_country[iso3]
             x = self.pair.get((s, c), x)
             y = self.chan.get(c, 0.0)
             out[i] = 1.0 - (1.0 - x) * (1.0 - y)
@@ -242,7 +232,7 @@ def per_million_card(iso3: str, bucket: str, inputs: dict, ptab: pd.DataFrame, m
 
 @dataclass
 class Fiscal:
-    mode: str = "none"            # none | historical | custom | max | gradual (money comes via gov_add_usd)
+    mode: str = "none"            # none | custom | max | gradual (money comes via gov_add_usd)
     theta: float = 0.0            # replacement share for "custom"
     cap_to_space: bool = True
     allocation: str = "pro_rata"  # pro_rata | lives_first
@@ -628,11 +618,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     fs = fiscal_space(row, fiscal.effort)
     # full-cut yearly loss (the scenario's own deepest year), reported for the fiscal panel and break-even
     G = float(max(np.clip(g, 0, None).sum() for g in gross_full_t)) if len(cells) else 0.0
-    th_hist = max(0.0, theta_historical(inputs["reg"])[0])
 
     def response(g):
-        want = {"none": 0.0, "gradual": 0.0, "historical": th_hist * g, "custom": fiscal.theta * g,
-                "max": g}[fiscal.mode]
+        want = {"none": 0.0, "gradual": 0.0, "custom": fiscal.theta * g, "max": g}[fiscal.mode]
         r = min(want, fs["capacity"]) if (fiscal.cap_to_space or fiscal.mode == "max") else want
         return max(r, 0.0), want
 
@@ -963,8 +951,7 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
 
     out = {"iso3": iso3, "cells": cells, "lines": tab, "buckets": bsum, "path": path, "path_band": path_band,
            "years": year_tab,
-           "fiscal": {**fs, "gross_loss": G, "replacement": float(R_t.mean()), "replacement_wanted": want,
-                      "theta_hist": th_hist},
+           "fiscal": {**fs, "gross_loss": G, "replacement": float(R_t.mean()), "replacement_wanted": want},
            "flags": ep["flags"], "deaths_per_dollar": dpd,
            "committed": {"deaths": d5c + sum(afterc.values()), "deaths_lo": q(committed, 2.5),
                          "deaths_hi": q(committed, 97.5), "after_2030": sum(afterc.values()),
@@ -1156,11 +1143,9 @@ def _money_by_year(iso3, scenario, fiscal, inputs, cut_path):
     else:
         G_t = np.zeros(N_YEARS)
     fs = fiscal_space(row, fiscal.effort)
-    th = max(0.0, theta_historical(inputs["reg"])[0])
     R_t = []
     for g in G_t:
-        want = {"none": 0.0, "gradual": 0.0, "historical": th * g, "custom": fiscal.theta * g,
-                "max": g}[fiscal.mode]
+        want = {"none": 0.0, "gradual": 0.0, "custom": fiscal.theta * g, "max": g}[fiscal.mode]
         R_t.append(max(min(want, fs["capacity"]) if (fiscal.cap_to_space or fiscal.mode == "max") else want, 0.0))
     return G_t, np.array(R_t)
 

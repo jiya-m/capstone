@@ -249,7 +249,7 @@ if not DATA_DIR.exists():
 
 _missing = []
 if not (SPEND_DIR / "_index.csv").exists():
-    _missing.append(f"`spending_data/` (health spending graph) - build with `prepare_spending.py`")
+    _missing.append("`spending_data/` (health spending graph) - build with `prepare_spending.py`")
 if not any(COFOG_ALL_DIR.glob("*.csv")):
     _missing.append("`cofog_all/` (government spending treemap) - unzip `cofog_all.zip` or build with `prepare_cofog.py`")
 if not any(MACRO_DIR.glob("*.csv")):

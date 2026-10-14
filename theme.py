@@ -80,17 +80,10 @@ def blend(hex_color: str, alpha: float) -> str:
     return f"rgb({r},{g},{b})"
 
 
-def cycle(n: int) -> list:
-    """n categorical colors: the palette, then the palette at 55% for categories 7-12, then grey."""
-    seq = PALETTE + [tint(c, 0.55) for c in PALETTE]
-    return [seq[i] if i < len(seq) else OTHER for i in range(n)]
-
-
 # --------------------------------------------------------------------------- #
 # Fonts
 # --------------------------------------------------------------------------- #
 SERIF = "'Source Serif 4', Georgia, 'Times New Roman', serif"
-SERIF_ATTR = SERIF.replace("'", "&quot;")       # for style='' attributes
 SANS = "'Libre Franklin', 'Helvetica Neue', Arial, sans-serif"
 FONTS_URL = ("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700"
              "&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap")

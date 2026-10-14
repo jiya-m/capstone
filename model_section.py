@@ -273,7 +273,7 @@ def _title(text):
 
 def _resp_label(fiscal_t) -> str:
     mode, theta, _, alloc, ceiling = fiscal_t
-    lbl = {"none": NO_REPLACEMENT, "historical": NO_REPLACEMENT, "custom": f"Government replaces {theta:.0%}",
+    lbl = {"none": NO_REPLACEMENT, "custom": f"Government replaces {theta:.0%}",
            "max": "As much as fiscal space allows", "gradual": "Gradual budget increase"}[mode]
     if mode not in ("none", "gradual"):
         lbl += (", lives first" if alloc == "lives_first" else ", pro-rata")
@@ -615,8 +615,8 @@ def response_kicker(fiscal_t) -> str:
     capped = len(fiscal_t) > 2 and fiscal_t[2]
     return {"none": NO_REPLACEMENT,
             "custom": f"Government Replaces {'Up to ' if capped else ''}{theta:.0%}",
-            "max": "Government Replaces What Its Budget Allows", "gradual": "Gradual Budget Increase",
-            "historical": NO_REPLACEMENT}.get(mode, _resp_label(fiscal_t))
+            "max": "Government Replaces What Its Budget Allows",
+            "gradual": "Gradual Budget Increase"}.get(mode, _resp_label(fiscal_t))
 SPELLED = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
 
 
@@ -1095,8 +1095,6 @@ def _who_cut_fig(cl: pd.DataFrame, n_rows: int | None = None):
     return fig
 
 
-SUM_COLS = ["base_usd", "gross_loss_usd", "replaced_usd", "net_loss_usd", "units_lost", "cov_drop_pp", "deaths_y1",
-            "deaths_5y", "deaths_5y_lo", "deaths_5y_hi"]
 
 
 LINE_SHORT = {"hiv_art": ("HIV Treatment", "antiretroviral therapy (ART)"),
@@ -1198,7 +1196,7 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
                    f"</span><b>{e(r.name)}</b><br>{grey(e(r.detail))}</td>")
         dash = f"<span class='nm' title='{e(care_ct_tip(), quote=True)}'>–</span>"
         if r.line in hm.LINKED:                        # HIV testing & care: works through ART (I-09)
-            cells = [money(r.base_usd), money(r.net_loss_usd), f"<span class='big'>–</span>", dash, dash,
+            cells = [money(r.base_usd), money(r.net_loss_usd), "<span class='big'>–</span>", dash, dash,
                      f"<span class='nm' title='{e(care_ct_tip(), quote=True)}'>In HIV<br>Treatment</span>"]
             body.append("<tr>" + service + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
             continue
@@ -1371,7 +1369,7 @@ def fiscal_gap_values(res) -> tuple:
 
 def _response_phrase_short(fiscal_t) -> str:
     mode, theta = fiscal_t[0], fiscal_t[1]
-    return {"none": NO_REPLACEMENT, "historical": NO_REPLACEMENT, "custom": f"a {theta:.0%} replacement",
+    return {"none": NO_REPLACEMENT, "custom": f"a {theta:.0%} replacement",
             "max": "replacement up to fiscal space", "gradual": "a gradual budget increase"}.get(mode, "this response")
 
 
@@ -1439,7 +1437,7 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_
          "Aid lost per year (gross, average 2026-2030) ÷ total government revenue", ""),
         health_share_pill(F),
     ], large=True), unsafe_allow_html=True)
-    none_selected = avg["filled"] <= 0.5 and fiscal_t[0] in ("none", "historical")
+    none_selected = avg["filled"] <= 0.5 and fiscal_t[0] == "none"
     sub = lambda k: (f"2030: {money(y30[k])}" if show30 else "")
     st.markdown(th.pills_html([
         ("Gap Before Government Steps In", money(avg["gap"]),
