@@ -319,3 +319,67 @@ structural change outside this batch).
 | E | DS 100-3,000, DR 1,000-30,000; WHO cross-check within x3 for at least half | met (Ethiopia DR listed; 35 of 60 = 58%) |
 | G | 0 <= continuity <= 0.5 | met (0.15 kept; 0.30 recorded as a sensitivity value) |
 | C | evidence for the flow formulation | **BLOCKED** (no cost per initiation; the flow raises, not lowers, the count) |
+
+## Phase 3: reconciliation with Optima (15 overlapping countries; no model change)
+
+Script `batch34_reconcile.py`, output `batch34_reconcile.csv`. Donor shares from ten Brink et al. 2025 appendix Table
+B2 (p. 8; PEPFAR funding and total international funding over total expenditure, most recent GAM year, nominal). Model:
+US Bilateral Exit + Multilateral Withdrawals, central run; "share who stop" = people who stop ART (full-cost
+equivalents, per year) / people on ART outside PMTCT; before = `audit/before_batch34.csv` (commit `cd42746`), after =
+the final state of the batch. "Optima HIV spending per person on ART" = Table B2 total expenditure (all purposes, all
+payers) / people on ART outside PMTCT, an upper bound on what a year of treatment can cost in that country.
+
+| Country | GAM year | People on ART (outside PMTCT) | PEPFAR share of HIV spending | All international share | Model share who stop: before | after | ART full cost/yr: before | after | Cap: external HIV share | Optima HIV spending per person on ART | Donor ART aid exceeds the pool |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| AZE | 2023 | 9,654 | 0% | 14% | 3% | 3% | $322 | $400 | 0.50 | $1,530 | no |
+| KHM | 2022 | 71,656 | 15% | 64% | 6% | 2% | $283 | $400 | 0.84 | $441 | no |
+| CIV | 2022 | 166,102 | 56% | 12% | 62% | 40% | $284 | $400 | 0.72 | $1,084 | no |
+| DOM | 2022 | 56,616 | 34% | 42% | 43% | 30% | $343 | $400 | 0.59 | $1,288 | no |
+| SWZ | 2019 | 192,925 | 42% | 59% | 36% | 19% | $297 | $463 | 0.61 | $529 | no |
+| KEN | 2022 | 1,326,509 | 26% | 37% | 34% | 14% | $277 | $644 | 0.67 | $576 | no |
+| KGZ | 2023 | 7,502 | 17% | 71% | 30% | 16% | $281 | $400 | 0.50 | $1,669 | yes |
+| MWI | 2022 | 859,919 | 60% | 95% | 46% | 29% | $191 | $274 | 0.70 | $302 | no |
+| MDA | 2023 | 9,039 | 0% | 45% | 4% | 0% | $317 | $400 | 0.04 | $1,176 | yes |
+| MNG | 2021 | 265 | 0% | 52% | 7% | 4% | $314 | $400 | 0.59 | $9,331 | yes |
+| MOZ | 2019 | 1,992,180 | 66% | 96% | 25% | 15% | $251 | $400 | 0.84 | $280 | no |
+| ZAF | 2023 | 5,899,725 | 21% | 24% | 11% | 8% | $314 | $400 | 0.10 | $316 | no |
+| TJK | 2023 | 11,885 | 0% | 0% | 37% | 21% | $265 | $400 | 0.57 | $295 | no |
+| UGA | 2020 | 1,177,947 | 65% | 80% | 30% | 14% | $336 | $675 | 0.78 | $458 | no |
+| ZWE | 2023 | 1,194,700 | 57% | 89% | 14% | 13% | $400 | $400 | 0.96 | $260 | no |
+
+Weighted (by people on ART) share who stop: before 21.1%, after 12.8%; PEPFAR share 39.1%; all international 52.7%
+
+**What the batch did to the gap.** The batch lowered the model's share who stop in every country (weighted 21% to
+13%), while PEPFAR's spending share is 39% and all international funding 53% (weighted by people on ART). The gap
+to the funding shares widened; it was not tuned. Four things drive it, in order of size:
+
+1. **The full-cost conversion.** A lost dollar removes 1 / (full cost per patient-year) people. The full cost is the
+   site cost x 1.818 (above-site markup from PEPFAR's 47% non-service-delivery share): after item 4 it is US$400 in
+   most countries, US$644 in Kenya and US$675 in Uganda. In Kenya, Uganda, Mozambique, Zimbabwe and South Africa this
+   is above the country's **total** HIV spending per person on ART (US$576, 458, 280, 260, 316), i.e. above what a
+   year of treatment plus everything else costs there. PEPFAR, by contrast, counts a person as "supported" when it
+   pays any part of their care (20.6M people for about US$4.5B, about US$220 a head). So the same money is a third to
+   a half as many people in the model as in PEPFAR's or Optima's framing. This is the single largest driver and is
+   recorded as a new finding (L-50): the GHCC economic site costs and the programme-wide markup together exceed what
+   the countries spend; resolving it needs PEPFAR Expenditure Analysis per patient (DR-01), which was not available.
+2. **Money that buys no people.** Only treatment money, the treatment share of unspecified money and kappa (50%) of
+   testing-and-care money count toward ART. Systems money (item 1), programme management and the testing, prevention
+   and systems shares of unspecified money (item 2) now buy no patients. Optima's and PEPFAR's shares are shares of
+   all HIV spending, so they include that money.
+3. **Continuity and the cap.** 15% of the people whose money is lost keep their service (item 7); the donor-funded
+   pool is capped at the external share of HIV spending (item 6), which binds in Kyrgyzstan, Moldova and Mongolia
+   among the 15.
+4. **What is cut.** US money through the Global Fund is cut 23%, not 100%, and other donors are untouched, so the
+   model removes less than "all international" money; and IHME's donor accounting differs from GAM's (Tajikistan:
+   0% international in Table B2, yet IHME records donor HIV money there, so the model's share, 21%, is above the
+   table's 0%; the same for Azerbaijan).
+
+Where the model's share is above the PEPFAR share (Tajikistan, Dominican Republic before the batch, Azerbaijan), it
+is because of point 4; where it is far below (Mozambique 15% vs 66%, Uganda 14% vs 65%, Malawi 29% vs 60%, Zimbabwe
+13% vs 57%), points 1 and 2 dominate. A reading in which PEPFAR's spending share of people on ART stop (Reading B of
+IMP-01) would multiply the model's HIV deaths in those four countries by 3-5; it was not adopted in Batch 2 (Option
+A) and is not adopted here.
+
+**Lines where donor money exceeds the donor-funded pool** (Validation page): 323 country-service lines in 70
+countries after item 6 (hiv_art 15, hiv_pmtct 49, tb_ds 39, tb_dr 41, mal_itn 37, mal_irs 61, mal_cm 49, imm 32),
+up from 160 of 695 before, because the pool is now people covered x external share rather than everyone covered.

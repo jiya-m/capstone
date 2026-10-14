@@ -173,6 +173,27 @@ over countries. Before the batch: 2,055,422 deaths; 5,303,707 people who stop AR
 | 6. IMP-04 / L-44 cap rule | ✅ done | `f7fbb88` | 1,379,963 (-16.6% vs item 5; -32.9% vs before) | 3,184,530 (-7.7%; -40.0%) | The donor-funded pool is people covered x the external share of the country's spending on the disease (`donor_share_*`: GHED for HIV, malaria and immunization; WHO TB financing for TB; WHO-region median where missing) instead of everyone covered; units lost = pool x share of money lost where donor money would buy more than the pool. Malaria -48% (external share median 0.25), vaccines -12%, TB -12%, HIV -8%. Labelled: a spending share is not exactly the share of patients donors fund |
 | 7. IMP-16 / L-14 continuity | ◐ partly done (value kept) | (this commit) | 1,379,963 (no change) | 3,184,530 (no change) | Evidence from the 2025 cuts was found (KFF: PEPFAR ART "remained relatively stable" at 20.3M vs 20.4M; Cust & Chabata 2026: at four defunded NGOs "treatment by 22% to 32%" lower; WHO: TB treatment "the least affected") but none directly measures the share of patients who keep the same service after its donor funding is withdrawn in an LMIC (service volumes at defunded NGOs under a waiver; programme-wide stocks under partial cuts; a disruption survey), so under the rule set on 14 October 2026 `continuity` stays 0.15 as a labelled assumption; range narrowed from 0-0.35 to 0-0.30; 0.30 recorded as a sensitivity value (`batch34_evidence.md` G). Per-country TB continuity could not be built (no private-sector notification variable in the 2026 WHO file). Only ranges moved (86 baseline entries) |
 
+**Combined effect of the batch** (all countries, Full US Exit, central): 2,055,422 to 1,379,963 deaths 2026-2030
+(-32.9%); HIV 1,096,151 to 669,366 (-39%), TB 472,436 to 463,973 (-2%; -41% after items 1-2, +91% in item 5, -12%
+in item 6), malaria 369,425 to 143,889 (-61%), vaccines 117,411 to 102,735 (-12%); further deaths 2031-2035 1,092,054
+to 661,961; HIV infections 4,334,929 to 2,802,503; people who stop ART 5,303,707 to 3,184,530 (-40%). No single item
+moved the headline by more than 50% and the combined change (-33%) is inside the -50% / +150% band, so no item is
+RED; item 5's TB line (+91%) is flagged. Every preset and six countries: `batch34_before_after.md`.
+
+**Phase 3 reconciliation with Optima** (15 overlapping countries, `batch34_evidence.md` Phase 3,
+`batch34_reconcile.csv`): the model's share of people on ART who stop under Full US Exit fell from 21% to 13%
+(weighted), against PEPFAR's 39% share of HIV spending and 53% for all international funding (Optima Table B2). The
+gap is driven by the full-cost conversion (a lost dollar removes 1 / full cost per patient-year people, and the full
+cost, US$400-675, is above total HIV spending per person on ART in Kenya, Uganda, Mozambique, Zimbabwe and South
+Africa), by the money that now buys no people (systems, programme management, the non-treatment shares of
+unspecified money, half of testing and care), by continuity and the cap, and by the 23% Global Fund cut. Not tuned.
+
+**New open finding L-50 (Major, Medium confidence).** The ART full cost per patient-year (site cost x 1 / (1 -
+asd_share)) exceeds the country's total HIV spending per person on ART in 5 of the 15 Optima countries. The GHCC
+economic site costs (overheads, OI care, 2015-2016 prices) and the PEPFAR-wide 47% non-service share (L-26) cannot
+both be right there; PEPFAR Expenditure Analysis per patient (DR-01) would settle the level. Until then, the number
+of people who stop ART is a lower bound in those countries.
+
 ## Summary
 
 | Area | Result |
