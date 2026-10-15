@@ -1,2 +1,43 @@
 datasets/dataset_2026-10-06T18_38_46.834794338Z_DEFAULT_INTEGRATION_IMF.STA_GFS_COFOG_11.0.0.csv
 datasets/IHME_DAH_DATABASE_1990_2026_Y2026M09D18.CSV
+
+# Local virtual environment
+.venv/
+
+# Python bytecode (rebuilt automatically; never commit)
+__pycache__/
+*.pyc
+.DS_Store
+~$*
+
+# Large audit snapshots (regenerate with audit/snapshot_numbers.py)
+audit/before_cosmetic.csv
+audit/after_cosmetic.csv
+audit/before_minor.csv
+audit/after_minor.csv
+audit/minor_diff_summary.csv
+audit/before_i07.csv
+audit/after_i07.csv
+
+# raw downloads: never committed (offline inputs to prepare_model.py, add_constant_dollars.py and audit/checks.py)
+datasets/
+audit/before_malaria.csv
+audit/after_malaria.csv
+audit/before_malaria_fu.csv
+audit/after_malaria_fu.csv
+audit/checks_results_quick.csv
+audit/checks_summary_quick.csv
+audit/checks_summary_quick.md
+audit/before_hiv.csv
+audit/after_hiv.csv
+audit/before_fiscal.csv
+audit/after_fiscal.csv
+audit/before_s3.csv
+audit/after_s3.csv
+audit/before_labels.csv
+audit/after_labels.csv
+audit/before_cleanup.csv
+audit/after_cleanup.csv
+
+# raw downloads waiting to be sorted into datasets/ (never committed)
+New Data/

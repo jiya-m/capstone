@@ -1,0 +1,41 @@
+item,countries,of,note
+plhiv: not from WHO/UNAIDS (fallback),5,70,CIV; GTM; IRQ; JOR; NIC
+sh_hiv_artc_zs: not from WHO/UNAIDS (fallback),5,70,CIV; GTM; IRQ; JOR; NIC
+sh_hiv_pmtc_zs: not from WHO/UNAIDS (fallback),10,70,BLZ; CIV; GTM; IRQ; JOR; MNG; NIC; SLV; STP; TLS
+hiv_pos_pregnancies: not from WHO/UNAIDS (fallback),10,70,BLZ; CIV; GTM; IRQ; JOR; MNG; NIC; SLV; STP; TLS
+malaria_deaths: not from WHO/UNAIDS (fallback),7,70,FJI; JAM; JOR; LBY; LSO; MDA; MNG
+malaria_cases: not from WHO/UNAIDS (fallback),7,70,FJI; JAM; JOR; LBY; LSO; MDA; MNG
+malaria_pop_at_risk: not from WHO/UNAIDS (fallback),16,70,AZE; BLZ; EGY; FJI; IRQ; JAM; JOR; KGZ; LBY; LSO; MDA; MNG; MUS; SLV; TJK; TLS
+sh_mlr_nets_zs: not from WHO/UNAIDS (fallback),39,70,AZE; BGD; BLZ; BOL; BWA; DOM; EGY; FJI; GTM; GUY; HND; HTI; IDN; IND; IRQ; JAM; JOR; KGZ; KHM; LAO; LBY; LSO; MDA; MNG; MUS; NAM; NIC; NPL; PAK; PHL; PNG; SLV; STP; SWZ; TJK; TLS; VEN; VNM; ZAF
+malaria countries (WHO deaths > 0),46,70,
+bednet use missing -> default 50% (malaria countries),6,70,
+malaria treatment coverage -> default 40% (malaria countries; incidence < 50/1000 or survey missing),17,70,
+malaria treatment survey used: year <= 2015,6,70,median survey year 2018
+bednet use from an old under-5 survey (not WHO modelled),9,70,survey years 2007-2021
+PMTCT coverage missing -> ART coverage used,7,70,
+TB-HIV share missing -> 0,0,70,
+ART coverage missing,1,70,
+under-5 mortality missing -> 50,0,70,
+"GDP per person missing -> $1,000",0,70,
+income group missing -> GDP rule,0,70,
+government health spending 2023 missing -> fiscal capacity 0,0,70,
+GHES growth p75 <= median -> fiscal capacity 0,0,70,
+interest/revenue missing -> debt-stress factor 1,18,70,
+debt-stress factor < 1,30,70,
+debt-stress factor at floor 0.25,0,70,
+vaccine death scale clipped at 0.3 (U5MR < 15),7,70,
+vaccine death scale clipped at 2.5 (U5MR > 125),0,70,
+"HIV incidence clipped to [0.05, 10]/1000 (prevention cost)",11,70,
+HIV incidence missing -> 0.3/1000,5,70,
+ART cost from a country study (else default),5,70,"LSO, MWI, UGA, ZMB, ZWE"
+trend_u5mr: at the -8%/+2% clip,4,70,
+trend_u5mr: equal to the median fill (likely no usable series),0,70,median -0.0372
+trend_malaria_deaths: at the -8%/+2% clip,34,70,
+trend_malaria_deaths: equal to the median fill (likely no usable series),16,70,median -0.0311
+Full US exit: lines capped at people covered,0,70,{}
+Full US exit / any: donor aid exceeds cost x covered (proportional scaling),204,70,"{""mal_itn"": 16, ""hiv_pmtct"": 52, ""tb_dr"": 24, ""mal_cm"": 51, ""hiv_art"": 29, ""tb_ds"": 24, ""imm"": 7, ""mal_irs"": 1}"
+Full US exit: coverage driven to 0%,0,70,{}
+IHME 2025 cells: ratio clipped at 1.5,39,70,of 572 cells
+IHME 2025 cells: ratio 0 (funding ends),3,70,of 572 cells
+"IHME 2025 cells: baseline < $20M, uses donor x bucket ratio",467,70,of 572 cells
+America First MOUs: countries with a schedule (others get the average cut),16,70,average 2028 cut 36%

@@ -1,4 +1,8 @@
-streamlit>=1.50
+# App (streamlit run app.py)
+streamlit>=1.50   # 1.46+ needed for st.navigation(position="top")
 pandas
+numpy
 plotly>=5.20
- 
+# Data preparation scripts only (prepare_model.py)
+statsmodels   # Poisson regressions in prepare_model.py
+openpyxl   # only needed by prepare_model.py (reads the MOU spreadsheet)
