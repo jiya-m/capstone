@@ -70,21 +70,28 @@ Full US exit; America First MOUs (team's 2026-30 schedules, year selectable); IH
 **Announced donor cuts** (the dashboard's default; the only other option shown is Custom, the presets above stay in
 the code and tests) gives every recipient x donor x channel flow its own 2026-30 path, read from
 `model_data/announcement_cuts.csv`. That file is built by `announcement_model/project_cuts.py <workbook.xlsx>` from
-the aid_cut_projections_announcements workbook. Each flow gets exactly one multiplier; nothing is stacked, because the
-Global Fund and Gavi cut only because donors cut.
-- Known (a published number for that flow): Global Fund money from every source = the country's GC8 allocation ratio
-  (2026: reduced GC7); Gavi = the donor's Gavi 6.0 pledge ratio (UK, Norway, France) and 0 for the US; US via WHO = 0;
-  US bilateral and US NGOs = the America First MOU schedule; Swedish and UK exits, the UK Africa path, the
+the aid_cut_projections_announcements workbook and `country_data/`. Each flow gets exactly one multiplier; nothing is
+stacked, because the Global Fund and Gavi cut only because donors cut.
+- Base: IHME DAH, average of 2019-2023 (COVID-19 money included) for every health area. Countries without yearly
+  files use the average of 2019, 2022 and 2023 from the workbook.
+- Known (a published number for that flow): Global Fund money from every source = reduced GC7 / GC7 (2026) and
+  GC8 / GC7 (2027); Gavi = Gavi 6.0 new pledges / Gavi 5.0 pledges (6.0 / 8.8) for every donor, 0 for the US; US via
+  WHO = 0; US bilateral and US NGOs = the America First MOU schedule; Swedish and UK exits, the UK Africa path, the
   Netherlands' health budget and UNICEF cut.
-- Predicted: every other DAC flow = the donor's announced total-aid path (OECD ODA outlook 2026-28, trend to 2030),
-  the same on all its channels; US bilateral without an MOU = the signed MOUs' prior-funding-weighted average path
-  (0.793, 0.770, 0.694, 0.570, 0.408 of 2023 kept; income group and aid / government health spending were tested as
-  predictors and do not beat the average out of sample, see `announcement_model/output/fit_v3.txt`); foundations,
-  private and non-DAC = IHME 2025 / 2021-23 ratio.
-The file carries `cut_<year>` and `known_cut_<year>` (the known part), which the Dashboard's known vs predicted chart
-uses. The scenario applies the yearly path itself, so the Dashboard shows the announced phase-out instead of the
-sudden / gradual funding-path choice. Guyana has no 2023 IHME baseline in the workbook, so it takes the pooled path
-for each donor x channel, all of it predicted.
+- Predicted: the Global Fund from 2028 = the GC7 -> GC8 change continuing at (GC8 / GC7)^(1/3) a year; US bilateral
+  and NGOs without an MOU = the average whole-agreement ratio of the 3 MOU countries with the closest aid /
+  government health spending ratio (all within +-50%, else the prior-funding-weighted average of all MOUs) on the
+  MOUs' average yearly shape; foundations, private and non-DAC = IHME 2025 / 2021-23 ratio.
+- Every other DAC flow: the donor's health target = 2019-23 health aid x exp(alpha) x (total ODA / its 2019-23
+  average)^eps, with alpha = -0.24 and eps = 0.28 fitted on IHME 2025 health vs OECD 2025 total aid across donors.
+  ODA comes from `announcement_model/oda_history.csv` (OECD DAC1 via ONE, constant 2025 US$) chained to the workbook
+  outlook for 2026-28, with the 2025-28 trend extended to 2030. The donor's known and predicted flows above count
+  toward the target; its other flows share what is left as one equal cut, between 0 and no cut. Audit tables:
+  `announcement_model/output/rows_v4.csv`, `donor_targets_v4.csv`, `us_no_mou_v4.csv`.
+The file carries `base_kusd`, `cut_<year>` and `known_cut_<year>` (the known part). The Dashboard's money headline and
+known vs predicted chart sum these over every health area; the deaths section uses only the HIV, TB, malaria and
+vaccine cells. The scenario applies the yearly path itself, so the Dashboard shows the announced phase-out instead of
+the sudden / gradual funding-path choice.
 
 ## Things to improve with more time / data
 

@@ -167,8 +167,8 @@ def load_announcement_cuts(model_dir: Path = MODEL_DIR, part: str = "cut") -> di
         return {}
     out = {(r.iso3, r.src_grp, r.chan_grp): np.array([getattr(r, c) for c in cols], dtype=float)
            for r in a.itertuples(index=False)}
-    lost = a[cols].mul(a.base_2023_kusd, axis=0).assign(iso3=a.iso3, src_grp=a.src_grp, chan_grp=a.chan_grp,
-                                                        base=a.base_2023_kusd)
+    base = a["base_kusd"] if "base_kusd" in a.columns else a["base_2023_kusd"]
+    lost = a[cols].mul(base, axis=0).assign(iso3=a.iso3, src_grp=a.src_grp, chan_grp=a.chan_grp, base=base)
     for keys, pre in ((["iso3", "src_grp"], ()), (["src_grp", "chan_grp"], ("*",)), (["src_grp"], ("*",))):
         g = lost.groupby(keys)[cols + ["base"]].sum()
         for k, r in g.iterrows():
@@ -181,6 +181,26 @@ def load_announcement_cuts(model_dir: Path = MODEL_DIR, part: str = "cut") -> di
 @functools.lru_cache(maxsize=2)
 def _announcement_cuts_default(part: str = "cut") -> dict:
     return load_announcement_cuts(part=part)
+
+
+@functools.lru_cache(maxsize=2)
+def announcement_totals(model_dir: Path = MODEL_DIR) -> dict:
+    """All health aid (every health area, every donor) under the Announced donor cuts model, per country:
+    {iso3: {"base": US$ a year in 2019-2023, "lost": US$ lost in each year 2026-2030, "known": the part of it from
+    published numbers}}. Empty dict if the file is missing or predates the 2019-2023 base. Feeds the money headline
+    and the known vs predicted chart on the Dashboard."""
+    p = model_dir / ANNOUNCE_FILE
+    if not p.exists():
+        return {}
+    a = pd.read_csv(p)
+    if "base_kusd" not in a.columns:
+        return {}
+    yrs = [2026 + t for t in range(N_YEARS)]
+    b = a["base_kusd"] * 1e3
+    t = pd.DataFrame({"base": b, **{f"l{y}": b * a[f"cut_{y}"] for y in yrs},
+                      **{f"k{y}": b * a[f"known_cut_{y}"] for y in yrs}}).groupby(a.iso3).sum()
+    return {iso: {"base": float(r.base), "lost": r[[f"l{y}" for y in yrs]].to_numpy(float),
+                  "known": r[[f"k{y}" for y in yrs]].to_numpy(float)} for iso, r in t.iterrows()}
 
 
 def announcement_lookup(amap: dict, iso3: str, src: str, chan: str):
