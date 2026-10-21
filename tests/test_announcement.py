@@ -141,3 +141,26 @@ def test_abuja_and_tax_options():
     r0 = hm.run_country("KEN", SC, NONE, I, P, n_draws=0)
     r1 = hm.run_country("KEN", SC, NONE, I, P, n_draws=0, gov_add_usd=tuple(a["by_year"]))
     assert r1["totals"]["replaced"] > 0 and r1["totals"]["net"] < r0["totals"]["net"]
+
+
+def test_services_by_year():
+    """Each service has its own money lost, people and coverage drop for every year 2026-2030; their averages are the
+    5-year figures, and the year view of the service table adds up to that year's net loss."""
+    r = hm.run_country("KEN", SC, NONE, I, P, n_draws=0)
+    L = r["lines"]
+    yrs = [hm.YEAR0 + t for t in range(hm.N_YEARS)]
+    d = L[L["line"].isin(hm.ALL_DIRECT)]
+    np.testing.assert_allclose(d[[f"units_lost_{y}" for y in yrs]].mean(axis=1), d["units_lost"], rtol=1e-6)
+    ok = d["cov_drop_pp"].notna()
+    np.testing.assert_allclose(d.loc[ok, [f"cov_drop_pp_{y}" for y in yrs]].mean(axis=1), d.loc[ok, "cov_drop_pp"],
+                               rtol=1e-6)
+    np.testing.assert_allclose(L[[f"net_loss_{y}" for y in yrs]].mean(axis=1), L["net_loss_usd"], rtol=1e-6, atol=1)
+    art = d.set_index("line").loc["hiv_art"]
+    assert art["cov_drop_pp_2030"] > art["cov_drop_pp"] > art["cov_drop_pp_2026"] > 0
+    import model_section as ms
+    rows = ms._service_rows(L[(L["base_usd"] > 0) | (L["net_loss_usd"] != 0)])
+    assert ms._model_years(rows) == yrs
+    ry, Ty = ms._year_rows(rows, r, r["totals"], 2030)
+    assert Ty["net"] == pytest.approx(float(r["years"].set_index("year").loc[2030, "gap_usd"]))
+    assert ry.set_index("line").loc["hiv_art", "drop"] == pytest.approx(art["cov_drop_pp_2030"])
+    assert ms._coverage_path_fig(rows) is not None
