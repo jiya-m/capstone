@@ -589,8 +589,6 @@ else:
 # =========================================================================== #
 # SECTION 4 - the government budget: one treemap, revenue side and spending side sized to each other
 # =========================================================================== #
-th.section_header("account_balance", f"Revenue and Spending in {country_name}")
-
 def _budget_section():
     iso = crow["iso3"]
     rev = load_revenue(iso) if REVENUE_DIR.exists() else None
@@ -609,6 +607,7 @@ def _budget_section():
     with ycol:
         yr4 = st.selectbox("Year", years_all, index=years_all.index(default_y), key=f"c4_year_{iso}")
     where = f"{iso} {int(yr4)}"
+    extra = ms.budget_sliders(iso, country_name)
 
     # ---- WEO (general government) totals; GDP (constant 2023 US$) turns % of GDP into dollars ----
     gdp_m, debt_pct, R_w, E_w, NL_w = None, None, None, None, None
@@ -675,6 +674,9 @@ def _budget_section():
                     node("rev:other", bs.OTHER_LEVELS, "rev", rside["other"], th.RULE, other_hover, rev_side)
             else:
                 node("rev:all", "Revenue" + no_mix, "rev", R, th.OTHER, "the IMF revenue file has no breakdown for this year", rev_side)
+            if extra is not None and extra["tax_usd"] > 0:
+                node("rev:added", "Added tax revenue", "rev", extra["tax1"] - extra["tax0"], th.GRAPE,
+                     f"Tax revenue raised from {extra['tax0']:.1f}% to {extra['tax1']:.1f}% of GDP", rev_side)
             if gap > 0.05:
                 node("rev:debt", "Borrowing (spending beyond revenue)", "rev", gap, BORROWING_COLOR,
                      "Spending exceeded revenue by this much; financed by new borrowing or drawing down reserves", rev_side)
@@ -691,9 +693,14 @@ def _budget_section():
             if sside["items"] is not None:
                 it = sside["items"]
                 hl = it[it["group"] == "Health"]
-                if len(hl):
+                add_h = (extra["full_usd"] / extra["gdp_usd"] * 100
+                         if extra is not None and extra["full_usd"] > 0 and extra["gdp_usd"] else 0.0)
+                if len(hl) or add_h:
                     health_pct = float(hl["v"].sum())
-                    node("spd:Health", "Health", "spd", health_pct, th.ROSE, side_total=spd_side)
+                    node("spd:Health", "Health", "spd", health_pct + add_h, th.ROSE, side_total=spd_side)
+                if add_h:
+                    node("spd:Health:added", "Added health spending", "spd:Health", add_h, th.GRAPE,
+                         "Health budget at the slider settings, by 2030", spd_side)
                 for _, r in it.iterrows():
                     lab, is_h = r["label"], r["group"] == "Health"
                     node(f"spd:{lab}", lab, "spd:Health" if is_h else "spd", r["v"],
@@ -758,6 +765,14 @@ def _budget_section():
         pills.append((f"Gross Government Debt, {int(yr4)}", _v(debt_pct), f"{debt_pct:.0f}% of GDP",
                       "IMF World Economic Outlook; the stock of debt outstanding."))
     pill_row(pills)
+    if extra is not None and extra["full_usd"] > 0:
+        lost30 = None
+        if ctl["preset"] == ms.scn.ANNOUNCED and iso in set(ms._inputs()["lines"].iso3):
+            lost30 = float(ms.announced_path(iso)["lost"][-1])
+        pill_row([("Added for Health by 2030", ms.money(extra["full_usd"]),
+                   (f"{extra['full_usd'] / lost30:.0%} of the aid lost in 2030" if lost30 else ""),
+                   "Health share of government spending and tax revenue at the slider settings, reached in equal "
+                   "steps from 2026. The coverage results above include it.")])
 
     if bx["caption"]:
         st.caption(bx["caption"])
@@ -767,11 +782,6 @@ def _budget_section():
     if any(sd is not None and sd["other"] > 0 for sd in (rside, sside)):
         st.caption("Grey box: the rest of the IMF WEO general-government total (states, provinces, local governments, "
                    "social security funds), which the central-government breakdown does not cover.")
-    if can_compare and gap > 0.05:
-        st.caption(f"The dark purple box is borrowing: {_v(gap)} ({gap:.1f}% of GDP)." if gdp_m else
-                   f"The dark purple box is borrowing: {gap:.1f}% of GDP.")
-    elif can_compare and gap < -0.05:
-        st.caption(f"The green box is the surplus: {_v(-gap)}.")
     if not weo:
         st.caption("The IMF World Economic Outlook has no general-government totals for this year, so each side is "
                    "sized from its own IMF file, and the two can cover different levels of government.")
@@ -785,8 +795,6 @@ def _budget_section():
                            f"local governments); IHME puts government health spending at {float(_h.iloc[0]) * 100:.1f}% "
                            "of GDP.")
 
-
-_budget_section()
 
 
 
@@ -805,3 +813,9 @@ if _rev4 is not None and not _rev4.empty:
     if pd.notna(_ry):
         _imf["revenue_pct_gdp"] = float(_rev4.loc[_rev4["year"] == _ry, "pct_gdp"].sum())
 render_model_section(crow["iso3"], country_name, _imf, ctl, sk)
+
+# =========================================================================== #
+# SECTION 5 - the government budget, last: sliders grow the health budget and tax revenue
+# =========================================================================== #
+th.section_header("account_balance", f"Revenue and Spending in {country_name}")
+_budget_section()
