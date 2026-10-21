@@ -21,6 +21,7 @@ and the 2.5-97.5 percentile range of the Monte Carlo draws.
 """
 from __future__ import annotations
 
+import functools
 import json
 import logging
 from dataclasses import dataclass, field
@@ -171,6 +172,11 @@ def load_announcement_cuts(model_dir: Path = MODEL_DIR) -> dict:
     return out
 
 
+@functools.lru_cache(maxsize=1)
+def _announcement_cuts_default() -> dict:
+    return load_announcement_cuts()
+
+
 def load_params(path: Path = PARAMS_FILE) -> pd.DataFrame:
     """Read model_params.csv: one row per parameter with central, low and high values (units in its 'unit' column),
     status (sourced / assumption) and source. Feeds every model run, the Methods parameter table and the parameter
@@ -271,7 +277,8 @@ class Scenario:
         falling back to the country x donor group average, else no cut)."""
         if self.announcement:
             out = np.zeros((len(cells), N_YEARS))
-            amap = announce_map or {}
+            # a long-running app can hold load_inputs() output cached from before this file existed: read it here then
+            amap = announce_map if announce_map is not None else _announcement_cuts_default()
             for i, (s, c, b) in enumerate(zip(cells["src_grp"], cells["chan_grp"], cells["bucket"])):
                 if self.bucket_only and b != self.bucket_only:
                     continue

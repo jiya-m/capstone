@@ -55,3 +55,10 @@ def test_run_country_and_precomputed_file():
     assert r["totals"]["deaths_5y"] > 0
     pre = pd.read_csv(scn.precomputed_path(hm.MODEL_DIR, ANN))
     assert len(pre) == I["lines"].iso3.nunique()
+
+
+def test_inputs_cached_before_the_file_existed_still_cut():
+    """A running app keeps load_inputs() cached across a code update, so its inputs can lack announce_map."""
+    stale = {k: v for k, v in I.items() if k != "announce_map"}
+    r = hm.run_country("ZMB", SC, NONE, stale, P, n_draws=50)
+    assert r["years"]["aid_lost_usd"].gt(0).all()
