@@ -416,24 +416,6 @@ def phase_out_by_donor(iso3: str) -> pd.DataFrame:
     return out.loc[order]
 
 
-def _funder_cut_list_html(d: pd.DataFrame) -> str:
-    """Compact list for the scenario bar: each funder's share of aid cut in the first and last year."""
-    c0, c1 = f"cut_{scn.YEARS[0]}", f"cut_{scn.YEARS[-1]}"
-    rows = []
-    for name, r in d.iterrows():
-        col = PHASE_MAIN.get(name, th.OTHER if name != PHASE_OTHERS else th.MUTED)
-        w = "600" if name in PHASE_MAIN else "400"
-        rows.append(f"<tr><td style='padding:1px 6px 1px 0'><span style='display:inline-block;width:8px;height:8px;"
-                    f"border-radius:50%;background:{col};margin-right:5px'></span>"
-                    f"<span style='font-weight:{w}'>{html.escape(name)}</span></td>"
-                    f"<td style='text-align:right;white-space:nowrap;color:{MUTED}'>{r[c0]:.0%} → "
-                    f"<b style='color:{INK}'>{r[c1]:.0%}</b></td></tr>")
-    return (f"<table style='font-size:12px;border-collapse:collapse;width:100%;margin-top:4px'>"
-            f"<tr><td style='color:{MUTED};padding-bottom:2px'>Share of aid cut</td>"
-            f"<td style='color:{MUTED};text-align:right'>{scn.YEARS[0]} → {scn.YEARS[-1]}</td></tr>"
-            + "".join(rows) + "</table>")
-
-
 def _spread(vals: list, gap: float) -> list:
     """Label positions at least `gap` apart, as close as possible to vals (end-of-line labels that don't overlap)."""
     idx = sorted(range(len(vals)), key=lambda i: vals[i])
@@ -568,11 +550,8 @@ def _controls(iso3, country_name, I) -> dict:
                             unsafe_allow_html=True)
                 ap = announced_path(iso3)
                 schedule = list(ap["cut"])
-                fun = phase_out_by_donor(iso3)
-                if fun.empty:
+                if phase_out_by_donor(iso3).empty:      # otherwise the by-funder chart is drawn under the controls
                     paths_ui.mou_schedule_chart(schedule, None, "share of aid cut")
-                else:
-                    st.html(_funder_cut_list_html(fun))
                 shape = ANNOUNCED_SHAPE
             else:
                 shape = paths_ui.path_selector()
