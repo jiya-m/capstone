@@ -1541,6 +1541,55 @@ def health_budget(iso3: str, inputs: dict) -> dict:
             "p90_rise_pp": p90, "ghes_usd": ghes, "gov_source": hs["source"]}
 
 
+TAX_BENCHMARK = 15.0     # % of GDP: the tax-to-GDP level linked to faster growth (Gaspar, Jaramillo & Wingender, IMF 2016)
+POLICY_RAMP = np.array([0.2, 0.4, 0.6, 0.8, 1.0])   # reached in equal steps by 2030
+
+
+@functools.lru_cache(maxsize=256)
+def tax_effort(iso3: str) -> dict:
+    """Tax revenue as % of GDP (IMF World Revenue Longitudinal Data, latest year up to 2024, revenue_data/) and GDP in
+    2023 US$ (IMF WEO, macro_data/). NaN where either file is missing. Feeds: policy_money."""
+    out = {"tax_pct": np.nan, "tax_year": None, "gdp_usd": np.nan}
+    r, m = HERE / "revenue_data" / f"{iso3}.csv", HERE / "macro_data" / f"{iso3}.csv"
+    if r.exists():
+        t = pd.read_csv(r)
+        t = t[(t.group == "Taxes") & (t.year <= 2024)].groupby("year").pct_gdp.sum()
+        if len(t):
+            out["tax_pct"], out["tax_year"] = float(t.iloc[-1]), int(t.index[-1])
+    if m.exists():
+        g = pd.read_csv(m)
+        g = g[g.year == 2023]["gdp_usd_bn_2023"].dropna()
+        if len(g):
+            out["gdp_usd"] = float(g.iloc[0]) * 1e9
+    return out
+
+
+def policy_money(iso3: str, inputs: dict, abuja: bool, tax: bool) -> dict:
+    """Extra government health money (US$, each year 2026-2030) if the health budget reaches the Abuja target (15% of
+    government spending) and/or tax collection rises to TAX_BENCHMARK % of GDP, each reached in equal steps by 2030.
+        Abuja:  (15% - health share) x government spending
+        Tax:    (benchmark - tax % of GDP) x GDP of new revenue, spent on health at the health share (15% with Abuja)
+    Nothing is added where the country is already past a target. Feeds: the government response checkboxes."""
+    hb, te = health_budget(iso3, inputs), tax_effort(iso3)
+    s, G = hb["share_pct"] / 100, hb["gov_spend_usd"]
+    out = {"abuja_usd": 0.0, "tax_usd": 0.0, "share_pct": hb["share_pct"], "tax_pct": te["tax_pct"],
+           "tax_year": te["tax_year"], "missing": []}
+    if (abuja or tax) and not (s == s and G == G):
+        out["missing"].append("health's share of government spending")
+        s = G = np.nan
+    target = max(s, ABUJA_CEILING / 100) if abuja else s
+    if abuja and s == s:
+        out["abuja_usd"] = max(target - s, 0.0) * G
+    if tax:
+        if te["tax_pct"] == te["tax_pct"] and te["gdp_usd"] == te["gdp_usd"] and s == s:
+            out["tax_usd"] = max(TAX_BENCHMARK - te["tax_pct"], 0.0) / 100 * te["gdp_usd"] * target
+        else:
+            out["missing"].append("tax revenue")
+    out["full_usd"] = out["abuja_usd"] + out["tax_usd"]
+    out["by_year"] = out["full_usd"] * POLICY_RAMP
+    return out
+
+
 def _money_by_year(iso3, scenario, fiscal, inputs, cut_path):
     """Aid lost and the existing government response in each year 2026-2030 (US$), without running the full model.
     Feeds: break_even_share."""
