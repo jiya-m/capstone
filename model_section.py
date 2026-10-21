@@ -19,6 +19,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 import health_model as hm
+import hiv_pot as hp
 import scenarios as scn
 import paths_ui
 import theme as th
@@ -1063,6 +1064,8 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     _service_grid(rows)
     st.markdown(th.source_html("Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), Malaria Atlas "
                                "Project 2025 (malaria), WUENIC (DTP3).", None), unsafe_allow_html=True)
+    if preset == scn.ANNOUNCED:
+        mou_hiv_section(iso3, country_name, ptab_json)
 
     # ------------------------------ fiscal space ------------------------------ #
     ap = announced_path(iso3) if ctl["preset"] == scn.ANNOUNCED else None
@@ -1620,6 +1623,77 @@ def _service_grid(rows: pd.DataFrame, ncols: int = 3):
         for c, (r, years, cov, drop) in zip(cols, paths[i:i + ncols]):
             with c:
                 chart(_service_fig(r, years, cov, drop))
+
+
+POT_COLORS = {"hiv_art": th.GRAPE, "hiv_pmtct": th.ROSE, "hiv_prev": th.BLUE, "hiv_ovc": th.TEAL}
+POT_NAMES = {"hiv_art": "ART", "hiv_pmtct": "PMTCT", "hiv_prev": "Prevention", "hiv_ovc": "Orphan Support"}
+
+
+@st.cache_data(show_spinner=False, max_entries=32)
+def _hiv_pot(iso3, ptab_json):
+    ptab = pd.read_json(io.StringIO(ptab_json), orient="split")
+    return hp.hiv_pot(iso3, _inputs(), ptab)
+
+
+def _pot_alloc_fig(T: pd.DataFrame, obj: str):
+    """Stacked bars: the MOU's HIV service money each year, by service, for one split."""
+    d = T[T.objective == obj]
+    fig = go.Figure()
+    for l in hp.HIV_LINES:
+        v = d[d.line == l].sort_values("year")
+        fig.add_bar(x=v.year, y=v.alloc_usd / 1e6, name=POT_NAMES[l], marker_color=POT_COLORS[l],
+                    hovertemplate=f"{POT_NAMES[l]} %{{x}}: $%{{y:.1f}}M<extra></extra>")
+    fig.update_layout(barmode="stack", bargap=0.35, legend=dict(orientation="h", y=-0.15, x=0))
+    return _layout(fig, h=320, title=_title("Where the HIV Money Goes"), margin=dict(l=0, r=0, t=40, b=0),
+                   yaxis=dict(tickprefix="$", ticksuffix="M", nticks=5), xaxis=dict(tickvals=hp.YEARS))
+
+
+def _pot_cov_fig(T: pd.DataFrame, obj: str, cov0: dict):
+    """Coverage of ART and PMTCT each year: the chosen split (solid) and today's split (dotted)."""
+    fig = go.Figure()
+    years = [hp.YEARS[0] - 1] + hp.YEARS
+    for l in hp.COV_LINES:
+        for o, dash in ((obj, "solid"), ("current", "dot")) if obj != "current" else ((obj, "solid"),):
+            v = T[(T.objective == o) & (T.line == l)].sort_values("year")
+            y = [cov0[l]] + list(v.cov_pct)
+            fig.add_scatter(x=years, y=y, mode="lines+markers" if dash == "solid" else "lines",
+                            line=dict(color=POT_COLORS[l], width=2.5 if dash == "solid" else 1.5, dash=dash),
+                            name=POT_NAMES[l], showlegend=o == obj,
+                            hovertemplate=f"{POT_NAMES[l]} %{{x}}: %{{y:.0f}}%<extra></extra>")
+    if obj != "current":
+        fig.add_scatter(x=[years[0]], y=[None], mode="lines", line=dict(color=MUTED, width=1.5, dash="dot"),
+                        name="Today's Split", hoverinfo="skip")
+    fig.update_layout(legend=dict(orientation="h", y=-0.15, x=0))
+    return _layout(fig, h=320, title=_title("Coverage"), margin=dict(l=0, r=0, t=40, b=0),
+                   yaxis=dict(ticksuffix="%", nticks=5),
+                   xaxis=dict(tickvals=years, ticktext=["Now"] + [str(y) for y in hp.YEARS]))
+
+
+def mou_hiv_section(iso3: str, country_name: str, ptab_json: str):
+    """MOU countries: the MOU's US HIV money as one pot, split three ways (hiv_pot.py)."""
+    r = _hiv_pot(iso3, ptab_json)
+    if r is None:
+        return
+    T = r["table"]
+    st.subheader("Spending the MOU's HIV Money")
+    labels = list(hp.OBJECTIVES.values())
+    pick = st.segmented_control("Split", labels, default=labels[1], key=f"pot_obj_{iso3}",
+                                label_visibility="collapsed") or labels[1]
+    obj = {v: k for k, v in hp.OBJECTIVES.items()}[pick]
+    a, b = st.columns(2, gap="medium")
+    with a:
+        chart(_pot_alloc_fig(T, obj))
+    with b:
+        chart(_pot_cov_fig(T, obj, {l: float(r["cov0"][hp.HIV_LINES.index(l)]) * 100 for l in hp.COV_LINES}))
+    y1 = hp.YEARS[-1]
+    last = T[T.year == y1]
+    worst = last.groupby("objective").cov_drop_pp.max()
+    people = last.groupby("objective").units_lost.sum()
+    st.markdown(th.source_html(
+        f"HIV money = MOU amount × {r['share']:.0%} (US share of health aid going to HIV, IHME 2021-23); "
+        f"{r['service_share']:.0%} pays for services. {y1}: worst drop {_pts(worst[obj])}, "
+        f"{num(people[obj])} people losing HIV services (today's split: {_pts(worst['current'])}, "
+        f"{num(people['current'])}).", None), unsafe_allow_html=True)
 
 
 def _coverage_fig(rows: pd.DataFrame):
