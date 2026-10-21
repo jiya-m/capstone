@@ -993,13 +993,19 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                      "external share of the country's spending on the disease), the loss is that pool x the share of "
                      "money lost.")
     notes += [f"{f[0].upper() + f[1:]}." for f in res["flags"]]
-    notes.append("HIV prevention turns money into infections averted, so it has no coverage of its own. Program money "
-                 "with no "
-                 "reported purpose is split by purpose with the country's Global Fund grant mix (treatment, "
-                 "prevention, testing, systems, programme management); only the treatment share counts as people on "
-                 "treatment; "
-                 + systems_note(ptab) + " HIV Testing & Care has no patients of its own: " + care_ct_note()
-                 + " Bednets and spraying have their own coverage; together they set vector-control coverage.")
+    if hm.TREAT_SHARE is not None:
+        notes.append(f"{hm.TREAT_SHARE:.0%} of each disease's aid, whatever IHME says it paid for, is counted as "
+                     "paying for treatment (HIV: ART; TB: TB treatment; malaria: malaria treatment), split between "
+                     "treatment lines by today's mix. The other "
+                     f"{1 - hm.TREAT_SHARE:.0%} is overhead (systems, management) and cuts no service. Vaccine aid "
+                     "pays for vaccines.")
+    else:
+        notes.append("HIV prevention turns money into infections averted, so it has no coverage of its own. Program "
+                     "money with no reported purpose is split by purpose with the country's Global Fund grant mix "
+                     "(treatment, prevention, testing, systems, programme management); only the treatment share counts "
+                     "as people on treatment; " + systems_note(ptab) + " HIV Testing & Care has no patients of its "
+                     "own: " + care_ct_note() + " Bednets and spraying have their own coverage; together they set "
+                     "vector-control coverage.")
     st.subheader("Service Coverage, Year by Year")
     if path_fig is not None:
         chart(path_fig, source="Model estimates; 2025 is coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), "
@@ -1011,11 +1017,16 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     rows_y, T_y = (rows, T) if yr == AVG_LABEL else _year_rows(rows, res, T, int(yr))
     st.html(_service_table_html(rows_y, country_name, T_y, {b: float(B.loc[b, "gains_usd"]) for b in hm.BUCKETS}))
     ovc = show[show["line"] == "hiv_ovc"]
-    st.caption(_esc("Other Aid is money the model does not link to a service: support for orphans and vulnerable children"
-                    + (f" ({money(ovc['net_loss_usd'].sum())} a year lost)" if len(ovc) else "")
-                    + f" and the {1 - float(ptab.loc['hss_service_share', 'central']):.0%} of lost systems money (labs, "
-                    "staff, monitoring, supply chain) that does not cut services. With it, the totals match Aid at Risk and Net Aid Lost "
-                    "Services above."))
+    if hm.TREAT_SHARE is not None:
+        st.caption(_esc(f"Treatment rows carry {hm.TREAT_SHARE:.0%} of each disease's aid. Other Aid is the other "
+                        f"{1 - hm.TREAT_SHARE:.0%} (systems, management), which cuts no service. With it, the totals "
+                        "match Aid at Risk and Net Aid Lost above."))
+    else:
+        st.caption(_esc("Other Aid is money the model does not link to a service: support for orphans and vulnerable children"
+                        + (f" ({money(ovc['net_loss_usd'].sum())} a year lost)" if len(ovc) else "")
+                        + f" and the {1 - float(ptab.loc['hss_service_share', 'central']):.0%} of lost systems money "
+                        "(labs, staff, monitoring, supply chain) that does not cut services. With it, the totals match "
+                        "Aid at Risk and Net Aid Lost Services above."))
     if cov_fig is not None:
         chart(cov_fig, source="Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), Malaria Atlas "
                               "Project 2025 (malaria treatment, bednets, spraying; source shown on each bar), WUENIC "
@@ -1415,7 +1426,7 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
         if max(o_base, o_net) >= 0.005 * max(T["base"], 1.0):
             body.append("<tr class='gap'><td colspan='6'></td></tr>")
             body.append("<tr><td class='svc' style='border-left:3px solid #cfcad6'><b>Other Aid</b><br>"
-                        f"{grey('orphan support; systems money not cutting services')}</td>"
+                        f"{grey(_other_aid_sub())}</td>"
                         + "".join(f"<td>{c}</td>" for c in (money(max(o_base, 0)), money(max(o_net, 0)), "", nm, ""))
                         + "</tr>")
         base_tot, net_tot = T["base"], T["net"]
@@ -1428,6 +1439,12 @@ def _service_table_html(rows: pd.DataFrame, country_name: str = "", T: dict | No
     return ("<div class='ed-nyt-wrap'><table class='ed-nyt'><colgroup><col style='width:26%'>"
             + "<col style='width:14.8%'>" * 5 + "</colgroup><thead><tr>" + th_html + "</tr></thead><tbody>"
             + "".join(body) + "</tbody></table></div>").replace("$", "&#36;")
+
+
+def _other_aid_sub() -> str:
+    """The grey line under the service table's Other Aid row."""
+    return ("overhead: systems, management" if hm.TREAT_SHARE is not None
+            else "orphan support; systems money not cutting services")
 
 
 def _gain_rows(bucket, gains) -> list:

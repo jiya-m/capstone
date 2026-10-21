@@ -93,7 +93,7 @@ def test_combined_vector_control_formula():
     assert got["mal_itn"][0] < hm.malaria_levels(row, Pc, u, alone)["mal_itn"][0]
 
 
-def test_each_vector_line_capped_at_its_own_coverage():
+def test_each_vector_line_capped_at_its_own_coverage(ihme_split):
     for iso in ("NGA", "ZMB", "UGA", "IDN"):
         L = hm.run_country(iso, scn.build_scenario("Full US exit", {}, CI), NONE, I, P, n_draws=0)["lines"]
         L = L.set_index("line")
@@ -136,7 +136,7 @@ def test_malaria_treatment_cost_sourced():
 
 
 # ---------------- E and I-17: display ----------------
-def test_service_table_shows_source_and_year():
+def test_service_table_shows_source_and_year(ihme_split):
     r = hm.run_country("KEN", scn.build_scenario("Full US exit", {}, CI), NONE, I, P, n_draws=0)
     rows = ms._service_rows(r["lines"][(r["lines"]["base_usd"] > 0) | (r["lines"]["net_loss_usd"] != 0)])
     html = ms._service_table_html(rows, "Kenya", r["totals"])

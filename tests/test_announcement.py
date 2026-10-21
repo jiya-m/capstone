@@ -164,3 +164,17 @@ def test_services_by_year():
     assert Ty["net"] == pytest.approx(float(r["years"].set_index("year").loc[2030, "gap_usd"]))
     assert ry.set_index("line").loc["hiv_art", "drop"] == pytest.approx(art["cov_drop_pp_2030"])
     assert ms._coverage_path_fig(rows) is not None
+
+
+def test_treatment_gets_its_share_of_each_disease():
+    """TREAT_SHARE of each disease's aid (all of its lines) pays for treatment; the rest cuts no service, and other
+    services keep no money of their own."""
+    r = hm.run_country("KEN", SC, NONE, I, P, n_draws=0)
+    L, cells = r["lines"].set_index("line"), I["lines"][I["lines"].iso3 == "KEN"]
+    for b, treat in hm.UNSPEC_TREAT.items():
+        total = cells.loc[cells["bucket"] == b, "usd"].sum()
+        assert L.loc[treat, "base_usd"].sum() == pytest.approx(hm.TREAT_SHARE * total, rel=1e-6)
+    for l in ("hiv_pmtct", "hiv_prev", "mal_itn", "mal_irs", "hiv_care_ct"):
+        assert L.loc[l, "base_usd"] == 0 and L.loc[l, "net_loss_usd"] == 0
+    assert L.loc["imm", "base_usd"] == pytest.approx(cells.loc[cells["line"] == "imm", "usd"].sum())
+    assert L.loc["hiv_art", "cov_drop_pp_2030"] > 15

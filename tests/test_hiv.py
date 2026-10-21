@@ -30,7 +30,7 @@ def test_line_mapping():
     assert len(cols) == len(set(cols))                       # each IHME program area in one line only
 
 
-def test_care_line_has_money_but_no_units():
+def test_care_line_has_money_but_no_units(ihme_split):
     r = hm.run_country("KEN", EXIT, NONE, I, P, n_draws=0)
     L = r["lines"].set_index("line")
     c = L.loc["hiv_care_ct"]
@@ -38,7 +38,7 @@ def test_care_line_has_money_but_no_units():
     assert np.isnan(c["units_lost"]) and np.isnan(c["cov0"]) and c["deaths_5y"] == 0
 
 
-def test_kappa_of_care_loss_counts_toward_art():
+def test_kappa_of_care_loss_counts_toward_art(ihme_split):
     """Cutting only the testing & care line: ART loses kappa x the loss / cost x (1 - continuity) people."""
     sc = hm.Scenario(name="care only")
     sc.src_direct = {s: 1.0 for s in hm.SOURCE_GROUPS}
@@ -57,7 +57,7 @@ def test_kappa_of_care_loss_counts_toward_art():
     assert L.loc["hiv_art", "units_lost"] > 0
 
 
-def test_service_table_care_row():
+def test_service_table_care_row(ihme_split):
     r = hm.run_country("KEN", EXIT, NONE, I, P, n_draws=0)
     L = r["lines"]
     rows = ms._service_rows(L[(L["base_usd"] > 0) | (L["net_loss_usd"] != 0)])

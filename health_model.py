@@ -112,6 +112,10 @@ DONOR_SHARE_LINE = {"mal_itn": "malaria_prev", "mal_irs": "malaria_prev"}
 UNSPEC_TREAT = {"HIV": ["hiv_art"], "TB": ["tb_ds", "tb_dr"], "Malaria": ["mal_cm"]}
 UNSPEC_PREV = {"HIV": ["hiv_prev", "hiv_pmtct"], "TB": [], "Malaria": ["mal_itn", "mal_irs"]}
 UNSPEC_TEST_TARGET = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_cm"}
+# share of each disease's aid (all of it: services, testing, systems, unspecified) that pays for treatment (Jiya,
+# 2026-10-21). It goes to the treatment lines (UNSPEC_TREAT) by their own mix; the rest is overhead (systems,
+# management) and cuts no service. None = IHME's own program-area split.
+TREAT_SHARE = 0.8
 _EXCESS_LOGGED: set = set()     # (iso3, line) pairs already logged as "donor money exceeds the service cost"
 
 
@@ -935,6 +939,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
         rest is nonservice[bucket]. Linked lines (HIV testing and care) keep kappa x their pool as service money (it
         counts toward the target line's units) and put the rest in nonservice[line]."""
         eff, nonservice = {}, {}
+        if TREAT_SHARE is not None:
+            return treat_share_split(series)
         for b in BUCKETS:
             known = DIRECT[b] + LINKED_IN[b]
             d = series.reindex(known).fillna(0.0)
@@ -969,6 +975,29 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                 pool = d[l] + add[l]                                # its own money + its share of unspecified money
                 eff[l], nonservice[l] = kappa * pool, (1 - kappa) * pool
             nonservice[b] = (1 - sigma) * s_all + ns_extra
+        return eff, nonservice
+
+    def treat_share_split(series):
+        """TREAT_SHARE of each disease's money (every line of it) to its treatment lines, by the country's own mix of
+        treatment money now (the global mix when it has none); the rest cuts no service (nonservice[bucket]). Other
+        services (PMTCT, prevention, bednets, spraying, orphan support, testing and care) keep none of their own."""
+        eff, nonservice = {}, {}
+        for b in BUCKETS:
+            if b not in UNSPEC:                             # vaccines: one line, its own money
+                for l in DIRECT[b]:
+                    eff[l] = series.get(l, 0.0)
+                nonservice[b] = 0.0
+                continue
+            own = DIRECT[b] + LINKED_IN[b] + [UNSPEC[b], HSS[b]]
+            total = sum(series.get(l, 0.0) for l in own)
+            bmix = base.reindex(DIRECT[b]).fillna(0.0)
+            mix = (bmix / bmix.sum()) if bmix.sum() > 0 else pd.Series(inputs["global_mix"][b])
+            eff.update({l: 0.0 for l in DIRECT[b]})
+            for l, w in sub_mix(UNSPEC_TREAT[b], mix).items():
+                eff[l] = TREAT_SHARE * total * w
+            for l in LINKED_IN[b]:
+                eff[l], nonservice[l] = 0.0, 0.0
+            nonservice[b] = (1 - TREAT_SHARE) * total
         return eff, nonservice
 
     eff_base, _ = effective(base, P["hss_kappa"], P["hss_service_share"])

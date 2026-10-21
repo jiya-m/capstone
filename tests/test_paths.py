@@ -34,7 +34,7 @@ def close(a, b):
 
 # (a) default paths reproduce the original sudden-cut results, for 5 countries, every preset and 3 responses
 @pytest.mark.parametrize("key", sorted(BASE))
-def test_default_path_reproduces_original(key):
+def test_default_path_reproduces_original(key, ihme_split):
     iso, preset, fk = key.split("|")
     sc = scn.build_scenario(preset, baseline_opts(preset, I["ci"]), I["ci"])
     for kw in ({}, {"cut_path": [1] * 5, "gov_add_usd": [0] * 5}):        # implicit and explicit defaults
