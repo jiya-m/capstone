@@ -60,9 +60,8 @@ PRESET_SHORT = {
     "Global Fund & Gavi shortfalls": "All donors' money through Gavi and the Global Fund falls by the share set "
                                      "below, against each fund's 2021-23 disbursements.",
     "Combined retreat": "US Bilateral Exit + Multilateral Withdrawals plus the OECD-reported 2025 total-aid cuts for every other donor.",
-    "Announced cuts + donor budget model": "Each donor and channel follows its own 2026-2030 path: announced cuts "
-                                           "(MOUs, Global Fund GC8, Gavi pledges, exits) where they exist, and each "
-                                           "donor's OECD budget outlook, spread across countries, for the rest.",
+    "Announced donor cuts": "Each donor's announced aid cut, the same on every channel, except where a channel's own "
+                            "cut is published (Global Fund allocations, MOUs, Gavi pledges, exits): then that number.",
     "Custom": "Set the cuts yourself by donor and by channel.",
 }
 CEILINGS = {"Strong year (75th percentile growth)": "p75", "Best years (90th percentile growth)": "p90"}
@@ -347,6 +346,50 @@ def _preset_options(preset, ci, iso3, country_name, key):
 
 MOU = "America First MOUs"
 MOU_SHAPE = "Follows MOU schedule"   # internal path label: the scenario carries the country's own yearly cuts
+ANNOUNCED_SHAPE = "Announced phase-out"   # same for Announced donor cuts: each cell's yearly cut is in the scenario
+
+
+@st.cache_data(show_spinner=False, max_entries=256)
+def announced_path(iso3: str) -> dict:
+    """Announced donor cuts for one country, 2026-2030 (four diseases): base aid a year, US$ lost each year, the part
+    of it that is known (published numbers) and the predicted rest, and the share of aid cut ("cut")."""
+    I = _inputs()
+    cells = I["lines"][I["lines"].iso3 == iso3]
+    sc = scn.build_scenario(scn.ANNOUNCED, scn.default_opts(scn.ANNOUNCED, I["ci"]), I["ci"])
+    usd = cells["usd"].to_numpy()
+    lost = np.clip((usd[:, None] * sc.cuts_by_year(cells, iso3, I["trend_map"], I.get("announce_map"))).sum(0),
+                   0.0, None)
+    known = np.minimum(hm.known_loss_by_year(iso3, I), lost)
+    base = float(usd.sum())
+    return {"base": base, "lost": lost, "known": known, "predicted": lost - known,
+            "cut": lost / base if base > 0 else np.zeros_like(lost)}
+
+
+def known_vs_predicted_chart(iso3: str, country_name: str):
+    """Stacked bars: aid lost each year 2026-2030 that is known from announcements vs predicted by the model."""
+    ap = announced_path(iso3)
+    if ap["lost"].sum() <= 0:
+        return
+    st.markdown(f"<div class='ed-kicker' style='margin:0.6rem 0 0'>Aid lost each year in {html.escape(country_name)}: "
+                "known vs predicted</div>", unsafe_allow_html=True)
+    fig = go.Figure()
+    for key, name, col in (("known", "Known (published cuts)", th.ROSE),
+                           ("predicted", "Predicted (model)", th.tint(th.ROSE, 0.35))):
+        fig.add_bar(x=scn.YEARS, y=ap[key] / 1e6, name=name, marker_color=col,
+                    hovertemplate="%{x}: $%{y:,.1f}M " + name.split(" (")[0].lower() + "<extra></extra>")
+    fig.add_scatter(x=scn.YEARS, y=ap["lost"] / 1e6, mode="text", text=[money(v) for v in ap["lost"]],
+                    textposition="top center", showlegend=False, hoverinfo="skip", cliponaxis=False)
+    fig.update_layout(barmode="stack", height=260, margin=dict(l=0, r=0, t=24, b=0),
+                      yaxis=dict(title="US$ million lost", rangemode="tozero"), xaxis=dict(tickvals=scn.YEARS),
+                      legend=dict(orientation="h", y=1.12, x=0))
+    sh = ap["known"].sum() / ap["lost"].sum()
+    chart(fig, note=f"{sh:.0%} of the loss over 2026-2030 comes from published numbers: Global Fund allocations, "
+                    "America First MOUs, Gavi pledges, the US exit from Gavi and WHO, and Swedish, UK and Dutch "
+                    "announcements. The rest is predicted: each donor's announced total-aid cut spread evenly over "
+                    "its channels, the MOU average for US bilateral aid without an MOU, and IHME's 2025 trend for "
+                    "foundations. HIV, TB, malaria and vaccine aid.",
+          source="announcement_model/project_cuts.py; IHME DAH 2023; OECD ODA outlook; Global Fund GC8; US MOUs.")
+
 
 
 def preset_choices(ci, iso3) -> tuple:
@@ -354,7 +397,7 @@ def preset_choices(ci, iso3) -> tuple:
     has a signed MOU with schedule data (group A), listed but unavailable where it has signed without data (B), and not
     listed otherwise (C)."""
     group = scn.mou_group(ci, iso3)
-    opts = [p for p in PRESETS if not (p == MOU and group == scn.MOU_GROUP_C)]
+    opts = [p for p in scn.UI_PRESETS if not (p == MOU and group == scn.MOU_GROUP_C)]
 
     def fmt(p):
         return title_case(scn.display_name(p)) + (f" ({scn.NO_MOU_DATA})" if p == MOU and group == scn.MOU_GROUP_B
@@ -370,7 +413,7 @@ def mou_fallback(ci, iso3, country_name):
         if prev and prev != MOU:                     # just picked for a country that signed without funding data
             st.session_state["sel_preset"] = prev
             return f"America First MOUs: {scn.NO_MOU_DATA}"
-        st.session_state["sel_preset"] = "Full US exit"   # switched country while the preset was on
+        st.session_state["sel_preset"] = scn.ANNOUNCED   # switched country while the preset was on
         return f"{country_name}: no MOU funding data; showing US Bilateral Exit + Multilateral Withdrawals."
     return None
 
@@ -383,8 +426,8 @@ def donor_scenario_select(ci, iso3, country_name, widget_key, label="Donor Scena
     preset = th.shared_select(label, opts, widget_key, "sel_preset", opts[0], format_func=fmt,
                               help=_esc(PRESETS[st.session_state.get("sel_preset", opts[0])]))
     if preset == MOU and group == scn.MOU_GROUP_B:                   # listed but unavailable: no model run
-        prev = st.session_state.get("prev_preset", "Full US exit")
-        st.session_state["sel_preset"] = prev if prev != MOU else "Full US exit"
+        prev = st.session_state.get("prev_preset", scn.ANNOUNCED)
+        st.session_state["sel_preset"] = prev if prev != MOU else scn.ANNOUNCED
         st.session_state["mou_note"] = f"America First MOUs: {scn.NO_MOU_DATA}"
         st.rerun()
     st.session_state["prev_preset"] = preset
@@ -430,6 +473,13 @@ def _controls(iso3, country_name, I) -> dict:
                             unsafe_allow_html=True)
                 paths_ui.mou_schedule_chart(schedule, sched_end)
                 shape = MOU_SHAPE
+            elif preset == scn.ANNOUNCED:
+                st.markdown("<div class='ed-kicker' style='margin:0.35rem 0 0'>Follows the announced phase-out</div>",
+                            unsafe_allow_html=True)
+                ap = announced_path(iso3)
+                schedule = list(ap["cut"])
+                paths_ui.mou_schedule_chart(schedule, None, "share of aid cut")
+                shape = ANNOUNCED_SHAPE
             else:
                 shape = paths_ui.path_selector()
         budget = hm.health_budget(iso3, I)
@@ -476,8 +526,8 @@ def _controls(iso3, country_name, I) -> dict:
             st.divider()
             cmp = None
             if st.toggle("Compare with a Second Scenario", value=False, key="m_compare"):
-                options_b = ["Same as Scenario A"] + [p for p in scn.PRECOMPUTED_PRESETS
-                                                      if p != MOU or group == scn.MOU_GROUP_A]
+                options_b = ["Same as Scenario A"] + [p for p in scn.UI_PRESETS if p in scn.PRECOMPUTED_PRESETS
+                                                      and (p != MOU or group == scn.MOU_GROUP_A)]
                 pb = st.selectbox("Donor Scenario (B)", options_b, index=0, key="mb_preset",
                                   format_func=lambda p: title_case(scn.display_name(p)))
                 if pb == "Same as Scenario A":
@@ -515,7 +565,7 @@ def _controls(iso3, country_name, I) -> dict:
                 st.session_state["last_valid_ptab_json"] = ptab.to_json(orient="split")
 
         # ---- when the funding path or the response is not the default, the box expands: chart + year sliders ----
-        expanded = (shape not in (paths_ui.SUDDEN, MOU_SHAPE)) or mode == "gradual"
+        expanded = (shape not in (paths_ui.SUDDEN, MOU_SHAPE, ANNOUNCED_SHAPE)) or mode == "gradual"
         cut_path, pts, outcome_slot = None, [0.0] * 5, None
         if expanded:
             st.divider()
@@ -584,7 +634,7 @@ SCENARIO_PHRASE = {
     "OECD-reported 2025 aid cuts": "If donors cut health aid as much as their total 2025 aid",
     "Global Fund & Gavi shortfalls": "If the Global Fund and Gavi fall short of their targets",
     "Combined retreat": "If the U.S. exits and other donors cut too",
-    "Announced cuts + donor budget model": "If donors cut as announced and as their budgets imply",
+    "Announced donor cuts": "If donors cut aid as announced",
     "Custom": "Under this scenario",
 }
 
@@ -715,6 +765,8 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
         return (f"<div class='ed-lede'>{kick_html}<div class='ed-headline'>{e(head)}</div>"
                 f"<p class='ed-dek'>{e(dek)}</p></div>")
     res = run_ctl(iso3, sk, ctl)
+    if ctl["preset"] == scn.ANNOUNCED:
+        return _money_lede(iso3, country_name, ctl, res, kick_html)
     T, B, L = res["totals"], res["buckets"].set_index("bucket"), res["lines"].set_index("line")
     phrase = scenario_phrase(ctl["preset"], ctl.get("opts"))
     d5 = T["deaths_5y"]
@@ -764,6 +816,41 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
          + (f" · +{num(res['committed']['after_2030'])} more in 2031-2035 (assumption-driven)"
             if res["committed"]["after_2030"] >= 0.5
             else ""), True, after_2030_help(res["committed"])),
+    ]
+    big = "".join(f"<div class='ed-bignum' title='{e(tip, quote=True)}'><div class='v{' hl' if hl else ''}'>{e(v)}</div>"
+                  f"<div class='l'>{e(lbl)}</div><div class='n'>{e(note)}</div></div>" for v, lbl, note, hl, tip in nums)
+    return (f"<div class='ed-lede'>{kick_html}<div class='ed-headline'>{e(head)}</div>"
+            f"<p class='ed-dek'>{e(dek)}</p></div><div class='ed-bignums'>{big}</div>").replace("$", "&#36;")
+
+
+def _money_lede(iso3: str, country_name: str, ctl: dict, res: dict, kick_html: str) -> str:
+    """Top of the Dashboard for Announced donor cuts: the headline is the money lost (deaths are further down)."""
+    e = html.escape
+    T, ap = res["totals"], announced_path(iso3)
+    lost, known, pred = ap["lost"], ap["known"], ap["predicted"]
+    if T["gross"] <= 1e4:
+        head = f"If donors cut aid as announced, {country_name} would lose almost no HIV, TB, malaria or vaccine aid"
+        dek = "None of the announced cuts falls on these programmes here."
+    else:
+        head = (f"If donors cut aid as announced, {country_name} would lose {money_words(lost[0])} of HIV, TB, malaria "
+                f"and vaccine aid in {scn.YEARS[0]}, rising to {money_words(lost[-1])} by {scn.YEARS[-1]}")
+        sh = known.sum() / lost.sum() if lost.sum() > 0 else 0
+        dek = (f"That is {ap['cut'][0]:.0%} of this aid in {scn.YEARS[0]} and {ap['cut'][-1]:.0%} by {scn.YEARS[-1]}. "
+               f"About {sh:.0%} of the loss comes from published cuts (Global Fund allocations, MOUs, Gavi pledges, "
+               "exits); the rest is predicted: donors' announced total-aid cuts, and the MOU average for US aid where "
+               "there is no MOU.")
+        if T["replaced"] > 0:
+            dek += f" The government could replace {money_words(T['replaced'])} a year on average."
+    nums = [
+        (money(T["gross"]), "Aid Lost Each Year, Average", f"{T['gross'] / T['base']:.0%} of aid for these four diseases"
+         if T["base"] else "", True, "Average yearly loss 2026-2030, before any government replacement."),
+        (money(lost[-1]), f"Aid Lost in {scn.YEARS[-1]}", f"{ap['cut'][-1]:.0%} of this aid", False, ""),
+        (money(known.mean()), "Known Loss Each Year", "from published cuts", False,
+         "Global Fund GC8 allocations, America First MOUs, Gavi pledges, the US exit from Gavi and WHO, Swedish, UK "
+         "and Dutch announcements."),
+        (money(pred.mean()), "Predicted Loss Each Year", "modelled, not yet published", False,
+         "Each donor's announced total-aid cut spread evenly over its channels; US bilateral aid without an MOU "
+         "follows the MOU average; foundations follow IHME's 2025 trend."),
     ]
     big = "".join(f"<div class='ed-bignum' title='{e(tip, quote=True)}'><div class='v{' hl' if hl else ''}'>{e(v)}</div>"
                   f"<div class='l'>{e(lbl)}</div><div class='n'>{e(note)}</div></div>" for v, lbl, note, hl, tip in nums)

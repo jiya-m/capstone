@@ -143,38 +143,68 @@ def load_inputs(model_dir: Path = MODEL_DIR) -> dict:
         ush[b] = {c: v / tot for c, v in med.items()}
     return {"lines": lines, "ci": ci, "trend": trend, "reg": reg, "global_mix": gmix, "unspec_shares": ush,
             "trend_map": trend.set_index(["src_grp", "chan_grp", "bucket"])["ratio"].to_dict(),
-            "announce_map": load_announcement_cuts(model_dir)}
+            "announce_map": load_announcement_cuts(model_dir),
+            "announce_known": load_announcement_cuts(model_dir, "known_cut")}
 
 
 ANNOUNCE_FILE = "announcement_cuts.csv"
 
 
-def load_announcement_cuts(model_dir: Path = MODEL_DIR) -> dict:
+def load_announcement_cuts(model_dir: Path = MODEL_DIR, part: str = "cut") -> dict:
     """Yearly cuts 2026-2030 from model_data/announcement_cuts.csv as {(iso3, donor group, channel group): 5 cuts},
     plus {(iso3, donor group): 5 cuts} (baseline-weighted over that donor's channels) as the fallback for a cell the
     projection has no exact match for, and ("*", donor group, channel group) / ("*", donor group) pooled over all
-    recipients for a country with no 2023 IHME baseline in the projection (Guyana). Empty dict if the file is missing.
-    Feeds: the Announced cuts + donor budget model preset (Scenario.announcement)."""
+    recipients for a country with no 2023 IHME baseline in the projection (Guyana). part="known_cut" gives the part of
+    each cut that comes from a published number (the pooled fallbacks are 0 there: nothing is known for that
+    country). Empty dict if the file is missing. Feeds: the Announced donor cuts preset (Scenario.announcement) and
+    its known vs predicted chart."""
     p = model_dir / ANNOUNCE_FILE
     if not p.exists():
         return {}
     a = pd.read_csv(p)
-    cols = [f"cut_{2026 + t}" for t in range(N_YEARS)]
+    cols = [f"{part}_{2026 + t}" for t in range(N_YEARS)]
+    if not set(cols) <= set(a.columns):
+        return {}
     out = {(r.iso3, r.src_grp, r.chan_grp): np.array([getattr(r, c) for c in cols], dtype=float)
            for r in a.itertuples(index=False)}
-    kept = a[cols].rsub(1).mul(a.base_2023_kusd, axis=0).assign(iso3=a.iso3, src_grp=a.src_grp,
-                                                                base=a.base_2023_kusd)
+    lost = a[cols].mul(a.base_2023_kusd, axis=0).assign(iso3=a.iso3, src_grp=a.src_grp, chan_grp=a.chan_grp,
+                                                        base=a.base_2023_kusd)
     for keys, pre in ((["iso3", "src_grp"], ()), (["src_grp", "chan_grp"], ("*",)), (["src_grp"], ("*",))):
-        g = kept.assign(chan_grp=a.chan_grp).groupby(keys)[cols + ["base"]].sum()
+        g = lost.groupby(keys)[cols + ["base"]].sum()
         for k, r in g.iterrows():
             if r.base > 0:
-                out[pre + (k if isinstance(k, tuple) else (k,))] = 1 - r[cols].to_numpy(dtype=float) / r.base
+                v = r[cols].to_numpy(dtype=float) / r.base
+                out[pre + (k if isinstance(k, tuple) else (k,))] = v if not pre or part == "cut" else v * 0
     return out
 
 
-@functools.lru_cache(maxsize=1)
-def _announcement_cuts_default() -> dict:
-    return load_announcement_cuts()
+@functools.lru_cache(maxsize=2)
+def _announcement_cuts_default(part: str = "cut") -> dict:
+    return load_announcement_cuts(part=part)
+
+
+def announcement_lookup(amap: dict, iso3: str, src: str, chan: str):
+    """The 5 yearly cuts for one cell: exact match, then the donor's average in the country, then pooled."""
+    for k in ((iso3, src, chan), (iso3, src), ("*", src, chan), ("*", src)):
+        v = amap.get(k)
+        if v is not None:
+            return v
+    return None
+
+
+def known_loss_by_year(iso3: str, inputs: dict) -> np.ndarray:
+    """US$ of the Announced donor cuts preset's loss in each year 2026-2030 that comes from a published number
+    (Global Fund allocations, MOUs, Gavi pledges, exits, programme announcements), for the four diseases. The rest of
+    the loss is predicted. Feeds the known vs predicted chart on the Dashboard."""
+    km = inputs.get("announce_known")
+    km = km if km is not None else _announcement_cuts_default("known_cut")
+    cells = inputs["lines"][inputs["lines"].iso3 == iso3]
+    out = np.zeros(N_YEARS)
+    for u, s, c in zip(cells["usd"], cells["src_grp"], cells["chan_grp"]):
+        v = announcement_lookup(km, iso3, s, c)
+        if v is not None:
+            out += u * v
+    return np.clip(out, 0.0, None)
 
 
 def load_params(path: Path = PARAMS_FILE) -> pd.DataFrame:
@@ -282,9 +312,7 @@ class Scenario:
             for i, (s, c, b) in enumerate(zip(cells["src_grp"], cells["chan_grp"], cells["bucket"])):
                 if self.bucket_only and b != self.bucket_only:
                     continue
-                v = amap.get((iso3, s, c))
-                for k in ((iso3, s), ("*", s, c), ("*", s)):
-                    v = amap.get(k) if v is None else v
+                v = announcement_lookup(amap, iso3, s, c)
                 if v is not None:
                     out[i] = v
             return np.clip(out, -1.0, 1.0) * self.scale

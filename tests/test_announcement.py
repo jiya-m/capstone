@@ -1,4 +1,4 @@
-"""Tests for the 'Announced cuts + donor budget model' preset (announcement_model/). Run:  python -m pytest tests"""
+"""Tests for the 'Announced donor cuts' preset (announcement_model/). Run:  python -m pytest tests"""
 import logging
 import sys
 from pathlib import Path
@@ -23,12 +23,14 @@ def test_file_covers_every_country_and_cuts_are_bounded():
     assert set(I["lines"].iso3) - set(CSV.iso3) <= {"GUY"}     # no 2023 IHME baseline: pooled path
     gy = I["lines"][I["lines"].iso3 == "GUY"]
     assert (SC.cuts_by_year(gy, "GUY", I["trend_map"], AMAP)[:, 2] * gy.usd.to_numpy()).sum() > 0
-    cuts = CSV.filter(like="cut_").to_numpy()
-    assert cuts.shape[1] == len(scn.YEARS) and np.all((cuts >= -1) & (cuts <= 1))
+    cuts = CSV[[f"cut_{y}" for y in scn.YEARS]].to_numpy()
+    known = CSV[[f"known_cut_{y}" for y in scn.YEARS]].to_numpy()
+    assert np.all((cuts >= -1) & (cuts <= 1)) and np.all((known >= -1) & (known <= 1))
 
 
 def test_preset_registered():
     assert ANN in scn.PRESETS and ANN in scn.PRECOMPUTED_PRESETS
+    assert scn.UI_PRESETS == [ANN, "Custom"]
     assert SC.announcement and not scn.build_scenario("Full US exit", scn.default_opts("Full US exit", CI), CI).announcement
 
 
@@ -62,3 +64,27 @@ def test_inputs_cached_before_the_file_existed_still_cut():
     stale = {k: v for k, v in I.items() if k != "announce_map"}
     r = hm.run_country("ZMB", SC, NONE, stale, P, n_draws=50)
     assert r["years"]["aid_lost_usd"].gt(0).all()
+
+
+def test_global_fund_cut_is_the_allocation_not_stacked_on_donor_cuts():
+    """Every donor's Global Fund money in a country gets the same cut (the country's allocation ratio): the Global
+    Fund cuts because donors cut, so a donor's own cut is never applied on top."""
+    gf = CSV[(CSV.iso3 == "ZMB") & (CSV.chan_grp == "Global Fund")]
+    assert len(gf) > 3
+    assert np.allclose(gf[[f"cut_{y}" for y in scn.YEARS]].std(), 0, atol=1e-3)
+    assert np.allclose(gf[[f"cut_{y}" for y in scn.YEARS]].to_numpy(), gf[[f"known_cut_{y}" for y in scn.YEARS]])
+
+
+def test_donor_cut_is_uniform_across_its_predicted_channels():
+    de = CSV[(CSV.iso3 == "ZMB") & (CSV.src_grp == "Germany") & ~CSV.chan_grp.isin(["Global Fund", "Gavi"])]
+    assert len(de) > 1 and np.allclose(de["cut_2028"], de["cut_2028"].iloc[0], atol=1e-3)
+
+
+def test_known_loss_is_part_of_total_loss():
+    for iso in ("ZMB", "KEN", "GUY"):
+        cells = I["lines"][I["lines"].iso3 == iso]
+        total = np.clip((cells.usd.to_numpy()[:, None] * SC.cuts_by_year(cells, iso, I["trend_map"], AMAP)).sum(0), 0, None)
+        known = hm.known_loss_by_year(iso, I)
+        assert np.all(known <= total + 1)
+    assert hm.known_loss_by_year("GUY", I).sum() == 0          # nothing is published for Guyana
+    assert hm.known_loss_by_year("KEN", I).sum() > 0            # MOU + Global Fund

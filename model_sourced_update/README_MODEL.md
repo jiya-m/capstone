@@ -67,19 +67,24 @@ python prepare_model.py --dah IHME_DAH_DATABASE_1990_2026_Y2026M09D18.CSV \
 Full US exit; America First MOUs (team's 2026-30 schedules, year selectable); IHME 2025 preliminary estimates
 (data-driven); OECD-reported 2025 ODA cuts; Global Fund & Gavi shortfalls; Combined retreat; Custom.
 
-**Announced cuts + donor budget model** gives every recipient x donor x channel flow its own 2026-30 path, read from
+**Announced donor cuts** (the dashboard's default; the only other option shown is Custom, the presets above stay in
+the code and tests) gives every recipient x donor x channel flow its own 2026-30 path, read from
 `model_data/announcement_cuts.csv`. That file is built by `announcement_model/project_cuts.py <workbook.xlsx>` from
-the aid_cut_projections_announcements workbook (about a minute). Layers, in order of priority:
-1. Announced cuts: America First MOUs (year-by-year schedules; whole-agreement ratios spread with the schedules'
-   average shape 1.255, 1.256, 1.102, 0.813, 0.574), Global Fund GC8 allocation ratio x donor pledge ratio / 0.8051,
-   Gavi 6.0 pledges, US exit from Gavi and WHO, US other multilaterals 0.4326, UK Africa path, Netherlands.
-2. US bilateral to countries with no MOU: the signed MOUs' prior-funding-weighted average path
-   (0.793, 0.770, 0.694, 0.570, 0.408 of 2023 kept).
-3. Foundations, private and non-DAC: IHME 2025 / 2021-23 ratio by source.
-4. Other DAC money: donor health envelope = e^a x ODA^e (a = -0.240, e = 0.281, fitted on IHME 2025 vs OECD 2025
-   across 8 donor groups), minus that donor's announced cuts, spread over recipients as lambda x size^beta
-   (beta = 0.081, from Global Fund GC8 and the US MOUs). 2029-30 extend each donor's 2025-28 OECD trend.
-Guyana has no 2023 IHME baseline in the workbook, so it takes the pooled path for each donor x channel.
+the aid_cut_projections_announcements workbook. Each flow gets exactly one multiplier; nothing is stacked, because the
+Global Fund and Gavi cut only because donors cut.
+- Known (a published number for that flow): Global Fund money from every source = the country's GC8 allocation ratio
+  (2026: reduced GC7); Gavi = the donor's Gavi 6.0 pledge ratio (UK, Norway, France) and 0 for the US; US via WHO = 0;
+  US bilateral and US NGOs = the America First MOU schedule; Swedish and UK exits, the UK Africa path, the
+  Netherlands' health budget and UNICEF cut.
+- Predicted: every other DAC flow = the donor's announced total-aid path (OECD ODA outlook 2026-28, trend to 2030),
+  the same on all its channels; US bilateral without an MOU = the signed MOUs' prior-funding-weighted average path
+  (0.793, 0.770, 0.694, 0.570, 0.408 of 2023 kept; income group and aid / government health spending were tested as
+  predictors and do not beat the average out of sample, see `announcement_model/output/fit_v3.txt`); foundations,
+  private and non-DAC = IHME 2025 / 2021-23 ratio.
+The file carries `cut_<year>` and `known_cut_<year>` (the known part), which the Dashboard's known vs predicted chart
+uses. The scenario applies the yearly path itself, so the Dashboard shows the announced phase-out instead of the
+sudden / gradual funding-path choice. Guyana has no 2023 IHME baseline in the workbook, so it takes the pooled path
+for each donor x channel, all of it predicted.
 
 ## Things to improve with more time / data
 

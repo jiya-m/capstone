@@ -41,20 +41,20 @@ PRESETS = {
         "you set (default Gavi -15%, Global Fund -20%), against each fund's 2021-23 disbursements (the model "
         "baseline). The sliders' tooltips give the sources for each value."),
     "Combined retreat": "'US Bilateral Exit + Multilateral Withdrawals' for the US plus the OECD-reported 2025 total-aid cuts for all other donors.",
-    "Announced cuts + donor budget model": (
-        "Every donor x channel flow to this country follows its own yearly path, 2026-2030 (announcement_model/). "
-        "Announced: America First MOUs (year-by-year schedules; whole-agreement ratios spread with the schedules' "
-        "average shape), Global Fund GC8 allocations x each donor's pledge cut, Gavi 6.0 pledges, the US exit from "
-        "Gavi and WHO, Swedish, UK and Dutch cuts. US bilateral aid to countries without an MOU follows the signed "
-        "MOUs' average path. Foundations and non-DAC donors follow IHME's 2025 estimates. Every other DAC flow: the "
-        "donor's health budget = e^a x (OECD ODA outlook)^e (fitted on 2025: health moves about 0.28x total aid, "
-        "plus a common 21% drop), minus its announced cuts, spread over its recipients with smaller programmes cut "
-        "harder (beta 0.08, from Global Fund GC8 and the US MOUs)."),
+    "Announced donor cuts": (
+        "Each donor cuts its aid by its announced total-aid path (OECD ODA outlook 2026-2028, trend to 2030), the same "
+        "on every channel it funds. Where a channel's cut is published, that number replaces the donor's cut (never "
+        "on top of it: the Global Fund and Gavi cut because donors cut): the Global Fund's GC8 allocation for this "
+        "country, Gavi 6.0 pledges (UK, Norway, France), the US exit from Gavi and WHO, America First MOU schedules "
+        "for US bilateral aid, and Swedish, UK and Dutch programme announcements. US bilateral aid with no MOU follows "
+        "the signed MOUs' average path. Foundations and non-DAC donors follow IHME's 2025 estimates. "
+        "Built by announcement_model/project_cuts.py."),
     "Custom": "Set cuts yourself by donor and by channel (cuts combine multiplicatively: 1 - (1-donor cut)(1-channel cut)).",
 }
 PRECOMPUTED_PRESETS = [p for p in PRESETS if p != "Custom"]
 
-ANNOUNCED = "Announced cuts + donor budget model"
+ANNOUNCED = "Announced donor cuts"
+UI_PRESETS = [ANNOUNCED, "Custom"]          # the options offered in the dashboard; the others stay for tests
 
 # Global Fund & Gavi Shortfalls (audit I-07): user-set cuts on each fund's 2021-23 disbursements, from every donor
 SHORTFALLS = "Global Fund & Gavi shortfalls"
