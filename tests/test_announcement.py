@@ -42,7 +42,7 @@ def test_cells_take_their_own_yearly_path():
     us_bil = ((cells.src_grp == "United States") & (cells.chan_grp == "Bilateral agency")).to_numpy()
     assert us_bil.any()
     assert np.allclose(cuts[us_bil], want)
-    assert want == sorted(want)                    # the no-MOU signer path deepens every year
+    assert (np.diff(want) > -1e-3).all() and want[-1] > want[0] + 0.2   # the similar countries' path deepens
 
 
 def test_without_the_file_nothing_is_cut():
@@ -68,11 +68,26 @@ def test_inputs_cached_before_the_file_existed_still_cut():
 
 def test_global_fund_cut_is_the_allocation_not_stacked_on_donor_cuts():
     """Every donor's Global Fund money in a country gets the same cut (the country's allocation ratio): the Global
-    Fund cuts because donors cut, so a donor's own cut is never applied on top."""
+    Fund cuts because donors cut, so a donor's own cut is never applied on top. 2026-2027 are the published
+    allocations; from 2028 the GC7 -> GC8 change continues at the same yearly rate (predicted)."""
     gf = CSV[(CSV.iso3 == "ZMB") & (CSV.chan_grp == "Global Fund")]
     assert len(gf) > 3
-    assert np.allclose(gf[[f"cut_{y}" for y in scn.YEARS]].std(), 0, atol=1e-3)
-    assert np.allclose(gf[[f"cut_{y}" for y in scn.YEARS]].to_numpy(), gf[[f"known_cut_{y}" for y in scn.YEARS]])
+    cut = gf[[f"cut_{y}" for y in scn.YEARS]].to_numpy()
+    known = gf[[f"known_cut_{y}" for y in scn.YEARS]].to_numpy()
+    assert np.allclose(cut.std(0), 0, atol=1e-3)
+    assert np.allclose(cut[:, :2], known[:, :2]) and np.allclose(known[:, 2:], 0)
+    kept27 = 1 - cut[0, 1]
+    assert np.allclose(1 - cut[0, 2:], kept27 * kept27 ** (np.arange(1, 4) / 3), atol=1e-3)
+
+
+def test_total_health_aid_uses_the_2019_2023_average():
+    """The money headline covers all health aid against the 2019-2023 average, COVID-19 money included."""
+    tot = hm.announcement_totals()
+    assert 1.2e9 < tot["KEN"]["base"] < 1.4e9                  # Kenya: 1.30, 1.40, 1.47, 1.30, 0.94 $B
+    for iso in ("KEN", "ZMB"):
+        t = tot[iso]
+        assert np.all(t["lost"] > 0) and np.all(t["known"] <= t["lost"] + 1)
+    assert tot["KEN"]["lost"][-1] > tot["KEN"]["lost"][0]       # the MOU cliff in 2030
 
 
 def test_donor_cut_is_uniform_across_its_predicted_channels():
@@ -86,5 +101,4 @@ def test_known_loss_is_part_of_total_loss():
         total = np.clip((cells.usd.to_numpy()[:, None] * SC.cuts_by_year(cells, iso, I["trend_map"], AMAP)).sum(0), 0, None)
         known = hm.known_loss_by_year(iso, I)
         assert np.all(known <= total + 1)
-    assert hm.known_loss_by_year("GUY", I).sum() == 0          # nothing is published for Guyana
     assert hm.known_loss_by_year("KEN", I).sum() > 0            # MOU + Global Fund

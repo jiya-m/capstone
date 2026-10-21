@@ -351,8 +351,15 @@ ANNOUNCED_SHAPE = "Announced phase-out"   # same for Announced donor cuts: each 
 
 @st.cache_data(show_spinner=False, max_entries=256)
 def announced_path(iso3: str) -> dict:
-    """Announced donor cuts for one country, 2026-2030 (four diseases): base aid a year, US$ lost each year, the part
-    of it that is known (published numbers) and the predicted rest, and the share of aid cut ("cut")."""
+    """Announced donor cuts for one country, 2026-2030: base aid a year (2019-2023 average), US$ lost each year, the
+    part of it that is known (published numbers) and the predicted rest, and the share of aid cut ("cut"). Covers all
+    health aid ("all": True) where the cut model has the country, else only HIV, TB, malaria and vaccine aid."""
+    tot = hm.announcement_totals().get(iso3)
+    if tot is not None and tot["base"] > 0:
+        lost = np.clip(tot["lost"], 0.0, None)
+        known = np.clip(np.minimum(tot["known"], lost), 0.0, None)
+        return {"base": tot["base"], "lost": lost, "known": known, "predicted": lost - known,
+                "cut": lost / tot["base"], "all": True}
     I = _inputs()
     cells = I["lines"][I["lines"].iso3 == iso3]
     sc = scn.build_scenario(scn.ANNOUNCED, scn.default_opts(scn.ANNOUNCED, I["ci"]), I["ci"])
@@ -362,7 +369,7 @@ def announced_path(iso3: str) -> dict:
     known = np.minimum(hm.known_loss_by_year(iso3, I), lost)
     base = float(usd.sum())
     return {"base": base, "lost": lost, "known": known, "predicted": lost - known,
-            "cut": lost / base if base > 0 else np.zeros_like(lost)}
+            "cut": lost / base if base > 0 else np.zeros_like(lost), "all": False}
 
 
 def known_vs_predicted_chart(iso3: str, country_name: str):
@@ -383,12 +390,15 @@ def known_vs_predicted_chart(iso3: str, country_name: str):
                       yaxis=dict(title="US$ million lost", rangemode="tozero"), xaxis=dict(tickvals=scn.YEARS),
                       legend=dict(orientation="h", y=1.12, x=0))
     sh = ap["known"].sum() / ap["lost"].sum()
-    chart(fig, note=f"{sh:.0%} of the loss over 2026-2030 comes from published numbers: Global Fund allocations, "
-                    "America First MOUs, Gavi pledges, the US exit from Gavi and WHO, and Swedish, UK and Dutch "
-                    "announcements. The rest is predicted: each donor's announced total-aid cut spread evenly over "
-                    "its channels, the MOU average for US bilateral aid without an MOU, and IHME's 2025 trend for "
-                    "foundations. HIV, TB, malaria and vaccine aid.",
-          source="announcement_model/project_cuts.py; IHME DAH 2023; OECD ODA outlook; Global Fund GC8; US MOUs.")
+    scope = ("All health aid, compared with the 2019-2023 average." if ap["all"]
+             else "HIV, TB, malaria and vaccine aid.")
+    chart(fig, note=f"{sh:.0%} of the loss over 2026-2030 comes from published numbers: Global Fund allocations for "
+                    "2026-2027, America First MOUs, Gavi 6.0 new pledges, the US exit from Gavi and WHO, and Swedish, "
+                    "UK and Dutch announcements. The rest is predicted: the Global Fund's decline continuing after "
+                    "2027, similar MOU countries' cuts for US aid without an MOU, each donor's remaining health "
+                    "budget (from its total aid cut) shared over its other channels, and IHME's 2025 trend for "
+                    f"foundations and non-DAC donors. {scope}",
+          source="announcement_model/project_cuts.py; IHME DAH 2019-2023; OECD ODA; Global Fund GC7/GC8; US MOUs.")
 
 
 
@@ -828,29 +838,31 @@ def _money_lede(iso3: str, country_name: str, ctl: dict, res: dict, kick_html: s
     e = html.escape
     T, ap = res["totals"], announced_path(iso3)
     lost, known, pred = ap["lost"], ap["known"], ap["predicted"]
-    if T["gross"] <= 1e4:
-        head = f"If donors cut aid as announced, {country_name} would lose almost no HIV, TB, malaria or vaccine aid"
-        dek = "None of the announced cuts falls on these programmes here."
+    what = "health aid" if ap["all"] else "HIV, TB, malaria and vaccine aid"
+    if lost.sum() <= 1e4 * len(lost):
+        head = f"If donors cut aid as announced, {country_name} would lose almost no {what}"
+        dek = "None of the announced cuts falls on this aid here."
     else:
-        head = (f"If donors cut aid as announced, {country_name} would lose {money_words(lost[0])} of HIV, TB, malaria "
-                f"and vaccine aid in {scn.YEARS[0]}, rising to {money_words(lost[-1])} by {scn.YEARS[-1]}")
-        sh = known.sum() / lost.sum() if lost.sum() > 0 else 0
-        dek = (f"That is {ap['cut'][0]:.0%} of this aid in {scn.YEARS[0]} and {ap['cut'][-1]:.0%} by {scn.YEARS[-1]}. "
-               f"About {sh:.0%} of the loss comes from published cuts (Global Fund allocations, MOUs, Gavi pledges, "
-               "exits); the rest is predicted: donors' announced total-aid cuts, and the MOU average for US aid where "
-               "there is no MOU.")
+        head = (f"If donors cut aid as announced, {country_name} would lose {money_words(lost[0])} of {what} in "
+                f"{scn.YEARS[0]}, rising to {money_words(lost[-1])} by {scn.YEARS[-1]}")
+        sh = known.sum() / lost.sum()
+        dek = (f"That is {ap['cut'][0]:.0%} of its {what} in {scn.YEARS[0]} and {ap['cut'][-1]:.0%} by "
+               f"{scn.YEARS[-1]}, against the 2019-2023 average. About {sh:.0%} of the loss comes from published cuts "
+               "(Global Fund allocations, MOUs, Gavi pledges, exits); the rest is predicted.")
+        if ap["all"]:
+            dek += " The deaths further down cover only the HIV, TB, malaria and vaccine part of this aid."
         if T["replaced"] > 0:
-            dek += f" The government could replace {money_words(T['replaced'])} a year on average."
+            dek += f" The government could replace {money_words(T['replaced'])} a year of that part on average."
     nums = [
-        (money(T["gross"]), "Aid Lost Each Year, Average", f"{T['gross'] / T['base']:.0%} of aid for these four diseases"
-         if T["base"] else "", True, "Average yearly loss 2026-2030, before any government replacement."),
-        (money(lost[-1]), f"Aid Lost in {scn.YEARS[-1]}", f"{ap['cut'][-1]:.0%} of this aid", False, ""),
+        (money(lost.mean()), "Aid Lost Each Year, Average", f"{lost.mean() / ap['base']:.0%} of {what}"
+         if ap["base"] else "", True, "Average yearly loss 2026-2030 against the 2019-2023 average."),
+        (money(lost[-1]), f"Aid Lost in {scn.YEARS[-1]}", f"{ap['cut'][-1]:.0%} of {what}", False, ""),
         (money(known.mean()), "Known Loss Each Year", "from published cuts", False,
-         "Global Fund GC8 allocations, America First MOUs, Gavi pledges, the US exit from Gavi and WHO, Swedish, UK "
-         "and Dutch announcements."),
+         "Global Fund allocations for 2026-2027, America First MOUs, Gavi 6.0 new pledges, the US exit from Gavi and "
+         "WHO, Swedish, UK and Dutch announcements."),
         (money(pred.mean()), "Predicted Loss Each Year", "modelled, not yet published", False,
-         "Each donor's announced total-aid cut spread evenly over its channels; US bilateral aid without an MOU "
-         "follows the MOU average; foundations follow IHME's 2025 trend."),
+         "The Global Fund's decline after 2027; similar MOU countries' cuts for US aid without an MOU; each donor's "
+         "remaining health budget shared over its other channels; IHME's 2025 trend for foundations."),
     ]
     big = "".join(f"<div class='ed-bignum' title='{e(tip, quote=True)}'><div class='v{' hl' if hl else ''}'>{e(v)}</div>"
                   f"<div class='l'>{e(lbl)}</div><div class='n'>{e(note)}</div></div>" for v, lbl, note, hl, tip in nums)

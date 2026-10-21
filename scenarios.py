@@ -42,12 +42,14 @@ PRESETS = {
         "baseline). The sliders' tooltips give the sources for each value."),
     "Combined retreat": "'US Bilateral Exit + Multilateral Withdrawals' for the US plus the OECD-reported 2025 total-aid cuts for all other donors.",
     "Announced donor cuts": (
-        "Each donor cuts its aid by its announced total-aid path (OECD ODA outlook 2026-2028, trend to 2030), the same "
-        "on every channel it funds. Where a channel's cut is published, that number replaces the donor's cut (never "
-        "on top of it: the Global Fund and Gavi cut because donors cut): the Global Fund's GC8 allocation for this "
-        "country, Gavi 6.0 pledges (UK, Norway, France), the US exit from Gavi and WHO, America First MOU schedules "
-        "for US bilateral aid, and Swedish, UK and Dutch programme announcements. US bilateral aid with no MOU follows "
-        "the signed MOUs' average path. Foundations and non-DAC donors follow IHME's 2025 estimates. "
+        "Cuts against each country's 2019-2023 average aid. Published numbers first: the Global Fund's reduced GC7 "
+        "(2026) and GC8 (2027) allocations for this country, Gavi 6.0 new pledges vs Gavi 5.0 for every donor, the "
+        "US exit from Gavi and WHO, America First MOU schedules for US bilateral and NGO aid, and Swedish, UK and "
+        "Dutch programme announcements. Predicted: the Global Fund's GC7-to-GC8 decline continues each year after "
+        "2027; US aid with no MOU follows the 3 MOU countries with the most similar aid / government health "
+        "spending ratio; each donor's health budget falls with its total aid (OECD ODA, IHME 2025 health vs total "
+        "aid), and whatever its Global Fund, Gavi and announced cuts leave of that budget is shared equally over its "
+        "other channels, so nothing is cut twice. Foundations and non-DAC donors follow IHME's 2025 estimates. "
         "Built by announcement_model/project_cuts.py."),
     "Custom": "Set cuts yourself by donor and by channel (cuts combine multiplicatively: 1 - (1-donor cut)(1-channel cut)).",
 }
