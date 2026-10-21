@@ -457,11 +457,7 @@ def phase_out_by_donor_chart(iso3: str, country_name: str):
     _layout(fig, h=max(320, 26 * len(names) + 80), showlegend=False, margin=dict(l=0, r=190, t=10, b=0),
             xaxis=dict(tickvals=scn.YEARS), yaxis=dict(title=dict(text="% of 2019-2023 aid cut", standoff=10), ticksuffix="%",
                                                      range=[min(lo, 0) - 3, max(hi, pos[-1] if pos else hi) + 5]))
-    chart(fig, note="The US line is its bilateral, NGO, UN-agency and other money; its Global Fund and Gavi money is in "
-                    "those lines. OECD donors' lines are their money outside the Global Fund and Gavi, set so each "
-                    "donor's health aid falls with its total aid. Foundations, development banks and non-DAC donors "
-                    "follow IHME's 2025 trend. A negative cut is a rise.",
-          source="announcement_model/project_cuts.py; IHME DAH 2019-2023; OECD ODA; Global Fund GC7/GC8; Gavi; US MOUs.")
+    chart(fig, source="announcement_model/project_cuts.py; IHME DAH 2019-2023; OECD ODA; Global Fund GC7/GC8; Gavi; US MOUs.")
 
 
 def preset_choices(ci, iso3) -> tuple:
@@ -532,8 +528,8 @@ def _controls(iso3, country_name, I) -> dict:
             if note:
                 st.caption(_esc(note))
             schedule, sched_end = scn.mou_schedule(ci, iso3) if preset == MOU else (None, None)
-            st.caption(_esc(scn.mou_schedule_text(ci, iso3, country_name) if preset == MOU
-                            else PRESET_SHORT.get(preset, PRESETS[preset])))
+            if preset == MOU:
+                st.caption(_esc(scn.mou_schedule_text(ci, iso3, country_name)))
             opts = _preset_options(preset, ci, iso3, country_name, "m")
         with c2:
             if preset == MOU:
@@ -586,8 +582,12 @@ def _controls(iso3, country_name, I) -> dict:
                                               "goes to health at the health share of government spending (15% if the "
                                               "Abuja box is ticked). Tax data: IMF World Revenue Longitudinal Data."))
             abuja = abuja and mode != "gradual"
-            policy = hm.policy_money(iso3, I, abuja, taxup) if (abuja or taxup) else None
-            if policy is not None:
+            share_t, tax_t = budget_targets(iso3)            # the budget sliders at the bottom of the page
+            if share_t is not None or tax_t is not None:
+                policy = hm.policy_money(iso3, I, False, False, share_t, tax_t)
+            else:
+                policy = hm.policy_money(iso3, I, abuja, taxup) if (abuja or taxup) else None
+            if policy is not None and SHOW_GOV_OPTIONS:
                 st.caption(_esc(policy_caption(policy, country_name, abuja, taxup)))
         with c4:
             st.markdown("<div style='height:1.75rem'></div>", unsafe_allow_html=True)
@@ -680,6 +680,38 @@ INTRO = ("A three-step model for HIV, TB, malaria and immunization: the donor sc
          "can replace part of it, limited by fiscal space; and money not replaced ÷ cost per person = people-equivalents "
          "of service lost (the service the lost money would have paid for, not a headcount), shown as a drop in "
          "coverage.")
+
+
+def budget_targets(iso3: str) -> tuple:
+    """(health share of government spending %, tax revenue % of GDP) set with the budget sliders at the bottom of the
+    Dashboard, or None where a slider is at today's level (nothing added)."""
+    I = _inputs()
+    s0, t0 = hm.health_budget(iso3, I)["share_pct"], hm.tax_effort(iso3)["tax_pct"]
+    s1, t1 = st.session_state.get(f"bud_share_{iso3}"), st.session_state.get(f"bud_tax_{iso3}")
+    # the sliders start at today's level rounded to 0.1, so only a move above that adds money
+    return (s1 if (s1 is not None and s0 == s0 and s1 > round(float(s0), 1) + 1e-9) else None,
+            t1 if (t1 is not None and t0 == t0 and t1 > round(float(t0), 1) + 1e-9) else None)
+
+
+def budget_sliders(iso3: str, country_name: str) -> dict | None:
+    """Two sliders that grow the health budget and tax revenue, and what they add for health by 2030 (reached in
+    equal steps from 2026; the model run above uses the same money as extra government spending). None when the
+    country has no spending or tax data."""
+    I = _inputs()
+    hb, te = hm.health_budget(iso3, I), hm.tax_effort(iso3)
+    s0, t0 = hb["share_pct"], te["tax_pct"]
+    if not (s0 == s0 and t0 == t0):
+        return None
+    a, b = st.columns(2, gap="large")
+    with a:
+        s1 = st.slider("Health Share of Government Spending (%)", 0.0, 30.0, round(float(s0), 1), 0.5, format="%.1f%%",
+                       key=f"bud_share_{iso3}", help=f"Today: {s0:.1f}%. Abuja target: {hm.ABUJA_CEILING:.0f}%.")
+    with b:
+        t1 = st.slider("Tax Revenue (% of GDP)", 0.0, 40.0, round(float(t0), 1), 0.5, format="%.1f%%", key=f"bud_tax_{iso3}",
+                       help=f"Today: {t0:.1f}% ({te['tax_year']}). IMF benchmark: {hm.TAX_BENCHMARK:.0f}%.")
+    share_t, tax_t = budget_targets(iso3)
+    p = hm.policy_money(iso3, I, False, False, share_t, tax_t)
+    return {**p, "share0": s0, "share1": s1, "tax0": t0, "tax1": t1, "gdp_usd": te["gdp_usd"]}
 
 
 def policy_caption(p: dict, country_name: str, abuja: bool, taxup: bool) -> str:
@@ -960,8 +992,8 @@ def _money_lede(iso3: str, country_name: str, ctl: dict, res: dict, kick_html: s
         dek = ""
     pol = ctl.get("policy")
     if pol is not None and pol["full_usd"] > 0 and lost[-1] > 0:
-        what_gov = " and ".join(w for w, v in (("reaching the Abuja target", pol["abuja_usd"]),
-                                               (f"raising tax to {hm.TAX_BENCHMARK:.0f}% of GDP", pol["tax_usd"])) if v > 0)
+        what_gov = " and ".join(w for w, v in (("a bigger health budget", pol["abuja_usd"]),
+                                               ("higher tax revenue", pol["tax_usd"])) if v > 0)
         cover = pol["full_usd"] / lost[-1]
         dek = (f"{what_gov[0].upper() + what_gov[1:]} would add {money_words(pol['full_usd'])} a year for health by "
                f"{scn.YEARS[-1]}, " + (f"more than the {money_words(lost[-1])} of aid lost that year."
@@ -974,8 +1006,6 @@ def render_model_section(iso3: str, country_name: str, imf: dict | None, ctl: di
     I = _inputs()
     ci = I["ci"]
     th.section_header("monitor_heart", f"How Aid Cuts Translate into Coverage in {country_name}", help=INTRO)
-    st.caption(_esc(f"{scenario_title(ctl['preset'], ctl.get('opts'))} · {_resp_label(ctl['fiscal_t'])}. Change the scenario at the top "
-                    "of the page."))
     if iso3 not in ci.index or iso3 not in set(I["lines"].iso3):
         st.info(f"{country_name} has no recorded HIV, TB, malaria or vaccine aid in 2021-2023, so there is nothing to "
                 "model for this country. See the All Countries page for the other countries.")
@@ -999,36 +1029,14 @@ def _country_results(iso3, country_name, ctl, sk, imf):
 
     show = L[(L["base_usd"] > 0) | (L["net_loss_usd"] != 0)].copy()
     rows = _service_rows(show)
-    cov_fig = _coverage_fig(rows)
-    path_fig = _coverage_path_fig(rows)
-    cards = _per_million_cards(iso3, ptab_json, ctl["trend"], country_name)
     items = _headline_items(res, ptab)
 
-    # ------------------------------ headline ------------------------------ #
     if ctl["cmp"]:
         _comparison(iso3, country_name, ctl, res, items)
-    else:
-        st.subheader("The Numbers")
-        _stat_grid(items, 4)
     if gov_on and T["replaced"] > 0:
         kept = people_lost(res0) - people_lost(res)
         st.markdown(_esc(f"Government replacement of {money(T['replaced'])} a year keeps services for about "
                          f"**{num(kept)} people a year** compared with no government replacement."))
-    if SHOW_BRIEF:
-        st.download_button(
-            "Download Country Brief", icon=":material/download:",
-            data=_brief_html(country_name, preset, _resp_label(fiscal_t), items, cards,
-                             [cov_fig], ctl.get("opts")).encode("utf-8"),
-            file_name=f"{country_name.replace(' ', '_')}_funding_cut_brief.html", mime="text/html", key="m_brief",
-            help="A one-page HTML summary of this scenario. Open it in a browser and print to PDF.")
-
-    # ------------------------------ per $1M ------------------------------ #
-    st.subheader(_esc(CARDS_TITLE),
-                 help="Each card runs the full model for a US$1M-a-year cut to that disease, spread across all its "
-                      "services (including HIV testing and care) in proportion to current aid, with no government "
-                      "replacement and a sudden cut. People and coverage are for the main service. The model "
-                      "parameters follow your choices above.")
-    st.markdown(_cards_html(cards), unsafe_allow_html=True)
 
     # ------------------------------ where the money is lost ------------------------------ #
     st.subheader("Where the Money Is Lost")
@@ -1044,55 +1052,17 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                 chart(_loss_by_bucket_fig(B, T["replaced"] > 0, n_rows))
             with b:
                 chart(_who_cut_fig(cl, n_rows))
-        st.markdown(th.source_html(SRC_MODEL, "Donors are who originally paid; the label after the dot is the "
-                                              "channel the money went through."), unsafe_allow_html=True)
 
-    # ------------------------------ service table ------------------------------ #
-    notes = []
-    if show["capped"].any():
-        notes.append("Where the aid lost would pay for more people than are covered today, the loss is capped at "
-                     "current coverage. Where donor aid buys more than the donor-funded pool (people covered x the "
-                     "external share of the country's spending on the disease), the loss is that pool x the share of "
-                     "money lost.")
-    notes += [f"{f[0].upper() + f[1:]}." for f in res["flags"]]
-    if hm.TREAT_SHARE is not None:
-        notes.append(f"{hm.TREAT_SHARE:.0%} of each disease's aid, whatever IHME says it paid for, is counted as "
-                     "paying for treatment (HIV: ART; TB: TB treatment; malaria: malaria treatment), split between "
-                     "treatment lines by today's mix. The other "
-                     f"{1 - hm.TREAT_SHARE:.0%} is overhead (systems, management) and cuts no service. Vaccine aid "
-                     "pays for vaccines.")
-    else:
-        notes.append("HIV prevention turns money into infections averted, so it has no coverage of its own. Program "
-                     "money with no reported purpose is split by purpose with the country's Global Fund grant mix "
-                     "(treatment, prevention, testing, systems, programme management); only the treatment share counts "
-                     "as people on treatment; " + systems_note(ptab) + " HIV Testing & Care has no patients of its "
-                     "own: " + care_ct_note() + " Bednets and spraying have their own coverage; together they set "
-                     "vector-control coverage.")
-    st.subheader("Service Coverage, Year by Year")
-    if path_fig is not None:
-        chart(path_fig, source="Model estimates; 2025 is coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), "
-                               "Malaria Atlas Project 2025 (malaria), WUENIC (DTP3).")
-    st.subheader("What Each Service Loses", help=" ".join(notes))
-    yr_opts = [str(y) for y in _model_years(rows)] + [AVG_LABEL]
-    yr = st.selectbox("Year", yr_opts, index=len(yr_opts) - 2 if len(yr_opts) > 1 else 0, key="m_svc_year",
-                      help="The aid lost and the people losing each service in one year, or the 2026-2030 average.")
-    rows_y, T_y = (rows, T) if yr == AVG_LABEL else _year_rows(rows, res, T, int(yr))
-    st.html(_service_table_html(rows_y, country_name, T_y, {b: float(B.loc[b, "gains_usd"]) for b in hm.BUCKETS}))
-    ovc = show[show["line"] == "hiv_ovc"]
-    if hm.TREAT_SHARE is not None:
-        st.caption(_esc(f"Treatment rows carry {hm.TREAT_SHARE:.0%} of each disease's aid. Other Aid is the other "
-                        f"{1 - hm.TREAT_SHARE:.0%} (systems, management), which cuts no service. With it, the totals "
-                        "match Aid at Risk and Net Aid Lost above."))
-    else:
-        st.caption(_esc("Other Aid is money the model does not link to a service: support for orphans and vulnerable children"
-                        + (f" ({money(ovc['net_loss_usd'].sum())} a year lost)" if len(ovc) else "")
-                        + f" and the {1 - float(ptab.loc['hss_service_share', 'central']):.0%} of lost systems money "
-                        "(labs, staff, monitoring, supply chain) that does not cut services. With it, the totals match "
-                        "Aid at Risk and Net Aid Lost Services above."))
-    if cov_fig is not None:
-        chart(cov_fig, source="Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), Malaria Atlas "
-                              "Project 2025 (malaria treatment, bednets, spraying; source shown on each bar), WUENIC "
-                              "(DTP3).")
+    # ------------------------------ services ------------------------------ #
+    h, pop = st.columns([3, 1], vertical_alignment="bottom")
+    with h:
+        st.subheader("Service Coverage, Year by Year")
+    with pop:
+        with st.popover("Biggest Drops", icon=":material/warning:", width="stretch"):
+            st.html(_drop_overview_html(rows))
+    _service_grid(rows)
+    st.markdown(th.source_html("Model estimates; coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), Malaria Atlas "
+                               "Project 2025 (malaria), WUENIC (DTP3).", None), unsafe_allow_html=True)
 
     # ------------------------------ fiscal space ------------------------------ #
     ap = announced_path(iso3) if ctl["preset"] == scn.ANNOUNCED else None
@@ -1576,6 +1546,82 @@ def _coverage_path_fig(rows: pd.DataFrame):
     return fig
 
 
+DROP_ALERT, DROP_WATCH = 10.0, 5.0     # coverage drop by the last year, percentage points: needs help / watch
+
+
+def _service_paths(rows: pd.DataFrame) -> list:
+    """For each service with a coverage figure: (row, years incl. today, coverage % each year, drop by the last year
+    in points)."""
+    years = _model_years(rows)
+    out = []
+    for r in rows[rows["cov_ok"] & ~rows["line"].isin(hm.LINKED)].itertuples():
+        c0 = float(r.cov0) * 100
+        cov = [c0] + [float(np.clip(c0 - (v if v == v else 0.0), 0, 100))
+                      for v in (getattr(r, f"cov_drop_pp_{y}") for y in years)]
+        out.append((r, [years[0] - 1] + years, cov, c0 - cov[-1]))
+    return out
+
+
+def _drop_color(drop: float) -> str:
+    return th.ROSE if drop >= DROP_ALERT else th.AMBER if drop >= DROP_WATCH else th.TEAL
+
+
+def _drop_overview_html(rows: pd.DataFrame) -> str:
+    """Pop-up overview: services ranked by how far coverage falls by the last year; red at 10+ points (needs help),
+    amber at 5-10, green below."""
+    paths = sorted(_service_paths(rows), key=lambda p: -p[3])
+    if not paths:
+        return "<p>No service loses coverage in this scenario.</p>"
+    y1 = paths[0][1][-1]
+    tag = lambda d: "Needs help" if d >= DROP_ALERT else "Watch" if d >= DROP_WATCH else "Holding"  # noqa: E731
+    li = "".join(
+        f"<tr><td style='padding:4px 8px 4px 0'><span style='display:inline-block;width:10px;height:10px;"
+        f"border-radius:50%;background:{_drop_color(d)};margin-right:6px'></span><b>{html.escape(r.name)}</b></td>"
+        f"<td style='padding:4px 8px;white-space:nowrap'>{cov[0]:.0f}% → {cov[-1]:.0f}%</td>"
+        f"<td style='padding:4px 8px;white-space:nowrap;color:{_drop_color(d)};font-weight:600'>{_pts(d)}</td>"
+        f"<td style='padding:4px 0;color:{MUTED}'>{tag(d)}</td></tr>"
+        for r, _, cov, d in paths)
+    return (f"<div style='font-size:14px'><div style='color:{MUTED};margin-bottom:6px'>Coverage today → {y1}</div>"
+            f"<table style='border-collapse:collapse'>{li}</table></div>")
+
+
+def _service_fig(r, years: list, cov: list, drop: float):
+    """One service: coverage each year (left axis, %) and the same line as people covered (right axis), with the
+    cost per person in the title."""
+    col = BUCKET_COLORS[r.bucket]
+    need = float(r.need)
+    lo, hi = max(0.0, min(cov) - 8), min(100.0, max(cov) + 4)
+    people = [c / 100 * need for c in cov]
+    fig = go.Figure()
+    fig.add_scatter(x=years, y=cov, mode="lines+markers", line=dict(color=col, width=2.5), marker=dict(size=6),
+                    customdata=[num(p) for p in people], showlegend=False,
+                    hovertemplate="%{x}: %{y:.0f}% covered, %{customdata} people<extra></extra>")
+    fig.add_scatter(x=years, y=people, yaxis="y2", mode="lines", line=dict(width=0), hoverinfo="skip",
+                    showlegend=False)
+    fig.add_annotation(x=years[-1], y=cov[-1], text=f"<b>{_pts(drop)}</b>", showarrow=False, xanchor="right",
+                       yanchor="top", yshift=-6, font=dict(color=_drop_color(drop), size=13))
+    cost = f"{money(r.unit_cost)} {r.cost_unit}"
+    _layout(fig, h=250, title=_title(th.title_sub(r.name, cost)), margin=dict(l=0, r=0, t=56, b=0),
+            xaxis=dict(tickvals=years, ticktext=[str(y) if i else "Now" for i, y in enumerate(years)]),
+            yaxis=dict(range=[lo, hi], ticksuffix="%", nticks=4),
+            yaxis2=dict(range=[lo / 100 * need, hi / 100 * need], overlaying="y", side="right", showgrid=False,
+                        nticks=4, tickformat=".2~s", title=None))
+    return fig
+
+
+def _service_grid(rows: pd.DataFrame, ncols: int = 3):
+    """Small multiples: one chart per service, worst drop first."""
+    paths = sorted(_service_paths(rows), key=lambda p: -p[3])
+    if not paths:
+        st.info("No service has a coverage figure in this scenario.")
+        return
+    for i in range(0, len(paths), ncols):
+        cols = st.columns(ncols, gap="medium")
+        for c, (r, years, cov, drop) in zip(cols, paths[i:i + ncols]):
+            with c:
+                chart(_service_fig(r, years, cov, drop))
+
+
 def _coverage_fig(rows: pd.DataFrame):
     """How much coverage each service loses: one bar per service (percentage points), largest first."""
     d = rows[rows["cov_ok"] & (rows["drop"] > 0)].copy()
@@ -1786,7 +1832,6 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_
          "Gap before the government steps in minus what it fills, average per year 2026-2030 (= Net Aid Lost).",
          sub("left")),
     ], large=True), unsafe_allow_html=True)
-    st.markdown(_esc(_fiscal_sentence(res, F, country_name, fiscal_t)))
     if G <= 0:
         return
     views = [("Average per Year, 2026-2030", avg)] + ([("2030", y30)] if show30 else [])

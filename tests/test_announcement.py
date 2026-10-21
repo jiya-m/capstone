@@ -166,9 +166,10 @@ def test_services_by_year():
     assert ms._coverage_path_fig(rows) is not None
 
 
-def test_treatment_gets_its_share_of_each_disease():
+def test_treatment_gets_its_share_of_each_disease(monkeypatch):
     """TREAT_SHARE of each disease's aid (all of its lines) pays for treatment; the rest cuts no service, and other
-    services keep no money of their own."""
+    services keep no money of their own (the optional TREAT_SHARE rule, off by default)."""
+    monkeypatch.setattr(hm, "TREAT_SHARE", 0.8)
     r = hm.run_country("KEN", SC, NONE, I, P, n_draws=0)
     L, cells = r["lines"].set_index("line"), I["lines"][I["lines"].iso3 == "KEN"]
     for b, treat in hm.UNSPEC_TREAT.items():

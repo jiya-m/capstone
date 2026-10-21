@@ -112,10 +112,10 @@ DONOR_SHARE_LINE = {"mal_itn": "malaria_prev", "mal_irs": "malaria_prev"}
 UNSPEC_TREAT = {"HIV": ["hiv_art"], "TB": ["tb_ds", "tb_dr"], "Malaria": ["mal_cm"]}
 UNSPEC_PREV = {"HIV": ["hiv_prev", "hiv_pmtct"], "TB": [], "Malaria": ["mal_itn", "mal_irs"]}
 UNSPEC_TEST_TARGET = {"HIV": "hiv_art", "TB": "tb_ds", "Malaria": "mal_cm"}
-# share of each disease's aid (all of it: services, testing, systems, unspecified) that pays for treatment (Jiya,
-# 2026-10-21). It goes to the treatment lines (UNSPEC_TREAT) by their own mix; the rest is overhead (systems,
-# management) and cuts no service. None = IHME's own program-area split.
-TREAT_SHARE = 0.8
+# share of each disease's aid (all of it: services, testing, systems, unspecified) that pays for treatment. It goes to
+# the treatment lines (UNSPEC_TREAT) by their own mix; the rest is overhead and cuts no service. None (in use, Jiya
+# 2026-10-21) = IHME's own program-area split, so every service keeps its own money.
+TREAT_SHARE = None
 _EXCESS_LOGGED: set = set()     # (iso3, line) pairs already logged as "donor money exceeds the service cost"
 
 
@@ -1601,12 +1601,18 @@ def tax_effort(iso3: str) -> dict:
     return out
 
 
-def policy_money(iso3: str, inputs: dict, abuja: bool, tax: bool) -> dict:
+def policy_money(iso3: str, inputs: dict, abuja: bool, tax: bool, share_target_pct: float | None = None,
+                 tax_target_pct: float | None = None) -> dict:
     """Extra government health money (US$, each year 2026-2030) if the health budget reaches the Abuja target (15% of
     government spending) and/or tax collection rises to TAX_BENCHMARK % of GDP, each reached in equal steps by 2030.
         Abuja:  (15% - health share) x government spending
         Tax:    (benchmark - tax % of GDP) x GDP of new revenue, spent on health at the health share (15% with Abuja)
-    Nothing is added where the country is already past a target. Feeds: the government response checkboxes."""
+    share_target_pct / tax_target_pct set any other target (the Dashboard's budget sliders) and override the
+    Abuja / benchmark flags. Nothing is added where the country is already past a target."""
+    if share_target_pct is not None:
+        abuja = True
+    if tax_target_pct is not None:
+        tax = True
     hb, te = health_budget(iso3, inputs), tax_effort(iso3)
     s, G = hb["share_pct"] / 100, hb["gov_spend_usd"]
     out = {"abuja_usd": 0.0, "tax_usd": 0.0, "share_pct": hb["share_pct"], "tax_pct": te["tax_pct"],
@@ -1614,12 +1620,13 @@ def policy_money(iso3: str, inputs: dict, abuja: bool, tax: bool) -> dict:
     if (abuja or tax) and not (s == s and G == G):
         out["missing"].append("health's share of government spending")
         s = G = np.nan
-    target = max(s, ABUJA_CEILING / 100) if abuja else s
+    target = max(s, (ABUJA_CEILING if share_target_pct is None else share_target_pct) / 100) if abuja else s
+    tax_goal = TAX_BENCHMARK if tax_target_pct is None else tax_target_pct
     if abuja and s == s:
         out["abuja_usd"] = max(target - s, 0.0) * G
     if tax:
         if te["tax_pct"] == te["tax_pct"] and te["gdp_usd"] == te["gdp_usd"] and s == s:
-            out["tax_usd"] = max(TAX_BENCHMARK - te["tax_pct"], 0.0) / 100 * te["gdp_usd"] * target
+            out["tax_usd"] = max(tax_goal - te["tax_pct"], 0.0) / 100 * te["gdp_usd"] * target
         else:
             out["missing"].append("tax revenue")
     out["full_usd"] = out["abuja_usd"] + out["tax_usd"]
