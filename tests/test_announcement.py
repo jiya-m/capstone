@@ -178,3 +178,16 @@ def test_treatment_gets_its_share_of_each_disease():
         assert L.loc[l, "base_usd"] == 0 and L.loc[l, "net_loss_usd"] == 0
     assert L.loc["imm", "base_usd"] == pytest.approx(cells.loc[cells["line"] == "imm", "usd"].sum())
     assert L.loc["hiv_art", "cov_drop_pp_2030"] > 15
+
+
+def test_phase_out_by_funder():
+    """The per-funder phase-out covers all of the country's health aid: the US, Global Fund and Gavi lines, each OECD
+    donor and everyone else add up to the total base and loss."""
+    import model_section as ms
+    d = ms.phase_out_by_donor("KEN")
+    a = hm.announcement_sources("KEN")
+    assert {"United States", "Global Fund", "Gavi"} <= set(d.index)
+    assert d["base"].sum() == pytest.approx(a["base"].sum())
+    assert (d["base"] * d["cut_2030"]).sum() == pytest.approx(a["lost_2030"].sum())
+    assert d.loc["Gavi", "cut_2026"] > 0 and d.loc["United States", "cut_2030"] > d.loc["United States", "cut_2026"]
+    assert ms._spread([5.0, 5.5, 20.0], 2.0) == [5.0, 7.0, 20.0]
