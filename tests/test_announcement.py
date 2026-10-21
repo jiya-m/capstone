@@ -191,3 +191,17 @@ def test_phase_out_by_funder():
     assert (d["base"] * d["cut_2030"]).sum() == pytest.approx(a["lost_2030"].sum())
     assert d.loc["Gavi", "cut_2026"] > 0 and d.loc["United States", "cut_2030"] > d.loc["United States", "cut_2026"]
     assert ms._spread([5.0, 5.5, 20.0], 2.0) == [5.0, 7.0, 20.0]
+
+
+def test_fiscal_panel_uses_all_health_aid_lost():
+    """Can the Country Fill the Gap? uses the Announced donor cuts headline money (all health aid lost each year), and
+    the government fills it by the chosen response, capped at fiscal space."""
+    import model_section as ms
+    r = hm.run_country("KEN", SC, NONE, I, P, n_draws=0)
+    lost = hm.announcement_totals()["KEN"]["lost"]
+    avg, y30, _ = ms.fiscal_gap_values(ms.with_all_aid(r, lost, scn.DEFAULT_FISCAL))
+    assert y30["gap"] == pytest.approx(lost[-1]) and avg["filled"] == 0 and y30["left"] == pytest.approx(lost[-1])
+    fmax = ("max", 0.0, True, "pro_rata", "p50")
+    rm = hm.run_country("KEN", SC, hm.Fiscal(*fmax), I, P, n_draws=0)
+    avg_m, y30_m, _ = ms.fiscal_gap_values(ms.with_all_aid(rm, lost, fmax))
+    assert y30_m["filled"] == pytest.approx(min(lost[-1], rm["fiscal"]["capacity"]))
