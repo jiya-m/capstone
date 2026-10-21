@@ -233,8 +233,8 @@ PATH_PHRASE = {"Sudden (default)": "With a sudden cut", "Linear phase-out": "Pha
                "Custom": "With this path"}
 
 
-def outcome_panel(country_name, shape, response_phrase, res, base_committed, break_even, budget, num, rng,
-                  round_words, after_help):
+def outcome_panel(country_name, shape, response_phrase, res, base_people, people, break_even, budget, num,
+                  round_words):
     """Benchmark line, four pills, one sentence and the caption."""
     share, p90 = budget["share_pct"], budget["p90_rise_pp"]
     if share == share:
@@ -242,20 +242,17 @@ def outcome_panel(country_name, shape, response_phrase, res, base_committed, bre
         st.caption(f"{country_name}: health is {share:.1f}% of government spending ({when}); fastest sustained rise in "
                    f"its history: {p90:.1f} points a year (90th percentile of its 2001-2023 yearly changes)."
                    if p90 == p90 else f"{country_name}: health is {share:.1f}% of government spending ({when}).")
-    T, C = res["totals"], res["committed"]
-    avoided = base_committed - C["deaths"]
+    T = res["totals"]
+    kept = base_people - people
     be = ("Not reachable by 15%" if break_even is None else "None needed" if break_even <= 1e-9
           else f"+{break_even:.1f} points a year")
+    money_m = lambda v: f"${v / 1e6:,.1f}M"
     st.markdown(th.pills_html([
-        ("Extra Deaths 2026-2030", num(max(T["deaths_5y"], 0.0)) if T["deaths_5y"] > -0.5 else num(T["deaths_5y"]),
-         "Central estimate; range across parameter values. " + th.RANGE_TIP,
-         f"Range {rng(T['deaths_5y_lo'], T['deaths_5y_hi'])}"),
-        ("Further Deaths, 2031-2035, Set in Motion by 2030 (Assumption-Driven)", num(max(C["after_2030"], 0.0)),
-         after_help(C), f"Range {rng(C['after_2030_lo'], C['after_2030_hi'])}"
-         + (f"; {rng(*C['after_2030_reengage'])} across return-to-care {C['reengage_values'][0]:.0%}-"
-            f"{C['reengage_values'][1]:.0%} a year" if "after_2030_reengage" in C else "")),
-        ("Deaths Avoided vs Sudden Cut With No Response", num(max(avoided, 0)) if avoided >= -0.5 else f"−{num(-avoided)}",
-         "Committed basis: deaths in 2026-2035 caused by the 2026-2030 losses", f"of {num(base_committed)}"),
+        ("Net Aid Lost per Year", money_m(T["net"]), "Average 2026-2030, after government replacement", ""),
+        ("People Losing a Service per Year", num(max(people, 0.0)),
+         "People-equivalents: the services the lost money would have paid for", ""),
+        ("People Kept in Services vs Sudden Cut With No Response", num(max(kept, 0)) if kept >= -0.5 else f"−{num(-kept)}",
+         "Compared with the whole cut in 2026 and no government replacement", f"of {num(base_people)}"),
         ("Break-Even Budget Increase", be, "Smallest steady yearly rise in health's share of government spending that "
                                            "keeps pace with the lost aid every year (up to the 15% Abuja target)", ""),
     ], large=True), unsafe_allow_html=True)
@@ -270,13 +267,11 @@ def outcome_panel(country_name, shape, response_phrase, res, base_committed, bre
         pace = f"keeps pace from {first}" if first else "keeps pace only in some years"
     lead = PATH_PHRASE.get(shape, "With this path") + (f" and {response_phrase}" if response_phrase else "")
     sent = (f"{lead}, {country_name} {pace} and "
-            + (f"avoids about {round_words(avoided)} of the {round_words(base_committed)} deaths a sudden cut would "
-               f"cause." if avoided > 0.5 else "avoids none of the deaths a sudden cut would cause."))
+            + (f"keeps about {round_words(kept)} more people a year in services than a sudden cut would."
+               if kept > 0.5 else "keeps no more people in services than a sudden cut would."))
     if break_even is None:
         sent += " Keeping pace every year is not possible without passing the 15% Abuja target."
     elif break_even > 1e-9:
         sent += f" Keeping pace every year needs at least +{break_even:.1f} points a year."
     st.markdown(html.escape(sent).replace("$", "\\$"))
-    st.caption("Assumes people return to care when funding returns and that new government money is spent as "
-               "efficiently as donor money. Deaths avoided include 2031-2035 deaths caused by losses before 2031 "
-               "(funding back from 2031), so delaying a cut isn't counted as preventing it.")
+    st.caption("Assumes new government money is spent as efficiently as donor money.")

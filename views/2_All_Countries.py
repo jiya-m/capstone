@@ -1,6 +1,7 @@
 """
-All Countries: who is most exposed under a donor scenario (pills, map, scatter, top-15 chart). The scenario is shared
-with the other pages; the government response, model parameters and death-rate setting follow the Dashboard.
+All Countries: who is most exposed under a donor scenario (pills, map, scatter, top-15 chart), in aid lost and people
+losing a service. The scenario is shared with the other pages; the government response and model parameters follow
+the Dashboard.
 """
 import io
 

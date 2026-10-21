@@ -102,3 +102,23 @@ def test_known_loss_is_part_of_total_loss():
         known = hm.known_loss_by_year(iso, I)
         assert np.all(known <= total + 1)
     assert hm.known_loss_by_year("KEN", I).sum() > 0            # MOU + Global Fund
+
+
+def test_dashboard_is_coverage_only():
+    """No deaths in the headline numbers or the service table; the lede names each country's biggest risks."""
+    import model_section as ms
+    r = hm.run_country("KEN", SC, NONE, I, P, n_draws=0)
+    labels = " ".join(lbl for lbl, *_ in ms._headline_items(r, P))
+    assert "Death" not in labels and "People Losing a Service" in labels
+    table = ms._service_table_html(ms._service_rows(r["lines"]), "Kenya", r["totals"])
+    assert "Deaths" not in table
+    for iso in ("KEN", "ZMB"):
+        risks = ms.risk_lines(iso, hm.run_country(iso, SC, NONE, I, P, n_draws=0))
+        assert risks[0].startswith("Biggest risk:") and any(t.startswith("Hardest-hit service:") for t in risks)
+    assert "US government bilateral aid" in ms.risk_lines("KEN", r)[0]     # the MOU is Kenya's largest 2030 loss
+
+
+def test_all_countries_people_columns():
+    out = hm.run_all(SC, NONE, I, P, n_draws=0, countries=["KEN", "ZMB"])
+    assert (out["people_lost"] > 0).all()
+    assert np.allclose(out["people_lost"], out[[f"people_lost_{b}" for b in hm.BUCKETS]].sum(axis=1))

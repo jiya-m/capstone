@@ -203,6 +203,24 @@ def announcement_totals(model_dir: Path = MODEL_DIR) -> dict:
                   "known": r[[f"k{y}" for y in yrs]].to_numpy(float)} for iso, r in t.iterrows()}
 
 
+def announcement_sources(iso3: str, model_dir: Path = MODEL_DIR) -> pd.DataFrame:
+    """All health aid lost in one country under the Announced donor cuts model, by donor group x channel group:
+    columns base (US$ a year, 2019-2023), lost_<year> and known_<year> (US$). Empty if the file is missing.
+    Feeds the "biggest risk" lines on the Dashboard."""
+    p = model_dir / ANNOUNCE_FILE
+    if not p.exists():
+        return pd.DataFrame()
+    a = pd.read_csv(p)
+    if "base_kusd" not in a.columns:
+        return pd.DataFrame()
+    a = a[a.iso3 == iso3]
+    b = a["base_kusd"] * 1e3
+    yrs = [2026 + t for t in range(N_YEARS)]
+    return pd.DataFrame({"src_grp": a.src_grp, "chan_grp": a.chan_grp, "base": b,
+                         **{f"lost_{y}": b * a[f"cut_{y}"] for y in yrs},
+                         **{f"known_{y}": b * a[f"known_cut_{y}"] for y in yrs}}).reset_index(drop=True)
+
+
 def announcement_lookup(amap: dict, iso3: str, src: str, chan: str):
     """The 5 yearly cuts for one cell: exact match, then the donor's average in the country, then pooled."""
     for k in ((iso3, src, chan), (iso3, src), ("*", src, chan), ("*", src)):
@@ -1583,8 +1601,8 @@ def break_even_share(iso3, scenario, fiscal, inputs, cut_path=None, tol: float =
 
 def run_all(scenario, fiscal, inputs, ptab, n_draws=80, countries=None, mortality_trend=True):
     """Run the model for every dashboard country (or `countries`) and return one row per country: aid (US$ a year),
-    deaths 2026-2030 with range, deaths 2031-2035, deaths and net loss by disease, new HIV infections, fiscal
-    capacity. Feeds the All Countries page and the precomputed model_data/all_countries_<preset>.csv files."""
+    deaths 2026-2030 with range, deaths 2031-2035, deaths and net loss by disease, new HIV infections, people losing a
+    service each year (people-equivalents; HIV prevention and orphan support left out) by disease, fiscal capacity. Feeds the All Countries page and the precomputed model_data/all_countries_<preset>.csv files."""
     countries = countries or [c for c in inputs["ci"].index if c in set(inputs["lines"].iso3)]
     if scenario.mou_only:                              # America First MOUs: only countries with an MOU schedule
         countries = [c for c in countries if c in scenario.us_direct_path_by_country]
@@ -1609,6 +1627,11 @@ def run_all(scenario, fiscal, inputs, ptab, n_draws=80, countries=None, mortalit
             rec[f"deaths_5y_{bb['bucket']}"] = bb["deaths_5y"]
             rec[f"net_loss_{bb['bucket']}"] = bb["net_loss_usd"]
         rec["hiv_infections_5y"] = float(r["buckets"].set_index("bucket").loc["HIV", "infections_5y"])
+        ln = r["lines"][~r["lines"]["line"].isin(["hiv_prev", "hiv_ovc"])]
+        ppl = ln.groupby("bucket")["units_lost"].sum().clip(lower=0)
+        for b in BUCKETS:
+            rec[f"people_lost_{b}"] = float(ppl.get(b, 0.0))
+        rec["people_lost"] = float(ppl.sum())
         recs.append(rec)
     out = pd.DataFrame(recs)
     # draw-by-draw totals over all countries: the All Countries range is their 2.5th-97.5th percentile (IMP-10)
