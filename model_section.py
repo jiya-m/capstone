@@ -416,24 +416,6 @@ def phase_out_by_donor(iso3: str) -> pd.DataFrame:
     return out.loc[order]
 
 
-def _funder_cut_list_html(d: pd.DataFrame) -> str:
-    """Compact list for the scenario bar: each funder's share of aid cut in the first and last year."""
-    c0, c1 = f"cut_{scn.YEARS[0]}", f"cut_{scn.YEARS[-1]}"
-    rows = []
-    for name, r in d.iterrows():
-        col = PHASE_MAIN.get(name, th.OTHER if name != PHASE_OTHERS else th.MUTED)
-        w = "600" if name in PHASE_MAIN else "400"
-        rows.append(f"<tr><td style='padding:1px 6px 1px 0'><span style='display:inline-block;width:8px;height:8px;"
-                    f"border-radius:50%;background:{col};margin-right:5px'></span>"
-                    f"<span style='font-weight:{w}'>{html.escape(name)}</span></td>"
-                    f"<td style='text-align:right;white-space:nowrap;color:{MUTED}'>{r[c0]:.0%} → "
-                    f"<b style='color:{INK}'>{r[c1]:.0%}</b></td></tr>")
-    return (f"<table style='font-size:12px;border-collapse:collapse;width:100%;margin-top:4px'>"
-            f"<tr><td style='color:{MUTED};padding-bottom:2px'>Share of aid cut</td>"
-            f"<td style='color:{MUTED};text-align:right'>{scn.YEARS[0]} → {scn.YEARS[-1]}</td></tr>"
-            + "".join(rows) + "</table>")
-
-
 def _spread(vals: list, gap: float) -> list:
     """Label positions at least `gap` apart, as close as possible to vals (end-of-line labels that don't overlap)."""
     idx = sorted(range(len(vals)), key=lambda i: vals[i])
@@ -568,11 +550,8 @@ def _controls(iso3, country_name, I) -> dict:
                             unsafe_allow_html=True)
                 ap = announced_path(iso3)
                 schedule = list(ap["cut"])
-                fun = phase_out_by_donor(iso3)
-                if fun.empty:
+                if phase_out_by_donor(iso3).empty:      # otherwise the by-funder chart is drawn under the controls
                     paths_ui.mou_schedule_chart(schedule, None, "share of aid cut")
-                else:
-                    st.html(_funder_cut_list_html(fun))
                 shape = ANNOUNCED_SHAPE
             else:
                 shape = paths_ui.path_selector()
@@ -1116,7 +1095,9 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                               "(DTP3).")
 
     # ------------------------------ fiscal space ------------------------------ #
-    _fiscal_panel(res, country_name, imf, fiscal_t)
+    ap = announced_path(iso3) if ctl["preset"] == scn.ANNOUNCED else None
+    _fiscal_panel(with_all_aid(res, ap["lost"], fiscal_t) if ap is not None and ap["all"] else res,
+                  country_name, imf, fiscal_t)
     return res
 
 
@@ -1690,10 +1671,31 @@ def pct_smart(frac: float) -> str:
     return f"{v:.1f}%" if v < 1 else f"{v:,.0f}%"
 
 
+def with_all_aid(res: dict, lost_t, fiscal_t) -> dict:
+    """res with "all_aid": the gap numbers on all health aid lost each year (the Announced donor cuts headline, not
+    only HIV, TB, malaria and vaccine aid). The government fills it by the same rule as in the model run: the chosen
+    response to that year's loss (a share theta of it, or all of it), capped at fiscal space when the cap is on (always
+    for 'as much as fiscal space allows'), plus any extra government money that year, never more than the loss."""
+    mode, theta, cap_on = fiscal_t[0], fiscal_t[1], fiscal_t[2]
+    capacity = float(res["fiscal"].get("capacity") or 0.0)
+    g = np.clip(np.asarray(lost_t, dtype=float), 0.0, None)
+    want = {"none": 0.0 * g, "gradual": 0.0 * g, "custom": theta * g, "max": g}[mode]
+    resp = np.minimum(want, capacity) if (cap_on or mode == "max") else want
+    extra = res["years"]["gov_add_usd"].to_numpy(dtype=float)
+    filled = np.minimum(np.maximum(resp, 0.0) + extra, g)
+    return {**res, "all_aid": {"gap": g, "filled": filled}}
+
+
 def fiscal_gap_values(res) -> tuple:
     """I-13: (average per year 2026-2030, 2030, show the 2030 line) for the three gap numbers, from the same run as the
     headline: gap before the government steps in = aid lost (gross); filled = the chosen response plus any gradual
-    budget money; left = the difference (= the headline's net aid lost)."""
+    budget money; left = the difference (= the headline's net aid lost). With "all_aid" (with_all_aid), the same
+    numbers on all health aid lost."""
+    if "all_aid" in res:
+        g, f = res["all_aid"]["gap"], res["all_aid"]["filled"]
+        avg = {"gap": float(g.mean()), "filled": float(f.mean()), "left": float((g - f).mean())}
+        y30 = {"gap": float(g[-1]), "filled": float(f[-1]), "left": float(g[-1] - f[-1])}
+        return avg, y30, any(abs(avg[k] - y30[k]) > max(0.5, 1e-6 * abs(avg[k])) for k in avg)
     T, Y = res["totals"], res["years"].set_index("year")
     avg = {"gap": float(T["gross"]), "filled": float(T["replaced"]), "left": float(T["net"])}
     y30 = {"gap": float(Y.loc[2030, "aid_lost_usd"]), "filled": float(Y.loc[2030, "replaced_usd"]),
