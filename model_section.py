@@ -510,6 +510,20 @@ def _controls(iso3, country_name, I) -> dict:
                 else:
                     st.caption("No data on this government's total spending, so a budget increase can't be modelled.")
                     mode = "none"
+            abuja = st.checkbox("Health Budget Reaches the Abuja Target", key="m_abuja", disabled=(mode == "gradual"),
+                                help=_esc(f"Health rises to {hm.ABUJA_CEILING:.0f}% of government spending (Abuja "
+                                          "Declaration, 2001), in equal steps by 2030. Not combined with Gradual "
+                                          "Budget Increase, which already sets the health share."))
+            taxup = st.checkbox(f"Tax Collection Rises to {hm.TAX_BENCHMARK:.0f}% of GDP", key="m_tax",
+                                help=_esc(f"Tax revenue rises to {hm.TAX_BENCHMARK:.0f}% of GDP, the level linked to "
+                                          "faster growth and the IMF / World Bank benchmark for tax capacity (Gaspar, "
+                                          "Jaramillo & Wingender, IMF 2016), in equal steps by 2030. The new revenue "
+                                          "goes to health at the health share of government spending (15% if the "
+                                          "Abuja box is ticked). Tax data: IMF World Revenue Longitudinal Data."))
+            abuja = abuja and mode != "gradual"
+            policy = hm.policy_money(iso3, I, abuja, taxup) if (abuja or taxup) else None
+            if policy is not None:
+                st.caption(_esc(policy_caption(policy, country_name, abuja, taxup)))
         with c4:
             st.markdown("<div style='height:1.75rem'></div>", unsafe_allow_html=True)
             adv = st.popover("Advanced", icon=":material/tune:", width="stretch")
@@ -580,11 +594,14 @@ def _controls(iso3, country_name, I) -> dict:
             outcome_slot = st.container()
     gov_add = tuple(float(v) for v in hm.gov_add_from_points(pts, budget["gov_spend_usd"])) \
         if mode == "gradual" and any(pts) else None
+    if policy is not None and policy["full_usd"] > 0:
+        gov_add = tuple(float(v) for v in np.asarray(gov_add or np.zeros(5)) + policy["by_year"])
     if cut_path is not None and all(abs(c - 1) < 1e-9 for c in cut_path):
         cut_path = None                                # identical to the sudden cut: share its cached results
     return {"preset": preset, "opts": opts, "fiscal_t": (mode, theta, cap, alloc, ceiling), "mode": mode,
             "ptab": ptab, "ptab_json": ptab.to_json(orient="split"), "cmp": cmp, "trend": trend,
             "shape": shape, "cut_path": cut_path, "gov_pts": pts, "gov_add": gov_add, "budget": budget,
+            "policy": policy,
             "expanded": expanded, "outcome_slot": outcome_slot}
 
 
@@ -595,6 +612,21 @@ INTRO = ("A three-step model for HIV, TB, malaria and immunization: the donor sc
          "can replace part of it, limited by fiscal space; and money not replaced ÷ cost per person = people-equivalents "
          "of service lost (the service the lost money would have paid for, not a headcount), shown as a drop in "
          "coverage.")
+
+
+def policy_caption(p: dict, country_name: str, abuja: bool, taxup: bool) -> str:
+    """One line under the checkboxes: what each option adds by 2030, or why it adds nothing."""
+    parts = []
+    if abuja:
+        parts.append(f"Abuja target: +{money(p['abuja_usd'])} a year" if p["abuja_usd"] > 0 else
+                     f"already at {p['share_pct']:.0f}% of spending, so the Abuja target adds nothing"
+                     if p["share_pct"] == p["share_pct"] else "no data on health's share of spending")
+    if taxup:
+        parts.append(f"tax at {hm.TAX_BENCHMARK:.0f}% of GDP (now {p['tax_pct']:.1f}%, {p['tax_year']}): "
+                     f"+{money(p['tax_usd'])} a year for health" if p["tax_usd"] > 0 else
+                     f"tax already {p['tax_pct']:.1f}% of GDP ({p['tax_year']}), so this adds nothing"
+                     if p["tax_pct"] == p["tax_pct"] else "no tax data for this country")
+    return "By 2030: " + "; ".join(parts) + " (phased in from 2026)."
 
 
 def scenario_bar(iso3: str, country_name: str):
@@ -861,25 +893,19 @@ def _money_lede(iso3: str, country_name: str, ctl: dict, res: dict, kick_html: s
         head = (f"If donors cut aid as announced, {country_name} would lose {money_words(lost[0])} of {what} in "
                 f"{scn.YEARS[0]}, rising to {money_words(lost[-1])} by {scn.YEARS[-1]}")
         dek = ""
-    nums = [
-        (money(lost.mean()), "Aid Lost Each Year, Average", f"{lost.mean() / ap['base']:.0%} of {what}"
-         if ap["base"] else "", True, "Average yearly loss 2026-2030 against the 2019-2023 average."),
-        (money(lost[-1]), f"Aid Lost in {scn.YEARS[-1]}", f"{ap['cut'][-1]:.0%} of {what}", False, ""),
-        (money(known.mean()), "Known Loss Each Year", "from published cuts", False,
-         "Global Fund allocations for 2026-2027, America First MOUs, Gavi 6.0 new pledges, the US exit from Gavi and "
-         "WHO, Swedish, UK and Dutch announcements."),
-        (money(pred.mean()), "Predicted Loss Each Year", "modelled, not yet published", False,
-         "The Global Fund's decline after 2027; similar MOU countries' cuts for US aid without an MOU; each donor's "
-         "remaining health budget shared over its other channels; IHME's 2025 trend for foundations."),
-    ]
-    big = "".join(f"<div class='ed-bignum' title='{e(tip, quote=True)}'><div class='v{' hl' if hl else ''}'>{e(v)}</div>"
-                  f"<div class='l'>{e(lbl)}</div><div class='n'>{e(note)}</div></div>" for v, lbl, note, hl, tip in nums)
+    pol = ctl.get("policy")
+    if pol is not None and pol["full_usd"] > 0 and lost[-1] > 0:
+        what_gov = " and ".join(w for w, v in (("reaching the Abuja target", pol["abuja_usd"]),
+                                               (f"raising tax to {hm.TAX_BENCHMARK:.0f}% of GDP", pol["tax_usd"])) if v > 0)
+        cover = pol["full_usd"] / lost[-1]
+        dek = (f"{what_gov[0].upper() + what_gov[1:]} would add {money_words(pol['full_usd'])} a year for health by "
+               f"{scn.YEARS[-1]}, " + (f"more than the {money_words(lost[-1])} of aid lost that year."
+                                      if cover >= 1 else f"{cover:.0%} of the {money_words(lost[-1])} of aid lost that year."))
     risks = risk_lines(iso3, res)
     risk = ("<ul class='ed-dek' style='margin:0.4rem 0 0;padding-left:1.1rem'>"
             + "".join(f"<li>{e(t)}</li>" for t in risks) + "</ul>") if risks else ""
     return (f"<div class='ed-lede'>{kick_html}<div class='ed-headline'>{e(head)}</div>"
-            + (f"<p class='ed-dek'>{e(dek)}</p>" if dek else "") + risk
-            + f"</div><div class='ed-bignums'>{big}</div>").replace("$", "&#36;")
+            + (f"<p class='ed-dek'>{e(dek)}</p>" if dek else "") + risk + "</div>").replace("$", "&#36;")
 
 
 def render_model_section(iso3: str, country_name: str, imf: dict | None, ctl: dict, sk: str):
@@ -900,7 +926,8 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     trend = ctl["trend"]
     res = run_ctl(iso3, sk, ctl)
     # the same funding path with no government money, for "replacement averts N deaths"
-    res0 = run_ctl(iso3, sk, ctl, fiscal_t=scn.DEFAULT_FISCAL, gov_add=None) if mode != "none" else res
+    gov_on = mode != "none" or ctl.get("gov_add") is not None
+    res0 = run_ctl(iso3, sk, ctl, fiscal_t=scn.DEFAULT_FISCAL, gov_add=None) if gov_on else res
     T, B, L = res["totals"], res["buckets"].set_index("bucket"), res["lines"]
 
     if T["gross"] <= 0 and T["base"] > 0:
@@ -920,7 +947,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     else:
         st.subheader("The Numbers")
         _stat_grid(items, 4)
-    if mode != "none" and T["replaced"] > 0:
+    if gov_on and T["replaced"] > 0:
         kept = people_lost(res0) - people_lost(res)
         st.markdown(_esc(f"Government replacement of {money(T['replaced'])} a year keeps services for about "
                          f"**{num(kept)} people a year** compared with no government replacement."))

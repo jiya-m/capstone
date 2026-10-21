@@ -1,5 +1,7 @@
 """Tests for the 'Announced donor cuts' preset (announcement_model/). Run:  python -m pytest tests"""
 import logging
+
+import pytest
 import sys
 from pathlib import Path
 
@@ -122,3 +124,20 @@ def test_all_countries_people_columns():
     out = hm.run_all(SC, NONE, I, P, n_draws=0, countries=["KEN", "ZMB"])
     assert (out["people_lost"] > 0).all()
     assert np.allclose(out["people_lost"], out[[f"people_lost_{b}" for b in hm.BUCKETS]].sum(axis=1))
+
+
+def test_abuja_and_tax_options():
+    """Abuja: (15% - health share) x government spending; tax: new revenue up to 15% of GDP, spent at the health share
+    (15% when combined with Abuja); nothing where a country is already past the target; phased in by 2030."""
+    hb, te = hm.health_budget("KEN", I), hm.tax_effort("KEN")
+    a = hm.policy_money("KEN", I, True, False)
+    assert a["abuja_usd"] == pytest.approx((0.15 - hb["share_pct"] / 100) * hb["gov_spend_usd"])
+    t = hm.policy_money("KEN", I, False, True)
+    assert t["tax_usd"] == pytest.approx((15 - te["tax_pct"]) / 100 * te["gdp_usd"] * hb["share_pct"] / 100)
+    both = hm.policy_money("KEN", I, True, True)
+    assert both["tax_usd"] == pytest.approx(t["tax_usd"] * 15 / hb["share_pct"])
+    assert np.allclose(both["by_year"], both["full_usd"] * np.array([0.2, 0.4, 0.6, 0.8, 1.0]))
+    assert hm.policy_money("ZAF", I, True, True)["full_usd"] == 0           # past both targets
+    r0 = hm.run_country("KEN", SC, NONE, I, P, n_draws=0)
+    r1 = hm.run_country("KEN", SC, NONE, I, P, n_draws=0, gov_add_usd=tuple(a["by_year"]))
+    assert r1["totals"]["replaced"] > 0 and r1["totals"]["net"] < r0["totals"]["net"]
