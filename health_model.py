@@ -73,6 +73,7 @@ SOURCE_GROUPS = ["United States", "United Kingdom", "Germany", "France", "Japan"
 DIRECT_CHANNELS = {"Bilateral agency", "NGOs", "Gates direct", "Other"}
 
 N_YEARS = 5
+YEAR0 = 2026                         # first model year (year t = 0)
 # how quickly the full annual effect appears after a sustained cut (year 1..5)
 LAG = {
     "hiv_art": None,                                   # explicit hazard ramp below
@@ -1278,6 +1279,11 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
             # central run, like deaths; the range is the 2.5th-97.5th percentile of the draws
             "infections_5y": float(np.asarray(infectionsc[l]).sum()) if l in infectionsc else 0.0,
             "infections_5y_lo": q(inf5, 2.5), "infections_5y_hi": q(inf5, 97.5),
+            # each year 2026-2030 (central run): money lost after replacement, people losing the service, coverage drop
+            **{f"net_loss_{YEAR0 + t}": float(np.asarray(netc_t[t][l]).ravel()[0]) for t in years},
+            **{f"units_lost_{YEAR0 + t}": float(unitsc[l][0, t]) for t in years},
+            **{f"cov_drop_pp_{YEAR0 + t}": (float(unitsc[l][0, t]) / need * 100
+                                                 if (need and not np.isnan(need)) else np.nan) for t in years},
         })
     # linked money lines (HIV testing and care): their full money, no units of their own; kappa of their lost money is
     # already inside the target line's people losing the service and deaths
@@ -1293,7 +1299,9 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
                      "units_lost_peak": np.nan, "cov_drop_pp": np.nan, "capped": False,
                      "donor_exceeds_cost": False, "donor_share_ext": np.nan, "donor_funded_units": np.nan, "deaths_y1": 0.0, "deaths_y1_lo": 0.0, "deaths_y1_hi": 0.0,
                      "deaths_5y": 0.0, "deaths_5y_lo": 0.0, "deaths_5y_hi": 0.0, "infections_5y": 0.0,
-                     "infections_5y_lo": 0.0, "infections_5y_hi": 0.0})
+                     "infections_5y_lo": 0.0, "infections_5y_hi": 0.0,
+                     **{f"net_loss_{YEAR0 + t}": full(effc_t[t], nsc_t_all[t]) - full(repc_t[t], repnc_t[t])
+                        for t in years}})
     tab = pd.DataFrame(recs)
 
     # bucket summary incl. money that has no modelled outcome (OVC, systems share)

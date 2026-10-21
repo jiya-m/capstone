@@ -938,6 +938,7 @@ def _country_results(iso3, country_name, ctl, sk, imf):
     show = L[(L["base_usd"] > 0) | (L["net_loss_usd"] != 0)].copy()
     rows = _service_rows(show)
     cov_fig = _coverage_fig(rows)
+    path_fig = _coverage_path_fig(rows)
     cards = _per_million_cards(iso3, ptab_json, ctl["trend"], country_name)
     items = _headline_items(res, ptab)
 
@@ -999,8 +1000,16 @@ def _country_results(iso3, country_name, ctl, sk, imf):
                  "treatment; "
                  + systems_note(ptab) + " HIV Testing & Care has no patients of its own: " + care_ct_note()
                  + " Bednets and spraying have their own coverage; together they set vector-control coverage.")
+    st.subheader("Service Coverage, Year by Year")
+    if path_fig is not None:
+        chart(path_fig, source="Model estimates; 2025 is coverage today: UNAIDS/WHO 2025 (HIV), WHO 2024 (TB), "
+                               "Malaria Atlas Project 2025 (malaria), WUENIC (DTP3).")
     st.subheader("What Each Service Loses", help=" ".join(notes))
-    st.html(_service_table_html(rows, country_name, T, {b: float(B.loc[b, "gains_usd"]) for b in hm.BUCKETS}))
+    yr_opts = [str(y) for y in _model_years(rows)] + [AVG_LABEL]
+    yr = st.selectbox("Year", yr_opts, index=len(yr_opts) - 2 if len(yr_opts) > 1 else 0, key="m_svc_year",
+                      help="The aid lost and the people losing each service in one year, or the 2026-2030 average.")
+    rows_y, T_y = (rows, T) if yr == AVG_LABEL else _year_rows(rows, res, T, int(yr))
+    st.html(_service_table_html(rows_y, country_name, T_y, {b: float(B.loc[b, "gains_usd"]) for b in hm.BUCKETS}))
     ovc = show[show["line"] == "hiv_ovc"]
     st.caption(_esc("Other Aid is money the model does not link to a service: support for orphans and vulnerable children"
                     + (f" ({money(ovc['net_loss_usd'].sum())} a year lost)" if len(ovc) else "")
@@ -1428,6 +1437,62 @@ def _gain_rows(bucket, gains) -> list:
         return []
     return [f"<tr><td colspan='6' class='svc' style='border-left:3px solid {BUCKET_COLORS[bucket]}'>"
             f"<span class='sub'>{html.escape(gains_note(bucket, g))}</span></td></tr>"]
+
+
+AVG_LABEL = "Average 2026-2030"
+
+
+def _model_years(rows: pd.DataFrame) -> list:
+    """Years with per-year service columns (cov_drop_pp_2026 ...), oldest first."""
+    return sorted(int(c.rsplit("_", 1)[1]) for c in rows.columns if c.startswith("cov_drop_pp_"))
+
+
+def _year_rows(rows: pd.DataFrame, res: dict, T: dict, year: int):
+    """The service rows and totals for one year: that year's money lost, people losing the service and coverage, in
+    place of the 2026-2030 averages."""
+    d = rows.copy()
+    for col, yc in (("net_loss_usd", f"net_loss_{year}"), ("units_lost", f"units_lost_{year}"),
+                    ("cov_drop_pp", f"cov_drop_pp_{year}")):
+        if yc in d:
+            d[col] = d[yc]
+    d["units_lost"] = d["units_lost"].fillna(0)
+    d["units_lost_5y"] = np.nan                     # no 5-year total under a single year
+    d["after"] = np.where(d["cov_ok"], (d["cov0"] - d["cov_drop_pp"].fillna(0) / 100).clip(0, 1), np.nan)
+    d["drop"] = np.where(d["cov_ok"], (d["cov0"] - d["after"]) * 100, np.nan)
+    yt = res["years"].set_index("year")
+    T_y = dict(T)
+    if year in yt.index:
+        T_y["net"] = float(yt.loc[year, "gap_usd"])
+    return d, T_y
+
+
+def _coverage_path_fig(rows: pd.DataFrame):
+    """Coverage of every service from today (2025) through 2030, one line each, coloured by disease. Services of the
+    same disease are told apart by dash style."""
+    years = _model_years(rows)
+    d = rows[rows["cov_ok"] & ~rows["line"].isin(hm.LINKED)]
+    if d.empty or not years:
+        return None
+    dashes = ["solid", "dash", "dot", "dashdot", "longdash"]
+    seen, fig = {}, go.Figure()
+    for r in d.itertuples():
+        k = seen.get(r.bucket, 0)
+        seen[r.bucket] = k + 1
+        drops = [getattr(r, f"cov_drop_pp_{y}") for y in years]
+        cov = [r.cov0 * 100] + [float(np.clip(r.cov0 * 100 - (v if v == v else 0), 0, 100)) for v in drops]
+        fig.add_trace(go.Scatter(
+            x=[years[0] - 1] + years, y=cov, mode="lines+markers", name=r.name,
+            line=dict(color=BUCKET_COLORS[r.bucket], width=2.2, dash=dashes[k % len(dashes)]), marker=dict(size=6),
+            customdata=[0.0] + [cov[0] - c for c in cov[1:]],
+            hovertemplate=f"<b>{html.escape(r.name)}</b> %{{x}}: %{{y:.0f}}% "
+                          "(−%{customdata:.1f} pts vs 2025)<extra></extra>"))
+    _layout(fig, h=440, title=_title(th.title_sub("Coverage of Each Service", "Share of people in need covered, %")),
+            legend=dict(orientation="h", yanchor="top", y=-0.12, x=0),
+            margin=dict(l=10, r=20, t=50, b=10), hovermode="closest",
+            xaxis=dict(tickmode="array", tickvals=[years[0] - 1] + years,
+                       ticktext=[f"{years[0] - 1} (now)"] + [str(y) for y in years]),
+            yaxis=dict(range=[0, 100], ticksuffix="%"))
+    return fig
 
 
 def _coverage_fig(rows: pd.DataFrame):
