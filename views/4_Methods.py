@@ -23,7 +23,8 @@ names = dropdown_countries()
 iso3 = st.session_state.get("sel_iso3", "KEN")
 iso3 = iso3 if iso3 in names else "KEN"
 country_name = names[iso3]
-preset = st.session_state.get("sel_preset", list(scn.PRESETS)[0])
+preset = st.session_state.get("sel_preset", scn.UI_PRESETS[0])
+preset = preset if preset in scn.UI_PRESETS else scn.UI_PRESETS[0]
 opts = ctx["opts"] if ctx.get("preset") == preset and ctx.get("opts") else scn.default_opts(preset, I["ci"])
 fiscal_t = tuple(ctx.get("fiscal_t", scn.DEFAULT_FISCAL))
 ptab_json = ctx.get("ptab_json", ms._default_params().to_json(orient="split"))

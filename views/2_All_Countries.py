@@ -12,7 +12,7 @@ import scenarios as scn
 import theme as th
 from country_lists import ALLOWED_COUNTRIES
 from model_section import title_case
-from scenarios import PRESETS
+from scenarios import PRESETS, UI_PRESETS
 
 I = ms._inputs()
 ctx = st.session_state.get("model_ctx", {})
@@ -20,9 +20,9 @@ ctx = st.session_state.get("model_ctx", {})
 st.title("All Countries")
 c1, _ = st.columns([1.3, 2])
 with c1:
-    preset = th.shared_select("Donor Scenario", list(PRESETS), "ac_preset", "sel_preset", list(PRESETS)[0],
+    preset = th.shared_select("Donor Scenario", UI_PRESETS, "ac_preset", "sel_preset", UI_PRESETS[0],
                               format_func=lambda p: title_case(scn.display_name(p)),
-                              help=ms._esc(PRESETS[st.session_state.get("sel_preset", list(PRESETS)[0])]))
+                              help=ms._esc(PRESETS[st.session_state.get("sel_preset", UI_PRESETS[0])]))
 
 fiscal_t = tuple(ctx.get("fiscal_t", scn.DEFAULT_FISCAL))
 ptab_json = ctx.get("ptab_json", ms._default_params().to_json(orient="split"))

@@ -98,13 +98,14 @@ def path_selector() -> str:
                              "Phase-outs reach the full cut by 2030; the sliders below set each year.")
 
 
-def mou_schedule_chart(cuts, end_year=None):
-    """Small red line of the MOU schedule's yearly cut in US bilateral aid (inside the scenario box)."""
+def mou_schedule_chart(cuts, end_year=None, what="US bilateral aid cut"):
+    """Small red line of a yearly cut (the MOU schedule's cut in US bilateral aid, or the announced phase-out's share
+    of all aid cut) inside the scenario box."""
     fig = go.Figure(go.Scatter(x=YEARS, y=[c * 100 for c in cuts], mode="lines+markers+text",
                                line=dict(color=th.ROSE, width=2), marker=dict(size=6, color=th.ROSE),
                                text=[f"{c:.0%}" for c in cuts], textposition="top center",
                                textfont=dict(size=10, color=th.ROSE), cliponaxis=False,
-                               hovertemplate="%{x}: US bilateral aid cut %{y:.0f}%<extra></extra>"))
+                               hovertemplate="%{x}: " + what + " %{y:.0f}%<extra></extra>"))
     if end_year and end_year < YEARS[-1]:
         fig.add_annotation(x=YEARS[-1], y=cuts[-1] * 100, text=f"held from {end_year}", showarrow=False,
                            yshift=-14, font=dict(size=9, color=th.MUTED))
@@ -180,7 +181,8 @@ def year_panel(iso3, country_name, scenario, fiscal, I, gradual: bool, budget: d
     gov_usd = hm.gov_add_from_points(pts, budget["gov_spend_usd"])
     G_t, R_t = hm._money_by_year(iso3, scenario, fiscal, I, cut)
     with chart_slot:
-        _chart(shown, pts, G_t, R_t, gov_usd, gradual, "US Bilateral Aid Cut (MOU)" if schedule is not None else None)
+        _chart(shown, pts, G_t, R_t, gov_usd, gradual, None if schedule is None
+               else "Aid Cut (Announced)" if scenario.announcement else "US Bilateral Aid Cut (MOU)")
     return cut, pts
 
 
