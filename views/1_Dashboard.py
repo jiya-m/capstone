@@ -144,7 +144,6 @@ def load_countries() -> pd.DataFrame:
 
 INCOME_LABELS = {"low_income": "Low Income", "lower_middle_income": "Lower-Middle Income",
                  "upper_middle_income": "Upper-Middle Income", "high_income": "High Income"}
-MOU_LABELS = {"Signed": "MOU Signed", "No MOU": "No MOU"}
 PROFILE_FILE = ROOT / "model_data" / "country_profile.csv"   # built by prepare_model.py
 
 
@@ -267,7 +266,7 @@ countries = load_countries()
 
 # ---- sticky country header: name and profile pills on the left, the country picker on the right ------ #
 hdr = st.container(key="hdr")
-hdr_left, hdr_right = hdr.columns([4, 1], vertical_alignment="bottom")
+hdr_left, hdr_map, hdr_right = hdr.columns([3.2, 0.8, 1], vertical_alignment="center")
 with hdr_right:                     # the country is shared with the other pages (st.session_state["sel_iso3"])
     _names = dict(zip(countries["iso3"], countries["label"]))
     sel_iso3 = th.shared_select("Country", list(countries["iso3"]), "country_sel", "sel_iso3",
@@ -278,36 +277,41 @@ country_name = crow["name"]
 
 _mac0 = load_macro(crow["iso3"]) if any(MACRO_DIR.glob("*.csv")) else None
 _gdp_bn, _gdp_yr = None, None
+POP_YEAR = 2026
+MAP_FRAME = {   # (lat range, lon range) of the header map for each World Bank region
+    "Sub-Saharan Africa": ([-36, 25], [-20, 55]), "Latin America & Caribbean": ([-56, 33], [-120, -30]),
+    "East Asia & Pacific": ([-48, 55], [70, 180]), "Middle East & North Africa": ([10, 42], [-18, 65]),
+    "Europe & Central Asia": ([33, 60], [10, 90]), "South Asia": ([0, 40], [58, 100])}
 GDP_COL = "gdp_usd_bn_2023"        # constant 2023 US$, like every other dollar figure (add_constant_dollars.py)
 if _mac0 is not None and GDP_COL in _mac0.columns:
     _gf = _mac0[_mac0[GDP_COL].notna() & ~_mac0["gdp_is_estimate"].astype(bool)]
     if len(_gf):
         _gdp_bn, _gdp_yr = float(_gf[GDP_COL].iloc[-1]), int(_gf["year"].iloc[-1])
-_pop_m, _pop_yr = None, None          # same year as GDP (IMF's own population "actual" is the last census, often years old)
+_pop_m, _pop_yr = None, None          # 2026 (IMF WEO projection), else the latest year there is
 if _mac0 is not None and "population_m" in _mac0.columns:
-    _pf = _mac0[_mac0["population_m"].notna() & (_mac0["year"] <= (_gdp_yr or 2024))]
+    _pf = _mac0[_mac0["population_m"].notna() & (_mac0["year"] <= POP_YEAR)]
     if len(_pf):
         _pop_m, _pop_yr = float(_pf["population_m"].iloc[-1]), int(_pf["year"].iloc[-1])
 
 _prof = load_profile().get(crow["iso3"], {})
-_items = [
-    ("Region", _prof.get("region") or "n/a", "World Bank region (IHME DAH database)"),
-    ("Income Group", INCOME_LABELS.get(_prof.get("income_group"), "n/a"), "World Bank income group"),
-    ("US MOU", MOU_LABELS.get(_prof.get("mou_status"), _prof.get("mou_status") or "n/a"), "America First bilateral health MOU signed (KFF tracker, data as of 2026-10-08)"),
-    (f"GDP{', ' + str(_gdp_yr) if _gdp_yr else ''}", fmt_usd(_gdp_bn * 1e3) if _gdp_bn else "n/a",
-     "Constant 2023 US$: IMF World Economic Outlook GDP for 2023, moved to other years with IHME's real GDP "
-     "per person (each country's own prices, 2023 exchange rates)"),
-    (f"Population{', ' + str(_pop_yr) if _pop_yr else ''}",
-     ((f"{_pop_m:,.1f}" if _pop_m >= 1 else f"{_pop_m:,.2f}") + "M") if _pop_m else "n/a",
-     "Millions of people, IMF World Economic Outlook"),
-]
+_facts = [_prof.get("region"), INCOME_LABELS.get(_prof.get("income_group")),
+          f"GDP {fmt_usd(_gdp_bn * 1e3)}" if _gdp_bn else None,
+          (f"Population {_pop_m:,.1f}M" if _pop_m >= 1 else f"Population {_pop_m:,.2f}M")
+          + (f" ({_pop_yr})" if _pop_yr != POP_YEAR else "") if _pop_m else None]
 with hdr_left:
-    st.markdown(f"<div class='ed-country'>{html.escape(country_name)}"
-                "<span class='ed-units'>All dollar figures in constant 2023 US$ (except MOU amounts)</span></div>"
-                f"<div class='ed-units' style='margin:2px 0 6px;display:block'>"
-                f"{html.escape(ms.inputs_years_line(ms._inputs()['ci'], sorted(set(ms._inputs()['lines'].iso3))))}</div>"
-                + th.pills_html(_items),
-                unsafe_allow_html=True)
+    st.markdown(f"<div class='ed-country'>{html.escape(country_name)}</div>"
+                f"<div class='ed-facts' style='color:{th.MUTED};font-size:15px;margin:2px 0 4px'>"
+                f"{html.escape(' · '.join(f for f in _facts if f))}</div>", unsafe_allow_html=True)
+with hdr_map:
+    _mf = go.Figure(go.Choropleth(locations=[crow["iso3"]], z=[1], colorscale=[[0, th.BRAND], [1, th.BRAND]],
+                                  showscale=False, marker_line_width=0, hoverinfo="skip"))
+    _mf.update_geos(projection_type="natural earth", showcountries=True, countrycolor=th.SURFACE,
+                    showland=True, landcolor=th.RULE, showcoastlines=False, showframe=False, bgcolor="rgba(0,0,0,0)",
+                    **dict(zip(("lataxis_range", "lonaxis_range"),
+                               MAP_FRAME.get(_prof.get("region"), ([-58, 80], [-180, 180])))))
+    _mf.update_layout(height=90, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor="rgba(0,0,0,0)")
+    st.plotly_chart(_mf, config={"displayModeBar": False, "staticPlot": True}, use_container_width=True,
+                    theme=None, key="hdr_map")
 
 # ---- story lede: headline, summary and three big numbers from the model, with the scenario bar under it ---- #
 lede = st.container()                    # filled after the scenario bar has run (it decides the numbers)
@@ -819,3 +823,7 @@ render_model_section(crow["iso3"], country_name, _imf, ctl, sk)
 # =========================================================================== #
 th.section_header("account_balance", f"Revenue and Spending in {country_name}")
 _budget_section()
+
+st.divider()
+st.caption(html.escape("All dollar figures are in constant 2023 US$, except MOU amounts. "
+                       + ms.inputs_years_line(ms._inputs()["ci"], sorted(set(ms._inputs()["lines"].iso3)))))
