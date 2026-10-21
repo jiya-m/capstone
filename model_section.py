@@ -402,6 +402,77 @@ def known_vs_predicted_chart(iso3: str, country_name: str):
 
 
 
+PHASE_MAIN = {"United States": th.GRAPE, "Global Fund": th.ROSE, "Gavi": th.TEAL}
+PHASE_OTHERS = "Foundations, banks and others"
+PHASE_OECD = ["United Kingdom", "Germany", "France", "Japan", "Canada", "Netherlands", "Nordics",
+              "Other DAC governments"]
+
+
+def phase_out_by_donor(iso3: str) -> pd.DataFrame:
+    """Announced donor cuts for one country by funder: the US (all its channels except the Global Fund and Gavi), the
+    Global Fund and Gavi (every donor's money through them), each OECD donor's other channels, and everyone else
+    together. Rows: funder; columns base (US$ a year, 2019-2023) and cut_<year> (share of base cut). Empty when the
+    cut model doesn't cover the country."""
+    a = hm.announcement_sources(iso3)
+    if a.empty:
+        return pd.DataFrame()
+    grp = np.where(a["chan_grp"].isin(["Global Fund", "Gavi"]), a["chan_grp"],
+                   np.where(a["src_grp"].isin(list(PHASE_MAIN) + PHASE_OECD), a["src_grp"], PHASE_OTHERS))
+    g = a.assign(g=grp).groupby("g").sum(numeric_only=True)
+    g = g[g["base"] > 0]
+    out = pd.DataFrame({"base": g["base"], **{f"cut_{y}": g[f"lost_{y}"] / g["base"] for y in scn.YEARS}})
+    order = [k for k in list(PHASE_MAIN) + PHASE_OECD + [PHASE_OTHERS] if k in out.index]
+    return out.loc[order]
+
+
+def _spread(vals: list, gap: float) -> list:
+    """Label positions at least `gap` apart, as close as possible to vals (end-of-line labels that don't overlap)."""
+    idx = sorted(range(len(vals)), key=lambda i: vals[i])
+    pos = [0.0] * len(vals)
+    last = -1e9
+    for i in idx:
+        last = max(vals[i], last + gap)
+        pos[i] = last
+    return pos
+
+
+def phase_out_by_donor_chart(iso3: str, country_name: str):
+    """One line per funder: share of its 2019-2023 health aid to the country cut in each year 2026-2030."""
+    d = phase_out_by_donor(iso3)
+    if d.empty:
+        return
+    st.markdown(f"<div class='ed-kicker' style='margin:0.6rem 0 0'>Announced phase-out in {html.escape(country_name)}, "
+                "by funder</div>", unsafe_allow_html=True)
+    cols = [f"cut_{y}" for y in scn.YEARS]
+    fig = go.Figure()
+    names = list(d.index)
+    for name in reversed(names):                    # main funders drawn last, on top
+        r = d.loc[name]
+        main = name in PHASE_MAIN
+        col = PHASE_MAIN.get(name, th.OTHER if name != PHASE_OTHERS else th.MUTED)
+        fig.add_scatter(x=scn.YEARS, y=r[cols].to_numpy() * 100, mode="lines+markers", name=name,
+                        line=dict(color=col, width=3 if main else 1.5, dash="dot" if name == PHASE_OTHERS else "solid"),
+                        marker=dict(size=6 if main else 4), customdata=[money(r["base"])] * len(cols),
+                        hovertemplate=f"<b>{html.escape(name)}</b> %{{x}}: %{{y:.0f}}% of "
+                                      "%{customdata} a year cut<extra></extra>")
+    ends = [float(d.loc[n, cols[-1]]) * 100 for n in names]
+    lo, hi = min(0.0, min(ends), float(d[cols].min().min()) * 100), max(ends + [float(d[cols].max().max()) * 100])
+    pos = _spread(ends, (hi - lo) * 0.055 + 1e-9)
+    for n, y0, y in zip(names, ends, pos):
+        main = n in PHASE_MAIN
+        fig.add_annotation(x=scn.YEARS[-1], y=y, text=f"<b>{html.escape(n)}</b>" if main else html.escape(n),
+                           xanchor="left", xshift=8, showarrow=False, align="left",
+                           font=dict(size=12 if main else 11, color=PHASE_MAIN.get(n, MUTED)))
+    _layout(fig, h=max(320, 26 * len(names) + 80), showlegend=False, margin=dict(l=0, r=190, t=10, b=0),
+            xaxis=dict(tickvals=scn.YEARS), yaxis=dict(title=dict(text="% of 2019-2023 aid cut", standoff=10), ticksuffix="%",
+                                                     range=[min(lo, 0) - 3, max(hi, pos[-1] if pos else hi) + 5]))
+    chart(fig, note="The US line is its bilateral, NGO, UN-agency and other money; its Global Fund and Gavi money is in "
+                    "those lines. OECD donors' lines are their money outside the Global Fund and Gavi, set so each "
+                    "donor's health aid falls with its total aid. Foundations, development banks and non-DAC donors "
+                    "follow IHME's 2025 trend. A negative cut is a rise.",
+          source="announcement_model/project_cuts.py; IHME DAH 2019-2023; OECD ODA; Global Fund GC7/GC8; Gavi; US MOUs.")
+
+
 def preset_choices(ci, iso3) -> tuple:
     """(options, format_func, group) for the Donor Scenario dropdown: America First MOUs is offered where the country
     has a signed MOU with schedule data (group A), listed but unavailable where it has signed without data (B), and not

@@ -316,6 +316,7 @@ with lede:
     st.markdown(ms.story_lede(crow["iso3"], country_name, ctl, sk), unsafe_allow_html=True)
     if ctl["preset"] == ms.scn.ANNOUNCED and crow["iso3"] in set(ms._inputs()["lines"].iso3):
         ms.known_vs_predicted_chart(crow["iso3"], country_name)
+        ms.phase_out_by_donor_chart(crow["iso3"], country_name)
 
 # =========================================================================== #
 # CHART 2 - total health spending by source: past vs expected
