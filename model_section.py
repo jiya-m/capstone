@@ -345,6 +345,7 @@ def _preset_options(preset, ci, iso3, country_name, key):
 
 
 MOU = "America First MOUs"
+SHOW_GOV_OPTIONS = False         # Abuja-target and tax-to-15%-of-GDP checkboxes: hidden for now (Jiya, 2026-10-21)
 MOU_SHAPE = "Follows MOU schedule"   # internal path label: the scenario carries the country's own yearly cuts
 ANNOUNCED_SHAPE = "Announced phase-out"   # same for Announced donor cuts: each cell's yearly cut is in the scenario
 
@@ -389,17 +390,7 @@ def known_vs_predicted_chart(iso3: str, country_name: str):
     fig.update_layout(barmode="stack", height=260, margin=dict(l=0, r=0, t=24, b=0),
                       yaxis=dict(title="US$ million lost", rangemode="tozero"), xaxis=dict(tickvals=scn.YEARS),
                       legend=dict(orientation="h", y=1.12, x=0))
-    sh = ap["known"].sum() / ap["lost"].sum()
-    scope = ("All health aid, compared with the 2019-2023 average." if ap["all"]
-             else "HIV, TB, malaria and vaccine aid.")
-    chart(fig, note=f"{sh:.0%} of the loss over 2026-2030 comes from published numbers: Global Fund allocations for "
-                    "2026-2027, America First MOUs, Gavi 6.0 new pledges, the US exit from Gavi and WHO, and Swedish, "
-                    "UK and Dutch announcements. The rest is predicted: the Global Fund's decline continuing after "
-                    "2027, similar MOU countries' cuts for US aid without an MOU, each donor's remaining health "
-                    "budget (from its total aid cut) shared over its other channels, and IHME's 2025 trend for "
-                    f"foundations and non-DAC donors. {scope}",
-          source="announcement_model/project_cuts.py; IHME DAH 2019-2023; OECD ODA; Global Fund GC7/GC8; US MOUs.")
-
+    chart(fig)
 
 
 PHASE_MAIN = {"United States": th.GRAPE, "Global Fund": th.ROSE, "Gavi": th.TEAL}
@@ -423,6 +414,24 @@ def phase_out_by_donor(iso3: str) -> pd.DataFrame:
     out = pd.DataFrame({"base": g["base"], **{f"cut_{y}": g[f"lost_{y}"] / g["base"] for y in scn.YEARS}})
     order = [k for k in list(PHASE_MAIN) + PHASE_OECD + [PHASE_OTHERS] if k in out.index]
     return out.loc[order]
+
+
+def _funder_cut_list_html(d: pd.DataFrame) -> str:
+    """Compact list for the scenario bar: each funder's share of aid cut in the first and last year."""
+    c0, c1 = f"cut_{scn.YEARS[0]}", f"cut_{scn.YEARS[-1]}"
+    rows = []
+    for name, r in d.iterrows():
+        col = PHASE_MAIN.get(name, th.OTHER if name != PHASE_OTHERS else th.MUTED)
+        w = "600" if name in PHASE_MAIN else "400"
+        rows.append(f"<tr><td style='padding:1px 6px 1px 0'><span style='display:inline-block;width:8px;height:8px;"
+                    f"border-radius:50%;background:{col};margin-right:5px'></span>"
+                    f"<span style='font-weight:{w}'>{html.escape(name)}</span></td>"
+                    f"<td style='text-align:right;white-space:nowrap;color:{MUTED}'>{r[c0]:.0%} → "
+                    f"<b style='color:{INK}'>{r[c1]:.0%}</b></td></tr>")
+    return (f"<table style='font-size:12px;border-collapse:collapse;width:100%;margin-top:4px'>"
+            f"<tr><td style='color:{MUTED};padding-bottom:2px'>Share of aid cut</td>"
+            f"<td style='color:{MUTED};text-align:right'>{scn.YEARS[0]} → {scn.YEARS[-1]}</td></tr>"
+            + "".join(rows) + "</table>")
 
 
 def _spread(vals: list, gap: float) -> list:
@@ -555,11 +564,15 @@ def _controls(iso3, country_name, I) -> dict:
                 paths_ui.mou_schedule_chart(schedule, sched_end)
                 shape = MOU_SHAPE
             elif preset == scn.ANNOUNCED:
-                st.markdown("<div class='ed-kicker' style='margin:0.35rem 0 0'>Follows the announced phase-out</div>",
+                st.markdown("<div class='ed-kicker' style='margin:0.35rem 0 0'>Follows the announced phase-out, by funder</div>",
                             unsafe_allow_html=True)
                 ap = announced_path(iso3)
                 schedule = list(ap["cut"])
-                paths_ui.mou_schedule_chart(schedule, None, "share of aid cut")
+                fun = phase_out_by_donor(iso3)
+                if fun.empty:
+                    paths_ui.mou_schedule_chart(schedule, None, "share of aid cut")
+                else:
+                    st.html(_funder_cut_list_html(fun))
                 shape = ANNOUNCED_SHAPE
             else:
                 shape = paths_ui.path_selector()
@@ -581,16 +594,18 @@ def _controls(iso3, country_name, I) -> dict:
                 else:
                     st.caption("No data on this government's total spending, so a budget increase can't be modelled.")
                     mode = "none"
-            abuja = st.checkbox("Health Budget Reaches the Abuja Target", key="m_abuja", disabled=(mode == "gradual"),
-                                help=_esc(f"Health rises to {hm.ABUJA_CEILING:.0f}% of government spending (Abuja "
-                                          "Declaration, 2001), in equal steps by 2030. Not combined with Gradual "
-                                          "Budget Increase, which already sets the health share."))
-            taxup = st.checkbox(f"Tax Collection Rises to {hm.TAX_BENCHMARK:.0f}% of GDP", key="m_tax",
-                                help=_esc(f"Tax revenue rises to {hm.TAX_BENCHMARK:.0f}% of GDP, the level linked to "
-                                          "faster growth and the IMF / World Bank benchmark for tax capacity (Gaspar, "
-                                          "Jaramillo & Wingender, IMF 2016), in equal steps by 2030. The new revenue "
-                                          "goes to health at the health share of government spending (15% if the "
-                                          "Abuja box is ticked). Tax data: IMF World Revenue Longitudinal Data."))
+            abuja = taxup = False
+            if SHOW_GOV_OPTIONS:
+                abuja = st.checkbox("Health Budget Reaches the Abuja Target", key="m_abuja", disabled=(mode == "gradual"),
+                                    help=_esc(f"Health rises to {hm.ABUJA_CEILING:.0f}% of government spending (Abuja "
+                                              "Declaration, 2001), in equal steps by 2030. Not combined with Gradual "
+                                              "Budget Increase, which already sets the health share."))
+                taxup = st.checkbox(f"Tax Collection Rises to {hm.TAX_BENCHMARK:.0f}% of GDP", key="m_tax",
+                                    help=_esc(f"Tax revenue rises to {hm.TAX_BENCHMARK:.0f}% of GDP, the level linked to "
+                                              "faster growth and the IMF / World Bank benchmark for tax capacity (Gaspar, "
+                                              "Jaramillo & Wingender, IMF 2016), in equal steps by 2030. The new revenue "
+                                              "goes to health at the health share of government spending (15% if the "
+                                              "Abuja box is ticked). Tax data: IMF World Revenue Longitudinal Data."))
             abuja = abuja and mode != "gradual"
             policy = hm.policy_money(iso3, I, abuja, taxup) if (abuja or taxup) else None
             if policy is not None:
@@ -652,6 +667,9 @@ def _controls(iso3, country_name, I) -> dict:
                 ptab = pd.read_json(io.StringIO(prev), orient="split") if prev else _default_params()
             else:
                 st.session_state["last_valid_ptab_json"] = ptab.to_json(orient="split")
+
+        if preset == scn.ANNOUNCED:
+            phase_out_by_donor_chart(iso3, country_name)
 
         # ---- when the funding path or the response is not the default, the box expands: chart + year sliders ----
         expanded = (shape not in (paths_ui.SUDDEN, MOU_SHAPE, ANNOUNCED_SHAPE)) or mode == "gradual"
@@ -859,11 +877,8 @@ def story_lede(iso3: str, country_name: str, ctl: dict, sk: str) -> str:
     """HTML for the top of the Dashboard: kicker, headline, dek and three big numbers."""
     I = _inputs()
     e = html.escape
-    path_lbl = "Sudden Cut" if ctl.get("shape", paths_ui.SUDDEN) == paths_ui.SUDDEN else title_case(ctl["shape"])
-    kicker = (f"America First MOUs · Follows MOU Schedule · {response_kicker(ctl['fiscal_t'])}" if ctl["preset"] == MOU
-              else f"Funding-Cut Scenario · {scenario_title(ctl['preset'], ctl.get('opts'))} · {path_lbl} · {response_kicker(ctl['fiscal_t'])}")
     # the controls sit in the scenario bar just below; the link jumps there (same cached run as Section 4)
-    kick_html = (f"<div class='ed-kicker-row'><div class='ed-kicker'>{e(kicker)}</div>"
+    kick_html = ("<div class='ed-kicker-row'><div class='ed-kicker'></div>"
                  f"<a class='ed-jump' href='#change-scenario' target='_self'>Change Scenario ↓</a></div>")
     if iso3 not in I["ci"].index or iso3 not in set(I["lines"].iso3):
         head = f"{country_name} receives no recorded HIV, TB, malaria or vaccine aid"
@@ -952,7 +967,7 @@ def risk_lines(iso3: str, res: dict) -> list:
 
 
 def _money_lede(iso3: str, country_name: str, ctl: dict, res: dict, kick_html: str) -> str:
-    """Top of the Dashboard for Announced donor cuts: the money lost, then the country's biggest risks."""
+    """Top of the Dashboard for Announced donor cuts: the money lost."""
     e = html.escape
     T, ap = res["totals"], announced_path(iso3)
     lost, known, pred = ap["lost"], ap["known"], ap["predicted"]
@@ -972,11 +987,8 @@ def _money_lede(iso3: str, country_name: str, ctl: dict, res: dict, kick_html: s
         dek = (f"{what_gov[0].upper() + what_gov[1:]} would add {money_words(pol['full_usd'])} a year for health by "
                f"{scn.YEARS[-1]}, " + (f"more than the {money_words(lost[-1])} of aid lost that year."
                                       if cover >= 1 else f"{cover:.0%} of the {money_words(lost[-1])} of aid lost that year."))
-    risks = risk_lines(iso3, res)
-    risk = ("<ul class='ed-dek' style='margin:0.4rem 0 0;padding-left:1.1rem'>"
-            + "".join(f"<li>{e(t)}</li>" for t in risks) + "</ul>") if risks else ""
     return (f"<div class='ed-lede'>{kick_html}<div class='ed-headline'>{e(head)}</div>"
-            + (f"<p class='ed-dek'>{e(dek)}</p>" if dek else "") + risk + "</div>").replace("$", "&#36;")
+            + (f"<p class='ed-dek'>{e(dek)}</p>" if dek else "") + "</div>").replace("$", "&#36;")
 
 
 def render_model_section(iso3: str, country_name: str, imf: dict | None, ctl: dict, sk: str):
