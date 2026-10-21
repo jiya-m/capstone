@@ -82,7 +82,7 @@ st.caption("A complete guide to how every number on the dashboard is calculated,
            "which values are assumptions. Numbers quoted here are read from the model's own files.")
 
 tabs = st.tabs(["Overview", "Dashboard Sections", "The Model, Step by Step", "Data Sources",
-                "Assumptions & Limitations", "Parameters", "Cross-Checks"])
+                "Assumptions & Limitations", "Parameters"])
 
 # =========================================================================== #
 # OVERVIEW
@@ -96,15 +96,13 @@ with tabs[0]:
     government's whole budget is raised and spent. These charts show published data with only light processing
     (grouping, unit conversion), described in *Dashboard Sections*.
 
-    **Simulation (Section 4 and the All Countries page).** A four-step model that asks what happens if donors cut
+    **Simulation (Section 4 and the All Countries page).** A three-step model that asks what happens if donors cut
     aid for HIV, TB, malaria and routine immunization:
 
     1. **Money**: how much aid each service loses (by donor, channel and program area).
     2. **Fiscal response**: how much of it the government replaces, limited by its fiscal space.
     3. **Coverage**: the money not replaced, divided by the cost of serving one person, is the number of people who
-       lose a service.
-    4. **Lives**: each lost service is turned into extra deaths using published effect sizes and the country's own
-       disease burden.
+       lose a service, shown as a drop in coverage.
 
     Every uncertain number is drawn at random many times (Monte Carlo), which gives the ranges shown. The model
     covers {N_COUNTRIES} countries.
@@ -258,15 +256,12 @@ with tabs[1]:
     | Treatment Lost Each Year; Prevention Lost Each Year (top of the Dashboard) | Treatment = HIV treatment, PMTCT, TB treatment and malaria treatment; prevention = bednet use, indoor spraying and childhood vaccination. Each counts the service the lost money would have paid for in a year (money lost ÷ cost per person). For HIV treatment this is patient-years of ART the lost money would have paid for, not a headcount of people who stop treatment |
     | Replaced by Government | The government's replacement, set by the response chosen, capped by fiscal space |
     | Net Aid Lost | Aid at risk minus what is replaced. It includes health-systems money (labs, staff, data systems, supply chain), which is above-site money already priced into the cost per patient, so it is not converted into lost services (`hss_service_share` = 0, a structural assumption held constant in the uncertainty runs; logic review L-05) |
-    | Further Deaths, 2031-2035 (Assumption-Driven) | Mostly set by an assumption with no published source: how fast people who stopped HIV treatment return once funding is back in 2031 (`art_reengage`, central 50% a year). Shown with the range from re-running the central estimate at 75% and 25% a year (for Full US Exit, all countries: about 300K to 850K against 495K central), next to the range across parameter values |
-    | Extra Deaths Over 5 Years; Further Deaths, 2031-2035 | Central estimate (all parameters at their central values); range across parameter values = 2.5th to 97.5th percentile of the Monte Carlo draws (parameter uncertainty only; uncertainty in the data and in the model's structure is larger and not included) |
-    | New HIV Infections, 5 Years | Infections from people who stop ART (and one further generation from the people they infect), mothers without PMTCT, and lost prevention |
-    | What Every US$1 Million Cut Does, by Disease | Each card runs the full model for a US$1M-a-year loss to one disease, spread across all its service lines (including HIV testing and care, unspecified and systems money) in proportion to current aid: no government replacement, sudden cut, every mechanism included (caps, TB spread, malaria rebound, deaths from new HIV infections). People losing the service and the coverage drop are for the main service (HIV: ART; TB: TB treatment; malaria: bednets; immunization: routine vaccines); extra deaths are for the whole disease, 2026-2030. Where a disease's aid is under US$1M a year, all of it is cut and the results are scaled to US$1M. "About $X of aid lost per life lost (based on US$1M a year for 5 years)" = $5M (five years of $1M) ÷ those deaths, which equals $1M ÷ the average extra deaths per year |
-    | What Each Service Loses | Per service line: baseline aid, aid lost after replacement, cost per person, people losing the service per year (average over 2026-2030), with the 5-year total of people affected underneath (the yearly numbers added up, following the funding path; for HIV treatment, mostly the same people stay off ART each year, so no total is added), coverage before and after, and extra deaths, 5-year total (range) |
-    | Extra Deaths as More Aid Is Cut | Solid line: every donor cuts this bucket by the same share, 0-100% in 5% steps, same random draws at every step; band = range across parameter values. Dashed line: this scenario's own cuts scaled from 0% to 100% of their size |
-    | Extra Deaths Each Year | Central estimate by year and bucket |
+    | People Losing a Service (per Year) | People-equivalents losing a service each year, all four diseases: money lost ÷ cost per person, capped at the people donors fund. HIV prevention (counted in infections averted) and orphan support are left out |
+    | Biggest risks (top of the Dashboard, Announced donor cuts) | The donor x channel flow with the largest loss in 2030 and whether it is published or predicted; the year the loss jumps most and the flow behind the jump; the service whose coverage falls the most |
+    | What Every US$1 Million Cut Does, by Disease | Each card runs the full model for a US$1M-a-year loss to one disease, spread across all its service lines (including HIV testing and care, unspecified and systems money) in proportion to current aid: no government replacement, sudden cut. People losing the service and the coverage drop are for the main service (HIV: ART; TB: TB treatment; malaria: bednets; immunization: routine vaccines). Where a disease's aid is under US$1M a year, all of it is cut and the results are scaled to US$1M |
+    | What Each Service Loses | Per service line: baseline aid, aid lost after replacement, cost per person, people losing the service per year (average over 2026-2030), with the 5-year total of people affected underneath (the yearly numbers added up, following the funding path; for HIV treatment, mostly the same people stay off ART each year, so no total is added), and coverage before and after |
     | Can {{Country}} Fill the Gap? | From the same run as the headline, as averages per year over 2026-2030 (2030 underneath when it differs): Gap Before Government Steps In = aid lost (gross); Filled by the Government = the chosen response plus any gradual budget increase; Gap Left After Government Response = the difference (= Net Aid Lost). The dashed line is backfill capacity (fiscal space), see *The Model, Step 2*. Aid Lost as % of Government Health Spending = average yearly gross loss ÷ government health spending in 2023; as % of revenue = that loss ÷ (GDP x revenue % of GDP, World Bank WDI). Health share of government spending: see *Gradual budget increase* |
-    | All Countries | Totals add up country results; deaths per 100,000 = 5-year deaths ÷ population x 100,000; budget exposure = gross loss ÷ government health spending |
+    | All Countries | Totals add up country results; people losing a service per 100,000 = people-equivalents losing a service per year ÷ population x 100,000; budget exposure = gross loss ÷ government health spending |
     """)
 
 # =========================================================================== #
@@ -400,7 +395,7 @@ with tabs[2]:
     governments did not, on average, replace falling aid.
 
     **Where replacement money goes.** *Pro-rata*: in proportion to each service's loss. *Hypothetical best case
-    (triage)*: service lines are refilled in order of the model's own deaths averted per dollar (usually TB treatment,
+    (triage)*: service lines are refilled in order of the model's own priority ranking (usually TB treatment,
     vaccines and HIV treatment first). This is an optimisation rule showing the most a given budget could save, not a
     description of how governments are known to allocate money.
     """)
@@ -429,7 +424,7 @@ with tabs[2]:
     Before Batch 3+4 the pool was everyone covered, which treated every patient as donor-funded in 160 country-lines
     (logic review L-44). A spending share is not exactly the share of patients whose service donors pay for (donors
     often buy commodities for everyone while governments pay staff); it is the closest external measure and is
-    labelled as such. The Validation page counts the lines where this happens.
+    labelled as such.
     """)
     md(f"""
     - **Continuity** = {pct('continuity')} (range {PRM.loc['continuity', 'low']:.0%}-{PRM.loc['continuity', 'high']:.0%}):
@@ -477,152 +472,11 @@ with tabs[2]:
     | Drug-resistant TB | WHO's RR-TB share of incidence, 2024 (`tb_rr_share`; median 2.1%; 4% where WHO has none) | RR-TB patients started on treatment ÷ RR-TB incidence, 2024 (`tb_rr_cov`; median 35%; 45% where WHO has none) |
     | Bednets | Population at risk, 2024 = WHO estimated cases ÷ incidence per 1,000 at risk (GHO `MALARIA_EST_CASES`, `MALARIA_EST_INCIDENCE`) | ITN use (share of people sleeping under a net), 2025, Malaria Atlas Project (31 African countries); elsewhere a household survey of children under 5 sleeping under a net (WDI `SH.MLR.NETS.ZS`) only if from 2015 or later; otherwise {C['mal_itn_default_use']:.0%} (*assumption*) |
     | Indoor spraying | Population at risk (as above) | Household IRS coverage, 2025, Malaria Atlas Project (modelled for Africa only; 0 in every year elsewhere, read as no estimate). Coverage used = the larger of MAP's estimate and the people donor IRS money pays for ÷ population at risk (the second alone where MAP has no estimate), so a cut removes the spraying it bought even where MAP shows little or none. MAP counts households sprayed; the model applies that share to people at risk, at a cost per person protected |
-    | Malaria testing & treatment | Malaria cases needing treatment, 2025 = Malaria Atlas Project *P. falciparum* + *P. vivax* clinical cases (61 countries); elsewhere the WHO estimate (GHO `MALARIA_EST_CASES`) | Effective treatment per 100 malaria cases, 2025, Malaria Atlas Project: the share of cases that receive an effective antimalarial. How much that treatment reduces deaths is a separate step, E_c below (as in the Lives Saved Tool). Where MAP has no value: the latest fever-treatment survey (WDI `SH.MLR.TRET.ZS`) where malaria incidence is at least {hm.MAL_CM_MIN_INCIDENCE} per 1,000 at risk, else {C['mal_cm_default_cov']:.0%} (*assumption*); none of the dashboard's malaria countries needs this |
+    | Malaria testing & treatment | Malaria cases needing treatment, 2025 = Malaria Atlas Project *P. falciparum* + *P. vivax* clinical cases (61 countries); elsewhere the WHO estimate (GHO `MALARIA_EST_CASES`) | Effective treatment per 100 malaria cases, 2025, Malaria Atlas Project: the share of cases that receive an effective antimalarial. Where MAP has no value: the latest fever-treatment survey (WDI `SH.MLR.TRET.ZS`) where malaria incidence is at least {hm.MAL_CM_MIN_INCIDENCE} per 1,000 at risk, else {C['mal_cm_default_cov']:.0%} (*assumption*); none of the dashboard's malaria countries needs this |
     | Routine immunization | Births = crude birth rate x population (WDI) | DTP3 coverage, WDI `SH.IMM.IDPT` |
 
     Where nobody is counted as in need (for example malaria treatment in Iraq), coverage cannot be calculated and the
     dashboard shows "Not Modelled".
-    """)
-
-    th.section_header("favorite", "Step 4: Lives (Extra Deaths)")
-    md("Deaths = people losing a service x deaths per person who loses it, year by year over five years.")
-    md(f"""
-    **HIV treatment.** The people counted are the people who stop ART: the full-cost equivalents of the lost money
-    (lost ART money ÷ full cost per patient-year), each treated as a person who actually stops treatment. Excess
-    deaths per person-year after stopping rise as CD4 falls: 1.3%, 2.5%, 3.7%, 4.9% and 6.0% in years 1-5 (6.8%,
-    7.2%, 7.3%, 7.1%, 6.7% in years 6-10, used after 2030), times an uncertain multiplier
-    {rng_txt('art_hazard_mult')}. These come from a CD4-stage cohort calculation: people start in the CD4
-    distribution of people on ART (ZIMPHIA 2020: median 528 cells/µL, quartiles 366-706), progress at untreated
-    rates and die at untreated stage-specific rates (Optima HIV, ten Brink et al. 2025, appendix Tables A1-A2), minus
-    the deaths they would have had on suppressive ART; 18.4% die over five years (range: women with the lower Optima
-    rates 12%, men with the higher rates 32%). Tracing studies of people lost to follow-up found higher mortality
-    (40% in 2000-07 cohorts, Brinkhof et al. 2009; 24% by 2011, Zürcher et al. 2017), from sicker, earlier
-    populations. People off ART also transmit HIV at the country's rate of new infections per person with
-    unsuppressed viral load (UNAIDS 2025: new infections ÷ (people living with HIV - people with suppressed viral
-    load); median 0.12 a year across the dashboard countries, Kenya 0.07, Mozambique 0.13; half in year 1), times
-    {rng_txt('art_transmission_mult')}. The people they infect are unsuppressed for about
-    {rng_txt('hiv_new_inf_unsup_years')} years on average (*assumption*, from the 2.6-year median time to diagnosis
-    in sub-Saharan Africa, Giguère et al. 2021) and transmit at the same rate: one further generation is counted.
-    """)
-    st.latex(r"\text{deaths}_{y}=\text{people who stop ART}\times h_y\times m,\qquad h=(0.013,\,0.025,\,0.037,\,0.049,\,0.060,\,0.068,\,0.072,\,0.073,\,0.071,\,0.067)")
-    md(f"""
-    **Mother-to-child transmission.** The PMTCT cost includes the mother's ART, so women on PMTCT are counted once:
-    PMTCT money pays for them, they are taken out of the people the HIV treatment line's money can pay for or lose
-    (people on ART minus women covered by PMTCT), and their own deaths are not added (conservative). IHME's program
-    areas are separate columns, so no dollar is in both lines. Deaths per mother losing PMTCT = transmission averted
-    {rng_txt('pmtct_vt_reduction')} (WHO: 15-45% without, under 5% with) x death by age 2 if infected
-    {rng_txt('pmtct_infant_mort')} (Newell et al. 2004).
-
-    **TB.** Deaths per patient untreated = case fatality untreated - case fatality treated, weighted by the share of
-    TB patients with HIV (h, WHO TB/HIV incidence ÷ TB incidence), with the HIV-positive values depending on ART
-    (a = ART coverage):
-    """)
-    st.latex(r"\Delta\text{CFR}=(1-h)\,(0.43-0.03)+h\,\big[0.78\,(1-a)+0.49\,a-0.06\,(1-0.3a)\big]")
-    md(f"""
-    with untreated / treated case fatality {rng_txt('tb_cfr_untreated_neg')} / {rng_txt('tb_cfr_treated_neg')}
-    (HIV-negative; WHO TB burden estimation methods, Table 4). For HIV-positive people, untreated case fatality is
-    {rng_txt('tb_cfr_untreated_pos')} off ART and {rng_txt('tb_cfr_untreated_pos_art')} on ART for a year or more
-    (WHO Table 5), weighted by ART coverage; treated, {rng_txt('tb_cfr_treated_pos')} x (1 - 0.3a). The TB case
-    detection rate (notifications ÷ WHO's incidence estimate) is capped at 100%. TB and HIV deaths are per patient,
-    so they have no baseline death-rate trend. Drug-resistant TB: {rng_txt('tb_dr_dcfr')} deaths averted per patient treated
-    (*assumption*).
-
-    **TB spread.** Each untreated TB patient (drug-sensitive or drug-resistant) causes {rng_txt('tb_secondary')}
-    further TB cases: about 10 people infected a year by an untreated smear-positive case (Styblo 1991) x ~60% of
-    pulmonary cases smear-positive (WHO) x 5-10% of those infected developing disease (Vynnycky & Fine 1997). Half the
-    new cases appear 1 year later and half 2 years later. They are treated at that year's (reduced) TB treatment
-    coverage, so each dies with probability coverage x treated CFR + (1 - coverage) x untreated CFR (same HIV mix as
-    above). Deaths before the end of 2030 are added to TB treatment; cases arriving in 2031-2032 are counted in
-    *Further deaths, 2031-2035*. Only one year of infectiousness per untreated patient and no onward chains beyond
-    these secondary cases are modelled, so this is conservative (untreated TB typically lasts 2-3 years).
-
-    **Malaria** uses the Lives Saved Tool form. Coverage after the cut feeds a multiplicative death reduction:
-    """)
-    st.latex(r"D_1=D_0\times\frac{1-E_v C_{v,1}}{1-E_v C_{v,0}}\times\frac{1-E_c C_{c,1}}{1-E_c C_{c,0}}")
-    md(f"""
-    - D₀ = all-age malaria deaths, 2024, as estimated in WHO's World Malaria Report (GHO `MALARIA_EST_DEATHS`). Its
-      trend is the country's 2015-2024 trend in the same WHO death series: see *Already-falling death rates*
-      below.
-    - Vector control is one intervention: C_v = 1 - (1 - bednet use) x (1 - spraying coverage). Bednet use and
-      spraying coverage each fall by their own people losing the service ÷ population at risk, and the
-      vector-control deaths are split between them by how much each one's fall lowers C_v.
-    - E_v = {rng_txt('mal_vc_eff')}, the reduction in deaths at full vector-control coverage (Eisele et al. 2010);
-      E_c = {rng_txt('mal_cm_eff')} for case management: the effect of ACT treatment of uncomplicated malaria, 97%
-      (86-99%) at 24-59 months and 99% at 1-23 months; the low end is 82%, the effect for severe malaria (Thwing et
-      al. 2011).
-    - Both are effect sizes for children aged 1-59 months. They apply in full to under-5 malaria deaths and are
-      scaled by {rng_txt('mal_adult_effect_frac')} (`mal_adult_effect_frac`, an assumption: no published adult
-      effect was found) for deaths at age 5 and over. The formula runs once for each age group and the two are added.
-    - **Under-5 share of malaria deaths.** The share stated in WHO's *World Malaria Report 2025* for the country's WHO
-      region (rule a; table below), with its range across parameter values. The report gives no European Region or
-      global figure, so a rule-b fallback to a global share is not available; the countries with no WMR figure
-      (European Region) have no malaria deaths, so the share has no effect there. The earlier rule, WHO/MCEE child
-      malaria deaths (2021) ÷ WHO all-age deaths (2024), divided two estimation methods and years and gave implausible
-      values (Nigeria 0.98, Kenya 0.19, Ethiopia 0.11). It is kept only as a sensitivity switch,
-      `mal_u5_use_country_series` (off).
-    - C₀ = current coverage; C₁ = C₀ - people losing the service ÷ people in need. C_c is the share of malaria
-      cases that receive an effective drug (MAP), so E_c applies to treated cases only.
-    - Because the formula is multiplicative, each extra point of coverage lost costs slightly more lives.
-    - **Rebound.** Once bednets and spraying stop, malaria transmission recovers over several seasons rather than
-      returning at once to its old level (Cohen et al. 2012, *Malaria Journal* 11:122, review of 75 resurgence
-      events). Deaths from lost vector control are multiplied by (1 + r)^(years since the cut started), with r =
-      {rng_txt('mal_resurgence')} a year (*assumption*; the direction is documented, the speed varies widely). Lost
-      malaria treatment is not affected.
-    """)
-    st.table(_u5_share_table())
-    md(f"""
-    **Routine immunization.** Future deaths averted per child immunized at under-5 mortality of 50 per 1,000 =
-    {rng_txt('imm_deaths_per_child_ref')} (Gavi: 20.6M deaths averted ÷ 1.2B children; 1.7M ÷ 72M in 2024), times the
-    share that would occur before age 5, {rng_txt('imm_u5_share')} (Li et al. 2021: hepatitis B and HPV deaths come in
-    adulthood), scaled by the country's under-5 mortality:
-    """)
-    st.latex(r"\text{deaths per child}=0.020\times0.65\times\operatorname{clip}\!\Big(\frac{\text{U5MR}}{50},\,0.3,\,2.5\Big)")
-    md("""
-    **Timing.** Deaths build up over the five years. The share of the full yearly effect reached in years 1-5:
-
-    | Service | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 |
-    |---|---|---|---|---|---|
-    | PMTCT | 60% | 100% | 100% | 100% | 100% |
-    | TB (both) | 70% | 100% | 100% | 100% | 100% |
-    | Bednets (nets keep protecting ~1 year) | 50% | 100% | 100% | 100% | 100% |
-    | Indoor spraying | 80% | 100% | 100% | 100% | 100% |
-    | Malaria treatment | 100% | 100% | 100% | 100% | 100% |
-    | Vaccines (unvaccinated cohorts add up) | 40% | 75% | 95% | 100% | 100% |
-
-    **Vaccines by birth cohort.** Each year's missed birth cohort dies over the following years: 40% of its
-    under-5 deaths in the year it is missed, then 35%, 20% and 5% (the yearly increments of the vaccine row above).
-    Deaths are scaled by under-5 mortality in the year they happen. Adding up the cohorts gives exactly the vaccine
-    row above for a sudden cut. Deaths of cohorts missed in 2027-2030 that fall in 2031-2034 are counted in *Further
-    deaths, 2031-2035* (under-5 mortality keeps its trend), so a vaccine cut late in the period is not undercounted.
-
-    **Already-changing death rates** (on by default). Baseline deaths are multiplied in year y by (1 + trend)^(y-1).
-    - **Under-5 mortality** (vaccines): the country's average annual change over 2010-2019 from a log-linear fit (at
-      least 5 years of data), clipped to -8% to +2% a year; countries without data get the median; if still missing,
-      -0.9% a year (Cavalcanti et al. 2025, Lancet, appendix 10.2). Under-5 mortality kept falling after 2019.
-    - **Malaria**: malaria has not kept falling. WHO's World Malaria Report 2025: "Between 2015 and 2024, malaria case
-      incidence increased by 8.5%; in 2024 there were an estimated 610,000 malaria deaths, 12,000 more than in 2023,
-      with Ethiopia among the largest increases." So each country's trend is the annual change in WHO's estimated
-      malaria deaths over 2015-2024 (World Malaria Report, GHO `MALARIA_EST_DEATHS`; log-linear fit, at least 5
-      years), clipped to ±5% a year; 0 where WHO has no series. The ±5% clip is an *assumption* (no published source),
-      which keeps short, noisy series from projecting far. 12 of the 46 malaria countries reach it (4 at +5%:
-      Madagascar, Pakistan, Djibouti, Bolivia; 8 at -5%, including India, Indonesia and Bangladesh).
-    - The malaria rebound after vector control stops (`mal_resurgence`, see Step 4) is a separate *assumption*,
-      applied only to deaths from lost bednets and spraying, on top of this baseline trend.
-    - TB and HIV effects are per patient and unchanged.
-
-    **New HIV infections.** HIV prevention turns money into infections averted, and people off ART transmit HIV
-    (see *Funding Paths*). Deaths from these adult infections are counted in the year they happen, up to 2035. Without
-    treatment, time from infection to death follows a Weibull curve with shape {hm.HIV_WEIBULL_SHAPE} and median
-    {rng_txt('hiv_survival_median')} years (Todd et al. 2007, *AIDS*, ALPHA network: 12.5 years if infected at 15-24,
-    10.5 at 25-34, 8.6 at 35-44; the shape used in UNAIDS Spectrum), so about 2% of these deaths fall within 2 years
-    of infection and about 10% within 4.5 years. The deaths in a year are scaled by that year's ART coverage: ART
-    coverage x {rng_txt('hiv_inf_death_treated')} + (1 - coverage) x {rng_txt('hiv_inf_death_untreated')}, the chance
-    of eventually dying of HIV with and without treatment (untreated: Todd et al. 2007 and CASCADE; treated:
-    *assumption* allowing for late diagnosis and interruptions). Deaths up to 2030 are added to the line that caused
-    the infection (HIV treatment for infections from people off ART, HIV prevention for lost prevention); deaths in
-    2031-2035 are counted in *Further deaths, 2031-2035*. Infant infections from lost PMTCT are not included here
-    because their deaths are already counted under PMTCT. **Orphans and
-    vulnerable children** support has no modelled effect on deaths.
     """)
 
     th.section_header("timeline", "Funding Paths Over 2026-2030")
@@ -662,41 +516,12 @@ with tabs[2]:
     Economic Outlook general-government expenditure for the same year, shown with "(estimated)"; (3) "n/a" if
     neither exists. No other government response applies with the budget-increase option.
 
-    **Which services are tracked how.**
-
-    | Service | Method |
-    |---|---|
-    | HIV treatment (and HIV transmission from people off treatment) | **Cohorts.** When the number who stop ART rises, the increase is a new cohort with 1 year since stopping; when it falls, the most recent cohorts return to care first. Each cohort's death risk follows the ART hazard by its own years since stopping (1.3%, 2.5%, 3.7%, 4.9%, 6.0%, then up to 7.3%), and it transmits HIV at half the full rate in its first year; the people it infects transmit in turn (one further generation). |
-    | Mother-to-child transmission | **Year by year.** Deaths and infections belong to the year the mother and infant miss the service. |
-    | TB, malaria (nets, spraying, treatment) | **Year by year.** Deaths in year t depend only on the coverage lost in year t, using the same formulas as for a sudden cut (TB case fatality for that year's untreated cases; the Lives Saved Tool formula for malaria). Each service's ramp-up and the malaria rebound are counted from when the cut started, not from the calendar year. TB spread adds deaths 1-2 years after each untreated year. |
-    | Routine immunization | **Birth cohorts.** Each year's missed cohort dies over the following years (40%, 35%, 20%, 5%), including after 2030. |
-
-    With a sudden cut every method gives exactly the original results (checked by automated tests for 5 countries,
-    every scenario and 3 government responses).
-
-    **Committed deaths.** A cut that starts late shows few deaths inside 2026-2030 simply because they happen
-    later. To avoid flattering late or delayed cuts, deaths caused by the 2026-2030 losses are followed for another
-    five years, to the end of 2035, assuming funding is back from 2031 (no cut after 2030). Every part uses the same
-    2031-2035 window, so nothing is projected over a lifetime. **Further deaths, 2031-2035** add up four parts:
-
-    | Part | What is counted in 2031-2035 |
-    |---|---|
-    | People off HIV treatment | people still off ART at the end of 2030 return to care at {rng_txt('art_reengage')} a year (indirect evidence from people who disengaged while services ran: 42% resumed within 3 years in Cape Town, Kranzer et al. 2010; half returned by 2.5 years in Khayelitsha, Kaplan et al. 2017; 68% returned within 12 months in Zambia, Mody et al. 2026); until they return they keep their excess death risk by years since stopping (rising to 7.3% a year by year 8) |
-    | New HIV infections | deaths in 2031-2035 of adults infected in 2026-2035 by people off ART, or because prevention was lost in 2026-2030 (timing as in *New HIV infections* above) |
-    | Missed vaccines | the remaining under-5 deaths of birth cohorts missed in 2027-2030 |
-    | TB spread | secondary TB cases arriving in 2031-2032 from patients untreated in 2029-2030 |
-
-    The central estimate of each part is shown in the tooltip of the pill. **Deaths avoided vs sudden cut with no response** = committed deaths (2026-2030 plus those
-    set in motion) of a sudden cut with no government response, minus committed deaths of the chosen path. For TB,
-    malaria and vaccines a later cut means fewer years of lost services, which genuinely costs fewer lives.
-
     **Break-even budget increase.** The smallest constant yearly rise s in health's share of government spending
     (cumulative: s points in 2026, 2s in 2027, ...) that keeps the net gap at or below zero in every year of the chosen
     funding path, on top of the chosen government response. Found by bisection between 0 and the rise that reaches
     15% in 2030; "not reachable by 15%" if even that falls short in some year.
 
-    **Assumptions.** People return to care when funding returns; new government money is spent as efficiently as
-    donor money. The benchmark under the sliders is the country's fastest sustained rise in health's share of
+    **Assumptions.** New government money is spent as efficiently as donor money. The benchmark under the sliders is the country's fastest sustained rise in health's share of
     government spending: the 90th percentile of its 2001-2023 yearly changes (WDI).
     """)
 
@@ -708,7 +533,7 @@ with tabs[2]:
     percentiles of the 400 draws, called the **range across parameter values**. All-country ranges are the 2.5th and
     97.5th percentiles of the all-country total in each draw (the draws are the same in every country).
     These ranges reflect uncertainty in model parameters only. Uncertainty in the data (aid amounts, people in need,
-    coverage, baseline deaths) and in the model's structure (for example, whether lost money means people stopping
+    coverage) and in the model's structure (for example, whether lost money means people stopping
     treatment entirely) is larger and not included, so the ranges are not confidence intervals. Parameters can be
     edited under Advanced to test sensitivity.
     """)
@@ -731,7 +556,6 @@ with tabs[3]:
     | World Development Indicators | World Bank, via Gapminder's open-numbers mirror | See the table below | Model inputs |
     | Global Health Observatory | WHO (UNAIDS 2025 round for HIV; World Malaria Report for 2024 malaria) | People living with HIV; ART and PMTCT coverage; women receiving ARVs for PMTCT; malaria deaths, cases and incidence per 1,000 at risk; modelled ITN use | Model inputs (people in need, coverage, malaria deaths and trend) |
     | Systema Globalis | Gapminder (WHO estimates) | TB incidence and deaths (HIV-negative and HIV-positive); child (1-59 months) malaria, measles and pneumonia deaths (WHO/MCEE) | TB inputs; Validation page regressions |
-    | HIV share of deaths | Gapminder fasttrack (IHME GBD) | HIV deaths as % of all deaths | Validation page (Lancet rate ratios) |
     | Country classifications | World Bank (Gapminder mirror) | Income group | Header; TB costs |
     | MOU / co-financing sheet | Capstone team | US reference funding 2021-25 and 2026-2030 schedules (nominal US$, as written in the MOU) | America First MOUs scenario |
     | KFF Tracker: America First MOU Bilateral Global Health Agreements | KFF, data as of 8 October 2026 | Countries with a signed MOU (36), agreement date, US funding | Header MOU status; which countries can run America First MOUs |
@@ -760,14 +584,12 @@ with tabs[3]:
     | `SH.MLR.TRET.ZS` | Children with fever receiving antimalarials (%) | Malaria treatment coverage only where MAP has no estimate |
     | `SH.IMM.IDPT` | DTP3 immunization (%) | Immunization coverage |
     | `SH.DYN.MORT` | Under-5 mortality per 1,000 | Vaccine effect scaling; trend |
-    | `SH.DTH.MORT` | Under-5 deaths | Poisson regression (Validation) |
     | `SP.DYN.CBRT.IN` | Crude birth rate | Births |
     | `SP.POP.TOTL`, `SP.POP.1564.TO` | Population, total and 15-64 | People in need; per-person rates |
     | `GC.REV.XGRT.GD.ZS` | Revenue excluding grants (% of GDP) | Aid lost as % of revenue |
     | `GC.DOD.TOTL.GD.ZS` | Central government debt (% of GDP) | Fiscal panel |
     | `GC.XPN.INTP.RV.ZS` | Interest payments (% of revenue) | Debt-stress factor (or IMF WEO net interest, whichever is more recent) |
     | `SH.XPD.GHED.GE.ZS` | Government health spending (% of government spending) | Health's share of government spending (first choice, latest year); fastest historical rise in that share (benchmark under the sliders) |
-    | `SP.DYN.CDRT.IN`, `SH.MMR.DTHS` | Crude death rate; maternal deaths | Validation page |
     """)
     th.section_header("menu_book", "Published Studies Behind the Parameters")
     md("""
@@ -818,7 +640,7 @@ with tabs[4]:
     - **Average, not marginal, costs.** Cuts usually hit the most expensive or least essential services first, and
       some cut services are cheaper than average. The model uses average costs per person.
     - **Donor money and service cost do not always line up.** In many country-service lines donor aid is more than
-      the modelled cost of serving everyone covered (see the Validation page); the excess is assumed to pay for
+      the modelled cost of serving everyone covered; the excess is assumed to pay for
       things other than the service, which may understate or overstate what a cut does to those lines.
     - **No second-round effects.** Drug resistance, outbreaks (for example measles), health-worker layoffs and supply
       chain breakdowns are not modelled.
@@ -834,7 +656,7 @@ with tabs[4]:
     - **Program-area tags are partial** (most TB aid is untagged), so unspecified money is split by purpose with the
       country's Global Fund grant mix, an assumption that unclassified donor money looks like the Global Fund's.
     - **The regressions are associations, not causes.** Aid goes where deaths are high, which can hide or reverse a
-      protective effect (see the Validation page).
+      protective effect.
     - **Treat results as scenario estimates, not forecasts.**
     """)
 
@@ -861,19 +683,3 @@ with tabs[5]:
     md("Coverage and fiscal regressions: two-way (country and year) fixed effects, standard errors clustered by "
        "country. Poisson regressions: country and year fixed effects, log population (or births) offset, controls for "
        "log GDP per person and log government health spending per person (method of Cavalcanti et al. 2025).")
-
-# =========================================================================== #
-# CROSS-CHECKS
-# =========================================================================== #
-with tabs[6]:
-    th.section_header("fact_check", "Cross-Checks for the Current Selection", rule=False)
-    st.caption(f"{country_name} · {ms.scenario_title(preset, opts)} · {ms._resp_label(fiscal_t)}"
-               + ("" if trend else " · Death Rates Held Constant"))
-    sk = scn.scenario_key(scn.build_scenario(preset, opts, I["ci"]))
-    res = ms._run(iso3, sk, fiscal_t, ptab_json, trend) if (iso3 in I["ci"].index and iso3 in set(I["lines"].iso3)) \
-        else None
-    st.subheader("What 20 Years of Data Say")
-    st.markdown(ms._esc(ms._crosscheck_summary(res, I, ptab, country_name)))
-    ctl = {"preset": preset, "ptab": ptab, "ptab_json": ptab_json, "fiscal_t": fiscal_t, "trend": trend}
-    A = ms._all_country_results(sk, ctl)
-    ms._published_estimates(A[A["gross_loss_usd"] > 0], I, ptab)

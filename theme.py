@@ -479,7 +479,6 @@ hr {{ border-color: {RULE} !important; }}
 
 PAGES = [("views/1_Dashboard.py", "Dashboard", ":material/dashboard:"),
          ("views/2_All_Countries.py", "All Countries", ":material/travel_explore:"),
-         ("views/3_Validation.py", "Validation & Benchmarks", ":material/fact_check:"),
          ("views/4_Methods.py", "Methods", ":material/menu_book:")]
 
 

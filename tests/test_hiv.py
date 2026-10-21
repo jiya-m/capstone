@@ -95,9 +95,7 @@ def test_card_is_full_model_for_1m_uniform_cut(iso):
         r = hm.run_country(iso, hm.uniform_scenario(b, cut), hm.Fiscal(), I, P, n_draws=0)
         B = r["buckets"].set_index("bucket")
         k = 1e6 / B.loc[b, "gross_loss_usd"]
-        want = B.loc[b, "deaths_5y"] * k
-        got = float(cards[b]["deaths"].replace(",", "")) if cards[b]["deaths"] else 0.0
-        assert got == pytest.approx(want, abs=0.5, rel=0.01)
+        assert "deaths" not in cards[b]                 # the dashboard shows coverage only
         main = ms.MAIN_LINE[b]
         ln = r["lines"].set_index("line").loc[main]
         assert float(cards[b]["people_n"].replace(",", "")) == pytest.approx(ln["units_lost"] * k, abs=0.5)
