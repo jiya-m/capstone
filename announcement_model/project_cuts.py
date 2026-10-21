@@ -27,8 +27,10 @@ PREDICTED:
         alpha, eps: fitted on IHME 2025 health aid vs OECD 2025 total aid across donors (health fell ~21% beyond what
         total aid explains and moves ~0.28x with it). Remaining flows keep min(1, max(0, (target - fixed) / rest)).
     2029-2030 extend each donor's 2025-28 outlook trend.
-Writes model_data/announcement_cuts.csv (country x donor group x channel group: base, cut_<year>, known_cut_<year>)
-and full audit tables in announcement_model/output/.
+Writes model_data/announcement_cuts.csv (country x donor group x channel group: base, cut_<year>, known_cut_<year>),
+model_data/announcement_areas.csv (country x health area: base and US$ lost / known each year; each flow's loss split
+by that flow's own 2019-2023 mix of health areas, for countries with yearly IHME files) and full audit tables in
+announcement_model/output/.
 
 Usage (from the repo root):
     python announcement_model/project_cuts.py aid_cut_projections_announcements.xlsx
@@ -68,10 +70,20 @@ hist.columns = hist.columns.astype(int)
 # --------------------------------------------------------------------------- base: 2019-2023 average per flow
 KEY = ["Recipient ISO3", "IHME source (original donor)", "Channel"]
 files = [f for f in glob.glob(str(REPO / "country_data/*.csv")) if open(f).readline().startswith("year,")]
-cd = pd.concat([pd.read_csv(f, usecols=["year", "source", "channel", "recipient_isocode", "dah_23"],
+AREAS = {"HIV": ["hiv_dah_23"], "TB": ["tb_dah_23"], "Malaria": ["mal_dah_23"], "Vaccines": ["nch_cnv_dah_23"],
+         "Other child health": ["nch_dah_23", "-nch_cnv_dah_23"], "Reproductive & maternal": ["rmh_dah_23"],
+         "Non-communicable diseases": ["ncd_dah_23"], "COVID-19": ["oid_covid_dah_23"],
+         "Other infectious diseases": ["oid_dah_23", "-oid_covid_dah_23"], "Health systems": ["swap_hss_total_dah_23"],
+         "Other / unallocated": ["other_dah_23", "unalloc_dah_23"]}
+AREA_COLS = sorted({c.lstrip("-") for v in AREAS.values() for c in v})
+cd = pd.concat([pd.read_csv(f, usecols=["year", "source", "channel", "recipient_isocode", "dah_23"] + AREA_COLS,
                             dtype={"source": str, "channel": str}) for f in files])
 cd = cd[cd.year.between(2019, 2023)]
 full = cd.groupby(["recipient_isocode", "source", "channel"]).dah_23.sum() / 5   # k$, 5-year mean
+for a, cols in AREAS.items():
+    cd[a] = sum(-cd[c[1:]] if c.startswith("-") else cd[c] for c in cols)
+area_base = cd.groupby(["recipient_isocode", "source", "channel"])[list(AREAS)].sum() / 5     # k$ by health area
+area_base.index.names = ["Recipient ISO3", "IHME source (original donor)", "Channel"]
 full.index.names = KEY
 have_full = set(cd.recipient_isocode)
 wb["base"] = np.where(wb["Recipient ISO3"].isin(have_full),
@@ -296,6 +308,24 @@ for y in YRS:
 out.insert(0, "base_kusd", ex.base.round(1))
 out.index.names = ["iso3", "src_grp", "chan_grp"]
 out.to_csv(REPO / "model_data" / "announcement_cuts.csv")
+
+# loss by health area: each flow's loss split by its own 2019-2023 mix of health areas (countries with yearly files)
+fk = pd.MultiIndex.from_frame(b[KEY])
+mix = area_base.reindex(fk).fillna(0.0).to_numpy(float)
+mix_tot = mix.sum(1, keepdims=True)
+share = np.divide(mix, mix_tot, out=np.zeros_like(mix), where=mix_tot > 0)
+has_mix = b.iso.isin(have_full).to_numpy() & (mix_tot[:, 0] > 0)
+ar = []
+for j, y in enumerate(YRS):
+    for nm, val in (("lost", loss[:, j]), ("known", loss[:, j] * KN[:, j])):
+        ar.append(pd.DataFrame(share[has_mix] * val[has_mix, None], columns=list(AREAS)).assign(
+            iso3=b.iso.to_numpy()[has_mix], col=f"{nm}_{y}"))
+ar.append(pd.DataFrame(share[has_mix] * B[has_mix, None], columns=list(AREAS)).assign(
+    iso3=b.iso.to_numpy()[has_mix], col="base_kusd"))
+areas = (pd.concat(ar).melt(id_vars=["iso3", "col"], var_name="area").groupby(["iso3", "area", "col"]).value.sum()
+         .unstack("col"))
+areas = areas[["base_kusd"] + [f"{k}_{y}" for k in ("lost", "known") for y in YRS]].round(1)
+areas.to_csv(REPO / "model_data" / "announcement_areas.csv")
 
 rows = b[["iso", "Recipient", "Donor group", "Channel name", "Rule"]].assign(label=lab, base_kusd=B.round(1))
 for j, y in enumerate(YRS):
