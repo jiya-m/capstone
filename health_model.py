@@ -119,9 +119,10 @@ _EXCESS_LOGGED: set = set()     # (iso3, line) pairs already logged as "donor mo
 def load_inputs(model_dir: Path = MODEL_DIR) -> dict:
     """Read the model inputs from model_data/: dah_lines.csv (baseline aid, US$ a year, by country x donor group x
     channel x service line), country_inputs.csv (one row per country: people in need, coverage, deaths, fiscal data),
-    ihme_trend.csv (IHME's 2025 / 2021-23 aid ratios) and regressions.json. Returns a dict with those tables, the
-    global mix of each disease's service lines (fallback for spreading unspecified money) and the IHME trend as a
-    lookup. Feeds every model run."""
+    ihme_trend.csv (IHME's 2025 / 2021-23 aid ratios), regressions.json and, when present, announcement_cuts.csv
+    (yearly cuts by country x donor group x channel group from announcement_model/project_cuts.py). Returns a dict
+    with those tables, the global mix of each disease's service lines (fallback for spreading unspecified money) and
+    the IHME trend and announcement cuts as lookups. Feeds every model run."""
     lines = pd.read_csv(model_dir / "dah_lines.csv")
     ci = pd.read_csv(model_dir / "country_inputs.csv").set_index("iso3")
     trend = pd.read_csv(model_dir / "ihme_trend.csv")
@@ -140,7 +141,34 @@ def load_inputs(model_dir: Path = MODEL_DIR) -> dict:
         tot = sum(med.values()) or 1.0
         ush[b] = {c: v / tot for c, v in med.items()}
     return {"lines": lines, "ci": ci, "trend": trend, "reg": reg, "global_mix": gmix, "unspec_shares": ush,
-            "trend_map": trend.set_index(["src_grp", "chan_grp", "bucket"])["ratio"].to_dict()}
+            "trend_map": trend.set_index(["src_grp", "chan_grp", "bucket"])["ratio"].to_dict(),
+            "announce_map": load_announcement_cuts(model_dir)}
+
+
+ANNOUNCE_FILE = "announcement_cuts.csv"
+
+
+def load_announcement_cuts(model_dir: Path = MODEL_DIR) -> dict:
+    """Yearly cuts 2026-2030 from model_data/announcement_cuts.csv as {(iso3, donor group, channel group): 5 cuts},
+    plus {(iso3, donor group): 5 cuts} (baseline-weighted over that donor's channels) as the fallback for a cell the
+    projection has no exact match for, and ("*", donor group, channel group) / ("*", donor group) pooled over all
+    recipients for a country with no 2023 IHME baseline in the projection (Guyana). Empty dict if the file is missing.
+    Feeds: the Announced cuts + donor budget model preset (Scenario.announcement)."""
+    p = model_dir / ANNOUNCE_FILE
+    if not p.exists():
+        return {}
+    a = pd.read_csv(p)
+    cols = [f"cut_{2026 + t}" for t in range(N_YEARS)]
+    out = {(r.iso3, r.src_grp, r.chan_grp): np.array([getattr(r, c) for c in cols], dtype=float)
+           for r in a.itertuples(index=False)}
+    kept = a[cols].rsub(1).mul(a.base_2023_kusd, axis=0).assign(iso3=a.iso3, src_grp=a.src_grp,
+                                                                base=a.base_2023_kusd)
+    for keys, pre in ((["iso3", "src_grp"], ()), (["src_grp", "chan_grp"], ("*",)), (["src_grp"], ("*",))):
+        g = kept.assign(chan_grp=a.chan_grp).groupby(keys)[cols + ["base"]].sum()
+        for k, r in g.iterrows():
+            if r.base > 0:
+                out[pre + (k if isinstance(k, tuple) else (k,))] = 1 - r[cols].to_numpy(dtype=float) / r.base
+    return out
 
 
 def load_params(path: Path = PARAMS_FILE) -> pd.DataFrame:
@@ -212,6 +240,7 @@ class Scenario:
     us_direct_path_by_country: dict = field(default_factory=dict)
     mou_only: bool = False                              # only countries in us_direct_path_by_country can be run
     ihme_trend: bool = False
+    announcement: bool = False                          # yearly cuts per cell from announcement_cuts.csv
     bucket_only: str | None = None                      # restrict the shock to one bucket (dose-response curves)
     scale: float = 1.0                                  # multiplies every cut (the scenario's own path, 0 -> 1)
 
@@ -234,9 +263,24 @@ class Scenario:
             out[i] = 1.0 - (1.0 - x) * (1.0 - y)
         return np.clip(out, -1.0, 1.0) * self.scale
 
-    def cuts_by_year(self, cells: pd.DataFrame, iso3: str, trend_map: dict) -> np.ndarray:
+    def cuts_by_year(self, cells: pd.DataFrame, iso3: str, trend_map: dict,
+                     announce_map: dict | None = None) -> np.ndarray:
         """Cut on every cell in each year 2026-2030 (cells x 5). The same as cuts() in every year, except US direct
-        channels in a country with a yearly schedule (us_direct_path_by_country), which follow that schedule."""
+        channels in a country with a yearly schedule (us_direct_path_by_country), which follow that schedule. The
+        announcement preset takes each cell's yearly cut from announce_map (country x donor group x channel group,
+        falling back to the country x donor group average, else no cut)."""
+        if self.announcement:
+            out = np.zeros((len(cells), N_YEARS))
+            amap = announce_map or {}
+            for i, (s, c, b) in enumerate(zip(cells["src_grp"], cells["chan_grp"], cells["bucket"])):
+                if self.bucket_only and b != self.bucket_only:
+                    continue
+                v = amap.get((iso3, s, c))
+                for k in ((iso3, s), ("*", s, c), ("*", s)):
+                    v = amap.get(k) if v is None else v
+                if v is not None:
+                    out[i] = v
+            return np.clip(out, -1.0, 1.0) * self.scale
         base = self.cuts(cells, iso3, trend_map)
         out = np.repeat(base[:, None], N_YEARS, axis=1)
         path = self.us_direct_path_by_country.get(iso3)
@@ -767,7 +811,8 @@ def run_country(iso3: str, scenario: Scenario, fiscal: Fiscal, inputs: dict, pta
     row = ci.loc[iso3] if iso3 in ci.index else pd.Series(dtype=float)
     cells = lines[lines.iso3 == iso3].copy()
     # cut on each cell in each year: the scenario's own yearly cuts (MOU schedules) x the funding path
-    cut_y = scenario.cuts_by_year(cells, iso3, inputs["trend_map"]) if len(cells) else np.zeros((0, N_YEARS))
+    cut_y = (scenario.cuts_by_year(cells, iso3, inputs["trend_map"], inputs.get("announce_map")) if len(cells)
+             else np.zeros((0, N_YEARS)))
     cut_m = cut_y * cut_path[None, :]
     usd = cells["usd"].to_numpy()
     gross_t = [pd.Series(usd * cut_m[:, t], index=cells.index).groupby(cells["line"]).sum() for t in range(N_YEARS)]
@@ -1431,7 +1476,7 @@ def _money_by_year(iso3, scenario, fiscal, inputs, cut_path):
     cells = lines[lines.iso3 == iso3].copy()
     path = np.clip(_path(cut_path, 1.0), 0, 1)
     if len(cells):
-        cut_m = scenario.cuts_by_year(cells, iso3, inputs["trend_map"]) * path[None, :]
+        cut_m = scenario.cuts_by_year(cells, iso3, inputs["trend_map"], inputs.get("announce_map")) * path[None, :]
         usd = cells["usd"].to_numpy()
         G_t = np.array([float(np.clip(pd.Series(usd * cut_m[:, t], index=cells.index).groupby(cells["line"]).sum(),
                                       0, None).sum()) for t in range(N_YEARS)])

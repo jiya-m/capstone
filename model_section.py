@@ -60,6 +60,9 @@ PRESET_SHORT = {
     "Global Fund & Gavi shortfalls": "All donors' money through Gavi and the Global Fund falls by the share set "
                                      "below, against each fund's 2021-23 disbursements.",
     "Combined retreat": "US Bilateral Exit + Multilateral Withdrawals plus the OECD-reported 2025 total-aid cuts for every other donor.",
+    "Announced cuts + donor budget model": "Each donor and channel follows its own 2026-2030 path: announced cuts "
+                                           "(MOUs, Global Fund GC8, Gavi pledges, exits) where they exist, and each "
+                                           "donor's OECD budget outlook, spread across countries, for the rest.",
     "Custom": "Set the cuts yourself by donor and by channel.",
 }
 CEILINGS = {"Strong year (75th percentile growth)": "p75", "Best years (90th percentile growth)": "p90"}
@@ -581,6 +584,7 @@ SCENARIO_PHRASE = {
     "OECD-reported 2025 aid cuts": "If donors cut health aid as much as their total 2025 aid",
     "Global Fund & Gavi shortfalls": "If the Global Fund and Gavi fall short of their targets",
     "Combined retreat": "If the U.S. exits and other donors cut too",
+    "Announced cuts + donor budget model": "If donors cut as announced and as their budgets imply",
     "Custom": "Under this scenario",
 }
 

@@ -41,9 +41,20 @@ PRESETS = {
         "you set (default Gavi -15%, Global Fund -20%), against each fund's 2021-23 disbursements (the model "
         "baseline). The sliders' tooltips give the sources for each value."),
     "Combined retreat": "'US Bilateral Exit + Multilateral Withdrawals' for the US plus the OECD-reported 2025 total-aid cuts for all other donors.",
+    "Announced cuts + donor budget model": (
+        "Every donor x channel flow to this country follows its own yearly path, 2026-2030 (announcement_model/). "
+        "Announced: America First MOUs (year-by-year schedules; whole-agreement ratios spread with the schedules' "
+        "average shape), Global Fund GC8 allocations x each donor's pledge cut, Gavi 6.0 pledges, the US exit from "
+        "Gavi and WHO, Swedish, UK and Dutch cuts. US bilateral aid to countries without an MOU follows the signed "
+        "MOUs' average path. Foundations and non-DAC donors follow IHME's 2025 estimates. Every other DAC flow: the "
+        "donor's health budget = e^a x (OECD ODA outlook)^e (fitted on 2025: health moves about 0.28x total aid, "
+        "plus a common 21% drop), minus its announced cuts, spread over its recipients with smaller programmes cut "
+        "harder (beta 0.08, from Global Fund GC8 and the US MOUs)."),
     "Custom": "Set cuts yourself by donor and by channel (cuts combine multiplicatively: 1 - (1-donor cut)(1-channel cut)).",
 }
 PRECOMPUTED_PRESETS = [p for p in PRESETS if p != "Custom"]
+
+ANNOUNCED = "Announced cuts + donor budget model"
 
 # Global Fund & Gavi Shortfalls (audit I-07): user-set cuts on each fund's 2021-23 disbursements, from every donor
 SHORTFALLS = "Global Fund & Gavi shortfalls"
@@ -177,6 +188,8 @@ def build_scenario(preset: str, opts: dict, ci: pd.DataFrame) -> hm.Scenario:
                 continue
             sc.src_direct[s] = v
             sc.src_multi[s] = v
+    if preset == ANNOUNCED:
+        sc.announcement = True                     # yearly cuts per cell from model_data/announcement_cuts.csv
     if preset == SHORTFALLS:
         # a channel cut for all source donors; this preset has no US multilateral exit, so nothing is counted twice
         g, f = shortfall_cuts(opts)
