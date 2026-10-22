@@ -15,8 +15,11 @@ KNOWN (a published number for that flow):
     budget (EUR 384M / 510M) and its halved UNICEF contribution.
 PREDICTED:
   - Global Fund 2028-2030: the GC7 -> GC8 change keeps going at the same yearly rate, (GC8 / GC7)^(1/3) a year.
-  - US bilateral + US-funded NGOs without an MOU: 0 from 2026 (no MOU, no US money; Jiya 2026-10-22). Other donors'
-    money through NGOs follows its own donor's rule. Reported separately as the "predicted MOU cut" (mou_pred_cut_<year>).
+  - US bilateral without an MOU: 0 from 2026 (no MOU, no US bilateral money; Jiya 2026-10-22), reported separately as
+    the "predicted MOU cut" (mou_pred_cut_<year>).
+  - US money through NGOs without an MOU: the average whole-agreement ratio of the 3 MOU countries with the closest
+    aid / government health spending ratio (all three within +-50%), else the all-MOU average (prior-funding weighted);
+    spread over the years with the MOU schedules' average shape.
   - Foundations, private and non-DAC governments (outside the Global Fund and Gavi): IHME 2025 / 2021-23 ratio.
   - Every other flow of a DAC donor: the donor's health budget target minus everything already fixed above for that
     donor (its Global Fund, Gavi, exits, announcements, MOUs), shared over its remaining flows as one equal cut:
@@ -54,6 +57,7 @@ OUTDIR.mkdir(parents=True, exist_ok=True)
 YRS = [2026, 2027, 2028, 2029, 2030]
 NY = len(YRS)
 GAVI_WIDE = 6.0 / 8.8                 # Gavi 6.0 new pledges / Gavi 5.0 pledges (US$ B)
+NN_K, NN_BAND = 3, np.log(1.5)        # similar-country rule for US aid without an MOU
 
 wb = pd.read_excel(WB, sheet_name="Base_Projection")
 oda = pd.read_excel(WB, sheet_name="Donor_ODA").dropna(subset=["IHME source"])
@@ -199,13 +203,43 @@ for k, r in M_.iterrows():
     if k not in mou_mult and pd.notna(r["Flat multiplier (whole agreement)"]):
         mou_mult[k] = spread(r["Flat multiplier (whole agreement)"],
                              int(r["Years in agreement"]) if pd.notna(r["Years in agreement"]) else 5)
-# MOUs signed after the workbook (KFF tracker, model_data/mou_signed.csv): whole-agreement ratio = (total / 5 years) /
-# the 2021-2025 US reference (country_inputs.csv mou_us_ref), spread like the others
+# MOUs signed after the workbook (KFF tracker, model_data/mou_signed.csv): the yearly amounts in country_inputs.csv
+# (prepare_model.MOU_SCHEDULE_EXTRA) / the 2021-2025 US reference (mou_us_ref); else (total / 5 years) / that reference,
+# spread like the others
 signed = pd.read_csv(REPO / "model_data/mou_signed.csv").set_index("iso3")
 for k, r in signed.iterrows():
     ref = ci.at[k, "mou_us_ref"] if k in ci.index else np.nan
-    if k not in mou_mult and pd.notna(r["us_funding_total"]) and pd.notna(ref) and ref > 0:
+    if k in mou_mult or pd.isna(ref) or ref <= 0:
+        continue
+    if np.isfinite(sched.loc[k]).all():
+        mou_mult[k] = sched.loc[k].to_numpy(float) * 1e6 / ref
+    elif pd.notna(r["us_funding_total"]):
         mou_mult[k] = spread(r["us_funding_total"] / 5 / ref)
+
+# --------------------------------------------------------------------------- US without an MOU: similar countries
+def latest(path, col):
+    d = pd.read_csv(path)
+    d = d[(d.time >= 2015) & (d.time <= 2024)].dropna(subset=[col]).sort_values("time")
+    return d.groupby("geo")[col].last().rename(index=str.upper)
+W = REPO / "ext_data"
+T = pd.DataFrame({"gdp_pc": latest(W / "reference/wdi/ny_gdp_pcap_cd.csv", "ny_gdp_pcap_cd"),
+                  "ghed_gdp": latest(W / "reference/wdi/sh_xpd_ghed_gd_zs.csv", "sh_xpd_ghed_gd_zs"),
+                  "pop": latest(W / "wdi/sp_pop_totl.csv", "sp_pop_totl")})
+ghes = (ci.ghes_2023 / 1e6).combine_first(T.ghed_gdp / 100 * T.gdp_pc * T["pop"] / 1e6)
+X = pd.DataFrame({"dah": b.groupby("iso").base.sum() / 1e3, "ghes": ghes})
+X["lr"] = np.log(X.dah / X.ghes).replace([np.inf, -np.inf], np.nan)
+D = pd.DataFrame({"f": M_["Flat multiplier (whole agreement)"], "w": M_["Prior US funding, same length ($M)"]})
+D = D.groupby(level=0).first().join(X).dropna(subset=["f", "w", "lr"])
+F_AVG = float(np.average(D.f, weights=D.w))
+nomou = {}
+for iso in sorted(set(b.iso[rule == "US non-MOU"])):
+    if iso in X.index and np.isfinite(X.at[iso, "lr"]):
+        dd = (D.lr - X.at[iso, "lr"]).abs().sort_values()[:NN_K]
+        if (dd < NN_BAND).all():
+            nomou[iso] = {"f": float(D.loc[dd.index, "f"].mean()), "match": list(dd.index),
+                          "ratio": float(np.exp(X.at[iso, "lr"]))}
+            continue
+    nomou[iso] = {"f": F_AVG, "match": [], "ratio": float(np.exp(X.at[iso, "lr"])) if iso in X.index else None}
 
 # --------------------------------------------------------------------------- fixed multipliers (known, or predicted)
 M = np.full((N, NY), np.nan)
@@ -237,7 +271,10 @@ for i in range(N):
     elif r in ("US MOU", "US non-MOU") and iso in mou_mult:
         M[i] = mou_mult[iso]; KN[i] = True; lab[i] = "America First MOU"
     elif r in ("US MOU", "US non-MOU"):
-        M[i] = 0.0; PM[i] = True; lab[i] = "US, no MOU (predicted MOU cut)"
+        if c.startswith("US bilateral"):
+            M[i] = 0.0; PM[i] = True; lab[i] = "US bilateral, no MOU (predicted MOU cut)"
+        else:
+            M[i] = spread(nomou.get(iso, {"f": F_AVG})["f"]); lab[i] = "US through NGOs, no MOU (similar countries)"
     elif r == "Exit":
         M[i] = EXIT; KN[i] = True; lab[i] = "Country exit"
     elif r == "UK Africa bilateral":
@@ -274,7 +311,7 @@ assert not np.isnan(M).any()
 
 P = B[:, None] * M
 loss = B[:, None] - P
-print(f"alpha {ALPHA:.3f}  eps {EPS:.3f}  Gavi-wide {GAVI_WIDE:.3f}")
+print(f"alpha {ALPHA:.3f}  eps {EPS:.3f}  Gavi-wide {GAVI_WIDE:.3f}  MOU average {F_AVG:.3f}")
 print("all recipients, $B: base", round(B.sum() / 1e6, 2), "kept", [round(v, 2) for v in P.sum(0) / 1e6])
 print("known share of loss:", [round((loss[:, j] * KN[:, j]).sum() / loss[:, j].sum(), 3) for j in range(NY)])
 
@@ -317,7 +354,10 @@ for j, y in enumerate(YRS):
     rows[f"known_{y}"] = KN[:, j]
 rows.to_csv(OUTDIR / "rows_v4.csv", index=False)
 dtab.round(4).to_csv(OUTDIR / "donor_targets_v4.csv", index=False)
+pd.DataFrame([{"iso3": k, "aid_to_ghes": v["ratio"], "matches": " ".join(v["match"]) or "none: MOU average",
+               "agreement_ratio": v["f"]} for k, v in nomou.items()]).to_csv(OUTDIR / "us_no_mou_v4.csv", index=False)
 with open(OUTDIR / "fit_v4.txt", "w") as f:
     f.write("Health vs total aid: log(IHME 2025 health ratio) = alpha + eps * log(OECD 2025 ODA ratio), WLS, Japan out\n")
     f.write(env.summary2().tables[1].to_string() + "\n\n")
-    f.write(f"Gavi-wide ratio {GAVI_WIDE:.4f}; MOU year shape {np.round(SHAPE5, 3).tolist()}\n")
+    f.write(f"Gavi-wide ratio {GAVI_WIDE:.4f}; MOU average (prior-funding weighted) {F_AVG:.4f}; "
+            f"MOU year shape {np.round(SHAPE5, 3).tolist()}\n")

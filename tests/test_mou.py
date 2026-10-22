@@ -16,7 +16,7 @@ I, P = hm.load_inputs(), hm.load_params()
 CI = I["ci"]
 NONE = hm.Fiscal(*scn.DEFAULT_FISCAL)
 MOU = "America First MOUs"
-GROUP_A = ["BDI", "BWA", "CMR", "ETH", "KEN", "LBR", "LSO", "MDG", "MOZ", "MWI", "NGA", "RWA", "SLE", "SSD", "SWZ", "UGA"]
+GROUP_A = ["BDI", "BWA", "CMR", "ETH", "KEN", "LBR", "LSO", "MDG", "MOZ", "MWI", "NGA", "RWA", "SLE", "SSD", "SWZ", "UGA", "ZMB"]   # ZMB: from its MOU table (prepare_model.MOU_SCHEDULE_EXTRA)
 SIGNED = set(scn.mou_signed()["iso3"])
 GROUPS = scn.mou_groups(CI, list(CI.index))
 SC = scn.build_scenario(MOU, scn.default_opts(MOU, CI), CI)
@@ -36,7 +36,7 @@ def written_schedule(iso):
 def test_signed_list_and_groups():
     assert len(SIGNED) == 36
     assert sorted(c for c, g in GROUPS.items() if g == "A") == sorted(GROUP_A)
-    assert sum(g == "B" for g in GROUPS.values()) == len(SIGNED & set(CI.index)) - 16
+    assert sum(g == "B" for g in GROUPS.values()) == len(SIGNED & set(CI.index)) - len(GROUP_A)
     assert all(GROUPS[c] == "C" for c in CI.index if c not in SIGNED)
     # status comes from the signed list, never from schedule data
     prof = pd.read_csv(hm.MODEL_DIR / "country_profile.csv").set_index("iso3")
