@@ -276,32 +276,37 @@ crow = countries[countries["iso3"] == sel_iso3].iloc[0]
 country_name = crow["name"]
 
 _mac0 = load_macro(crow["iso3"]) if any(MACRO_DIR.glob("*.csv")) else None
-_gdp_bn, _gdp_yr = None, None
-POP_YEAR = 2026
+FACT_YEAR = 2026                      # GDP and population: IMF WEO, current US$ (a projection for 2026)
+GDP_COL = "gdp_usd_bn_2023"        # constant 2023 US$, like every other dollar figure (add_constant_dollars.py)
 MAP_FRAME = {   # (lat range, lon range) of the header map for each World Bank region
     "Sub-Saharan Africa": ([-36, 25], [-20, 55]), "Latin America & Caribbean": ([-56, 33], [-120, -30]),
     "East Asia & Pacific": ([-48, 55], [70, 180]), "Middle East & North Africa": ([10, 42], [-18, 65]),
     "Europe & Central Asia": ([33, 60], [10, 90]), "South Asia": ([0, 40], [58, 100])}
-GDP_COL = "gdp_usd_bn_2023"        # constant 2023 US$, like every other dollar figure (add_constant_dollars.py)
-if _mac0 is not None and GDP_COL in _mac0.columns:
-    _gf = _mac0[_mac0[GDP_COL].notna() & ~_mac0["gdp_is_estimate"].astype(bool)]
-    if len(_gf):
-        _gdp_bn, _gdp_yr = float(_gf[GDP_COL].iloc[-1]), int(_gf["year"].iloc[-1])
-_pop_m, _pop_yr = None, None          # 2026 (IMF WEO projection), else the latest year there is
-if _mac0 is not None and "population_m" in _mac0.columns:
-    _pf = _mac0[_mac0["population_m"].notna() & (_mac0["year"] <= POP_YEAR)]
-    if len(_pf):
-        _pop_m, _pop_yr = float(_pf["population_m"].iloc[-1]), int(_pf["year"].iloc[-1])
 
+
+def _fact(col):
+    """(value, year) in FACT_YEAR, else the latest year before it that has one."""
+    if _mac0 is None or col not in _mac0.columns:
+        return None, None
+    f = _mac0[_mac0[col].notna() & (_mac0["year"] <= FACT_YEAR)]
+    return (float(f[col].iloc[-1]), int(f["year"].iloc[-1])) if len(f) else (None, None)
+
+
+_gdp_bn, _gdp_yr = _fact("gdp_usd_bn")
+_pop_m, _pop_yr = _fact("population_m")
 _prof = load_profile().get(crow["iso3"], {})
-_facts = [_prof.get("region"), INCOME_LABELS.get(_prof.get("income_group")),
-          f"GDP {fmt_usd(_gdp_bn * 1e3)}" if _gdp_bn else None,
-          (f"Population {_pop_m:,.1f}M" if _pop_m >= 1 else f"Population {_pop_m:,.2f}M")
-          + (f" ({_pop_yr})" if _pop_yr != POP_YEAR else "") if _pop_m else None]
+_facts = [("Region", _prof.get("region")), ("Income", INCOME_LABELS.get(_prof.get("income_group"))),
+          (f"GDP, {_gdp_yr}", fmt_usd(_gdp_bn * 1e3) if _gdp_bn else None),
+          (f"Population, {_pop_yr}", (f"{_pop_m:,.1f}M" if _pop_m >= 1 else f"{_pop_m:,.2f}M") if _pop_m else None)]
+_chips = "".join(
+    f"<div style='background:{th.SURFACE_TINT};border-radius:8px;padding:6px 12px'>"
+    f"<div style='font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:{th.MUTED}'>{html.escape(k)}</div>"
+    f"<div style='font-size:15px;font-weight:600;color:{th.INK}'>{html.escape(v)}</div></div>"
+    for k, v in _facts if v)
 with hdr_left:
     st.markdown(f"<div class='ed-country'>{html.escape(country_name)}</div>"
-                f"<div class='ed-facts' style='color:{th.MUTED};font-size:15px;margin:2px 0 4px'>"
-                f"{html.escape(' · '.join(f for f in _facts if f))}</div>", unsafe_allow_html=True)
+                f"<div class='ed-facts' style='display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px'>{_chips}</div>",
+                unsafe_allow_html=True)
 with hdr_map:
     _mf = go.Figure(go.Choropleth(locations=[crow["iso3"]], z=[1], colorscale=[[0, th.BRAND], [1, th.BRAND]],
                                   showscale=False, marker_line_width=0, hoverinfo="skip"))
@@ -825,5 +830,5 @@ th.section_header("account_balance", f"Revenue and Spending in {country_name}")
 _budget_section()
 
 st.divider()
-st.caption(html.escape("All dollar figures are in constant 2023 US$, except MOU amounts. "
+st.caption(html.escape("All dollar figures are in constant 2023 US$, except MOU amounts and GDP (current US$). "
                        + ms.inputs_years_line(ms._inputs()["ci"], sorted(set(ms._inputs()["lines"].iso3)))))
