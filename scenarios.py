@@ -46,8 +46,7 @@ PRESETS = {
         "(2026) and GC8 (2027) allocations for this country, Gavi 6.0 new pledges vs Gavi 5.0 for every donor, the "
         "US exit from Gavi and WHO, America First MOU schedules for US bilateral and NGO aid, and Swedish, UK and "
         "Dutch programme announcements. Predicted: the Global Fund's GC7-to-GC8 decline continues each year after "
-        "2027; US aid with no MOU follows the 3 MOU countries with the most similar aid / government health "
-        "spending ratio; each donor's health budget falls with its total aid (OECD ODA, IHME 2025 health vs total "
+        "2027; US bilateral and US-funded NGO aid ends in countries with no MOU (the predicted MOU cut); each donor's health budget falls with its total aid (OECD ODA, IHME 2025 health vs total "
         "aid), and whatever its Global Fund, Gavi and announced cuts leave of that budget is shared equally over its "
         "other channels, so nothing is cut twice. Foundations and non-DAC donors follow IHME's 2025 estimates. "
         "Built by announcement_model/project_cuts.py."),

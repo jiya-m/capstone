@@ -192,7 +192,7 @@ def _announcement_cuts_default(part: str = "cut") -> dict:
 def announcement_totals(model_dir: Path = MODEL_DIR) -> dict:
     """All health aid (every health area, every donor) under the Announced donor cuts model, per country:
     {iso3: {"base": US$ a year in 2019-2023, "lost": US$ lost in each year 2026-2030, "known": the part of it from
-    published numbers}}. Empty dict if the file is missing or predates the 2019-2023 base. Feeds the money headline
+    published numbers, "mou_pred": the predicted part from US money in a country without an MOU}}. Empty dict if the file is missing or predates the 2019-2023 base. Feeds the money headline
     and the known vs predicted chart on the Dashboard."""
     p = model_dir / ANNOUNCE_FILE
     if not p.exists():
@@ -202,10 +202,13 @@ def announcement_totals(model_dir: Path = MODEL_DIR) -> dict:
         return {}
     yrs = [2026 + t for t in range(N_YEARS)]
     b = a["base_kusd"] * 1e3
+    mp = lambda y: a[f"mou_pred_cut_{y}"] if f"mou_pred_cut_{y}" in a.columns else 0.0  # noqa: E731
     t = pd.DataFrame({"base": b, **{f"l{y}": b * a[f"cut_{y}"] for y in yrs},
-                      **{f"k{y}": b * a[f"known_cut_{y}"] for y in yrs}}).groupby(a.iso3).sum()
+                      **{f"k{y}": b * a[f"known_cut_{y}"] for y in yrs},
+                      **{f"p{y}": b * mp(y) for y in yrs}}).groupby(a.iso3).sum()
     return {iso: {"base": float(r.base), "lost": r[[f"l{y}" for y in yrs]].to_numpy(float),
-                  "known": r[[f"k{y}" for y in yrs]].to_numpy(float)} for iso, r in t.iterrows()}
+                  "known": r[[f"k{y}" for y in yrs]].to_numpy(float),
+                  "mou_pred": r[[f"p{y}" for y in yrs]].to_numpy(float)} for iso, r in t.iterrows()}
 
 
 def announcement_sources(iso3: str, model_dir: Path = MODEL_DIR) -> pd.DataFrame:
