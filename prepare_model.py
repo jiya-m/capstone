@@ -140,6 +140,9 @@ HIV_SHARE_FILE = EXT / "gm" / "ddf--datapoints--ihme_hiv_death--by--country--tim
 WB_REGIONS = {"SSA": "Sub-Saharan Africa", "SAS": "South Asia", "EAP": "East Asia & Pacific",
               "ECA": "Europe & Central Asia", "LAC": "Latin America & Caribbean", "MNA": "Middle East & North Africa"}
 KFF_MOU_FILE = HERE / "datasets" / "KFF_MOU_Tracker_2026-10-08.xlsx"
+# yearly US funding 2026-2030 for MOUs the team sheet doesn't have (Zambia: MOU co-investing & performance benchmarks
+# table, total US$1,026,968,737; Jiya 2026-10-22)
+MOU_SCHEDULE_EXTRA = {"ZMB": [325_294_438, 254_221_035, 196_657_009, 143_752_670, 107_043_584]}
 KFF_SOURCE = ("KFF Tracker: America First MOU Bilateral Global Health Agreements (data as of 2026-10-08), "
               "https://www.kff.org/global-health-policy/kff-tracker-america-first-mou-bilateral-global-health-agreements/")
 KFF_NAME_FIX = {"Côte d'Ivoire": "CIV"}            # KFF spelling -> ISO3 where it differs from country_lists.py
@@ -453,6 +456,11 @@ def main(a):
         m = m[m.iso3.isin(ISO3)].set_index("iso3").drop(columns="country")
         m = m.apply(pd.to_numeric, errors="coerce")
         ci = ci.join(m.add_prefix("mou_"))
+    # MOUs signed after the team sheet: yearly US amounts (nominal US$) from the agreement's co-investing table
+    for iso, vals in MOU_SCHEDULE_EXTRA.items():
+        if iso in ci.index:
+            for y, v in zip(range(2026, 2031), vals):
+                ci.loc[iso, f"mou_us_{y}"] = v
     import who_inputs                    # current WHO / UNAIDS estimates replace the derived HIV and malaria inputs
     ci = who_inputs.apply(ci)
     import hiv_transmission_inputs       # L-41: UNAIDS new infections per person with unsuppressed viral load

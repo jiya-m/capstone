@@ -15,7 +15,9 @@ KNOWN (a published number for that flow):
     budget (EUR 384M / 510M) and its halved UNICEF contribution.
 PREDICTED:
   - Global Fund 2028-2030: the GC7 -> GC8 change keeps going at the same yearly rate, (GC8 / GC7)^(1/3) a year.
-  - US bilateral + NGOs without an MOU: the average whole-agreement ratio of the 3 MOU countries with the closest
+  - US bilateral without an MOU: 0 from 2026 (no MOU, no US bilateral money; Jiya 2026-10-22), reported separately as
+    the "predicted MOU cut" (mou_pred_cut_<year>).
+  - US money through NGOs without an MOU: the average whole-agreement ratio of the 3 MOU countries with the closest
     aid / government health spending ratio (all three within +-50%), else the all-MOU average (prior-funding weighted);
     spread over the years with the MOU schedules' average shape.
   - Foundations, private and non-DAC governments (outside the Global Fund and Gavi): IHME 2025 / 2021-23 ratio.
@@ -201,6 +203,18 @@ for k, r in M_.iterrows():
     if k not in mou_mult and pd.notna(r["Flat multiplier (whole agreement)"]):
         mou_mult[k] = spread(r["Flat multiplier (whole agreement)"],
                              int(r["Years in agreement"]) if pd.notna(r["Years in agreement"]) else 5)
+# MOUs signed after the workbook (KFF tracker, model_data/mou_signed.csv): the yearly amounts in country_inputs.csv
+# (prepare_model.MOU_SCHEDULE_EXTRA) / the 2021-2025 US reference (mou_us_ref); else (total / 5 years) / that reference,
+# spread like the others
+signed = pd.read_csv(REPO / "model_data/mou_signed.csv").set_index("iso3")
+for k, r in signed.iterrows():
+    ref = ci.at[k, "mou_us_ref"] if k in ci.index else np.nan
+    if k in mou_mult or pd.isna(ref) or ref <= 0:
+        continue
+    if np.isfinite(sched.loc[k]).all():
+        mou_mult[k] = sched.loc[k].to_numpy(float) * 1e6 / ref
+    elif pd.notna(r["us_funding_total"]):
+        mou_mult[k] = spread(r["us_funding_total"] / 5 / ref)
 
 # --------------------------------------------------------------------------- US without an MOU: similar countries
 def latest(path, col):
@@ -230,6 +244,7 @@ for iso in sorted(set(b.iso[rule == "US non-MOU"])):
 # --------------------------------------------------------------------------- fixed multipliers (known, or predicted)
 M = np.full((N, NY), np.nan)
 KN = np.zeros((N, NY), bool)
+PM = np.zeros(N, bool)                       # US without an MOU: the predicted MOU cut
 lab = np.empty(N, object)
 gf26 = b.iso.map(gfa["Ratio 2026 (reduced GC7)"]).to_numpy(float)
 gf27 = b.iso.map(gfa["Ratio 2027-28 (GC8)"]).to_numpy(float)
@@ -253,10 +268,13 @@ for i in range(N):
         lab[i] = "US exit (Gavi, WHO)" if d == "United_States" else "Gavi replenishment"
     elif r == "Zero":                                            # US through WHO
         M[i] = 0.0; KN[i] = True; lab[i] = "US exit (Gavi, WHO)"
-    elif r == "US MOU" and iso in mou_mult:
+    elif r in ("US MOU", "US non-MOU") and iso in mou_mult:
         M[i] = mou_mult[iso]; KN[i] = True; lab[i] = "America First MOU"
     elif r in ("US MOU", "US non-MOU"):
-        M[i] = spread(nomou.get(iso, {"f": F_AVG})["f"]); lab[i] = "US, no MOU (similar countries)"
+        if c.startswith("US bilateral"):
+            M[i] = 0.0; PM[i] = True; lab[i] = "US bilateral, no MOU (predicted MOU cut)"
+        else:
+            M[i] = spread(nomou.get(iso, {"f": F_AVG})["f"]); lab[i] = "US through NGOs, no MOU (similar countries)"
     elif r == "Exit":
         M[i] = EXIT; KN[i] = True; lab[i] = "Country exit"
     elif r == "UK Africa bilateral":
@@ -299,12 +317,15 @@ print("known share of loss:", [round((loss[:, j] * KN[:, j]).sum() / loss[:, j].
 
 # --------------------------------------------------------------------------- outputs
 ex = b[["iso", "src", "chan"]].assign(base=B, **{f"l{y}": loss[:, j] for j, y in enumerate(YRS)},
-                                      **{f"k{y}": loss[:, j] * KN[:, j] for j, y in enumerate(YRS)})
+                                      **{f"k{y}": loss[:, j] * KN[:, j] for j, y in enumerate(YRS)},
+                                      **{f"p{y}": loss[:, j] * PM for j, y in enumerate(YRS)})
 ex = ex.groupby(["iso", "src", "chan"]).sum()
 ex = ex[ex.base > 0]
 out = pd.DataFrame({f"cut_{y}": (ex[f"l{y}"] / ex.base).clip(-1, 1).round(4) for y in YRS})
 for y in YRS:
     out[f"known_cut_{y}"] = (ex[f"k{y}"] / ex.base).clip(-1, 1).round(4)
+for y in YRS:
+    out[f"mou_pred_cut_{y}"] = (ex[f"p{y}"] / ex.base).clip(-1, 1).round(4)
 out.insert(0, "base_kusd", ex.base.round(1))
 out.index.names = ["iso3", "src_grp", "chan_grp"]
 out.to_csv(REPO / "model_data" / "announcement_cuts.csv")

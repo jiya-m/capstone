@@ -353,13 +353,15 @@ ANNOUNCED_SHAPE = "Announced phase-out"   # same for Announced donor cuts: each 
 @st.cache_data(show_spinner=False, max_entries=256)
 def announced_path(iso3: str) -> dict:
     """Announced donor cuts for one country, 2026-2030: base aid a year (2019-2023 average), US$ lost each year, the
-    part of it that is known (published numbers) and the predicted rest, and the share of aid cut ("cut"). Covers all
+    part of it that is known (published numbers), the predicted rest ("predicted", including "mou_pred": US money in
+    a country without an MOU, which ends), and the share of aid cut ("cut"). Covers all
     health aid ("all": True) where the cut model has the country, else only HIV, TB, malaria and vaccine aid."""
     tot = hm.announcement_totals().get(iso3)
     if tot is not None and tot["base"] > 0:
         lost = np.clip(tot["lost"], 0.0, None)
         known = np.clip(np.minimum(tot["known"], lost), 0.0, None)
-        return {"base": tot["base"], "lost": lost, "known": known, "predicted": lost - known,
+        mou_pred = np.clip(np.minimum(tot.get("mou_pred", np.zeros_like(lost)), lost - known), 0.0, None)
+        return {"base": tot["base"], "lost": lost, "known": known, "predicted": lost - known, "mou_pred": mou_pred,
                 "cut": lost / tot["base"], "all": True}
     I = _inputs()
     cells = I["lines"][I["lines"].iso3 == iso3]
@@ -369,7 +371,7 @@ def announced_path(iso3: str) -> dict:
                    0.0, None)
     known = np.minimum(hm.known_loss_by_year(iso3, I), lost)
     base = float(usd.sum())
-    return {"base": base, "lost": lost, "known": known, "predicted": lost - known,
+    return {"base": base, "lost": lost, "known": known, "predicted": lost - known, "mou_pred": np.zeros_like(lost),
             "cut": lost / base if base > 0 else np.zeros_like(lost), "all": False}
 
 
@@ -381,9 +383,13 @@ def known_vs_predicted_chart(iso3: str, country_name: str):
     st.markdown(f"<div class='ed-kicker' style='margin:0.6rem 0 0'>Aid lost each year in {html.escape(country_name)}: "
                 "known vs predicted</div>", unsafe_allow_html=True)
     fig = go.Figure()
-    for key, name, col in (("known", "Known (published cuts)", th.ROSE),
-                           ("predicted", "Predicted (model)", th.tint(th.ROSE, 0.35))):
-        fig.add_bar(x=scn.YEARS, y=ap[key] / 1e6, name=name, marker_color=col,
+    parts = (("known", "Known (published cuts)", th.ROSE, ap["known"]),
+             ("mou_pred", "Predicted MOU cut (no MOU)", th.BLUE, ap["mou_pred"]),
+             ("predicted", "Predicted (model)", th.tint(th.ROSE, 0.35), ap["predicted"] - ap["mou_pred"]))
+    for key, name, col, v in parts:
+        if key == "mou_pred" and v.sum() <= 0:
+            continue
+        fig.add_bar(x=scn.YEARS, y=v / 1e6, name=name, marker_color=col,
                     hovertemplate="%{x}: $%{y:,.1f}M " + name.split(" (")[0].lower() + "<extra></extra>")
     fig.add_scatter(x=scn.YEARS, y=ap["lost"] / 1e6, mode="text", text=[money(v) for v in ap["lost"]],
                     textposition="top center", showlegend=False, hoverinfo="skip", cliponaxis=False)
