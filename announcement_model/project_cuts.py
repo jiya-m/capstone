@@ -1,11 +1,13 @@
 """Health-aid cuts by country x donor x channel, 2026-2030, against the 2019-2023 average (Jiya's choices, 2026-10-21).
 
-Flow f = (recipient r, original donor d, channel c). Base B_f = IHME DAH, average of 2019-2023 (constant 2023 k$, COVID-19
-money included). For the dashboard's countries the yearly IHME files in country_data/ give all five years; for the other
-workbook countries only 2019, 2022 and 2023 exist, so the base is their average. Each flow keeps B_f * m_f,y in year y.
+Flow f = (recipient r, original donor d, channel c). Base B_f = OECD CRS health aid, average of 2019-2023 (constant 2023
+k$, COVID-19 money included), from oecd_data/ (built by oecd_inputs.py; Global Fund and Gavi traced back to the donors
+who fund them; IDA, EU institutions, WHO, UNICEF, UNFPA and UNAIDS own funds kept as their own donors). Every CRS
+recipient is included. Each flow keeps B_f * m_f,y in year y. From the workbook only the data sheets are read
+(US_MOU, GF_Allocations, Donor_ODA); its Base_Projection, rules and settings are not used (Jiya, 2026-11-05).
 
 KNOWN (a published number for that flow):
-  - Global Fund, money from every source: 2026 = reduced GC7 / original GC7, 2027 = GC8 / original GC7.
+  - Global Fund, money from every source: 2026 = reduced GC7 / original GC7, 2027 = GC8 / original GC7 (nominal).
   - Gavi: one Gavi-wide ratio, Gavi 6.0 new pledges / Gavi 5.0 pledges = 6.0 / 8.8 (Donor Tracker 2026: only about
     US$6B of the "US$9B+" is new money; Gavi 2020 summit: US$8.8B). The US is 0 (exit).
   - US through WHO = 0 (exit).
@@ -21,6 +23,8 @@ PREDICTED:
     aid / government health spending ratio (all three within +-50%), else the all-MOU average (prior-funding weighted);
     spread over the years with the MOU schedules' average shape.
   - Foundations, private and non-DAC governments (outside the Global Fund and Gavi): IHME 2025 / 2021-23 ratio.
+  - Multilateral agencies spending their own funds (IDA, EU institutions, UNICEF, UNFPA, UNAIDS): held flat; WHO's
+    own funds follow its 2026-27 base budget (US$4.2B vs 5.3B, known).
   - Every other flow of a DAC donor: the donor's health budget target minus everything already fixed above for that
     donor (its Global Fund, Gavi, exits, announcements, MOUs), shared over its remaining flows as one equal cut:
         target_d,y = B_d * exp(alpha) * O_d,y ^ eps
@@ -31,11 +35,11 @@ PREDICTED:
     2029-2030 extend each donor's 2025-28 outlook trend.
 Writes model_data/announcement_cuts.csv (country x donor group x channel group: base, cut_<year>, known_cut_<year>),
 model_data/announcement_areas.csv (country x health area: base and US$ lost / known each year; each flow's loss split
-by that flow's own 2019-2023 mix of health areas, for countries with yearly IHME files) and full audit tables in
+by that flow's own 2019-2023 mix of health areas) and full audit tables in
 announcement_model/output/.
 
 Usage (from the repo root):
-    python announcement_model/project_cuts.py aid_cut_projections_announcements.xlsx
+    python announcement_model/project_cuts.py datasets/aid_cut_projections_OECD.xlsx
 """
 import argparse
 import glob
@@ -45,9 +49,12 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from prepare_model import MOU_SCHEDULE_EXTRA  # noqa: E402
 
 ap = argparse.ArgumentParser()
-ap.add_argument("workbook", help="announcement workbook (aid_cut_projections_announcements.xlsx)")
+ap.add_argument("workbook", help="announcement workbook (aid_cut_projections_OECD.xlsx); only US_MOU, GF_Allocations, Donor_ODA are read")
 ap.add_argument("--out", default=None, help="folder for the audit tables (default announcement_model/output)")
 args = ap.parse_args()
 WB, REPO = Path(args.workbook), Path(__file__).resolve().parent.parent
@@ -59,7 +66,6 @@ NY = len(YRS)
 GAVI_WIDE = 6.0 / 8.8                 # Gavi 6.0 new pledges / Gavi 5.0 pledges (US$ B)
 NN_K, NN_BAND = 3, np.log(1.5)        # similar-country rule for US aid without an MOU
 
-wb = pd.read_excel(WB, sheet_name="Base_Projection")
 oda = pd.read_excel(WB, sheet_name="Donor_ODA").dropna(subset=["IHME source"])
 oda = oda[oda["ODA 2024"].notna()]
 mou = pd.read_excel(WB, sheet_name="US_MOU")
@@ -70,56 +76,59 @@ hist = pd.read_csv(HERE / "oda_history.csv", index_col=0)
 hist.columns = hist.columns.astype(int)
 
 # --------------------------------------------------------------------------- base: 2019-2023 average per flow
+# OECD CRS health aid in the IHME column layout (oecd_inputs.py), every recipient, 2019-2023 each year
 KEY = ["Recipient ISO3", "IHME source (original donor)", "Channel"]
-files = [f for f in glob.glob(str(REPO / "country_data/*.csv")) if open(f).readline().startswith("year,")]
+files = [f for f in glob.glob(str(REPO / "oecd_data/*.csv")) if open(f).readline().startswith("year,")]
 AREAS = {"HIV": ["hiv_dah_23"], "TB": ["tb_dah_23"], "Malaria": ["mal_dah_23"], "Vaccines": ["nch_cnv_dah_23"],
          "Other child health": ["nch_dah_23", "-nch_cnv_dah_23"], "Reproductive & maternal": ["rmh_dah_23"],
          "Non-communicable diseases": ["ncd_dah_23"], "COVID-19": ["oid_covid_dah_23"],
          "Other infectious diseases": ["oid_dah_23", "-oid_covid_dah_23"], "Health systems": ["swap_hss_total_dah_23"],
          "Other / unallocated": ["other_dah_23", "unalloc_dah_23"]}
 AREA_COLS = sorted({c.lstrip("-") for v in AREAS.values() for c in v})
-cd = pd.concat([pd.read_csv(f, usecols=["year", "source", "channel", "recipient_isocode", "dah_23"] + AREA_COLS,
-                            dtype={"source": str, "channel": str}) for f in files])
+cd = pd.concat([pd.read_csv(f, usecols=["year", "source", "channel", "recipient_isocode", "recipient_country", "dah_23"]
+                            + AREA_COLS, dtype={"source": str, "channel": str}) for f in files])
 cd = cd[cd.year.between(2019, 2023)]
 full = cd.groupby(["recipient_isocode", "source", "channel"]).dah_23.sum() / 5   # k$, 5-year mean
 for a, cols in AREAS.items():
     cd[a] = sum(-cd[c[1:]] if c.startswith("-") else cd[c] for c in cols)
 area_base = cd.groupby(["recipient_isocode", "source", "channel"])[list(AREAS)].sum() / 5     # k$ by health area
-area_base.index.names = ["Recipient ISO3", "IHME source (original donor)", "Channel"]
+area_base.index.names = KEY
 full.index.names = KEY
 have_full = set(cd.recipient_isocode)
-wb["base"] = np.where(wb["Recipient ISO3"].isin(have_full),
-                      wb.set_index(KEY).index.map(full).fillna(0.0).to_numpy(float),
-                      wb[["DAH 2019", "DAH 2022", "DAH 2023"]].mean(axis=1).to_numpy(float))
-# flows in the yearly files that the workbook lacks (no money in 2019, 2022 or 2023): add them with a rule
-wb_keys = set(wb.set_index(KEY).index)
-extra = full[[k not in wb_keys for k in full.index]].rename("base").reset_index()
-extra = extra[extra.base > 0]
-name_of = wb.drop_duplicates("Recipient ISO3").set_index("Recipient ISO3")["Recipient"]
-chan_name = wb.drop_duplicates("Channel").set_index("Channel")["Channel name"]
-grp_of = wb.drop_duplicates("IHME source (original donor)").set_index("IHME source (original donor)")["Donor group"]
+name_of = cd.drop_duplicates("recipient_isocode").set_index("recipient_isocode").recipient_country
+CHAN_NAME = {"BIL_USA": "US bilateral (USAID/State/etc.)", "NGO": "US NGOs", "INTLNGO": "International NGOs",
+             "GFATM": "Global Fund", "GAVI": "Gavi", "GATES": "Gates Foundation", "WB_IDA": "World Bank (IDA)",
+             "EC": "European Commission", "MULTI_EARMARKED": "Other multilateral (earmarked)"}
 NONDAC = {"China", "Corporate_donations", "Debt_repayments", "Gates Foundation", "Non_OECD_DAC_countries",
           "Non_OECD_non_DAC_countries", "Other", "Private_other", "Unallocable"}
+OWN_FUNDS = {"World_Bank_IDA", "EU_Institutions", "UNICEF", "UNFPA", "UNAIDS"}    # + WHO: multilaterals' own money
+EXITS = {"Sweden": {"BOL", "LBR", "MOZ", "TZA", "ZWE"},                          # Sida, 4 Dec 2025
+         "United_Kingdom": {"BRA", "CHN", "IDN", "IND", "MEX", "ZAF"}}           # UK country exits
+ent = pd.read_csv(REPO / "ext_data/wb_country_entities.csv").dropna(subset=["iso3166_1_alpha3"])
+AFRICA = set(ent.loc[ent.world_4region == "africa", "iso3166_1_alpha3"])
 mou_iso = set(mou.ISO3.dropna())
 def rule_for(src, chan, iso):
     if chan == "GFATM": return "Global Fund"
+    if chan == "GAVI": return "Gavi"
     if src in NONDAC: return "Non-DAC"
+    if src == "WHO": return "WHO own"
+    if src in OWN_FUNDS: return "Multilateral own"
     if src == "United_States":
-        if chan in ("GAVI", "WHO"): return "Zero"
-        if chan in ("BIL_USA", "USNGO", "INTLNGO", "US NGOs", "International NGOs"):
+        if chan == "WHO": return "Zero"
+        if chan in ("BIL_USA", "NGO", "INTLNGO"):
             return "US MOU" if iso in mou_iso else "US non-MOU"
         return "US other multilateral"
+    if src in EXITS and iso in EXITS[src] and (chan.startswith("BIL_") or chan == "INTLNGO"): return "Exit"
+    if src == "United_Kingdom" and iso in AFRICA and (chan.startswith("BIL_") or chan == "INTLNGO"):
+        return "UK Africa bilateral"
     if src == "Netherlands": return "NL UNICEF" if chan == "UNICEF" else "NL health"
     return "Residual"
-if len(extra):
-    extra = extra.assign(**{"Recipient": extra["Recipient ISO3"].map(name_of),
-                            "Channel name": extra.Channel.map(chan_name).fillna(extra.Channel),
-                            "Donor group": extra["IHME source (original donor)"].map(grp_of)
-                            .fillna(extra["IHME source (original donor)"])})
-    extra["Rule"] = [rule_for(s, c, i) for s, c, i in zip(extra["IHME source (original donor)"], extra.Channel,
-                                                          extra["Recipient ISO3"])]
-b = pd.concat([wb, extra], ignore_index=True)
+b = full.rename("base").reset_index()
 b = b[b.base > 0].reset_index(drop=True)
+b["Recipient"] = b["Recipient ISO3"].map(name_of)
+b["Channel name"] = b.Channel.map(CHAN_NAME).fillna(b.Channel)
+b["Donor group"] = b["IHME source (original donor)"]
+b["Rule"] = [rule_for(s, c, i) for s, c, i in zip(b["IHME source (original donor)"], b.Channel, b["Recipient ISO3"])]
 
 # --------------------------------------------------------------------------- source / channel groups (repo naming)
 NORDIC = {"Denmark", "Finland", "Norway", "Sweden", "Iceland"}
@@ -135,6 +144,8 @@ def src_grp(s):
     if s in ("China", "Non_OECD_DAC_countries", "Non_OECD_non_DAC_countries"): return "Non-DAC governments"
     if s in ("Corporate_donations", "Private_other"): return "Other private"
     if s in ("Other", "Unallocable"): return "Other / unallocable"
+    if s == "World_Bank_IDA": return "Development-bank lending"
+    if s in OWN_FUNDS or s == "WHO": return "Multilateral agencies"
     return "Other DAC governments"
 def chan_grp(c):
     c = str(c)
@@ -144,6 +155,7 @@ def chan_grp(c):
     if "Development Bank" in c or c.startswith("World Bank"): return "Development banks"
     if c == "European Commission": return "EU institutions"
     if c == "PAHO": return "WHO"
+    if c.startswith("Other multilateral"): return "Other"
     return c
 b["src"] = b["IHME source (original donor)"].map(src_grp)
 b["chan"] = b["Channel name"].map(chan_grp)
@@ -199,8 +211,9 @@ def spread(f, n=5):
     shp = SHAPE3 if n <= 3 else SHAPE5
     return f * np.concatenate([shp, np.repeat(shp[-1], 5 - len(shp))])
 mou_mult = dict(yby)
+EXTRA_SCHED = set(MOU_SCHEDULE_EXTRA)   # yearly amounts from the MOU itself (country_inputs, used below)
 for k, r in M_.iterrows():
-    if k not in mou_mult and pd.notna(r["Flat multiplier (whole agreement)"]):
+    if k not in mou_mult and k not in EXTRA_SCHED and pd.notna(r["Flat multiplier (whole agreement)"]):
         mou_mult[k] = spread(r["Flat multiplier (whole agreement)"],
                              int(r["Years in agreement"]) if pd.notna(r["Years in agreement"]) else 5)
 # MOUs signed after the workbook (KFF tracker, model_data/mou_signed.csv): the yearly amounts in country_inputs.csv
@@ -247,11 +260,13 @@ KN = np.zeros((N, NY), bool)
 PM = np.zeros(N, bool)                       # US without an MOU: the predicted MOU cut
 lab = np.empty(N, object)
 gf26 = b.iso.map(gfa["Ratio 2026 (reduced GC7)"]).to_numpy(float)
-gf27 = b.iso.map(gfa["Ratio 2027-28 (GC8)"]).to_numpy(float)
+gf27 = b.iso.map(gfa["GC8 allocation (US$)"] / gfa["GC7 original allocation (US$)"]
+                 .where(gfa["GC7 original allocation (US$)"] > 0)).to_numpy(float)   # nominal GC8 / GC7
 ihme = b.src.map(tr.h25).fillna(1.0).to_numpy(float, copy=True)
 ihme[b.src.eq("Other / unallocable").to_numpy()] = 1.0
 UK_AFRICA = [0.72, 0.58, 0.44, 0.44, 0.44]
 EXIT = [0.5, 0, 0, 0, 0]
+WHO_OWN = 4.2 / 5.3     # WHO 2026-27 base budget US$4.2B vs 2024-25 US$5.3B (WHA78, May 2025), nominal
 for i in range(N):
     r, d, c, iso = rule[i], donor[i], cname[i], b.iso.iat[i]
     if c == "Global Fund":
@@ -283,6 +298,10 @@ for i in range(N):
         M[i] = 384 / 510; KN[i] = True; lab[i] = "Netherlands health budget"
     elif r == "NL UNICEF":
         M[i] = 0.5; KN[i] = True; lab[i] = "Netherlands health budget"
+    elif r == "Multilateral own":
+        M[i] = 1.0; lab[i] = "Multilateral agencies' own funds (held flat)"
+    elif r == "WHO own":
+        M[i] = WHO_OWN; KN[i] = True; lab[i] = "WHO budget cut"
     elif r == "Non-DAC":
         M[i] = ihme[i]; lab[i] = "Foundations & non-DAC (IHME 2025 trend)"
     elif r in ("US other multilateral", "Residual"):

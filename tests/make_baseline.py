@@ -57,7 +57,11 @@ lists what moved.
 
 Aid rises (audit I-15): a line whose aid rises now counts as no loss instead of negative people losing services.
 Entries where some line's aid rises were refreshed with the current model (later mechanisms off):
-    python tests/make_baseline.py --gains-only"""
+    python tests/make_baseline.py --gains-only
+
+OECD aid data (2026-11-05): the aid baseline (dah_lines.csv) now comes from the OECD Creditor Reporting System instead of
+IHME (oecd_inputs.py), so every entry's money changed. All entries that moved were refreshed with the current model
+(later mechanisms off):  python tests/make_baseline.py --batch34 all"""
 import json
 import logging
 import sys

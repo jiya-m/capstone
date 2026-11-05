@@ -85,7 +85,7 @@ def test_global_fund_cut_is_the_allocation_not_stacked_on_donor_cuts():
 def test_total_health_aid_uses_the_2019_2023_average():
     """The money headline covers all health aid against the 2019-2023 average, COVID-19 money included."""
     tot = hm.announcement_totals()
-    assert 1.2e9 < tot["KEN"]["base"] < 1.4e9                  # Kenya: 1.30, 1.40, 1.47, 1.30, 0.94 $B
+    assert 0.80e9 < tot["KEN"]["base"] < 0.95e9                # Kenya, OECD CRS: 0.89, 0.94, 0.94, 0.91, 0.69 $B
     for iso in ("KEN", "ZMB"):
         t = tot[iso]
         assert np.all(t["lost"] > 0) and np.all(t["known"] <= t["lost"] + 1)
@@ -100,7 +100,8 @@ def test_donor_cut_is_uniform_across_its_predicted_channels():
 def test_known_loss_is_part_of_total_loss():
     for iso in ("ZMB", "KEN", "GUY"):
         cells = I["lines"][I["lines"].iso3 == iso]
-        total = np.clip((cells.usd.to_numpy()[:, None] * SC.cuts_by_year(cells, iso, I["trend_map"], AMAP)).sum(0), 0, None)
+        # loss = money lost in cells that lose money (a rise elsewhere, e.g. Gates growth, is not a negative loss)
+        total = np.clip(cells.usd.to_numpy()[:, None] * SC.cuts_by_year(cells, iso, I["trend_map"], AMAP), 0, None).sum(0)
         known = hm.known_loss_by_year(iso, I)
         assert np.all(known <= total + 1)
     assert hm.known_loss_by_year("KEN", I).sum() > 0            # MOU + Global Fund

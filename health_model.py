@@ -69,7 +69,7 @@ UNIT_SINGULAR = {"hiv_art": "patient-year of ART", "hiv_pmtct": "woman", "hiv_pr
 
 SOURCE_GROUPS = ["United States", "United Kingdom", "Germany", "France", "Japan", "Canada", "Netherlands", "Nordics",
                  "Other DAC governments", "Gates Foundation", "Other private", "Development-bank lending",
-                 "Non-DAC governments", "Other / unallocable"]
+                 "Multilateral agencies", "Non-DAC governments", "Other / unallocable"]
 DIRECT_CHANNELS = {"Bilateral agency", "NGOs", "Gates direct", "Other"}
 
 N_YEARS = 5

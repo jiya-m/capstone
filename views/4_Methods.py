@@ -132,7 +132,7 @@ with tabs[0]:
     md("""
     | What | Years |
     |---|---|
-    | Aid by donor and focus area (Section 2) | 2015-2023 (IHME's recipient-level data end in 2023) |
+    | Aid by donor and focus area (Section 2) | 2015-2024 (OECD CRS recipient-level data end in 2024) |
     | Health spending by source (Section 1) | 2015-2023, observed years only |
     | Government revenue and spending (Section 3) | latest year with IMF data (user can pick earlier years) |
     | Aid baseline the model cuts | average of 2021, 2022 and 2023 (smooths lumpy bednet campaigns and Gavi tranches) |
@@ -144,7 +144,7 @@ with tabs[0]:
     th.section_header("event", "Data Years")
     md("""
     The model applies each input's latest year to 2026-2030 without projecting it forward. The years differ by
-    input: aid is the 2021-2023 average (IHME's last recipient-level years), while coverage is from 2024-2025.
+    input: aid is the 2021-2023 average (OECD CRS), while coverage is from 2024-2025.
     """)
     st.table(ms.data_years_table(I["ci"], sorted(set(I["lines"].iso3))))
 
@@ -186,8 +186,15 @@ with tabs[1]:
 
     th.section_header("public", "Section 2: Who Is Providing the Money")
     md("""
-    **Data:** IHME Development Assistance for Health database (1990-2026 release), variable `dah_23` (constant
-    2023 US$) by year, **source** (who originally paid), **channel** (who delivered it) and recipient country.
+    **Data:** OECD Creditor Reporting System (CRS), health sectors (purpose codes 121, 122, 123 and 130), gross
+    disbursements, 2008-2024: ODA grants, ODA loans and the Gates Foundation's private development finance. Converted
+    from constant 2024 US$ millions to constant 2023 US$ (÷ 1.02) and put in the same layout as IHME's DAH database
+    (`oecd_inputs.py`): **source** (who originally paid), **channel** (who delivered it) and recipient country. The
+    Global Fund and Gavi report their own spending to the OECD; that money is traced back to the governments and
+    foundations that fund them, using each donor's share of that fund's money in the same recipient and year in IHME's
+    DAH database. The World Bank (IDA), EU institutions, WHO, UNICEF, UNFPA and UNAIDS spending their own funds are
+    their own sources. A donor government's money is "bilateral" when the OECD channel is the public sector, private
+    sector, a university, a PPP or other; NGO money is US NGOs for the United States and international NGOs otherwise.
 
     **Funders.** United States, Gates Foundation, Private Philanthropy (IHME's "private other" plus "corporate
     donations"), United Kingdom, Germany and France always get their own fixed color. Any other funder among the
@@ -204,8 +211,12 @@ with tabs[1]:
     **Pills:** Total in 2023 = all aid that year; Via NGO / Foundation Channels = the lighter-shaded share; Largest
     Funder = the source with the most aid in 2023.
 
-    **Where the Aid Is Spent.** IHME splits aid by health focus area (`hiv`, `tb`, `mal`, `rmh`, `nch`, `oid`,
-    `ncd`, `swap_hss`) and, within each, by program area (for example HIV treatment, prevention, care). Six focus
+    **Where the Aid Is Spent.** Each OECD purpose code is mapped to a health focus area (`hiv` 13040, `mal` 12262,
+    `tb` 12263, `rmh` 130xx, `nch` nutrition 12240 and all non-COVID Gavi money as vaccines, `oid` 12250 and COVID-19
+    12264, `ncd` 123xx, `swap_hss` 12110/12181/12230/12281, "other" 12191/12182/12220/12261). The OECD has one code per
+    disease, so the program areas inside HIV, TB and malaria (treatment, prevention, ...) use IHME's 2019-2023 split
+    for that country and channel group. The Global Fund reports joint HIV/TB grants under the HIV code, so its HIV + TB
+    money is re-split with IHME's HIV:TB split of Global Fund money in that country. Six focus
     areas are shown separately; other infectious diseases, non-communicable diseases, "other" and unallocated aid are
     grouped as All Other (the hover shows the breakdown). Inside one focus area the six largest program areas are
     shown and the rest grouped.
@@ -270,13 +281,14 @@ with tabs[1]:
 with tabs[2]:
     th.section_header("account_tree", "Step 1: Money (What Aid Is Lost)", rule=False)
     md("""
-    **Baseline.** For each country, the IHME aid database is summed by **source group x channel group x service
-    line** and averaged over 2021-2023. Each such combination is a *cell*.
+    **Baseline.** For each country, the OECD CRS health aid (in IHME's layout, see Section 2) is
+    summed by **source group x channel group x service line** and averaged over 2021-2023. Each such combination is a
+    *cell*.
     """)
     st.latex(r"\text{baseline}_{c} = \tfrac{1}{3}\sum_{y=2021}^{2023} \text{DAH}_{c,y}\times 1000 \quad"
-             r"\text{(IHME reports thousands of constant 2023 US\$)}")
+             r"\text{(thousands of constant 2023 US\$)}")
     md("""
-    **Service lines** come from IHME program-area columns:
+    **Service lines** come from program-area columns (IHME's names; amounts from the OECD, split as in Section 2):
 
     | Service line | Bucket | IHME program-area columns |
     |---|---|---|
@@ -298,8 +310,9 @@ with tabs[2]:
 
     **Source groups** (who paid): United States, United Kingdom, Germany, France, Japan, Canada, Netherlands,
     Nordics (Sweden, Norway, Denmark, Finland), Gates Foundation, Other private (private other, corporate donations),
-    Development-bank lending (IHME "debt repayments"), Non-DAC governments (China and other non-DAC), Other /
-    unallocable, and Other DAC governments (all remaining donor governments).
+    Development-bank lending (World Bank IDA), Multilateral agencies (EU institutions, WHO, UNICEF, UNFPA, UNAIDS
+    spending their own funds), Non-DAC governments (their share of Global Fund and Gavi money), Other / unallocable,
+    and Other DAC governments (all remaining donor governments).
 
     **Channel groups** (who delivered it): Bilateral agency (all `BIL_*`), NGOs (`NGO`, `INTLNGO`, `US_FOUND`),
     Gates direct, Global Fund, Gavi, WHO (incl. PAHO), UNICEF, UNFPA, UNAIDS, Unitaid, Development banks (World
@@ -546,7 +559,8 @@ with tabs[3]:
     md("""
     | Dataset | Provider and version | Variables used | Used in |
     |---|---|---|---|
-    | Development Assistance for Health | IHME, 1990-2026 (Sept 2026 release) | Aid (`dah_23`) by source, channel, recipient, focus and program area; 2025 preliminary totals | Section 2; model baseline (2021-23) and IHME 2025 scenario |
+    | Creditor Reporting System (CRS) | OECD, health sectors, gross disbursements 2008-2024, downloaded 4 November 2026 | Aid by donor, channel, recipient and purpose code | Section 2; model baseline (2021-23); Announced donor cuts baseline (2019-23) |
+    | Development Assistance for Health | IHME, 1990-2026 (Sept 2026 release) | Donor shares of Global Fund and Gavi money; program-area split inside HIV, TB and malaria; 2025 preliminary totals | Tracing the funds back to donors; service lines; IHME 2025 scenario and the foundations / non-DAC trend |
     | Global Health Spending | IHME, 1995-2023 | Government, prepaid private, out-of-pocket and aid spending: totals, per person, % of GDP | Section 1; government health spending and its growth (fiscal space) |
     | Expected Health Spending | IHME, 2024-2050 | Same variables, projected | Not used: loaded into the model's input file, but no calculation or chart uses it |
     | GDP | IHME Financing Global Health, 1960-2050 (2026) | GDP per person, constant 2023 US$ | Constant-dollar GDP; ART staff-cost scaling; regression controls |
@@ -564,8 +578,9 @@ with tabs[3]:
     | Malaria Atlas Project national unit data | MAP (data.malariaatlas.org), downloaded 13 October 2026 | Effective treatment per 100 cases; ITN use; household IRS coverage; *P. falciparum* and *P. vivax* clinical cases (2000-2025) | Malaria coverage and cases (2025); malaria death trend (*P. falciparum* cases 2015-2025) |
     | World Malaria Report 2025 | WHO | 610,000 malaria deaths in 2024; case incidence trend 2015-2024 | Validation page; malaria trend rationale |
 
-    Section 1 uses IHME's health spending database and Section 2 its DAH database; aid totals agree within 2% for 624 of
-    630 country-years, with small differences in a few small countries.
+    Section 1 uses IHME's health spending database (its aid bar is IHME's DAH); Section 2 uses the OECD CRS, which is
+    lower than IHME's DAH (2019-2023: a median of 42% lower across the dashboard's countries, 32% for Kenya), because
+    it leaves out private NGO and corporate money and most COVID-19 vaccine donations.
     """)
     th.section_header("table_chart", "World Development Indicators Used")
     md("""

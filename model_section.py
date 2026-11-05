@@ -45,7 +45,7 @@ NO_REPLACEMENT = "No Government Replacement"
 GOV_MODES = {NO_REPLACEMENT: "none", "Replace a set share": "custom",
              "As much as fiscal space allows": "max", "Gradual budget increase": "gradual"}
 RANGE_LABEL, RANGE_TIP = th.RANGE_LABEL, th.RANGE_TIP
-SRC_MODEL = "Model estimates from IHME aid data (2021-23 average), WHO, UNAIDS and World Bank data; see Methods."
+SRC_MODEL = "Model estimates from OECD CRS aid data (2021-23 average), WHO, UNAIDS and World Bank data; see Methods."
 SHOW_BRIEF = False                   # the Download Country Brief button (code kept for later)
 PRESET_SHORT = {
     "Full US exit": "US bilateral health aid ends and the US leaves WHO, Gavi and UNFPA; its Global Fund pledge falls "
@@ -463,7 +463,7 @@ def phase_out_by_donor_chart(iso3: str, country_name: str):
     _layout(fig, h=max(320, 26 * len(names) + 80), showlegend=False, margin=dict(l=0, r=190, t=10, b=0),
             xaxis=dict(tickvals=scn.YEARS), yaxis=dict(title=dict(text="% of 2019-2023 aid cut", standoff=10), ticksuffix="%",
                                                      range=[min(lo, 0) - 3, max(hi, pos[-1] if pos else hi) + 5]))
-    chart(fig, source="announcement_model/project_cuts.py; IHME DAH 2019-2023; OECD ODA; Global Fund GC7/GC8; Gavi; US MOUs.")
+    chart(fig, source="announcement_model/project_cuts.py; OECD CRS health aid 2019-2023; OECD ODA; Global Fund GC7/GC8; Gavi; US MOUs.")
 
 
 def preset_choices(ci, iso3) -> tuple:
@@ -1885,7 +1885,7 @@ def _fiscal_panel(res: dict, country_name: str, imf: dict, fiscal_t=scn.DEFAULT_
 # --------------------------------------------------------------------------- #
 WHO_MALARIA_DEATHS_2024 = 610_000      # WHO World Malaria Report 2025: estimated malaria deaths worldwide in 2024
 DATA_YEARS = [   # (input, column holding each country's year or None, fixed years, source, column holding the source)
-    ("Aid baseline (what a scenario cuts)", None, "2021-2023 average", "IHME DAH database", None),
+    ("Aid baseline (what a scenario cuts)", None, "2021-2023 average", "OECD Creditor Reporting System", None),
     ("Government health spending", None, "2023", "IHME health spending database", None),
     ("Health share of government spending", "sh_xpd_ghed_ge_zs_year", None, "World Bank WDI (WHO GHED)", None),
     ("People living with HIV", "plhiv_year", None, "UNAIDS / WHO", "plhiv_source"),
@@ -2018,9 +2018,9 @@ def _all_country_results(sk, ctl) -> pd.DataFrame:
     return _run_all(sk, ctl["fiscal_t"], ctl["ptab_json"], ctl["trend"])
 
 
-# claim C7 / L-03: what share of the aid the dashboard's countries cover (IHME DAH 2021-23, elim_ch == 0; logic review)
-SCOPE_NOTE = ("The 71 dashboard countries receive about 72% of the HIV, TB, malaria and vaccine aid that IHME assigns "
-              "to a country (2021-23); aid coded to global or unallocated programs (about 18% more) is not included.")
+# what share of the aid the dashboard's countries cover (OECD CRS 2021-23, recipient countries only; oecd_inputs.py)
+SCOPE_NOTE = ("The 71 dashboard countries receive about 93% of the HIV, TB, malaria and vaccine aid that the OECD "
+              "records for a recipient country (2021-23); regional and unallocated programs are not included.")
 ALL_RANGE_TIP = ("Totals add up each country's central estimate. The range is the " + RANGE_LABEL + ": the "
                  "2.5th-97.5th percentile of the all-country total over the 400 draws (the same draws in every "
                  "country). " + RANGE_TIP)
@@ -2311,8 +2311,8 @@ def _brief_html(country_name, preset, resp_label, items, cards, figs, opts=None)
 <h2>The Headline</h2><div class="grid">{stats}</div>
 <h2>What Every US$1 Million Cut Does, by Disease</h2><div class="cards">{card_html}</div>
 <h2>Coverage and Deaths</h2>{''.join(charts)}
-<div class="foot">Generated {_dt.date.today():%d %B %Y} from the Health Financing dashboard. Sources: IHME Development
-Assistance for Health and health spending; World Bank WDI; WHO and UNAIDS series via Gapminder. Ranges are the range across
+<div class="foot">Generated {_dt.date.today():%d %B %Y} from the Health Financing dashboard. Sources: OECD Creditor Reporting
+System (health aid); IHME health spending; World Bank WDI; WHO and UNAIDS series via Gapminder. Ranges are the range across
 parameter values (400 Monte Carlo draws); they exclude uncertainty in the data and in the model's structure, which is
 larger. Scenario estimates, not forecasts.</div>
 </body></html>"""

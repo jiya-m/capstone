@@ -1,8 +1,8 @@
 """
-Who funds health in each country?  (IHME Development Assistance for Health, 1990-2025)
+Who funds health in each country?  (OECD Creditor Reporting System health aid, 2008-2024)
 
 Run:   streamlit run app.py   (app.py is the navigation; this file is the Dashboard page)
-Data:  ./country_data/<Country>.csv   (created by prepare_data.py)
+Data:  ./oecd_data/<ISO3>.csv   (created by oecd_inputs.py from the OECD CRS)
 """
 import html
 import logging
@@ -27,7 +27,7 @@ WIDE = {"width": "stretch"} if _ver >= (1, 50) else {"use_container_width": True
 # Settings you may want to edit
 # --------------------------------------------------------------------------- #
 ROOT = Path(__file__).resolve().parent.parent              # the repo folder (this page lives in views/)
-DATA_DIR = ROOT / "country_data"          # DAH, one file per recipient
+DATA_DIR = ROOT / "oecd_data"             # health aid (OECD CRS, IHME column layout), one file per recipient
 SPEND_DIR = ROOT / "spending_data"        # total spending, one file per ISO3
 YEAR_MIN = 2015                          # aid charts start here and end with the last year of recipient data (2023)
 SPEND_YEAR_MIN, SPEND_YEAR_MAX = 2015, 2023   # observed years only: IHME's projections assume aid keeps flowing
@@ -35,7 +35,7 @@ DEFAULT_COUNTRY = "Kenya"
 NGO_SHADE = 0.45                         # NGO/foundation channels: the funder's color at this opacity
 # funders shown individually (fixed colors in theme.FUNDER_COLORS); everything else is "All Other Sources"
 
-# Channels treated as "NGO / foundation" money. IHME does NOT record whether a
+# Channels treated as "NGO / foundation" money. The OECD does NOT record whether a
 # recipient government knew about a flow -- channel is only a proxy. These are
 # the defaults; the sidebar lets you change them live.
 DEFAULT_NONGOV_CHANNELS = ["NGO", "INTLNGO", "US_FOUND", "GATES"]
@@ -243,7 +243,7 @@ def pick_unit(max_millions: float):
 # --------------------------------------------------------------------------- #
 
 if not DATA_DIR.exists():
-    st.error("No `country_data/` folder found. Run `python prepare_data.py <path to the IHME DAH CSV>` first.")
+    st.error("No `oecd_data/` folder found. Run `python oecd_inputs.py <path to the OECD CRS health CSV>` first.")
     st.stop()
 
 _missing = []
@@ -400,7 +400,7 @@ else:
 th.section_header("public", f"Who Is Providing the Money in {country_name}?")
 
 if pd.isna(crow["dah_file"]):
-    st.info(f"{country_name} is not a recipient in the IHME DAH database (typically a high-income country), "
+    st.info(f"{country_name} is not a recipient in the OECD CRS health data (typically a high-income country), "
             "so there is no aid-funder breakdown to show.")
 else:
     df = load_country(crow["dah_file"])
@@ -423,7 +423,7 @@ else:
             "Channels Drawn as NGO / Foundation (Lighter Shade)",
             options=list(CHANNEL_LABELS), default=DEFAULT_NONGOV_CHANNELS, key="c1_ngo",
             format_func=lambda c: title_case(f"{CHANNEL_LABELS[c]} ({c})"),
-            help="IHME doesn't record whether a government knew about a flow. "
+            help="The OECD doesn't record whether a government knew about a flow. "
                  "The channel that delivered the money is used as a proxy.",
         )
 
@@ -508,9 +508,9 @@ else:
                            arrowcolor=th.MUTED, xanchor="right", align="right", bgcolor=th.tint(th.SURFACE, 0.9),
                            text=f"{th.short_name(top_src)}: {latest.loc[latest['source'].map(lambda x: th.FUNDER_ALIASES.get(x, x)) == top_src, 'val'].sum() / tot:.0%}"
                                 f"<br>of {last_data_year} aid", font=dict(size=12, color=th.INK))
-    chart(fig, labels=True, source="IHME Development Assistance for Health database (1990-2026 release); constant 2023 US$.",
+    chart(fig, labels=True, source="OECD Creditor Reporting System, health sectors, gross disbursements; constant 2023 US$.",
           note="Lighter shades are aid delivered through NGOs and foundations, a proxy for money that may bypass the "
-               f"government. IHME's country-level data end in {last_data_year}.")
+               f"government. OECD country-level data end in {last_data_year}.")
 
 
 # =========================================================================== #
@@ -527,7 +527,7 @@ MAX_PROGRAM_AREAS = 6                              # inside one focus area: the 
 PA_SHADES = (1.0, 0.8, 0.64, 0.5, 0.38, 0.28)      # opacity of the focus area's color, darkest = largest
 
 if pd.isna(crow["dah_file"]):
-    st.info(f"{country_name} is not a recipient in the IHME DAH database, so there is no category breakdown to show.")
+    st.info(f"{country_name} is not a recipient in the OECD CRS health data, so there is no category breakdown to show.")
 else:
     df3 = load_country(crow["dah_file"])
     e1, e2, e3 = st.columns([2, 2, 2], vertical_alignment="bottom")
@@ -592,7 +592,7 @@ else:
                        rangemode="tozero", automargin=True, **({"range": [0, 100]} if share else {})),
             bargap=0.15, hovermode="closest",
         )
-        chart(fig4, labels=True, source="IHME Development Assistance for Health database (1990-2026 release); constant 2023 US$.")
+        chart(fig4, labels=True, source="OECD Creditor Reporting System, health sectors by purpose code, gross disbursements; constant 2023 US$.")
 
 
 # =========================================================================== #
