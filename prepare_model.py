@@ -73,6 +73,10 @@ SOURCE_GROUPS = {
     "China": "Non-DAC governments", "Non_OECD_DAC_countries": "Non-DAC governments",
     "Non_OECD_non_DAC_countries": "Non-DAC governments",
     "Other": "Other / unallocable", "Unallocable": "Other / unallocable",
+    # OECD CRS (oecd_inputs.py): multilateral agencies spending their own funds
+    "World_Bank_IDA": "Development-bank lending",
+    "EU_Institutions": "Multilateral agencies", "WHO": "Multilateral agencies", "UNICEF": "Multilateral agencies",
+    "UNFPA": "Multilateral agencies", "UNAIDS": "Multilateral agencies",
 }  # everything else (Australia, Belgium, Italy, Spain, Switzerland, Korea, ...) -> "Other DAC governments"
 
 

@@ -1,0 +1,154 @@
+recipient_country,recipient_isocode,file
+Afghanistan,AFG,AFG.csv
+Angola,AGO,AGO.csv
+Anguilla,AIA,AIA.csv
+Albania,ALB,ALB.csv
+Argentina,ARG,ARG.csv
+Armenia,ARM,ARM.csv
+Antigua and Barbuda,ATG,ATG.csv
+Azerbaijan,AZE,AZE.csv
+Burundi,BDI,BDI.csv
+Benin,BEN,BEN.csv
+Burkina Faso,BFA,BFA.csv
+Bangladesh,BGD,BGD.csv
+Bosnia and Herzegovina,BIH,BIH.csv
+Belarus,BLR,BLR.csv
+Belize,BLZ,BLZ.csv
+Bolivia,BOL,BOL.csv
+Brazil,BRA,BRA.csv
+Barbados,BRB,BRB.csv
+Bhutan,BTN,BTN.csv
+Botswana,BWA,BWA.csv
+Central African Republic,CAF,CAF.csv
+Chile,CHL,CHL.csv
+China (People’s Republic of),CHN,CHN.csv
+Côte d’Ivoire,CIV,CIV.csv
+Cameroon,CMR,CMR.csv
+Democratic Republic of the Congo,COD,COD.csv
+Congo,COG,COG.csv
+Cook Islands,COK,COK.csv
+Colombia,COL,COL.csv
+Comoros,COM,COM.csv
+Cabo Verde,CPV,CPV.csv
+Costa Rica,CRI,CRI.csv
+Cuba,CUB,CUB.csv
+Djibouti,DJI,DJI.csv
+Dominica,DMA,DMA.csv
+Dominican Republic,DOM,DOM.csv
+Algeria,DZA,DZA.csv
+Ecuador,ECU,ECU.csv
+Egypt,EGY,EGY.csv
+Eritrea,ERI,ERI.csv
+Ethiopia,ETH,ETH.csv
+Fiji,FJI,FJI.csv
+Micronesia,FSM,FSM.csv
+Gabon,GAB,GAB.csv
+Georgia,GEO,GEO.csv
+Ghana,GHA,GHA.csv
+Guinea,GIN,GIN.csv
+Gambia,GMB,GMB.csv
+Guinea-Bissau,GNB,GNB.csv
+Equatorial Guinea,GNQ,GNQ.csv
+Grenada,GRD,GRD.csv
+Guatemala,GTM,GTM.csv
+Guyana,GUY,GUY.csv
+Honduras,HND,HND.csv
+Croatia,HRV,HRV.csv
+Haiti,HTI,HTI.csv
+Indonesia,IDN,IDN.csv
+India,IND,IND.csv
+Iran,IRN,IRN.csv
+Iraq,IRQ,IRQ.csv
+Jamaica,JAM,JAM.csv
+Jordan,JOR,JOR.csv
+Kazakhstan,KAZ,KAZ.csv
+Kenya,KEN,KEN.csv
+Kyrgyzstan,KGZ,KGZ.csv
+Cambodia,KHM,KHM.csv
+Kiribati,KIR,KIR.csv
+Saint Kitts and Nevis,KNA,KNA.csv
+Lao People’s Democratic Republic,LAO,LAO.csv
+Lebanon,LBN,LBN.csv
+Liberia,LBR,LBR.csv
+Libya,LBY,LBY.csv
+Saint Lucia,LCA,LCA.csv
+Sri Lanka,LKA,LKA.csv
+Lesotho,LSO,LSO.csv
+Morocco,MAR,MAR.csv
+Moldova,MDA,MDA.csv
+Madagascar,MDG,MDG.csv
+Maldives,MDV,MDV.csv
+Mexico,MEX,MEX.csv
+Marshall Islands,MHL,MHL.csv
+North Macedonia,MKD,MKD.csv
+Mali,MLI,MLI.csv
+Myanmar,MMR,MMR.csv
+Montenegro,MNE,MNE.csv
+Mongolia,MNG,MNG.csv
+Mozambique,MOZ,MOZ.csv
+Mauritania,MRT,MRT.csv
+Montserrat,MSR,MSR.csv
+Mauritius,MUS,MUS.csv
+Malawi,MWI,MWI.csv
+Malaysia,MYS,MYS.csv
+Mayotte,MYT,MYT.csv
+Namibia,NAM,NAM.csv
+Niger,NER,NER.csv
+Nigeria,NGA,NGA.csv
+Nicaragua,NIC,NIC.csv
+Niue,NIU,NIU.csv
+Nepal,NPL,NPL.csv
+Nauru,NRU,NRU.csv
+Oman,OMN,OMN.csv
+Pakistan,PAK,PAK.csv
+Panama,PAN,PAN.csv
+Peru,PER,PER.csv
+Philippines,PHL,PHL.csv
+Palau,PLW,PLW.csv
+Papua New Guinea,PNG,PNG.csv
+Democratic People’s Republic of Korea,PRK,PRK.csv
+Paraguay,PRY,PRY.csv
+Palestinian Authority or West Bank and Gaza Strip,PSE,PSE.csv
+Rwanda,RWA,RWA.csv
+Sudan,SDN,SDN.csv
+Senegal,SEN,SEN.csv
+Saint Helena,SHN,SHN.csv
+Solomon Islands,SLB,SLB.csv
+Sierra Leone,SLE,SLE.csv
+El Salvador,SLV,SLV.csv
+Somalia,SOM,SOM.csv
+Serbia,SRB,SRB.csv
+South Sudan,SSD,SSD.csv
+Sao Tome and Principe,STP,STP.csv
+Suriname,SUR,SUR.csv
+Eswatini,SWZ,SWZ.csv
+Seychelles,SYC,SYC.csv
+Syrian Arab Republic,SYR,SYR.csv
+Chad,TCD,TCD.csv
+Togo,TGO,TGO.csv
+Thailand,THA,THA.csv
+Tajikistan,TJK,TJK.csv
+Tokelau,TKL,TKL.csv
+Turkmenistan,TKM,TKM.csv
+Timor-Leste,TLS,TLS.csv
+Tonga,TON,TON.csv
+Trinidad and Tobago,TTO,TTO.csv
+Tunisia,TUN,TUN.csv
+Türkiye,TUR,TUR.csv
+Tuvalu,TUV,TUV.csv
+Tanzania,TZA,TZA.csv
+Uganda,UGA,UGA.csv
+Ukraine,UKR,UKR.csv
+Uruguay,URY,URY.csv
+Uzbekistan,UZB,UZB.csv
+Saint Vincent and the Grenadines,VCT,VCT.csv
+Venezuela,VEN,VEN.csv
+Viet Nam,VNM,VNM.csv
+Vanuatu,VUT,VUT.csv
+Wallis and Futuna,WLF,WLF.csv
+Samoa,WSM,WSM.csv
+Kosovo,XKV,XKV.csv
+Yemen,YEM,YEM.csv
+South Africa,ZAF,ZAF.csv
+Zambia,ZMB,ZMB.csv
+Zimbabwe,ZWE,ZWE.csv

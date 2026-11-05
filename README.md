@@ -19,15 +19,15 @@ Benchmarks), and document every calculation (Methods).
 
 ```
  datasets/  (raw downloads, NOT in git)
-   IHME DAH, health spending, GDP | MAP | KFF tracker | team MOU sheet | IMF WEO
+   OECD CRS health aid | IHME DAH (shares only), health spending, GDP | MAP | KFF tracker | team MOU sheet | IMF WEO
         |
         v
  preparation scripts (run by hand)
-   malaria_inputs.py   fiscal_inputs.py   prepare_model.py (calls who_inputs.py)   add_constant_dollars.py
+   malaria_inputs.py   fiscal_inputs.py   prepare_model.py (calls who_inputs.py)   oecd_inputs.py   add_constant_dollars.py
         |
         v
  processed inputs (in git)
-   ext_data/   macro_data/   model_data/   spending_data/   country_data/   revenue_data/   cofog_all/
+   ext_data/   macro_data/   model_data/   spending_data/   oecd_data/   country_data/   revenue_data/   cofog_all/
    model_params.csv   unit_cost_reference.csv
         |
         v
@@ -89,8 +89,18 @@ python prepare_model.py \
     --gdp datasets/IHME_GDP_1960_2050_FGH_2026_Y2026M06D11.CSV \
     --mou datasets/co-financing_MOU.xlsx
 
-# 4. Constant-2023-US$ GDP and government health spending as % of GDP -> macro_data/, spending_data/
+# 4. Health aid from the OECD Creditor Reporting System -> oecd_data/, model_data/dah_lines.csv (+ 3 aid columns of
+#    country_inputs.csv). Must run after step 3, which still writes an IHME dah_lines.csv.
+python oecd_inputs.py datasets/oecd_crs_health_2026-11-04.csv
+
+# 5. Announced donor cuts on the OECD base -> model_data/announcement_cuts.csv, announcement_areas.csv
+python announcement_model/project_cuts.py datasets/aid_cut_projections_OECD.xlsx
+
+# 6. Constant-2023-US$ GDP and government health spending as % of GDP -> macro_data/, spending_data/
 python add_constant_dollars.py
+
+# 7. All Countries results
+python prepare_model.py --precompute-only
 ```
 
 - Steps 1 and 2 also patch `model_data/country_inputs.csv`. Step 3 rebuilds it and applies them again, through
@@ -109,7 +119,8 @@ python add_constant_dollars.py
 | `ext_data/` | World Bank WDI, WHO GHO, Gapminder series (`wdi/`, `gho/`, `sg/`, `gm/`), Malaria Atlas Project series (`map/`), unused reference series (`reference/`) | `prepare_model.py --download`, `who_inputs.py --download`, `malaria_inputs.py` |
 | `macro_data/` | IMF WEO by country (GDP, population, revenue, spending, debt); `weo_fiscal/` = WEO fiscal balances for interest costs | earlier scripts; `add_constant_dollars.py`; `fiscal_inputs.py` |
 | `spending_data/` | IHME health spending by source, per country (Section 1) | earlier scripts; `add_constant_dollars.py` |
-| `country_data/` | IHME DAH by donor and focus area, per country (Section 2) | earlier scripts |
+| `oecd_data/` | **Health aid used everywhere**: OECD CRS 2008-2024 by donor, channel and focus area, one file per recipient (ISO3), in the IHME DAH column layout (Section 2, the Announced model, `dah_lines.csv`) | `oecd_inputs.py` |
+| `country_data/` | IHME DAH by donor and focus area, per country. No longer drawn or modelled; `oecd_inputs.py` reads it only for Global Fund / Gavi donor shares and the service split inside HIV, TB and malaria | earlier scripts |
 | `revenue_data/`, `cofog_all/` | IMF revenue by type and COFOG spending by function, per country (Section 3) | earlier scripts |
 | `model_params.csv` | Every model parameter: central, low, high, sourced or assumption, citation | edited by hand |
 | `unit_cost_reference.csv` | Country ART and income-group TB unit costs from studies | edited by hand |
@@ -120,6 +131,8 @@ python add_constant_dollars.py
 
 | File in `datasets/` | Source |
 |---|---|
+| `oecd_crs_health_2026-11-04.csv` | OECD Data Explorer, CRS (DSD_CRS@DF_CRS): health sectors 121/122/123/130, gross disbursements, constant 2024 US$ millions, all recipients, 2008-2024 (downloaded 2026-11-04) |
+| `aid_cut_projections_OECD.xlsx` | The team's announcement workbook, OECD version; `project_cuts.py` reads its US_MOU, GF_Allocations and Donor_ODA sheets |
 | `IHME_DAH_DATABASE_1990_2026_Y2026M09D18.CSV` (plus its codebook, info sheet and user guide) | IHME, Financing Global Health: Development Assistance for Health Database 1990-2026 (GHDx, ghdx.healthdata.org) |
 | `IHME_HEALTH_SPENDING_1995_2023_Y2026M09D21.CSV` | IHME, Global Health Spending 1995-2023 (GHDx) |
 | `IHME_EXPECTED_HEALTH_SPENDING_2024_2050_Y2026M09D23.CSV` | IHME, Expected Health Spending 2024-2050 (GHDx) |
@@ -135,7 +148,8 @@ python add_constant_dollars.py
 
 ## The model in one paragraph
 
-- **Money.** Baseline aid is IHME's 2021-23 average by donor x channel x program area. A scenario cuts each cell.
+- **Money.** Baseline aid is the OECD CRS 2021-23 average by donor x channel x program area (each disease's program split
+  from IHME). A scenario cuts each cell.
 - **Government response.** Optionally the government replaces part of the loss, capped by fiscal space.
 - **People affected.** The money lost becomes people losing each service: net loss ÷ cost per person, capped at
   the people covered.

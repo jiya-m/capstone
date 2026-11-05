@@ -91,6 +91,9 @@ def test_card_is_full_model_for_1m_uniform_cut(iso):
     cards = {c["bucket"]: c for c in ms._per_million_cards(iso, pj, True, iso)}
     for b in hm.BUCKETS:
         aid = LINES.loc[(LINES.iso3 == iso) & (LINES.bucket == b), "usd"].sum()
+        if aid <= 0:                                    # no aid for this disease: see test_card_without_aid_says_so
+            assert cards[b]["people_n"] is None
+            continue
         cut = min(1.0, 1e6 / aid)
         r = hm.run_country(iso, hm.uniform_scenario(b, cut), hm.Fiscal(), I, P, n_draws=0)
         B = r["buckets"].set_index("bucket")
