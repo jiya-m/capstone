@@ -1,5 +1,9 @@
 # Health Financing Dashboard
 
+> Forking this to keep modeling? Start with [`CLAUDE.md`](CLAUDE.md) and [`docs/MODEL_GUIDE.md`](docs/MODEL_GUIDE.md):
+> they describe the current state (the dashboard is now coverage-only, with Announced donor cuts and Custom as the
+> only scenarios shown). Parts of this README still describe the earlier deaths model.
+
 A Streamlit dashboard on who pays for health in 71 low- and middle-income countries, and what happens to health
 coverage and lives if donors cut HIV, TB, malaria and immunization aid. All dollar figures are constant 2023 US$
 (except amounts quoted from MOUs, which are nominal).
